@@ -74,16 +74,17 @@ Feel free to copy anything from here and use it.
 
 	OR
 	- https://github.com/pop-os/gtk-theme (compile it)
+        - (DO NOT INSTALL 'pop-theme' or its ppa, it will mess up ubuntu)
+
 	OR
 	- change yaru theme color (chose Yaru Blue)
 		https://github.com/Jannomag/Yaru-Colors
 
 
 - Icons:
-	- install pop icons only (DO NOT INSTALL 'pop-theme' or its ppa, it will mess up ubuntu)
+	- pop icons
 		https://github.com/pop-os/icon-theme
-	OR
-	- Pop icons
+
 	OR
 	- papirus icons
 

@@ -2,9 +2,9 @@
 
 Feel free to copy anything from here and use it.
 
---
+
 ## Most Important
---
+
 
 * Install time shift first to make backup (https://itsfoss.com/backup-restore-linux-timeshift/)
 * https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely
@@ -31,9 +31,9 @@ Feel free to copy anything from here and use it.
     * OR "cat /etc/resolv.conf"
     * OR just check in wifi settings
 
---
+
 ## Appearance & Customization
---
+
 
 - https://askubuntu.com/questions/806200/how-can-you-enable-gtk3-themes-dark-theme-mode-when-using-unity-7 (see maual method)
 
@@ -73,12 +73,14 @@ Feel free to copy anything from here and use it.
             - https://snapcraft.io/orchis-themes
 
 	OR
+
 	- https://github.com/pop-os/gtk-theme (compile it)
-        - (DO NOT INSTALL 'pop-theme' or its ppa, it will mess up ubuntu)
+        - DO NOT INSTALL 'pop-theme' or its ppa, it will mess up ubuntu
 
 	OR
+
 	- change yaru theme color (chose Yaru Blue)
-		https://github.com/Jannomag/Yaru-Colors
+		- https://github.com/Jannomag/Yaru-Colors
 
 
 - Icons:
@@ -90,56 +92,46 @@ Feel free to copy anything from here and use it.
 
 
 - Fonts: (Install font manager first ("sudo apt install font-manager"))
-
-	- get mac font
-	OR
-
-		Interface: Fira Sans Book 10
-		Documents: Roboto Slab Regular 11
-		Monospace: Fira Mono Regular 11
-		Window Titles: Fira Sans SemiBold 10
-		scaling factor: 0.85
+    - for Pop! like look
+            Interface: Fira Sans Book 10
+            Documents: Roboto Slab Regular 11
+            Monospace: Fira Mono Regular 11
+            Window Titles: Fira Sans SemiBold 10
+            scaling factor: 0.85
 
 
-- Pop! Os Wall
-	https://github.com/pop-os/wallpapers
+- [Pop! Os Wall](https://github.com/pop-os/wallpapers)
 
+- [Pop! Os curser](https://github.com/pop-os/icon-theme) (Same as curser)
 
-- Pop! Os curser (same as icon theme)
-	https://github.com/pop-os/icon-theme
-
-
-- For macOS like look (see video, https://www.youtube.com/watch?v=IzPxJK4drcc)
+- For macOS like look ([see video](https://www.youtube.com/watch?v=IzPxJK4drcc))
 
 	- https://itsfoss.com/make-ubuntu-look-like-macos/
 	- https://www.linuxuprising.com/2020/10/whitesur-macos-big-sur-like-gtk-gnome.html
+        - https://github.com/vinceliuice/WhiteSur-gtk-theme
 	- https://www.omgubuntu.co.uk/2017/03/make-ubuntu-look-like-mac-5-steps
 
-	- https://photos.google.com/share/AF1QipNNQyeVrqxBdNmBkq9ILswizuj-RYJFNt5GlxJZ90Y6hx0okrVSLKSnmFFbX7j5Mg?key=RV8tSXVJVGdfS1RIQUI0Q3RZZVhlTmw0WmhFZ2V3
+	- [MacOS wallpapers](https://photos.google.com/share/AF1QipNNQyeVrqxBdNmBkq9ILswizuj-RYJFNt5GlxJZ90Y6hx0okrVSLKSnmFFbX7j5Mg?key=RV8tSXVJVGdfS1RIQUI0Q3RZZVhlTmw0WmhFZ2V3)
 
-	- mcata gtk theme
-		(https://www.gnome-look.org/p/1381832/)
-	- https://github.com/vinceliuice/WhiteSur-gtk-theme
+	- [Mcata gtk theme ](https://www.gnome-look.org/p/1381832/)
+
 	- https://github.com/vinceliuice/Sierra-gtk-theme
 	- https://github.com/vinceliuice/Mojave-gtk-theme
 
 
---
+
 ## System
---
 
-- setup thunderbird and update it to latest (and backup it like FF)
-	for calender & task-> https://fruux.com/sync/
 
-	https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/
-		for getting latest Thunderbird
+- Setup thunderbird (and backup it like FF)
+	- [for calender & task](https://fruux.com/sync/)
+    - [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/)
 
 - Firefox Setup (and desktop icons)
-	https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa
-		for latest nightly
+	- [for latest nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
 
-- enable flatpack support
-	https://flatpak.org/setup/Ubuntu/
+- [Enable flatpack support](https://flatpak.org/setup/Ubuntu/)
+
 
 - run all prog via amd gpu
 	https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an
@@ -186,9 +178,9 @@ Feel free to copy anything from here and use it.
 	https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/
 
 
---
+
 ## Install Apps & extensions
---
+
 
 
 - sudo apt update && sudo apt upgrade -y
@@ -316,6 +308,5 @@ EXTRA Apps:
 		https://extensions.gnome.org/extension/1319/gsconnect/
 
 
---
+
 ## Todo
---

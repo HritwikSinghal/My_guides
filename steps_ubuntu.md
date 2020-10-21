@@ -6,7 +6,7 @@ Feel free to copy anything from here and use it.
 ## Most Important
 
 
-* [Install Timeshift & make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
+- [x] [Install Timeshift & make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
 
 * [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
 
@@ -17,7 +17,7 @@ Feel free to copy anything from here and use it.
 
 * [Path variable in profile vs environment](https://askubuntu.com/questions/866161/setting-path-variable-in-etc-environment-vs-profile)
 
-* Put the below lines in "/etc/environment"
+* [x] Put the below lines in "/etc/environment"
     * DRI_PRIME=1
     * MOZ_ENABLE_WAYLAND=1
 

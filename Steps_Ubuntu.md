@@ -160,135 +160,121 @@ Feel free to copy anything from here and use it.
 	- gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 2
 
 
-
 ## Install Apps & extensions
 
 
-
-- sudo apt update && sudo apt upgrade -y
-
 - Install Apps:
-	- sublime & change its theme (pref -> theme -> adaptive.XXX)
-		https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux
+
+    - [Atom](https://atom.io/)
+	   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
+	   - Install
+        - "termination" (and disable other terminals)
+        - "Autosave-Onchange"
+
+    OR
+
+	- [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux) & change its theme (pref -> theme -> adaptive.XXX)
 
 	- gdebi (for installing .deb files)
 
 	- gnome-tweak-tool
 
-	- nemo (disable "desktop icons" extension before installing nemo ,add "nemo-desktop to startup")
-		https://itsfoss.com/install-nemo-file-manager-ubuntu/
+	- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/) (disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup")
 
-	- vnstat
-		https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/
-		https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/
-		https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/
+	- Vnstat
+		- [Link1](https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/)
+		- [Link2](https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/)
+		- [Link3](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
 
-	- PulseEffects (configs are stored in "~/.config/PulseEffects/output") (Do "Start Service at Login" in PE Settings)
-		http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/
+	- [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/) (configs are stored in "~/.config/PulseEffects/output") (Do "Start Service at Login" in PE Settings)
 
+	- [Uget](https://itsfoss.com/xtreme-download-manager-install/) (with its integrator for firefox, fix the issues)
 
-	- Uget (with its integrator for firefox, fix the issues)
-	OR
+    OR
+
 	- XDM
-		https://itsfoss.com/xtreme-download-manager-install/
 
-	- BingWall
-		https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap
-	OR
-	- Bing wallpaper extension
-		https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/
+	- [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
 
-	- lollypop music player
-		https://linuxconfig.org/how-to-install-lollypop-music-player-on-linux
-		https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop
+    OR
 
-	- bleachbit
-		https://www.bleachbit.org/download
+    - [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
 
-	- stacer
-		https://itsfoss.com/optimize-ubuntu-stacer/
+	- [Lollypop music player](https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop)
 
-	- GreenTunnel
+	- [Bleachbit](https://www.bleachbit.org/download)
+
+	- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
+
+	- [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
 		npm i -g green-tunnel
+
+	- [Flameshot](https://itsfoss.com/flameshot/) (SS tool)
+
 	OR
-		https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html
 
-	- flameshot (SS tool)
-		https://itsfoss.com/flameshot/
-	OR
-	- Normal SS in Linux
-		https://itsfoss.com/take-screenshot-linux/
+	- [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
 
-	- conky (just copy .conky/ to home)
-		(http://conky.sourceforge.net/variables.html) or (man conky)
+	- Conky (just copy .conky/ to home)
+        - [Conky config variables](http://conky.sourceforge.net/variables.html) OR 'man conky'
 
-		- https://www.youtube.com/watch?v=miLrmIGPCJs (fix titlebar)
+		- [Titlebar Fix](https://www.youtube.com/watch?v=miLrmIGPCJs)
 
-		- https://www.omgubuntu.co.uk/2016/02/run-multiple-conky-scripts-same-session
-		- https://www.youtube.com/watch?v=QB8cjKpdVQY
-		- https://www.youtube.com/watch?v=e4qNmPAYkFs
+		- [Run Mltiple Conky scrips](https://www.omgubuntu.co.uk/2016/02/run-multiple-conky-scripts-same-session)
+		- [Conky Setup by Chrits Titus Tech Youtube](https://www.youtube.com/watch?v=QB8cjKpdVQY)
 
+		- [Conky Widgets Config Link 1](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
+		- [Conky Widgets Config Link 2](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
 
-		- https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets
-		- http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/
+	- Telegram (sudo snap install telegram-desktop)
+	- [Whatsapp desktop](https://itsfoss.com/whatsapp-linux-desktop/)
+        - sudo snap install whatsdesk
+	- [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
+	- VLC
+        - change to X11 Video Decoder in settings
+	- Freetube
 
-	- telegram (sudo snap install telegram-desktop)
-	- whatsapp desktop (https://itsfoss.com/whatsapp-linux-desktop/)
-	- Wireshark (https://itsfoss.com/install-wireshark-ubuntu/)
-	- vlc (change to X11 in vlc)
-	- freetube
-
-EXTRA Apps:
-		- tilix (alternative terminal)
-			https://github.com/gnunn1/tilix
-
+    - EXTRA Apps:
 		- Elisa music player
 			sudo apt install elisa
-
-		- Fly-Pie
-			https://github.com/Schneegans/Fly-Pie
-
-		- ulauncher
-			https://ulauncher.io/#Download
-
+		- [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
+		- [ulauncher](https://ulauncher.io/#Download)
 
 - Extensions Install:
-	- Animation-Tweaks
-		https://github.com/Selenium-H/Animation-Tweaks
-		(https://github.com/Selenium-H/Animation-Tweaks/issues/34)
+	- [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
+        - [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
 
+	- [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 
-	- notifications-alert
-		https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/
 	OR
-	- always indicator
-		https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/
+	- [always indicator](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
+
 	OR
-	- New mail indicator
-		https://extensions.gnome.org/extension/1505/new-mail-indicator/
+	- [New mail indicator](https://extensions.gnome.org/extension/1505/new-mail-indicator/)
 
-	- Transparent Notification (.local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css)
-		https://extensions.gnome.org/extension/1080/transparent-notification/
+	- [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
+        - .local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css
 
-	- clipboard history (klipper or copyq or https://extensions.gnome.org/extension/779/clipboard-indicator/)
-		https://askubuntu.com/questions/19370/gnome-alternatives-equivalent-for-klipper
+	- Clipboard history
+        - klipper
+            - [Alt for Klipper in Gnome](https://askubuntu.com/questions/19370/gnome-alternatives-equivalent-for-klipper)
+        - copyq
+        - [Clipboard-indicator Gnome Extension](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 
 	- cpu speed control
-		https://github.com/konkor/cpufreq
-		https://github.com/martin31821/cpupower
+		- [cpufreq](https://github.com/konkor/cpufreq)
+		- [cpupower](https://github.com/martin31821/cpupower)
 
-	- panel osd (set 98 & 92)
-		https://extensions.gnome.org/extension/708/panel-osd/
+	- [panel osd](https://extensions.gnome.org/extension/708/panel-osd/)
+        - Not Req with animations Tweaks Extension
+        - set 98 & 92
 
-	- noannoyance
-		https://extensions.gnome.org/extension/1236/noannoyance/
+	- [Noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
 
-	- impatience (speed gnome animations) (set it to 0.6 in its settings)
-		https://extensions.gnome.org/extension/277/impatience/
+	- [Impatience](https://extensions.gnome.org/extension/277/impatience/) (speed gnome animations)
+        - set it to 0.6 in its settings
 
-	- gsconnect
-		https://extensions.gnome.org/extension/1319/gsconnect/
-
+	- [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 
 
 ## Todo

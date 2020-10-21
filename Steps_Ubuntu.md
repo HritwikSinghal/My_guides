@@ -278,3 +278,81 @@ Feel free to copy anything from here and use it.
 
 
 ## Todo
+
+- make one script for all startup apps
+- startup bug
+    - conky  (maybe its taking time to start)
+	- desktop icons for nemo
+
+- backup gnome boxes
+
+- make script for all above actions (backup and restore of whole OS)
+	- https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/
+
+    - BACKUP "~/.local/share/gnome-shell/extensions" for extensions
+        - this does not backup their data
+        - https://askubuntu.com/questions/1178580/where-are-gnome-extensions-preferences-stored
+
+    - https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
+ 		- (for nemo and extensions and system backup)
+
+
+- make current shell theme transparent
+
+- fusuma on sleep
+- Close button big
+- screen sharing wayland,
+- pinch to zoom Ubuntu,
+- theme color change our create new theme,
+- Firefox profile shortcuts,
+
+
+- try VS-codium
+
+- learn shell language and how this works: "nmcli dev show | grep DNS | awk '{ print $2 }"
+
+- try this for audio not coming in headphone fix
+	- sudo apt install pavucontrol
+
+    OR
+
+	- [upgrade kernel](https://itsfoss.com/upgrade-linux-kernel-ubuntu/#ukuu)
+        - secure boot ka chod hoga agar unsigned install kiya to
+
+
+- Virtualization
+	- https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/
+
+	- gnome-boxes (installl via flathub) (https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
+		- https://ostechnix.com/manage-remote-and-virtual-machines-with-gnome-boxes/
+	OR
+	- virt-manager (run as sudo)
+		- https://www.tecmint.com/install-kvm-on-ubuntu/
+		OR
+		- https://linuxize.com/post/how-to-install-kvm-on-ubuntu-20-04/
+
+- make shell beatiful and maybe switch to zhs
+	-- show current branch in git in terminal
+
+
+- https://github.com/pop-os/shell
+
+# Extra Articles
+
+- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
+
+- https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html
+- https://www.linuxuprising.com/2020/03/mystiq-is-easy-to-use-ffmpeg-gui.html
+- https://www.linuxuprising.com/2020/01/bandwhich-shows-whats-taking-up-your.html
+- https://www.linuxuprising.com/2020/05/how-to-encrypt-cloud-storage-files-with.html
+- https://www.linuxuprising.com/2020/04/cryptomator-150-released-with.html
+- https://medium.com/swlh/backing-up-with-borg-c6f13d74dd6
+
+
+- https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html
+- https://www.linuxuprising.com/2020/02/tlp-13-linux-laptop-battery-extender.html
+
+- https://itsfoss.com/linux-command-tricks/
+- https://opensource.com/article/18/5/bash-tricks
+- https://linuxconfig.org/how-to-backup-and-restore-permissions-for-entire-directory-on-linux
+- https://www.linuxuprising.com/2020/09/how-to-enable-echo-noise-cancellation.html

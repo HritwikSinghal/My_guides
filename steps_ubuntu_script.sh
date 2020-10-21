@@ -5,28 +5,32 @@ echo "------------------------------------------------------"
 # add repositories
 echo "Adding Repositories."
 # Ubuntu
-sudo add-apt-repository universe
-sudo add-apt-repository multiverse
-sudo add-apt-repository restricted
+sudo add-apt-repository universe -y
+sudo add-apt-repository multiverse -y
+sudo add-apt-repository restricted -y
 
 # Timeshift
-sudo apt-add-repository -y ppa:teejee2008/ppa
+sudo apt-add-repository ppa:teejee2008/ppa -y
 # Kvantum
-sudo add-apt-repository ppa:papirus/papirus
+sudo add-apt-repository ppa:papirus/papirus -y
 # Mozilla
-sudo add-apt-repository ppa:ubuntu-mozilla-security/ppa
-sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+sudo add-apt-repository ppa:ubuntu-mozilla-security/ppa -y
+sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa -y
 # Flatpack
-sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo add-apt-repository ppa:alexlarsson/flatpak -y
 # lollypop
-sudo add-apt-repository ppa:gnumdk/lollypop
+sudo add-apt-repository ppa:gnumdk/lollypop -y
 # conky
-sudo add-apt-repository ppa:linuxmint-tr/araclar
+sudo add-apt-repository ppa:linuxmint-tr/araclar -y
 sudo apt update
-sudo apt install conky conky-all conky-manager conky-manager-extra
-sudo add-apt-repository --remove ppa:linuxmint-tr/araclar
+sudo apt install conky conky-all conky-manager conky-manager-extra -y
+sudo add-apt-repository --remove ppa:linuxmint-tr/araclar -y
 # Wireshark
-sudo add-apt-repository ppa:wireshark-dev/stable
+sudo add-apt-repository ppa:wireshark-dev/stable -y
+# PulseEffects
+sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
+# Uget
+sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
 
 
 
@@ -34,55 +38,64 @@ echo "------------------------------------------------------"
 sudo apt update && sudo apt upgrade -y
 echo "Insatlling Apps."
 # Ubuntu-extras
-sudo apt install ubuntu-restricted-extras
-sudo apt install rar unrar p7zip-full p7zip-rar
-sudo apt install ttf-mscorefonts-installer
+sudo apt install ubuntu-restricted-extras -y
+sudo apt install rar unrar p7zip-full p7zip-rar -y
+sudo apt install ttf-mscorefonts-installer -y
 # clear font cache
-sudo apt install gnome-shell-extensions
+sudo apt install gnome-shell-extensions -y
 # Wine
-sudo apt install wine winetricks
+sudo apt install wine winetricks -y
 # java
-sudo apt-get install openjdk-11-jdk
+sudo apt-get install openjdk-11-jdk -y
 # Timeshift
-sudo apt install timeshift
+sudo apt install timeshift -y
 # NMCLI
-sudo apt install network-manager
+sudo apt install network-manager -y
 sudo systemctl start NetworkManager.service
 sudo systemctl start NetworkManager.service
 # GNOME-tweak-tool and chrome-gnome-shell
-sudo apt install gnome-tweaks
-sudo apt install chrome-gnome-shell
+sudo apt install gnome-tweaks -y
+sudo apt install chrome-gnome-shell -y
 # Kvantum
-sudo apt install qt5-style-kvantum qt5-style-kvantum-themes
+sudo apt install qt5-style-kvantum qt5-style-kvantum-themes -y
 # Mozilla
-sudo apt install firefox firefox-trunk thunderbird
+sudo apt install firefox firefox-trunk thunderbird -y
 # Flatpack
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo apt install flatpak -y
+sudo apt install gnome-software-plugin-flatpak -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
 # gdebi
-sudo apt install gdebi
+sudo apt install gdebi -y
 #Nemo
-sudo apt install nemo
+sudo apt install nemo -y
 # BingWall
-sudo snap install bing-wall
-sudo snap install wonderwall
+sudo snap install bing-wall -y
+sudo snap install wonderwall -y
 # Lollypop
-sudo apt install lollypop
+sudo apt install lollypop -y
 # GreenTunnel
-sudo apt install nodejs
-sudo apt install npm
+sudo apt install nodejs -y
+sudo apt install npm -y
 npm i -g green-tunnel
 # telegram
-sudo snap install telegram-desktop
+sudo snap install telegram-desktop -y
 # whatsdesk
-sudo snap install whatsdesk
+sudo snap install whatsdesk -y
 # Wireshark
-sudo apt install wireshark
+sudo apt install wireshark -y
 # VLC
-sudo apt install vlc
-
-
+sudo apt install vlc -y
+# vnstat
+sudo apt install vnstat -y
+cp ./configs/.vnstatrc $HOME/
+sudo systemctl enable vnstat.service
+sudo systemctl start vnstat.service
+# PulseEffects
+sudo apt install pulseaudio pulseeffects --install-recommends -y
+cp ./configs/PulseEffects_MyPreset.json /home/hritwik/.config/PulseEffects/output
+# uget
+sudo apt install uget -y
+sudo apt install uget aria2 -y
 
 
 echo "------------------------------------------------------"

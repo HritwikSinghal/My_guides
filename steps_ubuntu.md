@@ -194,28 +194,26 @@ Feel free to copy anything from here and use it.
 
         - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
 
-	- Vnstat
-		- [Link1](https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/)
-		- [Link2](https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/)
-		- [Link3](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
+	- [x] Vnstat
+		- [Link1](https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/)
+        -  [Link2](https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/)
+		- [Link3, for GUI via apache](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
 
-	- [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
+	- [x] [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
 		- configs are stored in "~/.config/PulseEffects/output") (Do "Start Service at Login" in PE Settings
 
-	- [Uget](https://itsfoss.com/xtreme-download-manager-install/) (with its integrator for firefox, fix the issues)
+	- [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
+        - with its integrator for firefox,
+        - fix the issues
 
     OR
 
-	- XDM
+	- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
 
 	- [x] [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
         - sudo snap install bing-wall
         - [x] and "wonderwall"
             - sudo snap install wonderwall
-
-    OR
-
-    - [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
 
 	- [x] [Lollypop music player](https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop)
 
@@ -248,7 +246,7 @@ Feel free to copy anything from here and use it.
         - sudo snap install telegram-desktop
 	- [x] [Whatsapp desktop](https://itsfoss.com/whatsapp-linux-desktop/)
         - sudo snap install whatsdesk
-	- [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
+	- [x] [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
 	- [x] VLC
         - change to X11 Video Decoder in settings
 	- Freetube
@@ -297,6 +295,7 @@ Feel free to copy anything from here and use it.
 
 	- [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 
+    - [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
 
 ## Todo
 

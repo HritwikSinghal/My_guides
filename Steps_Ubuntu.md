@@ -6,21 +6,24 @@ Feel free to copy anything from here and use it.
 ## Most Important
 
 
-* Install time shift first to make backup (https://itsfoss.com/backup-restore-linux-timeshift/)
-* https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely
-* https://askubuntu.com/questions/866161/setting-path-variable-in-etc-environment-vs-profile
-* https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers
-* https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe
+* [Install time shift first to make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
+
+* [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
+
+* [Path variable in profile vs environment](https://askubuntu.com/questions/866161/setting-path-variable-in-etc-environment-vs-profile)
+
+- Brother Printer
+    * [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
+    * [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
+
 
 
 * Put the below lines in "/etc/environment"
     * DRI_PRIME=1
     * MOZ_ENABLE_WAYLAND=1
 
-
 * This is for displaying fps counter on wine games.
     * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
-
 
 * DNS
     * https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
@@ -35,24 +38,17 @@ Feel free to copy anything from here and use it.
 ## Appearance & Customization
 
 
-- https://askubuntu.com/questions/806200/how-can-you-enable-gtk3-themes-dark-theme-mode-when-using-unity-7 (see maual method)
+- [GTK3 Dark mode](https://askubuntu.com/questions/806200/how-can-you-enable-gtk3-themes-dark-theme-mode-when-using-unity-7) (See maual method, check if this is valid now or not)
 
+- [Full Dark Mode in Ubuntu](https://itsfoss.com/dark-mode-ubuntu/)
 
-- change system theme to dark
-    - https://itsfoss.com/dark-mode-ubuntu/
+- [Full Dark theme in Qt5 apps](https://www.linuxuprising.com/2018/05/use-custom-themes-for-qt-applications.html)
 
+	- Dont compile it, install like from [here](https://github.com/tsujan/Kvantum/blob/master/Kvantum/INSTALL.md)
 
-- and enable complete dark theme in qt5 apps
-	https://www.linuxuprising.com/2018/05/use-custom-themes-for-qt-applications.html
-	Dont compile it, install like from here (https://github.com/tsujan/Kvantum/blob/master/Kvantum/INSTALL.md)
+- If using secondary monitor, make sure both have 1920*1080 and 60Hz
 
-
-- if using secondary monitor, make sure both have 1920*1080 and 60Hz
-
-
-- Switch to wayland on Ubuntu
-	https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578
-
+- Switch to wayland on Ubuntu, [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug.
 
 - Gnome-tweaks settings
     - change to right click and mouse sensitivity in settings
@@ -60,36 +56,33 @@ Feel free to copy anything from here and use it.
     - change settings in gnome tweak tool
     - enable middle click to minimize on title bar (in gnome tweak tool)
 
-
 - Theme:
-    - for grub
-        - https://github.com/vinceliuice/grub2-themes
+    - [Grub Themes](https://github.com/vinceliuice/grub2-themes)
 
-    - https://github.com/vinceliuice/Orchis-theme (for apps)
-        - (also take close buttons from here)
+    - [Orchis-theme](https://github.com/vinceliuice/Orchis-theme) (For Apps)
+        - Also take close buttons from here
 
-    - https://github.com/nana-4/materia-theme (for shell)
-        - also install its snap version
-            - https://snapcraft.io/orchis-themes
+    - [materia-theme](https://github.com/nana-4/materia-theme) (For Shell)
+        - [Install its snap version for snap Apps](https://snapcraft.io/orchis-themes)
 
 	OR
 
-	- https://github.com/pop-os/gtk-theme (compile it)
+	- [Pop! Os Application theme](https://github.com/pop-os/gtk-theme) (Compile it)
         - DO NOT INSTALL 'pop-theme' or its ppa, it will mess up ubuntu
 
 	OR
 
-	- change yaru theme color (chose Yaru Blue)
-		- https://github.com/Jannomag/Yaru-Colors
+	- [Yaru-Colors](https://github.com/Jannomag/Yaru-Colors)
 
 
 - Icons:
-	- pop icons
-		https://github.com/pop-os/icon-theme
+	- [Pop Icons](https://github.com/pop-os/icon-theme)
 
 	OR
-	- papirus icons
+	- [Papirus Icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
+    OR
+    - [Flat Remix](https://github.com/daniruiz/Flat-Remix)
 
 - Fonts: (Install font manager first ("sudo apt install font-manager"))
     - for Pop! like look
@@ -128,54 +121,43 @@ Feel free to copy anything from here and use it.
     - [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/)
 
 - Firefox Setup (and desktop icons)
-	- [for latest nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
+	- [For Latest Nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
 
 - [Enable flatpack support](https://flatpak.org/setup/Ubuntu/)
 
 
-- run all prog via amd gpu
-	https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an
+- [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
 
-- increase terminal size to 120x30 and change its color and shortcuts
-
-- change terminal 'built-in-schemas' to 'Linux console'
+- Increase terminal size to 120x30 and change its color and shortcuts
+- Change terminal 'built-in-schemas' to 'Linux console'
 	(pref -> profile(unnamed) -> colors -> palette)
 
-- change keyboard layout
+- Change keyboard layout to DVORAK
 
-- remove sudo passwd
-	https://askubuntu.com/questions/147241/execute-sudo-without-password
+- [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
-- see in ubuntu folder (in mods)
+- See in ubuntu folder (in mods)
 
-- Enable touchpad gestures
+- Touchpad Gestures
 
-	- fusuma
+	- [Fusuma](https://github.com/iberianpig/fusuma)
 	(with its addons & config file, add it to startup: "/usr/local/bin/fusuma -d")
-		https://github.com/iberianpig/fusuma
-	OR
-	- extended gestures (wayland only) (change sensitivity to 50)
-		https://extensions.gnome.org/extension/1253/extended-gestures/
-		https://github.com/mpiannucci/gnome-shell-extended-gestures
 
+    OR
 
-	For Xorg only:
-	- libinput-gestures (Xorg only, may work on wayland but not recommended, see wiki)
-		https://github.com/bulletmark/libinput-gestures
+	- [Extended gestures](https://extensions.gnome.org/extension/1253/extended-gestures/) Extension (wayland only) (change sensitivity to 50)
+        - [Github](https://github.com/mpiannucci/gnome-shell-extended-gestures)
 
-	- comfortable-swipe (Xorg only)
-		https://github.com/Hikari9/comfortable-swipe
+	- [libinput-gestures](https://github.com/bulletmark/libinput-gestures) (Xorg only, may work on wayland but not recommended, see wiki)
 
+	- [Comfortable-swipe](https://github.com/Hikari9/comfortable-swipe) (Xorg only)
 
 - Add shortcuts
-	- Calc
-		(F7)
-	- System monitor
-		(ctrl+shift+Esc 'gnome-system-monitor')
+	- Calc (F7)
+	- System monitor (ctrl+shift+Esc 'gnome-system-monitor')
 
-- Increment volume by 2 onstead of default 6
-	"gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 2"
-	https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/
+- [Increment volume](https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/) by 2 onstead of default 6
+	- gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 2
 
 
 

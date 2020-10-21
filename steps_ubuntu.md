@@ -17,16 +17,12 @@ Feel free to copy anything from here and use it.
 
 * [Path variable in profile vs environment](https://askubuntu.com/questions/866161/setting-path-variable-in-etc-environment-vs-profile)
 
-* [x] Put the below lines in "/etc/environment"
-    * DRI_PRIME=1
-    * MOZ_ENABLE_WAYLAND=1
-
 * This is for displaying fps counter on wine games.
     * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
 
 * DNS
     * https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
-    * use 'nmcli' command for dns server ip addr ([Link](https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/))
+    * [x] use 'nmcli' command for dns server ip addr ([Link](https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/))
         - nmcli dev show | grep DNS
     * OR 'nslookup website_name'
     * OR "cat /etc/resolv.conf"
@@ -36,13 +32,14 @@ Feel free to copy anything from here and use it.
 ## Appearance & Customization
 
 
-- [GTK3 Dark mode](https://askubuntu.com/questions/806200/how-can-you-enable-gtk3-themes-dark-theme-mode-when-using-unity-7) (See maual method, check if this is valid now or not)
+- [x] [GTK3 Dark mode](https://askubuntu.com/questions/806200/how-can-you-enable-gtk3-themes-dark-theme-mode-when-using-unity-7) (See maual method, check if this is valid now or not)
 
 - [Full Dark Mode in Ubuntu](https://itsfoss.com/dark-mode-ubuntu/)
 
-- [Full Dark theme in Qt5 apps](https://www.linuxuprising.com/2018/05/use-custom-themes-for-qt-applications.html)
+- [x] [Full Dark theme in Qt5 apps](https://github.com/tsujan/Kvantum/blob/master/Kvantum/INSTALL.md#debian-based-distributions)
 
-	- Dont compile it, install like from [here](https://github.com/tsujan/Kvantum/blob/master/Kvantum/INSTALL.md)
+	- Dont compile it
+    - Another [Guide](https://www.linuxuprising.com/2018/05/use-custom-themes-for-qt-applications.html)
 
 - If using secondary monitor, make sure both have 1920*1080 and 60Hz
 
@@ -114,16 +111,18 @@ Feel free to copy anything from here and use it.
 
 
 - Setup thunderbird (and backup it like FF)
-	- [for calender & task](https://fruux.com/sync/)
-    - [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/)
+	- [For calender & task](https://fruux.com/sync/)
+    - [x] [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/)
 
 - Firefox Setup (and desktop icons)
-	- [For Latest Nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
+	- [x] [For Latest Nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
+    - [x] Put "MOZ_ENABLE_WAYLAND=1" in "/etc/environment"
 
-- [Enable flatpack support](https://flatpak.org/setup/Ubuntu/)
+- [x] [Enable flatpack support](https://flatpak.org/setup/Ubuntu/)
 
 
-- [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
+- [x] [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
+    - Put "DRI_PRIME=1" in "/etc/environment"
 
 - Increase terminal size to 120x30 and change its color and shortcuts
 - Change terminal 'built-in-schemas' to 'Linux console'
@@ -142,18 +141,21 @@ Feel free to copy anything from here and use it.
 
     OR
 
-	- [Extended gestures](https://extensions.gnome.org/extension/1253/extended-gestures/) Extension (wayland only) (change sensitivity to 50)
+	- [Extended gestures](https://extensions.gnome.org/extension/1253/extended-gestures/) Extension
+        - wayland only, (change sensitivity to 50)
         - [Github](https://github.com/mpiannucci/gnome-shell-extended-gestures)
 
-	- [libinput-gestures](https://github.com/bulletmark/libinput-gestures) (Xorg only, may work on wayland but not recommended, see wiki)
+	- [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
+        - Xorg only, may work on wayland but not recommended, see wiki
 
-	- [Comfortable-swipe](https://github.com/Hikari9/comfortable-swipe) (Xorg only)
+	- [Comfortable-swipe](https://github.com/Hikari9/comfortable-swipe)
+        - (Xorg only)
 
 - Add shortcuts
 	- Calc (F7)
 	- System monitor (ctrl+shift+Esc 'gnome-system-monitor')
 
-- [Increment volume](https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/) by 2 onstead of default 6
+- [x] [Increment volume](https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/) by 2 onstead of default 6
 	- gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 2
 
 
@@ -170,11 +172,12 @@ Feel free to copy anything from here and use it.
 
     OR
 
-	- [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux) & change its theme (pref -> theme -> adaptive.XXX)
+	- [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
+        - Change its theme (pref -> theme -> adaptive.XXX)
 
-	- gdebi (for installing .deb files)
+	- [x] gdebi (for installing .deb files)
 
-	- gnome-tweak-tool
+	- [x] gnome-tweak-tool
 
 	- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
         - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
@@ -252,6 +255,8 @@ Feel free to copy anything from here and use it.
 		- [ulauncher](https://ulauncher.io/#Download)
 
 - Extensions Install:
+    - [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
+
 	- [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
         - [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
 

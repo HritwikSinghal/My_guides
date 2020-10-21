@@ -6,17 +6,16 @@ Feel free to copy anything from here and use it.
 ## Most Important
 
 
-* [Install time shift first to make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
+* [Install Timeshift & make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
 
 * [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
-
-* [Path variable in profile vs environment](https://askubuntu.com/questions/866161/setting-path-variable-in-etc-environment-vs-profile)
 
 - Brother Printer
     * [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
     * [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
 
 
+* [Path variable in profile vs environment](https://askubuntu.com/questions/866161/setting-path-variable-in-etc-environment-vs-profile)
 
 * Put the below lines in "/etc/environment"
     * DRI_PRIME=1
@@ -27,9 +26,8 @@ Feel free to copy anything from here and use it.
 
 * DNS
     * https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
-    * use 'nmcli' command for dns server ip addr
+    * use 'nmcli' command for dns server ip addr ([Link](https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/))
         - nmcli dev show | grep DNS
-        - https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/
     * OR 'nslookup website_name'
     * OR "cat /etc/resolv.conf"
     * OR just check in wifi settings
@@ -110,7 +108,6 @@ Feel free to copy anything from here and use it.
 
 	- https://github.com/vinceliuice/Sierra-gtk-theme
 	- https://github.com/vinceliuice/Mojave-gtk-theme
-
 
 
 ## System
@@ -321,21 +318,22 @@ Feel free to copy anything from here and use it.
 
 
 - Virtualization
-	- https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/
+	- [Install Win10 VM](https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/)
 
-	- gnome-boxes (installl via flathub) (https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
-		- https://ostechnix.com/manage-remote-and-virtual-machines-with-gnome-boxes/
+	- gnome-boxes (installl via flathub)
+		- [Guide](https://ostechnix.com/manage-remote-and-virtual-machines-with-gnome-boxes/)
+        - [Cant copy big files to VM fix](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
+
 	OR
 	- virt-manager (run as sudo)
-		- https://www.tecmint.com/install-kvm-on-ubuntu/
+		- [Link1](https://www.tecmint.com/install-kvm-on-ubuntu/)
+
 		OR
-		- https://linuxize.com/post/how-to-install-kvm-on-ubuntu-20-04/
+		- [Link2](https://linuxize.com/post/how-to-install-kvm-on-ubuntu-20-04/)
 
-- make shell beatiful and maybe switch to zhs
-	-- show current branch in git in terminal
+- make terminal shell beatiful and maybe switch to zhs
+	- show current branch in git in terminal
 
-
-- https://github.com/pop-os/shell
 
 # Extra Articles
 

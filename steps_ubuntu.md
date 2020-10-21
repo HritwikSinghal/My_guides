@@ -208,20 +208,23 @@ Feel free to copy anything from here and use it.
 
 	- XDM
 
-	- [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
+	- [x] [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
+        - sudo snap install bing-wall
+        - [x] and "wonderwall"
+            - sudo snap install wonderwall
 
     OR
 
     - [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
 
-	- [Lollypop music player](https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop)
+	- [x] [Lollypop music player](https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop)
 
 	- [Bleachbit](https://www.bleachbit.org/download)
 
 	- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
 
-	- [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
-		npm i -g green-tunnel
+	- [x] [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
+		- npm i -g green-tunnel
 
 	- [Flameshot](https://itsfoss.com/flameshot/) (SS tool)
 
@@ -230,6 +233,7 @@ Feel free to copy anything from here and use it.
 	- [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
 
 	- Conky (just copy .conky/ to home)
+        - [x] [install](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
         - [Conky config variables](http://conky.sourceforge.net/variables.html) OR 'man conky'
 
 		- [Titlebar Fix](https://www.youtube.com/watch?v=miLrmIGPCJs)
@@ -240,17 +244,18 @@ Feel free to copy anything from here and use it.
 		- [Conky Widgets Config Link 1](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
 		- [Conky Widgets Config Link 2](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
 
-	- Telegram (sudo snap install telegram-desktop)
-	- [Whatsapp desktop](https://itsfoss.com/whatsapp-linux-desktop/)
+	- [x] Telegram
+        - sudo snap install telegram-desktop
+	- [x] [Whatsapp desktop](https://itsfoss.com/whatsapp-linux-desktop/)
         - sudo snap install whatsdesk
 	- [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
-	- VLC
+	- [x] VLC
         - change to X11 Video Decoder in settings
 	- Freetube
 
     - EXTRA Apps:
 		- Elisa music player
-			sudo apt install elisa
+			- sudo apt install elisa
 		- [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
 		- [ulauncher](https://ulauncher.io/#Download)
 

@@ -176,14 +176,28 @@ Feel free to copy anything from here and use it.
 
 	- gnome-tweak-tool
 
-	- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/) (disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup")
+	- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
+        - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
+        - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
+                "After some tinkering around, I managed to solve the issue!
+                I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
+
+                Actions=new-window;open-home;open-computer;open-trash;
+                [Desktop Action new-window]
+                Name=New Window
+                Exec=nemo
+
+                After saving the file and restarting I was able to open as many instances of Nemo as I wanted from the dash."
+
+        - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
 
 	- Vnstat
 		- [Link1](https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/)
 		- [Link2](https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/)
 		- [Link3](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
 
-	- [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/) (configs are stored in "~/.config/PulseEffects/output") (Do "Start Service at Login" in PE Settings)
+	- [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
+		- configs are stored in "~/.config/PulseEffects/output") (Do "Start Service at Login" in PE Settings
 
 	- [Uget](https://itsfoss.com/xtreme-download-manager-install/) (with its integrator for firefox, fix the issues)
 
@@ -280,6 +294,13 @@ Feel free to copy anything from here and use it.
 - startup bug
     - conky  (maybe its taking time to start)
 	- desktop icons for nemo
+
+    - try these in startup apps
+        ```
+        bash -c 'sleep 3; /home/hritwik/.conky/conky-startup.sh'
+        bash -c 'sleep 3; nemo-desktop'
+        bash -c 'sleep 3; /usr/local/bin/fusuma -d'
+        ```
 
 - backup gnome boxes
 

@@ -109,6 +109,7 @@ Feel free to copy anything from here and use it.
 
 ## System
 
+- [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
 - Setup thunderbird (and backup it like FF)
 	- [For calender & task](https://fruux.com/sync/)
@@ -120,17 +121,14 @@ Feel free to copy anything from here and use it.
 
 - [x] [Enable flatpack support](https://flatpak.org/setup/Ubuntu/)
 
-
 - [x] [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
-    - Put "DRI_PRIME=1" in "/etc/environment"
+    - [x] Put "DRI_PRIME=1" in "/etc/environment"
 
 - Increase terminal size to 120x30 and change its color and shortcuts
 - Change terminal 'built-in-schemas' to 'Linux console'
 	(pref -> profile(unnamed) -> colors -> palette)
 
-- Change keyboard layout to DVORAK
-
-- [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
+- [x] Change keyboard layout to DVORAK
 
 - See in ubuntu folder (in mods)
 
@@ -155,14 +153,24 @@ Feel free to copy anything from here and use it.
 	- Calc (F7)
 	- System monitor (ctrl+shift+Esc 'gnome-system-monitor')
 
-- [x] [Increment volume](https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/) by 2 onstead of default 6
-	- gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 2
+- [x] [Increment volume](https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/) by 3 onstead of default 6
+	- gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
 
+- [x] [ExFat in Linux](https://itsfoss.com/mount-exfat/)
+    - sudo apt install exfat-fuse exfat-utils
+- [x] [NTFS in Linux](https://www.cyberciti.biz/faq/debian-ubuntu-linux-auto-mounting-windows-ntfs-file-system/)
+    - sudo apt install ntfs-3g
 
 ## Install Apps & extensions
 
 
 - Install Apps:
+    - [x] [qBittorrent](https://www.linuxbabe.com/ubuntu/install-qbittorrent-ubuntu-18-04-desktop-server)
+        - [x] For stable:
+            - sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+        - For Unstable
+            - sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable
+        - add it to startup apps
 
     - [Atom](https://atom.io/)
 	   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
@@ -274,11 +282,7 @@ Feel free to copy anything from here and use it.
 	- [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
         - .local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css
 
-	- Clipboard history
-        - klipper
-            - [Alt for Klipper in Gnome](https://askubuntu.com/questions/19370/gnome-alternatives-equivalent-for-klipper)
-        - copyq
-        - [Clipboard-indicator Gnome Extension](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+    - [copyq](https://github.com/hluk/CopyQ/releases)
 
 	- cpu speed control
 		- [cpufreq](https://github.com/konkor/cpufreq)
@@ -297,13 +301,13 @@ Feel free to copy anything from here and use it.
 
     - [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
 
+    - [Clipboard-indicator Gnome Extension](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+
+
 ## Todo
 
 - make one script for all startup apps
 - startup bug
-    - conky  (maybe its taking time to start)
-	- desktop icons for nemo
-
     - try these in startup apps
         ```
         bash -c 'sleep 3; /home/hritwik/.conky/conky-startup.sh'
@@ -318,6 +322,7 @@ Feel free to copy anything from here and use it.
 
     - BACKUP "~/.local/share/gnome-shell/extensions" for extensions
         - this does not backup their data
+        - sudo glib-compile-schemas /usr/share/glib-2.0/schemas
         - https://askubuntu.com/questions/1178580/where-are-gnome-extensions-preferences-stored
 
     - https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/

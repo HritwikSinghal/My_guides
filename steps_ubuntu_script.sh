@@ -31,6 +31,11 @@ sudo add-apt-repository ppa:wireshark-dev/stable -y
 sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
 # Uget
 sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
+#qBittorrent
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
+
+
+
 
 
 
@@ -41,6 +46,10 @@ echo "Insatlling Apps."
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install rar unrar p7zip-full p7zip-rar -y
 sudo apt install ttf-mscorefonts-installer -y
+sudo apt install exfat-fuse exfat-utils -y
+sudo apt install ntfs-3g -y
+sudo apt install dconf-editor -y
+sudo apt install filezilla -y
 # clear font cache
 sudo apt install gnome-shell-extensions -y
 # Wine
@@ -92,25 +101,35 @@ sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 # PulseEffects
 sudo apt install pulseaudio pulseeffects --install-recommends -y
-cp ./configs/PulseEffects_MyPreset.json /home/hritwik/.config/PulseEffects/output
+sudo cp ./configs/PulseEffects_MyPreset.json /home/hritwik/.config/PulseEffects/output
 # uget
 sudo apt install uget -y
 sudo apt install uget aria2 -y
+#qBittorrent
+sudo apt install qbittorrent -y
+
+
+
 
 
 echo "------------------------------------------------------"
 echo "Other Tweaks."
-echo "Adding to '/etc/environment'"
+# Some common Settings
+gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
+gsettings set org.gnome.mutter center-new-windows 'true'
+gsettings set org.gnome.nautilus.preferences show-create-link 'true'
+
 (echo "" ; echo "DRI_PRIME=1") >> /etc/environment
 (echo "" ; echo "MOZ_ENABLE_WAYLAND=1") >> /etc/environment
+gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-dark'
 # GTK3 Dark Mode
-echo "" > ~/.config/gtk-3.0/settings.ini
-echo "[Settings]" > ~/.config/gtk-3.0/settings.ini
-echo "gtk-application-prefer-dark-theme=1"  > ~/.config/gtk-3.0/settings.ini
+echo "" >> ~/.config/gtk-3.0/settings.ini
+echo "[Settings]" >> ~/.config/gtk-3.0/settings.ini
+echo "gtk-application-prefer-dark-theme=1"  >> ~/.config/gtk-3.0/settings.ini
 # wayland dash bug Fix
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 # Increment volume by 2
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 2
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
 # minimize on click
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 # show battery percentage
@@ -119,6 +138,14 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
+# Keyboard Layout
+sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
+sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
+sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
+sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
+
+
+
 
 
 echo "------------------------------------------------------"

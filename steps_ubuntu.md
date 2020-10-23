@@ -258,6 +258,9 @@ Feel free to copy anything from here and use it.
 	- [x] VLC
         - change to X11 Video Decoder in settings
 	- Freetube
+    - Kdenlive
+        - sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
+        - sudo apt install kdenlive -y
 
     - EXTRA Apps:
 		- Elisa music player
@@ -305,7 +308,12 @@ Feel free to copy anything from here and use it.
 
 
 ## Todo
+- https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html
 
+- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
+    - [Kid3 audio tagger](https://kid3.kde.org/)
+
+---
 - make one script for all startup apps
 - startup bug
     - try these in startup apps
@@ -314,9 +322,22 @@ Feel free to copy anything from here and use it.
         bash -c 'sleep 3; nemo-desktop'
         bash -c 'sleep 3; /usr/local/bin/fusuma -d'
         ```
+---
+- backup:
+    - grub theme
+    - system Appearance in tweak-tool
+    ---
+    - Thunderbird
+    - Firefox
+    ---
+    - gnome boxes
+    - qBittorrent torrents for seed
+    - Atom pref
+    - Nemo pref
+    ---
+    - Extensions & their data
 
-- backup gnome boxes
-
+---
 - make script for all above actions (backup and restore of whole OS)
 	- https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/
 

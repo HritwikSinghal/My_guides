@@ -38,7 +38,6 @@ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
 
 
 
-
 echo "------------------------------------------------------"
 sudo apt update && sudo apt upgrade -y
 echo "Insatlling Apps."
@@ -50,7 +49,7 @@ sudo apt install exfat-fuse exfat-utils -y
 sudo apt install ntfs-3g -y
 sudo apt install dconf-editor -y
 sudo apt install filezilla -y
-# clear font cache
+sudo apt install gnome-weather -y
 sudo apt install gnome-shell-extensions -y
 # Wine
 sudo apt install wine winetricks -y
@@ -107,7 +106,6 @@ sudo apt install uget -y
 sudo apt install uget aria2 -y
 #qBittorrent
 sudo apt install qbittorrent -y
-
 
 
 

@@ -49,8 +49,10 @@ sudo apt install exfat-fuse exfat-utils -y
 sudo apt install ntfs-3g -y
 sudo apt install dconf-editor -y
 sudo apt install filezilla -y
-sudo apt install gnome-weather -y
+sudo apt install gnome-weather gnome-clocks -y
 sudo apt install gnome-shell-extensions -y
+sudo apt install p7zip-full p7zip-rar -y
+sudo apt install openjdk-11-jdk -y
 # Wine
 sudo apt install wine winetricks -y
 # java
@@ -73,7 +75,7 @@ sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
 # gdebi
-sudo apt install gdebi -y
+sudo apt install gdebi-core -y
 #Nemo
 sudo apt install nemo -y
 # BingWall

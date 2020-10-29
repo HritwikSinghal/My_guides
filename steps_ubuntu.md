@@ -161,6 +161,12 @@ Feel free to copy anything from here and use it.
 - [x] [NTFS in Linux](https://www.cyberciti.biz/faq/debian-ubuntu-linux-auto-mounting-windows-ntfs-file-system/)
     - sudo apt install ntfs-3g
 
+- Change compression level
+        gsettings set org.gnome.FileRoller.General compression-level "very-fast"
+        gsettings set org.gnome.FileRoller.General compression-level "fast"
+        gsettings set org.gnome.FileRoller.General compression-level "normal"
+        gsettings set org.gnome.FileRoller.General compression-level "maximum"
+
 ## Install Apps & extensions
 
 
@@ -188,7 +194,14 @@ Feel free to copy anything from here and use it.
 	- [x] gnome-tweak-tool
 
 	- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
+
+        - [Install latest directly from github](https://github.com/linuxmint/nemo/releases/)
+            - use "sudo dpkg -i *.deb" and fix all for dependencies by installing the thing which is missing.
+            You may have to run 'sudo apt fix broken install' (It will tell you)
+                - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
+
         - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
+
         - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
                 "After some tinkering around, I managed to solve the issue!
                 I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
@@ -213,8 +226,6 @@ Feel free to copy anything from here and use it.
 	- [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
         - with its integrator for firefox,
         - fix the issues
-
-    OR
 
 	- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
 
@@ -308,10 +319,21 @@ Feel free to copy anything from here and use it.
 
 
 ## Todo
-- https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html
 
-- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
-    - [Kid3 audio tagger](https://kid3.kde.org/)
+
+- Gaming (Use Pop!_Os)
+    - for 20.04 [video](https://www.youtube.com/watch?v=DToZ9wU2qRk), [reddit](https://www.reddit.com/r/linux4noobs/comments/g7753y/how_to_set_up_ubuntu_2004_for_gaming_tutorial/)
+    - [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
+
+    - [Latest AMDGPU](https://linuxconfig.org/amd-radeon-ubuntu-20-04-driver-installation)
+    - [install latest mesa vulkan](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)
+            sudo dpkg --add-architecture i386
+            sudo apt install libgl1-mesa-dri:i386
+            sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+    - Install [vulkan](https://linuxconfig.org/install-and-test-vulkan-on-linux)
+    - [Wine staging branch](https://wiki.winehq.org/Ubuntu)
+    - [Lutris](https://lutris.net/downloads/)
+    - [DXVK](https://linuxconfig.org/improve-your-wine-gaming-on-linux-with-dxvk)
 
 ---
 - make one script for all startup apps
@@ -337,7 +359,6 @@ Feel free to copy anything from here and use it.
     ---
     - Extensions & their data
 
----
 - make script for all above actions (backup and restore of whole OS)
 	- https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/
 
@@ -360,6 +381,18 @@ Feel free to copy anything from here and use it.
 - Firefox profile shortcuts,
 
 
+- [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
+    - what boots first and where is bootloader stored
+    - if i delete efi partition will machine boot
+
+- terminal vs bash vs shell vs prompt
+
+- https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html
+
+- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
+    - [Kid3 audio tagger](https://kid3.kde.org/)
+
+
 - try VS-codium
 
 - learn shell language and how this works: "nmcli dev show | grep DNS | awk '{ print $2 }"
@@ -370,6 +403,7 @@ Feel free to copy anything from here and use it.
     OR
 
 	- [upgrade kernel](https://itsfoss.com/upgrade-linux-kernel-ubuntu/#ukuu)
+        - [Link2] (https://linuxhint.com/update_ubuntu_kernel_20_04/)
         - secure boot ka chod hoga agar unsigned install kiya to
 
 

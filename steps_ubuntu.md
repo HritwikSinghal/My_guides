@@ -48,8 +48,6 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 - [x] [GTK3 Dark mode](https://askubuntu.com/questions/806200/how-can-you-enable-gtk3-themes-dark-theme-mode-when-using-unity-7) (See maual method, check if this is valid now or not)
 
-- [Full Dark Mode in Ubuntu](https://itsfoss.com/dark-mode-ubuntu/)
-
 - [x] [Full Dark theme in Qt5 apps](https://github.com/tsujan/Kvantum/blob/master/Kvantum/INSTALL.md#debian-based-distributions)
 
 	- Dont compile it
@@ -72,7 +70,7 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     - [x] [Orchis-theme](https://github.com/vinceliuice/Orchis-theme) (For Apps)
         - Also take close buttons from here
 
-    - [materia-theme](https://github.com/nana-4/materia-theme) (For Shell)
+    - [x] [materia-theme](https://github.com/nana-4/materia-theme) (For Shell)
         - [Install its snap version for snap Apps](https://snapcraft.io/orchis-themes)
 
 	OR
@@ -95,17 +93,19 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     OR
     - [Flat Remix](https://github.com/daniruiz/Flat-Remix)
 
-- Fonts:
-    - Install font manager first
+- [x] Fonts:
+    - [x] Install font manager first
         - sudo apt install font-manager
 
-    - for Pop! like look
-            Interface: Fira Sans Book 10
-            Documents: Roboto Slab Regular 11
-            Monospace: Fira Mono Regular 11
-            Window Titles: Fira Sans SemiBold 10
-            scaling factor: 0.85
+    - [x] for Pop! like look
+        - sudo apt install pop-fonts
+                Interface: Fira Sans Book 11
+                Documents: Roboto Slab Regular 11
+                Monospace: Fira Mono Regular 13
+                Window Titles: Fira Sans SemiBold 11
+                scaling factor: 0.85
 
+### Extra Customization
 
 - [Pop! Os Wall](https://github.com/pop-os/wallpapers)
 

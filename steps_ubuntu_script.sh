@@ -56,6 +56,8 @@ sudo apt install p7zip-full p7zip-rar -y
 sudo apt install openjdk-11-jdk -y
 sudo apt install git -y
 sudo apt install gnome-music gnote -y
+sudo apt install sassc -y
+sudo apt install checkinstall -y
 
 # Wine
 sudo apt install wine winetricks -y
@@ -132,6 +134,9 @@ sudo gem install fusuma-plugin-tap
 # ---
 mkdir -p ~/.config/fusuma
 cp ./configs/config.yml ~/.config/fusuma/
+# fonts-manager
+sudo apt install font-manager
+
 
 
 
@@ -177,17 +182,19 @@ gsettings set org.gnome.FileRoller.General compression-level "very-fast"
 cp -r ./configs/.conky /media/hritwik/Shared_data/NEW/.conky
 
 
+
+
+
 echo "------------------------------------------------------"
-echo "Theming & Insatlling Exnensions...."
+echo "Theming & Installing Extensions...."
+
 # Grub-theme
-git clone https://github.com/vinceliuice/grub2-themes.git ~/my_downloads/grub_themes
-cd ~/my_downloads/grub_themes
-sudo ./install.sh --tela
+git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git ~/my_downloads/grub_themes
+sudo ~/my_downloads/grub_themes/install.sh --tela
 
 # App theme: orchis-dark
-git clone https://github.com/vinceliuice/Orchis-theme.git ~/my_downloads/orchis-dark
-cd ~/my_downloads/orchis-dark
-sudo ./install.sh
+git clone --depth 1 https://github.com/vinceliuice/Orchis-theme.git ~/my_downloads/orchis-dark
+sudo ~/my_downloads/orchis-dark/install.sh
 sudo snap install orchis-themes
 gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
 
@@ -199,6 +206,20 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
 # shell-theme & Extensions
 unzip ./configs/extensions_bak.zip -d ~/.local/share/gnome-shell/
 
+git clone --depth 1 https://github.com/nana-4/materia-theme.git ~/my_downloads/materia-theme
+sudo ~/my_downloads/materia-theme/install.sh
+gsettings set org.gnome.shell.extensions.user-theme name 'Materia-dark'
+
+# fonts
+git clone --depth 1 https://github.com/pop-os/fonts.git ~/my_downloads/pop_fonts
+cd ~/my_downloads/pop_fonts/
+sudo make install
+
+gsettings set org.gnome.desktop.interface font-name 'Fira Sans Semi-Light 11'
+gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
+gsettings set org.gnome.desktop.interface text-scaling-factor 0.84999999999999998
 
 echo "------------------------------------------------------"
 echo "Finished Successfully!"

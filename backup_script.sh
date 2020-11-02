@@ -31,8 +31,6 @@ cd ~/.local/share/gnome-shell
 zip -r ~/Backups/extensions_bak.zip ./extensions
 
 
-
-
 echo "------------------------------------------------------"
 echo "Backuping up gsettings"
 mkdir ~/Backups/gsettings
@@ -40,6 +38,9 @@ dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
 dconf dump /com/github/wwmm/pulseeffects/ > ~/Backups/gsettings/com.github.wwmm.pulseeffects
 
+echo "------------------------------------------------------"
+echo "Backuping up startup apps"
+cp -r /home/hritwik/.config/autostart/ ~/Backups/autostart
 
 echo "Finished Successfully..."
 echo "Dont forget to Copy '~/Backups/' to your directory "

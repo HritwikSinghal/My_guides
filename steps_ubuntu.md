@@ -171,14 +171,15 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 - [x] Change compression level
         gsettings set org.gnome.FileRoller.General compression-level "very-fast"
+
         gsettings set org.gnome.FileRoller.General compression-level "fast"
+
         gsettings set org.gnome.FileRoller.General compression-level "normal"
+        
         gsettings set org.gnome.FileRoller.General compression-level "maximum"
 
 
 ## Install Apps
-
-- [copyq](https://github.com/hluk/CopyQ/releases)
 
 - [x] [qBittorrent](https://www.linuxbabe.com/ubuntu/install-qbittorrent-ubuntu-18-04-desktop-server)
     - [x] For stable:
@@ -187,44 +188,9 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
         - sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable
     - add it to startup apps
 
-- [Atom](https://atom.io/)
-   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
-   - Install
-    - "termination" (and disable other terminals)
-    - "Autosave-Onchange"
-
-OR
-
-- VS codium
-
-- [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
-    - Change its theme (pref -> theme -> adaptive.XXX)
-
 - [x] gdebi (for installing .deb files)
 
 - [x] gnome-tweak-tool
-
-- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
-
-    - [Install latest directly from github](https://github.com/linuxmint/nemo/releases/)
-        - use "sudo dpkg -i *.deb" and fix all for dependencies by installing the thing which is missing.
-        You may have to run 'sudo apt fix broken install' (It will tell you)
-            - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
-
-    - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
-
-    - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
-            "After some tinkering around, I managed to solve the issue!
-            I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
-
-            Actions=new-window;open-home;open-computer;open-trash;
-            [Desktop Action new-window]
-            Name=New Window
-            Exec=nemo
-
-            After saving the file and restarting I was able to open as many instances of Nemo as I wanted from the dash."
-
-    - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
 
 - [x] Vnstat
 	- [Link1](https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/)
@@ -239,8 +205,6 @@ OR
     - with its integrator for firefox,
     - fix the issues
 
-- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
-
 - [x] [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
     - sudo snap install bing-wall
 
@@ -248,10 +212,6 @@ OR
     - sudo snap install wonderwall
 
 - [x] [Lollypop music player](https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop)
-
-- [Bleachbit](https://www.bleachbit.org/download)
-
-- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
 
 - [x] [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
 	- npm i -g green-tunnel
@@ -284,11 +244,56 @@ OR
 - [x] [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
 - [x] VLC
     - change to X11 Video Decoder in settings
-- Freetube
+
 - [x] Clion
     - sudo snap install clion --classic
 - [x] Pycharm
     - sudo snap install pycharm-community --classic
+
+- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
+
+    - [Install latest directly from github](https://github.com/linuxmint/nemo/releases/)
+        - use "sudo dpkg -i *.deb" and fix all for dependencies by installing the thing which is missing.
+        You may have to run 'sudo apt fix broken install' (It will tell you)
+            - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
+
+    - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
+
+    - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
+            "After some tinkering around, I managed to solve the issue!
+            I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
+
+            Actions=new-window;open-home;open-computer;open-trash;
+            [Desktop Action new-window]
+            Name=New Window
+            Exec=nemo
+
+            After saving the file and restarting I was able to open as many instances of Nemo as I wanted from the dash."
+
+    - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
+
+
+- [Bleachbit](https://www.bleachbit.org/download)
+
+- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
+
+- Freetube
+
+- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
+
+- [copyq](https://github.com/hluk/CopyQ/releases)
+
+
+- [Atom](https://atom.io/)
+   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
+   - Install
+    - "termination" (and disable other terminals)
+    - "Autosave-Onchange"
+
+- VS codium
+- [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
+    - Change its theme (pref -> theme -> adaptive.XXX)
+
 
 ### Extra Apps:
 

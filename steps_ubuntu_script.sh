@@ -142,6 +142,11 @@ sudo snap install pycharm-community --classic
 # Clion
 sudo snap install clion --classic
 
+# nemo
+
+sudo apt --fix-broken install -y
+
+#
 
 
 
@@ -232,6 +237,11 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 0.8499999999999999
 dconf load /org/gnome/ < ./configs/gsettings/org.gnome
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/pulseeffects/ < ./configs/gsettings/com.github.wwmm.pulseeffects
+
+# startup Apps
+cp -r ./configs/autostart/ /home/hritwik/.config/
+
+
 
 
 echo "------------------------------------------------------"

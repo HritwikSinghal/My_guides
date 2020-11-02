@@ -10,6 +10,15 @@ Feel free to copy anything from here and use it.
 
 * [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
 
+- [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
+
+        DOWNLOAD_URL=$(curl -s https://api.github.com/repos/felixb/swamp/releases/latest \
+        | grep browser_download_url \
+        | grep swamp_amd64 \
+        | cut -d '"' -f 4)
+        curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
+Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
+
 - Brother Printer
     * [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
     * [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
@@ -117,6 +126,8 @@ Feel free to copy anything from here and use it.
 
 ## System
 
+- See in ubuntu folder (in mods)
+
 - [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
 - Setup thunderbird (and backup it like FF)
@@ -138,24 +149,23 @@ Feel free to copy anything from here and use it.
 
 - [x] Change keyboard layout to DVORAK
 
-- See in ubuntu folder (in mods)
+- [x] Touchpad Gestures
 
-- Touchpad Gestures
-
-	- [Fusuma](https://github.com/iberianpig/fusuma)
-	(with its addons & config file, add it to startup: "/usr/local/bin/fusuma -d")
+	- [x] [Fusuma](https://github.com/iberianpig/fusuma)
+	   - [x] with its addons & config file
 
     OR
 
 	- [Extended gestures](https://extensions.gnome.org/extension/1253/extended-gestures/) Extension
-        - wayland only, (change sensitivity to 50)
+        - wayland only
+        - change sensitivity to 50
         - [Github](https://github.com/mpiannucci/gnome-shell-extended-gestures)
 
 	- [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
         - Xorg only, may work on wayland but not recommended, see wiki
 
 	- [Comfortable-swipe](https://github.com/Hikari9/comfortable-swipe)
-        - (Xorg only)
+        - Xorg only
 
 - Add shortcuts
 	- Calc (F7)
@@ -169,7 +179,7 @@ Feel free to copy anything from here and use it.
 - [x] [NTFS in Linux](https://www.cyberciti.biz/faq/debian-ubuntu-linux-auto-mounting-windows-ntfs-file-system/)
     - sudo apt install ntfs-3g
 
-- Change compression level
+- [x] Change compression level
         gsettings set org.gnome.FileRoller.General compression-level "very-fast"
         gsettings set org.gnome.FileRoller.General compression-level "fast"
         gsettings set org.gnome.FileRoller.General compression-level "normal"
@@ -179,114 +189,117 @@ Feel free to copy anything from here and use it.
 ## Install Apps
 
 
-- Install Apps:
-    - [x] [qBittorrent](https://www.linuxbabe.com/ubuntu/install-qbittorrent-ubuntu-18-04-desktop-server)
-        - [x] For stable:
-            - sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
-        - For Unstable
-            - sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable
-        - add it to startup apps
+- [x] [qBittorrent](https://www.linuxbabe.com/ubuntu/install-qbittorrent-ubuntu-18-04-desktop-server)
+    - [x] For stable:
+        - sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+    - For Unstable
+        - sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable
+    - add it to startup apps
 
-    - [Atom](https://atom.io/)
-	   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
-	   - Install
-        - "termination" (and disable other terminals)
-        - "Autosave-Onchange"
+- [Atom](https://atom.io/)
+   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
+   - Install
+    - "termination" (and disable other terminals)
+    - "Autosave-Onchange"
 
-    OR
+OR
 
-	- [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
-        - Change its theme (pref -> theme -> adaptive.XXX)
+- [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
+    - Change its theme (pref -> theme -> adaptive.XXX)
 
-	- [x] gdebi (for installing .deb files)
+- [x] gdebi (for installing .deb files)
 
-	- [x] gnome-tweak-tool
+- [x] gnome-tweak-tool
 
-	- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
+- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
-        - [Install latest directly from github](https://github.com/linuxmint/nemo/releases/)
-            - use "sudo dpkg -i *.deb" and fix all for dependencies by installing the thing which is missing.
-            You may have to run 'sudo apt fix broken install' (It will tell you)
-                - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
+    - [Install latest directly from github](https://github.com/linuxmint/nemo/releases/)
+        - use "sudo dpkg -i *.deb" and fix all for dependencies by installing the thing which is missing.
+        You may have to run 'sudo apt fix broken install' (It will tell you)
+            - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
 
-        - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
+    - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
 
-        - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
-                "After some tinkering around, I managed to solve the issue!
-                I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
+    - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
+            "After some tinkering around, I managed to solve the issue!
+            I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
 
-                Actions=new-window;open-home;open-computer;open-trash;
-                [Desktop Action new-window]
-                Name=New Window
-                Exec=nemo
+            Actions=new-window;open-home;open-computer;open-trash;
+            [Desktop Action new-window]
+            Name=New Window
+            Exec=nemo
 
-                After saving the file and restarting I was able to open as many instances of Nemo as I wanted from the dash."
+            After saving the file and restarting I was able to open as many instances of Nemo as I wanted from the dash."
 
-        - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
+    - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
 
-	- [x] Vnstat
-		- [Link1](https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/)
-        -  [Link2](https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/)
-		- [Link3, for GUI via apache](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
+- [x] Vnstat
+	- [Link1](https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/)
+    -  [Link2](https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/)
+	- [Link3, for GUI via apache](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
 
-	- [x] [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
-		- configs are stored in "~/.config/PulseEffects/output") (Do "Start Service at Login" in PE Settings
+- [x] [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
+	- configs are stored in "~/.config/PulseEffects/output") (Do "Start Service at Login" in PE Settings
 
-	- [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
-        - with its integrator for firefox,
-        - fix the issues
+- [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
+    - with its integrator for firefox,
+    - fix the issues
 
-	- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
+- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
 
-	- [x] [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
-        - sudo snap install bing-wall
-        - [x] and "wonderwall"
-            - sudo snap install wonderwall
+- [x] [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
+    - sudo snap install bing-wall
+    - [x] and "wonderwall"
+        - sudo snap install wonderwall
 
-	- [x] [Lollypop music player](https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop)
+- [x] [Lollypop music player](https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop)
 
-	- [Bleachbit](https://www.bleachbit.org/download)
+- [Bleachbit](https://www.bleachbit.org/download)
 
-	- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
+- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
 
-	- [x] [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
-		- npm i -g green-tunnel
+- [x] [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
+	- npm i -g green-tunnel
 
-	- [Flameshot](https://itsfoss.com/flameshot/) (SS tool)
+- [x] [Flameshot](https://itsfoss.com/flameshot/) (SS tool)
+    - install latest from [here](https://github.com/flameshot-org/flameshot/releases)
 
-	OR
+OR
 
-	- [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
+- [x] [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
 
-	- Conky (just copy .conky/ to home)
-        - [x] [install](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
-        - [Conky config variables](http://conky.sourceforge.net/variables.html) OR 'man conky'
+- Conky (just copy .conky/ to home)
 
-		- [Titlebar Fix](https://www.youtube.com/watch?v=miLrmIGPCJs)
+    - [x] [install](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
 
-		- [Run Mltiple Conky scrips](https://www.omgubuntu.co.uk/2016/02/run-multiple-conky-scripts-same-session)
-		- [Conky Setup by Chrits Titus Tech Youtube](https://www.youtube.com/watch?v=QB8cjKpdVQY)
+    - [Conky config variables](http://conky.sourceforge.net/variables.html)
+        - OR 'man conky'
 
-		- [Conky Widgets Config Link 1](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
-		- [Conky Widgets Config Link 2](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
+	- [Titlebar Fix](https://www.youtube.com/watch?v=miLrmIGPCJs)
 
-	- [x] Telegram
-        - sudo snap install telegram-desktop
-	- [x] [Whatsapp desktop](https://itsfoss.com/whatsapp-linux-desktop/)
-        - sudo snap install whatsdesk
-	- [x] [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
-	- [x] VLC
-        - change to X11 Video Decoder in settings
-	- Freetube
+	- [Run Mltiple Conky scrips](https://www.omgubuntu.co.uk/2016/02/run-multiple-conky-scripts-same-session)
+	- [Conky Setup by Chrits Titus Tech Youtube](https://www.youtube.com/watch?v=QB8cjKpdVQY)
+
+	- [Conky Widgets Config Link 1](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
+	- [Conky Widgets Config Link 2](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
+
+- [x] Telegram
+    - sudo snap install telegram-desktop
+- [x] [Whatsapp desktop](https://itsfoss.com/whatsapp-linux-desktop/)
+    - sudo snap install whatsdesk
+- [x] [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
+- [x] VLC
+    - change to X11 Video Decoder in settings
+- Freetube
+
+- EXTRA Apps:
     - Kdenlive
         - sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
         - sudo apt install kdenlive -y
-
-    - EXTRA Apps:
-		- Elisa music player
-			- sudo apt install elisa
-		- [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
-		- [ulauncher](https://ulauncher.io/#Download)
+	- Elisa music player
+		- sudo apt install elisa
+	- [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
+	- [ulauncher](https://ulauncher.io/#Download)
 
 
 ## Install extensions
@@ -353,6 +366,7 @@ OR
     - [DXVK](https://linuxconfig.org/improve-your-wine-gaming-on-linux-with-dxvk)
 
 ---
+
 - make one script for all startup apps
 - startup bug
     - try these in startup apps
@@ -361,32 +375,8 @@ OR
         bash -c 'sleep 3; nemo-desktop'
         bash -c 'sleep 3; /usr/local/bin/fusuma -d'
         ```
+        
 ---
-- backup:
-    - grub theme
-    - system Appearance in tweak-tool
-    ---
-    - Thunderbird
-    - Firefox
-    ---
-    - gnome boxes
-    - qBittorrent torrents for seed
-    - Atom pref
-    - Nemo pref
-    ---
-    
-- make script for all above actions (backup and restore of whole OS)
-
-    - [x] BACKUP extensions
-        - "~/.local/share/gnome-shell/extensions"
-        - this does not backup their data
-
-        - sudo glib-compile-schemas /usr/share/glib-2.0/schemas
-        - https://askubuntu.com/questions/1178580/where-are-gnome-extensions-preferences-stored
-
-    - https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
- 		- (for nemo and extensions and system backup)
-
 
 - make current shell theme transparent
 
@@ -395,8 +385,6 @@ OR
 - screen sharing wayland,
 - pinch to zoom Ubuntu,
 - theme color change our create new theme,
-- Firefox profile shortcuts,
-
 
 - [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
     - what boots first and where is bootloader stored
@@ -423,6 +411,7 @@ OR
         - [Link2] (https://linuxhint.com/update_ubuntu_kernel_20_04/)
         - secure boot ka chod hoga agar unsigned install kiya to
 
+---
 
 - Virtualization
 	- [Install Win10 VM](https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/)

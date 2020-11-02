@@ -54,13 +54,15 @@ sudo apt install gnome-shell-extensions -y
 sudo apt install p7zip-full p7zip-rar -y
 sudo apt install openjdk-11-jdk -y
 sudo apt install git -y
+sudo apt install gnome-music gnote -y
+
 # Wine
 sudo apt install wine winetricks -y
 # java
 sudo apt-get install openjdk-11-jdk -y
 # Timeshift
 sudo apt install timeshift -y
-# NMCLI
+# nmcli
 sudo apt install network-manager -y
 sudo systemctl start NetworkManager.service
 sudo systemctl start NetworkManager.service
@@ -109,6 +111,28 @@ sudo apt install uget -y
 sudo apt install uget aria2 -y
 #qBittorrent
 sudo apt install qbittorrent -y
+# Flameshot
+sudo apt install flameshot -y
+
+# fusuma
+sudo gpasswd -a $USER input
+newgrp input
+sudo apt install libinput-tools
+sudo apt install ruby
+sudo gem install fusuma
+sudo apt install xdotool
+gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
+# ---
+sudo apt install libevdev-dev ruby-dev build-essential
+sudo gem install fusuma-plugin-sendkey
+sudo gem install fusuma-plugin-keypress
+sudo apt install wmctrl
+sudo gem install fusuma-plugin-wmctrl
+sudo gem install fusuma-plugin-tap
+# ---
+mkdir -p ~/.config/fusuma
+cp ./configs/config.yml ~/.config/fusuma/
+
 
 
 
@@ -149,6 +173,9 @@ sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
 sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
 sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
 sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
+# change compression level
+gsettings set org.gnome.FileRoller.General compression-level "very-fast"
+
 
 
 

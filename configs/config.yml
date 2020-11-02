@@ -1,0 +1,85 @@
+swipe:
+  3:
+    left:
+      sendkey: "LEFTALT+RIGHT" # history back
+      keypress:
+        LEFTCTRL:
+          sendkey: "PREVIOUSSONG"
+        # LEFTMETA+LEFTALT:
+          # sendkey: 'BRIGHTNESSDOWN'
+
+    right:
+      sendkey: "LEFTALT+LEFT" # history forward
+      keypress:
+        LEFTCTRL:
+          sendkey: "NEXTSONG"
+        # LEFTMETA+LEFTALT:
+        #   sendkey: 'xdotool key --clearmodifiers XF86AudioLowerVolume'
+
+    up:
+      sendkey: "LEFTMETA" # Overview
+      keypress:
+        LEFTCTRL:
+          sendkey: "LEFTCTRL+K" # open new tab
+        LEFTCTRL+LEFTALT:
+          sendkey: 'BRIGHTNESSUP'
+
+    down:
+      sendkey: "LEFTMETA" # Overview
+      keypress:
+        LEFTCTRL:
+          sendkey: "LEFTCTRL+COMMA" # close tab
+        LEFTCTRL+LEFTALT:
+          sendkey: 'BRIGHTNESSDOWN'
+
+  4:
+    left:
+      sendkey: "VOLUMEDOWN"
+    right:
+      sendkey: "VOLUMEUP"
+#     up:
+#       sendkey: "xdotool key ctrl+alt+Down" # Switch to next workspace
+#     down:
+#       sendkey: "xdotool key ctrl+alt+Up" # Switch to previous workspace
+pinch:
+  in:
+    sendkey: "ZOOMOUT" # Zoom in
+  out:
+    sendkey: "ZOOMIN" # Zoom out
+
+
+threshold:
+  pinch: 0.4
+  swipe: 0.2
+
+interval:
+  swipe: 0.8
+  pinch: 0.5
+  tap: 0.2
+
+tap:
+  # 1:
+  #   sendkey: "echo ----------------tap1----------------------------"
+  # 2:
+  #   sendkey: "echo ----------------tap2----------------------------"
+  # 3:
+    # sendkey: "echo ----------------tap3----------------------------"
+  # 4:
+    # sendkey: "PLAYPAUSE"
+
+hold:
+#   1:
+#     command: "echo ----------------hold1----------------------------"
+#   2:
+#     command: "echo ----------------hold2----------------------------"
+#   3:
+#     command: "echo ----------------hold3----------------------------"
+  4:
+    sendkey: "PLAYPAUSE"
+
+plugin:
+  inputs:
+    libinput_command_input:
+      enable-tap: true
+      verbose: true
+      show-keycodes: true

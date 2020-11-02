@@ -3,7 +3,7 @@ set -e
 
 echo "------------------------------------------------------"
 # add repositories
-echo "Adding Repositories."
+echo "Adding Repositories...."
 # Ubuntu
 sudo add-apt-repository universe -y
 sudo add-apt-repository multiverse -y
@@ -40,7 +40,7 @@ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
 
 echo "------------------------------------------------------"
 sudo apt update && sudo apt upgrade -y
-echo "Insatlling Apps."
+echo "Insatlling Apps...."
 # Ubuntu-extras
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install rar unrar p7zip-full p7zip-rar -y
@@ -53,6 +53,7 @@ sudo apt install gnome-weather gnome-clocks -y
 sudo apt install gnome-shell-extensions -y
 sudo apt install p7zip-full p7zip-rar -y
 sudo apt install openjdk-11-jdk -y
+sudo apt install git -y
 # Wine
 sudo apt install wine winetricks -y
 # java
@@ -113,7 +114,7 @@ sudo apt install qbittorrent -y
 
 
 echo "------------------------------------------------------"
-echo "Other Tweaks."
+echo "Applying Tweaks...."
 # Some common Settings
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
@@ -126,9 +127,14 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-dark'
 echo "" >> ~/.config/gtk-3.0/settings.ini
 echo "[Settings]" >> ~/.config/gtk-3.0/settings.ini
 echo "gtk-application-prefer-dark-theme=1"  >> ~/.config/gtk-3.0/settings.ini
+
+echo "" >> ~/.config/gtk-4.0/settings.ini
+echo "[Settings]" >> ~/.config/gtk-4.0/settings.ini
+echo "gtk-application-prefer-dark-theme=1"  >> ~/.config/gtk-4.0/settings.ini
+
 # wayland dash bug Fix
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
-# Increment volume by 2
+# Increment volume by 3
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
 # minimize on click
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
@@ -146,6 +152,28 @@ sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
 
 
 
+
+echo "------------------------------------------------------"
+echo "Theming & Insatlling Exnensions...."
+# Grub-theme
+git clone https://github.com/vinceliuice/grub2-themes.git ~/my_downloads/grub_themes
+cd ~/my_downloads/grub_themes
+sudo ./install.sh --tela
+
+# App theme: orchis-dark
+git clone https://github.com/vinceliuice/grub2-themes.git ~/my_downloads/orchis-dark
+cd ~/my_downloads/orchis-dark
+sudo ./install.sh
+sudo snap install orchis-themes
+gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
+
+# icon-theme & Curser-theme: Pop
+sudo apt install pop-icon-theme
+gsettings set org.gnome.desktop.interface icon-theme 'Pop'
+gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
+
+# shell-theme & Extensions
+unzip extensions_bak.zip -d ~/.local/share/gnome-shell/
 
 
 echo "------------------------------------------------------"

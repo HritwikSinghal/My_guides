@@ -20,10 +20,15 @@ Feel free to copy anything from here and use it.
 * This is for displaying fps counter on wine games.
     * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
 
+- [restart-network-ubuntu](https://itsfoss.com/restart-network-ubuntu)
+    - use nmcli commands
+
 * DNS
     * https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
+
     * [x] use 'nmcli' command for dns server ip addr ([Link](https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/))
         - nmcli dev show | grep DNS
+
     * OR 'nslookup website_name'
     * OR "cat /etc/resolv.conf"
     * OR just check in wifi settings
@@ -43,7 +48,8 @@ Feel free to copy anything from here and use it.
 
 - If using secondary monitor, make sure both have 1920*1080 and 60Hz
 
-- Switch to wayland on Ubuntu, [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug.
+- Switch to wayland
+    - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
 
 - Gnome-tweaks settings
     - change to right click and mouse sensitivity in settings
@@ -51,10 +57,10 @@ Feel free to copy anything from here and use it.
     - change settings in gnome tweak tool
     - enable middle click to minimize on title bar (in gnome tweak tool)
 
-- Theme:
-    - [Grub Themes](https://github.com/vinceliuice/grub2-themes)
+- [x] Theme:
+    - [x] [Grub Themes](https://github.com/vinceliuice/grub2-themes)
 
-    - [Orchis-theme](https://github.com/vinceliuice/Orchis-theme) (For Apps)
+    - [x] [Orchis-theme](https://github.com/vinceliuice/Orchis-theme) (For Apps)
         - Also take close buttons from here
 
     - [materia-theme](https://github.com/nana-4/materia-theme) (For Shell)
@@ -70,16 +76,20 @@ Feel free to copy anything from here and use it.
 	- [Yaru-Colors](https://github.com/Jannomag/Yaru-Colors)
 
 
-- Icons:
-	- [Pop Icons](https://github.com/pop-os/icon-theme)
+- [x] Icons:
+	- [x] [Pop Icons and curser](https://github.com/pop-os/icon-theme)
 
 	OR
+
 	- [Papirus Icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
     OR
     - [Flat Remix](https://github.com/daniruiz/Flat-Remix)
 
-- Fonts: (Install font manager first ("sudo apt install font-manager"))
+- Fonts:
+    - Install font manager first
+        - sudo apt install font-manager
+
     - for Pop! like look
             Interface: Fira Sans Book 10
             Documents: Roboto Slab Regular 11
@@ -89,8 +99,6 @@ Feel free to copy anything from here and use it.
 
 
 - [Pop! Os Wall](https://github.com/pop-os/wallpapers)
-
-- [Pop! Os curser](https://github.com/pop-os/icon-theme) (Same as curser)
 
 - For macOS like look ([see video](https://www.youtube.com/watch?v=IzPxJK4drcc))
 
@@ -167,7 +175,8 @@ Feel free to copy anything from here and use it.
         gsettings set org.gnome.FileRoller.General compression-level "normal"
         gsettings set org.gnome.FileRoller.General compression-level "maximum"
 
-## Install Apps & extensions
+
+## Install Apps
 
 
 - Install Apps:
@@ -279,43 +288,50 @@ Feel free to copy anything from here and use it.
 		- [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
 		- [ulauncher](https://ulauncher.io/#Download)
 
-- Extensions Install:
-    - [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
 
-	- [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
-        - [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
+## Install extensions
 
-	- [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 
-	OR
-	- [always indicator](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
+- [Install from ZIP](https://linuxconfig.org/how-to-install-gnome-shell-extensions-from-zip-file-using-command-line-on-ubuntu-18-04-bionic-beaver-linux)
 
-	OR
-	- [New mail indicator](https://extensions.gnome.org/extension/1505/new-mail-indicator/)
+- [UPDATE ALL INSTALLED](https://askubuntu.com/questions/937284/how-can-i-update-gnome-shell-extensions-from-the-command-line)
 
-	- [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
-        - .local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css
+- [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
 
-    - [copyq](https://github.com/hluk/CopyQ/releases)
+- [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
+    - [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
 
-	- cpu speed control
-		- [cpufreq](https://github.com/konkor/cpufreq)
-		- [cpupower](https://github.com/martin31821/cpupower)
+- [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 
-	- [panel osd](https://extensions.gnome.org/extension/708/panel-osd/)
-        - Not Req with animations Tweaks Extension
-        - set 98 & 92
+OR
+- [always indicator](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 
-	- [Noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
+OR
+- [New mail indicator](https://extensions.gnome.org/extension/1505/new-mail-indicator/)
 
-	- [Impatience](https://extensions.gnome.org/extension/277/impatience/) (speed gnome animations)
-        - set it to 0.6 in its settings
+- [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
+    - .local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css
 
-	- [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
+- [copyq](https://github.com/hluk/CopyQ/releases)
 
-    - [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
+- cpu speed control
+	- [cpufreq](https://github.com/konkor/cpufreq)
+	- [cpupower](https://github.com/martin31821/cpupower)
 
-    - [Clipboard-indicator Gnome Extension](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+- [panel osd](https://extensions.gnome.org/extension/708/panel-osd/)
+    - Not Req with animations Tweaks Extension
+    - set 98 & 92
+
+- [Noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
+
+- [Impatience](https://extensions.gnome.org/extension/277/impatience/) (speed gnome animations)
+    - set it to 0.6 in its settings
+
+- [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
+
+- [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
+
+- [Clipboard-indicator Gnome Extension](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 
 
 ## Todo
@@ -330,7 +346,8 @@ Feel free to copy anything from here and use it.
             sudo dpkg --add-architecture i386
             sudo apt install libgl1-mesa-dri:i386
             sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
-    - Install [vulkan](https://linuxconfig.org/install-and-test-vulkan-on-linux)
+    - OR see guide for mesa [vulkan](https://linuxconfig.org/install-and-test-vulkan-on-linux)
+    - OR use [AMDVLK](https://github.com/GPUOpen-Drivers/AMDVLK/releases)
     - [Wine staging branch](https://wiki.winehq.org/Ubuntu)
     - [Lutris](https://lutris.net/downloads/)
     - [DXVK](https://linuxconfig.org/improve-your-wine-gaming-on-linux-with-dxvk)
@@ -357,13 +374,13 @@ Feel free to copy anything from here and use it.
     - Atom pref
     - Nemo pref
     ---
-    - Extensions & their data
-
+    
 - make script for all above actions (backup and restore of whole OS)
-	- https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/
 
-    - BACKUP "~/.local/share/gnome-shell/extensions" for extensions
+    - [x] BACKUP extensions
+        - "~/.local/share/gnome-shell/extensions"
         - this does not backup their data
+
         - sudo glib-compile-schemas /usr/share/glib-2.0/schemas
         - https://askubuntu.com/questions/1178580/where-are-gnome-extensions-preferences-stored
 

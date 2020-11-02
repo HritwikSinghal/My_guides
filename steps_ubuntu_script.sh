@@ -23,7 +23,7 @@ sudo add-apt-repository ppa:gnumdk/lollypop -y
 # conky
 sudo add-apt-repository ppa:linuxmint-tr/araclar -y
 sudo apt update
-sudo apt install conky conky-all conky-manager conky-manager-extra -y
+sudo apt install conky conky-all conky-manager -y
 sudo add-apt-repository --remove ppa:linuxmint-tr/araclar -y
 # Wireshark
 sudo add-apt-repository ppa:wireshark-dev/stable -y
@@ -31,7 +31,7 @@ sudo add-apt-repository ppa:wireshark-dev/stable -y
 sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
 # Uget
 sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
-#qBittorrent
+# qBittorrent
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
 
 
@@ -39,8 +39,9 @@ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
 
 
 echo "------------------------------------------------------"
-sudo apt update && sudo apt upgrade -y
 echo "Insatlling Apps...."
+sudo apt update && sudo apt upgrade -y
+
 # Ubuntu-extras
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install rar unrar p7zip-full p7zip-rar -y
@@ -113,7 +114,6 @@ sudo apt install uget aria2 -y
 sudo apt install qbittorrent -y
 # Flameshot
 sudo apt install flameshot -y
-
 # fusuma
 sudo gpasswd -a $USER input
 newgrp input
@@ -136,7 +136,6 @@ cp ./configs/config.yml ~/.config/fusuma/
 
 
 
-
 echo "------------------------------------------------------"
 echo "Applying Tweaks...."
 # Some common Settings
@@ -146,7 +145,6 @@ gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
 (echo "" ; echo "DRI_PRIME=1") >> /etc/environment
 (echo "" ; echo "MOZ_ENABLE_WAYLAND=1") >> /etc/environment
-gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-dark'
 # GTK3 Dark Mode
 echo "" >> ~/.config/gtk-3.0/settings.ini
 echo "[Settings]" >> ~/.config/gtk-3.0/settings.ini
@@ -175,9 +173,8 @@ sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
 sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
 # change compression level
 gsettings set org.gnome.FileRoller.General compression-level "very-fast"
-
-
-
+# conky
+cp -r ./configs/.conky /media/hritwik/Shared_data/NEW/.conky
 
 
 echo "------------------------------------------------------"
@@ -188,7 +185,7 @@ cd ~/my_downloads/grub_themes
 sudo ./install.sh --tela
 
 # App theme: orchis-dark
-git clone https://github.com/vinceliuice/grub2-themes.git ~/my_downloads/orchis-dark
+git clone https://github.com/vinceliuice/Orchis-theme.git ~/my_downloads/orchis-dark
 cd ~/my_downloads/orchis-dark
 sudo ./install.sh
 sudo snap install orchis-themes
@@ -200,7 +197,7 @@ gsettings set org.gnome.desktop.interface icon-theme 'Pop'
 gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
 
 # shell-theme & Extensions
-unzip extensions_bak.zip -d ~/.local/share/gnome-shell/
+unzip ./configs/extensions_bak.zip -d ~/.local/share/gnome-shell/
 
 
 echo "------------------------------------------------------"

@@ -239,7 +239,8 @@ OR
 	- [Link3, for GUI via apache](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
 
 - [x] [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
-	- configs are stored in "~/.config/PulseEffects/output") (Do "Start Service at Login" in PE Settings
+	- [x] configs are stored in "~/.config/PulseEffects/output")
+    - Do "Start Service at Login" in PE Settings
 
 - [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
     - with its integrator for firefox,
@@ -249,8 +250,9 @@ OR
 
 - [x] [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
     - sudo snap install bing-wall
-    - [x] and "wonderwall"
-        - sudo snap install wonderwall
+
+- [x] Wonderwall
+    - sudo snap install wonderwall
 
 - [x] [Lollypop music player](https://launchpad.net/~gnumdk/+archive/ubuntu/lollypop)
 
@@ -268,9 +270,8 @@ OR
 
 - [x] [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
 
-- Conky (just copy .conky/ to home)
-
-    - [x] [install](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
+- [x] [Conky](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
+    - for backup: just copy .conky/ to home
 
     - [Conky config variables](http://conky.sourceforge.net/variables.html)
         - OR 'man conky'
@@ -292,22 +293,20 @@ OR
     - change to X11 Video Decoder in settings
 - Freetube
 
-- EXTRA Apps:
-    - Kdenlive
-        - sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
-        - sudo apt install kdenlive -y
-	- Elisa music player
-		- sudo apt install elisa
-	- [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
-	- [ulauncher](https://ulauncher.io/#Download)
+### Extra Apps:
+- Kdenlive
+    - sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
+    - sudo apt install kdenlive -y
+- Elisa music player
+	- sudo apt install elisa
+- [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
+- [ulauncher](https://ulauncher.io/#Download)
 
 
 ## Install extensions
 
 
 - [Install from ZIP](https://linuxconfig.org/how-to-install-gnome-shell-extensions-from-zip-file-using-command-line-on-ubuntu-18-04-bionic-beaver-linux)
-
-- [UPDATE ALL INSTALLED](https://askubuntu.com/questions/937284/how-can-i-update-gnome-shell-extensions-from-the-command-line)
 
 - [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
 
@@ -316,35 +315,35 @@ OR
 
 - [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 
-OR
-- [always indicator](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
-
-OR
-- [New mail indicator](https://extensions.gnome.org/extension/1505/new-mail-indicator/)
-
 - [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
     - .local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css
 
 - [copyq](https://github.com/hluk/CopyQ/releases)
 
-- cpu speed control
-	- [cpufreq](https://github.com/konkor/cpufreq)
-	- [cpupower](https://github.com/martin31821/cpupower)
-
-- [panel osd](https://extensions.gnome.org/extension/708/panel-osd/)
-    - Not Req with animations Tweaks Extension
-    - set 98 & 92
+- [cpufreq](https://github.com/konkor/cpufreq)
 
 - [Noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
 
-- [Impatience](https://extensions.gnome.org/extension/277/impatience/) (speed gnome animations)
-    - set it to 0.6 in its settings
+### Extra Extensions:
+
+- [Clipboard-indicator Gnome Extension](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 
 - [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 
 - [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
 
-- [Clipboard-indicator Gnome Extension](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+- [Impatience](https://extensions.gnome.org/extension/277/impatience/) (speed gnome animations)
+    - set it to 0.6 in its settings
+
+- [panel osd](https://extensions.gnome.org/extension/708/panel-osd/)
+    - set 98 & 92
+
+- [cpupower](https://github.com/martin31821/cpupower)
+
+- [always indicator](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
+
+
+- [New mail indicator](https://extensions.gnome.org/extension/1505/new-mail-indicator/)
 
 
 ## Todo
@@ -375,7 +374,7 @@ OR
         bash -c 'sleep 3; nemo-desktop'
         bash -c 'sleep 3; /usr/local/bin/fusuma -d'
         ```
-        
+
 ---
 
 - make current shell theme transparent

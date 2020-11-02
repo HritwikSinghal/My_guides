@@ -3,10 +3,8 @@ set -e
 
 # todo: backup and restore of whole OS
 
-# Backup configs
-# PulseEffects
+# Backup configs:
 # conky
-# fusuma
 
 # gsettings
 # timeshift settings
@@ -25,10 +23,28 @@ set -e
 # https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
 
 
+echo "------------------------------------------------------"
+echo "Backuping up Configs"
+mkdir ~/Backups
+
+# PulseEffects
+sudo cp /home/hritwik/.config/PulseEffects/output/PulseEffects_MyPreset.json ~/Backups/
+# fusuma
+sudo cp ~/.config/fusuma/config.yml ~/Backups/config.yml
 
 
 echo "------------------------------------------------------"
 echo "Backuping up Extensions"
-mkdir ~/Backups
 cd ~/.local/share/gnome-shell
 zip -r ~/Backups/extensions_bak.zip ./extensions
+
+
+
+
+
+
+
+
+
+
+#

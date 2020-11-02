@@ -8,10 +8,6 @@ Feel free to copy anything from here and use it.
 
 - [x] [Install Timeshift & make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
 
-- [x] [Backup gsettings](https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/)
-
-* [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
-
 - [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
 
         DOWNLOAD_URL=$(curl -s https://api.github.com/repos/felixb/swamp/releases/latest \
@@ -140,8 +136,6 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     - [x] Put "DRI_PRIME=1" in "/etc/environment"
 
 - [x] Increase terminal size to 120x30 and change its color and shortcuts
-- Change terminal 'built-in-schemas' to 'Linux console'
-	(pref -> profile(unnamed) -> colors -> palette)
 
 - [x] Change keyboard layout to DVORAK
 
@@ -184,6 +178,7 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 ## Install Apps
 
+- [copyq](https://github.com/hluk/CopyQ/releases)
 
 - [x] [qBittorrent](https://www.linuxbabe.com/ubuntu/install-qbittorrent-ubuntu-18-04-desktop-server)
     - [x] For stable:
@@ -290,8 +285,15 @@ OR
 - [x] VLC
     - change to X11 Video Decoder in settings
 - Freetube
+- [x] Clion
+    - sudo snap install clion --classic
+- [x] Pycharm
+    - sudo snap install pycharm-community --classic
 
 ### Extra Apps:
+
+- [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
+
 - Kdenlive
     - sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
     - sudo apt install kdenlive -y
@@ -304,23 +306,21 @@ OR
 ## Install extensions
 
 
-- [Install from ZIP](https://linuxconfig.org/how-to-install-gnome-shell-extensions-from-zip-file-using-command-line-on-ubuntu-18-04-bionic-beaver-linux)
+- [x] [Install from ZIP](https://linuxconfig.org/how-to-install-gnome-shell-extensions-from-zip-file-using-command-line-on-ubuntu-18-04-bionic-beaver-linux)
 
-- [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
+- [x] [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
 
-- [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
+- [x] [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
     - [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
 
-- [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
+- [x] [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 
-- [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
+- [x] [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
     - .local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css
 
-- [copyq](https://github.com/hluk/CopyQ/releases)
+- [x] [cpufreq](https://github.com/konkor/cpufreq)
 
-- [cpufreq](https://github.com/konkor/cpufreq)
-
-- [Noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
+- [x] [Noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
 
 ### Extra Extensions:
 
@@ -352,12 +352,12 @@ OR
 
 
 - make current shell theme transparent
+- theme color change our create new theme,
 
 - fusuma on sleep
 - Close button big
 - screen sharing wayland,
 - pinch to zoom Ubuntu,
-- theme color change our create new theme,
 
 
 - how this works: "nmcli dev show | grep DNS | awk '{ print $2 }"

@@ -7,10 +7,8 @@ set -e
 # Backup configs:
 
 # timeshift settings
-
 # Thunderbird
 # Firefox
-
 # gnome boxes
 # qBittorrent torrents for seed
 # Atom pref
@@ -38,9 +36,9 @@ zip -r ~/Backups/extensions_bak.zip ./extensions
 echo "------------------------------------------------------"
 echo "Backuping up gsettings"
 mkdir ~/Backups/gsettings
-dconf dump /org/gnome/shell/ > ~/Backups/gsettings/org.gnome.shell
+dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
-
+dconf dump /com/github/wwmm/pulseeffects/ > ~/Backups/gsettings/com.github.wwmm.pulseeffects
 
 
 echo "Finished Successfully..."

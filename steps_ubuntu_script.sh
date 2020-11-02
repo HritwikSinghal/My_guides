@@ -137,6 +137,10 @@ mkdir -p ~/.config/fusuma
 cp ./configs/config.yml ~/.config/fusuma/
 # fonts-manager
 sudo apt install font-manager
+# Pycharm
+sudo snap install pycharm-community --classic
+# Clion
+sudo snap install clion --classic
 
 
 
@@ -144,6 +148,7 @@ sudo apt install font-manager
 
 echo "------------------------------------------------------"
 echo "Applying Tweaks...."
+
 # Some common Settings
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
@@ -224,10 +229,9 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bol
 gsettings set org.gnome.desktop.interface text-scaling-factor 0.84999999999999998
 
 # dconf-settings
-dconf load /org/gnome/shell/ < ./configs/gsettings/org.gnome.shell
+dconf load /org/gnome/ < ./configs/gsettings/org.gnome
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
-
-
+dconf load /com/github/wwmm/pulseeffects/ < ./configs/gsettings/com.github.wwmm.pulseeffects
 
 
 echo "------------------------------------------------------"

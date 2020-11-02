@@ -49,6 +49,7 @@ sudo apt install ttf-mscorefonts-installer -y
 sudo apt install exfat-fuse exfat-utils -y
 sudo apt install ntfs-3g -y
 sudo apt install dconf-editor -y
+sudo apt install dconf* -y
 sudo apt install filezilla -y
 sudo apt install gnome-weather gnome-clocks -y
 sudo apt install gnome-shell-extensions -y
@@ -179,7 +180,8 @@ sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
 # change compression level
 gsettings set org.gnome.FileRoller.General compression-level "very-fast"
 # conky
-cp -r ./configs/.conky /media/hritwik/Shared_data/NEW/.conky
+rm -rf ~/.conky
+cp -r ./configs/.conky ~/
 
 
 
@@ -220,6 +222,13 @@ gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
 gsettings set org.gnome.desktop.interface text-scaling-factor 0.84999999999999998
+
+# dconf-settings
+dconf load /org/gnome/shell/ < ./configs/gsettings/org.gnome.shell
+dconf load /org/nemo/ < ./configs/gsettings/org.nemo
+
+
+
 
 echo "------------------------------------------------------"
 echo "Finished Successfully!"

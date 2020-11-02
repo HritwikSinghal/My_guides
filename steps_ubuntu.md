@@ -8,6 +8,8 @@ Feel free to copy anything from here and use it.
 
 - [x] [Install Timeshift & make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
 
+- [x] [Backup gsettings](https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/)
+
 * [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
 
 - [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
@@ -52,17 +54,6 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 	- Dont compile it
     - Another [Guide](https://www.linuxuprising.com/2018/05/use-custom-themes-for-qt-applications.html)
-
-- If using secondary monitor, make sure both have 1920*1080 and 60Hz
-
-- Switch to wayland
-    - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
-
-- Gnome-tweaks settings
-    - change to right click and mouse sensitivity in settings
-    - change trackpad behaviour in gnome tweak tool to "fingers"
-    - change settings in gnome tweak tool
-    - enable middle click to minimize on title bar (in gnome tweak tool)
 
 - [x] Theme:
     - [x] [Grub Themes](https://github.com/vinceliuice/grub2-themes)
@@ -128,6 +119,11 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 - See in ubuntu folder (in mods)
 
+- If using secondary monitor, make sure both have 1920*1080 and 60Hz
+
+- Switch to wayland
+    - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
+
 - [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
 - Setup thunderbird (and backup it like FF)
@@ -143,7 +139,7 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 - [x] [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
     - [x] Put "DRI_PRIME=1" in "/etc/environment"
 
-- Increase terminal size to 120x30 and change its color and shortcuts
+- [x] Increase terminal size to 120x30 and change its color and shortcuts
 - Change terminal 'built-in-schemas' to 'Linux console'
 	(pref -> profile(unnamed) -> colors -> palette)
 
@@ -167,9 +163,9 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 	- [Comfortable-swipe](https://github.com/Hikari9/comfortable-swipe)
         - Xorg only
 
-- Add shortcuts
-	- Calc (F7)
-	- System monitor (ctrl+shift+Esc 'gnome-system-monitor')
+- [x] Add shortcuts
+	- [x] Calc (F7)
+	- [x] System monitor (ctrl+shift+Esc 'gnome-system-monitor')
 
 - [x] [Increment volume](https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/) by 3 onstead of default 6
 	- gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
@@ -203,6 +199,8 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     - "Autosave-Onchange"
 
 OR
+
+- VS codium
 
 - [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
     - Change its theme (pref -> theme -> adaptive.XXX)
@@ -326,6 +324,10 @@ OR
 
 ### Extra Extensions:
 
+- [windowoverlay-icons](https://extensions.gnome.org/extension/302/windowoverlay-icons/)
+
+- [workspace-indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
+
 - [Clipboard-indicator Gnome Extension](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 
 - [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
@@ -349,34 +351,6 @@ OR
 ## Todo
 
 
-- Gaming (Use Pop!_Os)
-    - for 20.04 [video](https://www.youtube.com/watch?v=DToZ9wU2qRk), [reddit](https://www.reddit.com/r/linux4noobs/comments/g7753y/how_to_set_up_ubuntu_2004_for_gaming_tutorial/)
-    - [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
-
-    - [Latest AMDGPU](https://linuxconfig.org/amd-radeon-ubuntu-20-04-driver-installation)
-    - [install latest mesa vulkan](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)
-            sudo dpkg --add-architecture i386
-            sudo apt install libgl1-mesa-dri:i386
-            sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
-    - OR see guide for mesa [vulkan](https://linuxconfig.org/install-and-test-vulkan-on-linux)
-    - OR use [AMDVLK](https://github.com/GPUOpen-Drivers/AMDVLK/releases)
-    - [Wine staging branch](https://wiki.winehq.org/Ubuntu)
-    - [Lutris](https://lutris.net/downloads/)
-    - [DXVK](https://linuxconfig.org/improve-your-wine-gaming-on-linux-with-dxvk)
-
----
-
-- make one script for all startup apps
-- startup bug
-    - try these in startup apps
-        ```
-        bash -c 'sleep 3; /home/hritwik/.conky/conky-startup.sh'
-        bash -c 'sleep 3; nemo-desktop'
-        bash -c 'sleep 3; /usr/local/bin/fusuma -d'
-        ```
-
----
-
 - make current shell theme transparent
 
 - fusuma on sleep
@@ -384,6 +358,12 @@ OR
 - screen sharing wayland,
 - pinch to zoom Ubuntu,
 - theme color change our create new theme,
+
+
+- how this works: "nmcli dev show | grep DNS | awk '{ print $2 }"
+
+- try this for audio not coming in headphone fix
+	- sudo apt install pavucontrol
 
 - [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
     - what boots first and where is bootloader stored
@@ -397,40 +377,53 @@ OR
     - [Kid3 audio tagger](https://kid3.kde.org/)
 
 
-- try VS-codium
+### Startup
 
-- learn shell language and how this works: "nmcli dev show | grep DNS | awk '{ print $2 }"
+- make one script for all startup apps
+- startup bug
+    - try these in startup apps
+        ```
+        bash -c 'sleep 3; /home/hritwik/.conky/conky-startup.sh'
+        bash -c 'sleep 3; nemo-desktop'
+        bash -c 'sleep 3; /usr/local/bin/fusuma -d'
+        ```
 
-- try this for audio not coming in headphone fix
-	- sudo apt install pavucontrol
 
-    OR
+### Gaming
 
-	- [upgrade kernel](https://itsfoss.com/upgrade-linux-kernel-ubuntu/#ukuu)
-        - [Link2] (https://linuxhint.com/update_ubuntu_kernel_20_04/)
-        - secure boot ka chod hoga agar unsigned install kiya to
+- Use Pop!_Os
+- for 20.04 [video](https://www.youtube.com/watch?v=DToZ9wU2qRk), [reddit](https://www.reddit.com/r/linux4noobs/comments/g7753y/how_to_set_up_ubuntu_2004_for_gaming_tutorial/)
+- [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
 
----
+- [Latest AMDGPU](https://linuxconfig.org/amd-radeon-ubuntu-20-04-driver-installation)
+- [install latest mesa vulkan](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)
+        sudo dpkg --add-architecture i386
+        sudo apt install libgl1-mesa-dri:i386
+        sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+- OR see guide for mesa [vulkan](https://linuxconfig.org/install-and-test-vulkan-on-linux)
+- OR use [AMDVLK](https://github.com/GPUOpen-Drivers/AMDVLK/releases)
+- [Wine staging branch](https://wiki.winehq.org/Ubuntu)
+- [Lutris](https://lutris.net/downloads/)
+- [DXVK](https://linuxconfig.org/improve-your-wine-gaming-on-linux-with-dxvk)
 
-- Virtualization
-	- [Install Win10 VM](https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/)
 
-	- gnome-boxes (installl via flathub)
-		- [Guide](https://ostechnix.com/manage-remote-and-virtual-machines-with-gnome-boxes/)
-        - [Cant copy big files to VM fix](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
+### Virtualization
+
+- [Install Win10 VM](https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/)
+
+- gnome-boxes (installl via flathub)
+	- [Guide](https://ostechnix.com/manage-remote-and-virtual-machines-with-gnome-boxes/)
+    - [Cant copy big files to VM fix](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
+
+OR
+- virt-manager (run as sudo)
+	- [Link1](https://www.tecmint.com/install-kvm-on-ubuntu/)
 
 	OR
-	- virt-manager (run as sudo)
-		- [Link1](https://www.tecmint.com/install-kvm-on-ubuntu/)
-
-		OR
-		- [Link2](https://linuxize.com/post/how-to-install-kvm-on-ubuntu-20-04/)
-
-- make terminal shell beatiful and maybe switch to zhs
-	- show current branch in git in terminal
+	- [Link2](https://linuxize.com/post/how-to-install-kvm-on-ubuntu-20-04/)
 
 
-# Extra Articles
+## Extra Articles
 
 - https://linuxhint.com/add_shortcuts_ubuntu_desktop/
 

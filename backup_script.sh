@@ -3,6 +3,11 @@ set -e
 
 # todo: backup and restore of whole OS
 # https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
+# https://github.com/lra/mackup
+# https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
+
+
+
 
 # Backup configs:
 
@@ -41,6 +46,10 @@ dconf dump /com/github/wwmm/pulseeffects/ > ~/Backups/gsettings/com.github.wwmm.
 echo "------------------------------------------------------"
 echo "Backuping up startup apps"
 cp -r /home/hritwik/.config/autostart/ ~/Backups/autostart
+
+
+
+
 
 echo "Finished Successfully..."
 echo "Dont forget to Copy '~/Backups/' to your directory "

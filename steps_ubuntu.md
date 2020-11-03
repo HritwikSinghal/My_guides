@@ -17,13 +17,6 @@ Feel free to copy anything from here and use it.
         curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
 Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
 
-- Brother Printer
-    * [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
-    * [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
-
-
-* [Path variable in profile vs environment](https://askubuntu.com/questions/866161/setting-path-variable-in-etc-environment-vs-profile)
-
 * This is for displaying fps counter on wine games.
     * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
 
@@ -31,8 +24,6 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     - use nmcli commands
 
 * DNS
-    * https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
-
     * [x] use 'nmcli' command for dns server ip addr ([Link](https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/))
         - nmcli dev show | grep DNS
 
@@ -113,7 +104,6 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 ## System
 
-- See in ubuntu folder (in mods)
 
 - If using secondary monitor, make sure both have 1920*1080 and 60Hz
 
@@ -135,7 +125,7 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 - [x] [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
     - [x] Put "DRI_PRIME=1" in "/etc/environment"
 
-- [x] Increase terminal size to 120x30 and change its color and shortcuts
+- [x] Increase terminal size to 100x30 and change its color and shortcuts
 
 - [x] Change keyboard layout to DVORAK
 
@@ -170,16 +160,18 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     - sudo apt install ntfs-3g
 
 - [x] Change compression level
+
         gsettings set org.gnome.FileRoller.General compression-level "very-fast"
 
         gsettings set org.gnome.FileRoller.General compression-level "fast"
 
         gsettings set org.gnome.FileRoller.General compression-level "normal"
-        
+
         gsettings set org.gnome.FileRoller.General compression-level "maximum"
 
 
 ## Install Apps
+
 
 - [x] [qBittorrent](https://www.linuxbabe.com/ubuntu/install-qbittorrent-ubuntu-18-04-desktop-server)
     - [x] For stable:
@@ -272,6 +264,8 @@ OR
 
     - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
 
+    - [clear zoom cache](https://forums.linuxmint.com/viewtopic.php?t=308395)
+
 
 - [Bleachbit](https://www.bleachbit.org/download)
 
@@ -297,6 +291,8 @@ OR
 
 ### Extra Apps:
 
+- [gnome-sushi](https://www.omgubuntu.co.uk/gnome-sushi-mac-quick-for-ubuntu)
+
 - [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
 
 - Kdenlive
@@ -313,23 +309,38 @@ OR
 
 - [x] [Install from ZIP](https://linuxconfig.org/how-to-install-gnome-shell-extensions-from-zip-file-using-command-line-on-ubuntu-18-04-bionic-beaver-linux)
 
+- [x] sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0
+    - this is dependency of below 3
+
+- [x] [blur-my-shell/](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+    - BUGGY! use below 2 for Replacement.
+
+- [x] [blyr](https://extensions.gnome.org/extension/1251/blyr/), for blurring activities screen
+    - [github](https://github.com/yozoon/gnome-shell-extension-blyr)
+
+- [x] [lock screen blur](https://extensions.gnome.org/extension/2935/control-blur-effect-on-lock-screen/)
+    - [github](https://github.com/PRATAP-KUMAR/Control_Blur_Effect_On_Lock_Screen)
+    - set to 0.5 and 15
+
 - [x] [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
 
 - [x] [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
-    - [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
+    - [x] [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
+            The Tween Parameters - "First Number" denotes the position of the notification banner at the start of the animation
+            and Tween Parameters - "Last Number" denotes the ending position of the notification banner.
 
 - [x] [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 
 - [x] [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
-    - .local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css
+    - set "/.local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css" to "background-color: rgba(0,0,0,0.72);"
 
 - [x] [cpufreq](https://github.com/konkor/cpufreq)
 
 - [x] [Noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
 
-### Extra Extensions:
+- [x] [windowoverlay-icons](https://extensions.gnome.org/extension/302/windowoverlay-icons/)
 
-- [windowoverlay-icons](https://extensions.gnome.org/extension/302/windowoverlay-icons/)
+### Extra Extensions:
 
 - [workspace-indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
 
@@ -355,6 +366,7 @@ OR
 
 ## Todo
 
+- [wayfire](https://github.com/WayfireWM/wayfire)
 
 - make current shell theme transparent
 - theme color change our create new theme,
@@ -380,6 +392,11 @@ OR
 
 - [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
     - [Kid3 audio tagger](https://kid3.kde.org/)
+
+
+- Brother Printer
+    * [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
+    * [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
 
 
 ### Startup
@@ -430,6 +447,11 @@ OR
 
 ## Extra Articles
 
+
+- Setup guide [Reddit](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
+
+- [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
+
 - https://linuxhint.com/add_shortcuts_ubuntu_desktop/
 
 - https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html
@@ -441,6 +463,8 @@ OR
 
 
 - https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html
+    - https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
+
 - https://www.linuxuprising.com/2020/02/tlp-13-linux-laptop-battery-extender.html
 
 - https://itsfoss.com/linux-command-tricks/

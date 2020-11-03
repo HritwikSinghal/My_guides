@@ -59,6 +59,10 @@ sudo apt install git -y
 sudo apt install gnome-music gnote -y
 sudo apt install sassc -y
 sudo apt install checkinstall -y
+sudo apt install preload -y
+sudo apt-get install libavcodec-extra -y
+sudo apt install vim -y
+sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
 
 # Wine
 sudo apt install wine winetricks -y

@@ -189,14 +189,6 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     -  [Link2](https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/)
 	- [Link3, for GUI via apache](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
 
-- [x] [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
-	- [x] configs are stored in "~/.config/PulseEffects/output")
-    - Do "Start Service at Login" in PE Settings
-
-- [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
-    - with its integrator for firefox,
-    - fix the issues
-
 - [x] [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
     - sudo snap install bing-wall
 
@@ -241,6 +233,14 @@ OR
     - sudo snap install clion --classic
 - [x] Pycharm
     - sudo snap install pycharm-community --classic
+
+- [x] [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
+	- [x] configs are stored in "~/.config/PulseEffects/output")
+    - Do "Start Service at Login" in PE Settings
+
+- [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
+    - with its integrator for firefox,
+    - fix the issues
 
 - [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
@@ -326,6 +326,7 @@ OR
 
 - [x] [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
     - [x] [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
+
             The Tween Parameters - "First Number" denotes the position of the notification banner at the start of the animation
             and Tween Parameters - "Last Number" denotes the ending position of the notification banner.
 
@@ -369,13 +370,14 @@ OR
 - [wayfire](https://github.com/WayfireWM/wayfire)
 
 - make current shell theme transparent
+    - search for rgba in its css
 - theme color change our create new theme,
-
-- fusuma on sleep
 - Close button big
+
+- Bulk rename linux
+- fusuma on sleep
 - screen sharing wayland,
 - pinch to zoom Ubuntu,
-
 
 - how this works: "nmcli dev show | grep DNS | awk '{ print $2 }"
 
@@ -385,8 +387,6 @@ OR
 - [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
     - what boots first and where is bootloader stored
     - if i delete efi partition will machine boot
-
-- terminal vs bash vs shell vs prompt
 
 - https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html
 
@@ -405,7 +405,7 @@ OR
 - startup bug
     - try these in startup apps
         ```
-        bash -c 'sleep 3; /home/hritwik/.conky/conky-startup.sh'
+        bash -c 'sleep 3; ~/.conky/conky-startup.sh'
         bash -c 'sleep 3; nemo-desktop'
         bash -c 'sleep 3; /usr/local/bin/fusuma -d'
         ```

@@ -1,0 +1,49 @@
+[desktop]
+computer-icon-visible=true
+desktop-layout='true::true'
+home-icon-visible=true
+show-desktop-icons=true
+trash-icon-visible=true
+volumes-visible=true
+
+[icon-view]
+captions=['size', 'date_modified']
+default-zoom-level='large'
+
+
+[list-view]
+default-column-order=['name', 'size', 'type', 'date_modified', 'date_created_with_time', 'date_accessed', 'date_created', 'detailed_type', 'group', 'where', 'mime_type', 'date_modified_with_time', 'octal_permissions', 'owner', 'permissions']
+default-visible-columns=['name', 'size', 'type', 'date_modified', 'permissions']
+default-zoom-level='small'
+
+[preferences]
+click-double-parent-folder=true
+close-device-view-on-device-eject=true
+default-folder-viewer='list-view'
+default-sort-order='type'
+quick-renames-with-pause-in-between=true
+show-advanced-permissions=true
+show-full-path-titles=true
+show-hidden-files=true
+show-image-thumbnails='always'
+show-location-entry=true
+show-new-folder-icon-toolbar=true
+show-open-in-terminal-toolbar=true
+show-reload-icon-toolbar=true
+show-show-thumbnails-toolbar=false
+thumbnail-limit=uint64 8589934592
+tooltips-in-icon-view=true
+tooltips-in-list-view=true
+tooltips-on-desktop=true
+tooltips-show-file-type=true
+tooltips-show-mod-date=true
+
+[preferences/menu-config]
+selection-menu-duplicate=true
+selection-menu-make-link=true
+
+[window-state]
+geometry='1055x837+56+50'
+maximized=false
+sidebar-bookmark-breakpoint=5
+start-with-sidebar=true

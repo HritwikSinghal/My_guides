@@ -10,6 +10,8 @@ set -e
 
 
 # Backup configs:
+# Clion
+# pycharm
 
 # timeshift settings
 # Thunderbird

@@ -29,8 +29,9 @@ sudo add-apt-repository --remove ppa:linuxmint-tr/araclar -y
 sudo add-apt-repository ppa:wireshark-dev/stable -y
 # PulseEffects
 sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
-# Uget
-sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
+# Uget (this is not working)
+# sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
+
 # qBittorrent
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
 
@@ -43,13 +44,13 @@ echo "Insatlling Apps...."
 sudo apt update && sudo apt upgrade -y
 
 # Ubuntu-extras
+sudo apt install libavcodec-extra58 -y
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install rar unrar p7zip-full p7zip-rar -y
 sudo apt install ttf-mscorefonts-installer -y
 sudo apt install exfat-fuse exfat-utils -y
 sudo apt install ntfs-3g -y
 sudo apt install dconf-editor -y
-sudo apt install dconf* -y
 sudo apt install filezilla -y
 sudo apt install gnome-weather gnome-clocks -y
 sudo apt install gnome-shell-extensions -y
@@ -84,14 +85,14 @@ sudo apt install firefox firefox-trunk thunderbird -y
 # Flatpack
 sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # gdebi
 sudo apt install gdebi-core -y
 #Nemo
 sudo apt install nemo -y
 # BingWall
-sudo snap install bing-wall -y
-sudo snap install wonderwall -y
+sudo snap install bing-wall
+sudo snap install wonderwall
 # Lollypop
 sudo apt install lollypop -y
 # GreenTunnel
@@ -99,11 +100,11 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 npm i -g green-tunnel
 # telegram
-sudo snap install telegram-desktop -y
+sudo snap install telegram-desktop
 # whatsdesk
-sudo snap install whatsdesk -y
+sudo snap install whatsdesk
 # Wireshark
-sudo apt install wireshark -y
+sudo apt install wireshark
 # VLC
 sudo apt install vlc -y
 # vnstat
@@ -147,9 +148,6 @@ sudo snap install pycharm-community --classic
 sudo snap install clion --classic
 
 # nemo
-
-sudo apt --fix-broken install -y
-
 #
 
 

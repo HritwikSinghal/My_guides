@@ -10,8 +10,8 @@ set -e
 
 
 # Backup configs:
-# Clion
-# pycharm
+# Clion (projects also)
+# pycharm (projects also)
 
 # timeshift settings
 # Thunderbird
@@ -31,6 +31,13 @@ sudo cp /home/$USER/.config/PulseEffects/output/PulseEffects_MyPreset.json ~/Bac
 sudo cp ~/.config/fusuma/config.yml ~/Backups/config.yml
 # conky
 cp -r ~/.conky ~/Backups/.conky
+# firefox
+cd /home/$USER/
+zip -r /home/$USER/Backups/firefox_bak.zip ./.mozilla
+# thunderbird
+cd /home/$USER/
+zip -r /home/$USER/Backups/thunderbird_bak.zip ./.thunderbird
+
 
 echo "------------------------------------------------------"
 echo "Backuping up Extensions"

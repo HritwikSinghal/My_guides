@@ -208,7 +208,7 @@ OR
 - [x] [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
 
 - [x] [Conky](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
-    - for backup: just copy .conky/ to home
+    - [x] for backup: just copy .conky/ to home
 
     - [Conky config variables](http://conky.sourceforge.net/variables.html)
         - OR 'man conky'
@@ -241,6 +241,14 @@ OR
 - [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
     - with its integrator for firefox,
     - fix the issues
+
+
+- [x] [Atom](https://flight-manual.atom.io/getting-started/sections/installing-atom/)
+   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
+   - Install
+    - "termination" (and disable other terminals)
+    - "Autosave-Onchange"
+
 
 - [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
@@ -276,13 +284,6 @@ OR
 - [XDM](https://itsfoss.com/xtreme-download-manager-install/)
 
 - [copyq](https://github.com/hluk/CopyQ/releases)
-
-
-- [Atom](https://atom.io/)
-   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
-   - Install
-    - "termination" (and disable other terminals)
-    - "Autosave-Onchange"
 
 - VS codium
 - [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)

@@ -34,6 +34,9 @@ sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
 
 # qBittorrent
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
+# atom
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 
 
 
@@ -146,7 +149,8 @@ sudo apt install font-manager
 sudo snap install pycharm-community --classic
 # Clion
 sudo snap install clion --classic
-
+# Atom
+sudo apt install atom
 # nemo
 #
 

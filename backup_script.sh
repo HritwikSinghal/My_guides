@@ -23,10 +23,10 @@ set -e
 
 echo "------------------------------------------------------"
 echo "Backuping up Configs"
-mkdir ~/Backups
+mkdir -p /home/$USER/Backups
 
 # PulseEffects
-sudo cp /home/hritwik/.config/PulseEffects/output/PulseEffects_MyPreset.json ~/Backups/
+sudo cp /home/$USER/.config/PulseEffects/output/PulseEffects_MyPreset.json ~/Backups/
 # fusuma
 sudo cp ~/.config/fusuma/config.yml ~/Backups/config.yml
 # conky

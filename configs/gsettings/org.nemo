@@ -10,7 +10,6 @@ volumes-visible=true
 captions=['size', 'date_modified']
 default-zoom-level='large'
 
-
 [list-view]
 default-column-order=['name', 'size', 'type', 'date_modified', 'date_created_with_time', 'date_accessed', 'date_created', 'detailed_type', 'group', 'where', 'mime_type', 'date_modified_with_time', 'octal_permissions', 'owner', 'permissions']
 default-visible-columns=['name', 'size', 'type', 'date_modified', 'permissions']
@@ -43,7 +42,7 @@ selection-menu-duplicate=true
 selection-menu-make-link=true
 
 [window-state]
-geometry='1055x837+56+50'
+geometry='1141x726+56+50'
 maximized=false
 sidebar-bookmark-breakpoint=5
 start-with-sidebar=true

@@ -21,10 +21,11 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
 
 - [restart-network-ubuntu](https://itsfoss.com/restart-network-ubuntu)
-    - use nmcli commands
-
+    - use nmcli commands:
+        - sudo nmcli networking off
+        - sudo nmcli networking on
 * DNS
-    * [x] use 'nmcli' command for dns server ip addr ([Link](https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/))
+    * Use 'nmcli' command for dns server ip addr ([Link](https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/))
         - nmcli dev show | grep DNS
 
     * OR 'nslookup website_name'
@@ -230,7 +231,7 @@ OR
 
 - [x] [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
 - [x] VLC
-    - change to X11 Video Decoder in settings
+    - [x] change to X11 Video Decoder in settings
 
 - [x] Clion
     - flatpak install flathub com.jetbrains.CLion -y
@@ -247,13 +248,20 @@ OR
     - with its integrator for firefox,
     - fix the issues
 
+- [x] [Obs-studio](https://obsproject.com/wiki/install-instructions)
+    - sudo apt install obs-studio -y
+
+
+- [x] [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
+    - flatpak install flathub com.sublimetext.three -y
+    - [x] Change its theme (pref -> theme -> adaptive.XXX)
+
 
 - [x] [Atom](https://flight-manual.atom.io/getting-started/sections/installing-atom/)
-    - flatpak install flathub io.atom.Atom
-    - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
-    - Install
-    - "termination" (and disable other terminals)
-    - "Autosave-Onchange"
+    - flatpak install flathub io.atom.Atom -y
+    - [x] [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
+    - [x] "termination" (and disable other terminals)
+    - [x] "Autosave-Onchange"
 
 - [x] [VS codium](https://vscodium.com/)
     - flatpak install flathub com.vscodium.codium -y
@@ -293,21 +301,19 @@ OR
 
 - [copyq](https://github.com/hluk/CopyQ/releases)
 
-- [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
-    - Change its theme (pref -> theme -> adaptive.XXX)
-
 
 ### Extra Apps:
 
-- [gnome-sushi](https://www.omgubuntu.co.uk/gnome-sushi-mac-quick-for-ubuntu)
+- [gnome-sushi](https://www.omgubuntu.co.uk/gnome-sushi-mac-quick-for-ubuntu) (spacebar preview for nautilus)
 
 - [CheckInstall](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
+    - sudo apt install checkinstall -y
 
 - Kdenlive
     - sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
     - sudo apt install kdenlive -y
 - Elisa music player
-	- sudo apt install elisa
+	- sudo apt install elisa -y
 - [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
 - [ulauncher](https://ulauncher.io/#Download)
 
@@ -377,7 +383,11 @@ OR
 
 - firefox setup and icons for profiles
 - thunderbird setup
-- sudo apt install obs-studio -y
+- check "Start Service at Login" in PulseEffects Settings
+- Uget
+    - with its integrator for firefox,
+    - fix the issues
+
 
 - [wayfire](https://github.com/WayfireWM/wayfire)
 

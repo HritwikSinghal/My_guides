@@ -8,6 +8,7 @@ echo "Adding Repositories...."
 sudo add-apt-repository universe -y
 sudo add-apt-repository multiverse -y
 sudo add-apt-repository restricted -y
+sudo add-apt-repository ppa:obsproject/obs-studio -y
 
 # Timeshift
 sudo apt-add-repository ppa:teejee2008/ppa -y
@@ -62,7 +63,6 @@ sudo apt install openjdk-11-jdk -y
 sudo apt install git -y
 sudo apt install gnome-music gnote -y
 sudo apt install sassc -y
-sudo apt install checkinstall -y
 sudo apt install preload -y
 sudo apt-get install libavcodec-extra -y
 sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
@@ -160,13 +160,20 @@ flatpak install flathub com.jetbrains.PyCharm-Community -y
 flatpak install flathub com.jetbrains.CLion -y
 # Atom
 sudo apt install atom
-
-# nemo
-
-
+# obs-studio
+sudo apt install ffmpeg -y
+sudo apt install obs-studio -y
 # vscodium
 flatpak install flathub com.vscodium.codium  -y
+# Sublime
+flatpak install flathub com.sublimetext.three -y
+# Nemo
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+gsettings set org.gnome.desktop.background show-desktop-icons false
+gsettings set org.nemo.desktop show-desktop-icons true
+    # install
 
+#
 
 
 
@@ -180,7 +187,7 @@ gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
 (echo "" ; echo "DRI_PRIME=1") >> /etc/environment
 (echo "" ; echo "MOZ_ENABLE_WAYLAND=1") >> /etc/environment
-# GTK3 Dark Mode
+# GTK Dark Mode
 echo "" >> /home/hritwik/.config/gtk-3.0/settings.ini
 echo "[Settings]" >> /home/hritwik/.config/gtk-3.0/settings.ini
 echo "gtk-application-prefer-dark-theme=1"  >> /home/hritwik/.config/gtk-3.0/settings.ini
@@ -197,10 +204,6 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 # show battery percentage
 gsettings set org.gnome.desktop.interface show-battery-percentage true
-# Nemo
-xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
-gsettings set org.gnome.desktop.background show-desktop-icons false
-gsettings set org.nemo.desktop show-desktop-icons true
 # Keyboard Layout
 sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
 sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
@@ -223,7 +226,13 @@ cp -r ./configs/autostart/ /home/hritwik/.config/
 unzip ./configs/firefox_bak.zip -d /home/hritwik/
 # thunderbird
 unzip ./configs/thunderbird_bak.zip -d /home/hritwik/
-
+# Atom
+unzip ./configs/atom_bak.zip -d /home/hritwik/
+# Sublime
+mkdir -p /home/hritwik/.config/sublime-text-3/Packages/User
+unzip ./configs/sublime_bak.zip -d /home/hritwik/.config/sublime-text-3/Packages/
+# VLC
+unzip ./configs/vlc_bak.zip -d /home/hritwik/.config/
 
 
 

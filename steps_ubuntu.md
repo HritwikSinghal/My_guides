@@ -222,16 +222,21 @@ OR
 	- [Conky Widgets Config Link 2](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
 
 - [x] Telegram
+    - flatpak install flathub org.telegram.desktop -y
     - sudo snap install telegram-desktop
 - [x] [Whatsapp desktop](https://itsfoss.com/whatsapp-linux-desktop/)
+    - flatpak install flathub org.telegram.desktop -y
     - sudo snap install whatsdesk
+
 - [x] [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
 - [x] VLC
     - change to X11 Video Decoder in settings
 
 - [x] Clion
+    - flatpak install flathub com.jetbrains.CLion -y
     - sudo snap install clion --classic
 - [x] Pycharm
+    - flatpak install flathub com.jetbrains.PyCharm-Community -y
     - sudo snap install pycharm-community --classic
 
 - [x] [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
@@ -244,11 +249,14 @@ OR
 
 
 - [x] [Atom](https://flight-manual.atom.io/getting-started/sections/installing-atom/)
-   - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
-   - Install
+    - flatpak install flathub io.atom.Atom
+    - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
+    - Install
     - "termination" (and disable other terminals)
     - "Autosave-Onchange"
 
+- [x] [VS codium](https://vscodium.com/)
+    - flatpak install flathub com.vscodium.codium -y
 
 - [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
@@ -285,7 +293,6 @@ OR
 
 - [copyq](https://github.com/hluk/CopyQ/releases)
 
-- VS codium
 - [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
     - Change its theme (pref -> theme -> adaptive.XXX)
 
@@ -370,6 +377,7 @@ OR
 
 - firefox setup and icons for profiles
 - thunderbird setup
+- sudo apt install obs-studio -y
 
 - [wayfire](https://github.com/WayfireWM/wayfire)
 
@@ -452,7 +460,9 @@ OR
 ## Extra Articles
 
 
-- Setup guide [Reddit](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
+- Setup guide
+    - [Reddit](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
+    - [github](https://github.com/themagicalmammal/howtopopbuntu)
 
 - [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
 

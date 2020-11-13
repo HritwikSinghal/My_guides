@@ -1,6 +1,10 @@
 #!/bin/sh
 set -e
 
+if [[ "$USER" == "root" ]]; then
+    echo "Error: script running as root or with sudo! Exiting..."
+    exit 1
+fi
 
 # --------------------------------------------------------#
 # !! DO NOT RUN THIS SCRIP WIT SUDO !!

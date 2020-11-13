@@ -67,6 +67,11 @@ sudo apt install preload -y
 sudo apt-get install libavcodec-extra -y
 sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
 sudo apt install kate -y
+sudo apt install pavucontrol -y
+sudo apt install nautilus-admin -y && nautilus -q
+sudo apt install htop -y
+sudo snap install bashtop
+
 
 # Wine
 sudo apt install wine winetricks -y
@@ -103,9 +108,11 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 npm i -g green-tunnel
 # telegram
-sudo snap install telegram-desktop
+# sudo snap install telegram-desktop
+flatpak install flathub org.telegram.desktop -y
 # whatsdesk
-sudo snap install whatsdesk
+# sudo snap install whatsdesk
+flatpak install flathub com.gigitux.gtkwhats -y
 # Wireshark
 sudo apt install wireshark
 # VLC
@@ -126,7 +133,7 @@ sudo apt install qbittorrent -y
 # Flameshot
 sudo apt install flameshot -y
 # fusuma
-sudo gpasswd -a $USER input
+sudo gpasswd -a hritwik input
 newgrp input
 sudo apt install libinput-tools
 sudo apt install ruby
@@ -146,14 +153,19 @@ cp ./configs/config.yml /home/hritwik/.config/fusuma/
 # fonts-manager
 sudo apt install font-manager
 # Pycharm
-sudo snap install pycharm-community --classic
+# sudo snap install pycharm-community --classic
+flatpak install flathub com.jetbrains.PyCharm-Community -y
 # Clion
-sudo snap install clion --classic
+# sudo snap install clion --classic
+flatpak install flathub com.jetbrains.CLion -y
 # Atom
 sudo apt install atom
 
 # nemo
 
+
+# vscodium
+flatpak install flathub com.vscodium.codium  -y
 
 
 

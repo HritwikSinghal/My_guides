@@ -151,8 +151,9 @@ sudo snap install pycharm-community --classic
 sudo snap install clion --classic
 # Atom
 sudo apt install atom
+
 # nemo
-#
+
 
 
 
@@ -235,7 +236,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
 
 # shell-theme & Extensions
 unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
-
+cp -r ./configs/.conky /home/hritwik/
 git clone --depth 1 https://github.com/nana-4/materia-theme.git /home/hritwik/my_downloads/materia-theme
 sudo /home/hritwik/my_downloads/materia-theme/install.sh
 gsettings set org.gnome.shell.extensions.user-theme name 'Materia-dark'

@@ -514,7 +514,7 @@ command-history=['nemo-desktop']
 disable-user-extensions=false
 disabled-extensions=['ubuntu-appindicators@ubuntu.com']
 enabled-extensions=['notifications-alert-on-user-menu@hackedbellini.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'transparentnotification@ipaq3870', 'dash-to-panel@jderose9.github.com', 'noannoyance@sindex.com', 'cpufreq@konkor', 'animation-tweaks@Selenium-H', 'windowoverlay-icons@sustmidown.centrum.cz', 'blyr@yozoon.dev.gmail.com']
-favorite-apps=['firefox.desktop', 'thunderbird.desktop', 'nemo.desktop', 'org.gnome.Lollypop.desktop', 'org.gnome.tweaks.desktop', 'com.github.wwmm.pulseeffects.desktop', 'sublime_text.desktop', 'realvnc-vncviewer.desktop', 'freetube.desktop', 'bitwarden_bitwarden.desktop', 'uget-gtk.desktop', 'org.gnome.Boxes.desktop', 'whatsdesk_whatsdesk.desktop', 'teams.desktop', 'pycharm-community_pycharm-community.desktop']
+favorite-apps=['firefox.desktop', 'thunderbird.desktop', 'nemo.desktop', 'org.gnome.Lollypop.desktop', 'org.gnome.tweaks.desktop', 'com.github.wwmm.pulseeffects.desktop', 'sublime_text.desktop', 'realvnc-vncviewer.desktop', 'freetube.desktop', 'bitwarden_bitwarden.desktop', 'clion_clion.desktop', 'uget-gtk.desktop', 'org.gnome.Boxes.desktop', 'pycharm-community_pycharm-community.desktop', 'whatsdesk_whatsdesk.desktop', 'teams.desktop']
 remember-mount-password=true
 
 [shell/extensions/animation-tweaks]
@@ -599,7 +599,7 @@ show-mounts=false
 [shell/extensions/dash-to-panel]
 appicon-margin=2
 appicon-padding=7
-available-monitors=[0, 1]
+available-monitors=[0]
 click-action='CYCLE-MIN'
 desktop-line-use-custom-color=false
 dot-color-1='#1eaec7'

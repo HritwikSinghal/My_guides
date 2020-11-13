@@ -112,14 +112,6 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 - [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
-- Setup thunderbird (and backup it like FF)
-	- [For calender & task](https://fruux.com/sync/)
-    - [x] [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/)
-
-- Firefox Setup (and desktop icons)
-	- [x] [For Latest Nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
-    - [x] Put "MOZ_ENABLE_WAYLAND=1" in "/etc/environment"
-
 - [x] [Enable flatpack support](https://flatpak.org/setup/Ubuntu/)
 
 - [x] [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
@@ -171,6 +163,14 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 
 ## Install Apps
+
+- [x] Setup thunderbird (and backup it like FF)
+	- [For calender & task](https://fruux.com/sync/)
+    - [x] [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/)
+
+- [x] Firefox Setup (and desktop icons)
+	- [x] [For Latest Nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
+    - [x] Put "MOZ_ENABLE_WAYLAND=1" in "/etc/environment"
 
 
 - [x] [qBittorrent](https://www.linuxbabe.com/ubuntu/install-qbittorrent-ubuntu-18-04-desktop-server)
@@ -367,6 +367,9 @@ OR
 
 
 ## Todo
+
+- firefox setup and icons for profiles
+- thunderbird setup
 
 - [wayfire](https://github.com/WayfireWM/wayfire)
 

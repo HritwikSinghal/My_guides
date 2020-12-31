@@ -4,17 +4,18 @@ dark-ui=true
 equalizer=[0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 5.0, 5.0, 5.0, 4.0, 2.0, 1.0, 0.0, 0.0, 0.0, 0.0]
 equalizer-custom=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 equalizer-enabled=false
+hd-artwork=true
 import-advanced-artist-tags=true
 music-uris=['file:///home/hritwik/Music']
 network-access=true
-network-access-acl=262142
+network-access-acl=1048574
 notification-flag=3
 orderby='year'
 repeat='track'
 save-state=true
 save-to-tags=true
-shown-album-lists=[-2, -3, -4, -5, -8, -9, -10, -11, -16, -101, -102, -103]
-volume-rate=0.572113037109375
+shown-album-lists=[-2, -3, -4, -5, -8, -11, -16, -103]
+volume-rate=0.5769195556640625
 window-maximized=false
 window-position=[56, 50]
 window-size=[1042, 802]
@@ -52,7 +53,7 @@ window-state=87168
 
 [boxes]
 first-run=false
-shared-folders="[<{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>]"
+shared-folders="[<{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>]"
 view='icon-view'
 window-maximized=false
 window-position=[56, 50]
@@ -62,7 +63,7 @@ window-size=[916, 533]
 accuracy=9
 angle-units='degrees'
 base=10
-button-mode='basic'
+button-mode='advanced'
 number-format='automatic'
 show-thousands=false
 show-zeroes=false
@@ -84,7 +85,7 @@ window-size=(946, 697)
 world-clocks=[{'location': <(uint32 2, <('Pittsburgh', 'KAGC', true, [(0.7043227676269912, -1.394896232832499)], [(0.70582205781433183, -1.3961915987500364)])>)>}]
 
 [control-center]
-last-panel='user-accounts'
+last-panel='wifi'
 
 [deja-dup]
 backend='google'
@@ -117,6 +118,9 @@ folder='Dell-Inspiron'
 [desktop/a11y/applications]
 screen-keyboard-enabled=false
 
+[desktop/a11y/magnifier]
+mag-factor=3.0
+
 [desktop/app-folders]
 folder-children=['Utilities', 'YaST']
 
@@ -134,7 +138,7 @@ translate=true
 [desktop/background]
 draw-background=true
 picture-options='stretched'
-picture-uri='file:///home/hritwik/snap/wonderwall/23/.local/share/ktechpit/WonderWall/download/n6zevl.jpg'
+picture-uri='file:///home/hritwik/snap/bing-wall/12/.local/share/org.keshavnrj.ubuntu/BingWall/downloaded/d1b273a4ffad45768597500d6828c9a2.jpg'
 primary-color='#02023c3c8888'
 show-desktop-icons=false
 
@@ -163,7 +167,7 @@ text-scaling-factor=0.84999999999999998
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['org-gnome-nautilus', 'update-manager', 'wine', 'firefox', 'gnome-printers-panel', 'org-gnome-lollypop', 'gnome-network-panel', 'gnome-control-center', 'org-gnome-terminal', 'gnome-power-panel', 'uget-gtk', 'snap-store-ubuntu-software', 'libreoffice-startcenter', 'freetube', 'thunderbird', 'teams', 'org-gnome-software', 'nemo', 'whatsdesk-whatsdesk', 'org-gnome-extensions-desktop', 'virt-manager', 'org-gnome-baobab', 'sublime-text', 'org-gnome-eog', 'org-gnome-dejadup', 'com-github-alainm23-planner', 'vlc', 'atom', 'org-qbittorrent-qbittorrent', 'org-kde-kdenlive', 'clion-clion', 'ca-desrt-dconf-editor']
+application-children=['org-gnome-nautilus', 'update-manager', 'wine', 'firefox', 'gnome-printers-panel', 'org-gnome-lollypop', 'gnome-network-panel', 'gnome-control-center', 'org-gnome-terminal', 'gnome-power-panel', 'uget-gtk', 'snap-store-ubuntu-software', 'libreoffice-startcenter', 'freetube', 'thunderbird', 'teams', 'org-gnome-software', 'nemo', 'whatsdesk-whatsdesk', 'org-gnome-extensions-desktop', 'virt-manager', 'org-gnome-baobab', 'sublime-text', 'org-gnome-eog', 'org-gnome-dejadup', 'com-github-alainm23-planner', 'vlc', 'atom', 'org-qbittorrent-qbittorrent', 'org-kde-kdenlive', 'clion-clion', 'ca-desrt-dconf-editor', 'fr-handbrake-ghb', 'signal-desktop', 'mainline']
 show-banners=true
 
 [desktop/notifications/application/atom]
@@ -180,6 +184,9 @@ application-id='com.github.alainm23.planner.desktop'
 
 [desktop/notifications/application/firefox]
 application-id='firefox.desktop'
+
+[desktop/notifications/application/fr-handbrake-ghb]
+application-id='fr.handbrake.ghb.desktop'
 
 [desktop/notifications/application/freetube]
 application-id='freetube.desktop'
@@ -198,6 +205,9 @@ application-id='gnome-printers-panel.desktop'
 
 [desktop/notifications/application/libreoffice-startcenter]
 application-id='libreoffice-startcenter.desktop'
+
+[desktop/notifications/application/mainline]
+application-id='mainline.desktop'
 
 [desktop/notifications/application/nemo]
 application-id='nemo.desktop'
@@ -231,6 +241,9 @@ application-id='org.kde.kdenlive.desktop'
 
 [desktop/notifications/application/org-qbittorrent-qbittorrent]
 application-id='org.qbittorrent.qBittorrent.desktop'
+
+[desktop/notifications/application/signal-desktop]
+application-id='signal-desktop.desktop'
 
 [desktop/notifications/application/snap-store-ubuntu-software]
 application-id='snap-store_ubuntu-software.desktop'
@@ -275,11 +288,12 @@ speed=-0.79562043795620441
 click-method='fingers'
 edge-scrolling-enabled=false
 send-events='enabled'
-speed=0.051094890510948954
+speed=0.12408759124087587
 two-finger-scrolling-enabled=true
 
 [desktop/privacy]
 disable-microphone=false
+remember-app-usage=false
 remove-old-temp-files=true
 report-technical-problems=true
 
@@ -315,7 +329,7 @@ background-color='rgb(0,0,0)'
 use-background-color=true
 
 [evince/default]
-window-ratio=(2.3839869281045751, 1.0265151515151516)
+window-ratio=(1.3349673202614378, 1.1035353535353536)
 
 [evolution-data-server]
 migrated=true
@@ -351,10 +365,10 @@ active-plugins=['filebrowser', 'docinfo', 'modelines', 'spell', 'time']
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/hritwik/Downloads/Programs/xdm-setup-7.2.11'
+virtual-root='file:///media/hritwik/Data'
 
 [gedit/preferences/editor]
-scheme='tango'
+scheme='oblivion'
 use-default-font=false
 wrap-last-split-mode='word'
 
@@ -379,7 +393,7 @@ auto-save-session=true
 
 [gnome-system-monitor]
 cpu-stacked-area-chart=false
-current-tab='resources'
+current-tab='processes'
 maximized=false
 show-dependencies=false
 show-whose-processes='user'
@@ -389,11 +403,17 @@ window-state=(700, 786, 56, 50)
 col-6-visible=true
 col-6-width=0
 
+[gnome-system-monitor/memmapstree]
+sort-col=0
+sort-order=0
+
 [gnome-system-monitor/proctree]
 col-1-visible=false
 col-1-width=98
 col-14-visible=true
 col-14-width=120
+col-17-visible=false
+col-17-width=102
 col-2-visible=false
 col-2-width=37
 col-22-visible=false
@@ -404,6 +424,10 @@ col-24-visible=false
 col-24-width=100
 col-25-visible=false
 col-25-width=100
+col-3-visible=false
+col-3-width=90
+col-4-visible=false
+col-4-width=90
 columns-order=[0, 14, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
 sort-col=15
 sort-order=0
@@ -483,10 +507,12 @@ show-browser=true
 locations=['file:///home/hritwik/Music']
 
 [settings-daemon/plugins/color]
+night-light-enabled=false
 night-light-last-coordinates=(26.848299280057596, 80.923100000000005)
+night-light-temperature=uint32 3700
 
 [settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 rotate-video-lock-static=@as []
 volume-step=3
 
@@ -494,11 +520,6 @@ volume-step=3
 binding='<Primary><Shift>Escape'
 command='gnome-system-monitor'
 name='task manager'
-
-[settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Super>n'
-command='flatpak run --command=com.github.alainm23.planner.quick-add com.github.alainm23.planner'
-name='flatpak run --command=com.github.alainm23.planner.quick-add com.github.alainm23.planner'
 
 [settings-daemon/plugins/power]
 power-button-action='suspend'
@@ -512,9 +533,10 @@ hinting='slight'
 app-picker-view=uint32 1
 command-history=['nemo-desktop']
 disable-user-extensions=false
-disabled-extensions=['ubuntu-appindicators@ubuntu.com']
-enabled-extensions=['notifications-alert-on-user-menu@hackedbellini.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'transparentnotification@ipaq3870', 'dash-to-panel@jderose9.github.com', 'noannoyance@sindex.com', 'cpufreq@konkor', 'animation-tweaks@Selenium-H', 'windowoverlay-icons@sustmidown.centrum.cz', 'blyr@yozoon.dev.gmail.com']
-favorite-apps=['firefox.desktop', 'thunderbird.desktop', 'nemo.desktop', 'org.gnome.Lollypop.desktop', 'org.gnome.tweaks.desktop', 'com.github.wwmm.pulseeffects.desktop', 'sublime_text.desktop', 'realvnc-vncviewer.desktop', 'freetube.desktop', 'bitwarden_bitwarden.desktop', 'clion_clion.desktop', 'uget-gtk.desktop', 'org.gnome.Boxes.desktop', 'pycharm-community_pycharm-community.desktop', 'whatsdesk_whatsdesk.desktop', 'teams.desktop']
+disabled-extensions=@as []
+enabled-extensions=['notifications-alert-on-user-menu@hackedbellini.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'transparentnotification@ipaq3870', 'dash-to-panel@jderose9.github.com', 'noannoyance@sindex.com', 'cpufreq@konkor', 'windowoverlay-icons@sustmidown.centrum.cz', 'blyr@yozoon.dev.gmail.com', 'ubuntu-appindicators@ubuntu.com', 'animation-tweaks@Selenium-H']
+favorite-apps=['firefox.desktop', 'thunderbird.desktop', 'nemo.desktop', 'org.gnome.Lollypop.desktop', 'org.gnome.tweaks.desktop', 'io.freetubeapp.FreeTube.desktop', 'com.github.wwmm.pulseeffects.desktop', 'sublime_text.desktop', 'clion_clion.desktop', 'uget-gtk.desktop', 'pycharm-community_pycharm-community.desktop', 'whatsdesk_whatsdesk.desktop', 'teams.desktop', 'atom.desktop', 'signal-desktop.desktop', 'telegram-desktop_telegram-desktop.desktop', 'virt-manager.desktop', 'org.gnome.Boxes.desktop']
+had-bluetooth-devices-setup=true
 remember-mount-password=true
 
 [shell/extensions/animation-tweaks]
@@ -532,7 +554,7 @@ minimizing-effect=true
 modaldialog-close=['|', 'T', 'Slide Up', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '0', '1.0', '1.0', '0.0', '-0.2', '0.0', '0.0', '0.0', '0.0', 'easeInCubic']
 modaldialog-movestart=['|', 'T', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '220', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
 modaldialog-open=['|', 'T', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0.0', '-0.2', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.2', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-moving-effect=true
+moving-effect=false
 name-list=@as []
 normal-close=['|', 'T', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '0', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
 normal-focus=['|', 'F', 'Inflate', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.025', '255', '1.02', '1.02', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.5', '0.5', '0.0', '0.0', '0.0', '0.025', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeInCubic']
@@ -582,7 +604,7 @@ label-show=false
 load-show=false
 profile-id='performance'
 save-settings=true
-user-profile='{"name":"Saved settings","minf":56,"maxf":100,"turbo":true,"cpu":8,"acpi":false,"guid":"user","core":[{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000}]}'
+user-profile='{"name":"Saved settings","minf":56,"maxf":100,"turbo":false,"cpu":8,"acpi":false,"guid":"user","core":[{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000}]}'
 window-height=720
 window-maximized=false
 window-width=626
@@ -654,7 +676,7 @@ stockgs-force-hotcorner=false
 stockgs-keep-dash=false
 stockgs-keep-top-panel=false
 stockgs-panelbtn-click-only=true
-taskbar-locked=false
+taskbar-locked=true
 trans-panel-opacity=0.69000000000000006
 trans-use-custom-bg=true
 trans-use-custom-gradient=false
@@ -728,8 +750,8 @@ locations=[<(uint32 2, <('Agra', 'VIAG', true, [(0.47398779161036003, 1.36067322
 locations=[<(uint32 2, <('Pittsburgh', 'KAGC', true, [(0.7043227676269912, -1.394896232832499)], [(0.70582205781433183, -1.3961915987500364)])>)>]
 
 [software]
-check-timestamp=int64 1605167935
-online-updates-timestamp=int64 1605167981
+check-timestamp=int64 1609436375
+online-updates-timestamp=int64 1609438293
 
 [system/location]
 enabled=false

@@ -8,14 +8,6 @@ Feel free to copy anything from here and use it.
 
 - [x] [Install Timeshift & make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
 
-- [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
-
-        DOWNLOAD_URL=$(curl -s https://api.github.com/repos/felixb/swamp/releases/latest \
-        | grep browser_download_url \
-        | grep swamp_amd64 \
-        | cut -d '"' -f 4)
-        curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
-Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
 
 * This is for displaying fps counter on wine games.
     * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
@@ -33,6 +25,11 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
     * OR just check in wifi settings
 
 
+- Setup guide
+    - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
+    - [github, for great selection of apps and other things. This is great](https://github.com/themagicalmammal/howtopopbuntu)
+
+
 ## Appearance & Customization
 
 
@@ -48,9 +45,9 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
     - [x] [Orchis-theme](https://github.com/vinceliuice/Orchis-theme) (For Apps)
         - Also take close buttons from here
+        - [Install its snap version for snap Apps](https://snapcraft.io/orchis-themes)
 
     - [x] [materia-theme](https://github.com/nana-4/materia-theme) (For Shell)
-        - [Install its snap version for snap Apps](https://snapcraft.io/orchis-themes)
 
 	OR
 
@@ -78,6 +75,7 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
     - [x] for Pop! like look
         - sudo apt install pop-fonts
+
                 Interface: Fira Sans Book 11
                 Documents: Roboto Slab Regular 11
                 Monospace: Fira Mono Regular 13
@@ -111,6 +109,9 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 - Switch to wayland
     - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
 
+- [set su passwd](https://askubuntu.com/questions/155278/how-do-i-set-the-root-password-so-i-can-use-su-instead-of-sudo)
+    - sudo passwd
+
 - [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
 - [x] [Enable flatpack support](https://flatpak.org/setup/Ubuntu/)
@@ -123,6 +124,10 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 - [x] Change keyboard layout to DVORAK
 
 - [x] Touchpad Gestures
+
+    - [Touchegg](https://github.com/JoseExposito/touchegg)
+
+    OR
 
 	- [x] [Fusuma](https://github.com/iberianpig/fusuma)
 	   - [x] with its addons & config file
@@ -152,6 +157,11 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 - [x] [NTFS in Linux](https://www.cyberciti.biz/faq/debian-ubuntu-linux-auto-mounting-windows-ntfs-file-system/)
     - sudo apt install ntfs-3g
 
+- [x] [Remove python2](https://stackoverflow.com/questions/44602191/how-to-completely-uninstall-python-2-7-13-on-ubuntu-16-04/60590067#60590067)
+
+- [x] [increase Swap file by 8192 MB)](https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal)
+    - https://linuxhint.com/change_swap_size_ubuntu/
+
 - [x] Change compression level
 
         gsettings set org.gnome.FileRoller.General compression-level "very-fast"
@@ -161,6 +171,8 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
         gsettings set org.gnome.FileRoller.General compression-level "normal"
 
         gsettings set org.gnome.FileRoller.General compression-level "maximum"
+
+
 
 
 ## Install Apps
@@ -201,12 +213,18 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 - [x] [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
 	- npm i -g green-tunnel
 
-- [x] [Flameshot](https://itsfoss.com/flameshot/) (SS tool)
-    - install latest from [here](https://github.com/flameshot-org/flameshot/releases)
+
+- [x] [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
 
 OR
 
-- [x] [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
+- [Ksnip](https://www.linuxuprising.com/2020/12/cross-platform-screenshot-tool-ksnip.html)
+
+OR
+
+- [x] [Flameshot](https://itsfoss.com/flameshot/) (SS tool)
+    - install latest from [here](https://github.com/flameshot-org/flameshot/releases)
+
 
 - [x] [Conky](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
     - [x] for backup: just copy .conky/ to home
@@ -226,7 +244,7 @@ OR
     - flatpak install flathub org.telegram.desktop -y
     - sudo snap install telegram-desktop
 - [x] [Whatsapp desktop](https://itsfoss.com/whatsapp-linux-desktop/)
-    - flatpak install flathub org.telegram.desktop -y
+    - flatpak install io.bit3.WhatsAppQT -y
     - sudo snap install whatsdesk
 
 - [x] [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
@@ -266,6 +284,19 @@ OR
 - [x] [VS codium](https://vscodium.com/)
     - flatpak install flathub com.vscodium.codium -y
 
+- [x] Freetube
+    - flatpak install flathub io.freetubeapp.FreeTube
+
+- [x] [Signal Desktop](https://signal.org/en/download)
+
+- [Bleachbit](https://www.bleachbit.org/download)
+
+- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
+
+- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
+
+- [copyq](https://github.com/hluk/CopyQ/releases)
+
 - [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
     - [Install latest directly from github](https://github.com/linuxmint/nemo/releases/)
@@ -290,16 +321,6 @@ OR
 
     - [clear zoom cache](https://forums.linuxmint.com/viewtopic.php?t=308395)
 
-
-- [Bleachbit](https://www.bleachbit.org/download)
-
-- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
-
-- Freetube
-
-- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
-
-- [copyq](https://github.com/hluk/CopyQ/releases)
 
 
 ### Extra Apps:
@@ -381,13 +402,17 @@ OR
 
 ## Todo
 
+- configure git with creds or session keys
+- [Shell theme](https://starship.rs/guide/#%F0%9F%9A%80-installation)
+
 - firefox setup and icons for profiles
-- thunderbird setup
 - check "Start Service at Login" in PulseEffects Settings
+
 - Uget
     - with its integrator for firefox,
     - fix the issues
 
+- [custom Kernel, Xanmod](https://xanmod.org/)
 
 - [wayfire](https://github.com/WayfireWM/wayfire)
 
@@ -417,9 +442,11 @@ OR
 
 
 - Brother Printer
-    * [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
-    * [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
+    - [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
+    - [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
 
+- Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
+    - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
 
 ### Startup
 
@@ -431,7 +458,9 @@ OR
         bash -c 'sleep 3; nemo-desktop'
         bash -c 'sleep 3; /usr/local/bin/fusuma -d'
         ```
-
+- Increase Bash History
+    - https://eshlox.net/2017/08/01/bash-increase-command-history-size
+    - https://stackoverflow.com/questions/9457233/unlimited-bash-history
 
 ### Gaming
 
@@ -440,6 +469,7 @@ OR
 - [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
 
 - [Latest AMDGPU](https://linuxconfig.org/amd-radeon-ubuntu-20-04-driver-installation)
+- [mesa](https://itsfoss.com/install-mesa-ubuntu/)
 - [install latest mesa vulkan](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)
         sudo dpkg --add-architecture i386
         sudo apt install libgl1-mesa-dri:i386
@@ -452,10 +482,15 @@ OR
 
 
 ### Virtualization
+- Path to gnome-boxes images for flatpak version:
+    "~/.var/app/org.gnome.Boxes/data/gnome-boxes/images"
+
+    - https://askubuntu.com/questions/1123697/where-are-image-files-for-gnome-boxes-stored
+    - find ~ -size +1G -ls
 
 - [Install Win10 VM](https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/)
 
-- gnome-boxes (installl via flathub)
+- gnome-boxes (DONT installl via flathub)
 	- [Guide](https://ostechnix.com/manage-remote-and-virtual-machines-with-gnome-boxes/)
     - [Cant copy big files to VM fix](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
 
@@ -469,10 +504,14 @@ OR
 
 ## Extra Articles
 
+- [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
 
-- Setup guide
-    - [Reddit](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
-    - [github](https://github.com/themagicalmammal/howtopopbuntu)
+        DOWNLOAD_URL=$(curl -s https://api.github.com/repos/felixb/swamp/releases/latest \
+        | grep browser_download_url \
+        | grep swamp_amd64 \
+        | cut -d '"' -f 4)
+        curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
+Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
 
 - [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
 

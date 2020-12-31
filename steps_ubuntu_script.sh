@@ -38,7 +38,12 @@ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
 # atom
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-
+# LibreOffice
+sudo add-apt-repository ppa:libreoffice/ppa -y
+# Kdenlive
+sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
+# bashtop
+sudo add-apt-repository ppa:bashtop-monitor/bashtop -y
 
 
 
@@ -70,7 +75,11 @@ sudo apt install kate -y
 sudo apt install pavucontrol -y
 sudo apt install nautilus-admin -y && nautilus -q
 sudo apt install htop -y
-sudo snap install bashtop
+sudo apt install bashtop -y
+# sudo snap install bashtop
+sudo apt install git -y
+sudo apt install python3-pip python3-dev python3-distutils python3-virenv -y
+pip3 install virtualenv
 
 
 # Wine
@@ -108,11 +117,13 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 npm i -g green-tunnel
 # telegram
-# sudo snap install telegram-desktop
-flatpak install flathub org.telegram.desktop -y
+sudo snap install telegram-desktop
+# flatpak install flathub org.telegram.desktop -y
 # whatsdesk
-# sudo snap install whatsdesk
-flatpak install flathub com.gigitux.gtkwhats -y
+sudo snap install whatsdesk
+# flatpak install io.bit3.WhatsAppQT -y
+# FreeTube
+flatpak install flathub io.freetubeapp.FreeTube -y
 # Wireshark
 sudo apt install wireshark
 # VLC
@@ -135,31 +146,31 @@ sudo apt install flameshot -y
 # fusuma
 sudo gpasswd -a hritwik input
 newgrp input
-sudo apt install libinput-tools
-sudo apt install ruby
+sudo apt install libinput-tools -y
+sudo apt install ruby -y
 sudo gem install fusuma
-sudo apt install xdotool
+sudo apt install xdotool -y
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 # ---
-sudo apt install libevdev-dev ruby-dev build-essential
+sudo apt install libevdev-dev ruby-dev build-essential -y
 sudo gem install fusuma-plugin-sendkey
 sudo gem install fusuma-plugin-keypress
-sudo apt install wmctrl
+sudo apt install wmctrl -y
 sudo gem install fusuma-plugin-wmctrl
 sudo gem install fusuma-plugin-tap
 # ---
 mkdir -p /home/hritwik/.config/fusuma
 cp ./configs/config.yml /home/hritwik/.config/fusuma/
 # fonts-manager
-sudo apt install font-manager
+sudo apt install font-manager -y
 # Pycharm
-# sudo snap install pycharm-community --classic
-flatpak install flathub com.jetbrains.PyCharm-Community -y
+sudo snap install pycharm-community --classic
+# flatpak install flathub com.jetbrains.PyCharm-Community -y
 # Clion
-# sudo snap install clion --classic
-flatpak install flathub com.jetbrains.CLion -y
+sudo snap install clion --classic
+# flatpak install flathub com.jetbrains.CLion -y
 # Atom
-sudo apt install atom
+sudo apt install atom -y
 # obs-studio
 sudo apt install ffmpeg -y
 sudo apt install obs-studio -y
@@ -167,12 +178,32 @@ sudo apt install obs-studio -y
 flatpak install flathub com.vscodium.codium  -y
 # Sublime
 flatpak install flathub com.sublimetext.three -y
+# Signal
+wget -O- https://updates.signal.org/desktop/apt/keys.asc |\
+  sudo apt-key add -
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" |\
+    sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install signal-desktop -y
+# python2 remove
+sudo apt purge python2 -y
+sudo ln -s /usr/bin/python3 /usr/bin/python
+sudo apt install -y python3-pip
+sudo ln -s /usr/bin/pip3 /usr/bin/pip
+# signal
+wget -O- https://updates.signal.org/desktop/apt/keys.asc |\
+  sudo apt-key add -
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" |\
+    sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install signal-desktop
+
+
+
 # Nemo
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
     # install
-
+https://github.com/linuxmint/nemo/releases/latest
 #
 
 
@@ -233,7 +264,15 @@ mkdir -p /home/hritwik/.config/sublime-text-3/Packages/User
 unzip ./configs/sublime_bak.zip -d /home/hritwik/.config/sublime-text-3/Packages/
 # VLC
 unzip ./configs/vlc_bak.zip -d /home/hritwik/.config/
+# jetbrains
+unzip ./configs/clion_bak.zip -d /home/hritwik/
+unzip ./configs/pycharm_bak.zip -d /home/hritwik/
 
+# increase swamp size
+sudo swapoff /swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc
+sudo mkswap /swapfile
+sudo swapon /swapfile
 
 
 

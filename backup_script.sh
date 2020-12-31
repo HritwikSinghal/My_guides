@@ -2,7 +2,7 @@
 set -e
 
 # --------------------------------------------------------#
-# !! DO NOT RUN THIS SCRIP WIT SUDO !!
+# !! DO NOT RUN THIS SCRIP WITH SUDO !!
 # --------------------------------------------------------#
 
 
@@ -13,12 +13,13 @@ set -e
 
 
 # Backup configs:
-# Clion (projects also)
-# pycharm (projects also)
 
 # timeshift settings
-# gnome boxes
+# gnome boxes & virt-manager
+    # https://www.debugpoint.com/2020/06/move-virtual-machine-image-another-host/
+    # https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610 (for directories)
 # qBittorrent torrents for seed
+# clion and PyCharm settings
 
 
 echo "------------------------------------------------------"
@@ -46,13 +47,23 @@ zip -r /home/hritwik/Backups/sublime_bak.zip ./User
 # VLC
 cd /home/hritwik/.config/
 zip -r /home/hritwik/Backups/vlc_bak.zip ./vlc
+# jetbrains
+cd /home/hritwik/
+zip -r /home/hritwik/Backups/clion_bak.zip ./CLionProjects
+zip -r /home/hritwik/Backups/pycharm_bak.zip ./PycharmProjects
+# vnstat
+cd /home/hritwik/
+cp ./.vnstatrc /home/hritwik/Backups/
 
 
+echo "Done"
+echo ""
 echo "------------------------------------------------------"
 echo "Backuping up Extensions"
 cd /home/hritwik/.local/share/gnome-shell
 zip -r /home/hritwik/Backups/extensions_bak.zip ./extensions
-
+echo "Done"
+echo ""
 
 echo "------------------------------------------------------"
 echo "Backuping up gsettings"
@@ -61,13 +72,14 @@ dconf dump /org/gnome/ > /home/hritwik/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > /home/hritwik/Backups/gsettings/org.nemo
 dconf dump /com/github/wwmm/pulseeffects/ > /home/hritwik/Backups/gsettings/com.github.wwmm.pulseeffects
 
+echo "Done"
+echo ""
 echo "------------------------------------------------------"
 echo "Backuping up startup apps"
 cp -r /home/hritwik/.config/autostart/ /home/hritwik/Backups/autostart
 
 
-
-
-
+echo ""
+echo "Done"
 echo "Finished Successfully..."
-echo "Dont forget to Copy '~/Backups/' to your directory "
+echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory "

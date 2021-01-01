@@ -20,6 +20,7 @@ set -e
     # https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610 (for directories)
 # qBittorrent torrents for seed
 # clion and PyCharm settings
+# downloads and other folders
 
 
 echo "------------------------------------------------------"

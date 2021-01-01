@@ -125,7 +125,7 @@ sudo snap install whatsdesk
 # FreeTube
 flatpak install flathub io.freetubeapp.FreeTube -y
 # Wireshark
-sudo apt install wireshark
+sudo apt install wireshark -y
 # VLC
 sudo apt install vlc -y
 # vnstat
@@ -189,13 +189,6 @@ sudo apt purge python2 -y
 sudo ln -s /usr/bin/python3 /usr/bin/python
 sudo apt install -y python3-pip
 sudo ln -s /usr/bin/pip3 /usr/bin/pip
-# signal
-wget -O- https://updates.signal.org/desktop/apt/keys.asc |\
-  sudo apt-key add -
-echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" |\
-    sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-sudo apt update && sudo apt install signal-desktop
-
 
 
 # Nemo
@@ -290,7 +283,7 @@ sudo snap install orchis-themes
 gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
 
 # icon-theme & Curser-theme: Pop
-sudo apt install pop-icon-theme
+sudo apt install pop-icon-theme -y
 gsettings set org.gnome.desktop.interface icon-theme 'Pop'
 gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
 

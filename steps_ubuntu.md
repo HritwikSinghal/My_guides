@@ -402,7 +402,14 @@ OR
 
 ## Todo
 
+- https://wayneoutthere.com/2018/12/29/how-to-fix-wrong-monitor-display-ubuntu/
+- https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release
+- [install eddy for soft install](https://linoxide.com/linux-how-to/eddy-install-debian-packages-elementary/)
+
+- install youtube-dl latest version 
+
 - configure git with creds or session keys
+
 - [Shell theme](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 
 - firefox setup and icons for profiles

@@ -1,58 +1,73 @@
 #!/bin/sh
 set -e
 
-echo "------------------------------------------------------"
+printf "\n---------------------------------------------------------------------------\n"
 # add repositories
-echo "Adding Repositories...."
-# Ubuntu
+printf "\n\n\n-------------------------Adding Repositories-------------------------\n\n\n"
+printf "\n-------------------------AddRepo---Ubuntu defaults-------------------------\n"
 sudo add-apt-repository universe -y
 sudo add-apt-repository multiverse -y
 sudo add-apt-repository restricted -y
 sudo add-apt-repository ppa:obsproject/obs-studio -y
 
-# Timeshift
+printf "\n-------------------------AddRepo---Timeshift-------------------------\n"
 sudo apt-add-repository ppa:teejee2008/ppa -y
-# Kvantum
+
+printf "\n-------------------------AddRepo---Kvantum-------------------------\n"
 sudo add-apt-repository ppa:papirus/papirus -y
-# Mozilla
+
+printf "\n-------------------------AddRepo---Mozilla-------------------------\n"
 sudo add-apt-repository ppa:ubuntu-mozilla-security/ppa -y
 sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa -y
-# Flatpack
-sudo add-apt-repository ppa:alexlarsson/flatpak -y
-# lollypop
+
+printf "\n-------------------------AddRepo---lollypop-------------------------\n"
 sudo add-apt-repository ppa:gnumdk/lollypop -y
-# conky
+
+printf "\n-------------------------AddRepo---PulseEffects-------------------------\n"
+sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
+
+printf "\n-------------------------AddRepo---qBittorrent-------------------------\n"
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
+
+printf "\n-------------------------AddRepo---atom-------------------------\n"
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+
+printf "\n-------------------------AddRepo---LibreOffice-------------------------\n"
+sudo add-apt-repository ppa:libreoffice/ppa -y
+
+printf "\n-------------------------AddRepo---Kdenlive-------------------------\n"
+sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
+
+printf "\n-------------------------AddRepo---bashtop-------------------------\n"
+sudo add-apt-repository ppa:bashtop-monitor/bashtop -y
+
+
+# Uget (this is not working)
+# sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
+
+
+# below ones will cause problem when not ubuntu 20.04
+printf "\n-------------------------AddRepo---Flatpack-------------------------\n"
+sudo add-apt-repository ppa:alexlarsson/flatpak -y
+
+printf "\n-------------------------AddRepo---conky-------------------------\n"
 sudo add-apt-repository ppa:linuxmint-tr/araclar -y
 sudo apt update
 sudo apt install conky conky-all conky-manager -y
 sudo add-apt-repository --remove ppa:linuxmint-tr/araclar -y
-# Wireshark
+
+printf "\n-------------------------AddRepo---Wireshark-------------------------\n"
 sudo add-apt-repository ppa:wireshark-dev/stable -y
-# PulseEffects
-sudo add-apt-repository ppa:mikhailnov/pulseeffects -y
-# Uget (this is not working)
-# sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
-
-# qBittorrent
-sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y
-# atom
-wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-# LibreOffice
-sudo add-apt-repository ppa:libreoffice/ppa -y
-# Kdenlive
-sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
-# bashtop
-sudo add-apt-repository ppa:bashtop-monitor/bashtop -y
 
 
-
-
-echo "------------------------------------------------------"
-echo "Insatlling Apps...."
+sudo chown hritwik:hritwik ~/ -R
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Insatlling Apps-------------------------\n\n\n"
+printf "\n--------------------------apt update && apt upgrade-------------------------\n"
 sudo apt update && sudo apt upgrade -y
 
-# Ubuntu-extras
+printf "\n-------------------------Install--Ubuntu-extras-------------------------\n"
 sudo apt install libavcodec-extra58 -y
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install rar unrar p7zip-full p7zip-rar -y
@@ -81,69 +96,95 @@ sudo apt install git -y
 sudo apt install python3-pip python3-dev python3-distutils python3-virenv -y
 pip3 install virtualenv
 
-
-# Wine
+printf "\n-------------------------Install--Wine-------------------------\n"
 sudo apt install wine winetricks -y
-# java
+
+printf "\n-------------------------Install--java-------------------------\n"
 sudo apt-get install openjdk-11-jdk -y
-# Timeshift
+
+printf "\n-------------------------Install--Timeshift-------------------------\n"
 sudo apt install timeshift -y
-# nmcli
+
+printf "\n-------------------------Install--nmcli-------------------------\n"
 sudo apt install network-manager -y
 sudo systemctl start NetworkManager.service
 sudo systemctl start NetworkManager.service
-# GNOME-tweak-tool and chrome-gnome-shell
+
+printf "\n-------------------------Install--GNOME-tweak-tool and chrome-gnome-shell-------------------------\n"
 sudo apt install gnome-tweaks -y
 sudo apt install chrome-gnome-shell -y
-# Kvantum
+
+printf "\n-------------------------Install--Kvantum-------------------------\n"
 sudo apt install qt5-style-kvantum qt5-style-kvantum-themes -y
-# Mozilla
+
+printf "\n-------------------------Install--Mozilla-------------------------\n"
 sudo apt install firefox firefox-trunk thunderbird -y
-# Flatpack
+
+printf "\n-------------------------Install--Flatpack-------------------------\n"
 sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-# gdebi
+
+printf "\n-------------------------Install--gdebi-------------------------\n"
 sudo apt install gdebi-core -y
-#Nemo
+
+printf "\n-------------------------Install--Nemo-------------------------\n"
 sudo apt install nemo -y
-# BingWall
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+gsettings set org.gnome.desktop.background show-desktop-icons false
+gsettings set org.nemo.desktop show-desktop-icons true
+# Latest: https://github.com/linuxmint/nemo/releases/latest
+
+printf "\n-------------------------Install--BingWall-------------------------\n"
 sudo snap install bing-wall
 sudo snap install wonderwall
-# Lollypop
+
+printf "\n-------------------------Install--Lollypop-------------------------\n"
 sudo apt install lollypop -y
-# GreenTunnel
+
+printf "\n-------------------------Install--GreenTunnel-------------------------\n"
 sudo apt install nodejs -y
 sudo apt install npm -y
 npm i -g green-tunnel
-# telegram
+
+printf "\n-------------------------Install--telegram-------------------------\n"
 sudo snap install telegram-desktop
 # flatpak install flathub org.telegram.desktop -y
-# whatsdesk
+
+printf "\n-------------------------Install--WhatsApp-------------------------\n"
 sudo snap install whatsdesk
 # flatpak install io.bit3.WhatsAppQT -y
-# FreeTube
+
+printf "\n-------------------------Install--FreeTube-------------------------\n"
 flatpak install flathub io.freetubeapp.FreeTube -y
-# Wireshark
+
+printf "\n-------------------------Install--Wireshark-------------------------\n"
 sudo apt install wireshark -y
-# VLC
+
+printf "\n-------------------------Install--VLC-------------------------\n"
 sudo apt install vlc -y
-# vnstat
+
+printf "\n-------------------------Install--vnstat-------------------------\n"
 sudo apt install vnstat -y
-cp ./configs/.vnstatrc $HOME/
+cp ./configs/.vnstatrc /home/hritwik/
 sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
-# PulseEffects
+
+printf "\n-------------------------Install--PulseEffects-------------------------\n"
 sudo apt install pulseaudio pulseeffects --install-recommends -y
 sudo cp ./configs/PulseEffects_MyPreset.json /home/hritwik/.config/PulseEffects/output
-# uget
+
+printf "\n-------------------------Install--uget-------------------------\n"
 sudo apt install uget -y
 sudo apt install uget aria2 -y
-#qBittorrent
+
+printf "\n-------------------------Install--qBittorrent-------------------------\n"
 sudo apt install qbittorrent -y
-# Flameshot
+
+printf "\n-------------------------Install--Flameshot-------------------------\n"
 sudo apt install flameshot -y
-# fusuma
+
+printf "\n-------------------------Install--fusuma-------------------------\n"
 sudo gpasswd -a hritwik input
 newgrp input
 sudo apt install libinput-tools -y
@@ -152,59 +193,61 @@ sudo gem install fusuma
 sudo apt install xdotool -y
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 # ---
+printf "\n-------------------------Install--fusuma-gems-------------------------\n"
 sudo apt install libevdev-dev ruby-dev build-essential -y
 sudo gem install fusuma-plugin-sendkey
 sudo gem install fusuma-plugin-keypress
 sudo apt install wmctrl -y
 sudo gem install fusuma-plugin-wmctrl
 sudo gem install fusuma-plugin-tap
+printf "\n-------------------------Install--fusuma-config-------------------------\n"
 # ---
+rm -rf /home/hritwik/.config/fusuma
 mkdir -p /home/hritwik/.config/fusuma
 cp ./configs/config.yml /home/hritwik/.config/fusuma/
-# fonts-manager
+
+printf "\n-------------------------Install--fonts-manager-------------------------\n"
 sudo apt install font-manager -y
-# Pycharm
+
+printf "\n-------------------------Install--jetbrains-------------------------\n"
 sudo snap install pycharm-community --classic
 # flatpak install flathub com.jetbrains.PyCharm-Community -y
 # Clion
 sudo snap install clion --classic
 # flatpak install flathub com.jetbrains.CLion -y
-# Atom
+
+printf "\n-------------------------Install--Atom-------------------------\n"
 sudo apt install atom -y
-# obs-studio
+
+printf "\n-------------------------Install--obs-studio-------------------------\n"
 sudo apt install ffmpeg -y
 sudo apt install obs-studio -y
-# vscodium
+
+printf "\n-------------------------Install--vscodium-------------------------\n"
 flatpak install flathub com.vscodium.codium  -y
-# Sublime
+
+printf "\n-------------------------Install--Sublime-------------------------\n"
 flatpak install flathub com.sublimetext.three -y
-# Signal
+
+printf "\n-------------------------Install--Signal-------------------------\n"
 wget -O- https://updates.signal.org/desktop/apt/keys.asc |\
   sudo apt-key add -
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" |\
     sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update && sudo apt install signal-desktop -y
-# python2 remove
+
+printf "\n-------------------------Install--Python2-purge-------------------------\n"
 sudo apt purge python2 -y
 sudo ln -s /usr/bin/python3 /usr/bin/python
 sudo apt install -y python3-pip
 sudo ln -s /usr/bin/pip3 /usr/bin/pip
 
 
-# Nemo
-xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
-gsettings set org.gnome.desktop.background show-desktop-icons false
-gsettings set org.nemo.desktop show-desktop-icons true
-    # install
-https://github.com/linuxmint/nemo/releases/latest
-#
+sudo chown hritwik:hritwik ~/ -R
 
-
-
-echo "------------------------------------------------------"
-echo "Applying Tweaks...."
-
-# Some common Settings
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
+printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
@@ -212,7 +255,7 @@ gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 (echo "" ; echo "DRI_PRIME=1") >> /etc/environment
 (echo "" ; echo "MOZ_ENABLE_WAYLAND=1") >> /etc/environment
 
-# GTK Dark Mode
+printf "\n--------------------------Tweaks---GTK Dark Mode-------------------------\n"
 
 rm -rf /home/hritwik/.config/gtk-3.0/settings.ini
 touch /home/hritwik/.config/gtk-3.0/settings.ini
@@ -226,95 +269,107 @@ echo "" >> /home/hritwik/.config/gtk-4.0/settings.ini
 echo "[Settings]" >> /home/hritwik/.config/gtk-4.0/settings.ini
 echo "gtk-application-prefer-dark-theme=1"  >> /home/hritwik/.config/gtk-4.0/settings.ini
 
-# wayland dash bug Fix
+printf "\n--------------------------Tweaks---wayland dash bug Fix-------------------------\n"
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
-# Increment volume by 3
+
+printf "\n--------------------------Tweaks---Increment volume by 3-------------------------\n"
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
-# minimize on click
+
+printf "\n--------------------------Tweaks---minimize on click-------------------------\n"
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-# show battery percentage
+
+printf "\n--------------------------Tweaks---show battery percentage-------------------------\n"
 gsettings set org.gnome.desktop.interface show-battery-percentage true
-# Keyboard Layout
+
+printf "\n--------------------------Tweaks---Keyboard Layout-------------------------\n"
 sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
 sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
 sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
 sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
-# change compression level
+
+printf "\n--------------------------Tweaks---change compression level-------------------------\n"
 gsettings set org.gnome.FileRoller.General compression-level "very-fast"
-# conky
+
+printf "\n--------------------------Tweaks---conky-------------------------\n"
 rm -rf /home/hritwik/.conky/
 cp -r ./configs/.conky/ /home/hritwik/
 
-# dconf-settings
+printf "\n--------------------------Tweaks---dconf-settings-------------------------\n"
 dconf load /org/gnome/ < ./configs/gsettings/org.gnome
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/pulseeffects/ < ./configs/gsettings/com.github.wwmm.pulseeffects
 
-# startup Apps
+printf "\n--------------------------Tweaks---startup Apps-------------------------\n"
 rm -rf /home/hritwik/.config/autostart
 cp -r ./configs/autostart/ /home/hritwik/.config/
-# firefox
+
+printf "\n--------------------------Tweaks---firefox-------------------------\n"
 rm -rf /home/hritwik/.mozilla
 unzip ./configs/firefox_bak.zip -d /home/hritwik/
-# thunderbird
+
+printf "\n--------------------------Tweaks---thunderbird-------------------------\n"
 rm -rf /home/hritwik/.thunderbird
 unzip ./configs/thunderbird_bak.zip -d /home/hritwik/
-# Atom
+
+printf "\n--------------------------Tweaks---Atom-------------------------\n"
 rm -rf /home/hritwik/.atom
 unzip ./configs/atom_bak.zip -d /home/hritwik/
 rm -rf /home/hritwik/.atom/recovery/
-# Sublime
+
+printf "\n--------------------------Tweaks---Sublime-------------------------\n"
 rm -rf /home/hritwik/.config/sublime-text-3/
 mkdir -p /home/hritwik/.config/sublime-text-3/Packages/User
 unzip ./configs/sublime_bak.zip -d /home/hritwik/.config/sublime-text-3/Packages/
-# VLC
+
+printf "\n--------------------------Tweaks---VLC-------------------------\n"
 rm -rf /home/hritwik/.config/vlc
 unzip ./configs/vlc_bak.zip -d /home/hritwik/.config/
 
-# jetbrains
+printf "\n--------------------------Tweaks---jetbrains-------------------------\n"
 rm -rf /home/hritwik/PycharmProjects
 rm -rf /home/hritwik/CLionProjects
 unzip ./configs/clion_bak.zip -d /home/hritwik/
 unzip ./configs/pycharm_bak.zip -d /home/hritwik/
 
-# increase swamp size
+printf "\n--------------------------Tweaks---increase swamp size-------------------------\n"
 sudo swapoff /swapfile
 sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc
 sudo mkswap /swapfile
 sudo swapon /swapfile
 
 
+sudo chown hritwik:hritwik ~/ -R
 
-echo "------------------------------------------------------"
-echo "Theming & Installing Extensions...."
 
-# Grub-theme
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Theming & Installing Extensions-------------------------\n\n\n"
+
+printf "\n--------------------------Theme_Ext---Grub-theme-------------------------\n"
 rm -rf /home/hritwik/my_downloads/grub_themes
 git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git /home/hritwik/my_downloads/grub_themes
 sudo /home/hritwik/my_downloads/grub_themes/install.sh --tela
 
-# App theme: orchis-dark
+printf "\n--------------------------Theme_Ext---App theme: orchis-dark-------------------------\n"
 rm -rf /home/hritwik/my_downloads/orchis-dark
 git clone --depth 1 https://github.com/vinceliuice/Orchis-theme.git /home/hritwik/my_downloads/orchis-dark
 sudo /home/hritwik/my_downloads/orchis-dark/install.sh
 sudo snap install orchis-themes
 gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
 
-# icon-theme & Curser-theme: Pop
+printf "\n--------------------------Theme_Ext---icon & Curser theme: Pop-------------------------\n"
 sudo apt install pop-icon-theme -y
 gsettings set org.gnome.desktop.interface icon-theme 'Pop'
 gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
 
-# shell-theme & Extensions
+printf "\n--------------------------Theme_Ext---shell-theme & Extensions-------------------------\n"
 unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
-# todo: may be missing something
 
 rm -rf /home/hritwik/my_downloads/materia-theme
 git clone --depth 1 https://github.com/nana-4/materia-theme.git /home/hritwik/my_downloads/materia-theme
 sudo /home/hritwik/my_downloads/materia-theme/install.sh
 gsettings set org.gnome.shell.extensions.user-theme name 'Materia-dark'
 
-# fonts
+printf "\n--------------------------Theme_Ext---fonts-------------------------\n"
 rm -rf /home/hritwik/my_downloads/pop_fonts
 git clone --depth 1 https://github.com/pop-os/fonts.git /home/hritwik/my_downloads/pop_fonts
 cd /home/hritwik/my_downloads/pop_fonts/
@@ -324,9 +379,8 @@ gsettings set org.gnome.desktop.interface font-name 'Fira Sans Semi-Light 11'
 gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
-gsettings set org.gnome.desktop.interface text-scaling-factor 0.84999999999999998
+gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
 
 sudo chown hritwik:hritwik ~/ -R
-
-echo "------------------------------------------------------"
-echo "Finished Successfully!"
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Finished Successfully-------------------------\n\n\n"

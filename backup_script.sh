@@ -21,6 +21,7 @@ set -e
 # qBittorrent torrents for seed
 # clion and PyCharm settings
 # downloads and other folders
+# bash history and bashrc
 
 
 echo "------------------------------------------------------"

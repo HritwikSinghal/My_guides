@@ -303,7 +303,8 @@ OR
         - use "sudo dpkg -i *.deb" and fix all for dependencies by installing the thing which is missing.
         You may have to run 'sudo apt fix broken install' (It will tell you)
             - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
-
+            - run 'sudo apt --fix-broken install'
+            
     - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
 
     - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
@@ -406,7 +407,7 @@ OR
 - https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release
 - [install eddy for soft install](https://linoxide.com/linux-how-to/eddy-install-debian-packages-elementary/)
 
-- install youtube-dl latest version 
+- install youtube-dl latest version
 
 - configure git with creds or session keys
 

@@ -93,7 +93,7 @@ sudo apt install htop -y
 sudo apt install bashtop -y
 # sudo snap install bashtop
 sudo apt install git -y
-sudo apt install python3-pip python3-dev python3-distutils python3-virenv -y
+sudo apt install python3-pip python3-dev python3-distutils python3-venv -y
 pip3 install virtualenv
 
 printf "\n-------------------------Install--Wine-------------------------\n"
@@ -172,6 +172,7 @@ sudo systemctl start vnstat.service
 
 printf "\n-------------------------Install--PulseEffects-------------------------\n"
 sudo apt install pulseaudio pulseeffects --install-recommends -y
+mkdir -p /home/hritwik/.config/PulseEffects/output/
 sudo cp ./configs/PulseEffects_MyPreset.json /home/hritwik/.config/PulseEffects/output
 
 printf "\n-------------------------Install--uget-------------------------\n"
@@ -185,8 +186,6 @@ printf "\n-------------------------Install--Flameshot-------------------------\n
 sudo apt install flameshot -y
 
 printf "\n-------------------------Install--fusuma-------------------------\n"
-sudo gpasswd -a hritwik input
-newgrp input
 sudo apt install libinput-tools -y
 sudo apt install ruby -y
 sudo gem install fusuma
@@ -203,7 +202,7 @@ sudo gem install fusuma-plugin-tap
 printf "\n-------------------------Install--fusuma-config-------------------------\n"
 # ---
 rm -rf /home/hritwik/.config/fusuma
-mkdir -p /home/hritwik/.config/fusuma
+mkdir -p /home/hritwik/.config/fusuma/
 cp ./configs/config.yml /home/hritwik/.config/fusuma/
 
 printf "\n-------------------------Install--fonts-manager-------------------------\n"
@@ -238,8 +237,11 @@ sudo apt update && sudo apt install signal-desktop -y
 
 printf "\n-------------------------Install--Python2-purge-------------------------\n"
 sudo apt purge python2 -y
+sudo rm -f /usr/bin/python
 sudo ln -s /usr/bin/python3 /usr/bin/python
+
 sudo apt install -y python3-pip
+sudo rm -f /usr/bin/pip
 sudo ln -s /usr/bin/pip3 /usr/bin/pip
 
 
@@ -382,5 +384,14 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bol
 gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
 
 sudo chown hritwik:hritwik ~/ -R
+
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"
+printf "\n--------------------------Final---Fusuma-add-user-to-input-group-------------------------\n"
+sudo gpasswd -a hritwik input
+newgrp input
+
+
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Finished Successfully-------------------------\n\n\n"

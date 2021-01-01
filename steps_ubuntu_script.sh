@@ -211,11 +211,17 @@ gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
 (echo "" ; echo "DRI_PRIME=1") >> /etc/environment
 (echo "" ; echo "MOZ_ENABLE_WAYLAND=1") >> /etc/environment
+
 # GTK Dark Mode
+
+rm -rf /home/hritwik/.config/gtk-3.0/settings.ini
+touch /home/hritwik/.config/gtk-3.0/settings.ini
 echo "" >> /home/hritwik/.config/gtk-3.0/settings.ini
 echo "[Settings]" >> /home/hritwik/.config/gtk-3.0/settings.ini
 echo "gtk-application-prefer-dark-theme=1"  >> /home/hritwik/.config/gtk-3.0/settings.ini
 
+rm -rf /home/hritwik/.config/gtk-4.0/settings.ini
+touch /home/hritwik/.config/gtk-4.0/settings.ini
 echo "" >> /home/hritwik/.config/gtk-4.0/settings.ini
 echo "[Settings]" >> /home/hritwik/.config/gtk-4.0/settings.ini
 echo "gtk-application-prefer-dark-theme=1"  >> /home/hritwik/.config/gtk-4.0/settings.ini
@@ -236,8 +242,8 @@ sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
 # change compression level
 gsettings set org.gnome.FileRoller.General compression-level "very-fast"
 # conky
-rm -rf /home/hritwik/.conky
-cp -r ./configs/.conky /home/hritwik/
+rm -rf /home/hritwik/.conky/
+cp -r ./configs/.conky/ /home/hritwik/
 
 # dconf-settings
 dconf load /org/gnome/ < ./configs/gsettings/org.gnome
@@ -245,19 +251,29 @@ dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/pulseeffects/ < ./configs/gsettings/com.github.wwmm.pulseeffects
 
 # startup Apps
+rm -rf /home/hritwik/.config/autostart
 cp -r ./configs/autostart/ /home/hritwik/.config/
 # firefox
+rm -rf /home/hritwik/.mozilla
 unzip ./configs/firefox_bak.zip -d /home/hritwik/
 # thunderbird
+rm -rf /home/hritwik/.thunderbird
 unzip ./configs/thunderbird_bak.zip -d /home/hritwik/
 # Atom
+rm -rf /home/hritwik/.atom
 unzip ./configs/atom_bak.zip -d /home/hritwik/
+rm -rf /home/hritwik/.atom/recovery/
 # Sublime
+rm -rf /home/hritwik/.config/sublime-text-3/
 mkdir -p /home/hritwik/.config/sublime-text-3/Packages/User
 unzip ./configs/sublime_bak.zip -d /home/hritwik/.config/sublime-text-3/Packages/
 # VLC
+rm -rf /home/hritwik/.config/vlc
 unzip ./configs/vlc_bak.zip -d /home/hritwik/.config/
+
 # jetbrains
+rm -rf /home/hritwik/PycharmProjects
+rm -rf /home/hritwik/CLionProjects
 unzip ./configs/clion_bak.zip -d /home/hritwik/
 unzip ./configs/pycharm_bak.zip -d /home/hritwik/
 
@@ -273,10 +289,12 @@ echo "------------------------------------------------------"
 echo "Theming & Installing Extensions...."
 
 # Grub-theme
+rm -rf /home/hritwik/my_downloads/grub_themes
 git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git /home/hritwik/my_downloads/grub_themes
 sudo /home/hritwik/my_downloads/grub_themes/install.sh --tela
 
 # App theme: orchis-dark
+rm -rf /home/hritwik/my_downloads/orchis-dark
 git clone --depth 1 https://github.com/vinceliuice/Orchis-theme.git /home/hritwik/my_downloads/orchis-dark
 sudo /home/hritwik/my_downloads/orchis-dark/install.sh
 sudo snap install orchis-themes
@@ -289,12 +307,15 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
 
 # shell-theme & Extensions
 unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
-cp -r ./configs/.conky /home/hritwik/
+# todo: may be missing something
+
+rm -rf /home/hritwik/my_downloads/materia-theme
 git clone --depth 1 https://github.com/nana-4/materia-theme.git /home/hritwik/my_downloads/materia-theme
 sudo /home/hritwik/my_downloads/materia-theme/install.sh
 gsettings set org.gnome.shell.extensions.user-theme name 'Materia-dark'
 
 # fonts
+rm -rf /home/hritwik/my_downloads/pop_fonts
 git clone --depth 1 https://github.com/pop-os/fonts.git /home/hritwik/my_downloads/pop_fonts
 cd /home/hritwik/my_downloads/pop_fonts/
 sudo make install
@@ -305,6 +326,7 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
 gsettings set org.gnome.desktop.interface text-scaling-factor 0.84999999999999998
 
+sudo chown hritwik:hritwik ~/ -R
 
 echo "------------------------------------------------------"
 echo "Finished Successfully!"

@@ -85,7 +85,6 @@ sudo apt install ntfs-3g -y
 sudo apt install dconf-editor -y
 sudo apt install filezilla -y
 sudo apt install gnome-weather gnome-clocks -y
-sudo apt install gnome-shell-extensions -y
 sudo apt install p7zip-full p7zip-rar -y
 sudo apt install git -y
 sudo apt install gnome-music gnote -y
@@ -317,6 +316,12 @@ rm -rf /home/hritwik/.conky/
 cp -r ./configs/.conky/ /home/hritwik/
 
 printf "\n--------------------------Tweaks---dconf-settings-------------------------\n"
+# Backup first
+
+dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
+dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
+dconf dump /com/github/wwmm/pulseeffects/ > /home/hritwik/com.github.wwmm.pulseeffects_Bak
+
 dconf load /org/gnome/ < ./configs/gsettings/org.gnome
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/pulseeffects/ < ./configs/gsettings/com.github.wwmm.pulseeffects
@@ -374,19 +379,19 @@ printf "\n\n\n-------------------------Theming & Installing Extensions----------
 printf "\n--------------------------Theme_Ext---Grub-theme-------------------------\n"
 rm -rf /home/hritwik/my_downloads/grub_themes
 git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git /home/hritwik/my_downloads/grub_themes
-sudo /home/hritwik/my_downloads/grub_themes/install.sh --tela
+sudo /home/hritwik/my_downloads/grub_themes/install.sh --slaze
 
-printf "\n--------------------------Theme_Ext---App theme: orchis-dark-------------------------\n"
-rm -rf /home/hritwik/my_downloads/orchis-dark
-git clone --depth 1 https://github.com/vinceliuice/Orchis-theme.git /home/hritwik/my_downloads/orchis-dark
-sudo /home/hritwik/my_downloads/orchis-dark/install.sh
-sudo snap install orchis-themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
+# printf "\n--------------------------Theme_Ext---App theme: orchis-dark-------------------------\n"
+# rm -rf /home/hritwik/my_downloads/orchis-dark
+# git clone --depth 1 https://github.com/vinceliuice/Orchis-theme.git /home/hritwik/my_downloads/orchis-dark
+# sudo /home/hritwik/my_downloads/orchis-dark/install.sh
+# sudo snap install orchis-themes
+# gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
 
-printf "\n--------------------------Theme_Ext---icon & Curser theme: Pop-------------------------\n"
-sudo apt install pop-icon-theme -y
-gsettings set org.gnome.desktop.interface icon-theme 'Pop'
-gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
+# printf "\n--------------------------Theme_Ext---icon & Curser theme: Pop-------------------------\n"
+# sudo apt install pop-icon-theme -y
+# gsettings set org.gnome.desktop.interface icon-theme 'Pop'
+# gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
 
 printf "\n--------------------------Theme_Ext---shell-theme & Extensions-------------------------\n"
 unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
@@ -396,16 +401,16 @@ git clone --depth 1 https://github.com/nana-4/materia-theme.git /home/hritwik/my
 sudo /home/hritwik/my_downloads/materia-theme/install.sh
 gsettings set org.gnome.shell.extensions.user-theme name 'Materia-dark'
 
-printf "\n--------------------------Theme_Ext---fonts-------------------------\n"
-rm -rf /home/hritwik/my_downloads/pop_fonts
-git clone --depth 1 https://github.com/pop-os/fonts.git /home/hritwik/my_downloads/pop_fonts
-cd /home/hritwik/my_downloads/pop_fonts/
-sudo make install
+# printf "\n--------------------------Theme_Ext---fonts-------------------------\n"
+# rm -rf /home/hritwik/my_downloads/pop_fonts
+# git clone --depth 1 https://github.com/pop-os/fonts.git /home/hritwik/my_downloads/pop_fonts
+# cd /home/hritwik/my_downloads/pop_fonts/
+# sudo make install
 
-gsettings set org.gnome.desktop.interface font-name 'Fira Sans Semi-Light 11'
-gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
-gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
+# gsettings set org.gnome.desktop.interface font-name 'Fira Sans Semi-Light 11'
+# gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 11'
+# gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
+# gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
 gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
 
 sudo chown hritwik:hritwik /home/hritwik -R

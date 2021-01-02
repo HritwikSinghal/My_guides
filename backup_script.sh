@@ -1,11 +1,6 @@
 #!/bin/sh
 set -e
 
-# --------------------------------------------------------#
-# !! DO NOT RUN THIS SCRIP WITH SUDO !!
-# --------------------------------------------------------#
-
-
 # todo: backup and restore of whole OS
 # https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
 # https://github.com/lra/mackup

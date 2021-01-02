@@ -386,14 +386,29 @@ rm -rf /home/hritwik/my_downloads/grub_themes
 git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git /home/hritwik/my_downloads/grub_themes
 sudo /home/hritwik/my_downloads/grub_themes/install.sh --slaze
 
-# printf "\n--------------------------Theme_Ext---App theme: orchis-dark-------------------------\n"
+
+printf "\n--------------------------Theme_Ext---Theme: Yaru-Colors-------------------------\n"
+rm -rf /home/hritwik/my_downloads/Yaru-Colors
+git clone --depth 1 https://github.com/Jannomag/Yaru-Colors.git /home/hritwik/my_downloads/Yaru-Colors
+sudo /home/hritwik/my_downloads/Yaru-Colors/install.sh
+
+sudo snap install yaru-colors -y
+for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done
+for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done
+for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done
+
+
+
+
+printf "\n--------------------------Theme_Ext---App theme: orchis-dark-------------------------\n"
 # rm -rf /home/hritwik/my_downloads/orchis-dark
 # git clone --depth 1 https://github.com/vinceliuice/Orchis-theme.git /home/hritwik/my_downloads/orchis-dark
 # sudo /home/hritwik/my_downloads/orchis-dark/install.sh
 # sudo snap install orchis-themes
 # gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
 
-# printf "\n--------------------------Theme_Ext---icon & Curser theme: Pop-------------------------\n"
+
+printf "\n--------------------------Theme_Ext---icon & Curser theme: Pop-------------------------\n"
 # sudo apt install pop-icon-theme -y
 # gsettings set org.gnome.desktop.interface icon-theme 'Pop'
 # gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
@@ -406,7 +421,7 @@ git clone --depth 1 https://github.com/nana-4/materia-theme.git /home/hritwik/my
 sudo /home/hritwik/my_downloads/materia-theme/install.sh
 gsettings set org.gnome.shell.extensions.user-theme name 'Materia-dark'
 
-# printf "\n--------------------------Theme_Ext---fonts-------------------------\n"
+printf "\n--------------------------Theme_Ext---fonts-------------------------\n"
 # rm -rf /home/hritwik/my_downloads/pop_fonts
 # git clone --depth 1 https://github.com/pop-os/fonts.git /home/hritwik/my_downloads/pop_fonts
 # cd /home/hritwik/my_downloads/pop_fonts/

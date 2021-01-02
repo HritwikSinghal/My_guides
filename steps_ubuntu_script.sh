@@ -390,7 +390,7 @@ sudo /home/hritwik/my_downloads/grub_themes/install.sh --slaze
 printf "\n--------------------------Theme_Ext---Theme: Yaru-Colors-------------------------\n"
 rm -rf /home/hritwik/my_downloads/Yaru-Colors
 git clone --depth 1 https://github.com/Jannomag/Yaru-Colors.git /home/hritwik/my_downloads/Yaru-Colors
-sudo /home/hritwik/my_downloads/Yaru-Colors/install.sh
+/home/hritwik/my_downloads/Yaru-Colors/install.sh
 
 sudo snap install yaru-colors -y
 for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done

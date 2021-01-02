@@ -64,12 +64,12 @@ conky.config = {
 
 	--Placement
 
-	alignment = 'top_right',						-- top_left,top_middle,top_right,bottom_left,bottom_middle,bottom_right,
+	alignment = 'top_right',					-- top_left,top_middle,top_right,bottom_left,bottom_middle,bottom_right,
 												-- middle_left,middle_middle,middle_right,none
 	--Arch Duoscreen
 	--gap_x = -1910,
-	gap_x = 5,									-- pixels between right or left border
-	gap_y = 0,									-- pixels between bottom or top border
+	gap_x = 10,									-- pixels between right or left border
+	gap_y = 2,									-- pixels between bottom or top border
 	minimum_height = 600,						-- minimum height of window
 	minimum_width = 300,						-- minimum height of window
 	maximum_width = 300,						-- maximum height of window
@@ -77,9 +77,9 @@ conky.config = {
 	--Graphical
 
 	border_inner_margin = 10, 					-- margin between border and text
-	border_outer_margin = 0, 					-- margin between border and edge of window
+	border_outer_margin = 5, 					-- margin between border and edge of window
 	border_width = 0, 							-- border width in pixels
-	default_bar_width = 80,					-- default is 0 - full width
+	default_bar_width = 80,						-- default is 0 - full width
 	default_bar_height = 10,					-- default is 6
 	default_gauge_height = 25,					-- default is 25
 	default_gauge_width =40,					-- default is 40
@@ -146,7 +146,8 @@ conky.config = {
 };
 
 conky.text = [[
-${color6}${voffset 4}${font GE Inspira:size=64}${alignc}${time %l}:${time %M} ${time %p}${font}${color}
+${color6}${voffset 4}${font GE Inspira:size=50}${alignc}${time %l}:${time %M} ${time %p}${font}${color}
+
 ${color6}${voffset 4}${font GE Inspira:size=16}${alignc}${time %A} ${time %B} ${time %e}, ${time %Y}${font}${color}
 ############################################################################################################################################################################
 
@@ -193,22 +194,21 @@ ${color2}Swap:${color} ${alignr}${offset -10}${swap} / ${swapmax}${alignr}${swap
 ${color5}${font font1:size=10}D R I V E S   ${hr 2}${font}${color}
 
 ${color2}Root :${color} ${alignr}${offset -10}${fs_used /} / ${fs_size /}${alignr}${fs_bar 12,130 /}
-${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/nvme0n1p6}${alignr}${diskiograph_read nvme0n1p6 12,130}
-${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/nvme0n1p6}${alignr}${diskiograph_write /dev/nvme0n1p6 12,130}
+${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/nvme0n1p3}${alignr}${diskiograph_read nvme0n1p3 12,130}
+${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/nvme0n1p3}${alignr}${diskiograph_write /dev/nvme0n1p3 12,130}
 
 ${color2}Home :${color} ${alignr}${offset -10}${fs_used /home} / ${fs_size /home}${alignr}${fs_bar 12,130 /home}
 ${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/nvme0n1p7}${alignr}${diskiograph_read /dev/nvme0n1p7 12,130}
 ${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/nvme0n1p7}${alignr}${diskiograph_write /dev/nvme0n1p7 12,130}
 
-${color2}Shared_data:${color} ${alignr}${offset -10}${fs_used /media/hritwik/Shared_data}/${fs_size /media/hritwik/Shared_data}${alignr}${fs_bar 12,130 /media/hritwik/Shared_data}
-${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda4}${alignr}${diskiograph_read /dev/sda4 12,130}
-${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda4}${alignr}${diskiograph_write /dev/sda4 12,130}
+${color2}Data:${color} ${alignr}${offset -10}${fs_used /media/hritwik/Data}/${fs_size /media/hritwik/Data}${alignr}${fs_bar 12,130 /media/hritwik/Data}
+${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/nvme0n1p2}${alignr}${diskiograph_read /dev/nvme0n1p2 12,130}
+${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/nvme0n1p2}${alignr}${diskiograph_write /dev/nvme0n1p2 12,130}
 
 ${color2}HDD :${color} ${alignr}${offset -10}${fs_used /media/hritwik/HDD} / ${fs_size /media/hritwik/HDD}${alignr}${fs_bar 12,130 /media/hritwik/HDD}
 ${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sdb1}${alignr}${diskiograph_read /dev/sdb1 12,130}
 ${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sdb1}${alignr}${diskiograph_write /dev/sdb1 12,130}
 
-${color2}Windows :${color} ${alignr}${offset -10}${fs_used /media/hritwik/Windows1} / ${fs_size /media/hritwik/Windows1}${alignr}${fs_bar 12,130 /media/hritwik/Windows1}
 
 ############################################################################################################################################################################
 
@@ -222,10 +222,10 @@ ${color2}DNS Server:
 ${color}${execi 99999 nmcli dev show | grep DNS | awk '{ print $2 }'}
 
 ${color2}Wlan Down: ${color}${alignr}${offset -10$} ${downspeed wlp3s0} (${totaldown wlp3s0})
-${color} ${alignr}${offset -10$}${downspeedgraph wlp3s0 20,175}
+${color} ${offset -10$}${downspeedgraph wlp3s0 27,300}
 
 ${color2}Wlan Up: ${color}${alignr}${offset -10$} ${upspeed wlp3s0} (${totalup wlp3s0})
-${color} ${alignr}${offset -10$}${upspeedgraph wlp3s0 20,175}
+${color} ${offset -10$}${upspeedgraph wlp3s0 27,300}
 
 ############################################################################################################################################################################
 #${font font1:size=10}N V I D I A   ${hr 2}${font}

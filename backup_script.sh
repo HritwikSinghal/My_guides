@@ -51,6 +51,9 @@ zip -r /home/hritwik/Backups/pycharm_bak.zip ./PycharmProjects
 # vnstat
 cd /home/hritwik/
 cp ./.vnstatrc /home/hritwik/Backups/
+# ssh keys
+cd /home/hritwik/
+zip -r /home/hritwik/Backups/git_ssh.zip ./.ssh
 
 
 echo "Done"

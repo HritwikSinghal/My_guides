@@ -358,6 +358,11 @@ rm -rf /home/hritwik/CLionProjects
 unzip ./configs/clion_bak.zip -d /home/hritwik/
 unzip ./configs/pycharm_bak.zip -d /home/hritwik/
 
+printf "\n--------------------------Tweaks---git_ssh-------------------------\n"
+rm -rf /home/hritwik/.ssh
+unzip ./configs/git_ssh.zip -d /home/hritwik/
+
+
 printf "\n--------------------------Tweaks---increase swamp size-------------------------\n"
 sudo swapoff /swapfile
 sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc

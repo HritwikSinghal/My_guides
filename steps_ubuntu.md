@@ -402,6 +402,9 @@ OR
 
 
 ## Todo
+- [if there are a lot of LSP icons in apps](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
+- vscodium (not from flatpk)
+- synaptic package manager
 
 - https://wayneoutthere.com/2018/12/29/how-to-fix-wrong-monitor-display-ubuntu/
 - https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release

@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+
+
+
 printf "\n---------------------------------------------------------------------------\n"
 # add repositories
 printf "\n\n\n-------------------------Adding Repositories-------------------------\n\n\n"
@@ -61,7 +64,12 @@ printf "\n-------------------------AddRepo---Wireshark-------------------------\
 sudo add-apt-repository ppa:wireshark-dev/stable -y
 
 
-sudo chown hritwik:hritwik ~/ -R
+
+
+
+
+
+sudo chown hritwik:hritwik /home/hritwik -R
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Insatlling Apps-------------------------\n\n\n"
 printf "\n--------------------------apt update && apt upgrade-------------------------\n"
@@ -79,16 +87,15 @@ sudo apt install filezilla -y
 sudo apt install gnome-weather gnome-clocks -y
 sudo apt install gnome-shell-extensions -y
 sudo apt install p7zip-full p7zip-rar -y
-sudo apt install openjdk-11-jdk -y
 sudo apt install git -y
 sudo apt install gnome-music gnote -y
 sudo apt install sassc -y
 sudo apt install preload -y
-sudo apt-get install libavcodec-extra -y
-sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
+sudo apt install libavcodec-extra -y
+sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
 sudo apt install kate -y
 sudo apt install pavucontrol -y
-sudo apt install nautilus-admin -y && nautilus -q
+sudo apt install nautilus-admin -y
 sudo apt install htop -y
 sudo apt install bashtop -y
 # sudo snap install bashtop
@@ -100,7 +107,7 @@ printf "\n-------------------------Install--Wine-------------------------\n"
 sudo apt install wine winetricks -y
 
 printf "\n-------------------------Install--java-------------------------\n"
-sudo apt-get install openjdk-11-jdk -y
+sudo apt install openjdk-11-jdk -y
 
 printf "\n-------------------------Install--Timeshift-------------------------\n"
 sudo apt install timeshift -y
@@ -145,7 +152,7 @@ sudo apt install lollypop -y
 printf "\n-------------------------Install--GreenTunnel-------------------------\n"
 sudo apt install nodejs -y
 sudo apt install npm -y
-npm i -g green-tunnel
+sudo npm i -g green-tunnel
 
 printf "\n-------------------------Install--telegram-------------------------\n"
 sudo snap install telegram-desktop
@@ -226,7 +233,11 @@ printf "\n-------------------------Install--vscodium-------------------------\n"
 flatpak install flathub com.vscodium.codium  -y
 
 printf "\n-------------------------Install--Sublime-------------------------\n"
-flatpak install flathub com.sublimetext.three -y
+# flatpak install flathub com.sublimetext.three -y
+sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common -y
+curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo add-apt-repository "deb https://download.sublimetext.com/ apt/stable/" -y
+sudo apt install sublime-text -y
 
 printf "\n-------------------------Install--Signal-------------------------\n"
 wget -O- https://updates.signal.org/desktop/apt/keys.asc |\
@@ -245,7 +256,11 @@ sudo rm -f /usr/bin/pip
 sudo ln -s /usr/bin/pip3 /usr/bin/pip
 
 
-sudo chown hritwik:hritwik ~/ -R
+sudo chown hritwik:hritwik /home/hritwik -R
+
+
+
+
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
@@ -254,8 +269,13 @@ gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
-(echo "" ; echo "DRI_PRIME=1") >> /etc/environment
-(echo "" ; echo "MOZ_ENABLE_WAYLAND=1") >> /etc/environment
+
+
+echo "" | sudo tee -a /etc/environment
+echo "DRI_PRIME=1" | sudo tee -a /etc/environment
+echo "" | sudo tee -a /etc/environment
+echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
+
 
 printf "\n--------------------------Tweaks---GTK Dark Mode-------------------------\n"
 
@@ -340,7 +360,12 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 
 
-sudo chown hritwik:hritwik ~/ -R
+sudo chown hritwik:hritwik /home/hritwik -R
+
+
+
+
+
 
 
 printf "\n---------------------------------------------------------------------------\n"
@@ -383,7 +408,11 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
 gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
 
-sudo chown hritwik:hritwik ~/ -R
+sudo chown hritwik:hritwik /home/hritwik -R
+
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Finished Successfully-------------------------\n\n\n"
 
 
 printf "\n---------------------------------------------------------------------------\n"
@@ -392,6 +421,3 @@ printf "\n--------------------------Final---Fusuma-add-user-to-input-group------
 sudo gpasswd -a hritwik input
 newgrp input
 
-
-printf "\n---------------------------------------------------------------------------\n"
-printf "\n\n\n-------------------------Finished Successfully-------------------------\n\n\n"

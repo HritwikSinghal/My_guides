@@ -104,10 +104,10 @@ Feel free to copy anything from here and use it.
 ## System
 
 
-- If using secondary monitor, make sure both have 1920*1080 and 60Hz
+- [Fix secondary monitor display](https://wayneoutthere.com/2018/12/29/how-to-fix-wrong-monitor-display-ubuntu/)
 
 - Switch to wayland
-    - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
+    - [x] [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
 
 - [set su passwd](https://askubuntu.com/questions/155278/how-do-i-set-the-root-password-so-i-can-use-su-instead-of-sudo)
     - sudo passwd
@@ -282,12 +282,16 @@ OR
     - [x] "Autosave-Onchange"
 
 - [x] [VS codium](https://vscodium.com/)
+    - [x] [Install from repo](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo#how-to-install-for-debianubuntulinux-mint)
     - flatpak install flathub com.vscodium.codium -y
+
 
 - [x] Freetube
     - flatpak install flathub io.freetubeapp.FreeTube
 
 - [x] [Signal Desktop](https://signal.org/en/download)
+
+- [x] [youtube-dl latest version](https://ytdl-org.github.io/youtube-dl/download.html)
 
 - [Bleachbit](https://www.bleachbit.org/download)
 
@@ -297,14 +301,14 @@ OR
 
 - [copyq](https://github.com/hluk/CopyQ/releases)
 
-- [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
+- [x] [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
-    - [Install latest directly from github](https://github.com/linuxmint/nemo/releases/)
+    - [Github](https://github.com/linuxmint/nemo/releases/)
         - use "sudo dpkg -i *.deb" and fix all for dependencies by installing the thing which is missing.
         You may have to run 'sudo apt fix broken install' (It will tell you)
             - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
             - run 'sudo apt --fix-broken install'
-            
+
     - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
 
     - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
@@ -345,19 +349,6 @@ OR
 
 - [x] [Install from ZIP](https://linuxconfig.org/how-to-install-gnome-shell-extensions-from-zip-file-using-command-line-on-ubuntu-18-04-bionic-beaver-linux)
 
-- [x] sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0
-    - this is dependency of below 3
-
-- [x] [blur-my-shell/](https://extensions.gnome.org/extension/3193/blur-my-shell/)
-    - BUGGY! use below 2 for Replacement.
-
-- [x] [blyr](https://extensions.gnome.org/extension/1251/blyr/), for blurring activities screen
-    - [github](https://github.com/yozoon/gnome-shell-extension-blyr)
-
-- [x] [lock screen blur](https://extensions.gnome.org/extension/2935/control-blur-effect-on-lock-screen/)
-    - [github](https://github.com/PRATAP-KUMAR/Control_Blur_Effect_On_Lock_Screen)
-    - set to 0.5 and 15
-
 - [x] [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
 
 - [x] [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
@@ -397,54 +388,56 @@ OR
 
 - [always indicator](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 
-
 - [New mail indicator](https://extensions.gnome.org/extension/1505/new-mail-indicator/)
 
 
+- [x] sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0
+    - this is dependency of below 3
+
+- [blur-my-shell/](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+    - BUGGY! use below 2 for Replacement.
+
+- [blyr](https://extensions.gnome.org/extension/1251/blyr/), for blurring activities screen
+    - [github](https://github.com/yozoon/gnome-shell-extension-blyr)
+
+- [lock screen blur](https://extensions.gnome.org/extension/2935/control-blur-effect-on-lock-screen/)
+    - [github](https://github.com/PRATAP-KUMAR/Control_Blur_Effect_On_Lock_Screen)
+    - set to 0.5 and 15
+
+
 ## Todo
+
 - [if there are a lot of LSP icons in apps](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
 - vscodium (not from flatpk)
-- synaptic package manager
 
-- https://wayneoutthere.com/2018/12/29/how-to-fix-wrong-monitor-display-ubuntu/
-- https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release
+- [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
 - [install eddy for soft install](https://linoxide.com/linux-how-to/eddy-install-debian-packages-elementary/)
 
-- install youtube-dl latest version
-
-- configure git with creds or session keys
-
-- [Shell theme](https://starship.rs/guide/#%F0%9F%9A%80-installation)
-
 - firefox setup and icons for profiles
-- check "Start Service at Login" in PulseEffects Settings
 
 - Uget
     - with its integrator for firefox,
     - fix the issues
 
+- [Shell theme](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 - [custom Kernel, Xanmod](https://xanmod.org/)
-
 - [wayfire](https://github.com/WayfireWM/wayfire)
 
-- make current shell theme transparent
-    - search for rgba in its css
-- theme color change our create new theme,
-- Close button big
+- Theming
+    - make current shell theme transparent
+        - search for rgba in its css
+    - theme color change our create new theme,
+    - Close button big
 
-- Bulk rename linux
-- fusuma on sleep
-- screen sharing wayland,
-- pinch to zoom Ubuntu,
+- Issues
+    - Bulk rename linux
+    - fusuma on sleep
+    - pinch to zoom Ubuntu,
 
 - how this works: "nmcli dev show | grep DNS | awk '{ print $2 }"
 
-- try this for audio not coming in headphone fix
-	- sudo apt install pavucontrol
 
 - [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
-    - what boots first and where is bootloader stored
-    - if i delete efi partition will machine boot
 
 - https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html
 

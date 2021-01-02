@@ -46,8 +46,13 @@ printf "\n-------------------------AddRepo---bashtop-------------------------\n"
 sudo add-apt-repository ppa:bashtop-monitor/bashtop -y
 
 
-# Uget (this is not working)
-# sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
+printf "\n-------------------------AddRepo---vscodium-------------------------\n"
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg
+
+echo 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
 
 
 # below ones will cause problem when not ubuntu 20.04
@@ -63,6 +68,8 @@ sudo add-apt-repository --remove ppa:linuxmint-tr/araclar -y
 printf "\n-------------------------AddRepo---Wireshark-------------------------\n"
 sudo add-apt-repository ppa:wireshark-dev/stable -y
 
+# Uget (this is not working)
+# sudo add-apt-repository ppa:plushuang-tw/uget-stable -y
 
 
 
@@ -100,7 +107,10 @@ sudo apt install bashtop -y
 # sudo snap install bashtop
 sudo apt install git -y
 sudo apt install python3-pip python3-dev python3-distutils python3-venv -y
+sudo apt install synaptic -y
+
 pip3 install virtualenv
+pip3 install youtube_dlc
 
 printf "\n-------------------------Install--Wine-------------------------\n"
 sudo apt install wine winetricks -y
@@ -229,7 +239,9 @@ sudo apt install ffmpeg -y
 sudo apt install obs-studio -y
 
 printf "\n-------------------------Install--vscodium-------------------------\n"
-flatpak install flathub com.vscodium.codium  -y
+# flatpak install flathub com.vscodium.codium  -y
+sudo apt install codium -y
+
 
 printf "\n-------------------------Install--Sublime-------------------------\n"
 # flatpak install flathub com.sublimetext.three -y
@@ -244,6 +256,12 @@ wget -O- https://updates.signal.org/desktop/apt/keys.asc |\
 echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" |\
     sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update && sudo apt install signal-desktop -y
+
+
+printf "\n-------------------------Install--youtube-dl-------------------------\n"
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
+
 
 printf "\n-------------------------Install--Python2-purge-------------------------\n"
 sudo apt purge python2 -y
@@ -445,4 +463,3 @@ printf "\n\n\n-------------------------Final changes-------------------------\n\
 printf "\n--------------------------Final---Fusuma-add-user-to-input-group-------------------------\n"
 sudo gpasswd -a hritwik input
 newgrp input
-

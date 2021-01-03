@@ -108,6 +108,7 @@ sudo apt install bashtop -y
 sudo apt install git -y
 sudo apt install python3-pip python3-dev python3-distutils python3-venv -y
 sudo apt install synaptic -y
+sudo apt install net-tools -y
 
 pip3 install virtualenv
 pip3 install youtube_dlc
@@ -196,7 +197,8 @@ sudo apt install uget -y
 sudo apt install uget aria2 -y
 
 printf "\n-------------------------Install--qBittorrent-------------------------\n"
-sudo apt install qbittorrent -y
+# sudo apt install qbittorrent -y
+sudo snap install qbittorrent-arnatious
 
 printf "\n-------------------------Install--Flameshot-------------------------\n"
 sudo apt install flameshot -y
@@ -293,6 +295,7 @@ echo "DRI_PRIME=1" | sudo tee -a /etc/environment
 echo "" | sudo tee -a /etc/environment
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 
+echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
 printf "\n--------------------------Tweaks---GTK Dark Mode-------------------------\n"
 
@@ -410,7 +413,7 @@ rm -rf /home/hritwik/my_downloads/Yaru-Colors
 git clone --depth 1 https://github.com/Jannomag/Yaru-Colors.git /home/hritwik/my_downloads/Yaru-Colors
 /home/hritwik/my_downloads/Yaru-Colors/install.sh
 
-sudo snap install yaru-colors -y
+sudo snap install yaru-colors
 for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done
 for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done
 for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done

@@ -56,7 +56,7 @@ Feel free to copy anything from here and use it.
 
 	OR
 
-	- [Yaru-Colors](https://github.com/Jannomag/Yaru-Colors)
+	- [x] [Yaru-Colors](https://github.com/Jannomag/Yaru-Colors)
 
 
 - [x] Icons:
@@ -159,7 +159,7 @@ Feel free to copy anything from here and use it.
 
 - [x] [Remove python2](https://stackoverflow.com/questions/44602191/how-to-completely-uninstall-python-2-7-13-on-ubuntu-16-04/60590067#60590067)
 
-- [x] [increase Swap file by 8192 MB)](https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal)
+- [x] [increase Swap file by 6144 MB](https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal)
     - https://linuxhint.com/change_swap_size_ubuntu/
 
 - [x] Change compression level
@@ -178,8 +178,8 @@ Feel free to copy anything from here and use it.
 ## Install Apps
 
 - [x] Setup thunderbird (and backup it like FF)
+    - [x] [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/);
 	- [For calender & task](https://fruux.com/sync/)
-    - [x] [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/)
 
 - [x] Firefox Setup (and desktop icons)
 	- [x] [For Latest Nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
@@ -392,6 +392,7 @@ OR
 
 
 - [x] sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0
+
     - this is dependency of below 3
 
 - [blur-my-shell/](https://extensions.gnome.org/extension/3193/blur-my-shell/)
@@ -407,11 +408,9 @@ OR
 
 ## Todo
 
-- [if there are a lot of LSP icons in apps](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
-- vscodium (not from flatpk)
-
-- [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
-- [install eddy for soft install](https://linoxide.com/linux-how-to/eddy-install-debian-packages-elementary/)
+- VNC viewer
+- gnome-boxes
+- Teams (optional)
 
 - firefox setup and icons for profiles
 
@@ -434,23 +433,29 @@ OR
     - fusuma on sleep
     - pinch to zoom Ubuntu,
 
-- how this works: "nmcli dev show | grep DNS | awk '{ print $2 }"
+- How this works:
+    - nmcli dev show | grep DNS | awk '{ print $2 }
 
+- Extra
+    - [Lots of LSP icons in apps](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
 
-- [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
+    - [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
+    - [Install eddy for soft install](https://linoxide.com/linux-how-to/eddy-install-debian-packages-elementary/)
 
-- https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html
+    - [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
 
-- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
-    - [Kid3 audio tagger](https://kid3.kde.org/)
+    - [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
 
+    - [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
+        - [Kid3 audio tagger](https://kid3.kde.org/)
 
-- Brother Printer
-    - [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
-    - [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
+    - Brother Printer
 
-- Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
-    - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
+        - [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
+        - [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
+
+    - Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
+        - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
 
 ### Startup
 

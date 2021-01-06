@@ -565,11 +565,27 @@ OR
 
 
 - Path to gnome-boxes images for flatpak version:
-    "~/.var/app/org.gnome.Boxes/data/gnome-boxes/images"
+    - "~/.var/app/org.gnome.Boxes/data/gnome-boxes/images"
+    - https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610
     - https://askubuntu.com/questions/1123697/where-are-image-files-for-gnome-boxes-stored
     - find ~ -size +1G -ls
 
+- [Steps to migrate from Boxes rpm to Boxes Flatpak](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610)
+    ```
+    Move images from ~/.local/share/gnome-boxes/images to ~/.var/app/org.gnome.Boxes/data/gnome-boxes/images
 
+    Move domain .xml files from ~/.config/libvirt/qemu/ to ~/.var/app/org.gnome.Boxes/config/libvirt/qemu/
+
+    Modify domain .xml files to ensure paths are correct
+
+    Ensure disk source path is correct, i.e. <source file='/home/user/.var/app/org.gnome.Boxes/data/gnome-boxes/images/disk-name'/>
+
+    Ensure os-state is installed, and remove any referenced media
+    Ensure network interfaces are set to user, not bridge.  Bridge mode is not supported in Flatpak at this time.
+    If this line, if present. <seclabel type='dynamic' model='selinux' relabel='yes'/> It appears that selinux seclabel is also not supported in Flatpak, based on resulting error. Unable to start domain: unsupported configuration: Security driver model 'selinux' is not available
+
+    Use the following command to help debug any further issues.  G_MESSAGS_DEBUG=all flatpak run org.gnome.Boxes
+    ```
 ## Extra Articles
 
 - [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)

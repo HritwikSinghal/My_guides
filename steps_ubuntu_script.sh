@@ -471,3 +471,5 @@ printf "\n\n\n-------------------------Final changes-------------------------\n\
 printf "\n--------------------------Final---Fusuma-add-user-to-input-group-------------------------\n"
 sudo gpasswd -a hritwik input
 newgrp input
+sudo usermod -a -G libvirt hritwik
+sudo usermod -a -G kvm hritwik

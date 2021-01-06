@@ -409,7 +409,6 @@ OR
 ## Todo
 
 - VNC viewer
-- gnome-boxes
 - Teams (optional)
 
 - firefox setup and icons for profiles
@@ -473,17 +472,38 @@ OR
 
 ### Gaming
 
-- Use Pop!_Os
+- Prefer Pop!_Os
 - for 20.04 [video](https://www.youtube.com/watch?v=DToZ9wU2qRk), [reddit](https://www.reddit.com/r/linux4noobs/comments/g7753y/how_to_set_up_ubuntu_2004_for_gaming_tutorial/)
 - [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
 
-- [Latest AMDGPU](https://linuxconfig.org/amd-radeon-ubuntu-20-04-driver-installation)
+- [Latest AMDGPU](https://linuxconfig.org/amd-radeon-ubuntu-20-04-driver-installation) (uses ppa:oibaf/graphics-drivers)
+    ```
+    sudo add-apt-repository ppa:oibaf/graphics-drivers
+    sudo apt update && sudo apt -y upgrade
+    ```
+
 - [mesa](https://itsfoss.com/install-mesa-ubuntu/)
+    ```
+    sudo add-apt-repository ppa:kisak/kisak-mesa
+    sudo apt update
+    sudo apt install mesa
+    ```
 - [install latest mesa vulkan](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)
-        sudo dpkg --add-architecture i386
-        sudo apt install libgl1-mesa-dri:i386
-        sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+    ```
+    sudo add-apt-repository ppa:kisak/kisak-mesa    
+    sudo dpkg --add-architecture i386
+    sudo apt update && sudo apt upgrade
+    sudo apt install libgl1-mesa-dri:i386
+    sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
+    ```
+
 - OR see guide for mesa [vulkan](https://linuxconfig.org/install-and-test-vulkan-on-linux)
+    ```
+    sudo add-apt-repository ppa:oibaf/graphics-drivers
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-utils
+    ```
 - OR use [AMDVLK](https://github.com/GPUOpen-Drivers/AMDVLK/releases)
 - [Wine staging branch](https://wiki.winehq.org/Ubuntu)
 - [Lutris](https://lutris.net/downloads/)

@@ -109,6 +109,7 @@ sudo apt install git -y
 sudo apt install python3-pip python3-dev python3-distutils python3-venv -y
 sudo apt install synaptic -y
 sudo apt install net-tools -y
+sudo apt install ppa-purge -y
 
 pip3 install virtualenv
 pip3 install youtube_dlc
@@ -263,6 +264,9 @@ sudo apt update && sudo apt install signal-desktop -y
 printf "\n-------------------------Install--youtube-dl-------------------------\n"
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
+
+printf "\n-------------------------Install--gnome-boxes-------------------------\n"
+sudo apt install gnome-boxes -y
 
 
 printf "\n-------------------------Install--Python2-purge-------------------------\n"

@@ -13,6 +13,8 @@
 
 
 - [Guide for drivers](https://medium.com/@alexanderbelov/how-to-use-your-brother-printer-with-cups-on-raspberry-pi-5b712cc2b4e6)
+	- [Another guide](https://web.archive.org/web/20200725181408/https://forum.manjaro.org/t/how-to-set-up-a-remote-printer-which-is-attached-to-a-raspberry-pi-or-any-other-arm-computer/57056)
+	
 	- Although Brother has its own drivers for CUPS, they’re precompiled for x86 (32-bit) architecture. Raspberry Pi is based on ARM arch, so manufactures’ drivers are note compatible with your Pi out of the box.
 
 	Software enthusiast Peter De Wachter has written an alternate driver for Brother’s printers − it’s called «brlaser».
@@ -27,4 +29,4 @@
 
 	When CUPS will ask you to choose the driver to communicate with your printer, choose «brlaser».
 
-	If you don’t see the exact model of your printer, pick the closest option based on your model’s number. For example, I have an 7060D model. Most close option is 7065 model − most probably that will work like a charm. (use HL-L2360D brlaser for HL-L2361DN)
+	If you don’t see the exact model of your printer, pick the closest option based on your model’s number. For example, I have an 7060D model. Most close option is 7065 model − most probably that will work like a charm. (use HL-L2360D brlaser for HL-2400CeN)

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=bash -c 'sleep 3; /usr/local/bin/fusuma -d'
+Exec=/usr/local/bin/fusuma -d
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

@@ -1,4 +1,5 @@
 [/]
+enable-all-sourceoutputs=false
 last-used-output-preset='PulseEffects_MyPreset'
 priority-type='Niceness'
 use-dark-theme=true

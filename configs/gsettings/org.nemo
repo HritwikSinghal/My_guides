@@ -45,9 +45,10 @@ selection-menu-make-link=true
 
 [window-state]
 devices-expanded=true
-geometry='1124x745+56+50'
+geometry='1124x745+26+23'
 maximized=false
 my-computer-expanded=true
 side-pane-view='places'
 sidebar-bookmark-breakpoint=5
+sidebar-width=140
 start-with-sidebar=true

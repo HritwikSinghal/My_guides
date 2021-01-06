@@ -13,6 +13,7 @@ set -e
 # gnome boxes & virt-manager
     # https://www.debugpoint.com/2020/06/move-virtual-machine-image-another-host/
     # https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610 (for directories)
+    # "~/.config/gnome-boxes" and ".config/libvirt/"
 # qBittorrent torrents for seed
 # clion and PyCharm settings
 # downloads and other folders

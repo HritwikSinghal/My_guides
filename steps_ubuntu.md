@@ -511,11 +511,13 @@ OR
 
 
 ### Virtualization
-- Path to gnome-boxes images for flatpak version:
-    "~/.var/app/org.gnome.Boxes/data/gnome-boxes/images"
 
-    - https://askubuntu.com/questions/1123697/where-are-image-files-for-gnome-boxes-stored
-    - find ~ -size +1G -ls
+- Guide for restoring OS:
+    - Make sure to install both boxes and virt-manager
+    - do not run any of them as root, see below for running without root
+    - open virt manager and when creating new VM, select option which will import VM (the last one) and go on to setup until you reach the last screen
+    - here select "customize VM before install", and now here paste the custom XML file conetnts.
+    - click begin install and now it should be ready.
 
 - [Install Win10 VM](https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/)
 
@@ -524,11 +526,48 @@ OR
     - [Cant copy big files to VM fix](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
 
 OR
+
 - virt-manager (run as sudo)
 	- [Link1](https://www.tecmint.com/install-kvm-on-ubuntu/)
-
-	OR
 	- [Link2](https://linuxize.com/post/how-to-install-kvm-on-ubuntu-20-04/)
+
+    ```
+    egrep -c '(vmx|svm)' /proc/cpuinfo
+    sudo apt install cpu-checker
+    sudo kvm-ok
+    sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager
+    sudo systemctl enable --now libvirtd
+
+    sudo usermod -a -G libvirt hritwik
+    sudo usermod -a -G kvm hritwik
+    ```
+
+- [Move gnome boxes to another PC](https://www.debugpoint.com/2020/06/move-virtual-machine-image-another-host/)
+    ```
+    - GNOME Boxes keeps the physical image of the virtual machine (this is usually in the size of GB) in the below path. For each of your virtual machines, you will find an image there.
+    Copy the image file to your new host’s path: ~/.local/share/gnome-boxes/images/
+    ~/.local/share/gnome-boxes/images/
+
+    - Copy the libvirt configuration XML from the below path to your new host’s same location.
+    In the below path, you should be seeing separate xml files for each of your virtual machines. Copy the one you need.
+    ~/.config/libvirt/qemu/
+
+    - Open the below file in your current system.
+    Copy the section (from “[display” … to end of this section) which belongs to your virtual machine. You can easily find it using the name (see below – ‘last seen name’).
+    Open the same above file in the other host machine and append the copied content at the end. Save the file.
+    ~/.config/gnome-boxes/sources/'QEMU Session'
+
+    Close all applications including GNOME Boxes in the new host machine.
+    ```
+
+- [fix for: cannot run boxes without root](https://askbot.fedoraproject.org/en/question/45805/how-to-use-virt-manager-as-a-non-root-user/)
+    - virt-manager --connect qemu:///session
+
+
+- Path to gnome-boxes images for flatpak version:
+    "~/.var/app/org.gnome.Boxes/data/gnome-boxes/images"
+    - https://askubuntu.com/questions/1123697/where-are-image-files-for-gnome-boxes-stored
+    - find ~ -size +1G -ls
 
 
 ## Extra Articles

@@ -265,9 +265,10 @@ printf "\n-------------------------Install--youtube-dl-------------------------\
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
 
-printf "\n-------------------------Install--gnome-boxes-------------------------\n"
+printf "\n-------------------------Install--gnome-boxes & virt-manager-------------------------\n"
 sudo apt install gnome-boxes -y
-
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager -y
+virt-manager --connect qemu:///session
 
 printf "\n-------------------------Install--Python2-purge-------------------------\n"
 sudo apt purge python2 -y

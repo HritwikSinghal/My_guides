@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=pulseaudio -D
+Hidden=true
+NoDisplay=false
+X-GNOME-Autostart-enabled=false
+Name[en_IN]=PA
+Name=PA
+Comment[en_IN]=
+Comment=

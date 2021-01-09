@@ -44,7 +44,7 @@ window-state=87168
 first-run=false
 shared-folders="[<{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>]"
 view='icon-view'
-window-maximized=true
+window-maximized=false
 window-position=[26, 23]
 window-size=[916, 533]
 
@@ -309,7 +309,7 @@ auto-save-session=true
 
 [gnome-system-monitor]
 cpu-stacked-area-chart=false
-current-tab='disks'
+current-tab='processes'
 disks-interval=2000
 maximized=false
 show-all-fs=false
@@ -665,8 +665,8 @@ locations=[<(uint32 2, <('Agra', 'VIAG', true, [(0.47398779161036003, 1.36067322
 locations=[<(uint32 2, <('Pittsburgh', 'KAGC', true, [(0.7043227676269912, -1.394896232832499)], [(0.70582205781433183, -1.3961915987500364)])>)>]
 
 [software]
-check-timestamp=int64 1609926405
-online-updates-timestamp=int64 1609852690
+check-timestamp=int64 1609980740
+online-updates-timestamp=int64 1609981421
 
 [system/location]
 enabled=false

@@ -472,7 +472,7 @@ OR
 
 ### Gaming
 
-- Prefer Pop!_Os
+- Prefer Pop!_Os and use 'gamemoderun' prefix for running games
 - for 20.04 [video](https://www.youtube.com/watch?v=DToZ9wU2qRk), [reddit](https://www.reddit.com/r/linux4noobs/comments/g7753y/how_to_set_up_ubuntu_2004_for_gaming_tutorial/)
 - [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
 
@@ -482,7 +482,7 @@ OR
     sudo apt update && sudo apt -y upgrade
     ```
 
-- [mesa](https://itsfoss.com/install-mesa-ubuntu/)
+- [latest mesa](https://itsfoss.com/install-mesa-ubuntu/)
     ```
     sudo add-apt-repository ppa:kisak/kisak-mesa
     sudo apt update

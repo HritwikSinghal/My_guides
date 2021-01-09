@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=bash -c 'sleep 3; nemo-desktop'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_IN]=nemo
+Name=nemo
+Comment[en_IN]=
+Comment=

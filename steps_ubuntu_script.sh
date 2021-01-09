@@ -3,6 +3,7 @@ set -e
 
 
 
+sudo apt-mark hold libegl-mesa0 libgbm1 libgl1-mesa-dri libglapi-mesa libglx-mesa0
 
 printf "\n---------------------------------------------------------------------------\n"
 # add repositories
@@ -76,49 +77,38 @@ sudo add-apt-repository ppa:wireshark-dev/stable -y
 
 
 
-sudo chown hritwik:hritwik /home/hritwik -R
+
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Insatlling Apps-------------------------\n\n\n"
 printf "\n--------------------------apt update && apt upgrade-------------------------\n"
 sudo apt update && sudo apt upgrade -y
 
 printf "\n-------------------------Install--Ubuntu-extras-------------------------\n"
-sudo apt install libavcodec-extra58 -y
-sudo apt install ubuntu-restricted-extras -y
-sudo apt install rar unrar p7zip-full p7zip-rar -y
-sudo apt install ttf-mscorefonts-installer -y
-sudo apt install exfat-fuse exfat-utils -y
-sudo apt install ntfs-3g -y
-sudo apt install dconf-editor -y
-sudo apt install filezilla -y
-sudo apt install gnome-weather gnome-clocks -y
-sudo apt install p7zip-full p7zip-rar -y
-sudo apt install git -y
-sudo apt install gnome-music gnote -y
-sudo apt install sassc -y
-sudo apt install preload -y
-sudo apt install libavcodec-extra -y
-sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
-sudo apt install kate -y
-sudo apt install pavucontrol -y
-sudo apt install nautilus-admin -y
-sudo apt install htop -y
-sudo apt install bashtop -y
-# sudo snap install bashtop
-sudo apt install git -y
-sudo apt install python3-pip python3-dev python3-distutils python3-venv -y
-sudo apt install synaptic -y
-sudo apt install net-tools -y
-sudo apt install ppa-purge -y
 
-pip3 install virtualenv
-pip3 install youtube_dlc
+sudo apt install ubuntu-restricted-extras ttf-mscorefonts-installer -y
+sudo apt install exfat-fuse exfat-utils ntfs-3g -y
+sudo apt install filezilla git rar unrar p7zip-full p7zip-rar -y
+sudo apt install gnome-music gnote gnome-weather gnome-clocks -y
+sudo apt install synaptic kate dconf-editor net-tools ppa-purge curl -y
+sudo apt install nautilus-admin bashtop htop -y
+sudo apt install python3-pip python3-dev python3-distutils python3-venv -y
+pip3 install virtualenv youtube_dlc
+
+# sudo snap install bashtop
+# sudo apt install preload -y
+# sudo apt install pavucontrol -y
+
+sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
+# Below one is needed only for blur shell extensions
+# sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
+
+
 
 printf "\n-------------------------Install--Wine-------------------------\n"
 sudo apt install wine winetricks -y
 
 printf "\n-------------------------Install--java-------------------------\n"
-sudo apt install openjdk-11-jdk -y
+sudo apt install openjdk-11-jdk openjdk-11-jre-headless -y
 
 printf "\n-------------------------Install--Timeshift-------------------------\n"
 sudo apt install timeshift -y
@@ -148,14 +138,12 @@ sudo apt install gdebi-core -y
 
 printf "\n-------------------------Install--Nemo-------------------------\n"
 sudo apt install nemo -y
+gnome-shell-extension-tool -d desktop-icons@csoriano
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 # Latest: https://github.com/linuxmint/nemo/releases/latest
 
-printf "\n-------------------------Install--BingWall-------------------------\n"
-sudo snap install bing-wall
-sudo snap install wonderwall
 
 printf "\n-------------------------Install--Lollypop-------------------------\n"
 sudo apt install lollypop -y
@@ -165,16 +153,8 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 sudo npm i -g green-tunnel
 
-printf "\n-------------------------Install--telegram-------------------------\n"
-sudo snap install telegram-desktop
-# flatpak install flathub org.telegram.desktop -y
-
-printf "\n-------------------------Install--WhatsApp-------------------------\n"
-sudo snap install whatsdesk
-# flatpak install io.bit3.WhatsAppQT -y
-
 printf "\n-------------------------Install--FreeTube-------------------------\n"
-flatpak install flathub io.freetubeapp.FreeTube -y
+# flatpak install flathub io.freetubeapp.FreeTube -y
 
 printf "\n-------------------------Install--Wireshark-------------------------\n"
 sudo apt install wireshark -y
@@ -198,8 +178,8 @@ sudo apt install uget -y
 sudo apt install uget aria2 -y
 
 printf "\n-------------------------Install--qBittorrent-------------------------\n"
-# sudo apt install qbittorrent -y
-sudo snap install qbittorrent-arnatious
+sudo apt install qbittorrent -y
+# sudo snap install qbittorrent-arnatious
 
 printf "\n-------------------------Install--Flameshot-------------------------\n"
 sudo apt install flameshot -y
@@ -227,12 +207,7 @@ cp ./configs/config.yml /home/hritwik/.config/fusuma/
 printf "\n-------------------------Install--fonts-manager-------------------------\n"
 sudo apt install font-manager -y
 
-printf "\n-------------------------Install--jetbrains-------------------------\n"
-sudo snap install pycharm-community --classic
-# flatpak install flathub com.jetbrains.PyCharm-Community -y
-# Clion
-sudo snap install clion --classic
-# flatpak install flathub com.jetbrains.CLion -y
+
 
 printf "\n-------------------------Install--Atom-------------------------\n"
 sudo apt install atom -y
@@ -280,7 +255,27 @@ sudo rm -f /usr/bin/pip
 sudo ln -s /usr/bin/pip3 /usr/bin/pip
 
 
-sudo chown hritwik:hritwik /home/hritwik -R
+printf "\n-------------------------Install--jetbrains-------------------------\n"
+sudo snap install pycharm-community --classic
+# flatpak install flathub com.jetbrains.PyCharm-Community -y
+# Clion
+sudo snap install clion --classic
+# flatpak install flathub com.jetbrains.CLion -y
+
+printf "\n-------------------------Install--telegram-------------------------\n"
+sudo snap install telegram-desktop
+# flatpak install flathub org.telegram.desktop -y
+
+printf "\n-------------------------Install--WhatsApp-------------------------\n"
+sudo snap install whatsdesk
+# flatpak install io.bit3.WhatsAppQT -y
+
+printf "\n-------------------------Install--BingWall-------------------------\n"
+sudo snap install bing-wall
+sudo snap install wonderwall
+
+
+
 
 
 
@@ -300,7 +295,7 @@ echo "DRI_PRIME=1" | sudo tee -a /etc/environment
 echo "" | sudo tee -a /etc/environment
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 
-echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
+echo "QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
 printf "\n--------------------------Tweaks---GTK Dark Mode-------------------------\n"
 
@@ -320,7 +315,7 @@ printf "\n--------------------------Tweaks---wayland dash bug Fix---------------
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
 printf "\n--------------------------Tweaks---Increment volume by 3-------------------------\n"
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
+# gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
 
 printf "\n--------------------------Tweaks---minimize on click-------------------------\n"
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
@@ -387,7 +382,8 @@ unzip ./configs/pycharm_bak.zip -d /home/hritwik/
 printf "\n--------------------------Tweaks---git_ssh-------------------------\n"
 rm -rf /home/hritwik/.ssh
 unzip ./configs/git_ssh.zip -d /home/hritwik/
-
+git config --global user.email "Hritwiksinghal@outlook.in"
+git config --global user.name "Hritwik"
 
 printf "\n--------------------------Tweaks---increase swamp size-------------------------\n"
 sudo swapoff /swapfile
@@ -396,7 +392,7 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 
 
-sudo chown hritwik:hritwik /home/hritwik -R
+
 
 
 
@@ -459,7 +455,7 @@ printf "\n--------------------------Theme_Ext---fonts-------------------------\n
 # gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
 gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
 
-sudo chown hritwik:hritwik /home/hritwik -R
+
 
 
 printf "\n---------------------------------------------------------------------------\n"

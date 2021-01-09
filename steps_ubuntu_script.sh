@@ -162,6 +162,10 @@ sudo apt install wireshark -y
 printf "\n-------------------------Install--VLC-------------------------\n"
 sudo apt install vlc -y
 
+printf "\n-------------------------Install--Copyq-------------------------\n"
+sudo apt install copyq -y
+
+
 printf "\n-------------------------Install--vnstat-------------------------\n"
 sudo apt install vnstat -y
 cp ./configs/.vnstatrc /home/hritwik/

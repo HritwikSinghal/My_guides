@@ -293,13 +293,14 @@ OR
 
 - [x] [youtube-dl latest version](https://ytdl-org.github.io/youtube-dl/download.html)
 
+- [x] [copyq](https://github.com/hluk/CopyQ/releases)
+
 - [Bleachbit](https://www.bleachbit.org/download)
 
 - [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
 
 - [XDM](https://itsfoss.com/xtreme-download-manager-install/)
 
-- [copyq](https://github.com/hluk/CopyQ/releases)
 
 - [x] [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
@@ -309,7 +310,7 @@ OR
             - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
             - run 'sudo apt --fix-broken install'
 
-    - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
+    - [x] disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
 
     - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
             "After some tinkering around, I managed to solve the issue!
@@ -391,8 +392,7 @@ OR
 - [New mail indicator](https://extensions.gnome.org/extension/1505/new-mail-indicator/)
 
 
-- [x] sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0
-
+- sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0
     - this is dependency of below 3
 
 - [blur-my-shell/](https://extensions.gnome.org/extension/3193/blur-my-shell/)
@@ -407,18 +407,15 @@ OR
 
 
 ## Todo
-
+- [custom Kernel, Xanmod](https://xanmod.org/)
 - VNC viewer
-- Teams (optional)
-
 - firefox setup and icons for profiles
-
 - Uget
     - with its integrator for firefox,
     - fix the issues
 
 - [Shell theme](https://starship.rs/guide/#%F0%9F%9A%80-installation)
-- [custom Kernel, Xanmod](https://xanmod.org/)
+
 - [wayfire](https://github.com/WayfireWM/wayfire)
 
 - Theming
@@ -459,20 +456,13 @@ OR
 ### Startup
 
 - make one script for all startup apps
-- startup bug
-    - try these in startup apps
-        ```
-        bash -c 'sleep 3; ~/.conky/conky-startup.sh'
-        bash -c 'sleep 3; nemo-desktop'
-        bash -c 'sleep 3; /usr/local/bin/fusuma -d'
-        ```
 - Increase Bash History
     - https://eshlox.net/2017/08/01/bash-increase-command-history-size
     - https://stackoverflow.com/questions/9457233/unlimited-bash-history
 
 ### Gaming
 
-- Prefer Pop!_Os and use 'gamemoderun' prefix for running games
+- Prefer Pop!_Os and use 'gamemoderun' prefix for running games on Ubuntu.
 - for 20.04 [video](https://www.youtube.com/watch?v=DToZ9wU2qRk), [reddit](https://www.reddit.com/r/linux4noobs/comments/g7753y/how_to_set_up_ubuntu_2004_for_gaming_tutorial/)
 - [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
 

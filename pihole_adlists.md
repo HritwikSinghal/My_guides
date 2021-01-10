@@ -52,7 +52,7 @@
 - [Unlock the full potential of Pihole](https://obutterbach.medium.com/unlock-the-full-potential-of-pihole-e795342e0e36)
 - [CDN powered AD filters](https://github.com/bmyjacks/adlists)
 
-# Jio Blocklist
+## Jio Blocklist
 ```
 acs.oss.jio.com
 
@@ -77,3 +77,4 @@ rtss-prod.jioconnect.com
 firebaseremoteconfig.googleapis.com
 
 ```
+- or just add '.*jio.*' regex for router

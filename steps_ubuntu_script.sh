@@ -56,6 +56,10 @@ echo 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg] https:
     | sudo tee /etc/apt/sources.list.d/vscodium.list
 
 
+printf "\n-------------------------AddRepo---Xanmod-------------------------\n"
+echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
+wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
+
 # below ones will cause problem when not ubuntu 20.04
 printf "\n-------------------------AddRepo---Flatpack-------------------------\n"
 sudo add-apt-repository ppa:alexlarsson/flatpak -y
@@ -244,6 +248,11 @@ printf "\n-------------------------Install--youtube-dl-------------------------\
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
 
+
+printf "\n-------------------------Install--Xanmod-------------------------\n"
+sudo apt install linux-xanmod -y
+sudo apt install intel-microcode iucode-tool -y
+
 printf "\n-------------------------Install--gnome-boxes & virt-manager-------------------------\n"
 sudo apt install gnome-boxes -y
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager -y
@@ -299,7 +308,15 @@ echo "DRI_PRIME=1" | sudo tee -a /etc/environment
 echo "" | sudo tee -a /etc/environment
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 
-echo "QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
+# for force qt5 to use wayland
+# sudo apt install qt5ct -y
+echo "" | sudo tee -a /etc/environment
+# echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
+echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
+
+
+echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
+
 
 printf "\n--------------------------Tweaks---GTK Dark Mode-------------------------\n"
 

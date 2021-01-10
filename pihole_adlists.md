@@ -51,3 +51,29 @@
 
 - [Unlock the full potential of Pihole](https://obutterbach.medium.com/unlock-the-full-potential-of-pihole-e795342e0e36)
 - [CDN powered AD filters](https://github.com/bmyjacks/adlists)
+
+# Jio Blocklist
+```
+acs.oss.jio.com
+
+jpdp.jpdc.jiophone.net
+
+uw.wln.ims.jio.com
+
+uw.wln.ccs.jio.com.reliance
+
+uw.wln.ccs.jio.com
+
+cr.acs.oss.jio.com
+
+jcpnv.jio.com
+
+nav.jiobuzz.com
+
+rtss-prod.jioconnect.com
+
+(\.|^)jio\.com$
+
+firebaseremoteconfig.googleapis.com
+
+```

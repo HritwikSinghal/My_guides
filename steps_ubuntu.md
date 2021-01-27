@@ -464,6 +464,7 @@ OR
 ### Gaming
 
 - Prefer Pop!_Os and use 'gamemoderun' prefix for running games on Ubuntu.
+- Bleeding edge = oibaf/graphics-drivers, Latest point release = kisak/kisak-mesa. [Source](https://itsfoss.com/install-mesa-ubuntu/)
 - for 20.04 [video](https://www.youtube.com/watch?v=DToZ9wU2qRk), [reddit](https://www.reddit.com/r/linux4noobs/comments/g7753y/how_to_set_up_ubuntu_2004_for_gaming_tutorial/)
 - [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
 

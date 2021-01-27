@@ -105,6 +105,7 @@ Feel free to copy anything from here and use it.
 
 
 - [Fix secondary monitor display](https://wayneoutthere.com/2018/12/29/how-to-fix-wrong-monitor-display-ubuntu/)
+    - rm .config/monitors.xml
 
 - Switch to wayland
     - [x] [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.

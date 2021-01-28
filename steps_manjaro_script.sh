@@ -8,6 +8,27 @@ printf "\n----------------------------------------------------------------------
 printf "\n\n\n-------------------------Insatlling Apps-------------------------\n\n\n"
 
 
+printf "\n-------------------------Install--Ubuntu-extras-------------------------\n"
+
+# sudo apt install ubuntu-restricted-extras ttf-mscorefonts-installer -y
+# sudo apt install exfat-fuse exfat-utils ntfs-3g -y
+# sudo apt install filezilla git rar unrar p7zip-full p7zip-rar -y
+# sudo apt install gnome-music gnote gnome-weather gnome-clocks -y
+# sudo apt install synaptic kate dconf-editor net-tools ppa-purge curl -y
+# sudo apt install nautilus-admin bashtop htop -y
+# sudo apt install python3-pip python3-dev python3-distutils python3-venv -y
+# pip3 install virtualenv youtube_dlc
+
+# # sudo snap install bashtop
+# # sudo apt install preload -y
+# # sudo apt install pavucontrol -y
+
+# sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
+# # Below one is needed only for blur shell extensions
+# # sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
+sudo pacman -S libmythes mythes-en languagetool aspell-en
+
+
 printf "\n-------------------------Install--Wine-------------------------\n"
 
 printf "\n-------------------------Install--java-------------------------\n"
@@ -136,29 +157,6 @@ sudo snap install wonderwall
 
 
 
-printf "\n-------------------------Install--Ubuntu-extras-------------------------\n"
-
-# sudo apt install ubuntu-restricted-extras ttf-mscorefonts-installer -y
-# sudo apt install exfat-fuse exfat-utils ntfs-3g -y
-# sudo apt install filezilla git rar unrar p7zip-full p7zip-rar -y
-# sudo apt install gnome-music gnote gnome-weather gnome-clocks -y
-# sudo apt install synaptic kate dconf-editor net-tools ppa-purge curl -y
-# sudo apt install nautilus-admin bashtop htop -y
-# sudo apt install python3-pip python3-dev python3-distutils python3-venv -y
-# pip3 install virtualenv youtube_dlc
-
-# # sudo snap install bashtop
-# # sudo apt install preload -y
-# # sudo apt install pavucontrol -y
-
-# sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
-# # Below one is needed only for blur shell extensions
-# # sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
-
-
-
-
-
 
 
 
@@ -171,6 +169,13 @@ gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
 echo "alias ll='ls -al'" | sudo tee -a /home/hritwik/.zshrc
 source ~/.zshrc
+
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
+
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+
 
 # echo "" | sudo tee -a /etc/environment
 # echo "DRI_PRIME=1" | sudo tee -a /etc/environment

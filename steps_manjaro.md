@@ -7,11 +7,7 @@
 - add keyboard shortcut for terminal
 - change "alternate characters Key" from "Right Alt" to "Right Super" (go to keyboard shortcuts settings)
 - [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
-
-- remove sudo passwd
-
-- [x] Change Keyboard Layout
-
+- [Install Ruby gems system-wide](https://wiki.archlinux.org/index.php/ruby#Installing_Ruby)
 
 
 ### Install Apps
@@ -60,3 +56,4 @@
 - [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
 - [nemo](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
 	- https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+- use toolbox for jetbrains apps.

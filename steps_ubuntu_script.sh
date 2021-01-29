@@ -153,8 +153,7 @@ printf "\n-------------------------Install--Lollypop-------------------------\n"
 sudo apt install lollypop -y
 
 printf "\n-------------------------Install--GreenTunnel-------------------------\n"
-sudo apt install nodejs -y
-sudo apt install npm -y
+sudo apt install nodejs npm -y
 sudo npm i -g green-tunnel
 
 printf "\n-------------------------Install--FreeTube-------------------------\n"
@@ -206,11 +205,6 @@ sudo gem install fusuma-plugin-keypress
 sudo apt install wmctrl -y
 sudo gem install fusuma-plugin-wmctrl
 sudo gem install fusuma-plugin-tap
-printf "\n-------------------------Install--fusuma-config-------------------------\n"
-# ---
-rm -rf /home/hritwik/.config/fusuma
-mkdir -p /home/hritwik/.config/fusuma/
-cp ./configs/config.yml /home/hritwik/.config/fusuma/
 
 printf "\n-------------------------Install--fonts-manager-------------------------\n"
 sudo apt install font-manager -y
@@ -412,6 +406,11 @@ sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc
 sudo mkswap /swapfile
 sudo swapon /swapfile
 
+printf "\n-------------------------Tweaks--fusuma-config-------------------------\n"
+# ---
+rm -rf /home/hritwik/.config/fusuma
+mkdir -p /home/hritwik/.config/fusuma/
+cp ./configs/config.yml /home/hritwik/.config/fusuma/
 
 
 

@@ -1,8 +1,19 @@
-# For x86 & x64 Linux
+# For x86 & x64 Linux (Only DEB and RPM coz fuck you Brother!)
 
 - Download drivers from [here](https://support.brother.com/g/b/downloadtop.aspx?c=in&lang=en&prod=hll2361dn_as) or [DDL (not recommended)](https://support.brother.com/g/b/downloadhowto.aspx?c=in&lang=en&prod=hll2361dn_as&os=128&dlid=dlf006893_000&flang=4&type3=625)
 
 - Download either "Driver Install Tool" or ("LPR printer driver" and "CUPSwrapper printer driver") and follow the install instructions given on the page.
+
+# For x86 & x64 Arch Based.
+- [See this forum](https://forum.manjaro.org/t/brother-l2550-dw-printer-driver-in-deb-or-rpm-but-what-for-arch/29481/3) and as always [THE GREAT ARCH WIKI](https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems)
+	- Install [AUR package for L2360D](https://aur.archlinux.org/packages/brother-hll2360d/)
+	- After building and installing the AUR package. You should also installed below from pacman
+
+	    1. ```manjaro-printer```
+
+	    2. ```system-config-printer```
+
+		```$ system-config-printer``` opens a dialog. Select network printer, and my printer appears. Using the ‘settings’ dialog enter into the Device URI field [socket://10.0.0.49] or whatever the IP address is of the printer. Good idea to make that static through the router. (steps written by some user on Manjaro forum)
 
 # For Rpi
 

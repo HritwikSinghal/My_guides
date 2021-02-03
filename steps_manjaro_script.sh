@@ -158,6 +158,9 @@ gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 echo "alias ll='ls -al'" | sudo tee -a /home/hritwik/.zshrc
 source ~/.zshrc
 
+sudo systemctl enable cronie
+sudo systemctl start cronie
+
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
 

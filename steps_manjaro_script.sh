@@ -75,6 +75,7 @@ sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
 printf "\n-------------------------Install--PulseEffects-------------------------\n"
+sudo pacman -S pulseeffects
 
 printf "\n-------------------------Install--uget-------------------------\n"
 
@@ -234,9 +235,14 @@ dconf load /org/gnome/ < ./configs/gsettings/org.gnome
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/pulseeffects/ < ./configs/gsettings/com.github.wwmm.pulseeffects
 
+printf "\n--------------------------Tweaks---Pulseeffects-------------------------\n"
+echo "[Desktop Entry] Hidden=true" > /tmp/1
+find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
+
 printf "\n--------------------------Tweaks---startup Apps-------------------------\n"
-rm -rf /home/hritwik/.config/autostart
+rm -rf /home/hritwik/.config/autostart/
 cp -r ./configs/autostart/ /home/hritwik/.config/
+sudo chmod +x /home/hritwik/.config/autostart/*
 
 printf "\n--------------------------Tweaks---firefox-------------------------\n"
 rm -rf /home/hritwik/.mozilla

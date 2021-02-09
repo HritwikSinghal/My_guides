@@ -249,6 +249,7 @@ OR
     - sudo snap install whatsdesk
 
 - [x] [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
+
 - [x] VLC
     - [x] change to X11 Video Decoder in settings
 
@@ -262,10 +263,14 @@ OR
 - [x] [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
 	- [x] configs are stored in "~/.config/PulseEffects/output")
     - Do "Start Service at Login" in PE Settings
+    - [Lots of LSP icons in apps due to pulseeffects in Gnome 3.38](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
 
-- [x] [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
-    - with its integrator for firefox,
-    - fix the issues
+        - ```echo "[Desktop Entry] Hidden=true" > /tmp/1```
+        
+        - ```find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}```
+
+
+- [x] [Uget (Prefer XDM)](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
 
 - [x] [Obs-studio](https://obsproject.com/wiki/install-instructions)
     - sudo apt install obs-studio -y
@@ -286,22 +291,11 @@ OR
     - [x] [Install from repo](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo#how-to-install-for-debianubuntulinux-mint)
     - flatpak install flathub com.vscodium.codium -y
 
-
-- [x] Freetube
-    - flatpak install flathub io.freetubeapp.FreeTube
-
 - [x] [Signal Desktop](https://signal.org/en/download)
 
 - [x] [youtube-dl latest version](https://ytdl-org.github.io/youtube-dl/download.html)
 
 - [x] [copyq](https://github.com/hluk/CopyQ/releases)
-
-- [Bleachbit](https://www.bleachbit.org/download)
-
-- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
-
-- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
-
 
 - [x] [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
@@ -328,6 +322,15 @@ OR
 
     - [clear zoom cache](https://forums.linuxmint.com/viewtopic.php?t=308395)
 
+- [XDM](https://itsfoss.com/xtreme-download-manager-install/)
+    - [Issue of xdm not picking up downloads in FF](https://github.com/subhra74/xdm/issues/235)
+
+- [Bleachbit](https://www.bleachbit.org/download)
+
+- [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
+
+- [x] Freetube
+    - flatpak install flathub io.freetubeapp.FreeTube
 
 
 ### Extra Apps:
@@ -411,9 +414,6 @@ OR
 - [custom Kernel, Xanmod](https://xanmod.org/)
 - VNC viewer
 - firefox setup and icons for profiles
-- Uget
-    - with its integrator for firefox,
-    - fix the issues
 
 - [Shell theme](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 
@@ -434,8 +434,6 @@ OR
     - nmcli dev show | grep DNS | awk '{ print $2 }
 
 - Extra
-    - [Lots of LSP icons in apps](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
-
     - [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
     - [Install eddy for soft install](https://linoxide.com/linux-how-to/eddy-install-debian-packages-elementary/)
 
@@ -591,6 +589,10 @@ Note: Replace the repository URL and grep "swamp_amd64" with the file you need (
 
 - [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
 
+- https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
+- https://libre-software.net/edit-metadata-exiftool/
+
+- https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts
 - https://linuxhint.com/add_shortcuts_ubuntu_desktop/
 
 - https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=bash -c 'sleep 3; nemo-desktop'
+Exec=nemo-desktop
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

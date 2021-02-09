@@ -25,21 +25,21 @@ pip3 install virtualenv youtube_dlc
 # sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
 # # Below one is needed only for blur shell extensions
 # # sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
-sudo pacman -S libmythes mythes-en languagetool aspell-en
+sudo pacman -S libmythes mythes-en languagetool aspell-en --noconfirm
 
 
 printf "\n-------------------------Install--Wine-------------------------\n"
 
 
 printf "\n-------------------------Install--conky-------------------------\n"
-sudo pacman -S conky
+sudo pacman -S conky --noconfirm
 
 printf "\n-------------------------Install--java-------------------------\n"
 
 printf "\n-------------------------Install--Kvantum-------------------------\n"
 
 printf "\n-------------------------Install--Mozilla-------------------------\n"
-sudo pacman -S thunderbird
+sudo pacman -S thunderbird --noconfirm
 
 
 printf "\n-------------------------Install--Flatpack-------------------------\n"
@@ -47,7 +47,7 @@ printf "\n-------------------------Install--Flatpack-------------------------\n"
 printf "\n-------------------------Install--gdebi-------------------------\n"
 
 printf "\n-------------------------Install--Nemo-------------------------\n"
-sudo pacman -S nemo
+sudo pacman -S nemo --noconfirm
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
@@ -56,54 +56,55 @@ gsettings set org.nemo.desktop show-desktop-icons true
 
 
 printf "\n-------------------------Install--GreenTunnel-------------------------\n"
-sudo pacman -S nodejs npm
+sudo pacman -S nodejs npm --noconfirm
 sudo npm i -g green-tunnel
 
 printf "\n-------------------------Install--Wireshark-------------------------\n"
-sudo pacman -S wireshark-qt
+sudo pacman -S wireshark-qt --noconfirm
 
 printf "\n-------------------------Install--VLC-------------------------\n"
-sudo pacman -S vlc
+sudo pacman -S vlc --noconfirm
 
 printf "\n-------------------------Install--Copyq-------------------------\n"
-sudo pacman -S copyq
+sudo pacman -S copyq --noconfirm
 
 printf "\n-------------------------Install--vnstat-------------------------\n"
-sudo pacman -S vnstat
+sudo pacman -S vnstat --noconfirm
 cp ./configs/.vnstatrc /home/hritwik/
 sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
 printf "\n-------------------------Install--PulseEffects-------------------------\n"
-sudo pacman -S pulseeffects
+sudo pacman -S pulseeffects --noconfirm
 
 printf "\n-------------------------Install--uget-------------------------\n"
 
 printf "\n-------------------------Install--qBittorrent-------------------------\n"
-sudo pacman -S qbittorrent
+sudo pacman -S qbittorrent --noconfirm
 
 printf "\n-------------------------Install--Flameshot-------------------------\n"
 
 printf "\n-------------------------Install--fusuma-------------------------\n"
-sudo pacman -S ruby libinput
+sudo pacman -S ruby libinput --noconfirm
 sudo gem install fusuma
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 # ---
 printf "\n-------------------------Install--fusuma-gems-------------------------\n"
-sudo pacman -S libevdev base-devel
+sudo pacman -S libevdev base-devel --noconfirm
 sudo gem install fusuma-plugin-sendkey
 sudo gem install fusuma-plugin-keypress
 
-sudo pacman -S wmctrl
+sudo pacman -S wmctrl --noconfirm
 sudo gem install fusuma-plugin-wmctrl
 sudo gem install fusuma-plugin-tap
 
 printf "\n-------------------------Install--fonts-manager-------------------------\n"
 
 printf "\n-------------------------Install--Atom-------------------------\n"
+sudo pacman -S atom --noconfirm
 
 printf "\n-------------------------Install--obs-studio-------------------------\n"
-sudo pacman -S obs-studio
+sudo pacman -S obs-studio --noconfirm
 
 printf "\n-------------------------Install--vscodium-------------------------\n"
 
@@ -111,10 +112,10 @@ printf "\n-------------------------Install--vscodium-------------------------\n"
 printf "\n-------------------------Install--Sublime-------------------------\n"
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-sudo pacman -Syu sublime-text
+sudo pacman -Syu sublime-text --noconfirm
 
 printf "\n-------------------------Install--Signal-------------------------\n"
-sudo pacman -S signal-desktop
+sudo pacman -S signal-desktop --noconfirm
 
 printf "\n-------------------------Install--youtube-dl-------------------------\n"
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
@@ -133,7 +134,7 @@ printf "\n-------------------------Install--jetbrains-------------------------\n
 # Use toolbox
 
 printf "\n-------------------------Install--telegram-------------------------\n"
-sudo pacman -S telegram-desktop
+sudo pacman -S telegram-desktop --noconfirm
 
 
 printf "\n-------------------------Install--WhatsApp-------------------------\n"

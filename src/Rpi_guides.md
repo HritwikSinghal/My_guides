@@ -4,6 +4,11 @@
 
 ## Guides
 
+- [Building a PiHole for Privacy and Performance (From Flashing SD to Unbound config. Fail2Ban, Firewall, RPi-Monitor.)](https://thesmashy.medium.com/building-a-pihole-for-privacy-and-performance-f762dbcb66e5)
+
+- [Quick Raspberry Pi SSH access over the internet
+](https://www.reddit.com/r/raspberry_pi/comments/kwh481/quick_raspberry_pi_ssh_access_over_the_internet/)
+
 - [Monitor your local network using a Raspberry Pi and NEMS](https://howchoo.com/pi/raspberry-pi-network-monitor-setup)
 
 ### Nextcloud on Pi
@@ -78,7 +83,7 @@
 
 - [Guide for drivers](https://medium.com/@alexanderbelov/how-to-use-your-brother-printer-with-cups-on-raspberry-pi-5b712cc2b4e6)
 	- [Another guide](https://web.archive.org/web/20200725181408/https://forum.manjaro.org/t/how-to-set-up-a-remote-printer-which-is-attached-to-a-raspberry-pi-or-any-other-arm-computer/57056)
-	
+
 	- Although Brother has its own drivers for CUPS, they’re precompiled for x86 (32-bit) architecture. Raspberry Pi is based on ARM arch, so manufactures’ drivers are note compatible with your Pi out of the box.
 
 	Software enthusiast Peter De Wachter has written an alternate driver for Brother’s printers − it’s called «brlaser».

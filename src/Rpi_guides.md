@@ -2,6 +2,12 @@
 
 # Raspberry Pi
 
+## Guides (Todo)
+
+- [[TUTORIAL] Install Brother old drivers in Raspberry PI with QUEMU (pretty easy)](https://www.reddit.com/r/linux/comments/lfaox9/tutorial_install_brother_old_drivers_in_raspberry/)
+- create your own private cloud on Raspberry Pi, [Medium Link]](https://zahidmak.medium.com/create-your-own-private-cloud-using-raspberry-pi-for-your-photos-and-documents-86a3b60384a0), [Reddit link](https://www.reddit.com/r/raspberry_pi/comments/k6n25f/wrote_this_step_by_step_guide_to_create_your_own/)
+- 
+
 
 ## Brother Printer Driver Installation.
 

@@ -4,7 +4,7 @@ Yeah, the title doesn't say much.
 
 ## Notes
 
-- Run all scrips from this directory only.
+- Run all scrips from this ```src/scripts/``` only.
 - DONT run "steps_ubuntu*" as SUDO.
 - DONT run "backup_script" as SUDO.
 - Default username: 'hritwik'

@@ -2,22 +2,51 @@
 
 # Raspberry Pi
 
-## Guides (Todo)
+## Guides
 
-- [[TUTORIAL] Install Brother old drivers in Raspberry PI with QUEMU (pretty easy)](https://www.reddit.com/r/linux/comments/lfaox9/tutorial_install_brother_old_drivers_in_raspberry/)
-- create your own private cloud on Raspberry Pi, [Medium Link]](https://zahidmak.medium.com/create-your-own-private-cloud-using-raspberry-pi-for-your-photos-and-documents-86a3b60384a0), [Reddit link](https://www.reddit.com/r/raspberry_pi/comments/k6n25f/wrote_this_step_by_step_guide_to_create_your_own/)
-- 
+- [Monitor your local network using a Raspberry Pi and NEMS](https://howchoo.com/pi/raspberry-pi-network-monitor-setup)
+
+### Nextcloud on Pi
+- []()
+- []()
+- []()
+- []()
+- []()
+- [Install Nextcloud on a RaspberryPi With Docker! Easy 5 Steps](https://www.youtube.com/watch?v=RkJuAGCKsUQ)
+- Create your own private cloud on Raspberry Pi, [Medium Link]](https://zahidmak.medium.com/create-your-own-private-cloud-using-raspberry-pi-for-your-photos-and-documents-86a3b60384a0), [Reddit link](https://www.reddit.com/r/raspberry_pi/comments/k6n25f/wrote_this_step_by_step_guide_to_create_your_own/)
+- [Nextcloud + Raspberry Pi + Docker + Onion service](https://itnext.io/nextcloud-docker-raspberry-pi-onion-service-84d4af13f7e6)
+- ["Best guide I’ve seen for setting up your own Nextcloud server"](https://kevq.uk/how-to-setup-a-nextcloud-server-in-ubuntu)
+
+
+
+### File storage server on Pi
+- []()
+- []()
+- []()
+- []()
+
+- [NASPi: a Raspberry Pi Server](https://www.reddit.com/r/raspberry_pi/comments/i9o0qw/naspi_a_raspberry_pi_server/)
+- ["Just wanted to show the Raspberry Pi NAS I've been running for about a year now"](https://www.reddit.com/r/raspberry_pi/comments/htjrir/just_wanted_to_show_the_raspberry_pi_nas_ive_been/)
+
 
 
 ## Brother Printer Driver Installation.
 
-1. ### For x86 & x64 Linux (Only DEB and RPM coz fuck you Brother!)
+<details><summary>1. For x86 & x64 Linux (Only DEB and RPM)</summary>
+<p>
 
 - Download drivers from [here](https://support.brother.com/g/b/downloadtop.aspx?c=in&lang=en&prod=hll2361dn_as) or [DDL (not recommended)](https://support.brother.com/g/b/downloadhowto.aspx?c=in&lang=en&prod=hll2361dn_as&os=128&dlid=dlf006893_000&flang=4&type3=625)
 
 - Download either "Driver Install Tool" or ("LPR printer driver" and "CUPSwrapper printer driver") and follow the install instructions given on the page.
 
-2. ### For x86 & x64 Arch Based.
+
+</p>
+</details>
+
+
+<details><summary>2. For x86 & x64 Arch Based.</summary>
+<p>
+
 - [See this forum](https://forum.manjaro.org/t/brother-l2550-dw-printer-driver-in-deb-or-rpm-but-what-for-arch/29481/3) and as always [THE GREAT ARCH WIKI](https://wiki.archlinux.org/index.php/CUPS/Printer-specific_problems)
 	- Install AUR package for [Hl-L2360D](https://aur.archlinux.org/packages/brother-hll2360d/) & [Brlaser](https://aur.archlinux.org/packages/brlaser/)
 
@@ -33,7 +62,13 @@
 
 		```$ system-config-printer``` opens a dialog. Select network printer, and my printer appears. Using the ‘settings’ dialog enter into the Device URI field [socket://10.0.0.49] or whatever the IP address is of the printer. Good idea to make that static through the router. (steps written by some user on Manjaro forum)
 
-3. ### For Rpi
+</p>
+</details>
+
+<details><summary>3. For Rpi</summary>
+<p>
+
+- [[TUTORIAL] Install Brother old drivers in Raspberry PI with QUEMU (pretty easy)](https://www.reddit.com/r/linux/comments/lfaox9/tutorial_install_brother_old_drivers_in_raspberry/)
 
 - [Guide for Setup a Print Server](https://medium.com/@anirudhgupta281998/setup-a-print-server-using-raspberry-pi-cups-part-2-2d6d48ccdc32) or [Another Guide](https://www.tomshardware.com/how-to/raspberry-pi-print-server) or [Rpi official Guide](https://www.raspberrypi.org/blog/printing-at-home-from-your-raspberry-pi/) or just Search it on internet.
 
@@ -60,6 +95,8 @@
 
 	If you don’t see the exact model of your printer, pick the closest option based on your model’s number. For example, I have an 7060D model. Most close option is 7065 model − most probably that will work like a charm. (use HL-L2360D brlaser for HL-2400CeN)
 
+</p>
+</details>
 
 ---
 

@@ -27,7 +27,7 @@
 	-  sudo pacman -S nemo-
 		nemo-audio-tab                  nemo-python                   
 		nemo-bulk-rename                nemo-qml-plugin-dbus          
-		nemo-compare                    nemo-qml-plugin-notifications 
+		nemo-compare                    nemo-qml-plugin-notifications
 		nemo-emblems                    nemo-qt-components            
 		nemo-fileroller                 nemo-repairer                 
 		nemo-image-converter            nemo-run-with-nvidia-prime-run
@@ -37,6 +37,25 @@
 		nemo-preview
 
 - Clion & Pycharm
+
+
+### QEMU
+- https://wiki.archlinux.org/index.php/libvirt
+
+- Steps to restore Win7
+	- ```
+		sudo pacman -S ebtables
+		sudo systemctl restart libvirtd
+	```
+	- copy disk image ```win7``` to some folder. (let ```/home/hritwik/boxes/```)
+	- install boxes and virt manager with all dependencies
+	- start virt manager, ```Edit -> pref -> enabre Xml editing```
+	- ```File -> new Virtual machine -> import existing disk image```
+	- add the folder and select the disk image, enter OS name, and move till end.
+	- **Select ```customize configuration before install``` and then click finish**
+	- Here copy the xml contents to the xml tab.
+	- start from boxes
+
 
 ### Gaming & Extra
 

@@ -3,8 +3,15 @@
 
 ### Todo
 
-- [Add github shiulds](https://github.com/a-maliarov/awesome-shields)
+- [Add github shields](https://github.com/a-maliarov/awesome-shields)
 
+
+#### Linux
+
+- [PARU](https://itsfoss.com/paru-aur-helper/)
+    - Also Disrtotube channel video
+- [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
+    - search it on internet, this is just basic.
 
 #### Android
 

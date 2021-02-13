@@ -2,6 +2,11 @@
 
 # Raspberry Pi
 
+## IMP!
+- Remove MS repo from PI (coz Rpi foundation is a jerk)
+	- https://www.reddit.com/r/linux/comments/lbu0t1/microsoft_repo_installed_on_all_raspberry_pis/
+	- 
+
 ## Guides
 
 - [Building a PiHole for Privacy and Performance (From Flashing SD to Unbound config. Fail2Ban, Firewall, RPi-Monitor.)](https://thesmashy.medium.com/building-a-pihole-for-privacy-and-performance-f762dbcb66e5)

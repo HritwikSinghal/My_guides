@@ -266,7 +266,7 @@ OR
     - [Lots of LSP icons in apps due to pulseeffects in Gnome 3.38](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
 
         - ```echo "[Desktop Entry] Hidden=true" > /tmp/1```
-        
+
         - ```find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}```
 
 
@@ -426,7 +426,11 @@ OR
     - Close button big
 
 - Issues
-    - Bulk rename linux
+    - Bulk rename linux (GPrename)
+        - https://www.fossmint.com/krename-batch-file-renamer-for-linux/
+        - https://linuxhint.com/rename_files_linux/
+        - https://askubuntu.com/questions/511862/an-ubuntu-linux-alternative-of-bulk-rename-utility-for-windows
+        - https://askubuntu.com/questions/1217683/rename-multiple-files-at-the-same-time
     - fusuma on sleep
     - pinch to zoom Ubuntu,
 

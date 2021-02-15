@@ -3,8 +3,12 @@
 
 ### Todo
 
+- setup github pages
+- github actions and tests.
 - [Add github shields](https://github.com/a-maliarov/awesome-shields)
 
+- Install Arch
+- Build custom rom
 
 #### Linux
 

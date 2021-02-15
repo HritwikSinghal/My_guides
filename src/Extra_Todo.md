@@ -3,6 +3,12 @@
 
 ### Todo
 
+- Explore Atom for coding(& Atom vs vscodium vs vsCode)
+
+- Markdown Editors
+    - https://github.com/marktext/marktext
+    - https://github.com/wereturtle/ghostwriter
+
 - setup github pages
 - github actions and tests.
 - [Add github shields](https://github.com/a-maliarov/awesome-shields)

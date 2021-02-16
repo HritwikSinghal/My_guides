@@ -5,10 +5,6 @@
 
 - Explore Atom for coding(& Atom vs vscodium vs vsCode)
 
-- Markdown Editors
-    - https://github.com/marktext/marktext
-    - https://github.com/wereturtle/ghostwriter
-
 - setup github pages
 - github actions and tests.
 - [Add github shields](https://github.com/a-maliarov/awesome-shields)
@@ -20,8 +16,13 @@
 
 - [PARU](https://itsfoss.com/paru-aur-helper/)
     - Also Disrtotube channel video
-- [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
-    - search it on internet, this is just basic.
+
+- Shell/terminal/prompt
+    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
+        - search it on internet, this is just basic.
+    - https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts
+    - https://itsfoss.com/linux-command-tricks/
+    - https://opensource.com/article/18/5/bash-tricks
 
 #### Android
 

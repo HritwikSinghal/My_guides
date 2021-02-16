@@ -5,7 +5,7 @@
 ## IMP!
 - Remove MS repo from PI (coz Rpi foundation is a jerk)
 	- https://www.reddit.com/r/linux/comments/lbu0t1/microsoft_repo_installed_on_all_raspberry_pis/
-	- 
+	- Maybe create a cron script for it.
 
 ## Guides
 
@@ -79,6 +79,47 @@
 <p>
 
 - [[TUTORIAL] Install Brother old drivers in Raspberry PI with QUEMU (pretty easy)](https://www.reddit.com/r/linux/comments/lfaox9/tutorial_install_brother_old_drivers_in_raspberry/)
+	```
+	Hi, just managed to print from my Android device in my old DCP-197C and I want to share it with you
+
+	I don't know if I miss something, because I tried it so many times, but I want to write somewhere what I did today, when it finally worked:
+
+	INSTALL ALL THE NECESARY STUFF
+
+	apt-get install qemu binfmt-support qemu-user-static cups a2ps
+
+	ADD ARCHITECTURE
+
+	dpkg --add-architecture i386
+
+	DOWNLOAD LIBC6 FOR i386 (I found it here)
+
+	wget old.kali.org/kali-security/pool/main/e/eglibc/libc6_2.13-38+deb7u8_i386.deb
+
+	IF YOU TRY TO INSTALL THIS, YOU WILL MESS AROUND WITH APT, SO WE WILL EXTRACT THE DEB AND COPY THESE FILES MANUALLY
+
+	    dpkg -x libc6_2.13-38+deb7u8_i386.deb data
+
+	    sudo cp -r data/lib/* /lib
+
+	    sudo cp -r data/usr/* /usr
+
+	    sudo cp -r data/etc/* /etc
+
+	RUN THIS AND ADD IT TO BASHRC TO RUN IN EVERY REBOOT
+
+	EXTRA_OPTS="-L /lib/i386-linux-gnu"
+
+	DOWNLOAD AND INSTALL YOUR DRIVERS - FOR ME:
+
+	    wget https://download.brother.com/welcome/dlf005405/dcp197ccupswrapper-1.1.3-1.i386.deb
+
+	    wget https://download.brother.com/welcome/dlf005403/dcp197clpr-1.1.3-1.i386.deb
+
+	    sudo dpkg -i dcp197ccupswrapper-1.1.3-1.i386.deb
+
+	    sudo dpkg -i dcp197clpr-1.1.3-1.i386.deb
+	```
 
 - [Guide for Setup a Print Server](https://medium.com/@anirudhgupta281998/setup-a-print-server-using-raspberry-pi-cups-part-2-2d6d48ccdc32) or [Another Guide](https://www.tomshardware.com/how-to/raspberry-pi-print-server) or [Rpi official Guide](https://www.raspberrypi.org/blog/printing-at-home-from-your-raspberry-pi/) or just Search it on internet.
 
@@ -86,24 +127,9 @@
 	CUPS (Common Unix Printing System) is a printing system for UNIX like operating systems based computers. It gives computers on which it is running the ability to act as a print server. A computer running CUPS is able to accept jobs from multiple devices, process them and pass it on to the appropriate printer to print. For this tutorial, we will setup CUPS on a Raspberry Pi 3 Model B+. You can use any other Raspberry Pi model.
 
 
-- [Guide for drivers](https://medium.com/@alexanderbelov/how-to-use-your-brother-printer-with-cups-on-raspberry-pi-5b712cc2b4e6)
-	- [Another guide](https://web.archive.org/web/20200725181408/https://forum.manjaro.org/t/how-to-set-up-a-remote-printer-which-is-attached-to-a-raspberry-pi-or-any-other-arm-computer/57056)
-
-	- Although Brother has its own drivers for CUPS, they’re precompiled for x86 (32-bit) architecture. Raspberry Pi is based on ARM arch, so manufactures’ drivers are note compatible with your Pi out of the box.
-
-	Software enthusiast Peter De Wachter has written an alternate driver for Brother’s printers − it’s called «brlaser».
-
-	Source code is available at its [GitHub repo](https://github.com/pdewacht/brlaser).
-
-	Installation is quite simple − just paste this line to Terminal:
-	```
-	sudo apt-get install printer-driver-brlaser
-	sudo service cups restart
-	```
-
-	When CUPS will ask you to choose the driver to communicate with your printer, choose «brlaser».
-
-	If you don’t see the exact model of your printer, pick the closest option based on your model’s number. For example, I have an 7060D model. Most close option is 7065 model − most probably that will work like a charm. (use HL-L2360D brlaser for HL-2400CeN)
+- (Does not work for HL-L2360D)
+	- [Guide for drivers](https://medium.com/@alexanderbelov/how-to-use-your-brother-printer-with-cups-on-raspberry-pi-5b712cc2b4e6)
+		- [Another source for above guide](https://web.archive.org/web/20200725181408/https://forum.manjaro.org/t/how-to-set-up-a-remote-printer-which-is-attached-to-a-raspberry-pi-or-any-other-arm-computer/57056)
 
 </p>
 </details>

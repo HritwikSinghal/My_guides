@@ -24,12 +24,6 @@
     - https://itsfoss.com/linux-command-tricks/
     - https://opensource.com/article/18/5/bash-tricks
 
-#### Android
-
-- [build LineageOS with Nix using robotnix](https://www.reddit.com/r/LineageOS/comments/igg7mc/you_can_now_build_lineageos_with_nix_using/)
-    - See reddit wiki for more
-
-#### General
 
 - [What's in a Linux executable](https://fasterthanli.me/series/making-our-own-executable-packer/part-1)
 
@@ -37,7 +31,13 @@
 
 - [simple-to-use graphical interface for youtube-dl](https://www.reddit.com/r/linux/comments/kyw5jx/a_simpletouse_graphical_interface_for_youtubedl/)
 
-- [Deskreen. This is a desktop app that makes any device with a web browser a second screen for your computer](https://www.reddit.com/r/electronjs/comments/kzuf10/i_created_deskreen_this_is_a_desktop_app_that/)
+
+#### Android
+
+- [build LineageOS with Nix using robotnix](https://www.reddit.com/r/LineageOS/comments/igg7mc/you_can_now_build_lineageos_with_nix_using/)
+    - See reddit wiki for more
+
+#### General
 
 - [I made a Finance Database with over 180.000 tickers to make Investment Decisions easier](https://www.reddit.com/r/Python/comments/lcexoa/i_made_a_finance_database_with_over_180000/)
 

@@ -14,6 +14,7 @@
 ### Install Apps
 
 - [AUR helper like yay](https://itsfoss.com/best-aur-helpers/)
+	- Paru
 - https://www.playonlinux.com/en/
 - https://itsfoss.com/pacman-command/
 - [sudo systemctl enable fstrim.timer](https://itsfoss.com/things-to-do-after-installing-manjaro/)

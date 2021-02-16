@@ -17,6 +17,9 @@
     - Manjaro
         -
 
+- [Deskreen. This is a desktop app that makes any device with a web browser a second screen for your computer](https://www.reddit.com/r/electronjs/comments/kzuf10/i_created_deskreen_this_is_a_desktop_app_that/)
+
+
 - Audio Tagger
     - https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
     - [Kid3 audio tagger](https://kid3.kde.org/)

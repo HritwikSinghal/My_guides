@@ -266,7 +266,7 @@ OR
     - [Lots of LSP icons in apps due to pulseeffects in Gnome 3.38](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
 
         - ```echo "[Desktop Entry] Hidden=true" > /tmp/1```
-        
+
         - ```find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}```
 
 
@@ -343,8 +343,7 @@ OR
 - Kdenlive
     - sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
     - sudo apt install kdenlive -y
-- Elisa music player
-	- sudo apt install elisa -y
+
 - [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
 - [ulauncher](https://ulauncher.io/#Download)
 
@@ -426,7 +425,6 @@ OR
     - Close button big
 
 - Issues
-    - Bulk rename linux
     - fusuma on sleep
     - pinch to zoom Ubuntu,
 
@@ -435,14 +433,12 @@ OR
 
 - Extra
     - [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
-    - [Install eddy for soft install](https://linoxide.com/linux-how-to/eddy-install-debian-packages-elementary/)
 
     - [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
 
     - [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
 
     - [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
-        - [Kid3 audio tagger](https://kid3.kde.org/)
 
     - Brother Printer
 
@@ -576,39 +572,3 @@ OR
 
     Use the following command to help debug any further issues.  G_MESSAGS_DEBUG=all flatpak run org.gnome.Boxes
     ```
-## Extra Articles
-
-- [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
-
-        DOWNLOAD_URL=$(curl -s https://api.github.com/repos/felixb/swamp/releases/latest \
-        | grep browser_download_url \
-        | grep swamp_amd64 \
-        | cut -d '"' -f 4)
-        curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
-Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
-
-- [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
-
-- https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
-- https://libre-software.net/edit-metadata-exiftool/
-
-- https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts
-- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
-
-- https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html
-- https://www.linuxuprising.com/2020/03/mystiq-is-easy-to-use-ffmpeg-gui.html
-- https://www.linuxuprising.com/2020/01/bandwhich-shows-whats-taking-up-your.html
-- https://www.linuxuprising.com/2020/05/how-to-encrypt-cloud-storage-files-with.html
-- https://www.linuxuprising.com/2020/04/cryptomator-150-released-with.html
-- https://medium.com/swlh/backing-up-with-borg-c6f13d74dd6
-
-
-- https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html
-    - https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
-
-- https://www.linuxuprising.com/2020/02/tlp-13-linux-laptop-battery-extender.html
-
-- https://itsfoss.com/linux-command-tricks/
-- https://opensource.com/article/18/5/bash-tricks
-- https://linuxconfig.org/how-to-backup-and-restore-permissions-for-entire-directory-on-linux
-- https://www.linuxuprising.com/2020/09/how-to-enable-echo-noise-cancellation.html

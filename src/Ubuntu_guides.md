@@ -414,8 +414,6 @@ OR
 - VNC viewer
 - firefox setup and icons for profiles
 
-- [Shell theme](https://starship.rs/guide/#%F0%9F%9A%80-installation)
-
 - [wayfire](https://github.com/WayfireWM/wayfire)
 
 - Theming

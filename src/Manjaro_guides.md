@@ -47,6 +47,12 @@
 	- ```
 		sudo pacman -S ebtables
 		sudo systemctl restart libvirtd
+
+
+		sudo gpasswd -a $USER kvm
+		newgrp kvm
+		sudo gpasswd -a $USER libvirt
+		newgrp libvirt
 	```
 	- copy disk image ```win7``` to some folder. (let ```/home/hritwik/boxes/```)
 	- install boxes and virt manager with all dependencies

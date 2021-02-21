@@ -12,7 +12,11 @@
 - Install Arch
 - Build custom rom
 
+- [for downloading videos](https://alltubedownload.net/)
+    - supports voot, sony liv, hotstar
 #### Linux
+- [starship](https://itsfoss.com/starship/)
+    - https://starship.rs/guide/#%F0%9F%9A%80-installation
 
 - [PARU](https://itsfoss.com/paru-aur-helper/)
     - Also Disrtotube channel video

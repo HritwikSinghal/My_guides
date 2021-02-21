@@ -1,8 +1,9 @@
 # Common Things for all Linux Distros
 
 
+## Apps & Extensions
 
-## Apps
+### Apps
 
 - There are many distro specific apps that are not known
     - Linux Mint
@@ -62,6 +63,10 @@
     - [Flameshot](https://itsfoss.com/flameshot/)
 
 
+### Extensions
+- [multi-monitors-add-on](https://extensions.gnome.org/extension/921/multi-monitors-add-on/)
+
+
 ## Guides
 
 
@@ -80,16 +85,18 @@
         | grep swamp_amd64 \
         | cut -d '"' -f 4)
         curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
-Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
+	Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
 
 - [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
 
 
 ---
+- [youtube-dl Gui](https://itsfoss.com/youtube-dl-gui-apps/)
+- [ffmpeg gui: mystiq](https://www.linuxuprising.com/2020/03/mystiq-is-easy-to-use-ffmpeg-gui.html)
+
 - https://linuxhint.com/add_shortcuts_ubuntu_desktop/
 
 - https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html
-- https://www.linuxuprising.com/2020/03/mystiq-is-easy-to-use-ffmpeg-gui.html
 - https://www.linuxuprising.com/2020/01/bandwhich-shows-whats-taking-up-your.html
 - https://www.linuxuprising.com/2020/05/how-to-encrypt-cloud-storage-files-with.html
 - https://www.linuxuprising.com/2020/04/cryptomator-150-released-with.html

@@ -1,8 +1,8 @@
 # Extra Things I want to do
 
 
-### Todo
-
+### 1. Todo
+- https://www.youtube.com/watch?v=t3pwiFKGHMg rpi things
 - Explore Atom for coding(& Atom vs vscodium vs vsCode)
 
 - setup github pages
@@ -14,9 +14,12 @@
 
 - [for downloading videos](https://alltubedownload.net/)
     - supports voot, sony liv, hotstar
+
 #### Linux
 - [starship](https://itsfoss.com/starship/)
     - https://starship.rs/guide/#%F0%9F%9A%80-installation
+
+- https://www.youtube.com/watch?v=TKX29fJ8U2Y (bash customize)
 
 - [PARU](https://itsfoss.com/paru-aur-helper/)
     - Also Disrtotube channel video
@@ -33,13 +36,12 @@
 
 - [script to use a smartphone (or any audio stream) as microphone on PulseAudio](https://github.com/MatthiasCoppens/pulseaudio-virtualmic)
 
-- [simple-to-use graphical interface for youtube-dl](https://www.reddit.com/r/linux/comments/kyw5jx/a_simpletouse_graphical_interface_for_youtubedl/)
-
 
 #### Android
 
 - [build LineageOS with Nix using robotnix](https://www.reddit.com/r/LineageOS/comments/igg7mc/you_can_now_build_lineageos_with_nix_using/)
-    - See reddit wiki for more
+    - See LOS reddit wiki for more
+
 
 #### General
 
@@ -48,7 +50,10 @@
 - [Udemy Coupon Grabber & Course Enroller](https://github.com/aapatre/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE)
 
 
-### Python projects
+
+
+
+### 2. Python projects
 
 - [7 pytest Features and Plugins That Will Save You Tons of Time](https://miguendes.me/7-pytest-features-and-plugins-that-will-save-you-tons-of-time-ckfsjlr8y02axv6s1f8is1pgh)
 
@@ -67,14 +72,18 @@
 - [open source face recognition Raspberry Pi camera](https://github.com/SharpAI/DeepCamera)
 
 
-### Open source contributions
+### 3. Open source contributions
 
 -
 - [mycroft](https://mycroft.ai/)
 - [Mozilla Deepspeech](https://github.com/mozilla/DeepSpeech)
 
 
-### FF
+
+
+
+
+### 4. FF
 
 #### Shortcuts
 
@@ -94,7 +103,9 @@
 
 
 
-### Self host
+
+
+### 5. Self host
 
 - [self-host Bitwarden Password Manager](https://bowlerdesign.tech/posts/how-to-self-host-bitwarden-on-ubuntu-server/)
 

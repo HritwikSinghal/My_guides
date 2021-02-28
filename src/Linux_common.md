@@ -69,6 +69,37 @@
 
 ## Guides
 
+#### 1) Steps to restore Win7
+
+- copy disk image ```win7``` to some folder. (let ```/home/hritwik/boxes/```)
+- install boxes and virt manager with all dependencies
+- start virt manager, ```Edit -> pref -> enabre Xml editing```
+- ```File -> new Virtual machine -> import existing disk image```
+- add the folder and select the disk image, enter OS name, and move till end.
+- **Select ```customize configuration before install``` and then click finish**
+- Here copy the xml contents to the xml tab.
+- start from boxes
+
+
+### 2) Gaming
+
+- https://leduccc.medium.com/simple-dgpu-passthrough-on-a-dell-precision-7450-ebe65b2e648e
+    - for GPU passthrough (don't bother, it won't work on muxless) and also for QEMU on manjaro
+- [another GPU passthrough Tut](https://heiko-sieger.info/running-windows-10-on-linux-using-kvm-with-vga-passthrough/)
+
+- [How To Setup Gaming on Manjaro](https://www.youtube.com/watch?v=w3yUVQ4QFGU)
+- [How to set up Manjaro Linux and making it fit for gaming](https://www.youtube.com/watch?v=XPc-Ty3rtRE)
+- [How To Set Up Manjaro For Gaming - GPU Drivers, Kernel, Steam Proton, Wine, Lutris - GUI Method](https://www.youtube.com/watch?v=01KCtHcB2D0)
+
+- [Get 10% MORE FPS in Linux games with GAMEMODE!](https://www.youtube.com/watch?v=sZb1v4EM-2U)
+- [The Ultimate Linux Gaming Guide](https://www.youtube.com/watch?v=xvrft9ULvho)
+- [How To Set Up Debian, Ubuntu, Arch for Gaming Using Python - Wine, Lutris, Steam, GOverlay, MangoHUD](https://www.youtube.com/watch?v=NLW6n8MM3R8)
+- [How to Install Games on Linux with WINE and DXVK Vulkan](https://www.youtube.com/watch?v=BefTUxsRiwY)
+
+
+
+
+#### 3) Other
 
 - [Linux Wifi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 - [login with USB on liunx](https://www.linuxuprising.com/2021/02/how-to-login-with-usb-flash-drive.html)
@@ -107,30 +138,6 @@
     - https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
 
 - https://www.linuxuprising.com/2020/02/tlp-13-linux-laptop-battery-extender.html
-
-- https://linuxconfig.org/how-to-backup-and-restore-permissions-for-entire-directory-on-linux
-- https://www.linuxuprising.com/2020/09/how-to-enable-echo-noise-cancellation.html
-
----
-- Gaming
-    - https://leduccc.medium.com/simple-dgpu-passthrough-on-a-dell-precision-7450-ebe65b2e648e
-    	- for GPU passthrough (don't bother, it won't work on muxless) and also for QEMU on manjaro
-    - [another GPU passthrough Tut](https://heiko-sieger.info/running-windows-10-on-linux-using-kvm-with-vga-passthrough/)
-
-    - https://www.youtube.com/watch?v=w3yUVQ4QFGU
-    - https://www.youtube.com/watch?v=XPc-Ty3rtRE
-    - https://www.youtube.com/watch?v=01KCtHcB2D0
-
-    - https://www.youtube.com/watch?v=sZb1v4EM-2U
-    - https://www.youtube.com/watch?v=xvrft9ULvho
-    - https://www.youtube.com/watch?v=NLW6n8MM3R8
-    - https://www.youtube.com/watch?v=BefTUxsRiwY
-
-
-
-
-
-
 
 
 

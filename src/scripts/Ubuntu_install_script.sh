@@ -171,7 +171,6 @@ sudo apt install copyq -y
 
 printf "\n-------------------------Install--vnstat-------------------------\n"
 sudo apt install vnstat -y
-cp ./configs/.vnstatrc /home/hritwik/
 sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
@@ -192,10 +191,8 @@ printf "\n-------------------------Install--Flameshot-------------------------\n
 sudo apt install flameshot -y
 
 printf "\n-------------------------Install--fusuma-------------------------\n"
-sudo apt install libinput-tools -y
-sudo apt install ruby -y
+sudo apt install libinput-tools ruby xdotool -y
 sudo gem install fusuma
-sudo apt install xdotool -y
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 # ---
 printf "\n-------------------------Install--fusuma-gems-------------------------\n"
@@ -418,6 +415,11 @@ mkdir -p /home/hritwik/.config/fusuma/
 cp ./configs/config.yml /home/hritwik/.config/fusuma/
 
 
+printf "\n--------------------------Tweaks---Vnstat-------------------------\n"
+cp ./configs/.vnstatrc /home/hritwik/
+
+
+
 
 
 
@@ -493,4 +495,6 @@ printf "\n--------------------------Final---Fusuma-add-user-to-input-group------
 sudo gpasswd -a hritwik input
 newgrp input
 sudo usermod -a -G libvirt hritwik
+newgrp libvirt
 sudo usermod -a -G kvm hritwik
+newgrp kvm

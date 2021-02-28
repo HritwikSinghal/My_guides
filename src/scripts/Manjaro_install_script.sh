@@ -8,43 +8,36 @@ printf "\n----------------------------------------------------------------------
 printf "\n\n\n-------------------------Insatlling Apps-------------------------\n\n\n"
 
 
-printf "\n-------------------------Install--Ubuntu-extras-------------------------\n"
+printf "\n-------------------------Install--extras-------------------------\n"
 
-# sudo apt install ubuntu-restricted-extras ttf-mscorefonts-installer -y
-# sudo apt install exfat-fuse exfat-utils ntfs-3g -y
-# sudo apt install filezilla git rar unrar p7zip-full p7zip-rar -y
-# sudo apt install gnome-music gnote gnome-weather gnome-clocks -y
-# sudo apt install synaptic kate dconf-editor net-tools ppa-purge curl -y
-# sudo apt install nautilus-admin bashtop htop -y
+# sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv opus wavpack x264 xvidcore  --noconfirm
+sudo pacman -S exfat-utils ntfs-3g p7zip --noconfirm 
+sudo pacman -S filezilla git rar unrar --noconfirm
+sudo pacman -S gnome-music gnote gnome-weather gnome-clocks --noconfirm
+sudo pacman -S net-tools dconf-editor kate curl eog --noconfirm
+sudo pacman -S nautilus-admin htop --noconfirm 
+
 pip3 install virtualenv youtube_dlc
 
-# # sudo snap install bashtop
-# # sudo apt install preload -y
-# # sudo apt install pavucontrol -y
+sudo pacman -S conky libmythes mythes-en languagetool aspell-en --noconfirm
 
+# sudo apt install ttf-mscorefonts-installer -y
 # sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
 # # Below one is needed only for blur shell extensions
 # # sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
-sudo pacman -S libmythes mythes-en languagetool aspell-en --noconfirm
+
+
 
 
 printf "\n-------------------------Install--Wine-------------------------\n"
 
-
-printf "\n-------------------------Install--conky-------------------------\n"
-sudo pacman -S conky --noconfirm
-
 printf "\n-------------------------Install--java-------------------------\n"
-
-printf "\n-------------------------Install--Kvantum-------------------------\n"
-
-printf "\n-------------------------Install--Mozilla-------------------------\n"
-sudo pacman -S thunderbird --noconfirm
-
+sudo pacman -S jre-openjdk jdk-openjdk --noconfirm
 
 printf "\n-------------------------Install--Flatpack-------------------------\n"
 
 printf "\n-------------------------Install--gdebi-------------------------\n"
+# Not needed
 
 printf "\n-------------------------Install--Nemo-------------------------\n"
 sudo pacman -S nemo --noconfirm
@@ -53,11 +46,18 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 # add nemo to startup apps & disable desktop icon extension
 
+sudo pacman -S nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-compare nemo-media-columns nemo-pdf-tools nemo-preview  nemo-share --noconfirm
 
+
+printf "\n-------------------------Install--Lollypop-------------------------\n"
+sudo pacman -S lollypop --noconfirm
 
 printf "\n-------------------------Install--GreenTunnel-------------------------\n"
 sudo pacman -S nodejs npm --noconfirm
 sudo npm i -g green-tunnel
+
+printf "\n-------------------------Install--FreeTube-------------------------\n"
+# flatpak install flathub io.freetubeapp.FreeTube -y
 
 printf "\n-------------------------Install--Wireshark-------------------------\n"
 sudo pacman -S wireshark-qt --noconfirm
@@ -70,7 +70,6 @@ sudo pacman -S copyq --noconfirm
 
 printf "\n-------------------------Install--vnstat-------------------------\n"
 sudo pacman -S vnstat --noconfirm
-cp ./configs/.vnstatrc /home/hritwik/
 sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
@@ -85,6 +84,8 @@ sudo pacman -S qbittorrent --noconfirm
 printf "\n-------------------------Install--Flameshot-------------------------\n"
 
 printf "\n-------------------------Install--fusuma-------------------------\n"
+# change setting to install systemwide first. 
+	# - https://wiki.archlinux.org/index.php/ruby#Installing_Ruby
 sudo pacman -S ruby libinput --noconfirm
 sudo gem install fusuma
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
@@ -107,7 +108,7 @@ printf "\n-------------------------Install--obs-studio-------------------------\
 sudo pacman -S obs-studio --noconfirm
 
 printf "\n-------------------------Install--vscodium-------------------------\n"
-
+# Use AUR
 
 printf "\n-------------------------Install--Sublime-------------------------\n"
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
@@ -125,6 +126,8 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 printf "\n-------------------------Install--Xanmod-------------------------\n"
 
 printf "\n-------------------------Install--gnome-boxes & virt-manager-------------------------\n"
+sudo pacman -S gnome-boxes virt-manager ebtables
+sudo systemctl restart libvirtd
 
 printf "\n-------------------------Install--jetbrains-------------------------\n"
 # sudo snap install pycharm-community --classic
@@ -138,7 +141,8 @@ sudo pacman -S telegram-desktop --noconfirm
 
 
 printf "\n-------------------------Install--WhatsApp-------------------------\n"
-sudo snap install whatsdesk
+sudo pacman -S whatsapp-for-linux --noconfirm
+# sudo snap install whatsdesk
 
 
 printf "\n-------------------------Install--BingWall-------------------------\n"
@@ -157,11 +161,13 @@ gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
-echo "alias ll='ls -al'" | sudo tee -a /home/hritwik/.zshrc
+echo "alias ll='ls -alh --color'" | sudo tee -a /home/hritwik/.zshrc
 source ~/.zshrc
 
 sudo systemctl enable cronie
 sudo systemctl start cronie
+
+sudo systemctl enable fstrim.timer
 
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
@@ -290,3 +296,86 @@ printf "\n-------------------------Tweaks--fusuma-config------------------------
 rm -rf /home/hritwik/.config/fusuma
 mkdir -p /home/hritwik/.config/fusuma/
 cp ./configs/config.yml /home/hritwik/.config/fusuma/
+
+
+printf "\n--------------------------Tweaks---Vnstat-------------------------\n"
+cp ./configs/.vnstatrc /home/hritwik/
+
+
+
+
+
+
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Theming & Installing Extensions-------------------------\n\n\n"
+
+printf "\n--------------------------Theme_Ext---Grub-theme-------------------------\n"
+rm -rf /home/hritwik/my_downloads/grub_themes
+git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git /home/hritwik/my_downloads/grub_themes
+sudo /home/hritwik/my_downloads/grub_themes/install.sh -t slaze -i white
+
+
+printf "\n--------------------------Theme_Ext---Theme: Yaru-Colors-------------------------\n"
+rm -rf /home/hritwik/my_downloads/Yaru-Colors
+git clone --depth 1 https://github.com/Jannomag/Yaru-Colors.git /home/hritwik/my_downloads/Yaru-Colors
+/home/hritwik/my_downloads/Yaru-Colors/install.sh
+
+sudo snap install yaru-colors
+for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done
+for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done
+for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done
+
+
+
+
+printf "\n--------------------------Theme_Ext---App theme: orchis-dark-------------------------\n"
+# rm -rf /home/hritwik/my_downloads/orchis-dark
+# git clone --depth 1 https://github.com/vinceliuice/Orchis-theme.git /home/hritwik/my_downloads/orchis-dark
+# sudo /home/hritwik/my_downloads/orchis-dark/install.sh
+# sudo snap install orchis-themes
+# gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
+
+
+printf "\n--------------------------Theme_Ext---icon & Curser theme: Pop-------------------------\n"
+# sudo apt install pop-icon-theme -y
+# gsettings set org.gnome.desktop.interface icon-theme 'Pop'
+# gsettings set org.gnome.desktop.interface cursor-theme 'Pop'
+
+
+printf "\n--------------------------Theme_Ext---shell-theme & Extensions-------------------------\n"
+unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
+
+rm -rf /home/hritwik/my_downloads/materia-theme
+git clone --depth 1 https://github.com/nana-4/materia-theme.git /home/hritwik/my_downloads/materia-theme
+sudo /home/hritwik/my_downloads/materia-theme/install.sh
+gsettings set org.gnome.shell.extensions.user-theme name 'Materia-dark'
+
+printf "\n--------------------------Theme_Ext---fonts-------------------------\n"
+# rm -rf /home/hritwik/my_downloads/pop_fonts
+# git clone --depth 1 https://github.com/pop-os/fonts.git /home/hritwik/my_downloads/pop_fonts
+# cd /home/hritwik/my_downloads/pop_fonts/
+# sudo make install
+
+# gsettings set org.gnome.desktop.interface font-name 'Fira Sans Semi-Light 11'
+# gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 11'
+# gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
+# gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Fira Sans Semi-Bold 11'
+gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
+
+
+
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Finished Successfully-------------------------\n\n\n"
+
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"
+printf "\n--------------------------Final---Fusuma-add-user-to-input-group-------------------------\n"
+sudo gpasswd -a hritwik input
+newgrp input
+sudo usermod -a -G libvirt hritwik
+newgrp libvirt
+sudo usermod -a -G kvm hritwik
+newgrp kvm

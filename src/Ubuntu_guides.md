@@ -166,11 +166,8 @@ Feel free to copy anything from here and use it.
 - [x] Change compression level
 
         gsettings set org.gnome.FileRoller.General compression-level "very-fast"
-
         gsettings set org.gnome.FileRoller.General compression-level "fast"
-
         gsettings set org.gnome.FileRoller.General compression-level "normal"
-
         gsettings set org.gnome.FileRoller.General compression-level "maximum"
 
 

@@ -16,18 +16,12 @@ Feel free to copy anything from here and use it.
     - use nmcli commands:
         - sudo nmcli networking off
         - sudo nmcli networking on
-* DNS
-    * Use 'nmcli' command for dns server ip addr ([Link](https://www.liquidweb.com/kb/how-to-install-and-configure-nmcli/))
-        - nmcli dev show | grep DNS
 
-    * OR 'nslookup website_name'
-    * OR "cat /etc/resolv.conf"
-    * OR just check in wifi settings
-
-
-- Setup guide
-    - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
-    - [github, for great selection of apps and other things. This is great](https://github.com/themagicalmammal/howtopopbuntu)
+* DNS lookup
+    * nmcli dev show | grep DNS
+    * nslookup website_name
+    * cat /etc/resolv.conf
+    * just check in wifi settings
 
 
 ## Appearance & Customization
@@ -39,66 +33,6 @@ Feel free to copy anything from here and use it.
 
 	- Dont compile it
     - Another [Guide](https://www.linuxuprising.com/2018/05/use-custom-themes-for-qt-applications.html)
-
-- [x] Theme:
-    - [x] [Grub Themes](https://github.com/vinceliuice/grub2-themes)
-
-    - [x] [Orchis-theme](https://github.com/vinceliuice/Orchis-theme) (For Apps)
-        - Also take close buttons from here
-        - [Install its snap version for snap Apps](https://snapcraft.io/orchis-themes)
-
-    - [x] [materia-theme](https://github.com/nana-4/materia-theme) (For Shell)
-
-	OR
-
-	- [Pop! Os Application theme](https://github.com/pop-os/gtk-theme) (Compile it)
-        - DO NOT INSTALL 'pop-theme' or its ppa, it will mess up ubuntu
-
-	OR
-
-	- [x] [Yaru-Colors](https://github.com/Jannomag/Yaru-Colors)
-
-
-- [x] Icons:
-	- [x] [Pop Icons and curser](https://github.com/pop-os/icon-theme)
-
-	OR
-
-	- [Papirus Icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-
-    OR
-    - [Flat Remix](https://github.com/daniruiz/Flat-Remix)
-
-- [x] Fonts:
-    - [x] Install font manager first
-        - sudo apt install font-manager
-
-    - [x] for Pop! like look
-        - sudo apt install pop-fonts
-
-                Interface: Fira Sans Book 11
-                Documents: Roboto Slab Regular 11
-                Monospace: Fira Mono Regular 13
-                Window Titles: Fira Sans SemiBold 11
-                scaling factor: 0.85
-
-### Extra Customization
-
-- [Pop! Os Wall](https://github.com/pop-os/wallpapers)
-
-- For macOS like look ([see video](https://www.youtube.com/watch?v=IzPxJK4drcc))
-
-	- https://itsfoss.com/make-ubuntu-look-like-macos/
-	- https://www.linuxuprising.com/2020/10/whitesur-macos-big-sur-like-gtk-gnome.html
-        - https://github.com/vinceliuice/WhiteSur-gtk-theme
-	- https://www.omgubuntu.co.uk/2017/03/make-ubuntu-look-like-mac-5-steps
-
-	- [MacOS wallpapers](https://photos.google.com/share/AF1QipNNQyeVrqxBdNmBkq9ILswizuj-RYJFNt5GlxJZ90Y6hx0okrVSLKSnmFFbX7j5Mg?key=RV8tSXVJVGdfS1RIQUI0Q3RZZVhlTmw0WmhFZ2V3)
-
-	- [Mcata gtk theme ](https://www.gnome-look.org/p/1381832/)
-
-	- https://github.com/vinceliuice/Sierra-gtk-theme
-	- https://github.com/vinceliuice/Mojave-gtk-theme
 
 
 ## System
@@ -123,28 +57,6 @@ Feel free to copy anything from here and use it.
 - [x] Increase terminal size to 100x30 and change its color and shortcuts
 
 - [x] Change keyboard layout to DVORAK
-
-- [x] Touchpad Gestures
-
-    - [Touchegg](https://github.com/JoseExposito/touchegg)
-
-    OR
-
-	- [x] [Fusuma](https://github.com/iberianpig/fusuma)
-	   - [x] with its addons & config file
-
-    OR
-
-	- [Extended gestures](https://extensions.gnome.org/extension/1253/extended-gestures/) Extension
-        - wayland only
-        - change sensitivity to 50
-        - [Github](https://github.com/mpiannucci/gnome-shell-extended-gestures)
-
-	- [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
-        - Xorg only, may work on wayland but not recommended, see wiki
-
-	- [Comfortable-swipe](https://github.com/Hikari9/comfortable-swipe)
-        - Xorg only
 
 - [x] Add shortcuts
 	- [x] Calc (F7)
@@ -263,7 +175,6 @@ OR
     - [Lots of LSP icons in apps due to pulseeffects in Gnome 3.38](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
 
         - ```echo "[Desktop Entry] Hidden=true" > /tmp/1```
-
         - ```find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}```
 
 
@@ -297,10 +208,6 @@ OR
 - [x] [Nemo](https://itsfoss.com/install-nemo-file-manager-ubuntu/)
 
     - [Github](https://github.com/linuxmint/nemo/releases/)
-        - use "sudo dpkg -i *.deb" and fix all for dependencies by installing the thing which is missing.
-        You may have to run 'sudo apt fix broken install' (It will tell you)
-            - [help](https://www.maketecheasier.com/fix-broken-packages-ubuntu/) for "apt fix broken install"
-            - run 'sudo apt --fix-broken install'
 
     - [x] disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
 
@@ -326,10 +233,6 @@ OR
 
 - [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
 
-- [x] Freetube
-    - flatpak install flathub io.freetubeapp.FreeTube
-
-
 ### Extra Apps:
 
 - [gnome-sushi](https://www.omgubuntu.co.uk/gnome-sushi-mac-quick-for-ubuntu) (spacebar preview for nautilus)
@@ -343,6 +246,9 @@ OR
 
 - [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
 - [ulauncher](https://ulauncher.io/#Download)
+
+- Freetube
+    - flatpak install flathub io.freetubeapp.FreeTube
 
 
 ## Install extensions
@@ -407,9 +313,9 @@ OR
 
 
 ## Todo
+
 - [custom Kernel, Xanmod](https://xanmod.org/)
 - VNC viewer
-- firefox setup and icons for profiles
 
 - [wayfire](https://github.com/WayfireWM/wayfire)
 
@@ -421,10 +327,10 @@ OR
 
 - Issues
     - fusuma on sleep
-    - pinch to zoom Ubuntu,
+    - pinch to zoom Ubuntu
 
 - How this works:
-    - nmcli dev show | grep DNS | awk '{ print $2 }
+    - nmcli dev show | grep DNS | awk '{ print $2 }'
 
 - Extra
     - [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
@@ -443,127 +349,6 @@ OR
     - Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
         - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
 
-### Startup
-
-- make one script for all startup apps
 - Increase Bash History
     - https://eshlox.net/2017/08/01/bash-increase-command-history-size
     - https://stackoverflow.com/questions/9457233/unlimited-bash-history
-
-### Gaming
-
-- Prefer Pop!_Os and use 'gamemoderun' prefix for running games on Ubuntu.
-- Bleeding edge = oibaf/graphics-drivers, Latest point release = kisak/kisak-mesa. [Source](https://itsfoss.com/install-mesa-ubuntu/)
-- for 20.04 [video](https://www.youtube.com/watch?v=DToZ9wU2qRk), [reddit](https://www.reddit.com/r/linux4noobs/comments/g7753y/how_to_set_up_ubuntu_2004_for_gaming_tutorial/)
-- [Wiki](https://www.reddit.com/r/linux_gaming/wiki/starting_guide)
-
-- [Latest AMDGPU](https://linuxconfig.org/amd-radeon-ubuntu-20-04-driver-installation) (uses ppa:oibaf/graphics-drivers)
-    ```
-    sudo add-apt-repository ppa:oibaf/graphics-drivers
-    sudo apt update && sudo apt -y upgrade
-    ```
-
-- [latest mesa](https://itsfoss.com/install-mesa-ubuntu/)
-    ```
-    sudo add-apt-repository ppa:kisak/kisak-mesa
-    sudo apt update
-    sudo apt install mesa
-    ```
-- [install latest mesa vulkan](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)
-    ```
-    sudo add-apt-repository ppa:kisak/kisak-mesa    
-    sudo dpkg --add-architecture i386
-    sudo apt update && sudo apt upgrade
-    sudo apt install libgl1-mesa-dri:i386
-    sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
-    ```
-
-- OR see guide for mesa [vulkan](https://linuxconfig.org/install-and-test-vulkan-on-linux)
-    ```
-    sudo add-apt-repository ppa:oibaf/graphics-drivers
-    sudo apt update
-    sudo apt upgrade
-    sudo apt install libvulkan1 mesa-vulkan-drivers vulkan-utils
-    ```
-- OR use [AMDVLK](https://github.com/GPUOpen-Drivers/AMDVLK/releases)
-- [Wine staging branch](https://wiki.winehq.org/Ubuntu)
-- [Lutris](https://lutris.net/downloads/)
-- [DXVK](https://linuxconfig.org/improve-your-wine-gaming-on-linux-with-dxvk)
-
-
-### Virtualization
-
-- Guide for restoring OS:
-    - Make sure to install both boxes and virt-manager
-    - do not run any of them as root, see below for running without root
-    - open virt manager and when creating new VM, select option which will import VM (the last one) and go on to setup until you reach the last screen
-    - here select "customize VM before install", and now here paste the custom XML file conetnts.
-    - click begin install and now it should be ready.
-
-- [Install Win10 VM](https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/)
-
-- gnome-boxes (DONT installl via flathub)
-	- [Guide](https://ostechnix.com/manage-remote-and-virtual-machines-with-gnome-boxes/)
-    - [Cant copy big files to VM fix](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
-
-OR
-
-- virt-manager (run as sudo)
-	- [Link1](https://www.tecmint.com/install-kvm-on-ubuntu/)
-	- [Link2](https://linuxize.com/post/how-to-install-kvm-on-ubuntu-20-04/)
-
-    ```
-    egrep -c '(vmx|svm)' /proc/cpuinfo
-    sudo apt install cpu-checker
-    sudo kvm-ok
-    sudo apt install -y qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager
-    sudo systemctl enable --now libvirtd
-
-    sudo usermod -a -G libvirt hritwik
-    sudo usermod -a -G kvm hritwik
-    ```
-
-- [Move gnome boxes to another PC](https://www.debugpoint.com/2020/06/move-virtual-machine-image-another-host/)
-    ```
-    - GNOME Boxes keeps the physical image of the virtual machine (this is usually in the size of GB) in the below path. For each of your virtual machines, you will find an image there.
-    Copy the image file to your new host’s path: ~/.local/share/gnome-boxes/images/
-    ~/.local/share/gnome-boxes/images/
-
-    - Copy the libvirt configuration XML from the below path to your new host’s same location.
-    In the below path, you should be seeing separate xml files for each of your virtual machines. Copy the one you need.
-    ~/.config/libvirt/qemu/
-
-    - Open the below file in your current system.
-    Copy the section (from “[display” … to end of this section) which belongs to your virtual machine. You can easily find it using the name (see below – ‘last seen name’).
-    Open the same above file in the other host machine and append the copied content at the end. Save the file.
-    ~/.config/gnome-boxes/sources/'QEMU Session'
-
-    Close all applications including GNOME Boxes in the new host machine.
-    ```
-
-- [fix for: cannot run boxes without root](https://askbot.fedoraproject.org/en/question/45805/how-to-use-virt-manager-as-a-non-root-user/)
-    - virt-manager --connect qemu:///session
-
-
-- Path to gnome-boxes images for flatpak version:
-    - "~/.var/app/org.gnome.Boxes/data/gnome-boxes/images"
-    - https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610
-    - https://askubuntu.com/questions/1123697/where-are-image-files-for-gnome-boxes-stored
-    - find ~ -size +1G -ls
-
-- [Steps to migrate from Boxes rpm to Boxes Flatpak](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610)
-    ```
-    Move images from ~/.local/share/gnome-boxes/images to ~/.var/app/org.gnome.Boxes/data/gnome-boxes/images
-
-    Move domain .xml files from ~/.config/libvirt/qemu/ to ~/.var/app/org.gnome.Boxes/config/libvirt/qemu/
-
-    Modify domain .xml files to ensure paths are correct
-
-    Ensure disk source path is correct, i.e. <source file='/home/user/.var/app/org.gnome.Boxes/data/gnome-boxes/images/disk-name'/>
-
-    Ensure os-state is installed, and remove any referenced media
-    Ensure network interfaces are set to user, not bridge.  Bridge mode is not supported in Flatpak at this time.
-    If this line, if present. <seclabel type='dynamic' model='selinux' relabel='yes'/> It appears that selinux seclabel is also not supported in Flatpak, based on resulting error. Unable to start domain: unsupported configuration: Security driver model 'selinux' is not available
-
-    Use the following command to help debug any further issues.  G_MESSAGS_DEBUG=all flatpak run org.gnome.Boxes
-    ```

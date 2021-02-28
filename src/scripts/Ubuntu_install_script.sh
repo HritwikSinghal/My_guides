@@ -3,8 +3,6 @@ set -e
 
 
 
-sudo apt-mark hold libegl-mesa0 libgbm1 libgl1-mesa-dri libglapi-mesa libglx-mesa0
-
 printf "\n---------------------------------------------------------------------------\n"
 # add repositories
 printf "\n\n\n-------------------------Adding Repositories-------------------------\n\n\n"

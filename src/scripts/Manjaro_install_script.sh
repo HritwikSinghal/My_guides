@@ -1,7 +1,8 @@
 #!/bin/zsh
 
 
-
+sudo pacman-mirrors -f
+sudo pacman -Syyu
 
 
 printf "\n---------------------------------------------------------------------------\n"
@@ -19,7 +20,8 @@ sudo pacman -S nautilus-admin htop --noconfirm
 
 pip3 install virtualenv youtube_dlc
 
-sudo pacman -S conky libmythes mythes-en languagetool aspell-en --noconfirm
+sudo pacman -S libreoffice-fresh conky libmythes mythes-en languagetool aspell-en --noconfirm
+sudo pacman -Rs onlyoffice-desktopeditors --noconfirm
 
 # sudo apt install ttf-mscorefonts-installer -y
 # sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
@@ -176,8 +178,8 @@ gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 
 
-# echo "" | sudo tee -a /etc/environment
-# echo "DRI_PRIME=1" | sudo tee -a /etc/environment
+echo "" | sudo tee -a /etc/environment
+echo "DRI_PRIME=1" | sudo tee -a /etc/environment
 echo "" | sudo tee -a /etc/environment
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 

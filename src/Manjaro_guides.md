@@ -1,28 +1,45 @@
 # Steps Manjaro
 
 
-### Misc
+### Todo
+
+- [create swap partiton](https://wiki.manjaro.org/index.php/Swap)
+
+- enable hibernate (use Arch wiki)
+	- https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation
+	- https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
+	
+	- https://confluence.jaytaala.com/display/TKB/Use+a+swap+file+and+enable+hibernation+on+Arch+Linux+-+including+on+a+LUKS+root+partition
+	- https://archived.forum.manjaro.org/t/installed-hibernator-but-nothing-happened-how-to-enable-hibernate/154361/9
+	
+	- https://forum.manjaro.org/t/howto-disable-turn-off-hibernate-completely/8033
+	
+	- add hibernate shortcut or install gnome extension
+
+- disable quiet boot so that when press 'del' key on boot it shows info
+- change f8 key to lock (Done when changing keyboard layout)
+- If terminal wont open after changing language to EN-IN
+	- https://forum.manjaro.org/t/gnome-terminal-wont-open-after-update/52808
 
 - enable snap, flatpak, AUR suppotr via terminal
-- add keyboard shortcut for terminal
+- add keyboard shortcut for terminal, system-monitor
 - change "alternate characters Key" from "Right Alt" to "Right Super" (go to keyboard shortcuts settings)
 - [Install Ruby gems system-wide](https://wiki.archlinux.org/index.php/ruby#Installing_Ruby)
 
 - [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
-- [x] [Fix auto bakups timeshift](https://forum.manjaro.org/t/back-in-time-cron-jobs-are-not-excuted/45892)
+- [x] [Fix auto bakups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
 
 ### Install Apps
 
+- Disrtotube channel 
+
 - [AUR helper like yay](https://itsfoss.com/best-aur-helpers/)
-	- Paru
+	- [Paru](https://itsfoss.com/paru-aur-helper/)
 - https://www.playonlinux.com/en/
 - https://itsfoss.com/pacman-command/
 
 
 ### Extra
-
-- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
-	- https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
 
 - https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
 	- if insatlling ```kid3``` in Arch, also insatll ```kio```

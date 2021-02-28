@@ -13,6 +13,22 @@
 
 ## Saved
 
+* This is for displaying fps counter on wine games.
+    * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
+
+- [restart-network-ubuntu](https://itsfoss.com/restart-network-ubuntu)
+    - use nmcli commands:
+        - sudo nmcli networking off
+        - sudo nmcli networking on
+
+* DNS lookup
+    * nmcli dev show | grep DNS
+    * nslookup website_name
+    * cat /etc/resolv.conf
+    * just check in wifi settings
+
+
+
 - [change mac](https://linuxconfig.org/change-mac-address-with-macchanger-linux-command)
     - and as always, [THE GREAT ARCH WIKI](https://wiki.archlinux.org/index.php/MAC_address_spoofing#Automatically) to change mac auto on every boot.
     - [another guide, not complete](https://itsfoss.com/change-mac-address-linux/)
@@ -132,45 +148,35 @@
 - [Orchis-theme](https://github.com/vinceliuice/Orchis-theme) (For Apps)
     - Also take close buttons from here   
     - [Install its snap version for snap Apps](https://snapcraft.io/orchis-themes)
-
 - [materia-theme](https://github.com/nana-4/materia-theme) (For Shell)
-
 - [Pop! Os Application theme](https://github.com/pop-os/gtk-theme) (Compile it)
     - DO NOT INSTALL 'pop-theme' or its ppa, it will mess up ubuntu
-
 - [Yaru-Colors](https://github.com/Jannomag/Yaru-Colors)
 
 
-
 - [Pop Icons and curser](https://github.com/pop-os/icon-theme)
-
 - [Papirus Icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-
 - [Flat Remix Icons](https://github.com/daniruiz/Flat-Remix)
 
 - Pop Fonts
     - sudo apt install pop-fonts
-
+        ```
         Interface: Fira Sans Book 11
         Documents: Roboto Slab Regular 11
         Monospace: Fira Mono Regular 13
         Window Titles: Fira Sans SemiBold 11
         scaling factor: 0.85
-
+        ```
 
 - [Pop! Os Wall](https://github.com/pop-os/wallpapers)
 
 - For macOS like look ([see video](https://www.youtube.com/watch?v=IzPxJK4drcc))
-
     - https://itsfoss.com/make-ubuntu-look-like-macos/
     - https://www.linuxuprising.com/2020/10/whitesur-macos-big-sur-like-gtk-gnome.html
         - https://github.com/vinceliuice/WhiteSur-gtk-theme
     - https://www.omgubuntu.co.uk/2017/03/make-ubuntu-look-like-mac-5-steps
-
     - [MacOS wallpapers](https://photos.google.com/share/AF1QipNNQyeVrqxBdNmBkq9ILswizuj-RYJFNt5GlxJZ90Y6hx0okrVSLKSnmFFbX7j5Mg?key=RV8tSXVJVGdfS1RIQUI0Q3RZZVhlTmw0WmhFZ2V3)
-
     - [Mcata gtk theme ](https://www.gnome-look.org/p/1381832/)
-
     - https://github.com/vinceliuice/Sierra-gtk-theme
     - https://github.com/vinceliuice/Mojave-gtk-theme
 

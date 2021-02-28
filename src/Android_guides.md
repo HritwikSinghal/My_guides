@@ -1,5 +1,18 @@
 # Things to do before Format
 
+
+
+**Table of Contents**
+    - Backup
+    - Update
+    - Make Sure
+
+
+--- 
+
+
+
+
 ## Backup
 - Update apps before backup
 

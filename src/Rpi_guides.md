@@ -3,6 +3,7 @@
 **Table of Contents**
 	- **Raspberry Pi**
 	    - IMP
+	    	- Remove MS repo
 	    - Guides
 		    - Brother Printer Driver Installation
 			    - 1. For x86 & x64 Linux (Only DEB and RPM)

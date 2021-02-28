@@ -1,7 +1,16 @@
 # Steps Manjaro
 
 
-### Todo
+**Table of Contents**
+    - Todo
+    - Install Apps
+    - Saved
+
+
+--- 
+
+
+## Todo
 
 - [create swap partiton](https://wiki.manjaro.org/index.php/Swap)
 
@@ -29,17 +38,16 @@
 - [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
 - [x] [Fix auto bakups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
 
-### Install Apps
+## Install Apps
 
 - Disrtotube channel 
 
 - [AUR helper like yay](https://itsfoss.com/best-aur-helpers/)
 	- [Paru](https://itsfoss.com/paru-aur-helper/)
-- https://www.playonlinux.com/en/
 - https://itsfoss.com/pacman-command/
 
 
-### Extra
+## Saved
 
 - https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
 	- if insatlling ```kid3``` in Arch, also insatll ```kio```

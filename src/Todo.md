@@ -1,17 +1,18 @@
-# Extra Things I want to do, generally bookmarks that i've stored.
+# Things To do, generally bookmarks that i've stored.
+
 
 **Table of Contents**
+    - General
     - Linux
     - RPI
     	- Nextcloud
     	- File storage server on Pi
-    - Todo
-        - Android
-        - General
+    - Android
     - Python
     - OSS
     - FF
     - Self-Host
+    - Extra
 
 
 
@@ -19,12 +20,70 @@
 ---
 
 
+## 1. General
+
+- [rpi things](https://www.youtube.com/watch?v=t3pwiFKGHMg)
+- Explore Atom for coding(& Atom vs vscodium vs vsCode)
+
+- setup github pages
+- github actions and tests.
+- [Add github shields](https://github.com/a-maliarov/awesome-shields)
+
+- [for downloading videos](https://alltubedownload.net/)
+    - supports voot, sony liv, hotstar
 
 
-### 1. Linux
+
+---
 
 
-- Disrtotube channel
+
+## 1. Linux
+
+
+----------------------------------xxx----------------------------------
+
+- [custom Kernel, Xanmod](https://xanmod.org/)
+- VNC viewer
+
+- [wayfire](https://github.com/WayfireWM/wayfire)
+
+- Theming
+    - make current shell theme transparent
+        - search for rgba in its css
+    - theme color change our create new theme,
+    - Close button big
+
+- Issues
+    - fusuma on sleep
+    - pinch to zoom Ubuntu
+
+- How this works:
+    - nmcli dev show | grep DNS | awk '{ print $2 }'
+
+
+
+- [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
+
+- [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
+
+- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
+
+- Brother Printer
+
+    - [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
+    - [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
+
+- Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
+    - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
+
+
+
+----------------------------------xxx----------------------------------
+
+
+- Disrtotube channel 
+- https://www.playonlinux.com/en/
 
 - Shell/terminal/prompt
     - [starship](https://itsfoss.com/starship/)
@@ -45,6 +104,9 @@
 - [What's in a Linux executable](https://fasterthanli.me/series/making-our-own-executable-packer/part-1)
 
 - [script to use a smartphone (or any audio stream) as microphone on PulseAudio](https://github.com/MatthiasCoppens/pulseaudio-virtualmic)
+
+
+----------------------------------xxx----------------------------------
 
 
 - [youtube-dl Gui](https://itsfoss.com/youtube-dl-gui-apps/)
@@ -78,7 +140,7 @@
 
 
 
-### 1. RPI
+## 1. RPI
 
 
 - [Building a PiHole for Privacy and Performance (From Flashing SD to Unbound config. Fail2Ban, Firewall, RPi-Monitor.)](https://thesmashy.medium.com/building-a-pihole-for-privacy-and-performance-f762dbcb66e5)
@@ -120,32 +182,10 @@
 
 
 
-
-### 1. Todo
-
-- [rpi things](https://www.youtube.com/watch?v=t3pwiFKGHMg)
-- Explore Atom for coding(& Atom vs vscodium vs vsCode)
-
-- setup github pages
-- github actions and tests.
-- [Add github shields](https://github.com/a-maliarov/awesome-shields)
-
-- [for downloading videos](https://alltubedownload.net/)
-    - supports voot, sony liv, hotstar
-
-
-#### Android
+## 1. Android
 
 - [build LineageOS with Nix using robotnix](https://www.reddit.com/r/LineageOS/comments/igg7mc/you_can_now_build_lineageos_with_nix_using/)
     - See LOS reddit wiki for more
-
-
-#### General
-
-- [I made a Finance Database with over 180.000 tickers to make Investment Decisions easier](https://www.reddit.com/r/Python/comments/lcexoa/i_made_a_finance_database_with_over_180000/)
-
-- [Udemy Coupon Grabber & Course Enroller](https://github.com/aapatre/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE)
-
 
 
 
@@ -157,7 +197,7 @@
 
 
 
-### 1. Python
+## 1. Python
 
 - [7 pytest Features and Plugins That Will Save You Tons of Time](https://miguendes.me/7-pytest-features-and-plugins-that-will-save-you-tons-of-time-ckfsjlr8y02axv6s1f8is1pgh)
 
@@ -176,7 +216,7 @@
 - [open source face recognition Raspberry Pi camera](https://github.com/SharpAI/DeepCamera)
 
 
-### 1. OSS
+## 1. OSS
 
 
 - [mycroft](https://mycroft.ai/)
@@ -195,9 +235,9 @@
 
 
 
-### 1. FF
+## 1. FF
 
-#### Shortcuts
+### Shortcuts
 
 - https://www.reddit.com/r/firefox/comments/l74kds/im_too_old_to_relearn_ctrlshifto_any_help/ : see comments
 
@@ -205,7 +245,7 @@
 
 - [public table of Firefox's keyboard shortcuts](https://www.reddit.com/r/firefox/comments/jj91qb/i_created_a_public_table_of_firefoxs_keyboard/)
 
-#### smooth scrolling
+### smooth scrolling
 
 - https://www.reddit.com/r/firefox/comments/lequ4j/what_are_some_aboutconfig_settings_to_make_the/ : see comments
 
@@ -223,6 +263,20 @@
 
 
 
+
+
+
+## 1. Extra
+
+- [I made a Finance Database with over 180.000 tickers to make Investment Decisions easier](https://www.reddit.com/r/Python/comments/lcexoa/i_made_a_finance_database_with_over_180000/)
+
+- [Udemy Coupon Grabber & Course Enroller](https://github.com/aapatre/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE)
+
+
+
+
+
+---
 
 
 

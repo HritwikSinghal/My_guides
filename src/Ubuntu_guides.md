@@ -3,25 +3,26 @@
 Feel free to copy anything from here and use it.
 
 
+**Table of Contents**
+    - Most Important
+    - Appearance & Customization
+    - System
+    - Install Apps
+        - Extra Apps
+    - Install Extensions
+        - Extra Extensions
+    - Saved & Todo
+
+
+--- 
+
+
+
 ## Most Important
 
 
 - [x] [Install Timeshift & make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
 
-
-* This is for displaying fps counter on wine games.
-    * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
-
-- [restart-network-ubuntu](https://itsfoss.com/restart-network-ubuntu)
-    - use nmcli commands:
-        - sudo nmcli networking off
-        - sudo nmcli networking on
-
-* DNS lookup
-    * nmcli dev show | grep DNS
-    * nslookup website_name
-    * cat /etc/resolv.conf
-    * just check in wifi settings
 
 
 ## Appearance & Customization
@@ -312,42 +313,11 @@ OR
     - set to 0.5 and 15
 
 
-## Todo
+## Saved & Todo
 
-- [custom Kernel, Xanmod](https://xanmod.org/)
-- VNC viewer
 
-- [wayfire](https://github.com/WayfireWM/wayfire)
+- [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
 
-- Theming
-    - make current shell theme transparent
-        - search for rgba in its css
-    - theme color change our create new theme,
-    - Close button big
-
-- Issues
-    - fusuma on sleep
-    - pinch to zoom Ubuntu
-
-- How this works:
-    - nmcli dev show | grep DNS | awk '{ print $2 }'
-
-- Extra
-    - [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
-
-    - [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
-
-    - [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
-
-    - [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
-
-    - Brother Printer
-
-        - [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
-        - [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
-
-    - Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
-        - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
 
 - Increase Bash History
     - https://eshlox.net/2017/08/01/bash-increase-command-history-size

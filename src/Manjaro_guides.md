@@ -12,6 +12,12 @@
 
 ## Todo
 
+- Add adb for android
+	- https://wiki.archlinux.org/index.php/Android_Debug_Bridge#Detect_the_device
+	- sudo pacman -S android-tools android-udev --no-confirm
+	- sudo usermod -a -G adbusers hritwik
+	- newgrp adbusers
+
 - [create swap partiton](https://wiki.manjaro.org/index.php/Swap)
 
 - enable hibernate (use Arch wiki)
@@ -41,7 +47,6 @@
 ## Install Apps
 
 - Disrtotube channel 
-
 - [AUR helper like yay](https://itsfoss.com/best-aur-helpers/)
 	- [Paru](https://itsfoss.com/paru-aur-helper/)
 - https://itsfoss.com/pacman-command/

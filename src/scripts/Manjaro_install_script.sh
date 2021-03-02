@@ -51,6 +51,9 @@ gsettings set org.nemo.desktop show-desktop-icons true
 sudo pacman -S nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-compare nemo-media-columns nemo-pdf-tools nemo-preview  nemo-share --noconfirm
 
 
+cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
+sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
+
 printf "\n-------------------------Install--Lollypop-------------------------\n"
 sudo pacman -S lollypop --noconfirm
 
@@ -294,7 +297,6 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 
 printf "\n-------------------------Tweaks--fusuma-config-------------------------\n"
-# ---
 rm -rf /home/hritwik/.config/fusuma
 mkdir -p /home/hritwik/.config/fusuma/
 cp ./configs/config.yml /home/hritwik/.config/fusuma/

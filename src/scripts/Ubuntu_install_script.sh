@@ -144,6 +144,11 @@ gnome-shell-extension-tool -d desktop-icons@csoriano
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
+
+
+cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
+sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
+
 # Latest: https://github.com/linuxmint/nemo/releases/latest
 
 

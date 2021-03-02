@@ -32,7 +32,15 @@
 - [change mac](https://linuxconfig.org/change-mac-address-with-macchanger-linux-command)
     - and as always, [THE GREAT ARCH WIKI](https://wiki.archlinux.org/index.php/MAC_address_spoofing#Automatically) to change mac auto on every boot.
     - [another guide, not complete](https://itsfoss.com/change-mac-address-linux/)
+
 - [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
+
+- [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
+
+- Setup guide
+    - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
+    - [github, for great selection of apps and other things. This is great](https://github.com/themagicalmammal/howtopopbuntu)
+
 
 - [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
 
@@ -42,12 +50,6 @@
         | cut -d '"' -f 4)
         curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
     Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
-
-- [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
-
-- Setup guide
-    - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
-    - [github, for great selection of apps and other things. This is great](https://github.com/themagicalmammal/howtopopbuntu)
 
 
 ---

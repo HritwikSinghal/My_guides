@@ -18,8 +18,7 @@
 
 - Apps using Migrate & TB & OABX
 - Apps using SAI & individual apk's using apk extractor.
-- XprivacyLUA settings export
-- Aegis export
+- XprivacyLUA settings, Aegis, signal export
 - 
 
 - Any photos in internal storage

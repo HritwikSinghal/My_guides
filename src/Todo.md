@@ -9,6 +9,7 @@
     	- File storage server on Pi
     - Android
     - Python
+        - Build LOS
     - OSS
     - FF
     - Self-Host
@@ -44,19 +45,13 @@
 ----------------------------------xxx----------------------------------
 
 - [custom Kernel, Xanmod](https://xanmod.org/)
-- VNC viewer
-
-- [wayfire](https://github.com/WayfireWM/wayfire)
+- VNC viewer , tigervnc instead of normal
 
 - Theming
     - make current shell theme transparent
         - search for rgba in its css
     - theme color change our create new theme,
     - Close button big
-
-- Issues
-    - fusuma on sleep
-    - pinch to zoom Ubuntu
 
 - How this works:
     - nmcli dev show | grep DNS | awk '{ print $2 }'
@@ -188,12 +183,7 @@
     - See LOS reddit wiki for more
 
 
-
-
 ---
-
-
-
 
 
 
@@ -224,14 +214,7 @@
 - XDM
 
 
-
-
-
-
 ---
-
-
-
 
 
 
@@ -251,18 +234,9 @@
 
 - https://www.reddit.com/r/firefox/comments/lev5wy/natural_smooth_scrolling/
 
--
-
-
-
-
 
 
 ---
-
-
-
-
 
 
 
@@ -271,13 +245,6 @@
 - [I made a Finance Database with over 180.000 tickers to make Investment Decisions easier](https://www.reddit.com/r/Python/comments/lcexoa/i_made_a_finance_database_with_over_180000/)
 
 - [Udemy Coupon Grabber & Course Enroller](https://github.com/aapatre/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE)
-
-
-
-
-
----
-
 
 
 

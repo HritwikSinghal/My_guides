@@ -24,7 +24,6 @@ Feel free to copy anything from here and use it.
 - [x] [Install Timeshift & make backup](https://itsfoss.com/backup-restore-linux-timeshift/)
 
 
-
 ## Appearance & Customization
 
 
@@ -213,15 +212,21 @@ OR
     - [x] disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
 
     - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
-            "After some tinkering around, I managed to solve the issue!
-            I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
+    	- 
+		```sh
+		cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
+		sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
+		```
+    
+        "After some tinkering around, I managed to solve the issue!
+        I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
 
-            Actions=new-window;open-home;open-computer;open-trash;
-            [Desktop Action new-window]
-            Name=New Window
-            Exec=nemo
+        Actions=new-window;open-home;open-computer;open-trash;
+        [Desktop Action new-window]
+        Name=New Window
+        Exec=nemo
 
-            After saving the file and restarting I was able to open as many instances of Nemo as I wanted from the dash."
+        After saving the file and restarting I was able to open as many instances of Nemo as I wanted from the dash."
 
     - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
 

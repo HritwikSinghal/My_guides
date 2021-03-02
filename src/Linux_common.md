@@ -116,6 +116,11 @@
     - codium
     - VSCode
 
+- Mail Clients
+    - Good old Thunderbird
+    - [Mailspring](https://www.youtube.com/watch?v=Oij2U1d3yL4)
+    - Geary
+
 - Markdown Editors
     - https://github.com/marktext/marktext
     - https://github.com/wereturtle/ghostwriter

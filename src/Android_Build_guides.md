@@ -1,18 +1,18 @@
 # Things for Android Rom Building
 
 
-**Table of Contents**
-	- Todo
-    - Steps i followed to build ROM on Manjaro
-    	- 0. Modify DT, VT, KT
-    	- 1. For AEX
-    	- 2. For DU
-    - Guides
-    - List of:
-    	- Custom Roms
-    	- Kernels
-    	- Custom Recoveries
-    - Things to check after booting ROM
+# Table of Contents
+- Todo
+- Steps i followed to build ROM on Manjaro
+	- 0. Modify DT, VT, KT
+	- 1. For AEX
+	- 2. For DU
+- Guides
+- List of:
+	- Custom Roms
+	- Kernels
+	- Custom Recoveries
+- Things to check after booting ROM
 
 
 
@@ -69,7 +69,7 @@ source ~/.zshrc
 
 ```
 
-**For Cleaning**
+- **For Cleaning**
 	- Unless you have space issues, you don't need to clean anything. If the need to do that arises, you can run ```mka clean```, ```mka clobber``` or just remove the ```out``` directory in the source tree
 
 
@@ -117,14 +117,14 @@ m aex -j$(nproc --all) | tee log.txt
 		- Use grep for this as this may be anywhere
 
 
-**End result: FAIL**
+- End result: **FAIL**
 	- could not complete build
 
 
 ### 2. For Dirty Unicorns
 
 
-```sh
+```zsh
 mkdir du && cd du
 repo init -u https://github.com/DirtyUnicorns/android_manifest.git -b r11x --depth=1
 repo sync --force-sync --no-tags --no-clone-bundle  -c -j$(nproc --all) --optimized-fetch --prune
@@ -163,43 +163,43 @@ m aex -j$(nproc --all) | tee log.txt
 	- https://wiki.archlinux.org/index.php/android#Building
 	- https://forum.xda-developers.com/t/guide-linux-manjaro-arch-how-to-set-up-android-build-environment.3300596/
 		- This is for reference only
-```sh
-# To install ncurses5-compat-libs you need
-# to enter this key in your terminal first.
-$ gpg --keyserver pgp.mit.edu --recv-keys C52048C0C0748FEE227D47A2702353E0F7E48EDB
-$ yay -S ncurses5-compat-libs
+			```sh
+			# To install ncurses5-compat-libs you need
+			# to enter this key in your terminal first.
+			$ gpg --keyserver pgp.mit.edu --recv-keys C52048C0C0748FEE227D47A2702353E0F7E48EDB
+			$ yay -S ncurses5-compat-libs
 
-# Before installing lib32-ncurses5-compat-libs I had to
-# uninstall these packages due to conflicts and dependencies.
-# this might or might not be necessary for you. If you are unable to
-# install lib32-ncureses5-compat-libs because it conflicts with other
-# installed packages, this should fix the problem.
-$ sudo pacman -R lib32-ncurses lib32-libxml2 lib32-gconf lib32-libcroco lib32-libsoup lib32-llvm-libs lib32-readline lib32-js17 lib32-librsvg lib32-mesa lib32-rest lib32-cairo lib32-glew1.10 lib32-gtk3 lib32-polkit lib32-colord lib32-gtk2 lib32-pango lib32-libdbusmenu-gtk2 lib32-libindicator-gtk2 lib32-libappindicator-gtk2
+			# Before installing lib32-ncurses5-compat-libs I had to
+			# uninstall these packages due to conflicts and dependencies.
+			# this might or might not be necessary for you. If you are unable to
+			# install lib32-ncureses5-compat-libs because it conflicts with other
+			# installed packages, this should fix the problem.
+			$ sudo pacman -R lib32-ncurses lib32-libxml2 lib32-gconf lib32-libcroco lib32-libsoup lib32-llvm-libs lib32-readline lib32-js17 lib32-librsvg lib32-mesa lib32-rest lib32-cairo lib32-glew1.10 lib32-gtk3 lib32-polkit lib32-colord lib32-gtk2 lib32-pango lib32-libdbusmenu-gtk2 lib32-libindicator-gtk2 lib32-libappindicator-gtk2
 
-# Install more necessary packages.
-$ yay -S lib32-ncurses5-compat-libs lib32-readline pngcrush pngquant
+			# Install more necessary packages.
+			$ yay -S lib32-ncurses5-compat-libs lib32-readline pngcrush pngquant
 
-# Install java 7 and set it as default
-$ yay -S jdk7-openjdk
-$ sudo archlinux-java set java-7-openjdk
-# Check java version.
-$ java -version
-# Output should look something like this.
-# java version "1.7.0_91"
-# OpenJDK Runtime Environment (IcedTea 2.6.3)
-# (Arch Linux build 7.u91_2.6.3-3-x86_64)
-# OpenJDK 64-Bit Server VM (build 24.91-b01, mixed mode)
+			# Install java 7 and set it as default
+			$ yay -S jdk7-openjdk
+			$ sudo archlinux-java set java-7-openjdk
+			# Check java version.
+			$ java -version
+			# Output should look something like this.
+			# java version "1.7.0_91"
+			# OpenJDK Runtime Environment (IcedTea 2.6.3)
+			# (Arch Linux build 7.u91_2.6.3-3-x86_64)
+			# OpenJDK 64-Bit Server VM (build 24.91-b01, mixed mode)
 
-# Install java 8 and set it as default
-$ yay -S jdk8-openjdk
-$ sudo  archlinux-java set java-8-openjdk
-$ java -version
-# Output should look something like this.
-# openjdk version "1.8.0_112"
-# OpenJDK Runtime Environment (build 1.8.0_112-b15)
-# OpenJDK 64-Bit Server VM (build 25.112-b15, mixed mode)
+			# Install java 8 and set it as default
+			$ yay -S jdk8-openjdk
+			$ sudo  archlinux-java set java-8-openjdk
+			$ java -version
+			# Output should look something like this.
+			# openjdk version "1.8.0_112"
+			# OpenJDK Runtime Environment (build 1.8.0_112-b15)
+			# OpenJDK 64-Bit Server VM (build 25.112-b15, mixed mode)
 
-```
+			```
 
 
 

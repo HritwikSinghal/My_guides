@@ -49,19 +49,21 @@ newgrp adbusers
 
 # This will setup repo in /usr/bin 
 git clone https://github.com/akhilnarang/scripts.git
+chmod +x ./scripts/setup/android_build_env.sh ./scripts/setup/arch-manjaro.sh
 ./scripts/setup/android_build_env.sh
-# ./scripts/setup/
+# ./scripts/setup/arch-manjaro.sh    # This is not required if you install all below 
 
 sudo pacman -S base-devel multilib-devel gcc repo git gnupg gperf sdl wxgtk2 squashfs-tools curl ncurses zlib schedtool perl-switch zip unzip libxslt bc rsync ccache lib32-zlib lib32-ncurses lib32-readline --noconfirm --needed
 
 sudo yay -S flex bison cpio clang ncurses5-compat-libs lib32-ncurses5-compat-libs xxd-standalone --noconfirm --needed
-sudo yay -S lineageos-devel aosp-devel maven gradle --noconfirm --needed
+sudo yay -S lineageos-devel aosp-devel maven gradle xmlstarlet --noconfirm --needed
 
 ccache -M 50G
 
 # put below lines in zshrc
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
+# export CCACHE_EXEC=$(command -v ccache) 				# OR This
 export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 
 # to reload zsh
@@ -71,6 +73,8 @@ source ~/.zshrc
 
 - **For Cleaning**
 	- Unless you have space issues, you don't need to clean anything. If the need to do that arises, you can run ```mka clean```, ```mka clobber``` or just remove the ```out``` directory in the source tree
+
+
 
 
 ### 0. Modify DT, VT, KT
@@ -88,7 +92,7 @@ source ~/.zshrc
 
 ```sh
 mkdir aex && cd aex
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
+repo init -u git://github.com/AospExtended/manifest.git -b 11.x --depth=1
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 git clone "https://github.com/dev-harsh1998/android_device_realme_x2.git" -b lineage-18.0 device/realme/X2
@@ -98,6 +102,7 @@ git clone "https://github.com/dev-harsh1998/android_vendor_realme_X2.git" -b lin
 
 # Now rename files like shown in video
 
+# . build/envsetup.sh 			# this or below
 source build/envsetup.sh
 lunch aosp_X2-userdebug
 m aex -j$(nproc --all) | tee log.txt
@@ -105,7 +110,7 @@ m aex -j$(nproc --all) | tee log.txt
 ```
 
 - delete
-	- "hal_lineage_trust_default.te" from "aex/device/realme/X2/sepolicy/private"
+	- "hal_lineage_trust_default.te" from "./device/realme/X2/sepolicy/private"
 
 - For errors:
 	- "Unrecognized check name".
@@ -121,20 +126,20 @@ m aex -j$(nproc --all) | tee log.txt
 	- could not complete build
 
 
-### 2. For Dirty Unicorns
+### 2. For AICP
 
 
 ```zsh
-mkdir du && cd du
-repo init -u https://github.com/DirtyUnicorns/android_manifest.git -b r11x --depth=1
-repo sync --force-sync --no-tags --no-clone-bundle  -c -j$(nproc --all) --optimized-fetch --prune
+mkdir aicp && cd aicp
+repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
+repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/android_device_realme_X2.git" -b lineage-18.0 device/realme/X2
 git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150 
 git clone "https://github.com/HritwikSinghal/android_vendor_realme_X2.git" -b lineage-18.0 vendor/realme/X2
 
 # Now rename files like shown in video
-
+. build/envsetup.sh
 source build/envsetup.sh
 lunch aosp_X2-userdebug
 m aex -j$(nproc --all) | tee log.txt
@@ -143,6 +148,10 @@ m aex -j$(nproc --all) | tee log.txt
 ```
 
 
+- Edit in
+	- AndroidProducts.mk
+	- lineage_X2.mk 
+		- and this file name also
 
 ---
 
@@ -156,7 +165,9 @@ m aex -j$(nproc --all) | tee log.txt
 	- https://www.youtube.com/watch?v=So6ctQbxZO8&t=7s
 	- https://wiki.lineageos.org/devices/bacon/build
 	- https://forum.xda-developers.com/t/guide-2018-all-you-need-to-know-to-build-android-from-scratch.3862893/
-	
+
+- https://github.com/halogenOS/android_manifest
+	- This is also great guide for arch and general	
 
 - for Building on Arch linux
 	- https://scorpionrom.com/building-scorpionrom-with-manjaro-linux/
@@ -211,6 +222,7 @@ m aex -j$(nproc --all) | tee log.txt
 ### Custom Roms
 
 - /e/
+
 - AEX (AOSP Extended)
 - AICP
 - AOSiP 				- Option for Gapps
@@ -218,42 +230,60 @@ m aex -j$(nproc --all) | tee log.txt
 - AncientOS
 - Arrow
 - Awaken
+
 - Bootleggers
 - Bliss ROM
+
 - Carbon ROM
 - Cesium
 - ColtOS
 - Corvus
 - CrDroid
+
 - Derpfest
 - Descendent
-- Dirty Unicorn ROM
+- Dirty Unicorn ROM 	- CAF based
 - DotOS
+
 - EvolutionX 			- Gapps
 - Extended UI 			- Maybe Dead
+
 - Floko
+
 - Havoc
+
 - ION ROM
+
 - LOS
-- MSMXtended
+
+- MSMXtended			- CAF based
+
 - NitrogenOS
+
 - Octavi
 - Omni Rom
+
 - PalladiumOS
-- Paranoid Android
+- Paranoid Android 		- CAF based
 - PE 					- Gapps
 - PE+ 					- Gapps
-- PixelPlusUI
-- PixyOS
+- PixelPlusUI			- Gapps
+- PixyOS				- Gapps
 - POSP
 - Project Sakura
+
 - RevengeOS
 - RR
+
 - ShapeshiftOS
 - StagOS
 - Styx Project
 - SuperiorOS
+
 - ZenX
+
+
+
 
 
 ### Kernels

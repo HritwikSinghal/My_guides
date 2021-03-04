@@ -95,13 +95,14 @@ mkdir aex && cd aex
 repo init -u git://github.com/AospExtended/manifest.git -b 11.x --depth=1
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
-git clone "https://github.com/dev-harsh1998/android_device_realme_x2.git" -b lineage-18.0 device/realme/X2
-git clone "https://github.com/dev-harsh1998/android_kernel_realme_sm6150.git" -b lineage-17.1 kernel/realme/sm6150 
-git clone "https://github.com/dev-harsh1998/android_vendor_realme_X2.git" -b lineage-18.0 vendor/realme/X2
+git clone "git@github.com/HritwikSinghal/android_device_realme_x2.git" -b lineage-18.0 device/realme/X2
+git clone "git@github.com/HritwikSinghal/android_vendor_realme_X2.git" -b lineage-18.0 vendor/realme/X2
+git clone "git@github.com/HritwikSinghal/android_kernel_realme_sm6150.git" -b lineage-17.1 kernel/realme/sm6150
 
 
 # Now rename files like shown in video
 
+chmod +x build/envsetup.sh
 # . build/envsetup.sh 			# this or below
 source build/envsetup.sh
 lunch aosp_X2-userdebug
@@ -134,15 +135,17 @@ mkdir aicp && cd aicp
 repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
-git clone "https://github.com/HritwikSinghal/android_device_realme_X2.git" -b lineage-18.0 device/realme/X2
-git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150 
-git clone "https://github.com/HritwikSinghal/android_vendor_realme_X2.git" -b lineage-18.0 vendor/realme/X2
+git clone "git@github.com:HritwikSinghal/android_device_realme_X2.git" -b aicp_my device/realme/X2
+git clone "git@github.com/HritwikSinghal/android_vendor_realme_X2.git" -b lineage-18.0 vendor/realme/X2
+git clone "git@github.com/HritwikSinghal/android_kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150
 
 # Now rename files like shown in video
-. build/envsetup.sh
+
+chmod +x build/envsetup.sh
+# . build/envsetup.sh 			# this or below
 source build/envsetup.sh
-lunch aosp_X2-userdebug
-m aex -j$(nproc --all) | tee log.txt
+lunch aicp_X2-userdebug
+m -j$(nproc --all) 2>1 | tee log.txt
 
 
 ```
@@ -152,6 +155,25 @@ m aex -j$(nproc --all) | tee log.txt
 	- AndroidProducts.mk
 	- lineage_X2.mk 
 		- and this file name also
+
+	- overlays also
+
+### 3. For RR
+
+```sh
+mkdir rr && cd rr
+repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
+repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
+
+
+. build/envsetup.sh
+lunch rr_$device-userdebug
+mka bacon
+
+
+
+
+```
 
 ---
 
@@ -249,6 +271,7 @@ m aex -j$(nproc --all) | tee log.txt
 - Extended UI 			- Maybe Dead
 
 - Floko
+- Fluid Rom
 
 - Havoc
 

@@ -3,15 +3,15 @@
 Feel free to copy anything from here and use it.
 
 
-**Table of Contents**
-    - Most Important
-    - Appearance & Customization
-    - System
-    - Install Apps
-        - Extra Apps
-    - Install Extensions
-        - Extra Extensions
-    - Saved & Todo
+# **Table of Contents**
+- Most Important
+- Appearance & Customization
+- System
+- Install Apps
+    - Extra Apps
+- Install Extensions
+    - Extra Extensions
+- Saved & Todo
 
 
 --- 

@@ -1,6 +1,15 @@
-
-
 # Piracy
+
+
+# ** Table of Contents **
+- General
+- Trackers
+- Apps
+
+---
+
+
+## General
 
 - [Reddit Megathread](https://www.reddit.com/r/Piracy/wiki/megathread/)
     - [tools](https://www.reddit.com/r/piracy/wiki/megathread/tools)
@@ -84,9 +93,23 @@
 - ![youtube-dl](/media/PG_1.png)
     - [This](https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/common.py)
 
+
+
+---
+
+
+
+
+
 ## Trackers
 
 - 
+
+
+
+---
+
+
 
 
 ## Apps
@@ -94,4 +117,4 @@
 - [tool to help you archive Microsoft and Xbox store packages](https://github.com/StoreDev/StoreWeb)
 
 
---- XXX ---
+

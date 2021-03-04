@@ -1,9 +1,16 @@
-
-
-
 # Privacy
 
+# ** Table of Contents **
+- General
+- Archive Resources
+- Apps
 
+
+
+---
+
+
+## General
 
 - [The Hitchhiker’s Guide to Online Anonymity](https://www.reddit.com/r/privacy/comments/lduq3l/updated_v066_the_hitchhikers_guide_to_online/)
 
@@ -37,9 +44,23 @@
 </p>
 </details>
 
+
+
+--- 
+
+
+
+
+
 ## Archive Resources
 
 - [How companies us of our data, great documentary by PBS](https://www.pbs.org/video/in-the-age-of-ai-zwfwzb/)
+
+
+
+--- 
+
+
 
 
 ## Apps
@@ -47,4 +68,8 @@
 - [Notally, notes taking app](https://github.com/OmGodse/Notally)
 - [academic search engine](https://www.base-search.net/)
 
---- XXX ---
+
+
+
+
+

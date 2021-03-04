@@ -1,14 +1,19 @@
 # Common Things for all Linux Distros
 
-**Table of Contents**
-    - Saved
-    - Apps, Extensions, Themes
-        - Apps
-        - Extensions
-        - Themes, Icons, Fonts
-    - Guides
-        - Virtualization, QEMU/KVM
-        - Gaming
+# **Table of Contents**
+- Saved
+- Apps, Extensions, Themes
+    - Apps
+    - Extensions
+    - Themes, Icons, Fonts
+- Guides
+    - Virtualization, QEMU/KVM
+    - Gaming
+
+
+
+---
+
 
 
 ## Saved

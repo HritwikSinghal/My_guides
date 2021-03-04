@@ -1,10 +1,10 @@
 # Steps Manjaro
 
 
-**Table of Contents**
-    - Todo
-    - Install Apps
-    - Saved
+# **Table of Contents**
+- Todo
+- Install Apps
+- Saved
 
 
 --- 

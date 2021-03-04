@@ -2,10 +2,10 @@
 
 
 
-**Table of Contents**
-    - Backup
-    - Update
-    - Make Sure
+# **Table of Contents**
+- Backup
+- Update
+- Make Sure
 
 
 --- 

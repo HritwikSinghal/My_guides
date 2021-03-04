@@ -1,19 +1,19 @@
 # Things To do, generally bookmarks that i've stored.
 
 
-**Table of Contents**
-    - General
-    - Linux
-    - RPI
-    	- Nextcloud
-    	- File storage server on Pi
-    - Android
-    - Python
-        - Build LOS
-    - OSS
-    - FF
-    - Self-Host
-    - Extra
+# ** Table of Contents **
+- General
+- Linux
+- RPI
+	- Nextcloud
+	- File storage server on Pi
+- Android
+- Python
+    - Build LOS
+- OSS
+- FF
+- Self-Host
+- Extra
 
 
 

@@ -1,18 +1,18 @@
 # RPI and Pihole.
 
-**Table of Contents**
-	- **Raspberry Pi**
-	    - IMP
-	    	- Remove MS repo
-	    - Guides
-		    - Brother Printer Driver Installation
-			    - 1. For x86 & x64 Linux (Only DEB and RPM)
-			    - 2. For x86 & x64 Arch Based.
-			    - 3. For Rpi
-	- **Pihole**
-		- Adlists
-		- Other Adlists Resources
-		- Jio Blocklist
+# ** Table of Contents **
+- ** Raspberry Pi **
+    - IMP
+    	- Remove MS repo
+    - Guides
+	    - Brother Printer Driver Installation
+		    - 1. For x86 & x64 Linux (Only DEB and RPM)
+		    - 2. For x86 & x64 Arch Based.
+		    - 3. For Rpi
+- ** Pihole **
+	- Adlists
+	- Other Adlists Resources
+	- Jio Blocklist
 
 
 ---

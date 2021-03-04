@@ -1,3 +1,15 @@
+# TrashOS Guides
+
+
+
+# ** Table of Contents **
+- After installing Windows
+
+
+--- 
+
+## After installing Windows
+
 - disable fast startup
 - make sure ntfs is defragmanted
 - update windows

@@ -18,19 +18,23 @@
 
 ## Saved
 
-* This is for displaying fps counter on wine games.
-    * DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
+- [How to Use sed to Find and Replace String in Files | Linuxize](https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/)
+- [How do I find all files containing specific text on Linux? - Stack Overflow](https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux)
+
+
+- This is for displaying fps counter on wine games.
+    - DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
 
 - [restart-network-ubuntu](https://itsfoss.com/restart-network-ubuntu)
     - use nmcli commands:
         - sudo nmcli networking off
         - sudo nmcli networking on
 
-* DNS lookup
-    * nmcli dev show | grep DNS
-    * nslookup website_name
-    * cat /etc/resolv.conf
-    * just check in wifi settings
+- DNS lookup
+    - nmcli dev show | grep DNS
+    - nslookup website_name
+    - cat /etc/resolv.conf
+    - just check in wifi settings
 
 
 
@@ -80,9 +84,27 @@
     - Manjaro
         - Pamac (for gui of AUR and other)
         - 
+    - Solus
+        - Doflicky (hardware manager)
 
-- [Deskreen. This is a desktop app that makes any device with a web browser a second screen for your computer](https://www.reddit.com/r/electronjs/comments/kzuf10/i_created_deskreen_this_is_a_desktop_app_that/)
 
+- [Debtap: A script for converting .deb packages into Arch Linux packages, focused on accuracy](https://github.com/helixarch/debtap)
+
+- [Deskreen](https://www.reddit.com/r/electronjs/comments/kzuf10/i_created_deskreen_this_is_a_desktop_app_that/)
+    - This is a desktop app that makes any device with a web browser a second screen for your computer
+
+- [duf: A Cross-Platform disk usage utility written in Golang](https://itsfoss.com/duf-disk-usage/)
+
+- [Fildem Global Menu And HUD](https://www.linuxuprising.com/2021/02/how-to-install-fildem-global-menu-and.html)
+    - Using this, the menu that's usually built into the application window is displayed on the top GNOME Shell panel. Thanks to the HUD functionality (which is brought up by using the Alt + Space keyboard shortcut), you can also use this to search through the application menu, very useful for applications with vast menus, like GIMP for example.
+
+- [NoiseTorch Is A Real-Time Microphone Noise Suppression Application For Linux](https://www.linuxuprising.com/2021/02/noisetorch-is-real-time-microphone.html)
+
+- Youtube-dl & ffmpeg GUI
+    - [Youtube-dl Gui](https://itsfoss.com/youtube-dl-gui-apps/)
+    - [Simple-to-use graphical interface for youtube-dl](https://www.reddit.com/r/linux/comments/kyw5jx/a_simpletouse_graphical_interface_for_youtubedl/)
+
+    - [ffmpeg gui: mystiq](https://www.linuxuprising.com/2020/03/mystiq-is-easy-to-use-ffmpeg-gui.html)
 
 
 
@@ -348,6 +370,3 @@ OR
 ---
 
 
-
-
---- XXX ---

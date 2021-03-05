@@ -21,7 +21,8 @@ sudo pacman -S nautilus-admin htop --noconfirm
 pip3 install virtualenv youtube_dlc
 
 sudo pacman -S libreoffice-fresh conky libmythes mythes-en languagetool aspell-en --noconfirm
-sudo pacman -Rs onlyoffice-desktopeditors --noconfirm
+sudo pacman -Rs onlyoffice-desktopeditors yay --noconfirm
+yay -S paru --noconfirm
 
 # sudo apt install ttf-mscorefonts-installer -y
 # sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
@@ -113,7 +114,7 @@ printf "\n-------------------------Install--obs-studio-------------------------\
 sudo pacman -S obs-studio --noconfirm
 
 printf "\n-------------------------Install--vscodium-------------------------\n"
-# Use AUR
+paru vscodium-bin vscodium-bin-marketplace --noconfirm
 
 printf "\n-------------------------Install--Sublime-------------------------\n"
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
@@ -265,9 +266,9 @@ rm -rf /home/hritwik/.thunderbird
 unzip ./configs/thunderbird_bak.zip -d /home/hritwik/
 
 printf "\n--------------------------Tweaks---Atom-------------------------\n"
-rm -rf /home/hritwik/.atom
-unzip ./configs/atom_bak.zip -d /home/hritwik/
-rm -rf /home/hritwik/.atom/recovery/
+# rm -rf /home/hritwik/.atom
+# unzip ./configs/atom_bak.zip -d /home/hritwik/
+# rm -rf /home/hritwik/.atom/recovery/
 
 printf "\n--------------------------Tweaks---Sublime-------------------------\n"
 rm -rf /home/hritwik/.config/sublime-text-3/

@@ -21,12 +21,6 @@
 - see this, most of this is FA 
 	- https://github.com/akhilnarang/scripts.git
 
-- insatll yay through pacman, then use yay
-
-- https://www.reddit.com/r/ManjaroLinux/comments/cbkblb/guide_run_android_apps_on_manjaro_super_simple/
-	- install android apps on manjaro
-
-
 - Other commands 
 	- [From Xda](https://forum.xda-developers.com/t/guide-2018-all-you-need-to-know-to-build-android-from-scratch.3862893/)
 		```
@@ -145,7 +139,7 @@ chmod +x build/envsetup.sh
 # . build/envsetup.sh 			# this or below
 source build/envsetup.sh
 lunch aicp_X2-userdebug
-m -j$(nproc --all) 2>1 | tee log.txt
+m -j$(nproc --all) | tee log.txt
 
 
 ```

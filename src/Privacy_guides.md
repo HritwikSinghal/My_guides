@@ -12,11 +12,19 @@
 
 ## General
 
+- [How I’ve Convinced People Around Me to Care About Privacy — The New Oil](https://write.as/thenewoil/how-ive-convinced-people-around-me-to-care-about-privacy)
+
 - [The Hitchhiker’s Guide to Online Anonymity](https://www.reddit.com/r/privacy/comments/lduq3l/updated_v066_the_hitchhikers_guide_to_online/)
 
 - [The Ultimate Guide To Internet Privacy and Becoming Anonymous (Advance Edition)](https://www.reddit.com/r/privacy/comments/c3mas9/the_ultimate_guide_to_internet_privacy_and/)
 
 - [Protect Yourself from Snakes](https://www.reddit.com/r/privatelife/comments/jc05d9/protect_yourself_from_snakes/)
+
+
+
+
+- [Buy Email Lists | Build Your Own Marketing List | Bookyourdata.com](https://www.bookyourdata.com/tool/real_estate)
+
 
 
 <details><summary>Email template to tell your favourite online shops to stop using Google Captcha</summary>

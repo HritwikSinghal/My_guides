@@ -1,19 +1,11 @@
-# Things To do, generally bookmarks that i've stored.
+# My TODO List
 
+# Table of contents
 
-# ** Table of Contents **
-- General
-- Linux
-- RPI
-	- Nextcloud
-	- File storage server on Pi
-- Android
-- Python
-    - Build LOS
-- OSS
-- FF
-- Self-Host
-- Extra
+- 1. High priority
+- 2. Medium priority
+- 3. Low priority
+- 4. Ultra low priority
 
 
 
@@ -21,64 +13,83 @@
 ---
 
 
-## 1. General
 
-- [rpi things](https://www.youtube.com/watch?v=t3pwiFKGHMg)
-- Explore Atom for coding(& Atom vs vscodium vs vsCode)
+# 1. High priority
 
-- setup github pages
+- Competitive coding
+- DSA, DBMS, CN, OS
+- Coursera
+- WSN, BTP
+- GSOC
+    - Gnome
+    -
+
+- Contribute to OSS
+    - [How to find your first open source bug to fix](https://www.freecodecamp.org/news/finding-your-first-open-source-project-or-bug-to-work-on-1712f651e5ba/)
+    - [awesome-for-beginners: A list of awesome beginners-friendly projects.](https://github.com/MunGell/awesome-for-beginners)
+    - [Search · label: up-for-grabs language: python: GITHUB](https://github.com/search?q=label%3A+up-for-grabs+language%3A+python)
+    - [Up for grabs website](https://up-for-grabs.net/#/)
+    - [First Timers Only - Get involved in Open Source and commit code to your first project!](https://www.firsttimersonly.com/)
+    - [A Beginner’s Very Bumpy Journey Through The World of Open Source](https://www.freecodecamp.org/news/a-beginners-very-bumpy-journey-through-the-world-of-open-source-4d108d540b39/)
+    - [Open Source Guides | Learn how to launch and grow your project.](https://opensource.guide/)
+
+
+    - Mozilla
+        - [Codetribute](https://codetribute.mozilla.org/languages/python)
+        - [Mozilla chat | Element](https://chat.mozilla.org/#/room/#introduction:mozilla.org)
+
+        - Thunderbird
+            - [Mozilla's Mentored Bugs](https://yoric.github.io/post/moz-great-stuff/)
+        - FF
+            - [Firefox Contributors’ Quick Reference — Firefox Source Docs documentation](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html)
+        - [Mozilla Deepspeech](https://github.com/mozilla/DeepSpeech)
+
+    - [mycroft](https://mycroft.ai/)
+    - XDM
+    - copyq
+
+
+---
+
+
+
+# 2. Medium priority
+
+
 - github actions and tests.
+    - [Introduction to GitHub Actions - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions)
+    - [Quickstart for GitHub Actions - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/actions/quickstart)
+    - [Specifications for GitHub-hosted runners - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-software)
+
+- [Self-Hosting Your Homelab Services with SSL -- Let's Encrypt, MetalLB, Traefik, Rancher, Kubernetes - YouTube](https://www.youtube.com/watch?v=pAM2GBCDGTo)
+- [Solve Your Dynamic IP problems! FREE domain for your home devices - Duck DNS - YouTube](https://www.youtube.com/watch?v=uhJ1zQIjujg)
+
+- Setup github pages
+    - try to find medium.com links
+    - [creating-and-deploying-a-static-website-using-github-pages](https://medium.com/@erickcodes/creating-and-deploying-a-static-website-using-github-pages-a634a588ed7d)
+    - [create-your-personal-page-or-blog-using-github-pages](https://ludwiguer.medium.com/create-your-personal-page-or-blog-using-github-pages-and-gatsby-92c551727b0c)
+    - [how-to-create-a-free-github-pages-website](https://docs.github.com/en/github/working-with-github-pages/getting-started-with-github-pages)
+    - [how-to-create-a-free-github-pages-](https://towardsdatascience.com/how-to-create-a-free-github-pages-website-53743d7524e1)
+    - [Getting started with GitHub Pages - GitHub Docs](https://docs.github.com/en/github/working-with-github-pages/getting-started-with-github-pages)
+    - [Jekyll Now – Create a Jekyll Blog in minutes](https://www.jekyllnow.com/)
+
+
 - [Add github shields](https://github.com/a-maliarov/awesome-shields)
 
-- [for downloading videos](https://alltubedownload.net/)
-    - supports voot, sony liv, hotstar
+
+- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
+    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
 
 
-
----
-
-
-
-## 1. Linux
+- Docker
+    - videos from https://www.youtube.com/c/LearnLinuxtv/videos
+    - https://medium.com/codingthesmartway-com-blog/docker-beginners-guide-part-1-images-containers-6f3507fffc98
+    - https://www.youtube.com/watch?v=fqMOX6JJhGo
 
 
-----------------------------------xxx----------------------------------
-
-- [custom Kernel, Xanmod](https://xanmod.org/)
-- VNC viewer , tigervnc instead of normal
-
-- Theming
-    - make current shell theme transparent
-        - search for rgba in its css
-    - theme color change our create new theme,
-    - Close button big
-
-- How this works:
-    - nmcli dev show | grep DNS | awk '{ print $2 }'
-
-
-
-- [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
-
-- [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
-
-- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
-
-- Brother Printer
-
-    - [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
-    - [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
-
-- Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
-    - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
-
-
-
-----------------------------------xxx----------------------------------
-
-
-- Disrtotube channel 
-- https://www.playonlinux.com/en/
+- Android rom build
+    - Try to use ubuntu in Docker for build
 
 - Shell/terminal/prompt
     - [starship](https://itsfoss.com/starship/)
@@ -87,166 +98,123 @@
 
     - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
         - search it on internet, this is just basic.
-    - https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts
+    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)
+    - [Bash tips for everyday at the command line | Opensource.com](https://opensource.com/article/18/5/bash-tricks)
     - https://itsfoss.com/linux-command-tricks/
-    - https://opensource.com/article/18/5/bash-tricks
 
 
-- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
-    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+- SNI, DPI
+    - [Unblock Websites Restricted By ISPs In Some Countries With GreenTunnel - Linux Uprising Blog](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
+    - [GitHub - ValdikSS/GoodbyeDPI: GoodbyeDPI—Passive Deep Packet Inspection blocker and Active DPI circumvention utility (for Windows)](https://github.com/ValdikSS/GoodbyeDPI)
+    - [GitHub - krlvm/PowerTunnel: Simple, scalable, cross-platform and effective solution against government censorship](https://github.com/krlvm/PowerTunnel)
+    - [GitHub - krlvm/PowerTunnel-Android: Simple, scalable, cross-platform and effective solution against government censorship for Android](https://github.com/krlvm/PowerTunnel-Android)
+    - [GitHub - SadeghHayeri/GreenTunnel: GreenTunnel is an anti-censorship utility designed to bypass the DPI system that is put in place by various ISPs to block access to certain websites.](https://github.com/SadeghHayeri/GreenTunnel)
+    - [GitHub - zhenyolka/DPITunnel: DPITunnel is an android app made for censorship bypass](https://github.com/zhenyolka/DPITunnel)
+    - [SymTCP – a new tool for circumventing deep packet inspections | The Daily Swig](https://portswigger.net/daily-swig/symtcp-a-new-tool-for-circumventing-deep-packet-inspections)
+    - [GitHub - seclab-ucr/SymTCP: Automatic Discrepancy Discovery for DPI Elusion](https://github.com/seclab-ucr/SymTCP)
+    - [Despite DoH and ESNI, with OCSP, web activity is insecure and not private | Knowledge is Capital](https://blog.seanmcelroy.com/2019/01/05/ocsp-web-activity-is-not-private/)
+    - [ESNI: A Privacy-Protecting Upgrade to HTTPS](https://www.eff.org/deeplinks/2018/09/esni-privacy-protecting-upgrade-https)
+
+- Books
+    - python DSA
+    
+
+---
 
 
+
+
+# 3. Low priority
+
+
+- Python (Pytest & tox)
+    - https://www.tutorialspoint.com/pytest/pytest_starting_with_basic_test.htm
+    - https://semaphoreci.com/community/tutorials/testing-python-applications-with-pytest
+    - https://tox.readthedocs.io/en/latest/
+    - https://tox.readthedocs.io/en/latest/example/basic.html#a-simple-tox-ini-default-environments
+    - https://tox.readthedocs.io/en/latest/config.html
+    - https://www.youtube.com/watch?v=75WBE_qbpGk
+    - https://github.com/opsdroid/opsdroid/blob/master/tox.ini
+    - https://github.com/ymyzk/tox-gh-actions
+    - [Building and testing Python - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-python)
+
+
+
+- [Hacking the DNS protocol to use it as a messaging system](https://www.reddit.com/r/Python/comments/l0ubhs/hacking_the_dns_protocol_to_use_it_as_a_messaging/)
+- [Publist pip package](https://johnfraney.ca/posts/2019/05/28/create-publish-python-package-poetry/)
+- [Detect plag](https://kalebu.hashnode.dev/how-to-detect-plagiarism-in-the-text-using-python)
+- [machine learning tool that allows you to train/fit, test and use models without writing code](https://github.com/nidhaloff/igel)
+
+
+
+- Disrtotube channel
+- https://www.playonlinux.com/en/
+- https://linuxjourney.com/lesson/filesystem-hierarchy
+- How this works: ```nmcli dev show | grep DNS | awk '{ print $2 }'```
+- [shell scripting](https://www.shellscript.sh/variables2.html)
+- [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
+
+
+- Rpi things (see saved.md)
 - [What's in a Linux executable](https://fasterthanli.me/series/making-our-own-executable-packer/part-1)
-
 - [script to use a smartphone (or any audio stream) as microphone on PulseAudio](https://github.com/MatthiasCoppens/pulseaudio-virtualmic)
 
 
-----------------------------------xxx----------------------------------
 
+- [How booting process works](https://askubuntu.com/questions/768675/deleted-esp-efi-partition-unable-to-create-a-new-one)
+- WM and compositors and etc
+- Arch linux install
 
-- [youtube-dl Gui](https://itsfoss.com/youtube-dl-gui-apps/)
-- [simple-to-use graphical interface for youtube-dl](https://www.reddit.com/r/linux/comments/kyw5jx/a_simpletouse_graphical_interface_for_youtubedl/)
-
-- [ffmpeg gui: mystiq](https://www.linuxuprising.com/2020/03/mystiq-is-easy-to-use-ffmpeg-gui.html)
-
-- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
-
-- https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html
-- https://www.linuxuprising.com/2020/01/bandwhich-shows-whats-taking-up-your.html
-- https://www.linuxuprising.com/2020/05/how-to-encrypt-cloud-storage-files-with.html
-- https://www.linuxuprising.com/2020/04/cryptomator-150-released-with.html
-- https://medium.com/swlh/backing-up-with-borg-c6f13d74dd6
-
-
-- https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html
-    - https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
-
-- https://www.linuxuprising.com/2020/02/tlp-13-linux-laptop-battery-extender.html
-
-
-- [autostart](https://www.linuxuprising.com/2020/11/how-to-launch-startup-applications-with.html)
-- [Linux Wifi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
-- [login with USB on liunx](https://www.linuxuprising.com/2021/02/how-to-login-with-usb-flash-drive.html)
-
-
-
----
-
-
-
-
-## 1. RPI
-
-
-- [Building a PiHole for Privacy and Performance (From Flashing SD to Unbound config. Fail2Ban, Firewall, RPi-Monitor.)](https://thesmashy.medium.com/building-a-pihole-for-privacy-and-performance-f762dbcb66e5)
-
-- [Quick Raspberry Pi SSH access over the internet
-](https://www.reddit.com/r/raspberry_pi/comments/kwh481/quick_raspberry_pi_ssh_access_over_the_internet/)
-
-- [Monitor your local network using a Raspberry Pi and NEMS](https://howchoo.com/pi/raspberry-pi-network-monitor-setup)
-
-- [self-host Bitwarden Password Manager](https://bowlerdesign.tech/posts/how-to-self-host-bitwarden-on-ubuntu-server/)
-
-
-### Nextcloud on Pi
-- []()
-- []()
-- []()
-- []()
-- []()
-- [Install Nextcloud on a RaspberryPi With Docker! Easy 5 Steps](https://www.youtube.com/watch?v=RkJuAGCKsUQ)
-- Create your own private cloud on Raspberry Pi, [Medium Link]](https://zahidmak.medium.com/create-your-own-private-cloud-using-raspberry-pi-for-your-photos-and-documents-86a3b60384a0), [Reddit link](https://www.reddit.com/r/raspberry_pi/comments/k6n25f/wrote_this_step_by_step_guide_to_create_your_own/)
-- [Nextcloud + Raspberry Pi + Docker + Onion service](https://itnext.io/nextcloud-docker-raspberry-pi-onion-service-84d4af13f7e6)
-- ["Best guide I’ve seen for setting up your own Nextcloud server"](https://kevq.uk/how-to-setup-a-nextcloud-server-in-ubuntu)
-
-
-
-### File storage server on Pi
-- []()
-- []()
-- []()
-- []()
-
-- [NASPi: a Raspberry Pi Server](https://www.reddit.com/r/raspberry_pi/comments/i9o0qw/naspi_a_raspberry_pi_server/)
-- ["Just wanted to show the Raspberry Pi NAS I've been running for about a year now"](https://www.reddit.com/r/raspberry_pi/comments/htjrir/just_wanted_to_show_the_raspberry_pi_nas_ive_been/)
-
-
-
-
----
-
-
-
-## 1. Android
-
-- [build LineageOS with Nix using robotnix](https://www.reddit.com/r/LineageOS/comments/igg7mc/you_can_now_build_lineageos_with_nix_using/)
-    - See LOS reddit wiki for more
-
-
----
-
-
-
-## 1. Python
-
-- [7 pytest Features and Plugins That Will Save You Tons of Time](https://miguendes.me/7-pytest-features-and-plugins-that-will-save-you-tons-of-time-ckfsjlr8y02axv6s1f8is1pgh)
-
-- [A Comprehensive Guide to Profiling Python Programs](https://medium.com/better-programming/a-comprehensive-guide-to-profiling-python-programs-f8b7db772e6)
+- transfer files using SSH
+- create ftp server in python
+    - [pyftpdlib: Extremely fast and scalable Python FTP server library](https://github.com/giampaolo/pyftpdlib)
 
 - [Apod-wallpaper changer linux](https://github.com/charly98cma/apod-wallpaper)
+    - and bing/spotlight
+    - https://github.com/Shabinder/SpotiFlyer
+    - https://github.com/KoalaBR/spotlight
+    - https://github.com/mariusknaust/spotlight
+    - https://github.com/ORelio/Spotlight-Downloader
 
-- [Hacking the DNS protocol to use it as a messaging system](https://www.reddit.com/r/Python/comments/l0ubhs/hacking_the_dns_protocol_to_use_it_as_a_messaging/)
-
-- [Publist pip package](https://johnfraney.ca/posts/2019/05/28/create-publish-python-package-poetry/)
-
-- [Detect plag](https://kalebu.hashnode.dev/how-to-detect-plagiarism-in-the-text-using-python)
-
-- [machine learning tool that allows you to train/fit, test and use models without writing code](https://github.com/nidhaloff/igel)
-
-- [open source face recognition Raspberry Pi camera](https://github.com/SharpAI/DeepCamera)
-
-
-## 1. OSS
-
-
-- [mycroft](https://mycroft.ai/)
-- [Mozilla Deepspeech](https://github.com/mozilla/DeepSpeech)
-- XDM
-
+- WebD using Django
 
 ---
 
 
 
-## 1. FF
+# 4. Ultra Low priority
 
-### Shortcuts
+- what is rsync
 
-- https://www.reddit.com/r/firefox/comments/l74kds/im_too_old_to_relearn_ctrlshifto_any_help/ : see comments
 
-- https://www.reddit.com/r/firefox/comments/k7wvzc/vanilla_firefox_keyboard_mastery/
+- [custom Kernel, Xanmod](https://xanmod.org/)
+- Theming
+    - make current shell theme transparent
+        - search for rgba in its css
+    - theme color change our create new theme,
+    - Close button big
 
-- [public table of Firefox's keyboard shortcuts](https://www.reddit.com/r/firefox/comments/jj91qb/i_created_a_public_table_of_firefoxs_keyboard/)
+    - https://www.google.com/search?channel=fs&q=Oomox
+    - https://askubuntu.com/questions/68976/how-can-i-create-themes-for-gnome-shell#696580
+    - https://linuxhint.com/how_gnome_themes_work/
+    - https://www.google.com/search?channel=fs&q=guide+to+gtk+theming
+    - https://www.reddit.com/r/gnome/comments/co476w/help_increasing_the_size_of_gnomes_default_theme/
 
-### smooth scrolling
+- [Tweak your touchpad to taste in Linux - TechRepublic](https://www.techrepublic.com/article/tweak-your-touchpad-to-taste-in-linux/)
+    - Increase touchpad area linex
 
-- https://www.reddit.com/r/firefox/comments/lequ4j/what_are_some_aboutconfig_settings_to_make_the/ : see comments
 
-- https://www.reddit.com/r/firefox/comments/lev5wy/natural_smooth_scrolling/
+- [Make any Python method available in the Nautilus menu,](https://github.com/josvromans/nautilus_python)
+- [File operations in Python, with a focus on image files](https://github.com/josvromans/python_file_operations)
 
+
+- Learn from these repos
+    - [I made a Finance Database with over 180.000 tickers to make Investment Decisions easier](https://www.reddit.com/r/Python/comments/lcexoa/i_made_a_finance_database_with_over_180000/)
+    - [Udemy Coupon Grabber & Course Enroller](https://github.com/aapatre/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE)
+
+
+- Port swigger and book
 
 
 ---
 
-
-
-## 1. Extra
-
-- [I made a Finance Database with over 180.000 tickers to make Investment Decisions easier](https://www.reddit.com/r/Python/comments/lcexoa/i_made_a_finance_database_with_over_180000/)
-
-- [Udemy Coupon Grabber & Course Enroller](https://github.com/aapatre/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE)
-
-
-
-
---------------------XXX--------------------

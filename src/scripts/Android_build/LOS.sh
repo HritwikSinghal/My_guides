@@ -30,21 +30,17 @@ source ~/.bashrc
 
 
 mkdir los && cd los
-repo init -u git://github.com/LineageOS/android.git -b lineage-18.1
+repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b lineage-18 device/realme/X2
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
-# Now rename files like shown in video
-
 chmod +x build/envsetup.sh
-# . build/envsetup.sh 			# this or below
 source build/envsetup.sh
 lunch lineage_X2-userdebug
-m -j$(nproc --all) | tee log.txt
-# make update-api && time m -j$(nproc --all) | tee log.txt
+time m bacon -j$(nproc --all) | tee log.txt
 
 
 

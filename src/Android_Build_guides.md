@@ -172,6 +172,8 @@ source ~/.zshrc
 
 
 ```sh
+
+ROM_NAME = ""
 mkdir aex && cd aex
 repo init -u git://github.com/AospExtended/manifest.git -b 11.x --depth=1
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
@@ -180,13 +182,10 @@ git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aex device
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
-# Now rename files like shown in video
-
 chmod +x build/envsetup.sh
-# . build/envsetup.sh 			# this or below
 source build/envsetup.sh
 lunch aosp_X2-userdebug
-m aex -j$(nproc --all) | tee log.txt
+time m aex -j$(nproc --all) | tee log.txt
 
 ```
 
@@ -197,20 +196,16 @@ m aex -j$(nproc --all) | tee log.txt
 
 ```zsh
 mkdir aicp && cd aicp
-repo init -u https://github.com/AICP/platform_manifest.git -b r11.1
+repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp device/realme/X2
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
-# Now rename files like shown in video
-
 chmod +x build/envsetup.sh
-# . build/envsetup.sh 			# this or below
 source build/envsetup.sh
-lunch aicp_X2-userdebug
-m -j$(nproc --all) | tee log.txt
+time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
 
 
 ```
@@ -220,21 +215,17 @@ m -j$(nproc --all) | tee log.txt
 
 ```sh
 mkdir havoc && cd havoc
-repo init -u git://github.com/Havoc-OS/android_manifest.git -b eleven
+repo init -u git://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b havoc device/realme/X2
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
-# Now rename files like shown in video
-
 chmod +x build/envsetup.sh
-# . build/envsetup.sh 			# this or below
 source build/envsetup.sh
-lunch havoc_X2-userdebug
-m -j$(nproc --all) | tee log.txt
-# make update-api && time m -j$(nproc --all) | tee log.txt
+time brunch havoc_X2-userdebug -j$(nproc --all) | tee log.txt
+
 ```
 
 
@@ -244,21 +235,18 @@ m -j$(nproc --all) | tee log.txt
 ```sh
 
 mkdir los && cd los
-repo init -u git://github.com/LineageOS/android.git -b lineage-18.1
+repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b lineage-18 device/realme/X2
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
-# Now rename files like shown in video
-
 chmod +x build/envsetup.sh
-# . build/envsetup.sh 			# this or below
 source build/envsetup.sh
 lunch lineage_X2-userdebug
-m -j$(nproc --all) | tee log.txt
-# make update-api && time m -j$(nproc --all) | tee log.txt
+time m bacon -j$(nproc --all) | tee log.txt
+
 
 ```
 
@@ -279,7 +267,7 @@ chmod +x build/envsetup.sh
 # . build/envsetup.sh 			# this or below
 source build/envsetup.sh
 lunch rr_X2-userdebug
-m -j$(nproc --all) | tee log.txt
+time m -j$(nproc --all) | tee log.txt
 # make update-api && time m -j$(nproc --all) | tee log.txt
 
 

@@ -40,6 +40,8 @@
 ```sh
 
 sudo apt update && sudo apt upgrade -y
+sudo apt install android-tools-adb android-tools-fastboot
+
 
 # This will setup repo in /usr/bin 
 git clone https://github.com/akhilnarang/scripts.git

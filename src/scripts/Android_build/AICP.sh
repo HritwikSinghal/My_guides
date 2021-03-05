@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
 # To run 
-# https://raw.githubusercontent.com/HritwikSinghal/My_guides/new/src/scripts/VPS_script.sh | sudo bash
+# curl -SsL https://raw.githubusercontent.com/HritwikSinghal/My_guides/new/src/scripts/Android_build/AICP.sh | sudo bash
 
 
 # https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session
 tmux
 
 sudo apt update && sudo apt upgrade -y
+sudo apt install android-tools-adb android-tools-fastboot -y
+
 
 # This will setup repo in /usr/bin 
 git clone https://github.com/akhilnarang/scripts.git
@@ -28,7 +30,7 @@ source ~/.bashrc
 
 
 mkdir aicp && cd aicp
-repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
+repo init -u https://github.com/AICP/platform_manifest.git -b r11.1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://www.github.com/HritwikSinghal/android_device_realme_X2.git" -b aicp_my device/realme/X2
@@ -42,7 +44,7 @@ chmod +x build/envsetup.sh
 source build/envsetup.sh
 lunch aicp_X2-userdebug
 # m -j$(nproc --all) | tee log.txt
-make update-api && m -j$(nproc --all) | tee log.txt
+make update-api && time m -j$(nproc --all) | tee log.txt
 
 
 

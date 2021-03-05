@@ -33,9 +33,9 @@ mkdir los && cd los
 repo init -u git://github.com/LineageOS/android.git -b lineage-18.1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
-git clone "https://www.github.com/HritwikSinghal/android_device_realme_X2.git" -b lineage-18.0 device/realme/X2
-git clone "https://www.github.com/HritwikSinghal/android_vendor_realme_X2.git" -b lineage-18.0 vendor/realme/X2
-git clone "https://www.github.com/HritwikSinghal/android_kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b lineage-18 device/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
 # Now rename files like shown in video
 

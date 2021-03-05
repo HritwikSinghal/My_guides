@@ -2,12 +2,20 @@
 
 
 # Table of Contents
-- Todo
-- Steps i followed to build ROM on Ubuntu
-- Steps i followed to build ROM on Manjaro
-	- 0. Modify DT, VT, KT
-	- 1. For AEX
-	- 2. For DU
+- Todo & notes & Errors
+	- Todo
+	- Notes
+	- Errors
+- Setup
+	- Ubuntu
+	- Manjaro
+- Sripts for Roms
+	- AEX
+	- AICP
+	- Havoc
+	- LOS
+	- RR
+
 - Guides
 - List of:
 	- Custom Roms
@@ -17,23 +25,73 @@
 
 
 
-## Todo
+
+--- 
+
+
+
+
+
+## Todo & notes & Errors
+
+
+### Todo
 
 - see this, most of this is FA 
 	- https://github.com/akhilnarang/scripts.git
 
-- Other commands 
-	- [From Xda](https://forum.xda-developers.com/t/guide-2018-all-you-need-to-know-to-build-android-from-scratch.3862893/)
-		```
-		repo sync -c -f --force-sync --no-tag --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
-		```
+- **For Cleaning**
+	- only run ```mka clobber```
+	- Unless you have space issues, you don't need to clean anything. If the need to do that arises, you can run ```mka clean```, ```mka clobber``` or just remove the ```out``` directory in the source tree
+
+
+
+### Notes
+
+-  Modify DT, VT, KT
+- Edit in
+	- AndroidProducts.mk
+	- lineage_X2.mk 
+		- and this file name also
+
+	- overlays also
+
+- rename in
+	- the two locations shown in video. make sure to rename to "aosp_X2.mk" and not "aosp.mk"
+	- AndroidProducts.mk
+	- Rename lineage to AOSP in device.mk biometric permissions OR Remove "Lineage Specific perms"
+
+
+- delete
+	- "hal_lineage_trust_default.te" from "./device/realme/X2/sepolicy/private"
+
+
+### Errors
+
+- "Unrecognized check name".
+	- We need to remove that line from "Makefile.lib" so for error like "FATAL ERROR: Unrecognized check name "avoid_unnecessary_addr_size"" we would remove "-Wno-avoid_unnecessary_addr_size" from "./kernel/realme/sm6150/scripts/Makefile.lib" line 283.
+
+	- for "FATAL ERROR: Unrecognized check name "alias_paths"", remove "-Wno-alias-paths".
+
+	- OR remove "-Wno-CHECK" alltogether. (if available)
+	- Use grep for this as this may be anywhere
+
+
+
+
 
 
 --- 
 
 
 
-## Steps i followed to build ROM on Ubuntu
+
+
+
+## Setup
+
+
+### Ubuntu
 
 
 
@@ -47,14 +105,13 @@ sudo apt install android-tools-adb android-tools-fastboot
 git clone https://github.com/akhilnarang/scripts.git
 chmod +x ./scripts/setup/android_build_env.sh
 ./scripts/setup/android_build_env.sh
-# ./scripts/setup/arch-manjaro.sh    # This is not required if you install all below 
 
-
-ccache -M 100G
+ccache -M 70G
 
 # put below lines in bashrc
-export USE_CCACHE=1 >> ~/.bashrc
-export CCACHE_EXEC=/usr/bin/ccache  >> ~/.bashrc
+echo "export USE_CCACHE=1" >> ~/.bashrc
+echo "export CCACHE_EXEC=/usr/bin/ccache"  >> ~/.bashrc
+echo "export CCACHE_DIR=/media/hritwik/CR/.cache/ccache" >> ~/.bashrc
 
 # to reload zsh
 source ~/.bashrc
@@ -66,7 +123,9 @@ source ~/.bashrc
 
 
 
-## Steps i followed to build ROM on Manjaro
+### Manjaro
+
+
 
 ```sh
 
@@ -88,34 +147,28 @@ sudo yay -S lineageos-devel aosp-devel maven gradle xmlstarlet --noconfirm --nee
 ccache -M 50G
 
 # put below lines in zshrc
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
+echo "export USE_CCACHE=1" >> ~/.zshrc
+echo "export CCACHE_EXEC=/usr/bin/ccache" >> ~/.zshrc
 # export CCACHE_EXEC=$(command -v ccache) 				# OR This
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+echo "export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache" >> ~/.zshrc
 
 # to reload zsh
 source ~/.zshrc
 
 ```
 
-- **For Cleaning**
-	- only run ```mka clobber```
-	- Unless you have space issues, you don't need to clean anything. If the need to do that arises, you can run ```mka clean```, ```mka clobber``` or just remove the ```out``` directory in the source tree
+
+
+---
 
 
 
 
-### 0. Modify DT, VT, KT
-
-
-- rename in
-	- the two locations shown in video. make sure to rename to "aosp_X2.mk" and not "aosp.mk"
-	- AndroidProducts.mk
-	- Rename lineage to AOSP in device.mk biometric permissions OR Remove "Lineage Specific perms"
+## Scripts for roms
 
 
 
-### 1. For AEX
+### For AEX
 
 
 ```sh
@@ -138,24 +191,9 @@ m aex -j$(nproc --all) | tee log.txt
 
 ```
 
-- delete
-	- "hal_lineage_trust_default.te" from "./device/realme/X2/sepolicy/private"
-
-- For errors:
-	- "Unrecognized check name".
-		- We need to remove that line from "Makefile.lib" so for error like "FATAL ERROR: Unrecognized check name "avoid_unnecessary_addr_size"" we would remove "-Wno-avoid_unnecessary_addr_size" from "./kernel/realme/sm6150/scripts/Makefile.lib" line 283.
-
-		- for "FATAL ERROR: Unrecognized check name "alias_paths"", remove "-Wno-alias-paths".
-
-		- OR remove "-Wno-CHECK" alltogether. (if available)
-		- Use grep for this as this may be anywhere
 
 
-- End result: **FAIL**
-	- could not complete build
-
-
-### 2. For AICP
+### AICP
 
 
 ```zsh
@@ -178,15 +216,13 @@ m -j$(nproc --all) | tee log.txt
 
 ```
 
+### Havoc
 
-- Edit in
-	- AndroidProducts.mk
-	- lineage_X2.mk 
-		- and this file name also
+### LOS
 
-	- overlays also
 
-### 3. For RR
+
+### RR
 
 ```sh
 mkdir rr && cd rr
@@ -203,7 +239,11 @@ mka bacon
 
 ```
 
+
+
+
 ---
+
 
 
 
@@ -267,7 +307,11 @@ mka bacon
 ---
 
 
+
+
+
 ## List of:
+
 
 ### Custom Roms
 

@@ -40,7 +40,7 @@ git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test k
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 lunch lineage_X2-userdebug
-time m bacon -j$(nproc --all) | tee log.txt
+time mka bacon -j$(nproc --all) | tee log.txt
 
 
 

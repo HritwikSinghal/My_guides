@@ -44,16 +44,14 @@
 	- only run ```mka clobber```
 	- Unless you have space issues, you don't need to clean anything. If the need to do that arises, you can run ```mka clean```, ```mka clobber``` or just remove the ```out``` directory in the source tree
 
-
+- http://www.trcompu.com/MySmartPhone/AndroidKitchen/Breakfast-Brunch-Lunch.html
 
 ### Notes
 
--  Modify DT, VT, KT
-- Edit in
+- Edit in (see others commits)
 	- AndroidProducts.mk
 	- lineage_X2.mk 
 		- and this file name also
-
 	- overlays also
 
 - rename in
@@ -76,9 +74,11 @@
 	- OR remove "-Wno-CHECK" alltogether. (if available)
 	- Use grep for this as this may be anywhere
 
+- If rom bootloops into fastboot, apply this to **SOURCE**
+	- https://github.com/CannedOS/external_selinux/commit/db56d38c06ca4514304eec771a14558b867ab2ff
 
-
-
+- if missing variable error in setting
+	- https://github.com/CannedShroud/device_realme_X2/commit/fd8cdab4fa3a7cc8a58b86204c77883c54748e83
 
 
 --- 
@@ -205,7 +205,9 @@ git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test k
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
-time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
+# time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
+lunch aicp_X2-userdebug
+time mka -j$(nproc --all) | tee log.txt
 
 
 ```
@@ -224,7 +226,9 @@ git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test k
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
-time brunch havoc_X2-userdebug -j$(nproc --all) | tee log.txt
+# time brunch havoc_X2-userdebug -j$(nproc --all) | tee log.txt
+lunch havoc_X2-userdebug
+time mka -j$(nproc --all) | tee log.txt
 
 ```
 
@@ -245,10 +249,11 @@ git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test k
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 lunch lineage_X2-userdebug
-time m bacon -j$(nproc --all) | tee log.txt
+time mka bacon -j$(nproc --all) | tee log.txt
 
 
 ```
+
 
 ### RR
 
@@ -257,23 +262,19 @@ mkdir rr && cd rr
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b havoc device/realme/X2
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr device/realme/X2
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
-# Now rename files like shown in video
-
 chmod +x build/envsetup.sh
-# . build/envsetup.sh 			# this or below
 source build/envsetup.sh
 lunch rr_X2-userdebug
-time m -j$(nproc --all) | tee log.txt
+time mka -j$(nproc --all) | tee log.txt
 # make update-api && time m -j$(nproc --all) | tee log.txt
 
 
 
 ```
-
 
 
 

@@ -7,11 +7,12 @@
 	- Notes
 	- Errors
 - Setup
-	- Ubuntu
 	- Manjaro
+	- Ubuntu
 - Sripts for Roms
 	- AEX
 	- AICP
+	- CrDroid
 	- Havoc
 	- LOS
 	- RR
@@ -48,6 +49,13 @@
 
 ### Notes
 
+```sh
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+
+```	
+
 - Edit in (see others commits)
 	- AndroidProducts.mk
 	- lineage_X2.mk 
@@ -74,12 +82,19 @@
 	- OR remove "-Wno-CHECK" alltogether. (if available)
 	- Use grep for this as this may be anywhere
 
-- If rom bootloops into fastboot, apply this to **SOURCE**
-	- https://github.com/CannedOS/external_selinux/commit/db56d38c06ca4514304eec771a14558b867ab2ff
-
 - if missing variable error in setting
 	- https://github.com/CannedShroud/device_realme_X2/commit/fd8cdab4fa3a7cc8a58b86204c77883c54748e83
 
+- If rom bootloops into fastboot, apply this to **SOURCE**
+	- https://github.com/CannedOS/external_selinux/commit/db56d38c06ca4514304eec771a14558b867ab2ff
+
+- if rom boots but is stuck at rom logo
+	- to debug
+		- https://github.com/kjanek/android_device_realme_x2/commit/8af4603704c803f18001b8a4e4bc01da672ccd6e
+
+- ccache: error: Failed to create directory /media/hritwik/CR/.cache/ccache/tmp: Permission denied
+	- Bcoz ccache dir should be "/run/media/...". If this does not slove then see below
+	- https://stackoverflow.com/questions/61923015/ccache-fails-with-read-only
 
 --- 
 
@@ -89,38 +104,6 @@
 
 
 ## Setup
-
-
-### Ubuntu
-
-
-
-```sh
-
-sudo apt update && sudo apt upgrade -y
-sudo apt install android-tools-adb android-tools-fastboot
-
-
-# This will setup repo in /usr/bin 
-git clone https://github.com/akhilnarang/scripts.git
-chmod +x ./scripts/setup/android_build_env.sh
-./scripts/setup/android_build_env.sh
-
-ccache -M 70G
-
-# put below lines in bashrc
-echo "export USE_CCACHE=1" >> ~/.bashrc
-echo "export CCACHE_EXEC=/usr/bin/ccache"  >> ~/.bashrc
-echo "export CCACHE_DIR=/media/hritwik/CR/.cache/ccache" >> ~/.bashrc
-
-# to reload zsh
-source ~/.bashrc
-
-
-
-```
-
-
 
 
 ### Manjaro
@@ -158,6 +141,36 @@ source ~/.zshrc
 ```
 
 
+### Ubuntu
+
+
+
+```sh
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install android-tools-adb android-tools-fastboot
+
+
+# This will setup repo in /usr/bin 
+git clone https://github.com/akhilnarang/scripts.git
+chmod +x ./scripts/setup/android_build_env.sh
+./scripts/setup/android_build_env.sh
+
+ccache -M 70G
+
+# put below lines in bashrc
+echo "export USE_CCACHE=1" >> ~/.bashrc
+echo "export CCACHE_EXEC=/usr/bin/ccache"  >> ~/.bashrc
+echo "export CCACHE_DIR=/media/hritwik/CR/.cache/ccache" >> ~/.bashrc
+
+# to reload zsh
+source ~/.bashrc
+
+
+
+```
+
+
 
 ---
 
@@ -168,7 +181,7 @@ source ~/.zshrc
 
 
 
-### AEX
+### 1. AEX
 
 
 ```sh
@@ -191,7 +204,7 @@ time m aex -j$(nproc --all) | tee log.txt
 
 
 
-### AICP
+### 2. AICP
 
 
 ```zsh
@@ -205,14 +218,38 @@ git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test k
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
+time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
+# lunch aicp_X2-userdebug
+# time mka -j$(nproc --all) | tee log.txt
+
+
+```
+
+
+
+### 3. CrDroid
+
+
+```zsh
+mkdir crdroid && cd crdroid
+repo init -u git://github.com/crdroidandroid/android.git -b 11.0 --depth=1
+repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
+
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b crdroid device/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
+
+chmod +x build/envsetup.sh
+source build/envsetup.sh
 # time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
-lunch aicp_X2-userdebug
+lunch crdroid_X2-userdebug
 time mka -j$(nproc --all) | tee log.txt
 
 
 ```
 
-### Havoc
+
+### 4. Havoc
 
 
 ```sh
@@ -233,7 +270,7 @@ time mka -j$(nproc --all) | tee log.txt
 ```
 
 
-### LOS
+### 5. LOS
 
 
 ```sh
@@ -255,7 +292,7 @@ time mka bacon -j$(nproc --all) | tee log.txt
 ```
 
 
-### RR
+### 6. RR
 
 ```sh
 mkdir rr && cd rr
@@ -444,16 +481,16 @@ time mka -j$(nproc --all) | tee log.txt
 ## Things to check after booting ROM
 
 
-- Audio
+- Audio (Microphone & Speakers & Headphone Jack)
 - Camera & Camcorder
 - Charging
 	- Fast charginig
+	- Offline Charging
 - Bluetooth
 - Encryption (of internal storage)
 - Fingerprint
 - Flash
 - GPS
-- Offline Charging
 - RIL (Calls, SMS, Data) + VoLTE + VoWIFI
 - Selinux Enforcing
 - Sensors
@@ -465,6 +502,7 @@ time mka -j$(nproc --all) | tee log.txt
 - Wifi & Hotspot
 	- 2.4Ghz & 5Ghz
 	- Is internet there?
+	- Do both work at same time?
 - Wifi Display
 
 ​

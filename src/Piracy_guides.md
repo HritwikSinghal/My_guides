@@ -68,6 +68,76 @@
     - https://gdrive.zppcw.cn/
 
 
+    <details><summary>Benefits of an .edu domain email account:</summary>
+    <p>
+        ```
+        ---<<< Free Services >>>---
+
+        • Amazon Prime (https://www.amazon.co.uk/Prime-Video) - Online Movies & TV (180 days only - requires verification & documents, manage yourself)
+
+        • BitBucket (https://bitbucket.org/product) - Unlimited code hosting
+
+        • Google Drive (https://www.google.com/drive) - Online storage (grants unlimited access)
+
+        • Lynda (https://www.lynda.com/) - Online courses & tutorials
+
+        • Microsoft Azure (https://azureforeducation.microsoft.com/en-us/Institutions) - Cloud services & online storage (5TB OneDrive Storage)
+
+        • Microsoft Office 365 (https://www.office.com/) - Productivity software & online storage
+
+        • MindSumo (https://www.mindsumo.com/) - Student crowdfunding
+
+        • Student Beans (https://www.studentbeans.com/) - Student Discounts (free registration & student status, for online coupons)
+
+        • The Washington Post (https://www.washingtonpost.com/) - US News outlet (free unlimited access)
+
+        • UNiDAYS (https://www.myunidays.com/) - Student Discounts (free registration & student status, for online coupons)
+
+
+
+        ---<<< Free Software >>>---
+
+        • Autodesk apps (https://www.autodesk.com/products) - CAD & 3D Design tools  (easier to pirate (https://raddle.me/f/MSToolkit/67756/xforce-keygen-autodesk-2019))
+
+        • Fetch (https://fetchsoftworks.com/) - File manager
+
+        • GitHub Student Developer Pack (https://education.github.com/pack) - online code hosting & version tracking (requires verification & documents, manage yourself)
+
+        • JetBrains apps (https://www.jetbrains.com/products.html?fromMenu) - Software development tools
+
+        • LastPass (https://www.lastpass.com/) - Password manager (6 months only)
+
+        • Microsoft Office 365 (https://www.office.com/) - Productivity software & online storage
+
+        • RipTiger (http://www.riptiger.com/) - Video editor
+
+        • RoboForm (https://www.roboform.com/) - Password manager
+
+        • SquareSpace (https://www.squarespace.com/) - Website builder
+
+
+
+        ---<<< Discounted Services >>>---
+
+        • Connectify (https://www.connectify.me/) - Turn your PC into a WiFi Hotspot (75% off)
+
+        • iDrive (https://www.idrive.com/) - Online Storage (50% off)
+
+
+
+        ---<<< Discounted Software >>>---
+
+        • Adobe Creative Cloud (https://www.adobe.com/creativecloud/plans.html) - Advanced productivity software (easier to pirate (https://t.me/raymondfreesoftware/166002))
+
+        • Apple Music (https://www.apple.com/apple-music) - Online music streaming (up to 50% off, $4.99 / Month)
+
+        • Comptia (https://www.comptia.org/) - Computing tools & training (discounted vouchers)
+        ```
+    </p>
+    </details>
+
+
+
 - Apply for Office 365 Education Edition : 
     - Student version : https://signup.microsoft.com/signup?sku=student 
     - Teacher Edition : https://signup.microsoft.com/signup?sku=faculty 
@@ -173,6 +243,61 @@
 
 - https://github.com/Th3-822/rapidleech
     - And transloaders
+
+- Free TV
+    ```
+    APPLICATIONS
+
+    Apollo v1.4.7
+    Website - https://apollotv.xyz/
+    Discord - https://tinyurl.com/yxd3cf68 
+    Reddit - https://www.reddit.com/r/ApolloTV/
+    Download - https://houston.apollotv.xyz/ota/download
+
+    BeeTV v2.3.5
+    Website - http://beetvapk.me/
+    Download - https://apks2day.xyz/Apps/BeeTV/BeeTV.apk
+    AdFree Mod - https://apks2day.xyz/Apps/BeeTV/Mod/BeeTV-AdFree.apk
+    Mod Lite - https://apks2day.xyz/Apps/BeeTV/Mod/BeeTV-AdFree-Lite.apk
+
+    Black Panther v1.13(Morpheus Fork & Unique Design)
+    Website - http://teamnn.xyz/
+    Download - https://apks2day.xyz/Apps/BlackPanther/BlackPanther.apk
+
+    Cinema v2.1.2 
+    Website  - https://cinemaapk.com/
+    FaceBook - https://www.facebook.com/groups/2249461928676565/
+    Download -  https://apks2day.xyz/Apps/Cinema/cinema.apk
+
+    Cyberflix v3.1.9 (Terrarium Clone)
+    Website - https://cybercloud.media/
+    Facebook - https://www.facebook.com/groups/CyberFlixTV 
+    Download - https://apks2day.xyz/Apps/Cyberflix/Cyberflix.apk 
+
+    FireAnime v2.9.6
+    Reddit - https://www.reddit.com/r/FireAnime/
+    Download - https://apks2day.xyz/Apps/Anime/FireAnime/FireAnime.apk
+
+    TeaTV v9.9.6r
+    Website - https://teatv.net/teatv-apk-download/
+    Discord -  http://tinyurl.com/y6hwf3db
+    Download - https://apks2day.xyz/Apps/TeaTV/TeaTV.apk
+    AdFree Mod - https://apks2day.xyz/Apps/TeaTV/Mod/TeaTV-AdFree.apk
+
+    TyphoonTV v2.0.19
+    Discord - https://tinyurl.com/y5exulc7
+    Download - https://apks2day.xyz/Apps/Typhoon/Typhoon.apk
+
+    TVZion v3.8.1
+    Website - https://tvzionapp.live/
+    Reddit - https://www.reddit.com/r/TVZionApp/
+    Download - https://zionapp.live/d
+    AdFree Mod - https://apks2day.xyz/Apps/TVZion/Mod/TVZion-AdFree.apk
+
+    UnlockMyTV v1.49 (Cinema Clone Uses AdFree Mod)
+    Website - https://unlockmytv.com/
+    Download -  https://apks2day.xyz/Apps/UnlockMyTV/unlockmytv.apk
+    ```
 
 - ![youtube-dl](./media/PG_1.png)
     - [This](https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/common.py)

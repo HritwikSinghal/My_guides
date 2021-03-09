@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # To run 
-# curl -SsL https://raw.githubusercontent.com/HritwikSinghal/My_guides/new/src/scripts/Android_build/AICP.sh | sudo bash
-
+# curl -SsL https://raw.githubusercontent.com/HritwikSinghal/My_guides/master/src/scripts/Android_build/AICP.sh | sudo bash
 
 # https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session
 tmux

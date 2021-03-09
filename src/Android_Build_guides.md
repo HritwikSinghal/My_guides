@@ -4,7 +4,7 @@
 # Table of Contents
 - Todo & notes & Errors
 	- Todo
-	- Notes
+	- Notes & Saved
 	- Errors
 - Setup
 	- Manjaro
@@ -38,6 +38,8 @@
 
 ### Todo
 
+- Try to use ubuntu in Docker for build
+
 - Use prebuilt Kernel
 
 - see this, most of this is FA 
@@ -46,10 +48,29 @@
 - **For Cleaning**
 	- only run ```mka clobber```
 	- Unless you have space issues, you don't need to clean anything. If the need to do that arises, you can run ```mka clean```, ```mka clobber``` or just remove the ```out``` directory in the source tree
+	- [Breakfast-Brunch-Lunch](http://www.trcompu.com/MySmartPhone/AndroidKitchen/Breakfast-Brunch-Lunch.html)
 
-- http://www.trcompu.com/MySmartPhone/AndroidKitchen/Breakfast-Brunch-Lunch.html
+### Notes & Saved
 
-### Notes
+- [build LineageOS with Nix using robotnix](https://www.reddit.com/r/LineageOS/comments/igg7mc/you_can_now_build_lineageos_with_nix_using/)
+    - See LOS reddit wiki for more
+
+- [Tmux](https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session)
+
+- [passwordless-ssh-login](https://linuxize.com/post/how-to-setup-passwordless-ssh-login/)
+
+- To copy a file from B to A while logged into A via ssh:
+	- ```sh
+	scp username@b:/path/to/file /path/to/destination
+	scp root@198.13.32.138:~/.profile ~/Videos
+	```
+
+- [transfer-files-with-rsync](https://linuxize.com/post/how-to-transfer-files-with-rsync-over-ssh/)
+ 	- Remote to Local: rsync [OPTION]... -e ssh [USER@]HOST:SRC... [DEST]
+ 	- Where SRC is the source directory, DEST is the destination directory 
+ 	- USER is the remote SSH username and HOST is the remote SSH host or IP Address
+ 	- To transfer data from a **remote to a local machine**, use the remote location as the source and the local location as destination:
+ 	- ```rsync -a root@198.13.32.138:/foo/bar/file.zip ~/Videos```
 
 
 - Edit in (see others commits)

@@ -3,15 +3,13 @@
 
 # **Table of Contents**
 - Todo
-- Install Apps
-- Saved
+- Notes & Saved
 
 
 --- 
 
 
 ## Todo
-
 
 - [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
 
@@ -57,21 +55,21 @@
 - [Install Ruby gems system-wide](https://wiki.archlinux.org/index.php/ruby#Installing_Ruby)
 
 - [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
-- [x] [Fix auto bakups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
+- [x] [Fix auto backups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
 
 
 
-## Install Apps
 
-- Disrtotube channel 
+## Notes & Saved
+
+
+- Install Apps and shell and other configs from Disrtotube channel 
 - chaotic aur 
 - [AUR helper like yay](https://itsfoss.com/best-aur-helpers/)
 	- [Paru](https://itsfoss.com/paru-aur-helper/)
 - https://itsfoss.com/pacman-command/
 
 
-
-## Saved
 
 - https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
 	- if insatlling ```kid3``` in Arch, also insatll ```kio```

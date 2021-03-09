@@ -1,7 +1,7 @@
 # Common Things for all Linux Distros
 
 # **Table of Contents**
-- Saved
+- Notes & Saved
 - Apps, Extensions, Themes
     - Apps
     - Extensions
@@ -16,10 +16,26 @@
 
 
 
-## Saved
+## Notes & Saved
+
+- Emulation
+    - https://superuser.com/questions/781454/debian-arm-and-brother-dcp195c-with-cups
+    - https://wiki.debian.org/QemuUserEmulation
+    - https://wiki.debian.org/Multiarch/HOWTO
+    - https://wiki.debian.org/Multiarch
+    - http://neuro.debian.net/blog/2013/2013-05-31_matlab_64bit_on_32bit.html
+    - https://unix.stackexchange.com/questions/118343/run-64-bit-app-on-32-bit-ubuntu-system
+
+
+- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
+    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
+
 
 - [How to Use sed to Find and Replace String in Files | Linuxize](https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/)
+    - ``` sed -i 's/SEARCH_REGEX/REPLACEMENT/g' INPUTFILE ```
 - [How do I find all files containing specific text on Linux? - Stack Overflow](https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux)
+    - ```grep -rnw '/path/to/somewhere/' -e 'pattern'```
 
 
 - This is for displaying fps counter on wine games.
@@ -59,6 +75,41 @@
         | cut -d '"' -f 4)
         curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
     Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
+
+
+
+- [Linux Wifi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
+- [login with USB on liunx](https://www.linuxuprising.com/2021/02/how-to-login-with-usb-flash-drive.html)
+
+
+- [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
+
+- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
+
+
+- Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
+    - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
+
+
+- [schedule-commands-and-scripts-in-linux](https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html)
+- https://www.linuxuprising.com/2020/01/bandwhich-shows-whats-taking-up-your.html
+- https://www.linuxuprising.com/2020/05/how-to-encrypt-cloud-storage-files-with.html
+- [cryptomator](https://www.linuxuprising.com/2020/04/cryptomator-150-released-with.html)
+- [borg backup](https://medium.com/swlh/backing-up-with-borg-c6f13d74dd6)
+
+
+- [free-up-port-53 in ubuntu](https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html)
+    - https://askubuntu.com/questions/973017/wrong-nameserver-set-by-resolvconf-and-networkmanager
+
+
+- [TLP, extend battery linux](https://www.linuxuprising.com/2020/02/tlp-13-linux-laptop-battery-extender.html)
+- [script to use a smartphone (or any audio stream) as microphone on PulseAudio](https://github.com/MatthiasCoppens/pulseaudio-virtualmic)
+
+
+- Brother Printer
+    - [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
+    - [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
+    - https://aur.archlinux.org/packages/brother-hll2360d/
 
 
 ---
@@ -141,7 +192,7 @@
     - Jetbrains
     - Atom
     - codium
-    - VSCode
+    - VSCode (Don't ever Use this proprietary shit, use codium with patches for marketplace)
 
 - Mail Clients
     - Good old Thunderbird
@@ -163,6 +214,12 @@
 
 - Music Players
     - Elisa music player
+
+- Remote control software
+    - Reminna
+    - TigerVNC
+    - RealVNC
+    - [More here](https://www.tecmint.com/remmina-remote-desktop-sharing-and-ssh-client/)
 
 - SS tools
     - [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)

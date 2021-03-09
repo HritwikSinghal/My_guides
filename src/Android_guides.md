@@ -1,19 +1,21 @@
-# Things to do before Format
+# Things to do before Format and after installing
 
 
 
 # **Table of Contents**
-- Backup
-- Update
-- Make Sure
-
+- Before format
+	- Backup
+	- Update
+	- Make Sure
+- After Install
+	- Flash
 
 --- 
 
 
+## Before format
 
-
-## Backup
+### Backup
 - Update apps before backup
 
 - Apps using Migrate & TB & OABX
@@ -29,12 +31,27 @@
 - Apps in Work profile
 
 
-## Update
+### Update
 
 - Magisk modules to be flashed. (in Downloads)
 - Magisk, nanodroid, minmicrog (all things in Documents)
 - TWRP
 
-## Make sure
+### Make sure
 
 - tasks, contacts are synced
+
+
+
+--- 
+
+
+
+## After Install
+
+### Flash
+
+- MircoG
+- Magisk
+- Migrate zips
+- Magisk Modules

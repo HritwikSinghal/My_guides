@@ -41,6 +41,7 @@
             - https://goindex-quick-install.glitch.me/
 
     - Get free ccsf/swccd team drives(shared drives) every 24 hours here:
+        ```
         Ccsf: https://teamdrive.mfoxx.workers.dev
         Swccd: http://leon.educationhost.cloud
         (The first column is the name of your new team drive. The second column is your gmail address.)
@@ -49,6 +50,7 @@
         Type /teamdrive and then your email to generate one.
         E.g.:
         /teamdrive example@gmail.com
+        ```
 
     - https://free-drive.orangesfor.me/   (Gives CCSF)
     - http://leon.educationhost.cloud/   (SWCCD)
@@ -172,7 +174,7 @@
 - https://github.com/Th3-822/rapidleech
     - And transloaders
 
-- ![youtube-dl](src/media/PG_1.png)
+- ![youtube-dl](./media/PG_1.png)
     - [This](https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/common.py)
 
 

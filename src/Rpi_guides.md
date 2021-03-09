@@ -1,46 +1,39 @@
+# RPI and Pihole.
+
+# ** Table of Contents **
+- ** Raspberry Pi **
+	- Notes
+    	- Remove MS repo
+    - Guides
+	    - Brother Printer Driver Installation
+		    - 1. For x86 & x64 Linux (Only DEB and RPM)
+		    - 2. For x86 & x64 Arch Based.
+		    - 3. For Rpi
+- ** Pihole **
+	- Adlists
+	- Other Adlists Resources
+	- Jio Blocklist
+
+
+---
 
 
 # Raspberry Pi
 
-## IMP!
+##  Notes
+
+- For editing static Ip address of Pi, Se dhcpcd config file. (/etc/dhcpcd.conf)
+
 - Remove MS repo from PI (coz Rpi foundation is a jerk)
 	- https://www.reddit.com/r/linux/comments/lbu0t1/microsoft_repo_installed_on_all_raspberry_pis/
 	- Maybe create a cron script for it.
+- [Install TigerVNC](https://atetux.com/how-to-install-tigervnc-server-on-ubuntu-20-04)
+
 
 ## Guides
 
-- [Building a PiHole for Privacy and Performance (From Flashing SD to Unbound config. Fail2Ban, Firewall, RPi-Monitor.)](https://thesmashy.medium.com/building-a-pihole-for-privacy-and-performance-f762dbcb66e5)
 
-- [Quick Raspberry Pi SSH access over the internet
-](https://www.reddit.com/r/raspberry_pi/comments/kwh481/quick_raspberry_pi_ssh_access_over_the_internet/)
-
-- [Monitor your local network using a Raspberry Pi and NEMS](https://howchoo.com/pi/raspberry-pi-network-monitor-setup)
-
-### Nextcloud on Pi
-- []()
-- []()
-- []()
-- []()
-- []()
-- [Install Nextcloud on a RaspberryPi With Docker! Easy 5 Steps](https://www.youtube.com/watch?v=RkJuAGCKsUQ)
-- Create your own private cloud on Raspberry Pi, [Medium Link]](https://zahidmak.medium.com/create-your-own-private-cloud-using-raspberry-pi-for-your-photos-and-documents-86a3b60384a0), [Reddit link](https://www.reddit.com/r/raspberry_pi/comments/k6n25f/wrote_this_step_by_step_guide_to_create_your_own/)
-- [Nextcloud + Raspberry Pi + Docker + Onion service](https://itnext.io/nextcloud-docker-raspberry-pi-onion-service-84d4af13f7e6)
-- ["Best guide I’ve seen for setting up your own Nextcloud server"](https://kevq.uk/how-to-setup-a-nextcloud-server-in-ubuntu)
-
-
-
-### File storage server on Pi
-- []()
-- []()
-- []()
-- []()
-
-- [NASPi: a Raspberry Pi Server](https://www.reddit.com/r/raspberry_pi/comments/i9o0qw/naspi_a_raspberry_pi_server/)
-- ["Just wanted to show the Raspberry Pi NAS I've been running for about a year now"](https://www.reddit.com/r/raspberry_pi/comments/htjrir/just_wanted_to_show_the_raspberry_pi_nas_ive_been/)
-
-
-
-## Brother Printer Driver Installation.
+### Brother Printer Driver Installation.
 
 <details><summary>1. For x86 & x64 Linux (Only DEB and RPM)</summary>
 <p>
@@ -121,7 +114,7 @@
 	    sudo dpkg -i dcp197clpr-1.1.3-1.i386.deb
 	```
 
-- [Guide for Setup a Print Server](https://medium.com/@anirudhgupta281998/setup-a-print-server-using-raspberry-pi-cups-part-2-2d6d48ccdc32) or [Another Guide](https://www.tomshardware.com/how-to/raspberry-pi-print-server) or [Rpi official Guide](https://www.raspberrypi.org/blog/printing-at-home-from-your-raspberry-pi/) or just Search it on internet.
+- [Other Guide for Setup a Print Server](https://medium.com/@anirudhgupta281998/setup-a-print-server-using-raspberry-pi-cups-part-2-2d6d48ccdc32) or [Another Guide](https://www.tomshardware.com/how-to/raspberry-pi-print-server) or [Rpi official Guide](https://www.raspberrypi.org/blog/printing-at-home-from-your-raspberry-pi/) or just Search it on internet.
 
 	- Introduction to CUPS
 	CUPS (Common Unix Printing System) is a printing system for UNIX like operating systems based computers. It gives computers on which it is running the ability to act as a print server. A computer running CUPS is able to accept jobs from multiple devices, process them and pass it on to the appropriate printer to print. For this tutorial, we will setup CUPS on a Raspberry Pi 3 Model B+. You can use any other Raspberry Pi model.

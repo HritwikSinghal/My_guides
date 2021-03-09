@@ -3,8 +3,6 @@ set -e
 
 
 
-sudo apt-mark hold libegl-mesa0 libgbm1 libgl1-mesa-dri libglapi-mesa libglx-mesa0
-
 printf "\n---------------------------------------------------------------------------\n"
 # add repositories
 printf "\n\n\n-------------------------Adding Repositories-------------------------\n\n\n"
@@ -146,6 +144,11 @@ gnome-shell-extension-tool -d desktop-icons@csoriano
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
+
+
+cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
+sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
+
 # Latest: https://github.com/linuxmint/nemo/releases/latest
 
 
@@ -171,7 +174,6 @@ sudo apt install copyq -y
 
 printf "\n-------------------------Install--vnstat-------------------------\n"
 sudo apt install vnstat -y
-cp ./configs/.vnstatrc /home/hritwik/
 sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
@@ -192,10 +194,8 @@ printf "\n-------------------------Install--Flameshot-------------------------\n
 sudo apt install flameshot -y
 
 printf "\n-------------------------Install--fusuma-------------------------\n"
-sudo apt install libinput-tools -y
-sudo apt install ruby -y
+sudo apt install libinput-tools ruby xdotool -y
 sudo gem install fusuma
-sudo apt install xdotool -y
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 # ---
 printf "\n-------------------------Install--fusuma-gems-------------------------\n"
@@ -418,6 +418,11 @@ mkdir -p /home/hritwik/.config/fusuma/
 cp ./configs/config.yml /home/hritwik/.config/fusuma/
 
 
+printf "\n--------------------------Tweaks---Vnstat-------------------------\n"
+cp ./configs/.vnstatrc /home/hritwik/
+
+
+
 
 
 
@@ -493,4 +498,6 @@ printf "\n--------------------------Final---Fusuma-add-user-to-input-group------
 sudo gpasswd -a hritwik input
 newgrp input
 sudo usermod -a -G libvirt hritwik
+newgrp libvirt
 sudo usermod -a -G kvm hritwik
+newgrp kvm

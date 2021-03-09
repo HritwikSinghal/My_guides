@@ -1,6 +1,15 @@
-
-
 # Piracy
+
+
+# ** Table of Contents **
+- General
+- Trackers
+- Apps
+
+---
+
+
+## General
 
 - [Reddit Megathread](https://www.reddit.com/r/Piracy/wiki/megathread/)
     - [tools](https://www.reddit.com/r/piracy/wiki/megathread/tools)
@@ -26,7 +35,9 @@
 
 - [pirated Android games source](https://www.reddit.com/r/Piracy/comments/hx71y9/trusted_pirated_android_games_source/)
 
-
+- [pirate cinema](https://craphound.com/pc/download/)
+    - Pirate Cinema is a novel by Cory Doctorow. It was released in October 2012. The novel is licensed under the terms of Creative Commons BY-NC-ND license and is available free on the author's website. The novel is set in a dystopian near-future Britain where the government is effectively controlled by media corporations
+- [The Right to Read, by GNU Project](https://www.gnu.org/philosophy/right-to-read.en.html)
 
 
 <details><summary>text + video tutorial on how to rip from Amazon</summary>
@@ -84,9 +95,23 @@
 - ![youtube-dl](/media/PG_1.png)
     - [This](https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/common.py)
 
+
+
+---
+
+
+
+
+
 ## Trackers
 
 - 
+
+
+
+---
+
+
 
 
 ## Apps
@@ -94,4 +119,4 @@
 - [tool to help you archive Microsoft and Xbox store packages](https://github.com/StoreDev/StoreWeb)
 
 
---- XXX ---
+

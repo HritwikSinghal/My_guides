@@ -4,6 +4,7 @@
 - General
 - Archive Resources
 - Apps
+	- Privacy Addons
 
 
 
@@ -73,11 +74,43 @@
 
 ## Apps
 
-- [Notally, notes taking app](https://github.com/OmGodse/Notally)
 - [academic search engine](https://www.base-search.net/)
+- Pilfershush jammer
+- https://thispersondoesnotexist.com/
+
+- Contacts, calender, Tasks
+	- Fruux
+	- Etesync
+	- Nextcloud
+
+- Google photos alt
+	- Crypt.ee
+	- Nextcloud
+	- Photoprism
+	- JottaCloud
+
+- Isolate Apps
+	- Firejail
+	- Chroot
+	- Run in Docker OR LXC
+
+- Notes
+	- [Notally, notes taking app](https://github.com/OmGodse/Notally)
+	
+
+- Temp mail
+	- Anonaddy
+	- Simplelogin
+	- ProtonMail offers the ability to receive mail to an unlimited number of aliases by using a “+” symbol after your username in your email address. For example, if your username is username@protonmail.com, you can also receive emails to username+myalias1@protonmail.com
+	- https://mail7.io/
+
+
+- TrashOS (Windows) telemetry
+	- [Privatezilla is the simplest way to perform a quick privacy and security check of your Windows 10 copy](https://github.com/builtbybel/privatezilla)
 
 
 
+### Privacy Addons
 
-
-
+- Chamaleon
+- 

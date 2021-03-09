@@ -18,7 +18,7 @@
 
 ## Notes & Saved
 
-- Emulation
+- Emulation of x86 on arm64 and more.
     - https://superuser.com/questions/781454/debian-arm-and-brother-dcp195c-with-cups
     - https://wiki.debian.org/QemuUserEmulation
     - https://wiki.debian.org/Multiarch/HOWTO

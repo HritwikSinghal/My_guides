@@ -142,6 +142,7 @@
     - Student version : https://signup.microsoft.com/signup?sku=student 
     - Teacher Edition : https://signup.microsoft.com/signup?sku=faculty 
     - Temporary mailbox for O365 : 
+        - https://yangyang.im/
         - http://onedrive.readmail.net 
         - http://od.obagg.com 
         - http://mail.hrka.net 
@@ -686,7 +687,7 @@
 ## Trackers & Websites
 
 - Ova Games
-
+- https://7torrents.cc/
 
 
 ---
@@ -699,3 +700,6 @@
 - [tool to help you archive Microsoft and Xbox store packages](https://github.com/StoreDev/StoreWeb)
 
 - [spotifykeydumper](https://gitlab.com/fuck-capitalism/spotifykeydumper)
+
+- https://github.com/ntoporcov/iQbit for searching torrents
+- [grabs magnet links for selected torrents through CLI](https://github.com/bleusakura/magnetfinder)

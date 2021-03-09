@@ -14,6 +14,7 @@
 
 - Games
 	- Titanfall 2
+	- Horizon zero dawn
 
 - [[MODULE] Smali Patcher for native Android (Termux) | XDA Developers Forums](https://forum.xda-developers.com/t/module-smali-patcher-for-native-android-termux.4183061/)
 	- [Gitlab](https://gitlab.com/JFronny/smalipatcher/)
@@ -62,9 +63,32 @@
 	- https://www.guyrutenberg.com/2018/10/25/sharing-a-folder-a-windows-guest-under-virt-manager/
 
 
+- Shell/terminal/prompt
+    - Learn to modify zsh and fish shell (if installed)
+    - [starship](https://itsfoss.com/starship/)
+        - https://starship.rs/guide/#%F0%9F%9A%80-installation
+    - https://www.youtube.com/watch?v=TKX29fJ8U2Y (bash customize)
+
+    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
+        - search it on internet, this is just basic.
+    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)
+    - [Bash tips for everyday at the command line | Opensource.com](https://opensource.com/article/18/5/bash-tricks)
+    - https://itsfoss.com/linux-command-tricks/
+
+    - https://www.playonlinux.com/en/
+    - https://linuxjourney.com/lesson/filesystem-hierarchy
+    - How this works: ```nmcli dev show | grep DNS | awk '{ print $2 }'```
+    - [shell scripting](https://www.shellscript.sh/variables2.html)
+    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
+    - https://explainshell.com/
+
+
+
 - [Full guide for installing KSP on linux for 64bit performance [X-post /r/KerbalSpaceProgram] : KerbalAcademy](https://www.reddit.com/r/KerbalAcademy/comments/3fdmv3/full_guide_for_installing_ksp_on_linux_for_64bit/)
 
 - [7 Tips To Book Cheap Flight Tickets For Your Trek - Indiahikes](https://indiahikes.com/tips-cheap-flight-tickets-india/)
+
+- Fiddler and Burp
 
 
 
@@ -73,6 +97,7 @@
 
 
 ## 1. FF
+
 
 ### Shortcuts
 

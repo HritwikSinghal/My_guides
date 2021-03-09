@@ -17,8 +17,14 @@
 
 - [Reddit Megathread](https://www.reddit.com/r/Piracy/wiki/megathread/)
     - [tools](https://www.reddit.com/r/piracy/wiki/megathread/tools)
+- Awesome Piracy List:
+    https://github.com/Igglybuff/awesome-piracy
+- Awesome Data Hoarding:
+    https://github.com/simon987/awesome-datahoarding
+- Mega Warez List:
+    https://github.com/CHEF-KOCH/Warez/blob/master/README.md
 
-- TD
+- Team Drives
     - GitHub Repos for GDrive Index
         - https://github.com/Kshitijchoudhry/Drive-Index
         - https://github.com/LeeluPradhan/G-Index
@@ -55,7 +61,9 @@
     - https://ucla.ur.workers.dev - ucla.edu
     - https://iuj.ur.workers.dev/ - iuj.ac.jp
     - https://ucla.ur.workers.dev (https://ucla.ur.workers.dev/)/
-
+    - https://gd.zxd.workers.dev/  this gives td from aims
+    - Getting from some UK university https://www.sheffield.ac.uk/
+    - https://gdrive.zppcw.cn/
 
 
 - Apply for Office 365 Education Edition : 
@@ -71,6 +79,108 @@
         - https://m.mzr.me 
         - http://24mail.chacuo.net (Office 365 A1 Plus subscription)
 
+
+- Tools for Modding
+    - Jasi Patcher: https://www.mediafire.com/file/ee8g110ee9z6mmi/Jasi_Patcher_v4.8.apk
+    - Lucky Patcher: https://www.mediafire.com/file/n4a5yb9a9nr8cqh/LP_Installer-v8.5.2_build_1612.apk
+    - Mobilism: https://forum.mobilism.org/viewforum.php?f=398
+
+- Temporary Gmail Accounts:
+    - http://gmailnator.com (best)
+    - http://storegmail.com
+
+- SMS
+    - try these
+        - http://www.receive-sms-online.info
+        - http://receive-a-sms.com
+        - https://www.textmagic.com/free-tools/receive-free-sms-online
+        - http://hs3x.com
+        - http://receivesmsonline.in
+        - http://www.receive-sms-now.com
+        - http://receivefreesms.net
+        - http://receivesmsonline.com
+
+    - GET PERSONAL NUMBER FOR RECEIVING SMS
+        1. Twilio.com 
+        2. Textnow.com 
+        3. Countrycode.org 
+        4. Wp.pinger.com 
+        5. Textmagic.com 
+        6. Esendex.co.uk - (It's easy to get a trial period using a virtual number by fast registration, the package includes 25 free messages, the restriction of use in 7 days.No credit card is required.You can be counted for a personal number!) 
+        7. Burstsms.com.au - (Similar service as the previous one, fast registration, the probe includes 14 days You do not need a credit card, so you can count as a personal number!) 
+        8. Directsms.com.au - (You register, you get a free 30-day trial version Business sms. Personal Wirth.number!)
+        9. Vumber.com - (Register, receive a 14-day trial version.) Personal PUBLIC NUMBER FOR RECEIVING SMS➖
+        1. Receive-sms-online.info 
+        2. Receivefreesms.net 
+        3. Sms-receive.net 
+        4. Receive-a-sms.com 
+        5. Hs3x.com 
+        6. Receive-sms-now.com - (There are Russian numbers) 
+        7. Smsreceivefree.com 
+        8. Receivesmsonline.com 
+        9. Getsms.org - (Рус.номера) 
+        10. Tempsms.ru - (Rus.number) 
+        11. Numberforsms.com - (There are Russian numbers) 
+        12. Sonetel.com 
+        13. Smska.us - (Rus.number) 
+        14. Sellaite.com 
+        15. Sms.ink - (Rus.numera) 
+        16. Proovl.com 
+        17. Onlinesim.ru 
+        18. Zadarma.com - (There are Russian numbers)
+        19. Smsc.ru - (You need to register, there are Russian and Ukrainian numbers) 
+        20. Freevirtualnumber.skycallbd.com 
+        21. Getfreesmsnumber.com 
+        22. Receive-smsonline.net - Yearly design 
+        23. Receivefreesms.com 
+        24. Receivesmsverification.com 
+        25. Sms-online.co 
+        26. Ireceivesmsonline.com 
+        27. Receive-sms-online.com - (There are a number of scores) 
+        28. Receive-sms-free.com 
+        29. Esendex.com.au - (Registration required) 
+        30. Receivesmsonline .in 
+        31. Mytrashmobile.com 
+        32. Receivesmsonline.me 
+        33. Anon-sms.com 
+        34. Mfreesms.com 
+        35. Spryng.nl - (You need to register) 
+        36. Smsreceiveonline.com 
+        37. Smsget.net - (Megaphone and Beeline)
+
+
+- [crawler websites](https://www.reddit.com/r/Piracy/comments/i4zaq4/why_do_i_get_this_feeling_not_many_new_pirates/)
+    - ```
+        Web crawlers are bots that search the web and index the sites in their databases.
+        There are people who made great crawlers meant for piracy that take torrents from public torrent trackers. You find everything in one place. Some websites are even ad free. A big bonus is also you get torrents from tracker sites that require you to register (not a problem... until you stumble upon a Russian torrent site and you don't know Russian).
+        *cough* Knaben database @ knaben.xyz *cough*
+        This is probably the biggest free torrent crawler that gets torrents from public trackers. It just works. I downloaded terabytes of music and movies thanks to the wonderful people who made this. I just don't like having to login to websites to have access to more music, especially because some websites have stupid rules when it comes to personalising your profile (looking at you, soundpark).
+        ```
+
+- Use colab to extract RAR files on drive
+
+- [Rclone-Guide-for-Beginners-04-15](https://telegra.ph/Rclone-Guide-for-Beginners-04-15)
+- [[Guide] How to set up Docker containers to automatically download any TV show or movie](https://www.reddit.com/r/Piracy/comments/cuzmro/guide_how_to_set_up_docker_containers_to/)
+- [Widewine L3 Decryptor](https://github.com/tomer8007/widevine-l3-decryptor/tree/ed8a97745c69b8cc0fc7f59cec9474b216b49e16)
+- [find programming courses](https://www.reddit.com/r/Piracy/comments/i5pguj/where_would_i_find_programming_courses/)
+- [pirated Android games source](https://www.reddit.com/r/Piracy/comments/hx71y9/trusted_pirated_android_games_source/)
+
+- [pirate cinema](https://craphound.com/pc/download/)
+    - Pirate Cinema is a novel by Cory Doctorow. It was released in October 2012. The novel is licensed under the terms of Creative Commons BY-NC-ND license and is available free on the author's website. The novel is set in a dystopian near-future Britain where the government is effectively controlled by media corporations
+- [The Right to Read, by GNU Project](https://www.gnu.org/philosophy/right-to-read.en.html)
+
+- https://github.com/Th3-822/rapidleech
+    - And transloaders
+
+- ![youtube-dl](src/media/PG_1.png)
+    - [This](https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/common.py)
+
+
+## Guides
+
+
+<details><summary>Android APK modding tutorial</summary>
+<p>
 
 - Android APK modding tutorial
     ```
@@ -106,40 +216,11 @@
     Hacking, cheating & general Android, iOS tutorials here! ... TUTORIAL Shadow fight 3 how to install mod apk . smdozk; Jan 1, 1970. Replies: 3. Views: 512.
     ```
 
-- Tools for Modding
-    - Jasi Patcher: https://www.mediafire.com/file/ee8g110ee9z6mmi/Jasi_Patcher_v4.8.apk
-    - Lucky Patcher: https://www.mediafire.com/file/n4a5yb9a9nr8cqh/LP_Installer-v8.5.2_build_1612.apk
-    - Mobilism: https://forum.mobilism.org/viewforum.php?f=398
-
-- Use colab to extract RAR files on drive
-
-- [Rclone-Guide-for-Beginners-04-15](https://telegra.ph/Rclone-Guide-for-Beginners-04-15)
-
-- [[Guide] How to set up Docker containers to automatically download any TV show or movie](https://www.reddit.com/r/Piracy/comments/cuzmro/guide_how_to_set_up_docker_containers_to/)
-
-- [Widewine L3 Decryptor](https://github.com/tomer8007/widevine-l3-decryptor/tree/ed8a97745c69b8cc0fc7f59cec9474b216b49e16)
-
-- [find programming courses](https://www.reddit.com/r/Piracy/comments/i5pguj/where_would_i_find_programming_courses/)
-- [crawler websites](https://www.reddit.com/r/Piracy/comments/i4zaq4/why_do_i_get_this_feeling_not_many_new_pirates/)
-    -   ```
-        Web crawlers are bots that search the web and index the sites in their databases.
-        There are people who made great crawlers meant for piracy that take torrents from public torrent trackers. You find everything in one place. Some websites are even ad free. A big bonus is also you get torrents from tracker sites that require you to register (not a problem... until you stumble upon a Russian torrent site and you don't know Russian).
-        *cough* Knaben database @ knaben.xyz *cough*
-        This is probably the biggest free torrent crawler that gets torrents from public trackers. It just works. I downloaded terabytes of music and movies thanks to the wonderful people who made this. I just don't like having to login to websites to have access to more music, especially because some websites have stupid rules when it comes to personalising your profile (looking at you, soundpark).
-        ```
-
-- [pirated Android games source](https://www.reddit.com/r/Piracy/comments/hx71y9/trusted_pirated_android_games_source/)
-
-- [pirate cinema](https://craphound.com/pc/download/)
-    - Pirate Cinema is a novel by Cory Doctorow. It was released in October 2012. The novel is licensed under the terms of Creative Commons BY-NC-ND license and is available free on the author's website. The novel is set in a dystopian near-future Britain where the government is effectively controlled by media corporations
-- [The Right to Read, by GNU Project](https://www.gnu.org/philosophy/right-to-read.en.html)
+</p>
+</details>
 
 
-- ![youtube-dl](src/media/PG_1.png)
-    - [This](https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/common.py)
 
-
-## Guides
 
 <details><summary>text + video tutorial on how to rip from Ama-z-o-n</summary>
 <p>

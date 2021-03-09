@@ -12,6 +12,10 @@
 
 ## General
 
+
+- Awesome Privacy List:
+    https://github.com/KevinColemanInc/awesome-privacy
+
 - [How I’ve Convinced People Around Me to Care About Privacy — The New Oil](https://write.as/thenewoil/how-ive-convinced-people-around-me-to-care-about-privacy)
 
 - [The Hitchhiker’s Guide to Online Anonymity](https://www.reddit.com/r/privacy/comments/lduq3l/updated_v066_the_hitchhikers_guide_to_online/)
@@ -20,11 +24,13 @@
 
 - [Protect Yourself from Snakes](https://www.reddit.com/r/privatelife/comments/jc05d9/protect_yourself_from_snakes/)
 
+- [The Terrifying Cost of "Free” Websites | Adam Ruins Everything](https://www.youtube.com/watch?v=5pFX2P7JLwA)
+
 
 - [Buy Email Lists | Build Your Own Marketing List | Bookyourdata.com](https://www.bookyourdata.com/tool/real_estate)
 
-
 - Template for play services
+	```
 	The latest version of app is not working anymore when there are no google play services and other google apps on device . 
 	I have one honor phone with no play services (since USA has stopped google from providing them) and one samsung one. 
 	On honor phone, the latest app stopped working after latest update. Huawei was banned from using any google services so i am guessing this app has dependency on play services .
@@ -32,10 +38,11 @@
 	This app is used nationwide and is expected to work on any device without play services. The reason i chose this over gpay was because gpay had play services dependencies and this didn't.
 	Please look into the matter ASAP.
 	- Name
+	```
 
 - Email template to tell your favourite online shops to stop using Google Captcha
-	-```
-	    Hi
+	- ```
+	    Hi,
 	    I want to let you know I have not ordered from you because of your use of the invasive Google javascript code embedded into your login page. The issues with this are:
 	        It collects substantial information about me that can be used to profile and track my browsing not only on [your shop] but across all other sites. I am not comfortable allowing Google to do this and you have no right to force me to hand over this information to Google.
 

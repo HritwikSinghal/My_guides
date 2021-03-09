@@ -38,6 +38,8 @@
 
 ### Todo
 
+- Use prebuilt Kernel
+
 - see this, most of this is FA 
 	- https://github.com/akhilnarang/scripts.git
 
@@ -49,12 +51,6 @@
 
 ### Notes
 
-```sh
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-
-```	
 
 - Edit in (see others commits)
 	- AndroidProducts.mk
@@ -95,6 +91,14 @@ export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 - ccache: error: Failed to create directory /media/hritwik/CR/.cache/ccache/tmp: Permission denied
 	- Bcoz ccache dir should be "/run/media/...". If this does not slove then see below
 	- https://stackoverflow.com/questions/61923015/ccache-fails-with-read-only
+
+- lang.IllegalStateException: Signature|privileged permissions not in privapp-permissions whitelist
+	- https://thealaskalinuxuser.wordpress.com/2019/08/29/e-zygote-java-lang-illegalstateexception-signatureprivileged-permissions-not-in-privapp-permissions-whitelist/
+	OR
+	- https://stackoverflow.com/questions/45653879/android-o-api-26-root-app-not-recognized-as-priviledged
+
+
+
 
 --- 
 
@@ -216,11 +220,15 @@ git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp devic
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
+
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+
+
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
-# lunch aicp_X2-userdebug
-# time mka -j$(nproc --all) | tee log.txt
 
 
 ```
@@ -303,12 +311,14 @@ git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr device/
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 lunch rr_X2-userdebug
-time mka -j$(nproc --all) | tee log.txt
-# make update-api && time m -j$(nproc --all) | tee log.txt
-
+time mka bacon -j$(nproc --all) | tee log.txt
 
 
 ```
@@ -435,6 +445,7 @@ time mka -j$(nproc --all) | tee log.txt
 - Paranoid Android 		- CAF based
 - PE 					- Gapps
 - PE+ 					- Gapps
+- Pixel Extended
 - PixelPlusUI			- Gapps
 - PixyOS				- Gapps
 - POSP

@@ -13,6 +13,13 @@
 ## Todo
 
 
+- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
+
+- [Enable Os-prober](https://forum.manjaro.org/t/stable-update-2021-03-08-kernels-plasma-5-21-2-haskell-kodi-grub-kde-dev/56877)
+
+- for pulseeffects
+	- pamac install manjaro-pipewire
+	- pamac install gst-plugin-pipewire
 - https://www.reddit.com/r/ManjaroLinux/comments/cbkblb/guide_run_android_apps_on_manjaro_super_simple/
 	- install android apps on manjaro
 

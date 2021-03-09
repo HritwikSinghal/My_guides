@@ -6,7 +6,7 @@ NoDisplay=false
 X-GNOME-Autostart-enabled=true
 X-GNOME-Autostart-Delay=10
 # You can use below also for delay
-# Exec=bash -c "sleep 7 && /home/hritwik/.conky/conky-startup.sh"
+# Exec=sh -c "sleep 7 ; /home/hritwik/.conky/conky-startup.sh"
 
 Name[en_IN]=Conky
 Name=Conky

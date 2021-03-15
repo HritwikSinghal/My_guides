@@ -453,10 +453,13 @@ time mka bacon -j$(nproc --all) | tee log.txt
 
 - ION ROM
 
+- KangOS
+
 - LOS
 
 - MSMXtended			- CAF based
 
+- Nezuko OS
 - NitrogenOS
 
 - Octavi

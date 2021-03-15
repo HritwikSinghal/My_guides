@@ -26,11 +26,14 @@
 ##  Todo
 
 
+- create a python or shell script to update ipv6
+
 - For editing static Ip address of Pi, Se dhcpcd config file. (/etc/dhcpcd.conf)
 
 - Remove MS repo from PI (coz Rpi foundation is a jerk)
 	- https://www.reddit.com/r/linux/comments/lbu0t1/microsoft_repo_installed_on_all_raspberry_pis/
 	- Maybe create a cron script for it.
+
 - [Install TigerVNC](https://atetux.com/how-to-install-tigervnc-server-on-ubuntu-20-04)
 
 

@@ -11,6 +11,11 @@
 
 ## Todo
 
+- If you need dual-boot you can reactivate os-prober the easiest with the following command combination in a terminal
+    ```sudo echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub && sudo update-grub```
+
+- Install Just perfection Extension in gnome 40 to increase workspace size in overview
+
 - [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
 
 - [Enable Os-prober](https://forum.manjaro.org/t/stable-update-2021-03-08-kernels-plasma-5-21-2-haskell-kodi-grub-kde-dev/56877)
@@ -57,6 +62,7 @@
 - [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
 - [x] [Fix auto backups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
 
+- Install yay through pacman, then install paru through yay. (pamac cli is shit)
 
 
 

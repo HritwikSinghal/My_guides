@@ -16,6 +16,12 @@
 
 # 1. High priority
 
+
+- Competitive coding
+    - https://www.linkedin.com/posts/activity-6680721603086692352-AXvP
+- DSA, DBMS, CN, OS
+- Coursera
+
 - WSN, BTP
 - GSOC
     - Gnome
@@ -23,11 +29,6 @@
         - https://samthursfield.wordpress.com/2021/01/29/every-contribution-matters/
         - https://openbuildservice.org/2021/02/18/introducing-flatpak-builds/
         
-
-- Competitive coding
-    - https://www.linkedin.com/posts/activity-6680721603086692352-AXvP
-- DSA, DBMS, CN, OS
-- Coursera
 - BTP
 
 
@@ -141,83 +142,6 @@
 - [Detect plag](https://kalebu.hashnode.dev/how-to-detect-plagiarism-in-the-text-using-python)
 - [machine learning tool that allows you to train/fit, test and use models without writing code](https://github.com/nidhaloff/igel)
 - [pyftpdlib: Extremely fast and scalable Python FTP server library](https://github.com/giampaolo/pyftpdlib)
-
-- [Using FFMPEG and V4l2 Loopback to Play YouTube Videos as a WebCam](https://theterminallife.com/using-ffmpeg-and-v4l2-loopback-to-play-youtube-videos-as-a-webcam/)
-    ```
-    With the increased amount of video conferencing going on, I decided to dust off an old trick to 'spice' things up during the many video calls I am on.
-    Things You Need
-
-        Linux : I'm using Pop_OS 20.04 for this one.
-            maybe other OSes too...but I'm too lazy to try right now
-        ffmpeg
-            standard apt install ffmpeg should suffice
-        youtube-dl
-            again just a apt install youtube-dl away
-        v4l2loopback-dkms
-            you guessed it apt install v4l2loopback-dkms
-            you may need to reboot after that one...
-
-    Codeblock for the lazy:
-
-    sudo apt install ffmpeg youtube-dl v4l2loopback-dkms
-
-    Putting it Together
-
-    The first thing to do is to see how many video devices you already have on your machine. This is handy to know for when we add the virtual one in.
-
-    In my case, I have 3 devices that show up there.
-
-    quinnm@pop-os:~$ ll /dev/video*
-    crw-rw----+ 1 root video 81, 0 Apr 28 13:48 /dev/video0
-    crw-rw----+ 1 root video 81, 1 Apr 28 13:51 /dev/video1
-    crw-rw----+ 1 root video 81, 2 Apr 28 13:51 /dev/video2
-
-    Armed with that knowledge, we can load the kernel module for v4l2loopback.
-
-    quinnm@pop-os:~$ sudo modprobe v4l2loopback
-
-    You should now have a new video device. In my case it is video3. Yours may not be, so that is why we eyeballed the directory before loading the module.
-
-    quinnm@pop-os:~$ ll /dev/video*
-    crw-rw----+ 1 root video 81, 0 Apr 28 13:48 /dev/video0
-    crw-rw----+ 1 root video 81, 1 Apr 28 13:51 /dev/video1
-    crw-rw----+ 1 root video 81, 2 Apr 28 13:51 /dev/video2
-    crw-rw----+ 1 root video 81, 2 Apr 28 13:51 /dev/video3
-
-    Now, head to Youtube and find the video you want to pump into that virtual device. I like to choose "Calming TV for Cats : Cat TV - My Garden Birds - Relaxing Nature Music for Cats to Sleep" because why not.
-
-    Get the URL of the video chosen and use youyube-dl -F to find out what formats are available. I find that mp4 formats seem to work the best for this. Other formats seem to error when I try to stream them to the virtual device. Not sure if that is a codec thing or an error on my part.
-
-    quinnm@pop-os:~$ youtube-dl -F 'https://www.youtube.com/watch?v=4joV8bgLSDo'
-
-    Rather than paste the wall of text from that command, I'll just tell you I chose format number 134.
-
-    Now we can stream that video into /dev/video3 using ffmpeg:
-
-    quinnm@pop-os:~$ ffmpeg -re -i \
-      $(youtube-dl -g -f 134 https://www.youtube.com/watch\?v\=4joV8bgLSDo) \
-      -f v4l2 /dev/video3
-
-    Command     Option  Reason
-    ffmpeg  -re     Reads the input at native framerate.
-    This option will slow down the reading
-    of the input(s) to the native frame rate of the input(s).
-    It is useful for real-time output (e.g. live streaming)
-    (from man ffmpeg)
-        -i  Specify the input.
-    In this case it is the full URL to the youtube video
-    as returned by youtube-dl -g URL
-        -f v4l2     Tell ffmpeg to use the format 4vl2 for our output
-        /dev/video3     Tell ffmpeg to output to our virtual device
-    youtube-dl  -g  Prints out the full URL of the video from youtube
-    ...which is crazy long
-        -f 134  Specify which format number we want
-    (we got that further up this doc using youtube-dl -F)
-
-    I've not yet worked out how to get audio pumped in there from youtube, so for now it is only the video and I just add my own sound effects with my microphone when ZoomSkypeJitsi callin'. 
-    ```
-    - https://atinkerholic.wordpress.com/2018/10/10/how-to-use-a-virtual-webcam-with-static-image-or-video-ffmpeg-v4l-utils-and-v4l2loopback/
-    - search this on google
 
 
 - [Apod-wallpaper changer linux](https://github.com/charly98cma/apod-wallpaper)

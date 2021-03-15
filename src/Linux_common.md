@@ -174,6 +174,8 @@
 
 - Clipboard Managers
     - [copyq](https://github.com/hluk/CopyQ/releases)
+    - [Klipper](https://userbase.kde.org/Klipper)
+    - [clipcat, a clipboard manager written in Rust Programming Language](https://github.com/xrelkd/clipcat)
 
 - Gestures
 
@@ -215,6 +217,12 @@
 - Music Players
     - Elisa music player
 
+- Package Managers & Installers
+	- [CubeGet, Portable and offline package manager for Linux](https://github.com/camicri/cube-get/)
+		- lets you download all dependencies offline for (DEB files only)
+    - [eddy](https://github.com/donadigo/eddy), for installing deb files.
+    - [appImageLauncher, for managing appImages.](https://github.com/TheAssassin/AppImageLauncher)
+
 - Remote control software
     - Reminna
     - TigerVNC
@@ -226,6 +234,9 @@
     - [Ksnip](https://www.linuxuprising.com/2020/12/cross-platform-screenshot-tool-ksnip.html)
     - [Flameshot](https://itsfoss.com/flameshot/)
 
+
+- Temp Mail
+    - [tmpmail, temp mail from shell](https://github.com/sdushantha/tmpmail)
 
 ### Extensions
 

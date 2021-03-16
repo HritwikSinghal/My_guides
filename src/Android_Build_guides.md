@@ -89,6 +89,15 @@
 	- "hal_lineage_trust_default.te" from "./device/realme/X2/sepolicy/private"
 
 
+- Imp commits
+	- Debugging Q during boot
+		- https://github.com/aoleary/device_lge_g4-common/commit/073490b8a5056d5d59c2bea04d6648f423db3a35
+
+	- If rom bootloops into fastboot, apply this to **SOURCE**
+		- https://github.com/CannedOS/external_selinux/commit/db56d38c06ca4514304eec771a14558b867ab2ff
+	- fix aac decoding on A11 roms with A10 vendor
+		- https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024f289772960f3cd7072fa940
+
 ### Errors
 
 - "Unrecognized check name".
@@ -110,7 +119,7 @@
 		- https://github.com/kjanek/android_device_realme_x2/commit/8af4603704c803f18001b8a4e4bc01da672ccd6e
 
 - ccache: error: Failed to create directory /media/hritwik/CR/.cache/ccache/tmp: Permission denied
-	- Bcoz ccache dir should be "/run/media/...". If this does not slove then see below
+	- Bcoz ccache dir should be "/run/media/...". If this does not solve then see below
 	- https://stackoverflow.com/questions/61923015/ccache-fails-with-read-only
 
 - lang.IllegalStateException: Signature|privileged permissions not in privapp-permissions whitelist

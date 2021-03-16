@@ -64,6 +64,7 @@
 
 - Install yay through pacman, then install paru through yay. (pamac cli is shit)
 
+- If vlc is not playing video, try https://bbs.archlinux.org/viewtopic.php?id=252113
 
 
 ## Notes & Saved

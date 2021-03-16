@@ -190,5 +190,7 @@
 - https://www.reddit.com/r/firefox/comments/lev5wy/natural_smooth_scrolling/
 
 
+### Addons
+    - [Translator-Inline](https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/)
 
 ---

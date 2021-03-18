@@ -82,3 +82,49 @@
 	- if insatlling ```kid3``` in Arch, also insatll ```kio```
 
 - install ```aur/vscodium-bin-marketplace``` to Enable vscode marketplace in vscodium-bin
+
+- [Make Persistent Live Manjaro USB](https://forum.manjaro.org/t/manjaro-xfce-20-0-3-persistent-usb-released/54/30)
+	```
+	git clone git@github.com:HritwikSinghal/alma.git
+	cd alma
+	git remote add phil https://github.com/philmmanjaro/alma.git
+	git cherry-pick b2dc7e628aa64152864b4019f583cc6b89603576..5610aa03352a3343e77b63e4fe193fcfa1e09699
+	# resolve any errors
+
+	cargo build
+	sudo ln -s '/home/hritwik/Documents/alma/target/debug/alma' /usr/local/bin
+
+	# to install deps
+	paru alma-git
+	paru -R alma-git
+
+	------------------------------------------
+
+	sudo alma create --image 10GiB almatest.img
+	sudo losetup -f ./almatest.img
+	sudo losetup -j ./almatest.img
+	sudo alma qemu /dev/loop7
+	sudo losetup -d /dev/loop7
+
+	sudo ALMA_USER=manjaro alma create --image 5GiB almaxfce.img --presets ./presets/user.toml ./presets/xorg.toml ./presets/xfce.toml
+	# type password
+
+	sudo losetup -f ./almaxfce.img
+	sudo losetup -j ./almaxfce.img
+	sudo alma qemu /dev/loop9
+	sudo losetup -d /dev/loop9
+	-------------------------------------------
+	You can plug the flash drive in a PC and edit
+	/etc/passwd
+	change
+	manjaro:x:1000:1000::/home/manjaro:/bin/bash
+	to
+	manjaro:x:0:0::/home/manjaro:/bin/bash
+	so you are root now
+	--------------------------------------------
+
+	[Manjaro Tools: How to create your own Manjaro Spin](https://www.youtube.com/watch?v=B--je--m0VI)
+	[Manjaro | Create a persistent USB-Stick easily](https://www.youtube.com/watch?v=jssqg7ax6YY)
+	[Manjaro | Add XFCE to your persistent USB-Stick image](https://www.youtube.com/watch?v=NhVuqgrv2iw)
+	https://wiki.manjaro.org/index.php/Install_Desktop_Environments#Gnome_3
+	```

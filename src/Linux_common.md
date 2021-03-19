@@ -12,25 +12,14 @@
 
 
 
+
 ---
 
 
 
 ## Notes & Saved
 
-- Emulation of x86 on arm64 and more.
-    - https://superuser.com/questions/781454/debian-arm-and-brother-dcp195c-with-cups
-    - https://wiki.debian.org/QemuUserEmulation
-    - https://wiki.debian.org/Multiarch/HOWTO
-    - https://wiki.debian.org/Multiarch
-    - http://neuro.debian.net/blog/2013/2013-05-31_matlab_64bit_on_32bit.html
-    - https://unix.stackexchange.com/questions/118343/run-64-bit-app-on-32-bit-ubuntu-system
-
-
-- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
-    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
-- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
-
+### Notes
 
 - [How to Use sed to Find and Replace String in Files | Linuxize](https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/)
     - ``` sed -i 's/SEARCH_REGEX/REPLACEMENT/g' INPUTFILE ```
@@ -53,45 +42,197 @@
     - just check in wifi settings
 
 
-
-- [change mac](https://linuxconfig.org/change-mac-address-with-macchanger-linux-command)
-    - and as always, [THE GREAT ARCH WIKI](https://wiki.archlinux.org/index.php/MAC_address_spoofing#Automatically) to change mac auto on every boot.
-    - [another guide, not complete](https://itsfoss.com/change-mac-address-linux/)
-
-- [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
-
-- [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
-
-- Setup guide
-    - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
-    - [github, for great selection of apps and other things. This is great](https://github.com/themagicalmammal/howtopopbuntu)
-
-
-- [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
-
-        DOWNLOAD_URL=$(curl -s https://api.github.com/repos/felixb/swamp/releases/latest \
-        | grep browser_download_url \
-        | grep swamp_amd64 \
-        | cut -d '"' -f 4)
-        curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
-    Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
-
-
-
-- [Linux Wifi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
-- [login with USB on liunx](https://www.linuxuprising.com/2021/02/how-to-login-with-usb-flash-drive.html)
-
-
+- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
+    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
 - [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
 
-- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
+
+- Emulation of x86 on arm64 and more.
+    - https://superuser.com/questions/781454/debian-arm-and-brother-dcp195c-with-cups
+    - https://wiki.debian.org/QemuUserEmulation
+    - https://wiki.debian.org/Multiarch/HOWTO
+    - https://wiki.debian.org/Multiarch
+    - http://neuro.debian.net/blog/2013/2013-05-31_matlab_64bit_on_32bit.html
+    - https://unix.stackexchange.com/questions/118343/run-64-bit-app-on-32-bit-ubuntu-system
+
+- [Fix secondary monitor display](https://wayneoutthere.com/2018/12/29/how-to-fix-wrong-monitor-display-ubuntu/)
+    - rm .config/monitors.xml
+
+- Switch to wayland
+    - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
+
+- [set su passwd](https://askubuntu.com/questions/155278/how-do-i-set-the-root-password-so-i-can-use-su-instead-of-sudo)
+    - sudo passwd
+
+- [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
+
+- [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
+    - Put "DRI_PRIME=1" in "/etc/environment"
+
+- Increase terminal size to 100x30 and change its color and shortcuts
+
+- Add shortcuts
+    - Calc (F7)
+    - System monitor (ctrl+shift+Esc 'gnome-system-monitor')
+
+
+- [Increment volume](https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/) by 3 onstead of default 6
+    - gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
 
 
 - Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
     - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
 
 
-- [schedule-commands-and-scripts-in-linux](https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html)
+- [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
+- [increase Swap file by 6144 MB](https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal)
+    - https://linuxhint.com/change_swap_size_ubuntu/
+
+
+- [Linux Wifi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
+
+
+- Change compression level
+    ```
+    gsettings set org.gnome.FileRoller.General compression-level "very-fast"
+    gsettings set org.gnome.FileRoller.General compression-level "fast"
+    gsettings set org.gnome.FileRoller.General compression-level "normal"
+    gsettings set org.gnome.FileRoller.General compression-level "maximum"
+    ```
+
+
+### Saved
+
+
+- QEMU
+    - https://github.com/qemu/qemu/search?q=harddisk
+    - https://github.com/SafeExamBrowser/seb-win-refactoring/blob/master/SafeExamBrowser.SystemComponents/VirtualMachineDetector.cs#L19
+    - https://github.com/SafeExamBrowser/seb-win/blob/2199f9d167fb05b9b869bebd86a2df61352c0bb0/SebWindowsClient/SebWindowsClient/SebWindowsClientMain.cs#L264
+    - https://blog.prowling.nu/2012/09/modifying-kvm-qemu-kvm-settings-for.html
+    - https://wiki.qemu.org/Hosts/Linux
+    - https://www.google.com/search?q=compile+qemu+ubuntu
+    - https://wiki.qemu.org/index.php?title=Hosts/Linux&action=edit
+    - https://gns3.com/community/blog/how-to-compile-qemu-2-2-0-in-ubu
+    - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_disk_access_with_offline_tools-using_virt_customize
+    - https://developers.redhat.com/blog/2020/03/06/configure-and-run-a-qemu-based-vm-outside-of-libvirt/
+    - https://www.google.com/search?q=qemu+change+directory
+    - https://www.google.com/search?q=compile+qemu+to+usr%2Fbin
+    - https://www.reddit.com/r/VFIO/comments/9pi2cd/how_to_set_up_qemu_30_on_ubuntu_1804/
+    - https://help.ubuntu.com/community/AppArmor
+    - https://phoenixnap.com/kb/grep-command-linux-unix-examples
+    - https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux
+    - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-manipulating_the_domain_xml-smbios_system_information
+    - https://blog.prowling.nu/2012/09/modifying-kvm-qemu-kvm-settings-for.html
+    - https://askubuntu.com/questions/58321/how-do-i-install-glib
+    - https://gns3.com/community/blog/how-to-compile-qemu-2-2-0-in-ubu
+    - https://askubuntu.com/questions/1123697/where-are-image-files-for-gnome-boxes-stored
+    - https://github.com/nsmfoo/antivmdetection
+    - https://www.guyrutenberg.com/2018/10/25/sharing-a-folder-a-windows-guest-under-virt-manager/
+
+
+- Shell/terminal/prompt
+    - Learn to modify zsh and fish shell (if installed)
+    - [starship](https://itsfoss.com/starship/)
+        - https://starship.rs/guide/#%F0%9F%9A%80-installation
+    - https://www.youtube.com/watch?v=TKX29fJ8U2Y (bash customize)
+
+    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
+        - search it on internet, this is just basic.
+    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)
+    - [Bash tips for everyday at the command line | Opensource.com](https://opensource.com/article/18/5/bash-tricks)
+    - https://itsfoss.com/linux-command-tricks/
+
+    - https://www.playonlinux.com/en/
+    - https://linuxjourney.com/lesson/filesystem-hierarchy
+    - How this works: ```nmcli dev show | grep DNS | awk '{ print $2 }'```
+    - [shell scripting](https://www.shellscript.sh/variables2.html)
+    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
+    - https://explainshell.com/
+
+
+- [Using FFMPEG and V4l2 Loopback to Play YouTube Videos as a WebCam](https://theterminallife.com/using-ffmpeg-and-v4l2-loopback-to-play-youtube-videos-as-a-webcam/)
+    ```
+    With the increased amount of video conferencing going on, I decided to dust off an old trick to 'spice' things up during the many video calls I am on.
+    Things You Need
+
+        Linux : I'm using Pop_OS 20.04 for this one.
+            maybe other OSes too...but I'm too lazy to try right now
+        ffmpeg
+            standard apt install ffmpeg should suffice
+        youtube-dl
+            again just a apt install youtube-dl away
+        v4l2loopback-dkms
+            you guessed it apt install v4l2loopback-dkms
+            you may need to reboot after that one...
+
+    Codeblock for the lazy:
+
+    sudo apt install ffmpeg youtube-dl v4l2loopback-dkms
+
+    Putting it Together
+
+    The first thing to do is to see how many video devices you already have on your machine. This is handy to know for when we add the virtual one in.
+
+    In my case, I have 3 devices that show up there.
+
+    quinnm@pop-os:~$ ll /dev/video*
+    crw-rw----+ 1 root video 81, 0 Apr 28 13:48 /dev/video0
+    crw-rw----+ 1 root video 81, 1 Apr 28 13:51 /dev/video1
+    crw-rw----+ 1 root video 81, 2 Apr 28 13:51 /dev/video2
+
+    Armed with that knowledge, we can load the kernel module for v4l2loopback.
+
+    quinnm@pop-os:~$ sudo modprobe v4l2loopback
+
+    You should now have a new video device. In my case it is video3. Yours may not be, so that is why we eyeballed the directory before loading the module.
+
+    quinnm@pop-os:~$ ll /dev/video*
+    crw-rw----+ 1 root video 81, 0 Apr 28 13:48 /dev/video0
+    crw-rw----+ 1 root video 81, 1 Apr 28 13:51 /dev/video1
+    crw-rw----+ 1 root video 81, 2 Apr 28 13:51 /dev/video2
+    crw-rw----+ 1 root video 81, 2 Apr 28 13:51 /dev/video3
+
+    Now, head to Youtube and find the video you want to pump into that virtual device. I like to choose "Calming TV for Cats : Cat TV - My Garden Birds - Relaxing Nature Music for Cats to Sleep" because why not.
+
+    Get the URL of the video chosen and use youyube-dl -F to find out what formats are available. I find that mp4 formats seem to work the best for this. Other formats seem to error when I try to stream them to the virtual device. Not sure if that is a codec thing or an error on my part.
+
+    quinnm@pop-os:~$ youtube-dl -F 'https://www.youtube.com/watch?v=4joV8bgLSDo'
+
+    Rather than paste the wall of text from that command, I'll just tell you I chose format number 134.
+
+    Now we can stream that video into /dev/video3 using ffmpeg:
+
+    quinnm@pop-os:~$ ffmpeg -re -i \
+      $(youtube-dl -g -f 134 https://www.youtube.com/watch\?v\=4joV8bgLSDo) \
+      -f v4l2 /dev/video3
+
+    Command     Option  Reason
+    ffmpeg  -re     Reads the input at native framerate.
+    This option will slow down the reading
+    of the input(s) to the native frame rate of the input(s).
+    It is useful for real-time output (e.g. live streaming)
+    (from man ffmpeg)
+        -i  Specify the input.
+    In this case it is the full URL to the youtube video
+    as returned by youtube-dl -g URL
+        -f v4l2     Tell ffmpeg to use the format 4vl2 for our output
+        /dev/video3     Tell ffmpeg to output to our virtual device
+    youtube-dl  -g  Prints out the full URL of the video from youtube
+    ...which is crazy long
+        -f 134  Specify which format number we want
+    (we got that further up this doc using youtube-dl -F)
+
+    I've not yet worked out how to get audio pumped in there from youtube, so for now it is only the video and I just add my own sound effects with my microphone when ZoomSkypeJitsi callin'. 
+    ```
+    - https://atinkerholic.wordpress.com/2018/10/10/how-to-use-a-virtual-webcam-with-static-image-or-video-ffmpeg-v4l-utils-and-v4l2loopback/
+    - search this on google
+
+
+- [change mac](https://linuxconfig.org/change-mac-address-with-macchanger-linux-command)
+    - and as always, [THE GREAT ARCH WIKI](https://wiki.archlinux.org/index.php/MAC_address_spoofing#Automatically) to change mac auto on every boot.
+    - [another guide, not complete](https://itsfoss.com/change-mac-address-linux/)
+
 - https://www.linuxuprising.com/2020/01/bandwhich-shows-whats-taking-up-your.html
 - https://www.linuxuprising.com/2020/05/how-to-encrypt-cloud-storage-files-with.html
 - [cryptomator](https://www.linuxuprising.com/2020/04/cryptomator-150-released-with.html)
@@ -110,6 +251,33 @@
     - [Arch Wiki](https://wiki.archlinux.org/index.php/Packaging_Brother_printer_drivers)
     - [LPR vs Cups](https://askubuntu.com/questions/383515/whats-the-difference-between-lpr-and-cupswrapper-drivers-how-to-install-printe)
     - https://aur.archlinux.org/packages/brother-hll2360d/
+
+
+- [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
+
+- Setup guide
+    - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
+    - [github, for great selection of apps and other things. This is great](https://github.com/themagicalmammal/howtopopbuntu)
+
+- [login with USB on liunx](https://www.linuxuprising.com/2021/02/how-to-login-with-usb-flash-drive.html)
+
+- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
+
+- [schedule-commands-and-scripts-in-linux](https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html)
+
+- [ExFat in Linux](https://itsfoss.com/mount-exfat/)
+- [NTFS in Linux](https://www.cyberciti.biz/faq/debian-ubuntu-linux-auto-mounting-windows-ntfs-file-system/)
+
+- [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
+    - Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
+        ```
+        DOWNLOAD_URL=$(curl -s https://api.github.com/repos/felixb/swamp/releases/latest \
+        | grep browser_download_url \
+        | grep swamp_amd64 \
+        | cut -d '"' -f 4)
+        curl -s -L --create-dirs -o ~/downloadDir "$DOWNLOAD_URL"
+        ```
+
 
 
 ---
@@ -267,6 +435,7 @@
 - Packet Sniffers
     - [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
     - Fiddler
+    - Burp
 
 
 - Proxy

@@ -90,7 +90,7 @@
 
 
 - Modify shell (see Bookmarks.md)
-- Learn to use Firejail
+- Learn to use Firejail & chroot
 
 
 - SNI, DPI

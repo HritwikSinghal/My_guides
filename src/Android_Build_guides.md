@@ -247,7 +247,7 @@ repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b aicp vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
 
@@ -337,8 +337,8 @@ mkdir rr && cd rr
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr_10 device/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b rr_10 vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
 
 export USE_CCACHE=1
@@ -458,7 +458,7 @@ time mka bacon -j$(nproc --all) | tee log.txt
 - Floko
 - Fluid Rom
 
-- Havoc
+- HavocOS
 
 - ION ROM
 
@@ -468,7 +468,7 @@ time mka bacon -j$(nproc --all) | tee log.txt
 
 - MSMXtended			- CAF based
 
-- Nezuko OS
+- Nezuko OS 			- Gapps (PE based)
 - NitrogenOS
 
 - Octavi

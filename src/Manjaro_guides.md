@@ -11,14 +11,11 @@
 
 ## Todo
 
-- If you need dual-boot you can reactivate os-prober the easiest with the following command combination in a terminal
-    ```sudo echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub && sudo update-grub```
-
-- Install Just perfection Extension in gnome 40 to increase workspace size in overview
-
-- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
+- write script to install firefox nightly 
 
 - [Enable Os-prober](https://forum.manjaro.org/t/stable-update-2021-03-08-kernels-plasma-5-21-2-haskell-kodi-grub-kde-dev/56877)
+	- If you need dual-boot you can reactivate os-prober the easiest with the following command combination in a terminal
+    	```sudo echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub && sudo update-grub```
 
 - for pulseeffects
 	- pamac install manjaro-pipewire
@@ -67,6 +64,11 @@
 - If vlc is not playing video, try https://bbs.archlinux.org/viewtopic.php?id=252113
 
 
+- Install Just perfection Extension in gnome 40 to increase workspace size in overview
+
+- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
+
+
 ## Notes & Saved
 
 
@@ -79,7 +81,7 @@
 
 
 - https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
-	- if insatlling ```kid3``` in Arch, also insatll ```kio```
+	- if installing ```kid3``` in Arch, also insatll ```kio```
 
 - install ```aur/vscodium-bin-marketplace``` to Enable vscode marketplace in vscodium-bin
 

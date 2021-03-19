@@ -139,32 +139,15 @@
         - Doflicky (hardware manager)
 
 
-- [Debtap: A script for converting .deb packages into Arch Linux packages, focused on accuracy](https://github.com/helixarch/debtap)
-
-- [Deskreen](https://www.reddit.com/r/electronjs/comments/kzuf10/i_created_deskreen_this_is_a_desktop_app_that/)
-    - This is a desktop app that makes any device with a web browser a second screen for your computer
-
-- [duf: A Cross-Platform disk usage utility written in Golang](https://itsfoss.com/duf-disk-usage/)
-
-- [Fildem Global Menu And HUD](https://www.linuxuprising.com/2021/02/how-to-install-fildem-global-menu-and.html)
-    - Using this, the menu that's usually built into the application window is displayed on the top GNOME Shell panel. Thanks to the HUD functionality (which is brought up by using the Alt + Space keyboard shortcut), you can also use this to search through the application menu, very useful for applications with vast menus, like GIMP for example.
-
-- [NoiseTorch Is A Real-Time Microphone Noise Suppression Application For Linux](https://www.linuxuprising.com/2021/02/noisetorch-is-real-time-microphone.html)
-
-- Youtube-dl & ffmpeg GUI
-    - [Youtube-dl Gui](https://itsfoss.com/youtube-dl-gui-apps/)
-    - [Simple-to-use graphical interface for youtube-dl](https://www.reddit.com/r/linux/comments/kyw5jx/a_simpletouse_graphical_interface_for_youtubedl/)
-
-    - [ffmpeg gui: mystiq](https://www.linuxuprising.com/2020/03/mystiq-is-easy-to-use-ffmpeg-gui.html)
-
-
-
-
-
 - Audio Tagger
     - https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
     - [Kid3 audio tagger](https://kid3.kde.org/)
 
+
+- Browers
+    - Firefox
+        - Put "MOZ_ENABLE_WAYLAND=1" in "/etc/environment"
+    - Firefox Nightly
 
 - Bulk rename linux (GPrename)
     - https://www.fossmint.com/krename-batch-file-renamer-for-linux/
@@ -176,6 +159,41 @@
     - [copyq](https://github.com/hluk/CopyQ/releases)
     - [Klipper](https://userbase.kde.org/Klipper)
     - [clipcat, a clipboard manager written in Rust Programming Language](https://github.com/xrelkd/clipcat)
+    - [Clipboard Manager extension for Gnome](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+
+
+- Custom Kernel
+    - Xanmod
+
+- Download Manager
+    - [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
+    - XDM
+        - [Issue of xdm not picking up downloads in FF](https://github.com/subhra74/xdm/issues/235)
+
+- File Manager
+    - Nemo    
+        - [Github](https://github.com/linuxmint/nemo/releases/)
+        - disable "desktop icons" extension before installing nemo, add "nemo-desktop to startup"
+        - [Fix for one window opening only](https://www.reddit.com/r/linuxquestions/comments/f9zfia/why_cant_i_open_multiple_instances_of_nemo_from/)
+            - 
+            ```sh
+            cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
+            sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
+            ```
+        
+            "After some tinkering around, I managed to solve the issue!
+            I opened nemo.desktop (location: /usr/share/applications/) in a text editor and added "new-window;" to the "Actions" line so it looked like the following:
+
+            Actions=new-window;open-home;open-computer;open-trash;
+            [Desktop Action new-window]
+            Name=New Window
+            Exec=nemo
+
+            After saving the file and restarting I was able to open as many instances of Nemo as I wanted from the dash."
+
+        - [Fix Explaination](https://forums.linuxmint.com/viewtopic.php?t=293818)
+        - [clear zoom cache](https://forums.linuxmint.com/viewtopic.php?t=308395)
+
 
 - Gestures
 
@@ -192,12 +210,15 @@
 
 - IDE
     - Jetbrains
-    - Atom
-    - codium
+    - [Atom]((https://flight-manual.atom.io/getting-started/sections/installing-atom/))
+        - [change soft tabs to 4](https://stackoverflow.com/questions/22608160/how-to-change-indentation-mode-in-atom)
+    - [codium](https://vscodium.com/)
+        - [Install from repo](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo)
     - VSCode (Don't ever Use this proprietary shit, use codium with patches for marketplace)
 
 - Mail Clients
-    - Good old Thunderbird
+    - Good ol Thunderbird
+        - [For calender & task](https://fruux.com/sync/)
     - [Mailspring](https://www.youtube.com/watch?v=Oij2U1d3yL4)
     - Geary
 
@@ -208,6 +229,16 @@
     - https://boostnote.io/
 
 
+- Media Editors
+    - Audacity
+    - Kdenlive
+
+- Messaging
+    - [Signal Desktop](https://signal.org/en/download)
+    - Element
+    - Telegram
+    - Whatsapp
+
 - Metadata Viewer
     - https://libre-software.net/edit-metadata-exiftool/
     - https://ostechnix.com/display-media-files-information-on-linux-using-mediainfo/
@@ -215,13 +246,31 @@
 
 
 - Music Players
+    - Lollypop music player
     - Elisa music player
 
+- Network Monitor
+    - Vnstat
+        - [Link1](https://www.cyberciti.biz/faq/ubuntu-install-vnstat-console-network-traffic-monitor/)
+        - [Link2](https://www.techrepublic.com/article/how-to-monitor-network-traffic-with-linux-and-vnstat/)
+        - [Link3, for GUI via apache](https://www.cloudsigma.com/how-to-use-vnstat-and-iftop-to-monitor-data-consumption-within-a-vm/)
+
+
 - Package Managers & Installers
+    - [appImageLauncher, for managing appImages.](https://github.com/TheAssassin/AppImageLauncher)    
 	- [CubeGet, Portable and offline package manager for Linux](https://github.com/camicri/cube-get/)
 		- lets you download all dependencies offline for (DEB files only)
     - [eddy](https://github.com/donadigo/eddy), for installing deb files.
-    - [appImageLauncher, for managing appImages.](https://github.com/TheAssassin/AppImageLauncher)
+    - Gdebi (for .deb files)
+
+
+- Packet Sniffers
+    - [Wireshark](https://itsfoss.com/install-wireshark-ubuntu/)
+    - Fiddler
+
+
+- Proxy
+    - [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
 
 - Remote control software
     - Reminna
@@ -229,18 +278,145 @@
     - RealVNC
     - [More here](https://www.tecmint.com/remmina-remote-desktop-sharing-and-ssh-client/)
 
-- SS tools
+
+- ScreenRecorder Tools
+    - [Obs-studio](https://obsproject.com/wiki/install-instructions)
+
+- Screenshot tools
     - [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)
     - [Ksnip](https://www.linuxuprising.com/2020/12/cross-platform-screenshot-tool-ksnip.html)
     - [Flameshot](https://itsfoss.com/flameshot/)
+        - https://github.com/flameshot-org/flameshot/releases
+
+- Sound Management
+    - [PulseEffects](http://ubuntuhandbook.org/index.php/2019/06/install-audio-effects-pulseeffects-ubuntu-18-04-higher/)
+        - configs are stored in "~/.config/PulseEffects/output")
+        - Do "Start Service at Login" in PE Settings
+        - [Lots of LSP icons in apps due to pulseeffects in Gnome 3.38](https://askubuntu.com/questions/1286239/show-all-apps-menu-flooded-with-lsp-modules-after-upgrade-to-20-10)
+            - ```echo "[Desktop Entry] Hidden=true" > /tmp/1```
+            - ```find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}```
+
+- System Optimizer
+    - [Bleachbit](https://www.bleachbit.org/download)
+    - [Stacer](https://itsfoss.com/optimize-ubuntu-stacer/)
+    - [cpufreq Extension](https://github.com/konkor/cpufreq)
+    - [cpupower Extension](https://github.com/martin31821/cpupower)
 
 
 - Temp Mail
     - [tmpmail, temp mail from shell](https://github.com/sdushantha/tmpmail)
 
+- Text Editor
+    - [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
+        - Change its theme (pref -> theme -> adaptive.XXX)
+
+- Torrent Clients
+    - Qbittorrent
+    - Transmission
+
+- Video Players
+    - VLC
+        - If problems on wayland, change to X11 Video Decoder in settings
+
+- Wallpapers
+    - [BingWall](https://www.omgubuntu.co.uk/2020/02/bing-wallpaper-app-ubuntu-snap)
+    - Wonderwall
+    - [Bing wallpaper extension](https://extensions.gnome.org/extension/1262/bing-wallpaper-changer/)
+
+
+- Widgets
+    - [Conky](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
+        -  for backup: just copy .conky/ to home
+        - [Conky config variables](http://conky.sourceforge.net/variables.html)
+            - OR 'man conky'
+        - [Titlebar Fix](https://www.youtube.com/watch?v=miLrmIGPCJs)
+        - [Run Mltiple Conky scrips](https://www.omgubuntu.co.uk/2016/02/run-multiple-conky-scripts-same-session)
+        - [Conky Setup by Chrits Titus Tech Youtube](https://www.youtube.com/watch?v=QB8cjKpdVQY)
+        - [Conky Widgets Config Link 1](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
+        - [Conky Widgets Config Link 2](http://ubuntuhandbook.org/index.php/2020/07/install-conky-manager-ubuntu-20-04-lts/)
+
+
+- Xtra
+    - [Debtap: A script for converting .deb packages into Arch Linux packages, focused on accuracy](https://github.com/helixarch/debtap)
+
+    - [Deskreen](https://www.reddit.com/r/electronjs/comments/kzuf10/i_created_deskreen_this_is_a_desktop_app_that/)
+        - This is a desktop app that makes any device with a web browser a second screen for your computer
+
+    - [duf: A Cross-Platform disk usage utility written in Golang](https://itsfoss.com/duf-disk-usage/)
+
+    - [Fildem Global Menu And HUD](https://www.linuxuprising.com/2021/02/how-to-install-fildem-global-menu-and.html)
+        - Using this, the menu that's usually built into the application window is displayed on the top GNOME Shell panel. Thanks to the HUD functionality (which is brought up by using the Alt + Space keyboard shortcut), you can also use this to search through the application menu, very useful for applications with vast menus, like GIMP for example.
+
+    - Freetube
+    
+    - [Fly-Pie](https://github.com/Schneegans/Fly-Pie)
+    
+    - [gnome-sushi](https://www.omgubuntu.co.uk/gnome-sushi-mac-quick-for-ubuntu) (spacebar preview for nautilus)
+
+    - [NoiseTorch Is A Real-Time Microphone Noise Suppression Application For Linux](https://www.linuxuprising.com/2021/02/noisetorch-is-real-time-microphone.html)
+    
+    - [ulauncher](https://ulauncher.io/#Download)
+
+    - Youtube-dl & ffmpeg GUI
+        - [Youtube-dl Gui](https://itsfoss.com/youtube-dl-gui-apps/)
+        - [Simple-to-use graphical interface for youtube-dl](https://www.reddit.com/r/linux/comments/kyw5jx/a_simpletouse_graphical_interface_for_youtubedl/)
+
+        - [ffmpeg gui: mystiq](https://www.linuxuprising.com/2020/03/mystiq-is-easy-to-use-ffmpeg-gui.html)
+
+
+
 ### Extensions
 
+- [Install from ZIP](https://linuxconfig.org/how-to-install-gnome-shell-extensions-from-zip-file-using-command-line-on-ubuntu-18-04-bionic-beaver-linux)
+
+- [user-themes](https://extensions.gnome.org/extension/19/user-themes/)
+
+- [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
+    - [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
+
+            The Tween Parameters - "First Number" denotes the position of the notification banner at the start of the animation
+            and Tween Parameters - "Last Number" denotes the ending position of the notification banner.
+
+- [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
+
+- [Transparent Notification](https://extensions.gnome.org/extension/1080/transparent-notification/)
+    - set "/.local/share/gnome-shell/extensions/transparentnotification@ipaq3870/stylesheet.css" to "background-color: rgba(0,0,0,0.72);"
+
+- [Noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
+
+- [windowoverlay-icons](https://extensions.gnome.org/extension/302/windowoverlay-icons/)
+
 - [multi-monitors-add-on](https://extensions.gnome.org/extension/921/multi-monitors-add-on/)
+
+- [workspace-indicator](https://extensions.gnome.org/extension/21/workspace-indicator/)
+
+- [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
+
+- [Impatience](https://extensions.gnome.org/extension/277/impatience/) (speed gnome animations)
+    - set it to 0.6 in its settings
+
+- [panel osd](https://extensions.gnome.org/extension/708/panel-osd/)
+    - set 98 & 92
+
+
+- [always indicator](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
+
+- [New mail indicator](https://extensions.gnome.org/extension/1505/new-mail-indicator/)
+
+
+- sudo apt-get install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0
+    - this is dependency of below 3
+
+- [blur-my-shell/](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+    - BUGGY! use below 2 for Replacement.
+
+- [blyr](https://extensions.gnome.org/extension/1251/blyr/), for blurring activities screen
+    - [github](https://github.com/yozoon/gnome-shell-extension-blyr)
+
+- [lock screen blur](https://extensions.gnome.org/extension/2935/control-blur-effect-on-lock-screen/)
+    - [github](https://github.com/PRATAP-KUMAR/Control_Blur_Effect_On_Lock_Screen)
+    - set to 0.5 and 15
+
 
 
 ### Themes, Icons, Fonts

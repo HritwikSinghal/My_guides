@@ -22,6 +22,9 @@ sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
 sudo pacman -S --noconfirm yay qt5-wayland qt6-wayland
 yay -S --noconfirm paru
 
+# ADB
+sudo pacman -S --no-confirm android-tools android-udev
+
 pip3 install virtualenv youtube_dlc
 
 # sudo apt install ttf-mscorefonts-installer -y
@@ -417,3 +420,5 @@ sudo usermod -a -G libvirt hritwik
 newgrp libvirt
 sudo usermod -a -G kvm hritwik
 newgrp kvm
+sudo usermod -a -G adbusers hritwik
+newgrp adbusers

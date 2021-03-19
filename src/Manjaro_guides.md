@@ -20,29 +20,6 @@
 - for pulseeffects
 	- pamac install manjaro-pipewire
 	- pamac install gst-plugin-pipewire
-- https://www.reddit.com/r/ManjaroLinux/comments/cbkblb/guide_run_android_apps_on_manjaro_super_simple/
-	- install android apps on manjaro
-
-- [Enable vscode marketplace in Codium](https://github.com/VSCodium/vscodium/blob/master/DOCS.md#migrating) and backup codium backup
-
-- Add adb for android
-	- https://wiki.archlinux.org/index.php/Android_Debug_Bridge#Detect_the_device
-	- sudo pacman -S android-tools android-udev --no-confirm
-	- sudo usermod -a -G adbusers hritwik
-	- newgrp adbusers
-
-- [create swap partiton](https://wiki.manjaro.org/index.php/Swap)
-
-- enable hibernate (use Arch wiki)
-	- https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation
-	- https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
-	
-	- https://confluence.jaytaala.com/display/TKB/Use+a+swap+file+and+enable+hibernation+on+Arch+Linux+-+including+on+a+LUKS+root+partition
-	- https://archived.forum.manjaro.org/t/installed-hibernator-but-nothing-happened-how-to-enable-hibernate/154361/9
-	
-	- https://forum.manjaro.org/t/howto-disable-turn-off-hibernate-completely/8033
-	
-	- add hibernate shortcut or install gnome extension
 
 - disable quiet boot so that when press 'del' key on boot it shows info
 - change f8 key to lock (Done when changing keyboard layout)
@@ -59,20 +36,30 @@
 - [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
 - [x] [Fix auto backups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
 
-- Install yay through pacman, then install paru through yay. (pamac cli is shit)
-
 - If vlc is not playing video, try https://bbs.archlinux.org/viewtopic.php?id=252113
-
 
 - Install Just perfection Extension in gnome 40 to increase workspace size in overview
 
-- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
 
 
-## Notes & Saved
 
 
-- Install Apps and shell and other configs from Disrtotube channel 
+- [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
+- [increase Swap file by 6144 MB](https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal)
+    - https://linuxhint.com/change_swap_size_ubuntu/
+- [create swap partiton](https://wiki.manjaro.org/index.php/Swap)
+- enable hibernate (use Arch wiki)
+	- https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation
+	- https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
+	
+	- https://confluence.jaytaala.com/display/TKB/Use+a+swap+file+and+enable+hibernation+on+Arch+Linux+-+including+on+a+LUKS+root+partition
+	- https://archived.forum.manjaro.org/t/installed-hibernator-but-nothing-happened-how-to-enable-hibernate/154361/9
+	
+	- https://forum.manjaro.org/t/howto-disable-turn-off-hibernate-completely/8033
+	
+	- add hibernate shortcut or install gnome extension
+
+
 - chaotic aur 
 - [AUR helper like yay](https://itsfoss.com/best-aur-helpers/)
 	- [Paru](https://itsfoss.com/paru-aur-helper/)
@@ -80,13 +67,47 @@
 
 
 
+
+
+## Notes & Saved
+
+
+- Install Apps and shell and other configs from Disrtotube channel 
+- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
+- Shell/terminal/prompt
+    - Learn to modify zsh and fish shell (if installed)
+    - [starship](https://itsfoss.com/starship/)
+        - https://starship.rs/guide/#%F0%9F%9A%80-installation
+    - https://www.youtube.com/watch?v=TKX29fJ8U2Y (bash customize)
+
+    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
+        - search it on internet, this is just basic.
+    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)
+    - [Bash tips for everyday at the command line | Opensource.com](https://opensource.com/article/18/5/bash-tricks)
+    - https://itsfoss.com/linux-command-tricks/
+
+    - https://www.playonlinux.com/en/
+    - https://linuxjourney.com/lesson/filesystem-hierarchy
+    - How this works: ```nmcli dev show | grep DNS | awk '{ print $2 }'```
+    - [shell scripting](https://www.shellscript.sh/variables2.html)
+    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
+    - https://explainshell.com/
+
+
+- [install android apps on manjaro](https://www.reddit.com/r/ManjaroLinux/comments/cbkblb/guide_run_android_apps_on_manjaro_super_simple/)
+
 - https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
 	- if installing ```kid3``` in Arch, also insatll ```kio```
 
-- install ```aur/vscodium-bin-marketplace``` to Enable vscode marketplace in vscodium-bin
+- [ADB](https://wiki.archlinux.org/index.php/Android_Debug_Bridge#Detect_the_device)
+
+- [Enable vscode marketplace in Codium](https://github.com/VSCodium/vscodium/blob/master/DOCS.md#migrating) and backup codium backup
+	- install ```aur/vscodium-bin-marketplace``` to Enable vscode marketplace in vscodium-bin
+
 
 - [Make Persistent Live Manjaro USB](https://forum.manjaro.org/t/manjaro-xfce-20-0-3-persistent-usb-released/54/30)
-	```
+	- 
+	```sh
 	git clone git@github.com:HritwikSinghal/alma.git
 	cd alma
 	git remote add phil https://github.com/philmmanjaro/alma.git

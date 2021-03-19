@@ -67,6 +67,8 @@
 
 
 ### Addons
-    - [Translator-Inline](https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/)
+
+- [Translator-Inline](https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/)
+
 
 ---

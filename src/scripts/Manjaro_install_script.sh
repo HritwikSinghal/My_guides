@@ -286,7 +286,7 @@ find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} 
 
 sudo cp ./configs/PulseEffects_MyPreset.json /home/hritwik/.config/PulseEffects/output
 
-printf "\n--------------------------Tweaks---startup Apps-------------------------\n"
+printf "\n--------------------------Tweaks---startup-Apps-------------------------\n"
 rm -rf /home/hritwik/.config/autostart/
 cp -r ./configs/autostart/ /home/hritwik/.config/
 sudo chmod +x /home/hritwik/.config/autostart/*
@@ -339,7 +339,11 @@ cp ./configs/config.yml /home/hritwik/.config/fusuma/
 printf "\n--------------------------Tweaks---Vnstat-------------------------\n"
 cp ./configs/.vnstatrc /home/hritwik/
 
-
+printf "\n--------------------------Tweaks---Qbittorrent-------------------------\n"
+rm -rf /home/hritwik/.config/qBittorrent
+rm -rf /home/hritwik/.local/share/data/qBittorrent
+unzip ./configs/qbit_settings.zip -d /home/hritwik/
+unzip ./configs/qbit_data.zip -d /home/hritwik/
 
 
 

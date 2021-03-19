@@ -1,4 +1,4 @@
-# These are all the steps i do after installing Ubuntu to make Ubuntu my type.
+# Ubuntu Specific Things
 
 Feel free to copy anything from here and use it.
 

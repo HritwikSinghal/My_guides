@@ -1,4 +1,4 @@
-# Steps Manjaro
+# Manjaro Specific Things
 
 
 # **Table of Contents**
@@ -11,7 +11,10 @@
 
 ## Todo
 
-- write script to install firefox nightly 
+- Setup thunderbird (and backup it like FF)
+
+- Firefox Setup (and desktop icons)
+	- write script to install firefox nightly 
 
 - [Enable Os-prober](https://forum.manjaro.org/t/stable-update-2021-03-08-kernels-plasma-5-21-2-haskell-kodi-grub-kde-dev/56877)
 	- If you need dual-boot you can reactivate os-prober the easiest with the following command combination in a terminal
@@ -40,6 +43,20 @@
 
 - Install Just perfection Extension in gnome 40 to increase workspace size in overview
 
+- Increase terminal size to 100x30 and change its color and shortcuts
+
+- Add shortcuts
+    - Calc (F7)
+    - System monitor (ctrl+shift+Esc 'gnome-system-monitor')
+
+
+
+
+
+- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
+    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
+- [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
 
 
 
@@ -64,7 +81,7 @@
 - [AUR helper like yay](https://itsfoss.com/best-aur-helpers/)
 	- [Paru](https://itsfoss.com/paru-aur-helper/)
 - https://itsfoss.com/pacman-command/
-
+- https://openbuildservice.org/2021/02/18/introducing-flatpak-builds/
 
 
 
@@ -73,33 +90,33 @@
 
 
 - Install Apps and shell and other configs from Disrtotube channel 
-- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
-- Shell/terminal/prompt
-    - Learn to modify zsh and fish shell (if installed)
-    - [starship](https://itsfoss.com/starship/)
-        - https://starship.rs/guide/#%F0%9F%9A%80-installation
-    - https://www.youtube.com/watch?v=TKX29fJ8U2Y (bash customize)
+	- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
+	- Shell/terminal/prompt
+	    - Learn to modify zsh and fish shell (if installed)
+	    - [starship](https://itsfoss.com/starship/)
+	        - https://starship.rs/guide/#%F0%9F%9A%80-installation
+	    - https://www.youtube.com/watch?v=TKX29fJ8U2Y (bash customize)
 
-    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
-        - search it on internet, this is just basic.
-    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)
-    - [Bash tips for everyday at the command line | Opensource.com](https://opensource.com/article/18/5/bash-tricks)
-    - https://itsfoss.com/linux-command-tricks/
+	    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
+	        - search it on internet, this is just basic.
+	    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)
+	    - [Bash tips for everyday at the command line | Opensource.com](https://opensource.com/article/18/5/bash-tricks)
+	    - https://itsfoss.com/linux-command-tricks/
 
-    - https://www.playonlinux.com/en/
-    - https://linuxjourney.com/lesson/filesystem-hierarchy
-    - How this works: ```nmcli dev show | grep DNS | awk '{ print $2 }'```
-    - [shell scripting](https://www.shellscript.sh/variables2.html)
-    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
-    - https://explainshell.com/
+	    - https://www.playonlinux.com/en/
+	    - https://linuxjourney.com/lesson/filesystem-hierarchy
+	    - How this works: ```nmcli dev show | grep DNS | awk '{ print $2 }'```
+	    - [shell scripting](https://www.shellscript.sh/variables2.html)
+	    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
+	    - https://explainshell.com/
 
 
 - [install android apps on manjaro](https://www.reddit.com/r/ManjaroLinux/comments/cbkblb/guide_run_android_apps_on_manjaro_super_simple/)
 
+- [ADB](https://wiki.archlinux.org/index.php/Android_Debug_Bridge#Detect_the_device)
+
 - https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
 	- if installing ```kid3``` in Arch, also insatll ```kio```
-
-- [ADB](https://wiki.archlinux.org/index.php/Android_Debug_Bridge#Detect_the_device)
 
 - [Enable vscode marketplace in Codium](https://github.com/VSCodium/vscodium/blob/master/DOCS.md#migrating) and backup codium backup
 	- install ```aur/vscodium-bin-marketplace``` to Enable vscode marketplace in vscodium-bin

@@ -222,11 +222,9 @@ echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 # for force qt5 to use wayland
 echo "" | sudo tee -a /etc/environment
 echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
-
 # Below is for sway WM
 # sudo pacman -S --noconfirm qt5ct
 # echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
-
 
 echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
@@ -246,10 +244,10 @@ echo "[Settings]" >> /home/hritwik/.config/gtk-4.0/settings.ini
 echo "gtk-application-prefer-dark-theme=1"  >> /home/hritwik/.config/gtk-4.0/settings.ini
 
 printf "\n--------------------------Tweaks---wayland dash bug Fix-------------------------\n"
-gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+# gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
-printf "\n--------------------------Tweaks---Increment volume by 3-------------------------\n"
-# gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
+printf "\n--------------------------Tweaks---Increment volume by 4-------------------------\n"
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 4
 
 printf "\n--------------------------Tweaks---minimize on click-------------------------\n"
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
@@ -272,8 +270,8 @@ rm -rf /home/hritwik/.conky/
 cp -r ./configs/.conky/ /home/hritwik/
 
 printf "\n--------------------------Tweaks---dconf-settings-------------------------\n"
-# Backup first
 
+# Backup first
 dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
 dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
 dconf dump /com/github/wwmm/pulseeffects/ > /home/hritwik/com.github.wwmm.pulseeffects_Bak
@@ -328,16 +326,15 @@ git config --global user.email "Hritwiksinghal@outlook.in"
 git config --global user.name "Hritwik"
 
 printf "\n--------------------------Tweaks---increase swamp size-------------------------\n"
-sudo swapoff /swapfile
-sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc
-sudo mkswap /swapfile
-sudo swapon /swapfile
+# sudo swapoff /swapfile
+# sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc
+# sudo mkswap /swapfile
+# sudo swapon /swapfile
 
 printf "\n-------------------------Tweaks--fusuma-config-------------------------\n"
 rm -rf /home/hritwik/.config/fusuma
 mkdir -p /home/hritwik/.config/fusuma/
 cp ./configs/config.yml /home/hritwik/.config/fusuma/
-
 
 printf "\n--------------------------Tweaks---Vnstat-------------------------\n"
 cp ./configs/.vnstatrc /home/hritwik/

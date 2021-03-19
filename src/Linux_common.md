@@ -42,20 +42,6 @@
     - just check in wifi settings
 
 
-- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
-    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
-- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
-- [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
-
-
-- Emulation of x86 on arm64 and more.
-    - https://superuser.com/questions/781454/debian-arm-and-brother-dcp195c-with-cups
-    - https://wiki.debian.org/QemuUserEmulation
-    - https://wiki.debian.org/Multiarch/HOWTO
-    - https://wiki.debian.org/Multiarch
-    - http://neuro.debian.net/blog/2013/2013-05-31_matlab_64bit_on_32bit.html
-    - https://unix.stackexchange.com/questions/118343/run-64-bit-app-on-32-bit-ubuntu-system
-
 - [Fix secondary monitor display](https://wayneoutthere.com/2018/12/29/how-to-fix-wrong-monitor-display-ubuntu/)
     - rm .config/monitors.xml
 
@@ -67,42 +53,33 @@
 
 - [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
-- [Run all Apps via descrete GPU](https://askubuntu.com/questions/791022/how-to-configure-an-application-to-always-run-with-dri-prime-1-set-is-there-an)
-    - Put "DRI_PRIME=1" in "/etc/environment"
 
-- Increase terminal size to 100x30 and change its color and shortcuts
+### Saved
 
-- Add shortcuts
-    - Calc (F7)
-    - System monitor (ctrl+shift+Esc 'gnome-system-monitor')
+- Setup guide
+    - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
+    - [github, for great selection of apps and other things. This is great](https://github.com/themagicalmammal/howtopopbuntu)
 
+- [login with USB on liunx](https://www.linuxuprising.com/2021/02/how-to-login-with-usb-flash-drive.html)
 
-- [Increment volume](https://www.reddit.com/r/gnome/comments/f4owxw/gnome_volume_step_adjustment/) by 3 onstead of default 6
-    - gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
+- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
 
+- [schedule-commands-and-scripts-in-linux](https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html)
 
 - Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
     - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
 
 
-- [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
-- [increase Swap file by 6144 MB](https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal)
-    - https://linuxhint.com/change_swap_size_ubuntu/
-
-
 - [Linux Wifi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 
 
-- Change compression level
-    ```
-    gsettings set org.gnome.FileRoller.General compression-level "very-fast"
-    gsettings set org.gnome.FileRoller.General compression-level "fast"
-    gsettings set org.gnome.FileRoller.General compression-level "normal"
-    gsettings set org.gnome.FileRoller.General compression-level "maximum"
-    ```
-
-
-### Saved
+- Emulation of x86 on arm64 and more.
+    - https://superuser.com/questions/781454/debian-arm-and-brother-dcp195c-with-cups
+    - https://wiki.debian.org/QemuUserEmulation
+    - https://wiki.debian.org/Multiarch/HOWTO
+    - https://wiki.debian.org/Multiarch
+    - http://neuro.debian.net/blog/2013/2013-05-31_matlab_64bit_on_32bit.html
+    - https://unix.stackexchange.com/questions/118343/run-64-bit-app-on-32-bit-ubuntu-system
 
 
 - QEMU
@@ -130,25 +107,6 @@
     - https://github.com/nsmfoo/antivmdetection
     - https://www.guyrutenberg.com/2018/10/25/sharing-a-folder-a-windows-guest-under-virt-manager/
 
-
-- Shell/terminal/prompt
-    - Learn to modify zsh and fish shell (if installed)
-    - [starship](https://itsfoss.com/starship/)
-        - https://starship.rs/guide/#%F0%9F%9A%80-installation
-    - https://www.youtube.com/watch?v=TKX29fJ8U2Y (bash customize)
-
-    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
-        - search it on internet, this is just basic.
-    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)
-    - [Bash tips for everyday at the command line | Opensource.com](https://opensource.com/article/18/5/bash-tricks)
-    - https://itsfoss.com/linux-command-tricks/
-
-    - https://www.playonlinux.com/en/
-    - https://linuxjourney.com/lesson/filesystem-hierarchy
-    - How this works: ```nmcli dev show | grep DNS | awk '{ print $2 }'```
-    - [shell scripting](https://www.shellscript.sh/variables2.html)
-    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
-    - https://explainshell.com/
 
 
 - [Using FFMPEG and V4l2 Loopback to Play YouTube Videos as a WebCam](https://theterminallife.com/using-ffmpeg-and-v4l2-loopback-to-play-youtube-videos-as-a-webcam/)
@@ -255,15 +213,15 @@
 
 - [dconf guide](https://askubuntu.com/questions/424621/which-files-does-gconf-editor-edit)
 
-- Setup guide
-    - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
-    - [github, for great selection of apps and other things. This is great](https://github.com/themagicalmammal/howtopopbuntu)
 
-- [login with USB on liunx](https://www.linuxuprising.com/2021/02/how-to-login-with-usb-flash-drive.html)
+- Change compression level
+    ```
+    gsettings set org.gnome.FileRoller.General compression-level "very-fast"
+    gsettings set org.gnome.FileRoller.General compression-level "fast"
+    gsettings set org.gnome.FileRoller.General compression-level "normal"
+    gsettings set org.gnome.FileRoller.General compression-level "maximum"
+    ```
 
-- [cut m4a audio](https://superuser.com/questions/140899/ffmpeg-splitting-mp4-with-same-quality)
-
-- [schedule-commands-and-scripts-in-linux](https://www.linuxuprising.com/2020/10/schedule-commands-and-scripts-in-linux.html)
 
 - [ExFat in Linux](https://itsfoss.com/mount-exfat/)
 - [NTFS in Linux](https://www.cyberciti.biz/faq/debian-ubuntu-linux-auto-mounting-windows-ntfs-file-system/)
@@ -542,9 +500,10 @@
 
 - [Animation-Tweaks](https://github.com/Selenium-H/Animation-Tweaks)
     - [Change notification Position](https://github.com/Selenium-H/Animation-Tweaks/issues/34)
-
+            ```
             The Tween Parameters - "First Number" denotes the position of the notification banner at the start of the animation
             and Tween Parameters - "Last Number" denotes the ending position of the notification banner.
+            ```
 
 - [notifications-alert](https://extensions.gnome.org/extension/258/notifications-alert-on-user-menu/)
 

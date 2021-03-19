@@ -22,13 +22,8 @@
 - DSA, DBMS, CN, OS
 - Coursera
 
-- WSN, BTP
-- GSOC
-    - Gnome
-        - https://discourse.gnome.org/t/call-for-project-ideas-for-google-summer-of-code-2021/5454
-        - https://samthursfield.wordpress.com/2021/01/29/every-contribution-matters/
-        - https://openbuildservice.org/2021/02/18/introducing-flatpak-builds/
-        
+- WSN, BPT
+- GSOC  
 - BTP
 
 
@@ -53,8 +48,6 @@
         - [Mozilla Deepspeech](https://github.com/mozilla/DeepSpeech)
 
     - [mycroft](https://mycroft.ai/)
-    - XDM
-    - copyq
 
 
 ---
@@ -88,8 +81,6 @@
     - https://medium.com/codingthesmartway-com-blog/docker-beginners-guide-part-1-images-containers-6f3507fffc98
     - https://www.youtube.com/watch?v=fqMOX6JJhGo
 
-
-- Modify shell (see Bookmarks.md)
 - Learn to use Firejail & chroot
 
 

@@ -197,6 +197,7 @@ sudo snap install wonderwall
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
+
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
@@ -230,6 +231,9 @@ echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
 
 echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
+
+printf "\n--------------------------Tweaks---Telegram-------------------------\n"
+unzip ./configs/xdm.zip -d /home/hritwik/
 
 printf "\n--------------------------Tweaks---GTK Dark Mode-------------------------\n"
 
@@ -348,7 +352,7 @@ unzip ./configs/qbit_settings.zip -d /home/hritwik/
 unzip ./configs/qbit_data.zip -d /home/hritwik/
 
 printf "\n--------------------------Tweaks---XDM-------------------------\n"
-unzip ./configs/xdm. -d /home/hritwik/
+unzip ./configs/xdm.zip -d /home/hritwik/
 
 
 

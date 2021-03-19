@@ -233,7 +233,10 @@ echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
 
 printf "\n--------------------------Tweaks---Telegram-------------------------\n"
-unzip ./configs/xdm.zip -d /home/hritwik/
+unzip ./configs/telegram.zip -d /home/hritwik/
+
+printf "\n--------------------------Tweaks---Signal-------------------------\n"
+unzip ./configs/signal.zip -d /home/hritwik/
 
 printf "\n--------------------------Tweaks---GTK Dark Mode-------------------------\n"
 

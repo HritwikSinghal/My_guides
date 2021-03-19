@@ -80,7 +80,9 @@ cd /home/hritwik/
 rm -rf /home/hritwik/.local/share/TelegramDesktop/tdata/user_data
 zip -r /home/hritwik/Backups/telegram.zip ./.local/share/TelegramDesktop
 
-
+printf "\n-------------------------Signal-------------------------\n"
+cd /home/hritwik/
+zip -r /home/hritwik/Backups/signal.zip ./.config/Signal
 
 
 printf "\n-------------------------Backuping up Extensions-------------------------\n"

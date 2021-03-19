@@ -51,16 +51,6 @@
 
 
 
-
-
-- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
-    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
-- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
-- [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
-
-
-
-
 - [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
 - [increase Swap file by 6144 MB](https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal)
     - https://linuxhint.com/change_swap_size_ubuntu/
@@ -82,6 +72,12 @@
 	- [Paru](https://itsfoss.com/paru-aur-helper/)
 - https://itsfoss.com/pacman-command/
 - https://openbuildservice.org/2021/02/18/introducing-flatpak-builds/
+
+
+- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
+    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+- https://linuxhint.com/add_shortcuts_ubuntu_desktop/
+- [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
 
 
 

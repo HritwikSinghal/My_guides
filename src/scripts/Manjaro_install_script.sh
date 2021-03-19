@@ -120,7 +120,9 @@ sudo pacman -S --noconfirm flameshot
 
 printf "\n-------------------------Install--fusuma-------------------------\n"
 # change setting to install systemwide first. 
-	# - https://wiki.archlinux.org/index.php/ruby#Installing_Ruby
+# https://wiki.archlinux.org/index.php/ruby#Installing_Ruby
+sudo sed -i "s/gem: --user-install/gem: --no-user-install/g" /etc/gemrc
+
 sudo pacman -S --noconfirm ruby libinput
 sudo gem install fusuma
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
@@ -345,7 +347,8 @@ rm -rf /home/hritwik/.local/share/data/qBittorrent
 unzip ./configs/qbit_settings.zip -d /home/hritwik/
 unzip ./configs/qbit_data.zip -d /home/hritwik/
 
-
+printf "\n--------------------------Tweaks---XDM-------------------------\n"
+unzip ./configs/xdm. -d /home/hritwik/
 
 
 

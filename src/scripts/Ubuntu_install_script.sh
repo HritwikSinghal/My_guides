@@ -437,6 +437,8 @@ rm -rf /home/hritwik/.local/share/data/qBittorrent
 unzip ./configs/qbit_settings.zip -d /home/hritwik/
 unzip ./configs/qbit_data.zip -d /home/hritwik/
 
+printf "\n--------------------------Tweaks---XDM-------------------------\n"
+unzip ./configs/xdm. -d /home/hritwik/
 
 
 

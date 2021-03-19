@@ -69,7 +69,9 @@ cd /home/hritwik/
 zip -r /home/hritwik/Backups/qbit_settings.zip ./.config/qBittorrent/
 zip -r /home/hritwik/Backups/qbit_data.zip ./.local/share/qBittorrent/
 
-
+printf "\n-------------------------XDM-------------------------\n"
+cd /home/hritwik/
+zip -r /home/hritwik/Backups/xdm.zip ./.xdman/
 
 
 

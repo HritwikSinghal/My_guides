@@ -16,8 +16,10 @@ default-visible-columns=['name', 'size', 'type', 'date_modified', 'permissions']
 default-zoom-level='small'
 
 [preferences]
+bulk-rename-tool=b'krename'
 click-double-parent-folder=true
 close-device-view-on-device-eject=true
+confirm-move-to-trash=false
 date-format='locale'
 default-folder-viewer='list-view'
 default-sort-order='type'
@@ -45,10 +47,10 @@ selection-menu-make-link=true
 
 [window-state]
 devices-expanded=true
-geometry='1124x745+26+23'
+geometry='1125x783+23+15'
 maximized=false
 my-computer-expanded=true
 side-pane-view='places'
 sidebar-bookmark-breakpoint=5
-sidebar-width=140
+sidebar-width=155
 start-with-sidebar=true

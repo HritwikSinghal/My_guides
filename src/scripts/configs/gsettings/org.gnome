@@ -1,10 +1,13 @@
+[GWeather]
+temperature-unit='centigrade'
+
 [Lollypop]
 background-mode=true
 dark-ui=true
-disable-scrobbling=false
 equalizer=[0.0, 0.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 5.0, 5.0, 5.0, 4.0, 2.0, 1.0, 0.0, 0.0, 0.0, 0.0]
 equalizer-custom=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 equalizer-enabled=false
+flatpak-access-migration=true
 hd-artwork=true
 import-advanced-artist-tags=true
 music-uris=['file:///home/hritwik/Music', 'file:///home/hritwik/Downloads']
@@ -22,31 +25,12 @@ window-maximized=false
 window-position=[26, 23]
 window-size=[1042, 802]
 
-[Music]
-did-initial-state=true
-repeat='song'
-window-maximized=false
-window-position=[56, 50]
-window-size=[922, 600]
-
-[Totem]
-active-plugins=['vimeo', 'save-file', 'movie-properties', 'recent', 'rotation', 'open-directory', 'apple-trailers', 'skipto', 'screensaver', 'media-player-keys', 'screenshot', 'autoload-subtitles', 'variable-rate']
-subtitle-encoding='UTF-8'
-
 [Weather]
 locations=[<(uint32 2, <('Agra', 'VIAG', true, [(0.47398779161036003, 1.3606732234474483)], [(0.47438049069205873, 1.3617058824059758)])>)>]
 
 [baobab/ui]
-window-size=(960, 600)
+window-size=(1309, 683)
 window-state=87168
-
-[boxes]
-first-run=false
-shared-folders="[<{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'3495a946-6aa5-46e2-8ac3-7c4ab8c24083'>, 'path': <'/home/hritwik'>, 'name': <'FS'>}>, <{'uuid': <'46d9ac4a-2133-4c4b-b988-0c90df22fbac'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>, <{'uuid': <'f16f42a1-9b21-4cab-a51b-486e2fe52dbf'>, 'path': <'/home/hritwik'>, 'name': <'hritwik'>}>]"
-view='icon-view'
-window-maximized=false
-window-position=[26, 23]
-window-size=[916, 533]
 
 [calculator]
 accuracy=9
@@ -60,119 +44,82 @@ source-currency=''
 source-units='degree'
 target-currency=''
 target-units='radian'
-window-position=(26, 23)
+window-position=(23, 15)
 word-size=64
 
-[calendar]
-active-view='month'
-weather-settings=(true, false, 'Agra, India', @mv <(uint32 2, <('Agra', 'VIAG', true, [(0.47398779161036003, 1.3606732234474483)], [(0.47438049069205873, 1.3617058824059758)])>)>)
-window-maximized=false
-window-position=(26, 23)
-window-size=(946, 697)
-
-[clocks]
-world-clocks=[{'location': <(uint32 2, <('Pittsburgh', 'KAGC', true, [(0.7043227676269912, -1.394896232832499)], [(0.70582205781433183, -1.3961915987500364)])>)>}]
-
-[clocks/state/window]
-panel-id='world'
-size=(870, 690)
-state=87168
-
 [control-center]
-last-panel='wifi'
+last-panel='keyboard'
 
 [deja-dup]
 backend='google'
-prompt-check='disabled'
+prompt-check='2021-02-28T00:58:42.224486Z'
 
-[deja-dup/file]
-migrated=true
+[desktop/a11y/applications]
+screen-magnifier-enabled=false
 
-[deja-dup/gcs]
-folder='Dell-Inspiron'
-
-[deja-dup/google]
-folder='Dell-Inspiron'
-
-[deja-dup/local]
-folder='Dell-Inspiron'
-
-[deja-dup/openstack]
-container='Dell-Inspiron'
-
-[deja-dup/rackspace]
-container='Dell-Inspiron'
-
-[deja-dup/remote]
-folder='Dell-Inspiron'
-
-[deja-dup/s3]
-folder='Dell-Inspiron'
+[desktop/a11y/magnifier]
+mag-factor=1.5
+mouse-tracking='centered'
+show-cross-hairs=false
 
 [desktop/app-folders]
-folder-children=['Utilities', 'YaST']
+folder-children=['accessories', 'office', 'system-tools']
 
-[desktop/app-folders/folders/Utilities]
-apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'gnome-system-monitor.desktop', 'gucharmap.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'simple-scan.desktop', 'vinagre.desktop', 'yelp.desktop']
-categories=['X-GNOME-Utilities']
-name='X-GNOME-Utilities.directory'
+[desktop/app-folders/folders/accessories]
+apps=['yad-icon-browser.desktop', 'uget-gtk.desktop', 'transmission-gtk.desktop']
+categories=['Utility']
+excluded-apps=['gnome-layouts.desktop', 'manjaro-documentation.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Maps.desktop']
+name='Accessories'
 translate=true
 
-[desktop/app-folders/folders/YaST]
-categories=['X-SuSE-YaST']
-name='suse-yast.directory'
+[desktop/app-folders/folders/office]
+categories=['Office']
+name='Office'
+translate=true
+
+[desktop/app-folders/folders/system-tools]
+apps=['qvidcap.desktop', 'qv4l2.desktop', 'bssh.desktop', 'bvnc.desktop', 'hp-uiscan.desktop']
+categories=['System', 'Settings']
+excluded-apps=['org.manjaro.pamac.manager.desktop']
+name='System Tools'
 translate=true
 
 [desktop/background]
 color-shading-type='solid'
-picture-options='zoom'
-picture-uri='file:///home/hritwik/snap/bing-wall/12/.local/share/org.keshavnrj.ubuntu/BingWall/downloaded/2d546a56008f4acfb069e90e158e9b4f.jpg'
-primary-color='#000000'
+picture-options='stretched'
+picture-uri='file:///usr/share/backgrounds/wallpapers-juhraya/Austria_by_Rutger_Heijmerikx.jpg'
+primary-color='#ffffff'
 secondary-color='#000000'
 show-desktop-icons=false
 
-[desktop/calendar]
-show-weekdate=false
-
 [desktop/input-sources]
+current=uint32 0
 sources=[('xkb', 'us+dvorak')]
-xkb-options=@as []
+xkb-options=['lv3:rwin_switch']
 
 [desktop/interface]
 clock-format='12h'
 clock-show-seconds=true
 clock-show-weekday=true
-cursor-theme='Yaru-Blue'
 enable-hot-corners=false
-gtk-im-module='gtk-im-context-simple'
-gtk-theme='Yaru-Blue-dark'
-icon-theme='Yaru-Blue'
-locate-pointer=false
 show-battery-percentage=true
 text-scaling-factor=0.84999999999999998
-toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['org-gnome-nautilus', 'firefox', 'org-gnome-software', 'gnome-power-panel', 'org-gnome-extensions-desktop', 'org-gnome-lollypop', 'rhythmbox', 'qbittorrent-arnatious-qbittorrent', 'gnome-network-panel', 'thunderbird', 'gnome-printers-panel', 'uget-gtk', 'nemo']
+application-children=['firefox', 'org-gnome-gedit', 'org-gnome-nautilus', 'org-gnome-lollypop', 'gnome-network-panel', 'gnome-power-panel', 'ca-desrt-dconf-editor', 'thunderbird', 'org-gnome-fileroller', 'jetbrains-pycharm', 'org-qbittorrent-qbittorrent', 'jetbrains-clion', 'xdg-desktop-portal-gtk', 'nemo', 'org-manjaro-pamac-manager', 'vlc', 'org-gnome-terminal', 'org-kde-kget', 'org-gnome-evince', 'signal-desktop', 'org-gnome-baobab', 'jetbrains-toolbox', 'org-gnome-chromegnomeshell', 'gnome-printers-panel', 'org-gnome-extensions', 'org-gnome-dejadup']
 show-banners=true
 
 [desktop/notifications/application/firefox]
 application-id='firefox.desktop'
 
-[desktop/notifications/application/gnome-network-panel]
-application-id='gnome-network-panel.desktop'
-
 [desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
 
-[desktop/notifications/application/gnome-printers-panel]
-application-id='gnome-printers-panel.desktop'
+[desktop/notifications/application/manjaro-settings-manager]
+application-id='manjaro-settings-manager.desktop'
 
-[desktop/notifications/application/nemo]
-application-id='nemo.desktop'
-
-[desktop/notifications/application/org-gnome-extensions-desktop]
-application-id='org.gnome.Extensions.desktop.desktop'
+[desktop/notifications/application/org-gnome-fileroller]
+application-id='org.gnome.FileRoller.desktop'
 
 [desktop/notifications/application/org-gnome-lollypop]
 application-id='org.gnome.Lollypop.desktop'
@@ -180,20 +127,8 @@ application-id='org.gnome.Lollypop.desktop'
 [desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
 
-[desktop/notifications/application/org-gnome-software]
-application-id='org.gnome.Software.desktop'
-
-[desktop/notifications/application/qbittorrent-arnatious-qbittorrent]
-application-id='qbittorrent-arnatious_qbittorrent.desktop'
-
-[desktop/notifications/application/rhythmbox]
-application-id='rhythmbox.desktop'
-
 [desktop/notifications/application/thunderbird]
 application-id='thunderbird.desktop'
-
-[desktop/notifications/application/uget-gtk]
-application-id='uget-gtk.desktop'
 
 [desktop/peripherals/keyboard]
 numlock-state=true
@@ -214,29 +149,25 @@ two-finger-scrolling-enabled=true
 [desktop/privacy]
 disable-microphone=false
 remember-app-usage=false
+remember-recent-files=false
 remove-old-temp-files=true
 report-technical-problems=true
 
 [desktop/screensaver]
 color-shading-type='solid'
-picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/Abstract_Painting_Photo_by_Pierre_Ch%C3%A2tel-Innocenti.jpg'
-primary-color='#000000'
+picture-options='stretched'
+picture-uri='file:///usr/share/backgrounds/wallpapers-juhraya/Austria_by_Rutger_Heijmerikx.jpg'
+primary-color='#ffffff'
 secondary-color='#000000'
 
-[desktop/search-providers]
-sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
-
-[desktop/session]
-idle-delay=uint32 600
-
-[desktop/sound]
-allow-volume-above-100-percent=false
-event-sounds=true
-
 [desktop/wm/keybindings]
-switch-to-workspace-left=@as []
-switch-to-workspace-right=@as []
+close=['<Alt>F4']
+maximize=['<Super>Up']
+panel-main-menu=['<Alt>F1']
+switch-applications=['<Super>Tab']
+switch-applications-backward=['<Shift><Super>Tab']
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
 
 [desktop/wm/preferences]
 action-middle-click-titlebar='minimize'
@@ -245,13 +176,6 @@ button-layout=':minimize,maximize,close'
 focus-mode='click'
 mouse-button-modifier='<Super>'
 num-workspaces=8
-
-[eog/view]
-background-color='rgb(0,0,0)'
-use-background-color=true
-
-[evince/default]
-window-ratio=(1.5686274509803921, 1.2537878787878789)
 
 [evolution-data-server]
 migrated=true
@@ -271,28 +195,23 @@ compression-level='very-fast'
 
 [file-roller/listing]
 list-mode='as-folder'
-name-column-width=250
+name-column-width=278
 show-path=false
 sort-method='name'
 sort-type='ascending'
 
 [file-roller/ui]
 sidebar-width=200
-window-height=480
+window-height=427
 window-width=600
 
 [gedit/plugins]
-active-plugins=['docinfo', 'modelines', 'spell', 'filebrowser', 'sort']
+active-plugins=['sort', 'filebrowser', 'spell', 'modelines', 'docinfo']
 
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/hritwik/.config/libvirt/storage'
-
-[gedit/preferences/editor]
-scheme='oblivion'
-use-default-font=true
-wrap-last-split-mode='word'
+virtual-root='file:///home/hritwik/Documents/scripts/configs/old/gsettings'
 
 [gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -308,33 +227,31 @@ state=87168
 auto-save-session=true
 
 [gnome-system-monitor]
-cpu-stacked-area-chart=false
 current-tab='processes'
-disks-interval=2000
 maximized=false
-show-all-fs=false
 show-dependencies=false
 show-whose-processes='user'
-update-interval=2000
-window-state=(700, 786, 26, 23)
+update-interval=1000
+window-state=(743, 801, 23, 15)
 
 [gnome-system-monitor/disktreenew]
 col-6-visible=true
 col-6-width=0
+columns-order=[0, 1, 2, 3, 4, 5, 6]
+sort-col=2
+sort-order=0
 
-[gnome-system-monitor/memmapstree]
+[gnome-system-monitor/openfilestree]
 sort-col=0
 sort-order=0
 
 [gnome-system-monitor/proctree]
-col-1-visible=false
-col-1-width=98
+col-0-visible=true
+col-0-width=210
+col-1-visible=true
+col-1-width=67
 col-14-visible=true
-col-14-width=120
-col-17-visible=false
-col-17-width=102
-col-2-visible=false
-col-2-width=37
+col-14-width=205
 col-22-visible=false
 col-22-width=100
 col-23-visible=false
@@ -343,27 +260,47 @@ col-24-visible=false
 col-24-width=100
 col-25-visible=false
 col-25-width=100
-col-3-visible=false
-col-3-width=90
-col-4-visible=false
-col-4-width=90
-col-6-visible=false
-col-6-width=90
-columns-order=[0, 14, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+col-8-visible=true
+col-8-width=51
+columns-order=[0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
 sort-col=15
 sort-order=0
 
 [gnote]
-main-window-maximized=false
-search-window-height=400
-search-window-splitter-pos=150
-search-window-width=450
+start-note='note://gnote/41fc2a43-75d3-46f6-b44d-4868745b07b3'
+
+[gthumb/browser]
+fullscreen-sidebar='hidden'
+fullscreen-thumbnails-visible=false
+maximized=false
+sidebar-sections=['GthFileProperties:expanded', 'GthFileComment:expanded', 'GthFileDetails:expanded', 'GthImageHistogram:expanded']
+sidebar-visible=true
+sort-inverse=false
+sort-type='file::mtime'
+startup-current-file='file:///run/media/hritwik/CR/Backups/Screenshot%20from%202021-02-19%2003-20-06.png'
+startup-location='file:///run/media/hritwik/CR/Backups'
+statusbar-visible=true
+thumbnail-list-visible=true
+viewer-sidebar='hidden'
+
+[gthumb/data-migration]
+catalogs-2-10=true
+
+[gthumb/general]
+active-extensions=['23hq', 'bookmarks', 'burn_disc', 'catalogs', 'change_date', 'comments', 'contact_sheet', 'convert_format', 'desktop_background', 'edit_metadata', 'exiv2_tools', 'facebook', 'file_manager', 'find_duplicates', 'flicker', 'gstreamer_tools', 'gstreamer_utils', 'image_print', 'image_rotation', 'importer', 'jpeg_utils', 'list_tools', 'oauth', 'photo_importer', 'picasaweb', 'raw_files', 'red_eye_removal', 'rename_series', 'resize_images', 'search', 'selections', 'slideshow', 'terminal', 'webalbums']
 
 [mutter]
 center-new-windows=true
 dynamic-workspaces=false
-experimental-features=@as []
+overlay-key='Super_L'
 workspaces-only-on-primary=false
+
+[mutter/keybindings]
+toggle-tiled-left=['<Super>Left']
+toggle-tiled-right=['<Super>Right']
+
+[mutter/wayland/keybindings]
+restore-shortcuts=['<Super>Escape']
 
 [nautilus/compression]
 default-compression-format='zip'
@@ -375,69 +312,22 @@ default-zoom-level='large'
 [nautilus/list-view]
 default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']
 default-visible-columns=['name', 'size', 'date_modified', 'starred']
-use-tree-view=false
 
 [nautilus/preferences]
-default-folder-viewer='icon-view'
+default-folder-viewer='list-view'
 search-filter-time-type='last_modified'
+search-view='list-view'
 show-create-link=true
 
 [nautilus/window-state]
-initial-size=(1133, 712)
+initial-size=(1197, 816)
 maximized=false
-
-[nm-applet/eap/882367af-1ca6-47b9-ab94-25c0eb6d8b08]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[power-manager]
-info-history-type='charge'
-info-last-device='/org/freedesktop/UPower/devices/battery_BAT0'
-info-page-number=2
-info-stats-type='discharge-accuracy'
-
-[rhythmbox]
-position=(26, 23)
-
-[rhythmbox/library/source]
-show-browser=true
-
-[rhythmbox/player]
-volume=1.0
-
-[rhythmbox/plugins]
-active-plugins=['mpris', 'audioscrobbler', 'mtpdevice', 'iradio', 'mmkeys', 'android', 'daap', 'power-manager', 'notification', 'audiocd', 'generic-player', 'rb', 'alternative-toolbar', 'artsearch', 'ipod', 'dbus-media-server']
-seen-plugins=['grilo', 'mpris', 'audioscrobbler', 'mtpdevice', 'rblirc', 'daap', 'fmradio', 'notification', 'pythonconsole', 'rb', 'alternative-toolbar', 'magnatune', 'webremote', 'artsearch', 'replaygain', 'lyrics', 'soundcloud', 'listenbrainz', 'im-status', 'ipod', 'dbus-media-server']
-
-[rhythmbox/plugins/alternative_toolbar]
-show-source-toolbar=false
-
-[rhythmbox/plugins/audioscrobbler/Last.fm]
-scrobbling-enabled=true
-
-[rhythmbox/plugins/audioscrobbler/Libre.fm]
-scrobbling-enabled=true
-
-[rhythmbox/plugins/iradio]
-initial-stations-loaded=true
-
-[rhythmbox/plugins/iradio/source]
-show-browser=true
-
-[rhythmbox/podcast/source]
-show-browser=true
-
-[rhythmbox/rhythmdb]
-locations=['file:///home/hritwik/Music']
 
 [settings-daemon/plugins/color]
 night-light-enabled=false
-night-light-last-coordinates=(26.848299280057596, 80.923100000000005)
-night-light-temperature=uint32 3700
 
 [settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
-rotate-video-lock-static=@as []
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 volume-step=3
 
 [settings-daemon/plugins/media-keys/custom-keybindings/custom0]
@@ -445,85 +335,91 @@ binding='<Primary><Shift>Escape'
 command='gnome-system-monitor'
 name='task manager'
 
+[settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Primary><Alt>t'
+command='gnome-terminal'
+name='terminal'
+
+[settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='F7'
+command='gnome-calculator'
+name='calc'
+
 [settings-daemon/plugins/power]
-power-button-action='suspend'
-sleep-inactive-ac-timeout=3600
+power-button-action='hibernate'
+sleep-inactive-ac-timeout=7200
 sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-timeout=1800
 
 [settings-daemon/plugins/xsettings]
 hinting='slight'
 
 [shell]
-app-picker-layout=[{'software-properties-drivers.desktop': <{'position': <0>}>, 'sol.desktop': <{'position': <1>}>, 'org.gnome.Calendar.desktop': <{'position': <2>}>, 'org.gnome.Cheese.desktop': <{'position': <3>}>, 'org.gnome.Extensions.desktop': <{'position': <4>}>, 'org.gnome.Nautilus.desktop': <{'position': <5>}>, 'firefox.desktop': <{'position': <6>}>, 'gnome-language-selector.desktop': <{'position': <7>}>, 'libreoffice-calc.desktop': <{'position': <8>}>, 'libreoffice-draw.desktop': <{'position': <9>}>, 'libreoffice-impress.desktop': <{'position': <10>}>, 'libreoffice-writer.desktop': <{'position': <11>}>, 'software-properties-livepatch.desktop': <{'position': <12>}>, 'timeshift-gtk.desktop': <{'position': <13>}>}, {'org.gnome.Mahjongg.desktop': <{'position': <0>}>, 'org.gnome.Mines.desktop': <{'position': <1>}>, 'org.gnome.PowerStats.desktop': <{'position': <2>}>, 'org.remmina.Remmina.desktop': <{'position': <3>}>, 'rhythmbox.desktop': <{'position': <4>}>, 'gnome-control-center.desktop': <{'position': <5>}>, 'shotwell.desktop': <{'position': <6>}>, 'software-properties-gtk.desktop': <{'position': <7>}>, 'update-manager.desktop': <{'position': <8>}>, 'gnome-session-properties.desktop': <{'position': <9>}>, 'usb-creator-gtk.desktop': <{'position': <10>}>, 'org.gnome.Sudoku.desktop': <{'position': <11>}>, 'org.gnome.gedit.desktop': <{'position': <12>}>, 'thunderbird.desktop': <{'position': <13>}>, 'org.gnome.Todo.desktop': <{'position': <14>}>, 'transmission-gtk.desktop': <{'position': <15>}>, 'snap-store_ubuntu-software.desktop': <{'position': <16>}>, 'org.gnome.Totem.desktop': <{'position': <17>}>, 'Utilities': <{'position': <18>}>}]
-app-picker-view=uint32 1
-command-history=['nemo-desktop']
+app-picker-layout=[{'system-tools': <{'position': <0>}>, 'accessories': <{'position': <1>}>, 'office': <{'position': <2>}>, 'webapp-manager.desktop': <{'position': <3>}>, 'firefox.desktop': <{'position': <4>}>, 'org.gnome.Geary.desktop': <{'position': <5>}>, 'simple-scan.desktop': <{'position': <6>}>, 'org.gnome.Totem.desktop': <{'position': <7>}>, 'org.gnome.Cheese.desktop': <{'position': <8>}>, 'org.gnome.Lollypop.desktop': <{'position': <9>}>, 'org.gnome.gThumb.desktop': <{'position': <10>}>, 'gnome-layouts.desktop': <{'position': <11>}>, 'manjaro-documentation.desktop': <{'position': <12>}>, 'org.gnome.Nautilus.desktop': <{'position': <13>}>, 'org.gnome.Maps.desktop': <{'position': <14>}>, 'org.manjaro.pamac.manager.desktop': <{'position': <15>}>}]
 disable-user-extensions=false
-disabled-extensions=['desktop-icons@csoriano']
-enabled-extensions=['notifications-alert-on-user-menu@hackedbellini.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'noannoyance@sindex.com', 'windowoverlay-icons@sustmidown.centrum.cz', 'blyr@yozoon.dev.gmail.com', 'ubuntu-appindicators@ubuntu.com', 'dash-to-panel@jderose9.github.com', 'animation-tweaks@Selenium-H', 'ubuntu-dock@ubuntu.com', 'transparentnotification@ipaq3870', 'cpufreq@konkor']
-favorite-apps=['firefox.desktop', 'thunderbird.desktop', 'nemo.desktop', 'org.gnome.Lollypop.desktop', 'org.gnome.tweaks.desktop', 'io.freetubeapp.FreeTube.desktop', 'com.github.wwmm.pulseeffects.desktop', 'sublime_text.desktop', 'clion_clion.desktop', 'uget-gtk.desktop', 'pycharm-community_pycharm-community.desktop', 'whatsdesk_whatsdesk.desktop', 'teams.desktop', 'atom.desktop', 'signal-desktop.desktop', 'telegram-desktop_telegram-desktop.desktop', 'virt-manager.desktop', 'org.gnome.Boxes.desktop']
-had-bluetooth-devices-setup=true
-remember-mount-password=true
+disabled-extensions=['dash-to-dock@micxgx.gmail.com', 'ding@rastersoft.com', 'arcmenu@arcmenu.com', 'pamac-updates@manjaro.org', 'pop-shell@system76.com']
+enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'dash-to-panel@jderose9.github.com', 'animation-tweaks@Selenium-H', 'cpufreq@konkor', 'multi-monitors-add-on@spin83', 'noannoyance@sindex.com', 'transparentnotification@ipaq3870', 'windowoverlay-icons@sustmidown.centrum.cz']
+favorite-apps=['firefox.desktop', 'nemo.desktop', 'org.gnome.Terminal.desktop']
 
 [shell/extensions/animation-tweaks]
 application-list=@as []
 closing-effect=true
-combo-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.5', '0.5', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
+combo-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 current-version=12
-desktoppopupmenu-open=['|', 'F', 'Scale Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '0.5', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
-dialog-close=['|', 'T', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '0', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-dialog-minimize=['|', 'T', 'Scale Auto In', '1', '0.0', '0.0', '0', '0', '0', '0.250', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'easeInCubic']
-dialog-movestart=['|', 'T', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '220', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-dialog-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-dialog-unminimize=['|', 'T', 'Scale Auto Out', '2', '0.0', '0.0', '0', '0', '0', '0.001', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0', '0', '0', '0.250', '255', '1', '1', 'IX', 'IY', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-focussing-effect=false
+desktoppopupmenu-open=['|', 'F', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0.0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+dialog-close=['|', 'T', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '0', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+dialog-minimize=['|', 'T', 'Scale Auto In', '1', '0.0', '0.0', '0', '0', '0', '0.250', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
+dialog-movestart=['|', 'T', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '220', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+dialog-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+dialog-unminimize=['|', 'T', 'Scale Auto Out', '2', '0.0', '0.0', '0', '0', '0', '0.001', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0', '0', '0', '0.250', '255', '1', '1', 'IX', 'IY', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 minimizing-effect=true
-modaldialog-close=['|', 'T', 'Slide Up', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '0', '1.0', '1.0', '0.0', '-0.2', '0.0', '0.0', '0.0', '0.0', 'easeInCubic']
-modaldialog-movestart=['|', 'T', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '220', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-modaldialog-open=['|', 'T', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0.0', '-0.2', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.2', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-moving-effect=false
+modaldialog-close=['|', 'T', 'Slide Up', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '0', '1.0', '1.0', '0.0', '-0.2', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
+modaldialog-movestart=['|', 'T', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '220', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+modaldialog-open=['|', 'T', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0.0', '-0.2', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.2', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+moving-effect=true
 name-list=@as []
-normal-close=['|', 'T', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '0', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-normal-focus=['|', 'F', 'Inflate', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.025', '255', '1.02', '1.02', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.5', '0.5', '0.0', '0.0', '0.0', '0.025', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeInCubic']
-normal-minimize=['|', 'T', 'Scale Auto In', '1', '0.0', '0.0', '0', '0', '0', '0.250', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'easeInCubic']
-normal-movestart=['|', 'T', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '220', '.9999', '.9999', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-normal-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-normal-unminimize=['|', 'T', 'Scale Auto Out', '2', '0.0', '0.0', '0', '0', '0', '0.001', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0', '0', '0', '0.250', '255', '1', '1', 'IX', 'IY', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-notificationbanner-close=['|', 'T', 'Slide Up', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '0', '1.0', '1.0', '0.0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'easeInCubic']
-notificationbanner-open=['|', 'T', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0.0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.1', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
+normal-close=['|', 'F', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '0', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '|', 'F', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '0', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+normal-minimize=['|', 'T', 'Scale Auto In', '1', '0.0', '0.0', '0', '0', '0', '0.250', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC', '|', 'T', 'Scale Auto In', '1', '0.0', '0.0', '0', '0', '0', '0.250', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
+normal-movestart=['|', 'T', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '220', '.9999', '.9999', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+normal-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+normal-unminimize=['|', 'T', 'Scale Auto Out', '2', '0.0', '0.0', '0', '0', '0', '0.001', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0', '0', '0', '0.250', '255', '1', '1', 'IX', 'IY', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '|', 'T', 'Scale Auto Out', '2', '0.0', '0.0', '0', '0', '0', '0.001', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0', '0', '0', '0.250', '255', '1', '1', 'IX', 'IY', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+notificationbanner-close=['|', 'T', 'Slide Up', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '0', '1.0', '1.0', '0.0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
+notificationbanner-open=['|', 'T', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '-0.02', '0.08', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 notificationbanner-pos='right'
 opening-effect=true
-overrideother-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.5', '0.5', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-padosd-close=['|', 'F', 'Scale Up', '1', '0.0', '1.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-padosd-open=['|', 'F', 'Slide Up', '3', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0.0', '0.2', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-popupmenu-open=['|', 'T', 'Scale Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '0.5', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.0', '0.0', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
+overrideother-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+padosd-open=['|', 'F', 'Slide Up', '3', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0.0', '0.2', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 reload-profiles-signal=false
 reload-signal=true
-tooltip-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic', '0.5', '0.5', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'easeOutCubic']
-toppanelpopupmenu-open=['|', 'F', 'Scale Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '0.5', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+tooltip-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '0.001', '128', '0.7', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '0.250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+toppanelpopupmenu-open=['|', 'T', 'Slide Up', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '0.001', '0', '1.0', '1.0', '0.0', '0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '0.300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 unminimizing-effect=true
+use-application-profiles=true
 wayland=true
 
-[shell/extensions/bingwallpaper]
-download-folder='/home/hritwik/Pictures/BingWallpaper/'
-icon-name='bing-light'
-market='en-US'
-previous='/home/hritwik/Pictures/BingWallpaper/20200929-LaragangaMoth_EN-IN5370273001_1920x1080.jpg,/home/hritwik/Pictures/BingWallpaper/20200930-SingaporeLanterns_EN-IN5674783716_1920x1080.jpg,/home/hritwik/Pictures/BingWallpaper/20201001-SingaporeLanterns_ROW0991793752_1920x1080.jpg,/home/hritwik/Pictures/BingWallpaper/20201001-SingaporeLanterns_EN-US2165733985_1920x1080.jpg,/home/hritwik/Pictures/BingWallpaper/20200930-SingaporeLanterns_EN-GB4159372327_1920x1080.jpg,/home/hritwik/Pictures/BingWallpaper/20200930-SingaporeLanterns_DE-DE4364932345_1920x1080.jpg,/home/hritwik/Pictures/BingWallpaper/20200930-SingaporeLanterns_EN-AU6640078209_1920x1080.jpg,/home/hritwik/Pictures/BingWallpaper/20201001-SingaporeLanterns_EN-CA4812935849_1920x1080.jpg'
-previous-days=7
-resolution='auto'
+[shell/extensions/arcmenu]
+arc-menu-placement='DTP'
+available-placement=[false, true, false]
+custom-menu-button-icon-size=32.0
+distro-icon=3
+dtp-dtd-state=[true, false]
+enable-menu-button-arrow=false
+menu-button-appearance='Icon'
+menu-button-icon='Distro_Icon'
+menu-layout='Mint'
+mint-pinned-app-list=['Firefox', 'firefox', 'firefox.desktop', 'Terminal', 'utilities-terminal', 'org.gnome.Terminal.desktop', 'Settings', 'emblem-system-symbolic', 'gnome-control-center.desktop', 'Software', 'system-software-install-symbolic', 'org.manjaro.pamac.manager.desktop', 'Files', 'system-file-manager', 'org.gnome.Nautilus.desktop', 'Log Out', 'application-exit-symbolic', 'ArcMenu_LogOut', 'Lock', 'changes-prevent-symbolic', 'ArcMenu_Lock', 'Power Off', 'system-shutdown-symbolic', 'ArcMenu_PowerOff']
+multi-monitor=false
+pinned-app-list=['Firefox', '', 'firefox.desktop', 'Terminal', '', 'org.gnome.Terminal.desktop', 'ArcMenu Settings', 'ArcMenu_ArcMenuIcon', 'gnome-extensions prefs arcmenu@arcmenu.com']
+recently-installed-apps=['cups.desktop', 'nm-connection-editor.desktop', 'org.onlyoffice.desktopeditors.desktop', 'sublime_text.desktop', 'org.gnome.Music.desktop', 'gnote.desktop', 'UserFeedbackConsole.desktop', 'org.gnome.eog.desktop', 'htop.desktop', 'org.kde.kate.desktop', 'libreoffice-calc.desktop', 'conky.desktop', 'libreoffice-writer.desktop', 'libreoffice-math.desktop', 'libreoffice-base.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-impress.desktop', 'libreoffice-draw.desktop', 'jconsole-java-openjdk.desktop', 'jshell-java-openjdk.desktop', 'org.gnome.tweaks.desktop', 'thunderbird.desktop', 'nemo.desktop', 'xreader.desktop', 'gprename.desktop', 'wireshark.desktop', 'vlc.desktop', 'com.github.hluk.copyq.desktop', 'org.qbittorrent.qBittorrent.desktop', 'org.flameshot.Flameshot.desktop', 'electron6.desktop', 'atom.desktop', 'com.obsproject.Studio.desktop', 'signal-desktop.desktop', 'org.gnome.Boxes.desktop', 'virt-manager.desktop', 'telegramdesktop.desktop', 'whatsapp-for-linux.desktop', 'bing-wall_bing-wall.desktop', 'wonderwall_wonderwall.desktop']
+ubuntu-dash-pinned-app-list=['Home', 'ArcMenu_Home', 'ArcMenu_Home', 'Documents', 'ArcMenu_Documents', 'ArcMenu_Documents', 'Downloads', 'ArcMenu_Downloads', 'ArcMenu_Downloads', 'Software', 'system-software-install-symbolic', 'org.manjaro.pamac.manager.desktop', 'Files', 'system-file-manager', 'org.gnome.Nautilus.desktop', 'Log Out', 'application-exit-symbolic', 'ArcMenu_LogOut', 'Lock', 'changes-prevent-symbolic', 'ArcMenu_Lock', 'Power Off', 'system-shutdown-symbolic', 'ArcMenu_PowerOff']
 
 [shell/extensions/cpufreq]
-color-show=true
-color-show-custom=true
-event-profiles='[{"percent":0,"event":0,"guid":"user"},{"percent":69,"event":1,"guid":"balanced"}]'
-governors-show=false
-label-show=false
-load-show=false
 profile-id='performance'
 save-settings=true
-user-profile='{"name":"Saved settings","minf":56,"maxf":100,"turbo":true,"cpu":8,"acpi":false,"guid":"user","core":[{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000},{"g":"performance","a":400000,"b":3400000}]}'
+user-profile='{"name":"Saved settings","minf":11,"maxf":100,"turbo":true,"cpu":8,"acpi":false,"guid":"user","core":[{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000}]}'
 window-height=720
 window-maximized=false
-window-width=626
+window-width=565
 window-x=0
 window-y=0
 
@@ -541,7 +437,8 @@ show-mounts=false
 [shell/extensions/dash-to-panel]
 appicon-margin=2
 appicon-padding=7
-available-monitors=[0]
+available-monitors=[0, 1]
+check-update=true
 click-action='CYCLE-MIN'
 desktop-line-use-custom-color=false
 dot-color-1='#1eaec7'
@@ -573,9 +470,10 @@ isolate-workspaces=true
 leave-timeout=25
 leftbox-padding=-1
 middle-click-action='LAUNCH'
-overview-click-to-exit=false
-panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
-panel-positions='{"0":"BOTTOM"}'
+multi-monitors=true
+overview-click-to-exit=true
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-position='BOTTOM'
 panel-size=40
 preview-custom-opacity=60
 preview-use-custom-opacity=true
@@ -586,23 +484,24 @@ secondarymenu-contains-showdetails=false
 shift-click-action='MINIMIZE'
 shift-middle-click-action='LAUNCH'
 show-appmenu=false
+show-running-apps=true
 show-showdesktop-delay=200
 show-showdesktop-hover=true
 show-showdesktop-time=200
 show-window-previews-timeout=25
 showdesktop-button-width=5
-status-icon-padding=2
+status-icon-padding=4
 stockgs-force-hotcorner=false
 stockgs-keep-dash=false
 stockgs-keep-top-panel=false
 stockgs-panelbtn-click-only=true
-taskbar-locked=true
-trans-panel-opacity=0.69000000000000006
+taskbar-locked=false
+trans-panel-opacity=0.55000000000000004
 trans-use-custom-bg=true
 trans-use-custom-gradient=false
 trans-use-custom-opacity=true
 trans-use-dynamic-opacity=true
-tray-padding=2
+tray-padding=4
 tray-size=0
 window-preview-animation-time=180
 window-preview-aspect-ratio-x=19
@@ -611,10 +510,6 @@ window-preview-hide-immediate-click=true
 window-preview-show-title=true
 window-preview-size=150
 window-preview-title-font-color='#dddddd'
-
-[shell/extensions/desktop-icons]
-icon-size='standard'
-show-home=true
 
 [shell/extensions/extendedgestures]
 down-three-action='overview'
@@ -626,6 +521,27 @@ right-three-action='go-back'
 up-three-action='overview'
 up-three-swipes=true
 vertical-sensitivity-adjustment=50
+
+[shell/extensions/materialshell/layouts]
+default-layout='half'
+float=false
+half=true
+ratio-value=0.54999999999999993
+split=false
+windows-excluded='Enpass,Gnome-layout-switcher'
+
+[shell/extensions/materialshell/theme]
+clock-horizontal=true
+primary-color='#2eb398'
+taskbar-item-style='name'
+
+[shell/extensions/multi-monitors-add-on]
+available-indicators=@as []
+show-activities=false
+show-app-menu=false
+show-date-time=false
+show-indicator=false
+show-panel=false
 
 [shell/extensions/net/gfxmonk/impatience]
 speed-factor=0.62
@@ -643,55 +559,43 @@ x-res=false
 y-pos=77.799999999999997
 y-res=false
 
-[shell/extensions/user-theme]
-name='Yaru-Blue-dark'
+[shell/extensions/pop-shell]
+focus-down=['<Super>s']
+focus-left=['<Super>a']
+focus-right=['<Super>d']
+focus-up=['<Super>w']
+gap-inner=uint32 0
+gap-outer=uint32 0
+hint-color-rgba='rgb(0,135,135)'
+show-title=true
+tile-by-default=false
 
-[shell/keybindings]
-switch-to-application-1=['<Super>1']
-switch-to-application-2=['<Super>2']
-switch-to-application-3=['<Super>3']
-switch-to-application-4=['<Super>4']
-switch-to-application-5=['<Super>5']
-switch-to-application-6=['<Super>6']
-switch-to-application-7=['<Super>7']
-switch-to-application-8=['<Super>8']
-switch-to-application-9=['<Super>9']
+[shell/extensions/user-theme]
+name='Matcha-dark-sea'
+
+[shell/extensions/windowoverlay-icons]
+icon-horizontal-alignment='middle'
+icon-size=100
+icon-size-relative=false
+icon-vertical-alignment='middle'
+
+[shell/overrides]
+workspaces-only-on-primary=false
 
 [shell/weather]
 automatic-location=true
 locations=[<(uint32 2, <('Agra', 'VIAG', true, [(0.47398779161036003, 1.3606732234474483)], [(0.47438049069205873, 1.3617058824059758)])>)>]
 
 [shell/world-clocks]
-locations=[<(uint32 2, <('Pittsburgh', 'KAGC', true, [(0.7043227676269912, -1.394896232832499)], [(0.70582205781433183, -1.3961915987500364)])>)>]
-
-[software]
-check-timestamp=int64 1609980740
-online-updates-timestamp=int64 1609981421
+locations=@av []
 
 [system/location]
 enabled=false
 
-[terminal/legacy]
-mnemonics-enabled=false
+[terminal/legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
 
 [terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-background-color='rgb(26,26,26)'
-background-transparency-percent=11
-bold-color-same-as-fg=true
-default-size-columns=100
-default-size-rows=30
-foreground-color='rgb(211,215,207)'
-highlight-colors-set=false
-palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
-use-system-font=false
+default-size-columns=130
+default-size-rows=25
 use-theme-colors=false
-use-theme-transparency=false
-use-transparent-background=true
-visible-name='Ubuntu'
-
-[todo]
-default-provider='local'
-view='grid'
-window-maximized=false
-window-position=[26, 23]
-window-size=[800, 600]

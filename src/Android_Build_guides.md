@@ -147,7 +147,7 @@
 
 ```sh
 
-sudo pacman -S yay android-tools android-udev
+sudo pacman -S base-devel yay android-tools android-udev
 sudo usermod -a -G adbusers $USER
 newgrp adbusers
 

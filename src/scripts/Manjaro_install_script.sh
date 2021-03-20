@@ -11,7 +11,7 @@ printf "\n\n\n-------------------------Insatlling Apps-------------------------\
 
 printf "\n-------------------------Install--extras-------------------------\n"
 
-sudo pacman -S --noconfirm exfat-utils ntfs-3g
+sudo pacman -S --noconfirm exfat-utils ntfs-3g 
 sudo pacman -S --noconfirm filezilla git rar unrar p7zip
 sudo pacman -S --noconfirm gnome-music gnote gnome-weather gnome-clocks
 sudo pacman -S --noconfirm kate dconf-editor net-tools curl eog
@@ -19,7 +19,7 @@ sudo pacman -S --noconfirm nautilus-admin htop
 
 sudo pacman -S --noconfirm libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
-sudo pacman -S --noconfirm yay qt5-wayland qt6-wayland
+sudo pacman -S --noconfirm yay qt5-wayland qt6-wayland base-devel android-tools android-udev
 yay -S --noconfirm paru
 
 # ADB
@@ -46,6 +46,8 @@ sudo pacman -S --noconfirm jre-openjdk jdk-openjdk
 
 printf "\n-------------------------Install--Timeshift-------------------------\n"
 sudo pacman -S --noconfirm timeshift
+sudo systemctl enable cronie
+sudo systemctl start cronie
 
 printf "\n-------------------------Install--nmcli-------------------------\n"
 sudo pacman -S --noconfirm networkmanager
@@ -107,7 +109,7 @@ sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
 printf "\n-------------------------Install--PulseEffects-------------------------\n"
-sudo pacman -S --noconfirm pulseeffects
+sudo pacman -S --noconfirm manjaro-pipewire gst-plugin-pipewire pulseeffects
 
 printf "\n-------------------------Install--uget-------------------------\n"
 
@@ -198,17 +200,16 @@ printf "\n----------------------------------------------------------------------
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
 
+echo GRUB_DISABLE_OS_PROBER=false|sudo tee -a /etc/default/grub && sudo update-grub
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
 echo "alias ll='ls -alh --color'" | sudo tee -a /home/hritwik/.zshrc
-source ~/.zshrc
-
-sudo systemctl enable cronie
-sudo systemctl start cronie
+source ~/.zshrc		# this does not work in script, do this manually
 
 sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer
 
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
@@ -219,8 +220,8 @@ gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift
 
 echo "" | sudo tee -a /etc/environment
 echo "DRI_PRIME=1" | sudo tee -a /etc/environment
-echo "" | sudo tee -a /etc/environment
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
+# echo "export QT_STYLE_OVERRIDE=kvantum" | sudo tee -a /etc/environment # already present in manjaro
 
 # for force qt5 to use wayland
 echo "" | sudo tee -a /etc/environment
@@ -228,8 +229,6 @@ echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
 # Below is for sway WM
 # sudo pacman -S --noconfirm qt5ct
 # echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
-
-echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
 
 printf "\n--------------------------Tweaks---Telegram-------------------------\n"

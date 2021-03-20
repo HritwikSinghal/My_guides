@@ -11,43 +11,24 @@
 
 ## Todo
 
-- Setup thunderbird (and backup it like FF)
-
-- Firefox Setup (and desktop icons)
-	- write script to install firefox nightly 
-
-- [Enable Os-prober](https://forum.manjaro.org/t/stable-update-2021-03-08-kernels-plasma-5-21-2-haskell-kodi-grub-kde-dev/56877)
-	- If you need dual-boot you can reactivate os-prober the easiest with the following command combination in a terminal
-    	```sudo echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub && sudo update-grub```
-
-- for pulseeffects
-	- pamac install manjaro-pipewire
-	- pamac install gst-plugin-pipewire
-
 - disable quiet boot so that when press 'del' key on boot it shows info
-- change f8 key to lock (Done when changing keyboard layout)
-	- Update: this is fixed when replacing keyboard layout
-	
-- If terminal wont open after changing language to EN-IN
-	- https://forum.manjaro.org/t/gnome-terminal-wont-open-after-update/52808
+-  to display advanced option in grub, and also disable quiet boot.
+	- sudo nano /etc/default/grub
+	- Comment "GRUB_TIMEOUT_STYLE=hidden"
+	- remove quiet from "GRUB_CMDLINE_LINUX_DEFAULT="
+	- sudo update-grub
 
-- enable snap, flatpak, AUR support via terminal
-- add keyboard shortcut for terminal, system-monitor
-- change "alternate characters Key" from "Right Alt" to "Right Super" (go to keyboard shortcuts settings)
-- [Install Ruby gems system-wide](https://wiki.archlinux.org/index.php/ruby#Installing_Ruby)
+- For gdm issues
+	- https://forum.manjaro.org/t/login-screen-not-showing-on-startup/16847/6
+	- https://bbs.archlinux.org/viewtopic.php?id=257421
+	- https://wiki.archlinux.org/index.php/Kernel_mode_setting
+	- https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
 
-- [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
-- [x] [Fix auto backups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
-
-- If vlc is not playing video, try https://bbs.archlinux.org/viewtopic.php?id=252113
-
-- Install Just perfection Extension in gnome 40 to increase workspace size in overview
-
-- Increase terminal size to 100x30 and change its color and shortcuts
-
-- Add shortcuts
-    - Calc (F7)
-    - System monitor (ctrl+shift+Esc 'gnome-system-monitor')
+	- In short do
+	- sudo nano /etc/mkinitcpio.conf
+	- Add the required module for the 'video driver' to the MODULES array: 
+		- so add 'intel_agp i915 amdgpu' to MODULES
+	- sudo mkinitcpio -P
 
 
 
@@ -55,7 +36,18 @@
 - [increase Swap file by 6144 MB](https://askubuntu.com/questions/927854/how-do-i-increase-the-size-of-swapfile-without-removing-it-in-the-terminal)
     - https://linuxhint.com/change_swap_size_ubuntu/
 - [create swap partiton](https://wiki.manjaro.org/index.php/Swap)
+
+
 - enable hibernate (use Arch wiki)
+	- Manjaro has hibernate option if i create swap partition > RAM
+	
+	OR
+	
+	- sudo pacman -S hibernator
+	- sudo hibernator
+
+	OR
+	
 	- https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation
 	- https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
 	
@@ -65,6 +57,89 @@
 	- https://forum.manjaro.org/t/howto-disable-turn-off-hibernate-completely/8033
 	
 	- add hibernate shortcut or install gnome extension
+	
+	OR
+	
+	- in "/etc/default/grub" in line "GRUB_CMDLINE_LINUX_DEFAULT" do 
+	```
+	The kernel parameter resume=swap_device must be used. Any of the persistent block device naming methods can be used as swap_device. For example:
+    resume=UUID=4209c845-f495-4c43-8a03-5363dd433153
+    resume="PARTLABEL=Swap partition"
+    resume=/dev/archVolumeGroup/archLogicalVolume
+    ```
+    # basically add "resume=UUID=4209c845-f495-4c43-8a03-5363dd433153"
+    # Then Configure the initramfs
+    ```
+    When an initramfs with the base hook is used, which is the default, the resume hook is required in /etc/mkinitcpio.conf. Whether by label or by UUID, the swap partition is referred to with a udev device node, so the resume hook must go after the udev hook. This example was made starting from the default hook configuration:
+    HOOKS=(base udev autodetect keyboard modconf block filesystems resume fsck)
+    Remember to regenerate the initramfs for these changes to take effect.
+    ```
+    Then regenerate the initramfs for these changes to take effect.
+    https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
+    do ```sudo mkinitcpio -P```
+
+
+
+- [Enable Os-prober](https://forum.manjaro.org/t/stable-update-2021-03-08-kernels-plasma-5-21-2-haskell-kodi-grub-kde-dev/56877)
+	- If you need dual-boot you can reactivate os-prober the easiest with the following command combination in a terminal
+    	```sudo echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub && sudo update-grub```
+
+- If terminal wont open after changing language to EN-IN in manjaro setting manager
+	- https://forum.manjaro.org/t/gnome-terminal-wont-open-after-update/52808
+
+
+- change f8 key to lock (Done when changing keyboard layout)
+	- Update: this is fixed when replacing keyboard layout
+	- also does not occur when chosing English india as lang.
+
+- change "alternate characters Key" from "Right Alt" to "Right Super" (go to keyboard shortcuts settings)
+
+
+- Increase terminal size to 100x30 and change its color and shortcuts
+
+- Add shortcuts
+    - Calc (F7)
+    - System monitor (ctrl+shift+Esc 'gnome-system-monitor')
+    - terminal (ctrl + alt + t)
+
+- If vlc is not playing video, try https://bbs.archlinux.org/viewtopic.php?id=252113
+
+- Install Just perfection Extension in gnome 40 to increase workspace size in overview
+
+
+- some Qt tweaks to put in /etc/env
+	QT_AUTO_SCREEN_SCALE_FACTOR=1
+	QT_QPA_PLATFORMTHEME="gnome"
+	QT_STYLE_OVERRIDE="kvantum"
+	QT_QPA_PLATFORM=wayland
+
+
+
+
+
+
+- In ```~/Templates```, there are various templates, add more
+
+- Setup thunderbird (and backup it like FF)
+
+- Firefox Setup (and desktop icons)
+	- write script to install firefox nightly 
+
+- enable snap, flatpak, AUR support via terminal
+
+- [x] [Install Ruby gems system-wide](https://wiki.archlinux.org/index.php/ruby#Installing_Ruby)
+
+- [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
+
+- [x] [Fix auto backups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
+
+
+- [x] for pulseeffects
+	- pamac install manjaro-pipewire
+	- pamac install gst-plugin-pipewire
+
+
+
 
 
 - chaotic aur 

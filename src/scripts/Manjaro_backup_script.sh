@@ -15,7 +15,8 @@ set -e
     # https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610 (for directories)
     # "~/.config/gnome-boxes" and ".config/libvirt/"
 # downloads and other folders
-# bash history and bashrc
+# zsh history and zshrc
+# pycharm and clion settings
 
 
 # Todo Bring uniformity, make backups from /home/hritwik

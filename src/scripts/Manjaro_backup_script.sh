@@ -16,7 +16,7 @@ set -e
     # "~/.config/gnome-boxes" and ".config/libvirt/"
 # downloads and other folders
 # zsh history and zshrc
-# pycharm and clion settings
+# pycharm and clion settings & toolbox settings
 
 
 # Todo Bring uniformity, make backups from /home/hritwik

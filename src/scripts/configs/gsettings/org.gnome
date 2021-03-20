@@ -20,9 +20,9 @@ save-state=true
 save-to-tags=true
 shown-album-lists=[-2, -3, -4, -5, -8, -11, -16, -103, -99]
 shuffle=false
-volume-rate=0.558258056640625
+volume-rate=1.0
 window-maximized=false
-window-position=[26, 23]
+window-position=[23, 15]
 window-size=[1042, 802]
 
 [Weather]
@@ -115,6 +115,9 @@ application-id='firefox.desktop'
 [desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
 
+[desktop/notifications/application/jetbrains-toolbox]
+application-id='jetbrains-toolbox.desktop'
+
 [desktop/notifications/application/manjaro-settings-manager]
 application-id='manjaro-settings-manager.desktop'
 
@@ -176,6 +179,13 @@ button-layout=':minimize,maximize,close'
 focus-mode='click'
 mouse-button-modifier='<Super>'
 num-workspaces=8
+
+[eog/ui]
+sidebar=false
+
+[eog/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
 
 [evolution-data-server]
 migrated=true
@@ -359,7 +369,7 @@ app-picker-layout=[{'system-tools': <{'position': <0>}>, 'accessories': <{'posit
 disable-user-extensions=false
 disabled-extensions=['dash-to-dock@micxgx.gmail.com', 'ding@rastersoft.com', 'arcmenu@arcmenu.com', 'pamac-updates@manjaro.org', 'pop-shell@system76.com']
 enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'dash-to-panel@jderose9.github.com', 'animation-tweaks@Selenium-H', 'cpufreq@konkor', 'multi-monitors-add-on@spin83', 'noannoyance@sindex.com', 'transparentnotification@ipaq3870', 'windowoverlay-icons@sustmidown.centrum.cz']
-favorite-apps=['firefox.desktop', 'nemo.desktop', 'org.gnome.Terminal.desktop']
+favorite-apps=['firefox.desktop', 'thunderbird.desktop', 'org.gnome.Lollypop.desktop', 'nemo.desktop', 'org.gnome.Terminal.desktop', 'org.qbittorrent.qBittorrent.desktop', 'jetbrains-clion.desktop', 'telegramdesktop.desktop', 'whatsapp-for-linux.desktop', 'signal-desktop.desktop', 'jetbrains-pycharm.desktop', 'sublime_text.desktop', 'org.gnome.Boxes.desktop', 'virt-manager.desktop']
 
 [shell/extensions/animation-tweaks]
 application-list=@as []
@@ -414,12 +424,12 @@ recently-installed-apps=['cups.desktop', 'nm-connection-editor.desktop', 'org.on
 ubuntu-dash-pinned-app-list=['Home', 'ArcMenu_Home', 'ArcMenu_Home', 'Documents', 'ArcMenu_Documents', 'ArcMenu_Documents', 'Downloads', 'ArcMenu_Downloads', 'ArcMenu_Downloads', 'Software', 'system-software-install-symbolic', 'org.manjaro.pamac.manager.desktop', 'Files', 'system-file-manager', 'org.gnome.Nautilus.desktop', 'Log Out', 'application-exit-symbolic', 'ArcMenu_LogOut', 'Lock', 'changes-prevent-symbolic', 'ArcMenu_Lock', 'Power Off', 'system-shutdown-symbolic', 'ArcMenu_PowerOff']
 
 [shell/extensions/cpufreq]
-profile-id='performance'
+profile-id='user'
 save-settings=true
 user-profile='{"name":"Saved settings","minf":11,"maxf":100,"turbo":true,"cpu":8,"acpi":false,"guid":"user","core":[{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000},{"g":"powersave","a":400000,"b":3400000}]}'
 window-height=720
 window-maximized=false
-window-width=565
+window-width=613
 window-x=0
 window-y=0
 

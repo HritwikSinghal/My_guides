@@ -11,6 +11,7 @@
 
 ## Todo
 
+- 
 - disable quiet boot so that when press 'del' key on boot it shows info
 -  to display advanced option in grub, and also disable quiet boot.
 	- sudo nano /etc/default/grub
@@ -84,7 +85,7 @@
 	- If you need dual-boot you can reactivate os-prober the easiest with the following command combination in a terminal
     	```sudo echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub && sudo update-grub```
 
-- If terminal wont open after changing language to EN-IN in manjaro setting manager
+- If terminal wont open after changing language, add the language (EN-IN) again in manjaro setting manager.
 	- https://forum.manjaro.org/t/gnome-terminal-wont-open-after-update/52808
 
 
@@ -113,7 +114,7 @@
 	QT_STYLE_OVERRIDE="kvantum"
 	QT_QPA_PLATFORM=wayland
 
-
+- for startup fixes see [this](https://forum.manjaro.org/t/solved-trouble-setting-up-a-startup-command/37323/15). This thread is also awesome, read whole convo.
 
 
 

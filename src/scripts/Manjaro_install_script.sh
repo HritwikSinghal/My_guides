@@ -169,7 +169,10 @@ printf "\n-------------------------Install--Xanmod-------------------------\n"
 
 printf "\n-------------------------Install--gnome-boxes & virt-manager-------------------------\n"
 sudo pacman -S --noconfirm gnome-boxes virt-manager ebtables
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
 sudo systemctl restart libvirtd
+
 
 printf "\n-------------------------Install--jetbrains-------------------------\n"
 # sudo snap install pycharm-community --classic
@@ -424,7 +427,7 @@ printf "\n\n\n-------------------------Finished Successfully--------------------
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"
 printf "\n--------------------------Final---Fusuma-add-user-to-input-group-------------------------\n"
-sudo gpasswd -a hritwik input
+sudo gpasswd -a -G input hritwik
 newgrp input
 sudo usermod -a -G libvirt hritwik
 newgrp libvirt

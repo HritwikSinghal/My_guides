@@ -121,14 +121,14 @@ printf "\n-------------------------Install--Flameshot-------------------------\n
 sudo pacman -S --noconfirm flameshot
 
 printf "\n-------------------------Install--fusuma-------------------------\n"
-# change setting to install systemwide first. 
-# https://wiki.archlinux.org/index.php/ruby#Installing_Ruby
+sudo pacman -S --noconfirm ruby libinput
 sudo sed -i "s/gem: --user-install/gem: --no-user-install/g" /etc/gemrc
 
-sudo pacman -S --noconfirm ruby libinput
 sudo gem install fusuma
+sudo gem install revdev
+sudo gem install bundler
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
-# ---
+# --- #
 printf "\n-------------------------Install--fusuma-gems-------------------------\n"
 sudo pacman -S --noconfirm libevdev base-devel
 sudo gem install fusuma-plugin-sendkey
@@ -427,7 +427,7 @@ printf "\n\n\n-------------------------Finished Successfully--------------------
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"
 printf "\n--------------------------Final---Fusuma-add-user-to-input-group-------------------------\n"
-sudo gpasswd -a -G input hritwik
+sudo gpasswd -a hritwik input
 newgrp input
 sudo usermod -a -G libvirt hritwik
 newgrp libvirt

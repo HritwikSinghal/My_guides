@@ -44,8 +44,9 @@
 
 - [Fix secondary monitor display](https://wayneoutthere.com/2018/12/29/how-to-fix-wrong-monitor-display-ubuntu/)
     - rm .config/monitors.xml
+    - or maybe the problem is that dash to panel shows itself on 2nd monitor
 
-- Switch to wayland
+- Switch to wayland (to be removed when wayland becomes def in ubuntu LTS and other major distros)
     - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
 
 - [set su passwd](https://askubuntu.com/questions/155278/how-do-i-set-the-root-password-so-i-can-use-su-instead-of-sudo)
@@ -69,6 +70,10 @@
 - Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
     - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
 
+
+- Dotfiles
+    - https://github.com/iberianpig/dotfiles
+    - https://github.com/search?q=dotfiles
 
 - [Linux Wifi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 

@@ -99,6 +99,16 @@
 	- fix aac decoding on A11 roms with A10 vendor
 		- https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024f289772960f3cd7072fa940
 
+	- Prox
+		- Revert this (not verified) [X2: disable proximity check on doze pulse](https://github.com/dev-harsh1998/android_device_realme_X2/commit/c51245c2b894b013b038cbc5ec8efea3c8df3040#diff-ff523737aef51cebc6be345dce58273042f461c8d93583a2800e3b4cde30a0c3)
+		- dual proxy, add this in DT [RMX1921:overlay: enable AOSP dual proximity approach via overlay ](https://github.com/DerpFest-Devices/device_realme_RMX1921/commit/052e4ce3ef4fd1064a939b54404dae06d83a2d0c#)
+		- dual proxy, revert this in kernel https://github.com/HritwikSinghal/android_kernel_realme_sm6150/commit/cf3ff1ae2759fa806fa3b50fa42119f20074c3e3
+
+	- Wifi calling
+		- maybe; revert this in vendor [X2: stopship telephony common jar for now ](https://github.com/HritwikSinghal/vendor_realme_X2/commit/b9a8253a6900485882be9b1f9b73aec06adb30e8) 
+
+
+
 ### Errors
 
 - "Unrecognized check name".
@@ -128,6 +138,7 @@
 	OR
 	- https://stackoverflow.com/questions/45653879/android-o-api-26-root-app-not-recognized-as-priviledged
 
+- if ncurses lib not found error, try ```paru ncurses5-compat-libs```
 
 
 
@@ -239,7 +250,7 @@ time m aex -j$(nproc --all) | tee log.txt
 
 
 
-### 2. AICP
+### 2. AICP A11
 
 
 ```zsh
@@ -249,7 +260,7 @@ repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp device/realme/X2
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b aicp vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
+git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b android-11.0.0 kernel/realme/sm6150
 
 
 export USE_CCACHE=1
@@ -268,6 +279,7 @@ time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
 
 ### 3. CrDroid
 
+**Not updated**
 
 ```zsh
 mkdir crdroid && cd crdroid
@@ -290,6 +302,7 @@ time mka -j$(nproc --all) | tee log.txt
 
 ### 4. Havoc
 
+**Not updated**
 
 ```sh
 mkdir havoc && cd havoc
@@ -311,6 +324,7 @@ time mka -j$(nproc --all) | tee log.txt
 
 ### 5. LOS
 
+**Not updated**
 
 ```sh
 
@@ -331,7 +345,7 @@ time mka bacon -j$(nproc --all) | tee log.txt
 ```
 
 
-### 6. RR
+### 6. RR A10
 
 ```sh
 mkdir rr && cd rr
@@ -345,6 +359,7 @@ git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test k
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+export RR_BUILDTYPE=Unofficial
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
@@ -543,6 +558,7 @@ time mka bacon -j$(nproc --all) | tee log.txt
 	- gyro
 	- proximity
 	- compass
+- Vibration
 - Video Playback
 - Wifi & Hotspot
 	- 2.4Ghz & 5Ghz

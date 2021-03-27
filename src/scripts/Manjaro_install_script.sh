@@ -15,7 +15,7 @@ sudo pacman -S --noconfirm exfat-utils ntfs-3g
 sudo pacman -S --noconfirm filezilla git rar unrar p7zip
 sudo pacman -S --noconfirm gnome-music gnote gnome-weather gnome-clocks
 sudo pacman -S --noconfirm kate dconf-editor net-tools curl eog
-sudo pacman -S --noconfirm nautilus-admin htop
+sudo pacman -S --noconfirm nautilus-admin htop dnsutils
 
 sudo pacman -S --noconfirm libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -Rs --noconfirm onlyoffice-desktopeditors

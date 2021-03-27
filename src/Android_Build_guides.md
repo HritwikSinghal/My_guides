@@ -6,17 +6,21 @@
 	- Todo
 	- Notes & Saved
 	- Errors
+
 - Setup
 	- Manjaro
 	- Ubuntu
-- Sripts for Roms
-	- AEX
-	- AICP
-	- CrDroid
-	- Havoc
-	- LOS
-	- RR
 
+- Sripts for Roms
+	- Current
+		- AICP
+		- RR
+	- Stale
+		- AEX
+		- CrDroid
+		- Havoc
+		- LOS
+		
 - Guides
 - List of:
 	- Custom Roms
@@ -94,18 +98,22 @@
 	- Debugging Q during boot
 		- https://github.com/aoleary/device_lge_g4-common/commit/073490b8a5056d5d59c2bea04d6648f423db3a35
 
-	- If rom bootloops into fastboot, apply this to **SOURCE**
+	- If no FOD in LOS based roms, add fod 1.0 commits from RR manifest
+
+	- If rom bootloops into fastboot, apply this to **SOURCE**. This is about selinux
 		- https://github.com/CannedOS/external_selinux/commit/db56d38c06ca4514304eec771a14558b867ab2ff
 	- fix aac decoding on A11 roms with A10 vendor
 		- https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024f289772960f3cd7072fa940
 
-	- Prox
-		- Revert this (not verified) [X2: disable proximity check on doze pulse](https://github.com/dev-harsh1998/android_device_realme_X2/commit/c51245c2b894b013b038cbc5ec8efea3c8df3040#diff-ff523737aef51cebc6be345dce58273042f461c8d93583a2800e3b4cde30a0c3)
-		- dual proxy, add this in DT [RMX1921:overlay: enable AOSP dual proximity approach via overlay ](https://github.com/DerpFest-Devices/device_realme_RMX1921/commit/052e4ce3ef4fd1064a939b54404dae06d83a2d0c#)
-		- dual proxy, revert this in kernel https://github.com/HritwikSinghal/android_kernel_realme_sm6150/commit/cf3ff1ae2759fa806fa3b50fa42119f20074c3e3
+	- Prox A11
+		- for prox use A11 KT
+		- Dual Prox
+			- dual proxy, add this in DT [RMX1921:overlay: enable AOSP dual proximity approach via overlay ](https://github.com/DerpFest-Devices/device_realme_RMX1921/commit/052e4ce3ef4fd1064a939b54404dae06d83a2d0c#)
+			- dual proxy, revert this in kernel https://github.com/HritwikSinghal/android_kernel_realme_sm6150/commit/cf3ff1ae2759fa806fa3b50fa42119f20074c3e3
 
 	- Wifi calling
 		- maybe; revert this in vendor [X2: stopship telephony common jar for now ](https://github.com/HritwikSinghal/vendor_realme_X2/commit/b9a8253a6900485882be9b1f9b73aec06adb30e8) 
+		- or add this https://github.com/AOSP-Realme-X2/platform_vendor_codeaurora_telephony
 
 
 
@@ -226,8 +234,63 @@ source ~/.bashrc
 ## Scripts for roms
 
 
+### Current
 
-### 1. AEX
+#### AICP A11
+
+
+```zsh
+mkdir aicp && cd aicp
+repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
+repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
+
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp device/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b aicp vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b aicp kernel/realme/sm6150
+
+
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+
+
+chmod +x build/envsetup.sh
+source build/envsetup.sh
+time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
+
+
+```
+
+
+#### RR A10
+
+```sh
+mkdir rr && cd rr
+repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
+repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
+
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr_10 device/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b rr_10 vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b lineage-17.1 kernel/realme/sm6150
+
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+export RR_BUILDTYPE=Unofficial
+
+chmod +x build/envsetup.sh
+source build/envsetup.sh
+lunch rr_X2-userdebug
+time mka bacon -j$(nproc --all) | tee log.txt
+
+
+```
+
+
+
+### Stale
+
+#### AEX A11
 
 
 ```sh
@@ -250,34 +313,8 @@ time m aex -j$(nproc --all) | tee log.txt
 
 
 
-### 2. AICP A11
 
-
-```zsh
-mkdir aicp && cd aicp
-repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
-repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
-
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b aicp vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b android-11.0.0 kernel/realme/sm6150
-
-
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-
-
-chmod +x build/envsetup.sh
-source build/envsetup.sh
-time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
-
-
-```
-
-
-
-### 3. CrDroid
+#### CrDroid A11
 
 **Not updated**
 
@@ -300,7 +337,7 @@ time mka -j$(nproc --all) | tee log.txt
 ```
 
 
-### 4. Havoc
+####  Havoc A11
 
 **Not updated**
 
@@ -322,7 +359,7 @@ time mka -j$(nproc --all) | tee log.txt
 ```
 
 
-### 5. LOS
+####  LOS
 
 **Not updated**
 
@@ -339,31 +376,6 @@ git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test k
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 lunch lineage_X2-userdebug
-time mka bacon -j$(nproc --all) | tee log.txt
-
-
-```
-
-
-### 6. RR A10
-
-```sh
-mkdir rr && cd rr
-repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
-repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
-
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr_10 device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b rr_10 vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
-
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-export RR_BUILDTYPE=Unofficial
-
-chmod +x build/envsetup.sh
-source build/envsetup.sh
-lunch rr_X2-userdebug
 time mka bacon -j$(nproc --all) | tee log.txt
 
 
@@ -465,7 +477,7 @@ time mka bacon -j$(nproc --all) | tee log.txt
 
 - Derpfest
 - Descendent
-- Dirty Unicorn ROM 	- CAF based
+- Dirty Unicorn ROM 	- CAF based - DEAD
 - DotOS
 
 - EvolutionX 			- Gapps
@@ -484,6 +496,7 @@ time mka bacon -j$(nproc --all) | tee log.txt
 
 - MSMXtended			- CAF based
 
+- NusantaraProject-ROM
 - Nezuko OS 			- Gapps (PE based)
 - NitrogenOS
 

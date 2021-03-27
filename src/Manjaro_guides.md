@@ -66,6 +66,11 @@
 
 - for startup app fix see [this](https://forum.manjaro.org/t/solved-trouble-setting-up-a-startup-command/37323/15). This thread is also awesome, read whole convo.
 
+- for snap aaps fix
+	- ```
+	sudo rm /var/cache/fontconfig/*
+	rm ~/.cache/fontconfig/*
+	```
 
 
 

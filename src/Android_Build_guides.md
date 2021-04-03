@@ -145,6 +145,8 @@
 	- https://thealaskalinuxuser.wordpress.com/2019/08/29/e-zygote-java-lang-illegalstateexception-signatureprivileged-permissions-not-in-privapp-permissions-whitelist/
 	OR
 	- https://stackoverflow.com/questions/45653879/android-o-api-26-root-app-not-recognized-as-priviledged
+- error: Please update ABI references with: $ANDROID_BUILD_TOP/development/vndk/tools/header-checker/utils/create_reference_dumps.py
+	- export SKIP_ABI_CHECKS=true
 
 - if ncurses lib not found error, try ```paru ncurses5-compat-libs```
 
@@ -252,7 +254,7 @@ git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b ai
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-
+export SKIP_ABI_CHECKS=true
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh

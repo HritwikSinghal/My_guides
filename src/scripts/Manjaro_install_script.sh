@@ -203,6 +203,10 @@ printf "\n----------------------------------------------------------------------
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
 
+# fix for dual boot time issue
+timedatectl set-local-rtc 1
+
+
 echo GRUB_DISABLE_OS_PROBER=false|sudo tee -a /etc/default/grub && sudo update-grub
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'

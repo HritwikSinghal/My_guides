@@ -18,7 +18,16 @@ EXTRA_OPTS="-L /lib/i386-linux-gnu"
 echo "EXTRA_OPTS="-L /lib/i386-linux-gnu"" >> ~/.bashrc
 wget https://download.brother.com/welcome/dlf101917/hll2360dcupswrapper-3.2.0-1.i386.deb
 wget https://download.brother.com/welcome/dlf101916/hll2360dlpr-3.2.0-1.i386.deb
-sudo sed 's/^/#/g' /etc/ld.so.preload | sudo tee /etc/ld.so.preload
+sudo sed 's/^/#/g' /etc/ld.so.preload | sudo tee -a /etc/ld.so.preload
 sudo dpkg -i hll2360dcupswrapper-3.2.0-1.i386.deb
 sudo dpkg -i hll2360dlpr-3.2.0-1.i386.deb
 
+
+# Cups printing
+sudo usermod -a -G lpadmin pi
+
+
+# set custom resolution, this should work but dont know it it would
+echo "# force a specific HDMI mode (this will force VGA)" | sudo tee -a /boot/config.txt
+echo "hdmi_group=2" | sudo tee -a /boot/config.txt
+echo "hdmi_mode=82" | sudo tee -a /boot/config.txt

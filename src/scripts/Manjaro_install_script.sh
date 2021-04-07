@@ -11,16 +11,16 @@ printf "\n\n\n-------------------------Insatlling Apps-------------------------\
 
 printf "\n-------------------------Install--extras-------------------------\n"
 
-sudo pacman -S --noconfirm exfat-utils ntfs-3g 
-sudo pacman -S --noconfirm filezilla git rar unrar p7zip
-sudo pacman -S --noconfirm gnome-music gnote gnome-weather gnome-clocks
-sudo pacman -S --noconfirm kate dconf-editor net-tools curl eog
-sudo pacman -S --noconfirm nautilus-admin htop dnsutils
+sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
+sudo pacman -S --noconfirm --needed filezilla git rar unrar p7zip
+sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
+sudo pacman -S --noconfirm --needed kate dconf-editor net-tools curl eog
+sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils
 
-sudo pacman -S --noconfirm libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
-sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
-sudo pacman -S --noconfirm yay qt5-wayland qt6-wayland base-devel android-tools android-udev
-yay -S --noconfirm paru
+sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
+sudo pacman -Rs --noconfirm --needed onlyoffice-desktopeditors
+sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel android-tools android-udev
+yay -S --noconfirm --needed paru
 
 # ADB
 sudo pacman -S --no-confirm android-tools android-udev
@@ -34,7 +34,7 @@ pip3 install virtualenv youtube_dlc
 # sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
 
 # # extra codecs
-# sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv opus wavpack x264 xvidcore  --noconfirm
+# sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv opus wavpack x264 xvidcore  --noconfirm --needed
 
 
 
@@ -42,26 +42,26 @@ printf "\n-------------------------Install--Wine-------------------------\n"
 
 
 printf "\n-------------------------Install--java-------------------------\n"
-sudo pacman -S --noconfirm jre-openjdk jdk-openjdk
+sudo pacman -S --noconfirm --needed jre-openjdk jdk-openjdk
 
 printf "\n-------------------------Install--Timeshift-------------------------\n"
-sudo pacman -S --noconfirm timeshift
+sudo pacman -S --noconfirm --needed timeshift
 sudo systemctl enable cronie
 sudo systemctl start cronie
 
 printf "\n-------------------------Install--nmcli-------------------------\n"
-sudo pacman -S --noconfirm networkmanager
+sudo pacman -S --noconfirm --needed networkmanager
 sudo systemctl start NetworkManager.service
 sudo systemctl start NetworkManager.service
 
 printf "\n-------------------------Install--GNOME-tweak-tool and chrome-gnome-shell-------------------------\n"
-sudo pacman -S --noconfirm gnome-tweaks chrome-gnome-shell
+sudo pacman -S --noconfirm --needed gnome-tweaks chrome-gnome-shell
 
 printf "\n-------------------------Install--Kvantum-------------------------\n"
-sudo pacman -S --noconfirm kvantum-manjaro kvantum-qt5
+sudo pacman -S --noconfirm --needed kvantum-manjaro kvantum-qt5
 
 printf "\n-------------------------Install--Mozilla-------------------------\n"
-sudo pacman -S --noconfirm firefox thunderbird
+sudo pacman -S --noconfirm --needed firefox thunderbird
 # make script for firefox-trunk
 
 printf "\n-------------------------Install--Flatpack-------------------------\n"
@@ -73,55 +73,55 @@ printf "\n-------------------------Install--gdebi-------------------------\n"
 # Not needed
 
 printf "\n-------------------------Install--Nemo-------------------------\n"
-sudo pacman -S --noconfirm nemo
+sudo pacman -S --noconfirm --needed nemo
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 # add nemo to startup apps & disable desktop icon extension
 
-sudo pacman -S nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-compare nemo-media-columns nemo-pdf-tools nemo-preview  nemo-share --noconfirm
+sudo pacman -S nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-compare nemo-media-columns nemo-pdf-tools nemo-preview  nemo-share --noconfirm --needed
 
 cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
 sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
 
 printf "\n-------------------------Install--Lollypop-------------------------\n"
-sudo pacman -S --noconfirm lollypop
+sudo pacman -S --noconfirm --needed lollypop
 
 printf "\n-------------------------Install--GreenTunnel-------------------------\n"
-sudo pacman -S --noconfirm nodejs npm
+sudo pacman -S --noconfirm --needed nodejs npm
 sudo npm i -g green-tunnel
 
 printf "\n-------------------------Install--FreeTube-------------------------\n"
 # paru freetube
 
 printf "\n-------------------------Install--Wireshark-------------------------\n"
-sudo pacman -S --noconfirm wireshark-qt
+sudo pacman -S --noconfirm --needed wireshark-qt
 
 printf "\n-------------------------Install--VLC-------------------------\n"
-sudo pacman -S --noconfirm vlc
+sudo pacman -S --noconfirm --needed vlc
 
 printf "\n-------------------------Install--Copyq-------------------------\n"
-sudo pacman -S --noconfirm copyq
+sudo pacman -S --noconfirm --needed copyq
 
 printf "\n-------------------------Install--vnstat-------------------------\n"
-sudo pacman -S --noconfirm vnstat
+sudo pacman -S --noconfirm --needed vnstat
 sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
 printf "\n-------------------------Install--PulseEffects-------------------------\n"
-sudo pacman -S --noconfirm manjaro-pipewire gst-plugin-pipewire pulseeffects
+sudo pacman -S --noconfirm --needed manjaro-pipewire gst-plugin-pipewire pulseeffects
 
 printf "\n-------------------------Install--uget-------------------------\n"
 
 
 printf "\n-------------------------Install--qBittorrent-------------------------\n"
-sudo pacman -S --noconfirm qbittorrent
+sudo pacman -S --noconfirm --needed qbittorrent
 
 printf "\n-------------------------Install--Flameshot-------------------------\n"
-sudo pacman -S --noconfirm flameshot
+sudo pacman -S --noconfirm --needed flameshot
 
 printf "\n-------------------------Install--fusuma-------------------------\n"
-sudo pacman -S --noconfirm ruby libinput
+sudo pacman -S --noconfirm --needed ruby libinput
 sudo sed -i "s/gem: --user-install/gem: --no-user-install/g" /etc/gemrc
 
 sudo gem install fusuma
@@ -130,21 +130,21 @@ sudo gem install bundler
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 # --- #
 printf "\n-------------------------Install--fusuma-gems-------------------------\n"
-sudo pacman -S --noconfirm libevdev base-devel
+sudo pacman -S --noconfirm --needed libevdev base-devel
 sudo gem install fusuma-plugin-sendkey
 sudo gem install fusuma-plugin-keypress
 
-sudo pacman -S --noconfirm wmctrl
+sudo pacman -S --noconfirm --needed wmctrl
 sudo gem install fusuma-plugin-wmctrl
 sudo gem install fusuma-plugin-tap
 
 printf "\n-------------------------Install--fonts-manager-------------------------\n"
 
 printf "\n-------------------------Install--Atom-------------------------\n"
-sudo pacman -S --noconfirm atom
+sudo pacman -S --noconfirm --needed atom
 
 printf "\n-------------------------Install--obs-studio-------------------------\n"
-sudo pacman -S --noconfirm obs-studio
+sudo pacman -S --noconfirm --needed obs-studio
 
 printf "\n-------------------------Install--vscodium-------------------------\n"
 # paru vscodium-bin vscodium-bin-marketplace
@@ -152,10 +152,10 @@ printf "\n-------------------------Install--vscodium-------------------------\n"
 printf "\n-------------------------Install--Sublime-------------------------\n"
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-sudo pacman -Syu --noconfirm sublime-text
+sudo pacman -Syu --noconfirm --needed sublime-text
 
 printf "\n-------------------------Install--Signal-------------------------\n"
-sudo pacman -S --noconfirm signal-desktop
+sudo pacman -S --noconfirm --needed signal-desktop
 
 printf "\n-------------------------Install--youtube-dl-------------------------\n"
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
@@ -168,7 +168,7 @@ printf "\n-------------------------Install--Xanmod-------------------------\n"
 
 
 printf "\n-------------------------Install--gnome-boxes & virt-manager-------------------------\n"
-sudo pacman -S --noconfirm gnome-boxes virt-manager ebtables
+sudo pacman -S --noconfirm --needed gnome-boxes virt-manager ebtables
 sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
 sudo systemctl restart libvirtd
@@ -182,11 +182,11 @@ printf "\n-------------------------Install--jetbrains-------------------------\n
 # Use toolbox
 
 printf "\n-------------------------Install--telegram-------------------------\n"
-sudo pacman -S --noconfirm telegram-desktop
+sudo pacman -S --noconfirm --needed telegram-desktop
 
 
 printf "\n-------------------------Install--WhatsApp-------------------------\n"
-sudo pacman -S --noconfirm whatsapp-for-linux
+sudo pacman -S --noconfirm --needed whatsapp-for-linux
 # sudo snap install whatsdesk
 
 
@@ -237,7 +237,7 @@ echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 echo "" | sudo tee -a /etc/environment
 echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
 # Below is for sway WM
-# sudo pacman -S --noconfirm qt5ct
+# sudo pacman -S --noconfirm --needed qt5ct
 # echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
 
 

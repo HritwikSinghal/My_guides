@@ -1,6 +1,6 @@
 # RPI and Pihole.
 
-# ** Table of Contents **
+# **Table of Contents**
 - **Raspberry Pi**
 	- Todo
     	- Remove MS repo
@@ -122,7 +122,7 @@
 <details><summary>3. For Rpi</summary>
 <p>
 
-- [[TUTORIAL] Install Brother old drivers in Raspberry PI with QUEMU (pretty easy)](https://www.reddit.com/r/linux/comments/lfaox9/tutorial_install_brother_old_drivers_in_raspberry/)
+- [[TUTORIAL] Install Brother old drivers in Raspberry PI with QUEMU (pretty easy)](https://www.reddit.com/r/raspberry_pi/comments/lxheg5/tutorial_install_brother_old_drivers_in_raspberry/), (Old link)[https://www.reddit.com/r/linux/comments/lfaox9/tutorial_install_brother_old_drivers_in_raspberry/]
 	```
 	Hi, just managed to print from my Android device in my old DCP-197C and I want to share it with you
 

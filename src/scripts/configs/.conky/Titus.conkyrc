@@ -194,16 +194,16 @@ ${color2}Swap:${color} ${alignr}${offset -10}${swap} / ${swapmax}${alignr}${swap
 ${color5}${font font1:size=10}D R I V E S   ${hr 2}${font}${color}
 
 ${color2}Root :${color} ${alignr}${offset -10}${fs_used /} / ${fs_size /}${alignr}${fs_bar 12,130 /}
-${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda6}${alignr}${diskiograph_read sda6 12,130}
-${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda6}${alignr}${diskiograph_write /dev/sda6 12,130}
+${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/nvme0n1p3}${alignr}${diskiograph_read nvme0n1p3 12,130}
+${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/nvme0n1p3}${alignr}${diskiograph_write /dev/nvme0n1p3 12,130}
 
 ${color2}Home :${color} ${alignr}${offset -10}${fs_used /home} / ${fs_size /home}${alignr}${fs_bar 12,130 /home}
-${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda6}${alignr}${diskiograph_read /dev/sda6 12,130}
-${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda6}${alignr}${diskiograph_write /dev/sda6 12,130}
+${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/nvme0n1p4}${alignr}${diskiograph_read /dev/nvme0n1p4 12,130}
+${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/nvme0n1p4}${alignr}${diskiograph_write /dev/nvme0n1p4 12,130}
 
 ${color2}CR:${color} ${alignr}${offset -10}${fs_used /run/media/hritwik/CR}/${fs_size /run/media/hritwik/CR}${alignr}${fs_bar 12,130 /run/media/hritwik/CR}
-${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda8}${alignr}${diskiograph_read /dev/sda8 12,130}
-${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda8}${alignr}${diskiograph_write /dev/sda8 12,130}
+${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda5}${alignr}${diskiograph_read /dev/sda5 12,130}
+${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda5}${alignr}${diskiograph_write /dev/sda5 12,130}
 
 ${color2}HDD :${color} ${alignr}${offset -10}${fs_used /run/media/hritwik/HDD} / ${fs_size /run/media/hritwik/HDD}${alignr}${fs_bar 12,130 /run/media/hritwik/HDD}
 ${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sdb1}${alignr}${diskiograph_read /dev/sdb1 12,130}

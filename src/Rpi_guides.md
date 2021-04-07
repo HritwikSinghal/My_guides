@@ -1,15 +1,18 @@
 # RPI and Pihole.
 
-# ** Table of Contents **
-- ** Raspberry Pi **
-	- Notes
+# **Table of Contents**
+- **Raspberry Pi**
+	- Todo
     	- Remove MS repo
+    - Notes & Saved
+		- Nextcloud
+		- File storage server on Pi
     - Guides
 	    - Brother Printer Driver Installation
 		    - 1. For x86 & x64 Linux (Only DEB and RPM)
 		    - 2. For x86 & x64 Arch Based.
 		    - 3. For Rpi
-- ** Pihole **
+- **Pihole**
 	- Adlists
 	- Other Adlists Resources
 	- Jio Blocklist
@@ -20,14 +23,62 @@
 
 # Raspberry Pi
 
-##  Notes
+##  Todo
+
+
+- create a python or shell script to update ipv6
 
 - For editing static Ip address of Pi, Se dhcpcd config file. (/etc/dhcpcd.conf)
 
 - Remove MS repo from PI (coz Rpi foundation is a jerk)
 	- https://www.reddit.com/r/linux/comments/lbu0t1/microsoft_repo_installed_on_all_raspberry_pis/
 	- Maybe create a cron script for it.
+
 - [Install TigerVNC](https://atetux.com/how-to-install-tigervnc-server-on-ubuntu-20-04)
+
+
+
+--- 
+
+
+
+## Notes & Saved
+
+
+- [Homelab for Pi](https://www.youtube.com/watch?v=t3pwiFKGHMg)
+
+- [Building a PiHole for Privacy and Performance (From Flashing SD to Unbound config. Fail2Ban, Firewall, RPi-Monitor.)](https://thesmashy.medium.com/building-a-pihole-for-privacy-and-performance-f762dbcb66e5)
+
+- [open source face recognition Raspberry Pi camera](https://github.com/SharpAI/DeepCamera)
+
+- [Monitor your local network using a Raspberry Pi and NEMS](https://howchoo.com/pi/raspberry-pi-network-monitor-setup)
+
+- [Quick Raspberry Pi SSH access over the internet
+](https://www.reddit.com/r/raspberry_pi/comments/kwh481/quick_raspberry_pi_ssh_access_over_the_internet/)
+
+
+### Nextcloud on Pi
+
+
+- [Install Nextcloud on a RaspberryPi With Docker! Easy 5 Steps](https://www.youtube.com/watch?v=RkJuAGCKsUQ)
+- Create your own private cloud on Raspberry Pi, [Medium Link]](https://zahidmak.medium.com/create-your-own-private-cloud-using-raspberry-pi-for-your-photos-and-documents-86a3b60384a0), [Reddit link](https://www.reddit.com/r/raspberry_pi/comments/k6n25f/wrote_this_step_by_step_guide_to_create_your_own/)
+- [Nextcloud + Raspberry Pi + Docker + Onion service](https://itnext.io/nextcloud-docker-raspberry-pi-onion-service-84d4af13f7e6)
+- ["Best guide I’ve seen for setting up your own Nextcloud server"](https://kevq.uk/how-to-setup-a-nextcloud-server-in-ubuntu)
+
+
+
+### File storage server on Pi
+
+
+- [NASPi: a Raspberry Pi Server](https://www.reddit.com/r/raspberry_pi/comments/i9o0qw/naspi_a_raspberry_pi_server/)
+- ["Just wanted to show the Raspberry Pi NAS I've been running for about a year now"](https://www.reddit.com/r/raspberry_pi/comments/htjrir/just_wanted_to_show_the_raspberry_pi_nas_ive_been/)
+
+- Create a nas with rpi using multiple HDD
+
+
+
+---
+
 
 
 ## Guides
@@ -71,7 +122,7 @@
 <details><summary>3. For Rpi</summary>
 <p>
 
-- [[TUTORIAL] Install Brother old drivers in Raspberry PI with QUEMU (pretty easy)](https://www.reddit.com/r/linux/comments/lfaox9/tutorial_install_brother_old_drivers_in_raspberry/)
+- [[TUTORIAL] Install Brother old drivers in Raspberry PI with QUEMU (pretty easy)](https://www.reddit.com/r/raspberry_pi/comments/lxheg5/tutorial_install_brother_old_drivers_in_raspberry/), (Old link)[https://www.reddit.com/r/linux/comments/lfaox9/tutorial_install_brother_old_drivers_in_raspberry/]
 	```
 	Hi, just managed to print from my Android device in my old DCP-197C and I want to share it with you
 

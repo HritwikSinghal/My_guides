@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Exec="/usr/local/bin/fusuma -d"
+# Exec="/usr/bin/fusuma -d"
 # You can use below also for running two commands in one line
-# Exec=sh -c "killall fusuma; sleep 1; /usr/local/bin/fusuma -d"
+Exec=sh -c "killall fusuma; sleep 1; /usr/bin/fusuma -d"
 
 Hidden=false
 NoDisplay=false

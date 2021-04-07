@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 # To run 
-# curl -SsL https://raw.githubusercontent.com/HritwikSinghal/My_guides/master/src/scripts/Android_build/Havoc.sh | sudo bash
+# curl -sSL https://raw.githubusercontent.com/HritwikSinghal/My_guides/master/src/scripts/Android_build/Havoc.sh | sudo bash
 
-
-# https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session
 tmux
 
 sudo apt update && sudo apt upgrade -y
@@ -15,8 +13,6 @@ sudo apt install android-tools-adb android-tools-fastboot -y
 git clone https://github.com/akhilnarang/scripts.git
 chmod +x ./scripts/setup/android_build_env.sh
 ./scripts/setup/android_build_env.sh
-# ./scripts/setup/arch-manjaro.sh    # This is not required if you install all below 
-
 
 ccache -M 70G
 
@@ -41,22 +37,4 @@ chmod +x build/envsetup.sh
 source build/envsetup.sh
 time brunch havoc_X2-userdebug -j$(nproc --all) | tee log.txt
 
-#To copy a file from B to A while logged into A:
-
-# scp username@b:/path/to/file /path/to/destination
-# scp root@198.13.32.138:~/.profile ~/Videos
-
-# OR
-
-
-# https://linuxize.com/post/how-to-setup-passwordless-ssh-login/
-# https://linuxize.com/post/how-to-transfer-files-with-rsync-over-ssh/
 sudo apt install rsync -y
-
-# Remote to Local: rsync [OPTION]... -e ssh [USER@]HOST:SRC... [DEST]
-# Where SRC is the source directory, DEST is the destination directory 
-# USER is the remote SSH username and HOST is the remote SSH host or IP Address
-# To transfer data from a remote to a local machine, use the remote location as the source and the local location as destination:
-
-# rsync -a root@198.13.32.138:/foo/bar/file.zip ~/Videos
-#!/bin/bash

@@ -121,8 +121,7 @@ sudo systemctl start NetworkManager.service
 sudo systemctl start NetworkManager.service
 
 printf "\n-------------------------Install--GNOME-tweak-tool and chrome-gnome-shell-------------------------\n"
-sudo apt install gnome-tweaks -y
-sudo apt install chrome-gnome-shell -y
+sudo apt install gnome-tweaks chrome-gnome-shell -y
 
 printf "\n-------------------------Install--Kvantum-------------------------\n"
 sudo apt install qt5-style-kvantum qt5-style-kvantum-themes -y
@@ -180,7 +179,6 @@ sudo systemctl start vnstat.service
 printf "\n-------------------------Install--PulseEffects-------------------------\n"
 sudo apt install pulseaudio pulseeffects --install-recommends -y
 mkdir -p /home/hritwik/.config/PulseEffects/output/
-sudo cp ./configs/PulseEffects_MyPreset.json /home/hritwik/.config/PulseEffects/output
 
 printf "\n-------------------------Install--uget-------------------------\n"
 sudo apt install uget -y
@@ -263,11 +261,11 @@ sudo ln -s /usr/bin/pip3 /usr/bin/pip
 
 
 printf "\n-------------------------Install--jetbrains-------------------------\n"
-sudo snap install pycharm-community --classic
-# flatpak install flathub com.jetbrains.PyCharm-Community -y
-# Clion
-sudo snap install clion --classic
-# flatpak install flathub com.jetbrains.CLion -y
+# sudo snap install pycharm-community --classic
+# # flatpak install flathub com.jetbrains.PyCharm-Community -y
+# sudo snap install clion --classic
+# # flatpak install flathub com.jetbrains.CLion -y
+# Use toolbox
 
 printf "\n-------------------------Install--telegram-------------------------\n"
 sudo snap install telegram-desktop
@@ -291,10 +289,22 @@ sudo snap install wonderwall
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
+
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
+
+
+
+
+
+
+
+sudo systemctl enable cronie
+sudo systemctl start cronie
+
+sudo systemctl enable fstrim.timer
 
 
 echo "" | sudo tee -a /etc/environment
@@ -303,11 +313,11 @@ echo "" | sudo tee -a /etc/environment
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 
 # for force qt5 to use wayland
-# sudo apt install qt5ct -y
 echo "" | sudo tee -a /etc/environment
-# echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
 echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
-
+# Below is for sway WM
+# sudo apt install qt5ct -y
+# echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
 
 echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
 
@@ -329,8 +339,8 @@ echo "gtk-application-prefer-dark-theme=1"  >> /home/hritwik/.config/gtk-4.0/set
 printf "\n--------------------------Tweaks---wayland dash bug Fix-------------------------\n"
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 
-printf "\n--------------------------Tweaks---Increment volume by 3-------------------------\n"
-# gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
+printf "\n--------------------------Tweaks---Increment volume by 4-------------------------\n"
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 3
 
 printf "\n--------------------------Tweaks---minimize on click-------------------------\n"
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
@@ -352,8 +362,8 @@ rm -rf /home/hritwik/.conky/
 cp -r ./configs/.conky/ /home/hritwik/
 
 printf "\n--------------------------Tweaks---dconf-settings-------------------------\n"
-# Backup first
 
+# Backup first
 dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
 dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
 dconf dump /com/github/wwmm/pulseeffects/ > /home/hritwik/com.github.wwmm.pulseeffects_Bak
@@ -366,7 +376,9 @@ printf "\n--------------------------Tweaks---Pulseeffects-----------------------
 echo "[Desktop Entry] Hidden=true" > /tmp/1
 find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
 
-printf "\n--------------------------Tweaks---startup Apps-------------------------\n"
+sudo cp ./configs/PulseEffects_MyPreset.json /home/hritwik/.config/PulseEffects/output
+
+printf "\n--------------------------Tweaks---startup-Apps-------------------------\n"
 rm -rf /home/hritwik/.config/autostart
 cp -r ./configs/autostart/ /home/hritwik/.config/
 sudo chmod +x /home/hritwik/.config/autostart/*
@@ -412,15 +424,21 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 
 printf "\n-------------------------Tweaks--fusuma-config-------------------------\n"
-# ---
 rm -rf /home/hritwik/.config/fusuma
 mkdir -p /home/hritwik/.config/fusuma/
 cp ./configs/config.yml /home/hritwik/.config/fusuma/
 
-
 printf "\n--------------------------Tweaks---Vnstat-------------------------\n"
 cp ./configs/.vnstatrc /home/hritwik/
 
+printf "\n--------------------------Tweaks---Qbittorrent-------------------------\n"
+rm -rf /home/hritwik/.config/qBittorrent
+rm -rf /home/hritwik/.local/share/data/qBittorrent
+unzip ./configs/qbit_settings.zip -d /home/hritwik/
+unzip ./configs/qbit_data.zip -d /home/hritwik/
+
+printf "\n--------------------------Tweaks---XDM-------------------------\n"
+unzip ./configs/xdm.zip -d /home/hritwik/
 
 
 

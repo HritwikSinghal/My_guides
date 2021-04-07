@@ -413,6 +413,9 @@
 
 - ScreenRecorder Tools
     - [Obs-studio](https://obsproject.com/wiki/install-instructions)
+        - ```paru obs-studio-git``` (current git version has wayland patches)
+        - OR ```sudo pacman -S obs-studio && paru obs-xdg-portal-git && paru obs-gnome-screencast```
+        - OR wait till OBS-v27 for native wayland support
 
 - Screenshot tools
     - [Normal SS in Linux](https://itsfoss.com/take-screenshot-linux/)

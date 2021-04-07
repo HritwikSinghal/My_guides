@@ -203,6 +203,9 @@ printf "\n----------------------------------------------------------------------
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
 
+# Enable color output in pacman
+sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
+
 # fix for dual boot time issue
 timedatectl set-local-rtc 1
 

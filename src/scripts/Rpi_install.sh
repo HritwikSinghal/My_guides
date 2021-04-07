@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# MS repo remove
+sudo sed 's/^/#/g' /etc/apt/sources.list.d/vscode.list | sudo tee /etc/apt/sources.list.d/vscode.list
+sudo rm -f /etc/apt/trusted.gpg.d/microsoft.gpg
+
+
+
 # Brother printer driver install
 sudo apt install qemu binfmt-support qemu-user-static cups a2ps -y
 sudo dpkg --add-architecture i386

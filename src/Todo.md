@@ -17,16 +17,6 @@
 # 1. High priority
 
 
-- Competitive coding
-    - https://www.linkedin.com/posts/activity-6680721603086692352-AXvP
-- DSA, DBMS, CN, OS
-- Coursera
-
-- WSN, BPT
-- GSOC  
-- BTP
-
-
 - Contribute to OSS
     - [How to find your first open source bug to fix](https://www.freecodecamp.org/news/finding-your-first-open-source-project-or-bug-to-work-on-1712f651e5ba/)
     - [awesome-for-beginners: A list of awesome beginners-friendly projects.](https://github.com/MunGell/awesome-for-beginners)
@@ -133,6 +123,7 @@
 - [Detect plag](https://kalebu.hashnode.dev/how-to-detect-plagiarism-in-the-text-using-python)
 - [machine learning tool that allows you to train/fit, test and use models without writing code](https://github.com/nidhaloff/igel)
 - [pyftpdlib: Extremely fast and scalable Python FTP server library](https://github.com/giampaolo/pyftpdlib)
+- https://2ality.com/2014/06/simple-http-server.html own ftp server python
 
 
 - [Apod-wallpaper changer linux](https://github.com/charly98cma/apod-wallpaper)

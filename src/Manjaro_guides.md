@@ -176,6 +176,7 @@
 	    - [shell scripting](https://www.shellscript.sh/variables2.html)
 	    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
 	    - https://explainshell.com/
+	    - "cut" and "tr"
 
 
 - [install android apps on manjaro](https://www.reddit.com/r/ManjaroLinux/comments/cbkblb/guide_run_android_apps_on_manjaro_super_simple/)

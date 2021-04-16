@@ -433,12 +433,14 @@ printf "\n\n\n-------------------------Finished Successfully--------------------
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"
-printf "\n--------------------------Final---Fusuma-add-user-to-input-group-------------------------\n"
-sudo gpasswd -a hritwik input
+printf "\n--------------------------Final-add-user-to-input-group-------------------------\n"
+sudo usermod -a -G input $(whoami)
 newgrp input
-sudo usermod -a -G libvirt hritwik
+sudo usermod -a -G libvirt $(whoami)
 newgrp libvirt
-sudo usermod -a -G kvm hritwik
+sudo usermod -a -G kvm $(whoami)
 newgrp kvm
-sudo usermod -a -G adbusers hritwik
+sudo usermod -a -G adbusers $(whoami)
 newgrp adbusers
+sudo usermod -a -G wireshark $(whoami)
+newgrp wireshark

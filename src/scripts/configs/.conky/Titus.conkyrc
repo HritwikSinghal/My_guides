@@ -219,7 +219,7 @@ ${color2}IP Address: ${color} ${alignr}${offset -10$}${addrs wlp3s0}
 # ${color2}DNS Server: ${color} ${alignr}${offset -10$}${execi 99999 systemd-resolve --status | grep "DNS Servers:" | awk '{ print $3 }'}
 ${color2}DNS Server:
 
-${color}${execi 99999 nmcli dev show | grep DNS | awk '{ print $2 }'}
+${color}${exec nmcli dev show | grep DNS | awk '{ print $2 }'}
 
 ${color2}Wlan Down: ${color}${alignr}${offset -10$} ${downspeed wlp3s0} (${totaldown wlp3s0})
 ${color} ${offset -10$}${downspeedgraph wlp3s0 27,300}

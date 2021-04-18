@@ -20,10 +20,19 @@ sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -Rs --noconfirm --needed onlyoffice-desktopeditors
 sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel android-tools android-udev
-yay -S --noconfirm --needed paru
+yay -S --noconfirm --needed paru reflector
+
+
+# Micro, fzf, bash-zsh-insulter
+sudo pacman -S --noconfirm --needed micro wl-clipboard fzf tldr
+micro -plugin install aspell wc
+paru --noconfirm --needed bash-zsh-insulter
+
+# Rust core utils
+sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs
 
 # ADB
-sudo pacman -S --no-confirm android-tools android-udev
+sudo pacman -S --noconfirm --needed android-tools android-udev
 
 pip3 install virtualenv youtube_dlc
 
@@ -38,7 +47,7 @@ pip3 install virtualenv youtube_dlc
 
 
 
-printf "\n-------------------------Install--Wine-------------------------\n"
+printf "\n-------------------------Install--Wine & Proton-------------------------\n"
 
 
 printf "\n-------------------------Install--java-------------------------\n"
@@ -203,14 +212,27 @@ printf "\n----------------------------------------------------------------------
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
 
-# Enable color output in pacman
+# Micro, make default, set theme
+echo "export EDITOR=/usr/bin/micro" >> ~/.zshrc
+
+	############ WARNING: This will wipe out existing micro config file ############
+echo "{" > .config/micro/settings.json
+echo '    "colorscheme": "dukedark-tc"' >> .config/micro/settings.json
+echo "}" >> .config/micro/settings.json
+
+# pacman, Enable color output
 sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
+# paru, Enable bottomup, SkipReview
+sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
+echo 'SkipReview' | sudo tee -a /etc/paru.conf
 
 # fix for dual boot time issue
 timedatectl set-local-rtc 1
 
+# Grub, Enable Os-prober
+echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
 
-echo GRUB_DISABLE_OS_PROBER=false|sudo tee -a /etc/default/grub && sudo update-grub
+# Gsettings
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
@@ -218,22 +240,26 @@ gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 echo "alias ll='ls -alh --color'" | sudo tee -a /home/hritwik/.zshrc
 source ~/.zshrc		# this does not work in script, do this manually
 
+# SSD
 sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
 
+# Key Bindings
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
 
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 
-
+# Graphics card, use dGPU
 echo "" | sudo tee -a /etc/environment
 echo "DRI_PRIME=1" | sudo tee -a /etc/environment
+
+# Firefox, run in wayland mode
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 # echo "export QT_STYLE_OVERRIDE=kvantum" | sudo tee -a /etc/environment # already present in manjaro
 
-# for force qt5 to use wayland
+# QT, force qt5 to use wayland
 echo "" | sudo tee -a /etc/environment
 echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
 # Below is for sway WM

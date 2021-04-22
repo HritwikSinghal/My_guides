@@ -1,13 +1,11 @@
 [/]
 enable-all-sourceoutputs=false
-last-used-output-preset='PulseEffects_MyPreset'
+last-used-input-preset='Presets'
+last-used-output-preset='Presets'
 priority-type='Niceness'
 use-dark-theme=true
 window-height=706
 window-width=1072
-
-[sinkinputs]
-plugins=['limiter', 'autogain', 'gate', 'multiband_gate', 'compressor', 'multiband_compressor', 'convolver', 'bass_enhancer', 'exciter', 'crystalizer', 'stereo_tools', 'reverb', 'equalizer', 'delay', 'deesser', 'crossfeed', 'loudness', 'maximizer', 'filter', 'pitch']
 
 [sinkinputs/autogain]
 installed=true
@@ -55,6 +53,7 @@ installed=true
 num-bands=10
 output-gain=-0.10000000000000001
 post-messages=false
+split-channels=false
 state=true
 
 [sinkinputs/equalizer/leftchannel]
@@ -299,7 +298,7 @@ post-messages=false
 state=false
 
 [sinkinputs/maximizer]
-installed=true
+installed=false
 post-messages=false
 state=false
 
@@ -314,12 +313,18 @@ post-messages=false
 state=false
 
 [sinkinputs/pitch]
-installed=true
+installed=false
 post-messages=false
 state=false
 
 [sinkinputs/reverb]
 installed=true
+post-messages=false
+state=false
+
+[sinkinputs/rnnoise]
+installed=true
+model-path='Standard RNNoise Model'
 post-messages=false
 state=false
 
@@ -511,7 +516,7 @@ post-messages=false
 state=false
 
 [sourceoutputs/maximizer]
-installed=true
+installed=false
 post-messages=false
 state=false
 
@@ -526,12 +531,18 @@ post-messages=false
 state=false
 
 [sourceoutputs/pitch]
-installed=true
+installed=false
 post-messages=false
 state=false
 
 [sourceoutputs/reverb]
 installed=true
+post-messages=false
+state=false
+
+[sourceoutputs/rnnoise]
+installed=true
+model-path='Standard RNNoise Model'
 post-messages=false
 state=false
 

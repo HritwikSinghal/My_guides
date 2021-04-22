@@ -16,6 +16,7 @@ set -e
     # "~/.config/gnome-boxes" and ".config/libvirt/"
 # downloads and other folders
 # zsh history and zshrc
+# move these files under folder named dot files and see DT gitlab for folder heiarchy
 # pycharm and clion settings & toolbox settings
 
 

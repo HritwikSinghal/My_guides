@@ -157,26 +157,38 @@
 
 
 - Install Apps and shell and other configs from Disrtotube channel 
-	- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
-	- Shell/terminal/prompt
-	    - Learn to modify zsh and fish shell (if installed)
-	    - [starship](https://itsfoss.com/starship/)
-	        - https://starship.rs/guide/#%F0%9F%9A%80-installation
-	    - https://www.youtube.com/watch?v=TKX29fJ8U2Y (bash customize)
+	- Dotfiles
+	    - https://github.com/iberianpig/dotfiles
+	    - https://github.com/search?q=dotfiles
+	    - DT dotfiles on gitlab
 
+	- PROMPTS
+		- [Install powerlevel10k prompt](https://github.com/romkatv/powerlevel10k)
+			- [Fix '[ERROR] p10k configure: cannot create /usr/share/zsh/p10k.zsh because /usr/share/zsh is readonly' on manjaro](https://forum.manjaro.org/t/customize-manjaro-zsh-config/46156/9)
+		- [starship prompt](https://itsfoss.com/starship/)
+	        - https://starship.rs/guide/#%F0%9F%9A%80-installation
 	    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
 	        - search it on internet, this is just basic.
+	            
+	- SHELL
+		- [MAYBE switch to fish shell (Read comments)](https://forum.manjaro.org/t/is-it-time-to-switch-the-default-shell-from-bash-to-fish/28745)
+		- Oh-my-zsh
+			- zsh-autosuggestions
+			- zsh-sytax-highlighting
+			- zsh-autocorrections
+			- change theme to powerlevel10k
+			- maybe add starship prompt
+
+	- TUTS
 	    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)
 	    - [Bash tips for everyday at the command line | Opensource.com](https://opensource.com/article/18/5/bash-tricks)
 	    - https://itsfoss.com/linux-command-tricks/
-
 	    - https://www.playonlinux.com/en/
 	    - https://linuxjourney.com/lesson/filesystem-hierarchy
-	    - How this works: ```nmcli dev show | grep DNS | awk '{ print $2 }'```
 	    - [shell scripting](https://www.shellscript.sh/variables2.html)
 	    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
 	    - https://explainshell.com/
-	    - "cut" and "tr"
+	    - "cut" and "tr", fd, find, awk
 
 
 - [install android apps on manjaro](https://www.reddit.com/r/ManjaroLinux/comments/cbkblb/guide_run_android_apps_on_manjaro_super_simple/)

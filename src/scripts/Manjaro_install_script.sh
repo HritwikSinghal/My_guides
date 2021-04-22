@@ -148,6 +148,7 @@ sudo gem install fusuma-plugin-wmctrl
 sudo gem install fusuma-plugin-tap
 
 printf "\n-------------------------Install--fonts-manager-------------------------\n"
+sudo pacman -S --noconfirm --needed font-manager
 
 printf "\n-------------------------Install--Atom-------------------------\n"
 sudo pacman -S --noconfirm --needed atom

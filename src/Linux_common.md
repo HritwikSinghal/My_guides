@@ -2,6 +2,8 @@
 
 # **Table of Contents**
 - Notes & Saved
+    - Notes
+    - Saved
 - Apps, Extensions, Themes
     - Apps
     - Extensions
@@ -70,10 +72,6 @@
 - Timeshift will fuck up windows bootloader if you restore it back to an old windows bootloader installation
     - [FIX](https://thegeekpage.com/bootrec-fixboot-access-is-denied/)
 
-
-- Dotfiles
-    - https://github.com/iberianpig/dotfiles
-    - https://github.com/search?q=dotfiles
 
 - [Linux Wifi Hotspot](https://github.com/lakinduakash/linux-wifi-hotspot)
 
@@ -189,6 +187,7 @@
     I've not yet worked out how to get audio pumped in there from youtube, so for now it is only the video and I just add my own sound effects with my microphone when ZoomSkypeJitsi callin'. 
     ```
     - https://atinkerholic.wordpress.com/2018/10/10/how-to-use-a-virtual-webcam-with-static-image-or-video-ffmpeg-v4l-utils-and-v4l2loopback/
+    - https://askubuntu.com/questions/881305/is-there-any-way-ffmpeg-send-video-to-dev-video0-on-ubuntu
     - search this on google
 
 
@@ -608,6 +607,10 @@
 ## Guides
 
 #### 1) Virtualization, QEMU/KVM
+
+- Enable 3d-acceleration in Linux Guests
+    - https://www.spice-space.org/spice-user-manual.html#virgl
+    - https://ryan.himmelwright.net/post/virtio-3d-vms/
 
 - Steps to restore Win7
     - copy disk image ```win7``` to some folder. (let ```/home/hritwik/boxes/```)

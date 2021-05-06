@@ -140,6 +140,9 @@ conky.config = {
 	-- fonts
 	font1 = 'Roboto',
 
+	-- Interface
+	wifi = 'wlp3s0',
+
     --Lua
 
 
@@ -153,11 +156,12 @@ ${color6}${voffset 4}${font GE Inspira:size=16}${alignc}${time %A} ${time %B} ${
 
 ${color5}${font font1:size=10}${voffset 2}S Y S T E M   ${hr 2}${font}${color}
 ${color2}${voffset 8}Hostname:${color} ${alignr}${nodename}
-${color2}Distro:${color}${alignr}$sysname ${alignr}${execi 6000 lsb_release -a | grep 'Description'|awk {'print $3, $4, $5'}}
+# ${color2}Distro:${color}${alignr}$sysname ${alignr}${exec lsb_release -a | grep 'Description'|awk {'print $2, $3, $4, $5'}}
+${color2}Distro:${color}${alignr}${exec lsb_release -a | grep 'Description'|awk {'print $2, $3'}} ${color}${alignr}${exec lsb_release -a | grep 'Relea' | awk {'print $2'}} ${color}${alignr}${exec lsb_release -a | grep 'Code' | awk {'print $2'}}
 ${color2}Kernel:${color}${alignr}${exec uname} ${exec uname -r}
+${color2}Uptime:${color} ${alignr}${uptime}
 #Nvidia: ${alignr}${execp  nvidia-smi --query-supported-clocks=gpu_name --format=csv,noheader}
 #Nvidia Driver: ${alignr}${execi 60000 nvidia-smi | grep "Driver Version"| awk {'print $3'}}
-${color2}Uptime:${color} ${alignr}${uptime}
 ############################################################################################################################################################################
 
 ${color5}${font font1:size=10}P R O C E S S O R S  ${hr 2}${font}${color}
@@ -209,24 +213,33 @@ ${color2}HDD :${color} ${alignr}${offset -10}${fs_used /run/media/hritwik/HDD} /
 ${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sdb1}${alignr}${diskiograph_read /dev/sdb1 12,130}
 ${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sdb1}${alignr}${diskiograph_write /dev/sdb1 12,130}
 
-
 ############################################################################################################################################################################
 
 ${color5}${color5}${font font1:size=10}N E T W O R K   ${hr 2}${font}${color}
 
-${color2}IP Address: ${color} ${alignr}${offset -10$}${addrs wlp3s0}
- ${alignr}${offset -10$}${color} ${execi 3600 curl ipinfo.io/ip}
-# ${color2}DNS Server: ${color} ${alignr}${offset -10$}${execi 99999 systemd-resolve --status | grep "DNS Servers:" | awk '{ print $3 }'}
-${color2}DNS Server:
+${color2}Local IPv4 Address: ${color} ${alignr}${offset -10$}${addrs wlp3s0}
+#
+# Below prints first line
+${color2}Local IPv6 Address: ${color}${alignr}${offset -10$}${exec ifconfig | grep inet6 | grep -m1 global | awk '{ print $2 }'}
+#
+# This prints rest of lines
+${color}${alignr}${offset -10$}${exec ifconfig | grep inet6 | grep global | awk 'NR!=1' | awk '{ print $2 }'}
 
-${color}${exec nmcli dev show | grep DNS | awk '{ print $2 }'}
+${color2}Public IPv4 Address: ${color}${alignr}${offset -10$}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
+${color2}Public IPv6 Address: ${color}${alignr}${offset -10$}${execi 3600 wget -q -O - https://nsx.de/ | grep -i 2405}
+# ${exec curl -s www.icanhazip.com}
+
+${color2}DNS Server IPv4: ${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep IP4 | awk '{ print $2 }'}
+${color2}DNS Server IPv6: ${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep -m1 IP6  | awk '{ print $2 }'}
+${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep IP6 | awk 'NR!=1' | awk '{ print $2 }'}
 
 ${color2}Wlan Down: ${color}${alignr}${offset -10$} ${downspeed wlp3s0} (${totaldown wlp3s0})
 ${color} ${offset -10$}${downspeedgraph wlp3s0 27,350}
-
 ${color2}Wlan Up: ${color}${alignr}${offset -10$} ${upspeed wlp3s0} (${totalup wlp3s0})
 ${color} ${offset -10$}${upspeedgraph wlp3s0 27,350}
-
+#
+#
+#
 ############################################################################################################################################################################
 #${font font1:size=10}N V I D I A   ${hr 2}${font}
 #${font font1:size=10,weight:bold}${color5}${execp  nvidia-smi --query-supported-clocks=gpu_name --format=csv,noheader}${font}

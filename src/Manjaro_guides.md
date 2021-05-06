@@ -66,7 +66,7 @@
 
 - for startup app fix see [this](https://forum.manjaro.org/t/solved-trouble-setting-up-a-startup-command/37323/15). This thread is also awesome, read whole convo.
 
-- for snap aaps fix
+- for snap apps fix
 	- ```
 	sudo rm /var/cache/fontconfig/*
 	rm ~/.cache/fontconfig/*
@@ -75,16 +75,12 @@
 
 
 
-
 - chaotic aur 
-- [AUR helper like yay](https://itsfoss.com/best-aur-helpers/)
-	- [Paru](https://itsfoss.com/paru-aur-helper/)
 - https://itsfoss.com/pacman-command/
 - https://openbuildservice.org/2021/02/18/introducing-flatpak-builds/
 
-
-- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
-    - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+- https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
+	- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
 - https://linuxhint.com/add_shortcuts_ubuntu_desktop/
 - [Display media info in nemo](https://www.linuxuprising.com/2018/08/display-extensive-media-information-in.html)
 
@@ -186,7 +182,7 @@
 	    - https://www.playonlinux.com/en/
 	    - https://linuxjourney.com/lesson/filesystem-hierarchy
 	    - [shell scripting](https://www.shellscript.sh/variables2.html)
-	    - [Linux Tutorial for Beginners - Learn Linux and the Bash Command Line](https://ryanstutorials.net/linuxtutorial/)
+	    - https://ryanstutorials.net/linuxtutorial/
 	    - https://explainshell.com/
 	    - "cut" and "tr", fd, find, awk
 
@@ -196,7 +192,7 @@
 - [Enable vscode marketplace in Codium](https://github.com/VSCodium/vscodium/blob/master/DOCS.md#migrating) and backup codium backup
 	- [x] install ```aur/vscodium-bin-marketplace``` to Enable vscode marketplace in vscodium-bin
 
-- https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/
+- [KDE tag editor](https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/)
 	- if installing ```kid3``` in Arch, also insatll ```kio```
 
 

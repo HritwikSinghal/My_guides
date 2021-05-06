@@ -68,11 +68,11 @@ conky.config = {
 												-- middle_left,middle_middle,middle_right,none
 	--Arch Duoscreen
 	--gap_x = -1910,
-	gap_x = 10,									-- pixels between right or left border
-	gap_y = 2,									-- pixels between bottom or top border
+	gap_x = 15,									-- pixels between right or left border
+	gap_y = 15,									-- pixels between bottom or top border
 	minimum_height = 600,						-- minimum height of window
-	minimum_width = 300,						-- minimum height of window
-	maximum_width = 300,						-- maximum height of window
+	minimum_width = 350,						-- minimum height of window
+	maximum_width = 600,						-- maximum height of window
 
 	--Graphical
 
@@ -163,7 +163,7 @@ ${color2}Uptime:${color} ${alignr}${uptime}
 ${color5}${font font1:size=10}P R O C E S S O R S  ${hr 2}${font}${color}
 
 ${color}${freq_g}GHz  			${cpu cpu0}% ${alignr} ${execi 10 sensors | grep 'Package id 0' | awk {'print $4'}}
-${color}${cpugraph cpu0 50,299 5e7b7b d8deeb -t}
+${color}${cpugraph cpu0 50,350 5e7b7b d8deeb -t}
 # ${color2}${offset 30}CPU Core 1:${color} ${alignr}${offset -10}${cpu cpu1}%${alignr}${cpubar cpu1}
 # ${color2}${offset 30}CPU Core 2:${color} ${alignr}${offset -10}${cpu cpu2}%${alignr}${cpubar cpu2}
 # ${color2}${offset 30}CPU Core 3:${color} ${alignr}${offset -10}${cpu cpu3}%${alignr}${cpubar cpu3}
@@ -181,7 +181,7 @@ ${color5}${font font1:size=10}M E M O R Y   ${hr 2}${font}${color}
 # ${color2}${offset 30}RAM: ${color}${alignr}${offset -10}${mem} / ${memmax}${alignr}${membar}
 # ${color2}${offset 30}Swap:${color} ${alignr}${offset -10}${swap} / ${swapmax}${alignr}${swapbar}
 ${color}${memperc}% ${alignr}${offset -10}${mem} / ${memmax}${alignr}${membar}
-${color}${memgraph 50,299}
+${color}${memgraph 50,350}
 ${color2}Swap:${color} ${alignr}${offset -10}${swap} / ${swapmax}${alignr}${swapbar}
 # ${color2}Top Processes${goto 222}cpu%${goto 274}mem%${color}
 # ${voffset 4}     1  -  ${top_mem name 1}${alignr}${goto 170} ${goto 222}${top_mem cpu 1} ${goto 274}${top_mem mem 1}
@@ -222,10 +222,10 @@ ${color2}DNS Server:
 ${color}${exec nmcli dev show | grep DNS | awk '{ print $2 }'}
 
 ${color2}Wlan Down: ${color}${alignr}${offset -10$} ${downspeed wlp3s0} (${totaldown wlp3s0})
-${color} ${offset -10$}${downspeedgraph wlp3s0 27,300}
+${color} ${offset -10$}${downspeedgraph wlp3s0 27,350}
 
 ${color2}Wlan Up: ${color}${alignr}${offset -10$} ${upspeed wlp3s0} (${totalup wlp3s0})
-${color} ${offset -10$}${upspeedgraph wlp3s0 27,300}
+${color} ${offset -10$}${upspeedgraph wlp3s0 27,350}
 
 ############################################################################################################################################################################
 #${font font1:size=10}N V I D I A   ${hr 2}${font}

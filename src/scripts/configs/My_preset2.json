@@ -31,6 +31,9 @@
     "output": {
         "blocklist": "",
         "plugins_order": [
+            "equalizer",
+            "bass_enhancer",
+            "stereo_tools",
             "limiter",
             "autogain",
             "gate",
@@ -38,15 +41,12 @@
             "compressor",
             "multiband_compressor",
             "convolver",
-            "bass_enhancer",
             "exciter",
             "crystalizer",
-            "stereo_tools",
+            "crossfeed",
             "reverb",
-            "equalizer",
             "delay",
             "deesser",
-            "crossfeed",
             "loudness",
             "maximizer",
             "filter",
@@ -54,16 +54,16 @@
             "rnnoise"
         ],
         "bass_enhancer": {
-            "state": "false",
+            "state": "true",
             "input-gain": "0",
-            "output-gain": "0",
+            "output-gain": "1.1000000000000001",
             "amount": "0",
             "harmonics": "8.5",
             "scope": "100",
             "floor": "20",
             "blend": "0",
             "floor-active": "false",
-            "listen": "true"
+            "listen": "false"
         },
         "compressor": {
             "state": "false",
@@ -116,8 +116,8 @@
             "state": "true",
             "mode": "IIR",
             "num-bands": "10",
-            "input-gain": "-2.7000000000000002",
-            "output-gain": "-6.9000000000000004",
+            "input-gain": "-2.7999999999999998",
+            "output-gain": "-9.3000000000000007",
             "split-channels": "false",
             "left": {
                 "band0": {
@@ -391,15 +391,15 @@
             "state": "false",
             "input-gain": "0",
             "output-gain": "0",
-            "room-size": "Large",
-            "decay-time": "1.5",
-            "hf-damp": "5000",
-            "diffusion": "0.5",
-            "amount": "-12",
+            "room-size": "Large\/smooth",
+            "decay-time": "0.44594499999999998",
+            "hf-damp": "5508.46",
+            "diffusion": "0.54000000000000004",
+            "amount": "-6.5624606609344482",
             "dry": "0",
-            "predelay": "0",
-            "bass-cut": "300",
-            "treble-cut": "5000"
+            "predelay": "25",
+            "bass-cut": "257.64999999999998",
+            "treble-cut": "20000"
         },
         "multiband_compressor": {
             "state": "false",
@@ -519,9 +519,9 @@
             }
         },
         "stereo_tools": {
-            "state": "false",
+            "state": "true",
             "input-gain": "0",
-            "output-gain": "0",
+            "output-gain": "-0.40000000000000002",
             "balance-in": "0",
             "balance-out": "0",
             "softclip": "false",

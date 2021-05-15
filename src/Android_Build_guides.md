@@ -168,7 +168,7 @@
 
 ```sh
 
-sudo pacman -S base-devel yay android-tools android-udev
+sudo pacman -S base-devel yay android-tools android-udev --noconfirm --needed
 sudo usermod -a -G adbusers $USER
 newgrp adbusers
 
@@ -180,8 +180,8 @@ chmod +x ./scripts/setup/android_build_env.sh ./scripts/setup/arch-manjaro.sh
 
 sudo pacman -S base-devel multilib-devel gcc repo git gnupg gperf sdl wxgtk2 squashfs-tools curl ncurses zlib schedtool perl-switch zip unzip libxslt bc rsync ccache lib32-zlib lib32-ncurses lib32-readline --noconfirm --needed
 
-sudo yay -S flex bison cpio clang ncurses5-compat-libs lib32-ncurses5-compat-libs xxd-standalone --noconfirm --needed
-sudo yay -S lineageos-devel aosp-devel maven gradle xmlstarlet --noconfirm --needed
+yay -S flex bison cpio clang ncurses5-compat-libs lib32-ncurses5-compat-libs xxd-standalone --noconfirm --needed
+yay -S lineageos-devel aosp-devel maven gradle xmlstarlet --noconfirm --needed
 
 ccache -M 50G
 
@@ -248,7 +248,7 @@ repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp device/realme/X2
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b aicp vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b aicp kernel/realme/sm6150
+git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b android-11.0.0 kernel/realme/sm6150
 
 
 export USE_CCACHE=1
@@ -262,32 +262,6 @@ time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
 
 
 ```
-
-
-#### RR A10
-
-```sh
-mkdir rr && cd rr
-repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
-repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
-
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr_10 device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b rr_10 vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b lineage-17.1 kernel/realme/sm6150
-
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-export RR_BUILDTYPE=Unofficial
-
-chmod +x build/envsetup.sh
-source build/envsetup.sh
-lunch rr_X2-userdebug
-time mka bacon -j$(nproc --all) | tee log.txt
-
-
-```
-
 
 
 ### Stale
@@ -382,6 +356,33 @@ time mka bacon -j$(nproc --all) | tee log.txt
 
 
 ```
+
+
+
+#### RR A10
+
+```sh
+mkdir rr && cd rr
+repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q --depth=1
+repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
+
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr_10 device/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b rr_10 vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b lineage-17.1 kernel/realme/sm6150
+
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+export RR_BUILDTYPE=Unofficial
+
+chmod +x build/envsetup.sh
+source build/envsetup.sh
+lunch rr_X2-userdebug
+time mka bacon -j$(nproc --all) | tee log.txt
+
+
+```
+
 
 
 

@@ -36,6 +36,7 @@
 - [Install TigerVNC](https://atetux.com/how-to-install-tigervnc-server-on-ubuntu-20-04)
 
 - [Installing the Log2RAM Service on a Raspberry Pi](https://pimylifeup.com/raspberry-pi-log2ram/)
+- 
 	```sh
 	sudo apt install rsync
 	wget https://github.com/azlux/log2ram/archive/master.tar.gz -O log2ram.tar.gz

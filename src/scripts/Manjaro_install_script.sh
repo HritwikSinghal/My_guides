@@ -205,6 +205,9 @@ sudo snap install bing-wall
 sudo snap install wonderwall
 
 
+printf "\n-------------------------Install--appimagelauncher-------------------------\n"
+sudo pacman -S --noconfirm --needed appimagelauncher
+
 
 
 

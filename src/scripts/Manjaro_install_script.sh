@@ -160,9 +160,9 @@ printf "\n-------------------------Install--vscodium-------------------------\n"
 # paru vscodium-bin vscodium-bin-marketplace
 
 printf "\n-------------------------Install--Sublime-------------------------\n"
-curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-sudo pacman -Syu --noconfirm --needed sublime-text
+# curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+# echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+# sudo pacman -Syu --noconfirm --needed sublime-text
 
 printf "\n-------------------------Install--Signal-------------------------\n"
 sudo pacman -S --noconfirm --needed signal-desktop
@@ -208,7 +208,8 @@ sudo snap install wonderwall
 printf "\n-------------------------Install--appimagelauncher-------------------------\n"
 sudo pacman -S --noconfirm --needed appimagelauncher
 
-
+printf "\n-------------------------Install--Rust-tools-------------------------\n"
+sudo pacman -S --noconfirm --needed exa
 
 
 
@@ -266,6 +267,7 @@ echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 # QT, force qt5 to use wayland
 echo "" | sudo tee -a /etc/environment
 echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
+
 # Below is for sway WM
 # sudo pacman -S --noconfirm --needed qt5ct
 # echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment

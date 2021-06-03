@@ -60,6 +60,8 @@
     - See LOS reddit wiki for more
 
 - [Tmux](https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session)
+    - or zellij
+
 
 - [passwordless-ssh-login](https://linuxize.com/post/how-to-setup-passwordless-ssh-login/)
 
@@ -188,11 +190,17 @@ ccache -M 50G
 # put below lines in zshrc
 echo "export USE_CCACHE=1" >> ~/.zshrc
 echo "export CCACHE_EXEC=/usr/bin/ccache" >> ~/.zshrc
-# export CCACHE_EXEC=$(command -v ccache) 				# OR This
 echo "export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache" >> ~/.zshrc
+# export CCACHE_EXEC=$(command -v ccache) 				# OR This
 
 # to reload zsh
 source ~/.zshrc
+
+or
+
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 
 ```
 
@@ -247,7 +255,7 @@ repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b aicp vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b android-11.0.0 kernel/realme/sm6150
 
 
@@ -277,8 +285,8 @@ repo init -u git://github.com/AospExtended/manifest.git -b 11.x --depth=1
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aex device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
@@ -300,8 +308,8 @@ repo init -u git://github.com/crdroidandroid/android.git -b 11.0 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b crdroid device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
@@ -319,12 +327,13 @@ time mka -j$(nproc --all) | tee log.txt
 
 ```sh
 mkdir havoc && cd havoc
-repo init -u git://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
+repo init -u https://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
+# repo init -u git://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
 git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b havoc device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b test kernel/realme/sm6150
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh

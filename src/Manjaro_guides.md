@@ -11,6 +11,35 @@
 
 ## Todo
 
+- copy zshrc file
+- install below aur Packages
+    - adwaita-dark-darose 3.28-3
+    - bash-zsh-insulter 1-1
+    - brlaser 6-2
+    - brother-hll2360d 3.2.0_1-1
+    - firefox-profile-switcher-connector 0.0.6-1
+    - lib32-ncurses5-compat-libs 6.2-1
+    - ncurses5-compat-libs 6.2-1
+    - paru-bin 1.7.2-1
+    - python3-fildem 0.6.7-1
+    - ruby-revdev 0.2.1-2
+    - szyszka-bin 1.0.0-2
+    - zsh-theme-powerlevel10k-git r3880.717573d-1
+
+
+- reduce 5% reserved space on ext4 home and / to 2%
+    - https://unix.stackexchange.com/questions/527628/disk-usage-confusion-10g-missing-on-linux-home-partition-on-ssd
+    - sudo tune2fs -m 2 /dev/nvme0n1p4
+    - sudo tune2fs -m 2 /dev/nvme0n1p3
+
+- set micro color scheme
+    - or just copy config files
+    - ctrl+e
+    - set colorscheme <tab>
+    - chose 'dukedark-tc'
+
+- Backup powerlevel10k theme
+
 
 - Swap
 	- [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
@@ -50,7 +79,7 @@
 - some Qt tweaks to put in /etc/env
 	QT_AUTO_SCREEN_SCALE_FACTOR=1
 	QT_QPA_PLATFORMTHEME="gnome"
-	QT_STYLE_OVERRIDE="kvantum"
+	QT_STYLE_OVERRIDE="kvantum-dark"
 	QT_QPA_PLATFORM=wayland
 
 
@@ -67,12 +96,11 @@
 - for startup app fix see [this](https://forum.manjaro.org/t/solved-trouble-setting-up-a-startup-command/37323/15). This thread is also awesome, read whole convo.
 
 - for snap apps fix
-	- ```
-	sudo rm /var/cache/fontconfig/*
-	rm ~/.cache/fontconfig/*
-	```
-
-
+	-
+    ```
+    sudo rm /var/cache/fontconfig/*
+    rm ~/.cache/fontconfig/*
+    ```
 
 
 - chaotic aur 

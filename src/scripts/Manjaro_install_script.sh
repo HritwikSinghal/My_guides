@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-
 sudo pacman-mirrors -f
 sudo pacman -Syyu
 
@@ -262,11 +261,22 @@ echo "DRI_PRIME=1" | sudo tee -a /etc/environment
 
 # Firefox, run in wayland mode
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
-# echo "export QT_STYLE_OVERRIDE=kvantum" | sudo tee -a /etc/environment # already present in manjaro
 
-# QT, force qt5 to use wayland
+
+# QT Tweaks
+
+# QT_QPA_PLATFORMTHEME=qt5ct	    # Also install qt5ct package. Obslete, now uses gnomeplatform
+# QT_AUTO_SCREEN_SCALE_FACTOR=1     # already present
+# QT_QPA_PLATFORMTHEME=gnome        # already present
+# echo "QT_STYLE_OVERRIDE=kvantum-dark" | sudo tee -a /etc/environment      # replace instead of add
+sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=kvantum-dark/g' /etc/environment
+
+
+# QT_QPA_PLATFORM=wayland 		# Force to use wayland backend, also install qt5-wayland & qt6-wayland
+# QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
+# use XCB till wayland gets fix
 echo "" | sudo tee -a /etc/environment
-echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
+echo "QT_QPA_PLATFORM=xcb" | sudo tee -a /etc/environment
 
 # Below is for sway WM
 # sudo pacman -S --noconfirm --needed qt5ct

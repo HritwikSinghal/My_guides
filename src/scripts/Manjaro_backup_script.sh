@@ -15,7 +15,10 @@ set -e
     # https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610 (for directories)
     # "~/.config/gnome-boxes" and ".config/libvirt/"
 # downloads and other folders
+
 # zsh history and zshrc
+# Powerlevel10K theme
+
 # move these files under folder named dot files and see DT gitlab for folder heiarchy
 # pycharm and clion settings & toolbox settings
 

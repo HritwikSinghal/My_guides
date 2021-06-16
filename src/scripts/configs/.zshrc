@@ -108,3 +108,5 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export DOWNGRADE_FROM_ALA=1
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache

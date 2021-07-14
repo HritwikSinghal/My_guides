@@ -3,8 +3,16 @@
 
 
 # ** Table of Contents **
+- Saved
 - After installing Windows
 
+
+---
+
+## Saved
+
+
+- [create-unattended-media-do-automated-installation-windows-10](https://www.windowscentral.com/how-create-unattended-media-do-automated-installation-windows-10)
 
 --- 
 

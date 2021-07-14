@@ -25,14 +25,29 @@
     - supports voot, sony liv, hotstar
 
 - Hosting
-	- [self-host Bitwarden Password Manager](https://bowlerdesign.tech/posts/how-to-self-host-bitwarden-on-ubuntu-server/)
+    - NC
+        - [nextcloud snap](https://www.youtube.com/watch?v=84gHe3WQmNQ)
+
+        - [How To Install & Use Nextcloud On Raspberry Pi (Easy!) - YouTube](https://www.youtube.com/watch?v=CHWHQFwxFcE)
+        - [Nextcloudfor Pi](https://www.youtube.com/watch?v=y4dtcr2NL5M)
+
+        - [Install Nextcloud on a RaspberryPi With Docker! Easy 5 Steps](https://www.youtube.com/watch?v=RkJuAGCKsUQ)
+        - Create your own private cloud on Raspberry Pi, [Medium Link]](https://zahidmak.medium.com/create-your-own-private-cloud-using-raspberry-pi-for-your-photos-and-documents-86a3b60384a0), [Reddit link](https://www.reddit.com/r/raspberry_pi/comments/k6n25f/wrote_this_step_by_step_guide_to_create_your_own/)
+        - [Nextcloud + Raspberry Pi + Docker + Onion service](https://itnext.io/nextcloud-docker-raspberry-pi-onion-service-84d4af13f7e6)
+
+
+    - [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)
+
+    - [self-host Bitwarden Password Manager](https://theselfhostingblog.com/posts/how-to-self-host-bitwarden-on-ubuntu-server/)
 	- [Self-Hosting Your Homelab Services with SSL -- Let's Encrypt, MetalLB, Traefik, Rancher, Kubernetes - YouTube](https://www.youtube.com/watch?v=pAM2GBCDGTo)
+
+	- https://www.dynu.com/DynamicDNS/IPUpdateClient/RaspberryPi-Dynamic-DNS
 	- [Solve Your Dynamic IP problems! FREE domain for your home devices - Duck DNS - YouTube](https://www.youtube.com/watch?v=uhJ1zQIjujg)
 	
-	- [nextcloud (other videos are also great of this channel)](https://www.youtube.com/watch?v=y4dtcr2NL5M)
 	- freenom.com (for free domain)
 	- [Use this temp mail for freenom](https://tempmail.altmails.com/)
 	- https://github.com/AmmeySaini/Edu-Mail-Generator
+
 
 - Python
 	- [google drive API](https://www.youtube.com/watch?v=9K2P2bWEd90)
@@ -58,6 +73,11 @@
 - https://www.reddit.com/r/firefox/comments/k7wvzc/vanilla_firefox_keyboard_mastery/
 
 - [public table of Firefox's keyboard shortcuts](https://www.reddit.com/r/firefox/comments/jj91qb/i_created_a_public_table_of_firefoxs_keyboard/)
+
+- https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly#main-content
+
+- https://support.mozilla.org/en-US/kb/mouse-shortcuts-perform-common-tasks
+
 
 ### Smooth scrolling
 

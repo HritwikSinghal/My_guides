@@ -47,6 +47,8 @@
 # 2. Medium priority
 
 - Learn Rust
+- Solid principles and SMDS using python
+    - https://www.youtube.com/watch?v=pTB30aXS77U - This youtube channel
 
 - Github
     - github actions and tests.

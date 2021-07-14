@@ -23,19 +23,19 @@
 
 ### Notes
 
-- [How to Use sed to Find and Replace String in Files | Linuxize](https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/)
-    - ``` sed -i 's/SEARCH_REGEX/REPLACEMENT/g' INPUTFILE ```
-- [How do I find all files containing specific text on Linux? - Stack Overflow](https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux)
-    - ```grep -rnw '/path/to/somewhere/' -e 'pattern'```
-
+- Tmux
+    - [Oh my tmux](https://github.com/gpakosz/.tmux)
+    - https://github.com/jimeh/tmux-themepack
+    - Try [zellij](https://www.linuxuprising.com/2021/04/zellij-is-new-terminal-multiplexer.html)
 
 - This is for displaying fps counter on wine games.
     - DRI_PRIME=1 GALLIUM_HUD=fps wine game.exe
 
-- [restart-network-ubuntu](https://itsfoss.com/restart-network-ubuntu)
+- [restart-network](https://itsfoss.com/restart-network-ubuntu)
     - use nmcli commands:
         - sudo nmcli networking off
         - sudo nmcli networking on
+    - maybe look into 'ip'
 
 - DNS lookup
     - nmcli dev show | grep DNS
@@ -49,15 +49,18 @@
     - or maybe the problem is that dash to panel shows itself on 2nd monitor
 
 - Switch to wayland (to be removed when wayland becomes def in ubuntu LTS and other major distros)
-    - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS.
+    - [This link](https://bugs.launchpad.net/ubuntu/+source/gnome-shell-extension-ubuntu-dock/+bug/1874578) is for dock bug in 20.04 LTS wayland.
 
 - [set su passwd](https://askubuntu.com/questions/155278/how-do-i-set-the-root-password-so-i-can-use-su-instead-of-sudo)
     - sudo passwd
 
-- [Remove sudo passwd](https://askubuntu.com/questions/147241/execute-sudo-without-password)
 
 
 ### Saved
+
+- [This thing runs OFFICE and ADOBE APPS like they were NATIVE? - YouTube](https://www.youtube.com/watch?v=fzzf2QnyPgY)
+
+- [How To Use DSLR as Webcam In Linux - YouTube](https://www.youtube.com/watch?v=TsuY4o2zLVQ)
 
 - Setup guide
     - [Reddit, take extension install from comments](https://www.reddit.com/r/Ubuntu/comments/jbhur4/goodbye_whatever_it_is_hello_ubuntu_2010_beta/)
@@ -83,6 +86,7 @@
     - https://wiki.debian.org/Multiarch
     - http://neuro.debian.net/blog/2013/2013-05-31_matlab_64bit_on_32bit.html
     - https://unix.stackexchange.com/questions/118343/run-64-bit-app-on-32-bit-ubuntu-system
+    - [Box64 Emulator Released for Arm64 Linux - It's FOSS News](https://news.itsfoss.com/box64-emulator-released/)
 
 
 - QEMU
@@ -226,10 +230,6 @@
     gsettings set org.gnome.FileRoller.General compression-level "maximum"
     ```
 
-
-- [ExFat in Linux](https://itsfoss.com/mount-exfat/)
-- [NTFS in Linux](https://www.cyberciti.biz/faq/debian-ubuntu-linux-auto-mounting-windows-ntfs-file-system/)
-
 - [download-latest-version-from-github](https://smarterco.de/download-latest-version-from-github-with-curl/)
     - Note: Replace the repository URL and grep "swamp_amd64" with the file you need (grep "YOUR_FILE").
         ```
@@ -279,11 +279,16 @@
         - Put "MOZ_ENABLE_WAYLAND=1" in "/etc/environment"
     - Firefox Nightly
 
-- Bulk rename linux (GPrename)
+- Bulk rename linux
+    - GPrename
+    - https://www.makeuseof.com/batch-rename-files-in-linux/
     - https://www.fossmint.com/krename-batch-file-renamer-for-linux/
     - https://linuxhint.com/rename_files_linux/
     - https://askubuntu.com/questions/511862/an-ubuntu-linux-alternative-of-bulk-rename-utility-for-windows
     - https://askubuntu.com/questions/1217683/rename-multiple-files-at-the-same-time
+    - Thunar comes with bulk rename
+    - Lunux mint 20.2 comes with one
+    - [F2: Fast And Safe Batch Rename Tool For The Command Line (Cross-Platform)](https://www.linuxuprising.com/2021/05/f2-fast-and-safe-batch-rename-tool-for.html)
 
 - Clipboard Managers
     - [copyq](https://github.com/hluk/CopyQ/releases)
@@ -299,6 +304,9 @@
     - [Uget](https://itsfoss.com/install-latest-uget-ubuntu-linux-mint/)
     - XDM
         - [Issue of xdm not picking up downloads in FF](https://github.com/subhra74/xdm/issues/235)
+
+- Emulators
+    - [Box64 Emulator Released for Arm64 Linux - It's FOSS News](https://news.itsfoss.com/box64-emulator-released/)
 
 - File Manager
     - Nemo    
@@ -345,6 +353,10 @@
     - [codium](https://vscodium.com/)
         - [Install from repo](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo)
     - VSCode (Don't ever Use this proprietary shit, use codium with patches for marketplace)
+
+
+- Image Processing
+    - [Converseen for Batch Processing Images on Linux - It's FOSS](https://itsfoss.com/converseen/)
 
 - Mail Clients
     - Good ol Thunderbird
@@ -399,6 +411,13 @@
     - Fiddler
     - Burp
 
+- Paint Apps
+    - [7 Open Source Paint Applications for Linux Users](https://itsfoss.com/open-source-paint-apps/)
+
+
+- Pdf Editor
+    - [PDF Mix Tool](https://www.linuxuprising.com/2021/06/pdf-mix-tool-10-released-with.html)
+
 
 - Proxy
     - [GreenTunnel](https://www.linuxuprising.com/2020/07/unblock-websites-restricted-by-isps-in.html)
@@ -408,6 +427,11 @@
     - TigerVNC
     - RealVNC
     - [More here](https://www.tecmint.com/remmina-remote-desktop-sharing-and-ssh-client/)
+
+
+- Screen Mirror Tools
+    - [With Deskreen, You Can Mirror or Stream Your Linux Computer Screen to Any Device](https://itsfoss.com/deskreen/)
+
 
 
 - ScreenRecorder Tools
@@ -443,6 +467,11 @@
 - Text Editor
     - [Sublime](https://linuxconfig.org/how-to-install-sublime-text-editor-on-ubuntu-20-04-focal-fossa-linux)
         - Change its theme (pref -> theme -> adaptive.XXX)
+
+
+- Time Tracker
+    - [ActivityWatch](https://news.itsfoss.com/activitywatch-0-11-release/)
+
 
 - Torrent Clients
     - Qbittorrent
@@ -610,7 +639,7 @@
 
 - Enable 3d-acceleration in Linux Guests
     - https://www.spice-space.org/spice-user-manual.html#virgl
-    - https://ryan.himmelwright.net/post/virtio-3d-vms/
+    - [Running VMs with VirtIO 3D Acceleration](https://ryan.himmelwright.net/post/virtio-3d-vms/)
 
 - Steps to restore Win7
     - copy disk image ```win7``` to some folder. (let ```/home/hritwik/boxes/```)

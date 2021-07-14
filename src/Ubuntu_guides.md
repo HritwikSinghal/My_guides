@@ -13,12 +13,8 @@ Feel free to copy anything from here and use it.
 
 ## Install Apps
 
-- Setup thunderbird (and backup it like FF)
-    - [x] [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/);
-
-- Firefox Setup (and desktop icons)
-	- [For Latest Nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
-
+- [for getting latest Thunderbird](https://launchpad.net/~ubuntu-mozilla-security/+archive/ubuntu/ppa/);
+- [For Latest Nightly](https://launchpad.net/~ubuntu-mozilla-daily/+archive/ubuntu/ppa)
 
 - [qBittorrent](https://www.linuxbabe.com/ubuntu/install-qbittorrent-ubuntu-18-04-desktop-server)
     - [x] For stable:
@@ -33,7 +29,6 @@ Feel free to copy anything from here and use it.
 
 - Kdenlive
     - sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
-    - sudo apt install kdenlive -y
 
 
 
@@ -46,8 +41,6 @@ Feel free to copy anything from here and use it.
     - Another [Guide](https://www.linuxuprising.com/2018/05/use-custom-themes-for-qt-applications.html)
 
 - [Enable flatpack support](https://flatpak.org/setup/Ubuntu/)
-
-- [Remove python2](https://stackoverflow.com/questions/44602191/how-to-completely-uninstall-python-2-7-13-on-ubuntu-16-04/60590067#60590067)
 
 - [Add ppa from old release](https://askubuntu.com/questions/293203/how-can-i-add-a-ppa-from-a-previous-release)
 

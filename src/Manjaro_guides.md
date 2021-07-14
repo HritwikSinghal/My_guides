@@ -11,35 +11,6 @@
 
 ## Todo
 
-- copy zshrc file
-- install below aur Packages
-    - adwaita-dark-darose 3.28-3
-    - bash-zsh-insulter 1-1
-    - brlaser 6-2
-    - brother-hll2360d 3.2.0_1-1
-    - firefox-profile-switcher-connector 0.0.6-1
-    - lib32-ncurses5-compat-libs 6.2-1
-    - ncurses5-compat-libs 6.2-1
-    - paru-bin 1.7.2-1
-    - python3-fildem 0.6.7-1
-    - ruby-revdev 0.2.1-2
-    - szyszka-bin 1.0.0-2
-    - zsh-theme-powerlevel10k-git r3880.717573d-1
-
-
-- reduce 5% reserved space on ext4 home and / to 2%
-    - https://unix.stackexchange.com/questions/527628/disk-usage-confusion-10g-missing-on-linux-home-partition-on-ssd
-    - sudo tune2fs -m 2 /dev/nvme0n1p4
-    - sudo tune2fs -m 2 /dev/nvme0n1p3
-
-- set micro color scheme
-    - or just copy config files
-    - ctrl+e
-    - set colorscheme <tab>
-    - chose 'dukedark-tc'
-
-- Backup powerlevel10k theme
-
 
 - Swap
 	- [Swap file](https://www.youtube.com/watch?v=0mgefj9ibRE)
@@ -86,11 +57,6 @@
 
 - In ```~/Templates```, there are various templates, add more
 
-- Setup thunderbird (and backup it like FF)
-
-- Firefox Setup (and desktop icons)
-	- write script to install firefox nightly 
-
 - enable snap, flatpak, AUR support in pamac (and maybe globally) via terminal
 
 - for startup app fix see [this](https://forum.manjaro.org/t/solved-trouble-setting-up-a-startup-command/37323/15). This thread is also awesome, read whole convo.
@@ -104,8 +70,7 @@
 
 
 - chaotic aur 
-- https://itsfoss.com/pacman-command/
-- https://openbuildservice.org/2021/02/18/introducing-flatpak-builds/
+- https://openbuildservice.org/
 
 - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks
 	- [How to get extract here, extract to and compress options in Nemo file manager context menu](https://www.lxle.net/forums/discussion/1396/how-to-get-extract-here-extract-to-and-compress-options-in-nemo-file-manager-context-menu/p1)
@@ -116,6 +81,12 @@
 
 
 ## Notes & Saved
+
+- Build manjaro ISO (use git version of 'manjaro-tools-iso' )
+    - https://wiki.manjaro.org/index.php/Build_Manjaro_ISOs_with_buildiso#Prerequisites
+    - https://gitlab.manjaro.org/tools/development-tools/manjaro-tools
+    - https://forum.manjaro.org/t/how-create-iso-from-current-manjaro-installation/26219/5
+    - google search for 'build own manjaro iso'
 
 
 
@@ -191,6 +162,7 @@
 			- [Fix '[ERROR] p10k configure: cannot create /usr/share/zsh/p10k.zsh because /usr/share/zsh is readonly' on manjaro](https://forum.manjaro.org/t/customize-manjaro-zsh-config/46156/9)
 		- [starship prompt](https://itsfoss.com/starship/)
 	        - https://starship.rs/guide/#%F0%9F%9A%80-installation
+            - https://www.youtube.com/watch?v=LDLisRPAC_g
 	    - [Customize prompt](https://itsfoss.com/customize-linux-terminal/)
 	        - search it on internet, this is just basic.
 	            
@@ -201,7 +173,6 @@
 			- zsh-sytax-highlighting
 			- zsh-autocorrections
 			- change theme to powerlevel10k
-			- maybe add starship prompt
 
 	- TUTS
 	    - [bash - "Friendly" terminal color names in shell scripts? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/92563/friendly-terminal-color-names-in-shell-scripts)

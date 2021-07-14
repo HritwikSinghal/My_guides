@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-sudo pacman-mirrors -f
-sudo pacman -Syyu
+sudo pacman-mirrors --fasttrack 5
+sudo pacman -Syyuu
 
 
 printf "\n---------------------------------------------------------------------------\n"
@@ -13,7 +13,7 @@ printf "\n-------------------------Install--extras-------------------------\n"
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
 sudo pacman -S --noconfirm --needed filezilla git rar unrar p7zip
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
-sudo pacman -S --noconfirm --needed kate dconf-editor net-tools curl eog
+sudo pacman -S --noconfirm --needed kate dconf-editor net-tools curl eog neovim
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
@@ -27,13 +27,10 @@ sudo pacman -S --noconfirm --needed micro wl-clipboard fzf tldr
 micro -plugin install aspell wc
 paru --noconfirm --needed bash-zsh-insulter
 
-# Rust core utils
-sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs
-
 # ADB
 sudo pacman -S --noconfirm --needed android-tools android-udev
 
-pip3 install virtualenv youtube_dlc
+pip3 install pipenv youtube_dlc
 
 # sudo apt install ttf-mscorefonts-installer -y
 # sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
@@ -71,6 +68,7 @@ sudo pacman -S --noconfirm --needed kvantum-manjaro kvantum-qt5
 printf "\n-------------------------Install--Mozilla-------------------------\n"
 sudo pacman -S --noconfirm --needed firefox thunderbird
 # make script for firefox-trunk
+# https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux
 
 printf "\n-------------------------Install--Flatpack-------------------------\n"
 
@@ -117,7 +115,7 @@ sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
 printf "\n-------------------------Install--PulseEffects-------------------------\n"
-sudo pacman -S --noconfirm --needed manjaro-pipewire gst-plugin-pipewire pulseeffects
+sudo pacman -S --noconfirm --needed manjaro-pipewire gst-plugin-pipewire easyeffects
 
 printf "\n-------------------------Install--uget-------------------------\n"
 
@@ -208,7 +206,11 @@ printf "\n-------------------------Install--appimagelauncher--------------------
 sudo pacman -S --noconfirm --needed appimagelauncher
 
 printf "\n-------------------------Install--Rust-tools-------------------------\n"
-sudo pacman -S --noconfirm --needed exa
+# Rust core utils
+sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs
+
+
+
 
 
 
@@ -226,6 +228,10 @@ echo "}" >> .config/micro/settings.json
 
 # pacman, Enable color output
 sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
+
+# pacman, ParallelDownloads
+echo 'ParallelDownloads = 8' | sudo tee -a /etc/pacman.conf
+
 # paru, Enable bottomup, SkipReview
 sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
 echo 'SkipReview' | sudo tee -a /etc/paru.conf
@@ -241,8 +247,6 @@ gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
-echo "alias ll='ls -alh --color'" | sudo tee -a /home/hritwik/.zshrc
-source ~/.zshrc		# this does not work in script, do this manually
 
 # SSD
 sudo systemctl enable fstrim.timer
@@ -271,23 +275,17 @@ echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 # echo "QT_STYLE_OVERRIDE=kvantum-dark" | sudo tee -a /etc/environment      # replace instead of add
 sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=kvantum-dark/g' /etc/environment
 
-
-# QT_QPA_PLATFORM=wayland 		# Force to use wayland backend, also install qt5-wayland & qt6-wayland
 # QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
-# use XCB till wayland gets fix
+# QT_QPA_PLATFORM=wayland 		# Force to use wayland backend, also install qt5-wayland & qt6-wayland
 echo "" | sudo tee -a /etc/environment
-echo "QT_QPA_PLATFORM=xcb" | sudo tee -a /etc/environment
+echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
 
 # Below is for sway WM
 # sudo pacman -S --noconfirm --needed qt5ct
 # echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
 
 
-printf "\n--------------------------Tweaks---Telegram-------------------------\n"
-unzip ./configs/telegram.zip -d /home/hritwik/
 
-printf "\n--------------------------Tweaks---Signal-------------------------\n"
-unzip ./configs/signal.zip -d /home/hritwik/
 
 printf "\n--------------------------Tweaks---GTK Dark Mode-------------------------\n"
 
@@ -351,6 +349,14 @@ rm -rf /home/hritwik/.config/autostart/
 cp -r ./configs/autostart/ /home/hritwik/.config/
 sudo chmod +x /home/hritwik/.config/autostart/*
 
+
+printf "\n--------------------------Tweaks---Telegram-------------------------\n"
+unzip ./configs/telegram.zip -d /home/hritwik/
+
+printf "\n--------------------------Tweaks---Signal-------------------------\n"
+unzip ./configs/signal.zip -d /home/hritwik/
+
+
 printf "\n--------------------------Tweaks---firefox-------------------------\n"
 rm -rf /home/hritwik/.mozilla
 unzip ./configs/firefox_bak.zip -d /home/hritwik/
@@ -365,19 +371,19 @@ printf "\n--------------------------Tweaks---Atom-------------------------\n"
 # rm -rf /home/hritwik/.atom/recovery/
 
 printf "\n--------------------------Tweaks---Sublime-------------------------\n"
-rm -rf /home/hritwik/.config/sublime-text-3/
-mkdir -p /home/hritwik/.config/sublime-text-3/Packages/User
-unzip ./configs/sublime_bak.zip -d /home/hritwik/.config/sublime-text-3/Packages/
+# rm -rf /home/hritwik/.config/sublime-text-3/
+# mkdir -p /home/hritwik/.config/sublime-text-3/Packages/User
+# unzip ./configs/sublime_bak.zip -d /home/hritwik/.config/sublime-text-3/Packages/
 
 printf "\n--------------------------Tweaks---VLC-------------------------\n"
 rm -rf /home/hritwik/.config/vlc
 unzip ./configs/vlc_bak.zip -d /home/hritwik/.config/
 
 printf "\n--------------------------Tweaks---jetbrains-------------------------\n"
-rm -rf /home/hritwik/PycharmProjects
-rm -rf /home/hritwik/CLionProjects
-unzip ./configs/clion_bak.zip -d /home/hritwik/
-unzip ./configs/pycharm_bak.zip -d /home/hritwik/
+# rm -rf /home/hritwik/PycharmProjects
+# rm -rf /home/hritwik/CLionProjects
+# unzip ./configs/clion_bak.zip -d /home/hritwik/
+# unzip ./configs/pycharm_bak.zip -d /home/hritwik/
 
 printf "\n--------------------------Tweaks---git_ssh-------------------------\n"
 rm -rf /home/hritwik/.ssh

@@ -25,6 +25,8 @@ export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 export EDITOR=/usr/bin/micro
 export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
 
+alias vim='nvim'
+
 #### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
@@ -43,11 +45,11 @@ alias .5='cd ../../../../..'
 
 
 
-alias ll='exa -lah --color=always --group-directories-first'  # long format
-alias ls='exa -al --color=always --group-directories-first'   # my preferred listing
-alias la='exa -a --color=always --group-directories-first'    # all files and dirs
-alias lt='exa -aT --color=always --group-directories-first'   # tree listing
-alias l.='exa -a | egrep "^\."'								  # list all dot files
+alias ll='exa -laah --color=always --group-directories-first'  # long format
+alias ls='exa -aal --color=always --group-directories-first'   # my preferred listing
+alias la='exa -aa --color=always --group-directories-first'    # all files and dirs
+alias lt='exa -aaT --color=always --group-directories-first'   # tree listing
+alias l.='exa -aa | egrep "^\."'								  # list all dot files
 
 
 
@@ -110,3 +112,9 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export DOWNGRADE_FROM_ALA=1
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
+
+
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS

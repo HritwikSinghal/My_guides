@@ -16,6 +16,7 @@
 ## Before format
 
 ### Backup
+
 - Update apps before backup
 
 - Apps using Migrate & TB & OABX
@@ -23,12 +24,15 @@
 - XprivacyLUA settings, Aegis, signal export
 - 
 
-- Any photos in internal storage
-- Anything in Internal storage (docs, downloads)
-- Whatsapp folder to SD_card
+- Anything in Internal storage
+    - docs
+    - download
+    - photos
+    - Whatsapp folder (Whatsapp updated its data folder to 'Internal/Android/')
 
-- take SS of home screen
-- Apps in Work profile
+- take SS of
+    - home screen
+    - Apps in Work profile
 
 
 ### Update

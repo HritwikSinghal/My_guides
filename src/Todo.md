@@ -95,6 +95,10 @@
 
 # 3. Low priority
 
+- Coursera courses on CS
+    - https://www.coursera.org/learn/algorithms-part1
+    - https://www.coursera.org/learn/algorithms-part1
+
 
 - Pytest & tox
     - https://www.tutorialspoint.com/pytest/pytest_starting_with_basic_test.htm
@@ -180,7 +184,8 @@
     - [Udemy Coupon Grabber & Course Enroller](https://github.com/aapatre/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE)
 
 
-- WebD using Django
+- WebD using Django or flask
+    - https://www.youtube.com/watch?v=mqhxxeeTbu0 (flask)
 
 
 - Port swigger and book

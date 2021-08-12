@@ -227,9 +227,8 @@ echo "export USE_CCACHE=1" >> ~/.bashrc
 echo "export CCACHE_EXEC=/usr/bin/ccache"  >> ~/.bashrc
 echo "export CCACHE_DIR=/media/hritwik/CR/.cache/ccache" >> ~/.bashrc
 
-# to reload zsh
+# to reload bash
 source ~/.bashrc
-
 
 
 ```
@@ -243,8 +242,19 @@ source ~/.bashrc
 
 ## Scripts for roms
 
+**Do below if selinux is permissive otherwise the rom wont boot**
+
+```sh
+cd external/selinux
+git remote add can https://github.com/CannedOS/external_selinux
+git fetch can
+git cherry-pick db56d38c06ca4514304eec771a14558b867ab2ff
+printf "Canned DONE"
+```
+
 
 ### Current
+
 
 #### AICP A11
 
@@ -263,13 +273,47 @@ export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 export SKIP_ABI_CHECKS=true
+# export ALLOW_MISSING_DEPENDENCIES=true
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
 
+```
+
+
+
+
+####  Havoc A11
+
+
+```sh
+mkdir havoc && cd havoc
+repo init -u https://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
+repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
+
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b havoc device/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150
+
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+export SKIP_ABI_CHECKS=true
+
+chmod +x build/envsetup.sh
+source build/envsetup.sh
+# time brunch havoc_X2-userdebug -j$(nproc --all) | tee log.txt
+
+make api-stubs-docs-update-current-api
+make system-api-stubs-docs-non-updatable-update-current-api
+
+# lunch havoc_X2-userdebug
+# time brunch -j$(nproc --all) | tee log.txt
+brunch
 
 ```
+
 
 
 ### Stale
@@ -326,42 +370,6 @@ source build/envsetup.sh
 # time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
 lunch crdroid_X2-userdebug
 time mka -j$(nproc --all) | tee log.txt
-
-
-```
-
-
-####  Havoc A11
-
-**Not updated**
-
-```sh
-mkdir havoc && cd havoc
-repo init -u https://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
-# repo init -u git://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
-repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
-
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b havoc device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150
-
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-export SKIP_ABI_CHECKS=true
-
-chmod +x build/envsetup.sh
-source build/envsetup.sh
-# time brunch havoc_X2-userdebug -j$(nproc --all) | tee log.txt
-
-make api-stubs-docs-update-current-api
-make system-api-stubs-docs-non-updatable-update-current-api
-
-# lunch havoc_X2-userdebug
-time brunch -j$(nproc --all) | tee log.txt
-
-
-
 ```
 
 
@@ -389,7 +397,6 @@ source build/envsetup.sh
 lunch lineage_X2-userdebug
 time mka bacon -j$(nproc --all) | tee log.txt
 
-
 ```
 
 
@@ -414,7 +421,6 @@ chmod +x build/envsetup.sh
 source build/envsetup.sh
 lunch rr_X2-userdebug
 time mka bacon -j$(nproc --all) | tee log.txt
-
 
 ```
 

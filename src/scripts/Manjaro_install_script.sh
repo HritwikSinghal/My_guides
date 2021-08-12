@@ -117,8 +117,8 @@ sudo systemctl start vnstat.service
 printf "\n-------------------------Install--PulseEffects-------------------------\n"
 sudo pacman -S --noconfirm --needed manjaro-pipewire gst-plugin-pipewire easyeffects
 
-printf "\n-------------------------Install--uget-------------------------\n"
-
+printf "\n-------------------------Install--uget-or-XDM-------------------------\n"
+yay -S --noconfirm --needed xdman
 
 printf "\n-------------------------Install--qBittorrent-------------------------\n"
 sudo pacman -S --noconfirm --needed qbittorrent

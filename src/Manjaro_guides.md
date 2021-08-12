@@ -19,11 +19,6 @@
 	- [create swap partiton](https://wiki.manjaro.org/index.php/Swap)
 
 
-
-- [Enable OS-prober](https://forum.manjaro.org/t/stable-update-2021-03-08-kernels-plasma-5-21-2-haskell-kodi-grub-kde-dev/56877)
-	- If you need dual-boot you can reactivate os-prober the easiest with the following command combination in a terminal
-    	```sudo echo GRUB_DISABLE_OS_PROBER=false >> /etc/default/grub && sudo update-grub```
-
 - If terminal wont open after changing language, add the language (EN-IN) again in manjaro setting manager.
 	- https://forum.manjaro.org/t/gnome-terminal-wont-open-after-update/52808
 
@@ -40,11 +35,11 @@
 - Add shortcuts
     - Calc (F7)
     - System monitor (ctrl+shift+Esc 'gnome-system-monitor')
-    - terminal (ctrl + alt + t)
+    - terminal (ctrl + alt + t) and (meta + enter)
+    - close to 'meta + c'
+    -
 
 - If vlc is not playing video, try https://bbs.archlinux.org/viewtopic.php?id=252113
-
-- Install Just perfection Extension in gnome 40 to increase workspace size in overview
 
 
 - some Qt tweaks to put in /etc/env
@@ -69,7 +64,6 @@
     ```
 
 
-- chaotic aur 
 - https://openbuildservice.org/
 
 - https://wiki.archlinux.org/index.php/Nemo#Tips_and_tricks

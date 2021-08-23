@@ -9,6 +9,7 @@
     - Extensions
     - Themes, Icons, Fonts
 - Guides
+    - grub reinstall
     - Virtualization, QEMU/KVM
     - Gaming
 
@@ -635,7 +636,36 @@
 
 ## Guides
 
-#### 1) Virtualization, QEMU/KVM
+#### grub reinstall
+
+- Sources
+    - https://howtoubuntu.org/how-to-repair-restore-reinstall-grub-2-with-a-ubuntu-live-cd
+    - https://askubuntu.com/questions/831216/how-can-i-reinstall-grub-to-the-efi-partition
+
+    - https://bbs.archlinux.org/viewtopic.php?id=172867
+    - https://unix.stackexchange.com/a/418913
+
+    Mount the partition your Ubuntu Installation is on. If you are not sure which it is, launch GParted (included in the Live CD) and find out. It is usually a EXT4 Partition. Replace the XY with the drive letter, and partition number, for example: sudo mount -t ext4 /dev/sda1 /mnt.
+
+    ```sh
+    sudo mount /dev/sdXY /mnt
+    sudo mount /dev/sdXX /mnt/boot/efi
+    for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done
+
+    for i in /dev /dev/pts /proc /sys /sys/firmware/efi/efivars /run; do sudo mount -B $i /mnt$i; done
+    modprobe efivars
+    mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+    mount --bind /sys/firmware/efi/efivars /mnt/sys/firmware/efi/efivars
+
+    sudo chroot /mnt
+    grub-install /dev/sdX
+    update-grub
+
+    ```
+
+
+
+#### Virtualization, QEMU/KVM
 
 - Enable 3d-acceleration in Linux Guests
     - https://www.spice-space.org/spice-user-manual.html#virgl
@@ -721,7 +751,7 @@ OR
     ```
 
 
-### 2) Gaming
+### Gaming
 
 
 - [How To Setup Gaming on Manjaro](https://www.youtube.com/watch?v=w3yUVQ4QFGU)

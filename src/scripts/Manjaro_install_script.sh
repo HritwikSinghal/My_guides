@@ -1,4 +1,4 @@
-#!/bin/zsh
+# #!/bin/zsh
 
 sudo pacman-mirrors --fasttrack 5
 sudo pacman -Syyuu
@@ -19,7 +19,7 @@ sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -Rs --noconfirm --needed onlyoffice-desktopeditors
 sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel android-tools android-udev
-yay -S --noconfirm --needed paru reflector
+yay -S --noconfirm --needed paru reflector ghostwriter
 
 
 # Micro, fzf, bash-zsh-insulter

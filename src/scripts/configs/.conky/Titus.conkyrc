@@ -124,9 +124,9 @@ conky.config = {
 	--Colours
 
 	default_color = '#D9DDE2',  				-- default color and border color
-	color1 = '#FF0000',	
+	color1 = '#FF0000',	                        -- red
 	color2 = '#58b860',							-- green
-	color3 = '#cccccc',
+	color3 = 'f4511e',                          -- orange
 	color4 = '#D9BC83',
 	color5 = '#fff963', 						-- yellow
 	color6 = '#FFFFFF',
@@ -147,27 +147,30 @@ conky.config = {
 
 
 };
-
 conky.text = [[
-${color6}${voffset 4}${font GE Inspira:size=50}${alignc}${time %l}:${time %M} ${time %p}${font}${color}
-
+${color6}${voffset 4}${font GE Inspira:size=40}${alignc}${time %l}:${time %M} ${time %p}${font}${color}
 ${color6}${voffset 4}${font GE Inspira:size=16}${alignc}${time %A} ${time %B} ${time %e}, ${time %Y}${font}${color}
 ############################################################################################################################################################################
 
+# ${color2}Distro:${color}${alignr}$sysname ${alignr}${exec lsb_release -a | grep 'Description'|awk {'print $2, $3, $4, $5'}}
+#
 ${color5}${font font1:size=10}${voffset 2}S Y S T E M   ${hr 2}${font}${color}
 ${color2}${voffset 8}Hostname:${color} ${alignr}${nodename}
-# ${color2}Distro:${color}${alignr}$sysname ${alignr}${exec lsb_release -a | grep 'Description'|awk {'print $2, $3, $4, $5'}}
 ${color2}Distro:${color}${alignr}${exec lsb_release -a | grep 'Description'|awk {'print $2, $3'}} ${color}${alignr}${exec lsb_release -a | grep 'Relea' | awk {'print $2'}} ${color}${alignr}${exec lsb_release -a | grep 'Code' | awk {'print $2'}}
 ${color2}Kernel:${color}${alignr}${exec uname} ${exec uname -r}
 ${color2}Uptime:${color} ${alignr}${uptime}
+${color3}Battery level: ${color}${alignr}$battery_percent%
+${color3}Battery Health: ${color}${alignr} ${exec upower -i `upower -e | grep 'BAT'` | grep -i capacity | awk {'print $2'}}
+${color2}GPU Temp: ${color} ${alignr}${exec sensors | grep 'edge' | awk {'print $2'}}
+#
 #Nvidia: ${alignr}${execp  nvidia-smi --query-supported-clocks=gpu_name --format=csv,noheader}
 #Nvidia Driver: ${alignr}${execi 60000 nvidia-smi | grep "Driver Version"| awk {'print $3'}}
 ############################################################################################################################################################################
 
 ${color5}${font font1:size=10}P R O C E S S O R S  ${hr 2}${font}${color}
 
-${color}${freq_g}GHz  			${cpu cpu0}% ${alignr} ${execi 10 sensors | grep 'Package id 0' | awk {'print $4'}}
-${color}${cpugraph cpu0 50,350 5e7b7b d8deeb -t}
+${color}${freq_g}GHz  			${cpu cpu0}% ${alignr} ${exec sensors | grep 'Package id 0' | awk {'print $4'}}
+${color}${cpugraph 45,350 5e7b7b d8deeb -t}
 # ${color2}${offset 30}CPU Core 1:${color} ${alignr}${offset -10}${cpu cpu1}%${alignr}${cpubar cpu1}
 # ${color2}${offset 30}CPU Core 2:${color} ${alignr}${offset -10}${cpu cpu2}%${alignr}${cpubar cpu2}
 # ${color2}${offset 30}CPU Core 3:${color} ${alignr}${offset -10}${cpu cpu3}%${alignr}${cpubar cpu3}
@@ -184,9 +187,11 @@ ${color5}${font font1:size=10}M E M O R Y   ${hr 2}${font}${color}
 
 # ${color2}${offset 30}RAM: ${color}${alignr}${offset -10}${mem} / ${memmax}${alignr}${membar}
 # ${color2}${offset 30}Swap:${color} ${alignr}${offset -10}${swap} / ${swapmax}${alignr}${swapbar}
+#
 ${color}${memperc}% ${alignr}${offset -10}${mem} / ${memmax}${alignr}${membar}
 ${color}${memgraph 50,350}
 ${color2}Swap:${color} ${alignr}${offset -10}${swap} / ${swapmax}${alignr}${swapbar}
+#
 # ${color2}Top Processes${goto 222}cpu%${goto 274}mem%${color}
 # ${voffset 4}     1  -  ${top_mem name 1}${alignr}${goto 170} ${goto 222}${top_mem cpu 1} ${goto 274}${top_mem mem 1}
 #      2  -  ${top_mem name 2}${alignr}${goto 170} ${goto 222}${top_mem cpu 2} ${goto 274}${top_mem mem 2}
@@ -209,7 +214,7 @@ ${color2}CR:${color} ${alignr}${offset -10}${fs_used /run/media/hritwik/CR}/${fs
 ${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda5}${alignr}${diskiograph_read /dev/sda5 12,130}
 ${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda5}${alignr}${diskiograph_write /dev/sda5 12,130}
 
-${color2}HDD :${color} ${alignr}${offset -10}${fs_used /run/media/hritwik/HDD} / ${fs_size /run/media/hritwik/HDD}${alignr}${fs_bar 12,130 /run/media/hritwik/HDD}
+${color2}Seagate :${color} ${alignr}${offset -10}${fs_used /run/media/hritwik/Seagate} / ${fs_size /run/media/hritwik/Seagate}${alignr}${fs_bar 12,130 /run/media/hritwik/Seagate}
 ${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sdb1}${alignr}${diskiograph_read /dev/sdb1 12,130}
 ${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sdb1}${alignr}${diskiograph_write /dev/sdb1 12,130}
 
@@ -217,26 +222,29 @@ ${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sdb1}${ali
 
 ${color5}${color5}${font font1:size=10}N E T W O R K   ${hr 2}${font}${color}
 
+${color2}Wifi SSID: ${color} ${alignr}${offset -10$}${wireless_essid wlp3s0}
+
 ${color2}Local IPv4 Address: ${color} ${alignr}${offset -10$}${addrs wlp3s0}
+${color2}Public IPv4 Address: ${color}${alignr}${offset -10$}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
+${color2}DNS Server IPv4: ${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep IP4 | awk '{ print $2 }'}
+
+# Below prints first line for local ipv6
 #
-# Below prints first line
-${color2}Local IPv6 Address: ${color}${alignr}${offset -10$}${exec ifconfig | grep inet6 | grep -m1 global | awk '{ print $2 }'}
+# ${color2}Local IPv6 Address:
+# ${color}${alignr}${offset -10$}${exec ifconfig | grep inet6 | grep -m1 global | awk '{ print $2 }'}
 #
 # This prints rest of lines
-${color}${alignr}${offset -10$}${exec ifconfig | grep inet6 | grep global | awk 'NR!=1' | awk '{ print $2 }'}
-
-${color2}Public IPv4 Address: ${color}${alignr}${offset -10$}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
-${color2}Public IPv6 Address: ${color}${alignr}${offset -10$}${execi 3600 wget -q -O - https://nsx.de/ | grep -i 2405}
+# ${color}${alignr}${offset -10$}${exec ifconfig | grep inet6 | grep global | awk 'NR!=1' | awk '{ print $2 }'}
+# ${color2}Public IPv6 Address: ${color}${alignr}${offset -10$}${execi 3600 wget -q -O - https://nsx.de/ | grep -i 2405}
 # ${exec curl -s www.icanhazip.com}
-
-${color2}DNS Server IPv4: ${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep IP4 | awk '{ print $2 }'}
-${color2}DNS Server IPv6: ${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep -m1 IP6  | awk '{ print $2 }'}
-${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep IP6 | awk 'NR!=1' | awk '{ print $2 }'}
+# ${color2}DNS Server IPv6: ${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep -m1 IP6  | awk '{ print $2 }'}
+# ${color}${alignr}${offset -10$}${exec nmcli dev show | grep DNS | grep IP6 | awk 'NR!=1' | awk '{ print $2 }'}
 
 ${color2}Wlan Down: ${color}${alignr}${offset -10$} ${downspeed wlp3s0} (${totaldown wlp3s0})
 ${color} ${offset -10$}${downspeedgraph wlp3s0 27,350}
 ${color2}Wlan Up: ${color}${alignr}${offset -10$} ${upspeed wlp3s0} (${totalup wlp3s0})
 ${color} ${offset -10$}${upspeedgraph wlp3s0 27,350}
+# ${offset 15}${font Noto Sans:size=10}${execi 2 fortune -s | fold -s -w44}
 #
 #
 #
@@ -249,3 +257,4 @@ ${color} ${offset -10$}${upspeedgraph wlp3s0 27,350}
 #${offset 30}Mem Clock ${alignr}${execi 86400 nvidia-settings -q all| grep -m 1 GPUCurrentProcessorClockFreqs | awk '{print $4}' | sed 's/.$//'} MHz
 #${offset 30}Mem Used ${alignr}${execi 60 nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -t} / ${exec nvidia-settings -q [gpu:0]/TotalDedicatedGPUMemory -t} MiB0
 ]];
+

@@ -27,6 +27,13 @@ sudo dpkg -i hll2360dlpr-3.2.0-1.i386.deb
 sudo usermod -a -G lpadmin pi
 
 
+# pihole
+curl -sSL https://install.pi-hole.net | bash
+
+
+# Room control service
+curl -sSL https://raw.githubusercontent.com/HritwikSinghal/room_control_server/master/install.sh | bash
+
 # set custom resolution, this should work but dont know it it would
 echo "# force a specific HDMI mode (this will force VGA)" | sudo tee -a /boot/config.txt
 echo "hdmi_group=2" | sudo tee -a /boot/config.txt

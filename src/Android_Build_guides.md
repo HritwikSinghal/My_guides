@@ -506,7 +506,7 @@ time mka bacon -j$(nproc --all) | tee log.txt
 - AICP
 - AOSiP 				- Option for Gapps
 - AOSP
-- AncientOS
+- AncientOS             - Source private
 - Arrow
 - Awaken
 
@@ -514,34 +514,40 @@ time mka bacon -j$(nproc --all) | tee log.txt
 - Bliss ROM
 
 - Carbon ROM
-- Cesium
+- CesiumOS
+- CherishOS
 - ColtOS
+- ConquerOS             - CAF based
 - Corvus
 - CrDroid
+- Cygnus OS             - CAF based
 
 - Derpfest
-- Descendent
+- Descendent-XI
 - Dirty Unicorn ROM 	- CAF based - DEAD
 - DotOS
 
 - EvolutionX 			- Gapps
-- Extended UI 			- Maybe Dead
+- Extended UI 			- Dead
 
 - Floko
 - Fluid Rom
 
 - HavocOS
+- HyconOS
 
 - ION ROM
 
 - KangOS
 
+- Legion OS
+- LessAOSP
 - LOS
 
 - MSMXtended			- CAF based
 
 - NusantaraProject-ROM
-- Nezuko OS 			- Gapps (PE based)
+- Nezuko OS 			- Gapps (PE based), Dead
 - NitrogenOS
 
 - Octavi
@@ -555,15 +561,24 @@ time mka bacon -j$(nproc --all) | tee log.txt
 - PixelPlusUI			- Gapps
 - PixyOS				- Gapps
 - POSP
+- Project Lighthouse
+- Project Radiant
 - Project Sakura
 
 - RevengeOS
 - RR
 
 - ShapeshiftOS
+- SparkOS
 - StagOS
 - Styx Project
 - SuperiorOS
+
+- The Styx Project
+
+- WaveOS
+
+- Xtended
 
 - ZenX
 
@@ -575,6 +590,8 @@ time mka bacon -j$(nproc --all) | tee log.txt
 
 
 - EXTENDED KERNEL
+- Elixir
+- Hydra
 - InsigniuX Kernel
 - Panda Kernel
 - RAD Kernel

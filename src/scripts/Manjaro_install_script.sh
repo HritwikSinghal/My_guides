@@ -1,4 +1,4 @@
-# #!/bin/zsh
+#!/bin/bash
 
 sudo pacman-mirrors --fasttrack 5
 sudo pacman -Syyuu
@@ -13,13 +13,13 @@ printf "\n-------------------------Install--extras-------------------------\n"
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
 sudo pacman -S --noconfirm --needed filezilla git rar unrar p7zip
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
-sudo pacman -S --noconfirm --needed kate dconf-editor net-tools curl eog neovim
+sudo pacman -S --noconfirm --needed kate dconf-editor net-tools curl eog neovim spacevim
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -Rs --noconfirm --needed onlyoffice-desktopeditors
-sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel android-tools android-udev
-yay -S --noconfirm --needed paru reflector ghostwriter
+sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel
+yay -S --noconfirm --needed paru-bin reflector ghostwriter
 
 
 # Micro, fzf, bash-zsh-insulter
@@ -30,7 +30,7 @@ paru --noconfirm --needed bash-zsh-insulter
 # ADB
 sudo pacman -S --noconfirm --needed android-tools android-udev
 
-pip3 install pipenv youtube_dlc
+pip3 install pipenv youtube_dlp
 
 # sudo apt install ttf-mscorefonts-installer -y
 # sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
@@ -50,13 +50,13 @@ printf "\n-------------------------Install--java-------------------------\n"
 sudo pacman -S --noconfirm --needed jre-openjdk jdk-openjdk
 
 printf "\n-------------------------Install--Timeshift-------------------------\n"
-sudo pacman -S --noconfirm --needed timeshift
+sudo pacman -S --noconfirm --needed timeshift cronie
 sudo systemctl enable cronie
 sudo systemctl start cronie
 
 printf "\n-------------------------Install--nmcli-------------------------\n"
 sudo pacman -S --noconfirm --needed networkmanager
-sudo systemctl start NetworkManager.service
+sudo systemctl enable NetworkManager.service
 sudo systemctl start NetworkManager.service
 
 printf "\n-------------------------Install--GNOME-tweak-tool and chrome-gnome-shell-------------------------\n"

@@ -354,6 +354,39 @@ export SKIP_ABI_CHECKS=true
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 lunch aosip_X2-userdebug
+
+
+
+#   # This error will come
+# - "'vendor/aosip/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml', needed by 'out/target/product/X2/system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml', missing and no known rule to make it"
+#     - https://gerrit.pixelexperience.org/c/vendor_aosp/+/658
+#     - https://gerrit.pixelexperience.org/plugins/gitiles/vendor_aosp/+/9a269eebcb30284b41863dcd337597d41256c7f3/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+#
+#    # to solve
+#     - mkdir -p vendor/aosip/config/permissions/
+#     - touch vendor/aosip/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+#     - vim vendor/aosip/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+#     ```
+# <?xml version="1.0" encoding="utf-8"?>
+# <!-- Copyright (C) 2019 The LineageOS Project
+#     Licensed under the Apache License, Version 2.0 (the "License");
+#     you may not use this file except in compliance with the License.
+#     You may obtain a copy of the License at
+#         http://www.apache.org/licenses/LICENSE-2.0
+#     Unless required by applicable law or agreed to in writing, software
+#     distributed under the License is distributed on an "AS IS" BASIS,
+#     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#     See the License for the specific language governing permissions and
+#     limitations under the License.
+# -->
+# <permissions>
+#     <feature name="vendor.lineage.biometrics.fingerprint.inscreen" />
+# </permissions>
+#
+#     ```
+
+
+
 time m kronic -j$(nproc --all) | tee log.txt
 
 ```
@@ -389,8 +422,10 @@ export SKIP_ABI_CHECKS=true
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 
-make api-stubs-docs-update-current-api && make system-api-stubs-docs-non-updatable-update-current-api \
-&& time brunch -j$(nproc --all) | tee log.txt
+make api-stubs-docs-update-current-api -j$(nproc --all) && \
+make system-api-stubs-docs-non-updatable-update-current-api -j$(nproc --all) && \
+# time brunch -j$(nproc --all) | tee log.txt        # DONT USE THIS, WILL GIVE ERRORS
+brunch
 
 
 ```

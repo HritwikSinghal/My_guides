@@ -12,14 +12,10 @@
 	- Ubuntu
 
 - Scripts for Roms
-	- Current
-		- AICP
-		- RR
-	- Stale
-		- AEX
-		- CrDroid
-		- Havoc
-		- LOS
+    - AICP
+    - Havoc
+    - AOSiP
+    - RR
 		
 - Guides
 - List of:
@@ -289,8 +285,6 @@ printf "Canned DONE"
 ```
 
 
-### Current
-
 
 #### AICP A11
 
@@ -422,55 +416,11 @@ export SKIP_ABI_CHECKS=true
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 
-make api-stubs-docs-update-current-api -j$(nproc --all) && \
-make system-api-stubs-docs-non-updatable-update-current-api -j$(nproc --all) && \
+# make api-stubs-docs-update-current-api -j$(nproc --all) && \
+# make system-api-stubs-docs-non-updatable-update-current-api -j$(nproc --all) && \
 # time brunch -j$(nproc --all) | tee log.txt        # DONT USE THIS, WILL GIVE ERRORS
 brunch
 
-
-```
-
-
-
-### Stale
-
-#### AEX A11
-
-
-```sh
-
-chmod +x build/envsetup.sh
-source build/envsetup.sh
-lunch aosp_X2-userdebug
-time m aex -j$(nproc --all) | tee log.txt
-
-```
-
-
-
-
-#### CrDroid A11
-
-**Not updated**
-
-```sh
-chmod +x build/envsetup.sh
-source build/envsetup.sh
-# time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
-lunch crdroid_X2-userdebug
-time mka -j$(nproc --all) | tee log.txt
-```
-
-
-####  LOS
-
-**Not updated**
-
-```sh
-chmod +x build/envsetup.sh
-source build/envsetup.sh
-lunch lineage_X2-userdebug
-time mka bacon -j$(nproc --all) | tee log.txt
 
 ```
 

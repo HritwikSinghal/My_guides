@@ -56,8 +56,6 @@ export SKIP_ABI_CHECKS=true
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
-
-
-make api-stubs-docs-update-current-api && make system-api-stubs-docs-non-updatable-update-current-api \
-&& time brunch -j$(nproc --all) | tee log.txt
+lunch havoc_X2-userdebug
+brunch
 

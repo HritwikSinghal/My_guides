@@ -42,8 +42,6 @@
 
 ### Todo
 
-- Try to use ubuntu in Docker for build
-
 - Use prebuilt Kernel
 
 - see this, most of this is FA 
@@ -107,17 +105,6 @@
 	- fix aac decoding on A11 roms with A10 vendor
 		- https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024f289772960f3cd7072fa940
 
-	- Prox A11
-		- for prox use A11 KT
-		- Dual Prox
-			- dual proxy, add this in DT [RMX1921:overlay: enable AOSP dual proximity approach via overlay ](https://github.com/DerpFest-Devices/device_realme_RMX1921/commit/052e4ce3ef4fd1064a939b54404dae06d83a2d0c#)
-			- dual proxy, revert this in kernel https://github.com/HritwikSinghal/android_kernel_realme_sm6150/commit/cf3ff1ae2759fa806fa3b50fa42119f20074c3e3
-
-	- Wifi calling
-		- maybe; revert this in vendor [X2: stopship telephony common jar for now ](https://github.com/HritwikSinghal/vendor_realme_X2/commit/b9a8253a6900485882be9b1f9b73aec06adb30e8) 
-		- or add this https://github.com/AOSP-Realme-X2/platform_vendor_codeaurora_telephony
-
-
 
 ### Errors
 
@@ -152,12 +139,55 @@
 
 - if ncurses lib not found error, try ```paru ncurses5-compat-libs```
 
+- "'vendor/aosip/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml', needed by 'out/target/product/X2/system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml', missing and no known rule to make it"
+    - https://gerrit.pixelexperience.org/c/vendor_aosp/+/658
+    - https://gerrit.pixelexperience.org/plugins/gitiles/vendor_aosp/+/9a269eebcb30284b41863dcd337597d41256c7f3/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+
+    - mkdir -p vendor/aosip/config/permissions/
+    - touch vendor/aosip/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    - vim vendor/aosip/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    ```
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 The LineageOS Project
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+        http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<permissions>
+    <feature name="vendor.lineage.biometrics.fingerprint.inscreen" />
+</permissions>
+
+    ```
+
+- Bhai splash pe stuck ho ja rha ..Logs kaise lun? Adb work nhi kar rha splash par.
+    Log it via init.rc
+    Create a logcat service that writes to /cache/myFavLogcat.log
+    Then pull this file via recovery
+
 
 
 --- 
 
 
+## Mount remote FS as folder in local machine
 
+- [How to Mount Remote Linux Filesystem or Directory Using SSHFS Over SSH](https://www.tecmint.com/sshfs-mount-remote-linux-filesystem-directory-using-ssh/)
+    - All of below is done on local machine
+        - sudo apt-get install sshfs
+        - yay -S sshfs
+
+        - mkdir -p ~/mnt/linode
+        - sshfs hritwik@x.x.x.x:/home/hritwik/ ~/mnt/linode
+        - cd ~/mnt/linode
+
+        - exit
+        - umount ~/mnt/tecmint
 
 
 
@@ -169,10 +199,13 @@
 
 
 ```sh
-
+#!/bin/bash
 sudo pacman -S base-devel yay android-tools android-udev --noconfirm --needed
 sudo usermod -a -G adbusers $USER
 newgrp adbusers
+
+git config --global user.email "test@test.com"
+git config --global user.name "testcom"
 
 # This will setup repo in /usr/bin 
 git clone https://github.com/akhilnarang/scripts.git
@@ -210,11 +243,14 @@ export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 
 
 ```sh
-
+#!/bin/bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install android-tools-adb android-tools-fastboot
 
+git config --global user.email "test@test.com"
+git config --global user.name "testcom"
 
+mkdir -p ~/roms && cd ~/roms
 # This will setup repo in /usr/bin 
 git clone https://github.com/akhilnarang/scripts.git
 chmod +x ./scripts/setup/android_build_env.sh
@@ -260,7 +296,7 @@ printf "Canned DONE"
 
 
 ```zsh
-mkdir aicp && cd aicp
+mkdir -p ~/roms/aicp/&& cd ~/roms/aicp
 repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
@@ -268,7 +304,14 @@ git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aicp devic
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b android-11.0.0 kernel/realme/sm6150
 
+cd external/selinux
+git remote add can https://github.com/CannedOS/external_selinux
+git fetch can
+git cherry-pick db56d38c06ca4514304eec771a14558b867ab2ff
+cd ..
+cd ..
 
+ccache -M 50G
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
@@ -282,13 +325,47 @@ time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
 ```
 
 
+#### AOSiP A11
+
+
+```zsh
+mkdir -p ~/roms/aosip && cd ~/roms/aosip
+repo init -u git://github.com/AOSiP/platform_manifest.git -b eleven --depth=1
+repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle -c
+
+git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aosip device/realme/X2
+git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
+git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b android-11.0.0 kernel/realme/sm6150
+
+cd external/selinux
+git remote add can https://github.com/CannedOS/external_selinux
+git fetch can
+git cherry-pick db56d38c06ca4514304eec771a14558b867ab2ff
+cd ..
+cd ..
+
+export USE_CCACHE=1
+ccache -M 50G
+# export CCACHE_EXEC=/usr/bin/ccache
+# export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+export SKIP_ABI_CHECKS=true
+# export ALLOW_MISSING_DEPENDENCIES=true
+
+chmod +x build/envsetup.sh
+source build/envsetup.sh
+lunch aosip_X2-userdebug
+time m kronic -j$(nproc --all) | tee log.txt
+
+```
+
+
 
 
 ####  Havoc A11
 
 
 ```sh
-mkdir havoc && cd havoc
+mkdir -p ~/roms/havoc && cd ~/roms/havoc
 repo init -u https://github.com/Havoc-OS/android_manifest.git -b eleven --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
@@ -296,21 +373,25 @@ git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b havoc devi
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150.git" -b android-11.0.0 kernel/realme/sm6150
 
+cd external/selinux
+git remote add can https://github.com/CannedOS/external_selinux
+git fetch can
+git cherry-pick db56d38c06ca4514304eec771a14558b867ab2ff
+cd ..
+cd ..
+
 export USE_CCACHE=1
+ccache -M 50G
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 export SKIP_ABI_CHECKS=true
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
-# time brunch havoc_X2-userdebug -j$(nproc --all) | tee log.txt
 
-make api-stubs-docs-update-current-api
-make system-api-stubs-docs-non-updatable-update-current-api
+make api-stubs-docs-update-current-api && make system-api-stubs-docs-non-updatable-update-current-api \
+&& time brunch -j$(nproc --all) | tee log.txt
 
-# lunch havoc_X2-userdebug
-# time brunch -j$(nproc --all) | tee log.txt
-brunch
 
 ```
 
@@ -322,20 +403,6 @@ brunch
 
 
 ```sh
-
-ROM_NAME = ""
-mkdir aex && cd aex
-repo init -u git://github.com/AospExtended/manifest.git -b 11.x --depth=1
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b aex device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b android-11.0.0 kernel/realme/sm6150
-
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-export SKIP_ABI_CHECKS=true
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh
@@ -351,20 +418,7 @@ time m aex -j$(nproc --all) | tee log.txt
 
 **Not updated**
 
-```zsh
-mkdir crdroid && cd crdroid
-repo init -u git://github.com/crdroidandroid/android.git -b 11.0 --depth=1
-repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
-
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b crdroid device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b master vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b android-11.0.0 kernel/realme/sm6150
-
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-export SKIP_ABI_CHECKS=true
-
+```sh
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 # time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
@@ -378,20 +432,6 @@ time mka -j$(nproc --all) | tee log.txt
 **Not updated**
 
 ```sh
-
-mkdir los && cd los
-repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
-repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
-
-git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b lineage-18 device/realme/X2
-git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b test vendor/realme/X2
-git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b test kernel/realme/sm6150
-
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
-export SKIP_ABI_CHECKS=true
-
 chmod +x build/envsetup.sh
 source build/envsetup.sh
 lunch lineage_X2-userdebug

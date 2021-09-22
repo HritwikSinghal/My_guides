@@ -11,7 +11,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 echo "autoload -U compinit" >> ~/.zshrc
 
 
-# Does not work
+# Does not work, fix this
 sudo sed "s/plugins=(/plugins=(zsh-syntax-highlighting zsh-autosuggestions zsh-completions/g" ~/.zshrc
 
 # Powerlevel10K

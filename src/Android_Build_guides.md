@@ -143,21 +143,21 @@
     - touch vendor/aosip/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
     - vim vendor/aosip/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
     ```
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2019 The LineageOS Project
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-        http://www.apache.org/licenses/LICENSE-2.0
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<permissions>
-    <feature name="vendor.lineage.biometrics.fingerprint.inscreen" />
-</permissions>
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Copyright (C) 2019 The LineageOS Project
+            Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at
+                http://www.apache.org/licenses/LICENSE-2.0
+            Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.
+        -->
+        <permissions>
+            <feature name="vendor.lineage.biometrics.fingerprint.inscreen" />
+        </permissions>
 
     ```
 
@@ -178,14 +178,23 @@
         - sudo apt-get install sshfs
         - yay -S sshfs
 
-        - mkdir -p ~/mnt/linode
-        - sshfs hritwik@x.x.x.x:/home/hritwik/ ~/mnt/linode
-        - cd ~/mnt/linode
+        - mkdir -p ~/mnt/linode/aicp
+        - sshfs username@ip_addr:<home_dir_server> ~/mnt/linode/aicp
+        - cd ~/mnt/linode/aicp
 
-        - exit
-        - umount ~/mnt/tecmint
+        - your server will be accessible in ~/mnt/linode/aicp
+        - rom in '/home/hritwik/mnt/linode/rr/roms/rr/out/target/product/X2'
+        - umount ~/mnt/linode/rr
 
 
+
+```
+mkdir -p ~/mnt/linode/rr
+sshfs hritwik@45.79.127.92:/home/hritwik/ ~/mnt/linode/rr
+cd ~/mnt/linode/rr
+
+umount ~/mnt/linode/rr
+```
 
 ## Setup
 
@@ -437,10 +446,50 @@ git clone "https://github.com/HritwikSinghal/device_realme_X2.git" -b rr_10 devi
 git clone "https://github.com/HritwikSinghal/vendor_realme_X2.git" -b rr_10 vendor/realme/X2
 git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b lineage-17.1 kernel/realme/sm6150
 
+# Not needed
+#
+# cd external/selinux
+# git remote add can https://github.com/CannedOS/external_selinux
+# git fetch can
+# git cherry-pick db56d38c06ca4514304eec771a14558b867ab2ff
+# cd ..
+# cd ..
+
+
+# For devices with in-display fingerprint, you need to adapt your devices to FOD 1.1 for things to work properly. FOD1.1 + fod-ext value to call the HAL layer
+#
+# Also set this flag in device tree device.mk
+# TARGET_HAS_FOD := true
+#
+# For Devices who don't wish to adapt to 1.1, and wish to stick to los 1.0 ext impl, please merge the following two commits in frameworks/base and packages/apps/Settings
+# Base:
+# https://github.com/ResurrectionRemix/android_frameworks_base/commit/b27490b437a1bc2a767af6d0dd8a30aae96036f0
+# Settings
+# https://github.com/ResurrectionRemix/Resurrection_packages_apps_Settings/commit/24551c50223cbccd8fd74f053463f99e38ee93d8
+#
+# Please don't forget extension lib (already in X2 RR DT)
+
+
+cd frameworks/base
+git remote add off_rr https://github.com/ResurrectionRemix/android_frameworks_base
+git fetch off_rr
+git cherry-pick b27490b437a1bc2a767af6d0dd8a30aae96036f0
+cd ../..
+
+
+cd packages/apps/Settings
+git remote add off_rr https://github.com/ResurrectionRemix/Resurrection_packages_apps_Settings
+git fetch off_rr
+git cherry-pick 24551c50223cbccd8fd74f053463f99e38ee93d8
+cd ../../..
+
+
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 export RR_BUILDTYPE=Unofficial
+export SKIP_ABI_CHECKS=true
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+
 
 chmod +x build/envsetup.sh
 source build/envsetup.sh

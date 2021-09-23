@@ -95,6 +95,8 @@
 
 # 3. Low priority
 
+- enable firewall
+
 - Coursera courses on CS
     - https://www.coursera.org/learn/algorithms-part1
     - https://www.coursera.org/learn/algorithms-part1

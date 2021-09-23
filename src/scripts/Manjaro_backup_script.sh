@@ -1,9 +1,14 @@
 #!/bin/sh
 set -e
 
+# todo: backup and restore of whole OS
+# https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
+# https://github.com/lra/mackup
+# https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
+
 
 #
-# printf "\n-------------------------PulseEffects-------------------------\n"
+# printf "\n-------------------------easyeffects-------------------------\n"
 # cd ~
 # zip -r ~/Backups/easyeffects.zip ~/.config/easyeffects
 #
@@ -35,10 +40,6 @@ set -e
 # printf "\n-------------------------vnstat-------------------------\n"
 # cd ~
 # cp ./.vnstatrc ~/Backups/
-
-# printf "\n-------------------------ssh-------------------------\n"
-# cd ~
-# zip -r ~/Backups/git_ssh.zip ./.ssh
 
 # printf "\n-------------------------Qbittorrent-------------------------\n"
 # # https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#Where_does_qBittorrent_save_its_settings
@@ -73,20 +74,19 @@ cd ~
 mkdir -p ~/Backups
 
 
-printf "\n-------------------------firefox-------------------------\n"
+printf "\n-------------------------mozilla-------------------------\n"
 cd ~
-zip -r ~/Backups/firefox_bak.zip ./.mozilla
+zip -r ~/Backups/mozilla.zip ./.thunderbird ./.mozilla
 
-printf "\n-------------------------thunderbird-------------------------\n"
+printf "\n-------------------------ssh-------------------------\n"
 cd ~
-zip -r ~/Backups/thunderbird_bak.zip ./.thunderbird
-
+zip -r ~/Backups/ssh.zip ./.ssh
 
 printf "\n-------------------------Backuping up gsettings-------------------------\n"
 mkdir -p ~/Backups/gsettings
 dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
-dconf dump /com/github/wwmm/pulseeffects/ > ~/Backups/gsettings/com.github.wwmm.pulseeffects
+dconf dump /com/github/wwmm/easyeffects/ > ~/Backups/gsettings/com.github.wwmm.easyeffects
 
 
 echo "Finished Successfully..."
@@ -96,7 +96,7 @@ echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory
 
 yadm add \
     ~/.gitignore \
-\
+    \
     ~/Templates \
     ~/.android \
     ~/.atom \
@@ -113,7 +113,6 @@ yadm add \
     ~/.vnc \
     ~/.vscode-oss \
     ~/.xdman \
-\
     ~/.bash* \
     ~/.dir_colors \
     ~/.gitconfig \
@@ -123,9 +122,8 @@ yadm add \
     ~/.vnstatrc \
     ~/.zhistory \
     ~/.zsh* \
-
-
-yadm add \
+    \
+    \
     ~/.config/Atom \
     ~/.config/autostart \
     ~/.config/bleachbit \
@@ -167,7 +165,7 @@ yadm add \
     ~/.config/VSCodium \
     ~/.config/warpinator \
     ~/.config/wireshark \
-\
+    ~/.config/yay \
     ~/.config/appimagelauncher.cfg \
     ~/.config/kate* \
     ~/.config/kid3rc \

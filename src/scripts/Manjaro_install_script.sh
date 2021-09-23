@@ -13,28 +13,16 @@ printf "\n-------------------------Install--extras-------------------------\n"
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
 sudo pacman -S --noconfirm --needed filezilla git rar unrar p7zip
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
-sudo pacman -S --noconfirm --needed kate dconf-editor net-tools curl eog neovim nano fish zsh tmux
-sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils
+sudo pacman -S --noconfirm --needed dconf-editor net-tools curl eog nano tmux
+sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-printer
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
+sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform
 sudo pacman -Rs --noconfirm --needed onlyoffice-desktopeditors firefox thunderbird
-sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel
-
-# Micro, fzf
-sudo pacman -S --noconfirm --needed micro wl-clipboard fzf tldr
-micro -plugin install aspell wc
 
 # ADB
 sudo pacman -S --noconfirm --needed android-tools android-udev
 
-# AUR packages
-yay -S --noconfirm --needed paru-bin reflector ghostwriter yadm bash-zsh-insulter
-
-# spacevim
-curl -sLf https://spacevim.org/install.sh | bash
-
-# Python packages
-pip3 install pipenv yt-dlp youtube_dlc
 
 # sudo apt install ttf-mscorefonts-installer -y
 # sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
@@ -45,7 +33,8 @@ pip3 install pipenv yt-dlp youtube_dlc
 # # extra codecs
 # sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv opus wavpack x264 xvidcore  --noconfirm --needed
 
-
+printf "\n-------------------------Install--KDE tools-------------------------\n"
+sudo pacman -S --noconfirm --needed thunar kate kid3 kio
 
 printf "\n-------------------------Install--Wine & Proton-------------------------\n"
 
@@ -70,7 +59,7 @@ printf "\n-------------------------Install--Kvantum-------------------------\n"
 sudo pacman -S --noconfirm --needed kvantum-manjaro kvantum-qt5
 
 printf "\n-------------------------Install--Mozilla-------------------------\n"
-sudo pacman -S --noconfirm --needed firefox thunderbird
+# sudo pacman -S --noconfirm --needed firefox thunderbird
 # make script for firefox-trunk
 # https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux
 
@@ -118,8 +107,9 @@ sudo pacman -S --noconfirm --needed vnstat
 sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
-printf "\n-------------------------Install--PulseEffects-------------------------\n"
-sudo pacman -S --noconfirm --needed manjaro-pipewire gst-plugin-pipewire easyeffects
+printf "\n-------------------------Install--EasyEffects-------------------------\n"
+# sudo pacman -S --noconfirm --needed manjaro-pipewire gst-plugin-pipewire easyeffects
+sudo pacman -S --noconfirm --needed easyeffects
 
 printf "\n-------------------------Install--uget-or-XDM-------------------------\n"
 yay -S --noconfirm --needed xdman
@@ -158,7 +148,10 @@ printf "\n-------------------------Install--obs-studio-------------------------\
 sudo pacman -S --noconfirm --needed obs-studio
 
 printf "\n-------------------------Install--vscodium-------------------------\n"
-# paru vscodium-bin vscodium-bin-marketplace
+# yay -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features
+
+# for code oss
+# yay -S --noconfirm --needed code-marketplace code-features-insiders code-icons
 
 printf "\n-------------------------Install--Sublime-------------------------\n"
 # curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
@@ -171,7 +164,6 @@ sudo pacman -S --noconfirm --needed signal-desktop
 printf "\n-------------------------Install--youtube-dl-------------------------\n"
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
-virt-manager --connect qemu:///session
 
 
 printf "\n-------------------------Install--Xanmod-------------------------\n"
@@ -183,13 +175,10 @@ sudo pacman -S --noconfirm --needed gnome-boxes virt-manager ebtables
 sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
 sudo systemctl restart libvirtd
+virt-manager --connect qemu:///session
 
 
 printf "\n-------------------------Install--jetbrains-------------------------\n"
-# sudo snap install pycharm-community --classic
-# # flatpak install flathub com.jetbrains.PyCharm-Community -y
-# sudo snap install clion --classic
-# # flatpak install flathub com.jetbrains.CLion -y
 # Use toolbox
 
 printf "\n-------------------------Install--telegram-------------------------\n"
@@ -211,8 +200,23 @@ sudo pacman -S --noconfirm --needed appimagelauncher
 
 printf "\n-------------------------Install--Rust-tools-------------------------\n"
 # Rust core utils
-sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs
+sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs micro fzf tldr neovim fish zsh
+micro -plugin install aspell wc
 
+
+printf "\n-------------------------Install--spacevim-------------------------\n"
+curl -sLf https://spacevim.org/install.sh | bash
+
+
+printf "\n-------------------------Install--AUR packages-------------------------\n"
+yay -S --noconfirm --needed paru-bin reflector ghostwriter yadm bash-zsh-insulter
+yay -S --noconfirm --needed brave-bin brlaser brother-hll2360d brother-lpr-drivers-common ebtables
+yay -S --noconfirm --needed firefox-profile-switcher-connector-bin lib32-ncurses5-compat-libs ncurses5-compat-libs ruby-revdev
+yay -S --noconfirm --needed qemu-user-static-bin binfmt-qemu-static-all-arch
+yay -S --noconfirm --needed warpinator webapp-manager
+
+printf "\n-------------------------Install--Python packages-------------------------\n"
+pip3 install pipenv yt-dlp youtube_dlc
 
 
 
@@ -220,25 +224,101 @@ sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
+
+
+printf "\n--------------------------Restore---mozilla-------------------------\n"
+rm -rf ~/.mozilla
+unzip ./configs/mozilla.zip -d ~
+
+
+printf "\n--------------------------Restore---git_ssh-------------------------\n"
+git config --global user.email "Hritwiksinghal@outlook.in"
+git config --global user.name "Hritwik"
+rm -rf ~/.ssh
+unzip ./configs/ssh.zip -d ~
+
+
+printf "\n--------------------------Restore---dconf-settings-------------------------\n"
+
+# Backup first
+dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
+dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
+dconf dump /com/github/wwmm/easyeffects/ > /home/hritwik/com.github.wwmm.easyeffects_Bak
+
+dconf load /org/gnome/ < ./configs/gsettings/org.gnome
+dconf load /org/nemo/ < ./configs/gsettings/org.nemo
+dconf load /com/github/wwmm/easyeffects/ < ./configs/gsettings/com.github.wwmm.easyeffects
+
+printf "\n--------------------------Restore---Keyboard Layout-------------------------\n"
+sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
+sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
+sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
+sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
+
+
+
+
+
+
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
 
-# Micro, make default, set theme
-echo "export EDITOR=/usr/bin/micro" >> ~/.zshrc
 
-	############ WARNING: This will wipe out existing micro config file ############
-echo "{" > .config/micro/settings.json
-echo '    "colorscheme": "dukedark-tc"' >> .config/micro/settings.json
-echo "}" >> .config/micro/settings.json
+#################################################################################
+################################# Needs testing #################################
+
+
+# QT Tweaks
+
+# QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
+# QT_QPA_PLATFORM=wayland 		# Force to use wayland backend, also install qt5-wayland & qt6-wayland
+# echo "QT_STYLE_OVERRIDE=kvantum-dark" | sudo tee -a /etc/environment      # replace instead of add
+
+# QT_AUTO_SCREEN_SCALE_FACTOR=1
+# QT_QPA_PLATFORMTHEME="gnome"
+# QT_STYLE_OVERRIDE="kvantum-dark"
+# QT_QPA_PLATFORM=wayland
+
+
+sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=kvantum-dark/g' /etc/environment
+
+echo "" | sudo tee -a /etc/environment
+echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
+
+
+# Graphics card, use dGPU
+echo "" | sudo tee -a /etc/environment
+echo "DRI_PRIME=1" | sudo tee -a /etc/environment
+
+
+echo "AMD_VULKAN_ICD=RADV" | sudo tee -a /etc/environment
+
+# Firefox, run in wayland mode
+echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
+
+
+
+# goes to .profile
+# export AMD_VULKAN_ICD=RADV
+# export EDITOR=/usr/bin/micro
+# export BROWSER=firefox
+# export TERM=alacritty
+# export MAIL=geary
+# export QT_QPA_PLATFORMTHEME="qt5ct"
+# export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+################################# Needs testing #################################
+#################################################################################
+
+
 
 # pacman, Enable color output
-sudo sed -i 's/#Color/Color/g' /etc/pacman.conf
+sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
+sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 
-# pacman, ParallelDownloads
-echo 'ParallelDownloads = 8' | sudo tee -a /etc/pacman.conf
-
-# paru, Enable bottomup, SkipReview
+# paru. Enable bottomup, SkipReview
 sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
 echo 'SkipReview' | sudo tee -a /etc/paru.conf
+
 
 # fix for dual boot time issue
 timedatectl set-local-rtc 1
@@ -246,15 +326,14 @@ timedatectl set-local-rtc 1
 # Grub, Enable Os-prober
 echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
 
+# SSD
+sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer
+
 # Gsettings
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
-
-
-# SSD
-sudo systemctl enable fstrim.timer
-sudo systemctl start fstrim.timer
 
 # Key Bindings
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
@@ -263,84 +342,27 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 
-# Graphics card, use dGPU
-echo "" | sudo tee -a /etc/environment
-echo "DRI_PRIME=1" | sudo tee -a /etc/environment
 
-# Firefox, run in wayland mode
-echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
-
-
-# QT Tweaks
-
-# QT_QPA_PLATFORMTHEME=qt5ct	    # Also install qt5ct package. Obslete, now uses gnomeplatform
-# QT_AUTO_SCREEN_SCALE_FACTOR=1     # already present
-# QT_QPA_PLATFORMTHEME=gnome        # already present
-# echo "QT_STYLE_OVERRIDE=kvantum-dark" | sudo tee -a /etc/environment      # replace instead of add
-sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=kvantum-dark/g' /etc/environment
-
-# QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
-# QT_QPA_PLATFORM=wayland 		# Force to use wayland backend, also install qt5-wayland & qt6-wayland
-echo "" | sudo tee -a /etc/environment
-echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
-
-# Below is for sway WM
-# sudo pacman -S --noconfirm --needed qt5ct
-# echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
-
-
-printf "\n--------------------------Tweaks---Increment volume by 4-------------------------\n"
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 4
-
-printf "\n--------------------------Tweaks---minimize on click-------------------------\n"
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-
-printf "\n--------------------------Tweaks---show battery percentage-------------------------\n"
 gsettings set org.gnome.desktop.interface show-battery-percentage true
-
-printf "\n--------------------------Tweaks---Keyboard Layout-------------------------\n"
-sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
-sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
-sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
-sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
-
-printf "\n--------------------------Tweaks---change compression level-------------------------\n"
 gsettings set org.gnome.FileRoller.General compression-level "very-fast"
 
-
-printf "\n--------------------------Tweaks---dconf-settings-------------------------\n"
-
-# Backup first
-dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
-dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
-dconf dump /com/github/wwmm/pulseeffects/ > /home/hritwik/com.github.wwmm.pulseeffects_Bak
-
-dconf load /org/gnome/ < ./configs/gsettings/org.gnome
-dconf load /org/nemo/ < ./configs/gsettings/org.nemo
-dconf load /com/github/wwmm/pulseeffects/ < ./configs/gsettings/com.github.wwmm.pulseeffects
 
 printf "\n--------------------------Tweaks---extra-app-presets-in-menu-------------------------\n"
 echo "[Desktop Entry] Hidden=true" > /tmp/1
 find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
 
 
-printf "\n--------------------------Tweaks---firefox-------------------------\n"
-rm -rf /home/hritwik/.mozilla
-unzip ./configs/firefox_bak.zip -d /home/hritwik/
-
-printf "\n--------------------------Tweaks---thunderbird-------------------------\n"
-rm -rf /home/hritwik/.thunderbird
-unzip ./configs/thunderbird_bak.zip -d /home/hritwik/
-
-printf "\n--------------------------Tweaks---git_ssh-------------------------\n"
-git config --global user.email "Hritwiksinghal@outlook.in"
-git config --global user.name "Hritwik"
-
 printf "\n--------------------------Tweaks---increase swamp size-------------------------\n"
 # sudo swapoff /swapfile
 # sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc
 # sudo mkswap /swapfile
 # sudo swapon /swapfile
+
+
+
+
 
 
 
@@ -365,6 +387,13 @@ printf "\n--------------------------Theme_Ext---shell-theme & Extensions--------
 unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
 
 gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
+
+
+# - reduce 5% reserved space on ext4 home and / to 2%
+#     - https://unix.stackexchange.com/questions/527628/disk-usage-confusion-10g-missing-on-linux-home-partition-on-ssd
+#     - sudo tune2fs -m 2 /dev/nvme0n1p4
+#     - sudo tune2fs -m 2 /dev/nvme0n1p3
+
 
 
 printf "\n---------------------------------------------------------------------------\n"

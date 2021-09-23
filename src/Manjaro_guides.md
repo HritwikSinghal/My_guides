@@ -30,23 +30,19 @@
 - change "alternate characters Key" from "Right Alt" to "Right Super" (go to keyboard shortcuts settings)
 
 
-- Increase terminal size to 100x30 and change its color and shortcuts
-
 - Add shortcuts
     - Calc (F7)
     - System monitor (ctrl+shift+Esc 'gnome-system-monitor')
-    - terminal (ctrl + alt + t) and (meta + enter)
-    - close to 'meta + c'
-    -
+    - terminal (ctrl + alt + t) and (super + enter)
+    - close to 'super + c'
+    - move windows with super m
+    - resize windows with super r
 
 - If vlc is not playing video, try https://bbs.archlinux.org/viewtopic.php?id=252113
 
+- install on guest in gnome-boxes (arch based guest)
+    - spice-vdagent xf86-video-qxl
 
-- some Qt tweaks to put in /etc/env
-	QT_AUTO_SCREEN_SCALE_FACTOR=1
-	QT_QPA_PLATFORMTHEME="gnome"
-	QT_STYLE_OVERRIDE="kvantum-dark"
-	QT_QPA_PLATFORM=wayland
 
 
 
@@ -83,8 +79,7 @@
     - google search for 'build own manjaro iso'
 
 
-
-- disable quiet boot so that when press 'del' key on boot it shows info
+- disable quiet boot so that when press 'del' key on boot it shows info (its shown by systemd)
 -  to display advanced option in grub, and also disable quiet boot.
 	- sudo nano /etc/default/grub
 	- Comment "GRUB_TIMEOUT_STYLE=hidden"
@@ -104,15 +99,15 @@
 
 
 - Enable hibernate (use Arch wiki)
+    - [howto-enable-and-configure-hibernation-with-btrfs](https://forum.manjaro.org/t/howto-enable-and-configure-hibernation-with-btrfs/51253)
+        - see comments
 	- Manjaro has hibernate option if i create swap partition > RAM
 	
 	OR
-	
 	- sudo pacman -S hibernator
 	- sudo hibernator
 
 	OR
-	
 	- https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation
 	- https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
 	
@@ -124,7 +119,6 @@
 	- add hibernate shortcut or install gnome extension or change power button behaviour in setting to hibernate
 	
 	OR
-	
 	- in "/etc/default/grub" in line "GRUB_CMDLINE_LINUX_DEFAULT" do 
 	```
 	The kernel parameter resume=swap_device must be used. Any of the persistent block device naming methods can be used as swap_device. For example:
@@ -150,6 +144,7 @@
 	    - https://github.com/iberianpig/dotfiles
 	    - https://github.com/search?q=dotfiles
 	    - DT dotfiles on gitlab
+	    - https://github.com/webpro/awesome-dotfiles
 
 	- PROMPTS
 		- [Install powerlevel10k prompt](https://github.com/romkatv/powerlevel10k)
@@ -180,11 +175,6 @@
 	    - "cut" and "tr", fd, find, awk
 
 
-- [install android apps on manjaro](https://www.reddit.com/r/ManjaroLinux/comments/cbkblb/guide_run_android_apps_on_manjaro_super_simple/)
-
-- [Enable vscode marketplace in Codium](https://github.com/VSCodium/vscodium/blob/master/DOCS.md#migrating) and backup codium backup
-	- [x] install ```aur/vscodium-bin-marketplace``` to Enable vscode marketplace in vscodium-bin
-	- yay -S vscodium-bin code-marketplace code-icons code-features-insiders --noconfirm --needed
 
 - [KDE tag editor](https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/)
 	- if installing ```kid3``` in Arch, also insatll ```kio```
@@ -238,16 +228,4 @@
 	```
 
 
-
-- [x] [ADB](https://wiki.archlinux.org/index.php/Android_Debug_Bridge#Detect_the_device)
-
-- [x] [Install Ruby gems system-wide](https://wiki.archlinux.org/index.php/ruby#Installing_Ruby)
-
 - [x] [Making alt+tab show windows instead of applications in Gnome](https://bbs.archlinux.org/viewtopic.php?id=228893)
-
-- [x] [Fix auto backups timeshift](https://forum.manjaro.org/t/back-in-time-crono-jobs-are-not-excuted/45892)
-
-
-- [x] for pulseeffects
-	- pamac install manjaro-pipewire
-	- pamac install gst-plugin-pipewire

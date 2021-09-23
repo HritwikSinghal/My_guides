@@ -685,6 +685,7 @@
 - [Install Win10 VM](https://getlabsdone.com/install-windows-10-on-ubuntu-kvm/)
 
 - gnome-boxes (DONT installl via flathub)
+    - [Steps to migrate from Boxes rpm to Boxes Flatpak](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610)
     - [Guide](https://ostechnix.com/manage-remote-and-virtual-machines-with-gnome-boxes/)
     - [Cant copy big files to VM fix](https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/353)
 

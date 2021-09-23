@@ -23,7 +23,8 @@ confirm-move-to-trash=false
 date-format='locale'
 default-folder-viewer='list-view'
 default-sort-order='type'
-last-server-connect-method=2
+inherit-show-thumbnails=false
+last-server-connect-method=1
 quick-renames-with-pause-in-between=true
 show-advanced-permissions=true
 show-full-path-titles=true
@@ -47,10 +48,10 @@ selection-menu-make-link=true
 
 [window-state]
 devices-expanded=true
-geometry='1236x771+23+15'
+geometry='1229x1007+26+23'
 maximized=false
 my-computer-expanded=true
 side-pane-view='places'
-sidebar-bookmark-breakpoint=5
-sidebar-width=155
+sidebar-bookmark-breakpoint=6
+sidebar-width=173
 start-with-sidebar=true

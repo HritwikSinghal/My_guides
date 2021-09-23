@@ -1,13 +1,6 @@
 #!/bin/sh
 set -e
 
-# todo: backup and restore of whole OS
-# https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
-# https://github.com/lra/mackup
-# https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
-
-# Snap apps data
-
 #
 # printf "\n-------------------------easyeffects-------------------------\n"
 # cd ~
@@ -69,6 +62,21 @@ set -e
 # printf "\n-------------------------Backuping up startup-apps-------------------------\n"
 # cp -r ~/.config/autostart/ ~/Backups/autostart
 
+
+
+
+
+
+
+
+# todo: backup and restore of whole OS
+# https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
+# https://github.com/lra/mackup
+# https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
+
+# Snap apps data
+
+# Backup gnome-boxes images: /home/hritwik/.local/share/gnome-boxes/images
 
 printf "\n-------------------------Backuping up Configs-------------------------\n"
 cd ~

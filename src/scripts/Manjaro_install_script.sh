@@ -79,11 +79,18 @@ sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en 
 sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform
 sudo pacman -Rs --noconfirm firefox-gnome-theme-maia
 sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
-sudo pacman -Rs --noconfirm firefox 
-sudo pacman -Rs --noconfirm thunderbird
+
+# sudo pacman -Rs --noconfirm firefox
+# sudo pacman -Rs --noconfirm thunderbird
 
 # ADB
 sudo pacman -S --noconfirm --needed android-tools android-udev
+
+printf "\n-------------------------Install--Mozilla-------------------------\n"
+sudo pacman -S --noconfirm --needed firefox thunderbird
+# make script for firefox-trunk
+# https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux
+
 
 
 printf "\n-------------------------Install--KDE tools-------------------------\n"
@@ -280,9 +287,9 @@ printf "\n-------------------------Install--Atom-------------------------\n"
 
 
 printf "\n-------------------------Install--nmcli-------------------------\n"
-# sudo pacman -S --noconfirm --needed networkmanager
-# sudo systemctl enable NetworkManager.service
-# sudo systemctl start NetworkManager.service
+sudo pacman -S --noconfirm --needed networkmanager
+sudo systemctl enable NetworkManager.service
+sudo systemctl start NetworkManager.service
 
 printf "\n-------------------------Install--vscodium-------------------------\n"
 # yay -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features
@@ -294,11 +301,6 @@ printf "\n-------------------------Install--Sublime-------------------------\n"
 # curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 # echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 # sudo pacman -Syu --noconfirm --needed sublime-text
-
-printf "\n-------------------------Install--Mozilla-------------------------\n"
-# sudo pacman -S --noconfirm --needed firefox thunderbird
-# make script for firefox-trunk
-# https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux
 
 # add nemo to startup apps & disable desktop icon extension
 
@@ -317,26 +319,25 @@ printf "\n-------------------------Install--Mozilla-------------------------\n"
 # QT Tweaks
 
 # QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
-# QT_QPA_PLATFORM=wayland 		# Force to use wayland backend, also install qt5-wayland & qt6-wayland
+# QT_QPA_PLATFORMTHEME="qt5ct"
+QT_QPA_PLATFORMTHEME="gnome"
+QT_STYLE_OVERRIDE="kvantum-dark"
+
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+QT_QPA_PLATFORM=wayland         # Force to use wayland backend, also install qt5-wayland & qt6-wayland
+
 # echo "QT_STYLE_OVERRIDE=kvantum-dark" | sudo tee -a /etc/environment      # replace instead of add
-
-# QT_AUTO_SCREEN_SCALE_FACTOR=1
-# QT_QPA_PLATFORMTHEME="gnome"
-# QT_STYLE_OVERRIDE="kvantum-dark"
-# QT_QPA_PLATFORM=wayland
-
-
 sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=kvantum-dark/g' /etc/environment
 
 echo "" | sudo tee -a /etc/environment
 echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
 
 
+echo "EDITOR=/usr/bin/micro" | sudo tee -a /etc/environment
+
 # Graphics card, use dGPU
 echo "" | sudo tee -a /etc/environment
 echo "DRI_PRIME=1" | sudo tee -a /etc/environment
-
-
 echo "AMD_VULKAN_ICD=RADV" | sudo tee -a /etc/environment
 
 # Firefox, run in wayland mode
@@ -395,7 +396,7 @@ dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
 dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
 dconf dump /com/github/wwmm/easyeffects/ > /home/hritwik/com.github.wwmm.easyeffects_Bak
 
-dconf load /org/gnome/ < ./configs/gsettings/org.gnome
+dconf load /org/gnome/ < ./configs/gsettings/org.gnome_new
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/easyeffects/ < ./configs/gsettings/com.github.wwmm.easyeffects
 

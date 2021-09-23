@@ -184,6 +184,7 @@
 
 - [Enable vscode marketplace in Codium](https://github.com/VSCodium/vscodium/blob/master/DOCS.md#migrating) and backup codium backup
 	- [x] install ```aur/vscodium-bin-marketplace``` to Enable vscode marketplace in vscodium-bin
+	- yay -S vscodium-bin code-marketplace code-icons code-features-insiders --noconfirm --needed
 
 - [KDE tag editor](https://www.ubuntupit.com/top-15-best-music-tag-editor-software-for-linux-system/)
 	- if installing ```kid3``` in Arch, also insatll ```kio```

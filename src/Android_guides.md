@@ -28,7 +28,7 @@
     - docs
     - download
     - photos
-    - Whatsapp folder (Whatsapp updated its data folder to 'Internal/Android/')
+    - Whatsapp folder (Whatsapp updated its data folder to 'Internal/Android/media/com.whatsapp')
 
 - take SS of
     - home screen

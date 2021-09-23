@@ -1,110 +1,209 @@
 #!/bin/sh
 set -e
 
-# todo: backup and restore of whole OS
-# https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
-# https://github.com/lra/mackup
-# https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
 
+#
+# printf "\n-------------------------PulseEffects-------------------------\n"
+# cd ~
+# zip -r ~/Backups/easyeffects.zip ~/.config/easyeffects
+#
+# printf "\n-------------------------fusuma-------------------------\n"
+# cd ~
+# sudo cp ~/.config/fusuma/config.yml ~/Backups/config.yml
 
-# Backup configs:
+# printf "\n-------------------------conky-------------------------\n"
+# cd ~
+# cp -r ~/.conky ~/Backups/.conky
 
-# timeshift settings
-# gnome boxes & virt-manager
-    # https://www.debugpoint.com/2020/06/move-virtual-machine-image-another-host/
-    # https://gitlab.gnome.org/GNOME/gnome-boxes/-/issues/610 (for directories)
-    # "~/.config/gnome-boxes" and ".config/libvirt/"
-# downloads and other folders
+# printf "\n-------------------------Atom-------------------------\n"
+# cd ~
+# zip -r ~/Backups/atom_bak.zip ./.atom
+#
+# printf "\n-------------------------sublime-------------------------\n"
+# cd ~/.config/sublime-text-3/Packages
+# zip -r ~/Backups/sublime_bak.zip ./User
+#
+# printf "\n-------------------------VLC-------------------------\n"
+# cd ~/.config/
+# zip -r ~/Backups/vlc_bak.zip ./vlc
 
-# zsh history and zshrc
-# Powerlevel10K theme
+# printf "\n-------------------------jetbrains-------------------------\n"
+# cd ~
+# zip -r ~/Backups/clion_bak.zip ./CLionProjects
+# zip -r ~/Backups/pycharm_bak.zip ./PycharmProjects
+#
+# printf "\n-------------------------vnstat-------------------------\n"
+# cd ~
+# cp ./.vnstatrc ~/Backups/
 
-# move these files under folder named dot files and see DT gitlab for folder heiarchy
-# pycharm and clion settings & toolbox settings
+# printf "\n-------------------------ssh-------------------------\n"
+# cd ~
+# zip -r ~/Backups/git_ssh.zip ./.ssh
 
+# printf "\n-------------------------Qbittorrent-------------------------\n"
+# # https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#Where_does_qBittorrent_save_its_settings
+# cd ~
+# zip -r ~/Backups/qbit_settings.zip ./.config/qBittorrent/
+# zip -r ~/Backups/qbit_data.zip ./.local/share/qBittorrent/
 
-# Todo Bring uniformity, make backups from /home/hritwik
+# printf "\n-------------------------XDM-------------------------\n"
+# cd ~
+# zip -r ~/Backups/xdm.zip ./.xdman/
+
+# printf "\n-------------------------Telegram-------------------------\n"
+# cd ~
+# rm -rf ~/.local/share/TelegramDesktop/tdata/user_data
+# zip -r ~/Backups/telegram.zip ./.local/share/TelegramDesktop
+#
+# printf "\n-------------------------Signal-------------------------\n"
+# cd ~
+# zip -r ~/Backups/signal.zip ./.config/Signal
+#
+#
+# printf "\n-------------------------Backuping up Extensions-------------------------\n"
+# cd ~/.local/share/gnome-shell
+# zip -r ~/Backups/extensions_bak.zip ./extensions
+#
+# printf "\n-------------------------Backuping up startup-apps-------------------------\n"
+# cp -r ~/.config/autostart/ ~/Backups/autostart
+
 
 printf "\n-------------------------Backuping up Configs-------------------------\n"
-mkdir -p /home/hritwik/Backups
+cd ~
+mkdir -p ~/Backups
 
-printf "\n-------------------------PulseEffects-------------------------\n"
-sudo cp /home/hritwik/.config/PulseEffects/output/PulseEffects_MyPreset.json /home/hritwik/Backups/
-
-printf "\n-------------------------fusuma-------------------------\n"
-sudo cp /home/hritwik/.config/fusuma/config.yml /home/hritwik/Backups/config.yml
-
-printf "\n-------------------------conky-------------------------\n"
-cp -r /home/hritwik/.conky /home/hritwik/Backups/.conky
 
 printf "\n-------------------------firefox-------------------------\n"
-cd /home/hritwik/
-zip -r /home/hritwik/Backups/firefox_bak.zip ./.mozilla
+cd ~
+zip -r ~/Backups/firefox_bak.zip ./.mozilla
 
 printf "\n-------------------------thunderbird-------------------------\n"
-cd /home/hritwik/
-zip -r /home/hritwik/Backups/thunderbird_bak.zip ./.thunderbird
-
-printf "\n-------------------------Atom-------------------------\n"
-cd /home/hritwik/
-zip -r /home/hritwik/Backups/atom_bak.zip ./.atom
-
-printf "\n-------------------------sublime-------------------------\n"
-cd /home/hritwik/.config/sublime-text-3/Packages
-zip -r /home/hritwik/Backups/sublime_bak.zip ./User
-
-printf "\n-------------------------VLC-------------------------\n"
-cd /home/hritwik/.config/
-zip -r /home/hritwik/Backups/vlc_bak.zip ./vlc
-
-printf "\n-------------------------jetbrains-------------------------\n"
-cd /home/hritwik/
-zip -r /home/hritwik/Backups/clion_bak.zip ./CLionProjects
-zip -r /home/hritwik/Backups/pycharm_bak.zip ./PycharmProjects
-
-printf "\n-------------------------vnstat-------------------------\n"
-cd /home/hritwik/
-cp ./.vnstatrc /home/hritwik/Backups/
-
-printf "\n-------------------------ssh-------------------------\n"
-cd /home/hritwik/
-zip -r /home/hritwik/Backups/git_ssh.zip ./.ssh
-
-printf "\n-------------------------Qbittorrent-------------------------\n"
-# https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#Where_does_qBittorrent_save_its_settings
-cd /home/hritwik/
-zip -r /home/hritwik/Backups/qbit_settings.zip ./.config/qBittorrent/
-zip -r /home/hritwik/Backups/qbit_data.zip ./.local/share/qBittorrent/
-
-printf "\n-------------------------XDM-------------------------\n"
-cd /home/hritwik/
-zip -r /home/hritwik/Backups/xdm.zip ./.xdman/
-
-printf "\n-------------------------Telegram-------------------------\n"
-cd /home/hritwik/
-rm -rf /home/hritwik/.local/share/TelegramDesktop/tdata/user_data
-zip -r /home/hritwik/Backups/telegram.zip ./.local/share/TelegramDesktop
-
-printf "\n-------------------------Signal-------------------------\n"
-cd /home/hritwik/
-zip -r /home/hritwik/Backups/signal.zip ./.config/Signal
-
-
-printf "\n-------------------------Backuping up Extensions-------------------------\n"
-cd /home/hritwik/.local/share/gnome-shell
-zip -r /home/hritwik/Backups/extensions_bak.zip ./extensions
+cd ~
+zip -r ~/Backups/thunderbird_bak.zip ./.thunderbird
 
 
 printf "\n-------------------------Backuping up gsettings-------------------------\n"
-mkdir -p /home/hritwik/Backups/gsettings
-dconf dump /org/gnome/ > /home/hritwik/Backups/gsettings/org.gnome
-dconf dump /org/nemo/ > /home/hritwik/Backups/gsettings/org.nemo
-dconf dump /com/github/wwmm/pulseeffects/ > /home/hritwik/Backups/gsettings/com.github.wwmm.pulseeffects
-
-
-printf "\n-------------------------Backuping up startup-apps-------------------------\n"
-cp -r /home/hritwik/.config/autostart/ /home/hritwik/Backups/autostart
+mkdir -p ~/Backups/gsettings
+dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
+dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
+dconf dump /com/github/wwmm/pulseeffects/ > ~/Backups/gsettings/com.github.wwmm.pulseeffects
 
 
 echo "Finished Successfully..."
 echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory "
+
+
+
+yadm add \
+    ~/.gitignore \
+\
+    ~/Templates \
+    ~/.android \
+    ~/.atom \
+    ~/.conky \
+    ~/.gnupg \
+    ~/.java \
+    ~/.kodi \
+    ~/.pki \
+    ~/.pvpn-cli \
+    ~/.SpaceVim.d \
+    ~/.ssh \
+    ~/.steam \
+    ~/.var \
+    ~/.vnc \
+    ~/.vscode-oss \
+    ~/.xdman \
+\
+    ~/.bash* \
+    ~/.dir_colors \
+    ~/.gitconfig \
+    ~/.gtkrc-2.0 \
+    ~/.p10k.zsh \
+    ~/.profile \
+    ~/.vnstatrc \
+    ~/.zhistory \
+    ~/.zsh* \
+
+
+yadm add \
+    ~/.config/Atom \
+    ~/.config/autostart \
+    ~/.config/bleachbit \
+    ~/.config/BraveSoftware \
+    ~/.config/"Code - OSS" \
+    ~/.config/easyeffects \
+    ~/.config/evince \
+    ~/.config/filezilla \
+    ~/.config/fish \
+    ~/.config/fusuma \
+    ~/.config/gedit \
+    ~/.config/ghostwriter \
+    ~/.config/gnome-boxes \
+    ~/.config/gnome-shell-extension-animation-tweaks@Selenium-H \
+    ~/.config/gnote \
+    ~/.config/gtk-3.0 \
+    ~/.config/gtk-4.0 \
+    ~/.config/htop \
+    ~/.config/JetBrains \
+    ~/.config/Kid3 \
+    ~/.config/Kvantum \
+    ~/.config/libreoffice \
+    ~/.config/libvirt \
+    ~/.config/manjaro \
+    ~/.config/micro \
+    ~/.config/nemo \
+    ~/.config/neofetch \
+    ~/.config/obs-studio \
+    ~/.config/pamac \
+    ~/.config/pop-shell \
+    ~/.config/qBittorrent \
+    ~/.config/Signal \
+    ~/.config/stacer \
+    ~/.config/sublime-text-3 \
+    ~/.config/systemd \
+    ~/.config/Thunar \
+    ~/.config/transmission \
+    ~/.config/vlc \
+    ~/.config/VSCodium \
+    ~/.config/warpinator \
+    ~/.config/wireshark \
+\
+    ~/.config/appimagelauncher.cfg \
+    ~/.config/kate* \
+    ~/.config/kid3rc \
+    ~/.config/topgrade.toml \
+
+
+yadm add \
+    ~/.local/share/copyq \
+    ~/.local/share/desktop-directories \
+    ~/.local/share/evolution \
+    ~/.local/share/firefoxprofileswitcher \
+    ~/.local/share/fish \
+    ~/.local/share/fonts \
+    ~/.local/share/gedit \
+    ~/.local/share/ghostwriter \
+    ~/.local/share/gnome-background-properties \
+    ~/.local/share/gnome-settings-daemon \
+    ~/.local/share/gnome-shell \
+    ~/.local/share/gnote \
+    ~/.local/share/gstreamer-1.0 \
+    ~/.local/share/icc \
+    ~/.local/share/ice \
+    ~/.local/share/JetBrains \
+    ~/.local/share/keyrings \
+    ~/.local/share/lollypop \
+    ~/.local/share/lutris \
+    ~/.local/share/man \
+    ~/.local/share/mime \
+    ~/.local/share/nautilus \
+    ~/.local/share/nemo \
+    ~/.local/share/nvim \
+    ~/.local/share/pki \
+    ~/.local/share/qBittorrent \
+    ~/.local/share/ranger \
+    ~/.local/share/TelegramDesktop \
+    ~/.local/share/vlc
+
+yadm commit -m 'updates'
+yadm push

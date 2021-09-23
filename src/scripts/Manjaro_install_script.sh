@@ -53,6 +53,16 @@ yadm clone git@gitlab.com:Hritwik/dotfiles.git
 # yadm checkout "home/hritwik"
 
 
+
+
+
+
+
+
+
+
+
+
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Insatlling Apps-------------------------\n\n\n"
 
@@ -60,30 +70,24 @@ printf "\n\n\n-------------------------Insatlling Apps-------------------------\
 printf "\n-------------------------Install--extras-------------------------\n"
 
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
-sudo pacman -S --noconfirm --needed filezilla git rar unrar p7zip
+sudo pacman -S --noconfirm --needed filezilla git unrar p7zip
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
 sudo pacman -S --noconfirm --needed dconf-editor net-tools curl eog nano tmux
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-printer
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform
-sudo pacman -Rs --noconfirm firefox-gnome-theme-maia onlyoffice-desktopeditors firefox thunderbird
+sudo pacman -Rs --noconfirm firefox-gnome-theme-maia
+sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
+sudo pacman -Rs --noconfirm firefox 
+sudo pacman -Rs --noconfirm thunderbird
 
 # ADB
 sudo pacman -S --noconfirm --needed android-tools android-udev
 
 
-# sudo apt install ttf-mscorefonts-installer -y
-# sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
-
-# # Below one is needed only for blur shell extensions
-# sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
-
-# # extra codecs
-# sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv opus wavpack x264 xvidcore  --noconfirm --needed
-
 printf "\n-------------------------Install--KDE tools-------------------------\n"
-sudo pacman -S --noconfirm --needed thunar kate kid3 kio
+sudo pacman -S --noconfirm --needed thunar kate kid3 kio latex
 
 printf "\n-------------------------Install--Wine & Proton-------------------------\n"
 
@@ -96,10 +100,6 @@ sudo pacman -S --noconfirm --needed timeshift cronie
 sudo systemctl enable cronie
 sudo systemctl start cronie
 
-printf "\n-------------------------Install--nmcli-------------------------\n"
-# sudo pacman -S --noconfirm --needed networkmanager
-# sudo systemctl enable NetworkManager.service
-# sudo systemctl start NetworkManager.service
 
 printf "\n-------------------------Install--GNOME-tweak-tool and chrome-gnome-shell-------------------------\n"
 sudo pacman -S --noconfirm --needed gnome-tweaks chrome-gnome-shell
@@ -107,18 +107,10 @@ sudo pacman -S --noconfirm --needed gnome-tweaks chrome-gnome-shell
 printf "\n-------------------------Install--Kvantum-------------------------\n"
 sudo pacman -S --noconfirm --needed kvantum-manjaro kvantum-qt5
 
-printf "\n-------------------------Install--Mozilla-------------------------\n"
-# sudo pacman -S --noconfirm --needed firefox thunderbird
-# make script for firefox-trunk
-# https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux
 
-printf "\n-------------------------Install--Flatpack-------------------------\n"
-
-
-
-
-printf "\n-------------------------Install--gdebi-------------------------\n"
-# Not needed
+printf "\n-------------------------Install--Flatpak-------------------------\n"
+sudo pacman -S --noconfirm --needed flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 printf "\n-------------------------Install--Nemo-------------------------\n"
 sudo pacman -S --noconfirm --needed nemo
@@ -139,9 +131,6 @@ printf "\n-------------------------Install--GreenTunnel-------------------------
 sudo pacman -S --noconfirm --needed nodejs npm
 sudo npm i -g green-tunnel
 
-printf "\n-------------------------Install--FreeTube-------------------------\n"
-# paru freetube
-
 printf "\n-------------------------Install--Wireshark-------------------------\n"
 sudo pacman -S --noconfirm --needed wireshark-qt
 
@@ -156,8 +145,14 @@ sudo pacman -S --noconfirm --needed vnstat
 sudo systemctl enable vnstat.service
 sudo systemctl start vnstat.service
 
-printf "\n-------------------------Install--EasyEffects-------------------------\n"
-# sudo pacman -S --noconfirm --needed manjaro-pipewire gst-plugin-pipewire easyeffects
+printf "\n-------------------------Install--pipewire-------------------------\n"
+
+sudo pacman -Rdd --noconfirm manjaro-pulse pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-rtp pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-ctl sof-firmware
+
+sudo pacman -S --noconfirm --needed xdg-desktop-portal xdg-desktop-portal-gtk \
+									pipewire-media-session pipewire pipewire-alsa pipewire-pulse pipewire-jack manjaro-pipewire \
+									gst-plugin-pipewire gstreamer-vaapi wireplumber
+									
 sudo pacman -S --noconfirm --needed easyeffects
 
 printf "\n-------------------------Install--uget-or-XDM-------------------------\n"
@@ -190,22 +185,8 @@ sudo gem install fusuma-plugin-tap
 printf "\n-------------------------Install--fonts-manager-------------------------\n"
 sudo pacman -S --noconfirm --needed font-manager
 
-printf "\n-------------------------Install--Atom-------------------------\n"
-sudo pacman -S --noconfirm --needed atom
-
 printf "\n-------------------------Install--obs-studio-------------------------\n"
 sudo pacman -S --noconfirm --needed obs-studio
-
-printf "\n-------------------------Install--vscodium-------------------------\n"
-# yay -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features
-
-# for code oss
-# yay -S --noconfirm --needed code-marketplace code-features-insiders code-icons
-
-printf "\n-------------------------Install--Sublime-------------------------\n"
-# curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-# echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-# sudo pacman -Syu --noconfirm --needed sublime-text
 
 printf "\n-------------------------Install--Signal-------------------------\n"
 sudo pacman -S --noconfirm --needed signal-desktop
@@ -214,21 +195,14 @@ printf "\n-------------------------Install--youtube-dl-------------------------\
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
 
-
-printf "\n-------------------------Install--Xanmod-------------------------\n"
-# Eh
-
-
 printf "\n-------------------------Install--gnome-boxes & virt-manager-------------------------\n"
-sudo pacman -S --noconfirm --needed gnome-boxes virt-manager ebtables
+sudo pacman -Rs --noconfirm iptables
+sudo pacman -S --noconfirm --needed gnome-boxes virt-manager iptables-nft bridge-utils openbsd-netcat
+
 sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
 sudo systemctl restart libvirtd
 virt-manager --connect qemu:///session
-
-
-printf "\n-------------------------Install--jetbrains-------------------------\n"
-# Use toolbox
 
 printf "\n-------------------------Install--telegram-------------------------\n"
 sudo pacman -S --noconfirm --needed telegram-desktop
@@ -248,21 +222,22 @@ printf "\n-------------------------Install--appimagelauncher--------------------
 sudo pacman -S --noconfirm --needed appimagelauncher
 
 printf "\n-------------------------Install--Rust-tools-------------------------\n"
-# Rust core utils
 sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs micro fzf tldr neovim fish zsh
-micro -plugin install aspell wc
+micro -plugin install aspell wc python-pip
 
 
 printf "\n-------------------------Install--spacevim-------------------------\n"
 curl -sLf https://spacevim.org/install.sh | bash
 
-
 printf "\n-------------------------Install--AUR packages-------------------------\n"
-yay -S --noconfirm --needed paru-bin reflector ghostwriter yadm bash-zsh-insulter
-yay -S --noconfirm --needed brave-bin brlaser brother-hll2360d brother-lpr-drivers-common ebtables
-yay -S --noconfirm --needed firefox-profile-switcher-connector-bin lib32-ncurses5-compat-libs ncurses5-compat-libs ruby-revdev
+# also install reflector if not on manjaro
+yay -S --noconfirm --needed paru-bin  ghostwriter bash-zsh-insulter
+yay -S --noconfirm --needed brave-bin brlaser brother-hll2360d brother-lpr-drivers-common
+
+yay -S --noconfirm --needed warpinator webapp-manager firefox-profile-switcher-connector-bin 
+yay -S --noconfirm --needed lib32-ncurses5-compat-libs ncurses5-compat-libs 
+
 yay -S --noconfirm --needed qemu-user-static-bin binfmt-qemu-static-all-arch
-yay -S --noconfirm --needed warpinator webapp-manager
 
 printf "\n-------------------------Install--Python packages-------------------------\n"
 pip3 install pipenv yt-dlp youtube_dlc
@@ -271,25 +246,68 @@ pip3 install pipenv yt-dlp youtube_dlc
 
 
 
-printf "\n---------------------------------------------------------------------------\n"
-printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
 
 
 
-printf "\n--------------------------Restore---dconf-settings-------------------------\n"
-
-# Backup first
-dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
-dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
-dconf dump /com/github/wwmm/easyeffects/ > /home/hritwik/com.github.wwmm.easyeffects_Bak
-
-dconf load /org/gnome/ < ./configs/gsettings/org.gnome
-dconf load /org/nemo/ < ./configs/gsettings/org.nemo
-dconf load /com/github/wwmm/easyeffects/ < ./configs/gsettings/com.github.wwmm.easyeffects
 
 
 
-printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
+
+
+#################################################################################
+################################# Needs testing #################################
+
+
+
+
+# sudo apt install ttf-mscorefonts-installer -y
+# sudo apt install libavcodec-extra libavcodec-extra58 sassc -y
+
+# # Below one is needed only for blur shell extensions
+# sudo apt install gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-gtkclutter-1.0 -y
+
+# # extra codecs
+# sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv opus wavpack x264 xvidcore  --noconfirm --needed
+
+
+printf "\n-------------------------Install--jetbrains-------------------------\n"
+# Use toolbox
+
+printf "\n-------------------------Install--Atom-------------------------\n"
+# sudo pacman -S --noconfirm --needed atom
+
+
+
+
+printf "\n-------------------------Install--nmcli-------------------------\n"
+# sudo pacman -S --noconfirm --needed networkmanager
+# sudo systemctl enable NetworkManager.service
+# sudo systemctl start NetworkManager.service
+
+printf "\n-------------------------Install--vscodium-------------------------\n"
+# yay -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features
+
+# for code oss
+# yay -S --noconfirm --needed code-marketplace code-features-insiders code-icons
+
+printf "\n-------------------------Install--Sublime-------------------------\n"
+# curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+# echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+# sudo pacman -Syu --noconfirm --needed sublime-text
+
+printf "\n-------------------------Install--Mozilla-------------------------\n"
+# sudo pacman -S --noconfirm --needed firefox thunderbird
+# make script for firefox-trunk
+# https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux
+
+# add nemo to startup apps & disable desktop icon extension
+
+# yay -S --noconfirm --needed --overwrite ruby-revdev
+
+
+################################# Needs testing #################################
+#################################################################################
+
 
 
 #################################################################################
@@ -335,9 +353,55 @@ echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 # export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
+
+# Grub, Enable Os-prober
+# echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
+
+
+printf "\n--------------------------Theme_Ext---shell-theme & Extensions-------------------------\n"
+unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
+
+
+
+# - reduce 5% reserved space on ext4 home and / to 2%
+#     - https://unix.stackexchange.com/questions/527628/disk-usage-confusion-10g-missing-on-linux-home-partition-on-ssd
+#     - sudo tune2fs -m 2 /dev/nvme0n1p4
+#     - sudo tune2fs -m 2 /dev/nvme0n1p3
+
+
+
 ################################# Needs testing #################################
 #################################################################################
 
+
+
+
+
+
+
+
+
+
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
+
+
+
+printf "\n--------------------------Restore---dconf-settings-------------------------\n"
+
+# Backup first
+dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
+dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
+dconf dump /com/github/wwmm/easyeffects/ > /home/hritwik/com.github.wwmm.easyeffects_Bak
+
+dconf load /org/gnome/ < ./configs/gsettings/org.gnome
+dconf load /org/nemo/ < ./configs/gsettings/org.nemo
+dconf load /com/github/wwmm/easyeffects/ < ./configs/gsettings/com.github.wwmm.easyeffects
+
+
+
+printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
 
 
 # paru. Enable bottomup, SkipReview
@@ -348,9 +412,6 @@ echo 'SkipReview' | sudo tee -a /etc/paru.conf
 # fix for dual boot time issue
 timedatectl set-local-rtc 1
 
-# Grub, Enable Os-prober
-# echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
-
 # SSD
 sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
@@ -359,7 +420,7 @@ sudo systemctl start fstrim.timer
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
-
+gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
 
 printf "\n--------------------------Tweaks---extra-app-presets-in-menu-------------------------\n"
 echo "[Desktop Entry] Hidden=true" > /tmp/1
@@ -368,10 +429,6 @@ find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} 
 
 
 
-
-
-printf "\n---------------------------------------------------------------------------\n"
-printf "\n\n\n-------------------------Theming & Installing Extensions-------------------------\n\n\n"
 
 printf "\n--------------------------Theme_Ext---Grub-theme-------------------------\n"
 rm -rf /home/hritwik/my_downloads/grub_themes
@@ -386,17 +443,6 @@ for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print 
 for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done
 for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done
 
-
-printf "\n--------------------------Theme_Ext---shell-theme & Extensions-------------------------\n"
-unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
-
-gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
-
-
-# - reduce 5% reserved space on ext4 home and / to 2%
-#     - https://unix.stackexchange.com/questions/527628/disk-usage-confusion-10g-missing-on-linux-home-partition-on-ssd
-#     - sudo tune2fs -m 2 /dev/nvme0n1p4
-#     - sudo tune2fs -m 2 /dev/nvme0n1p3
 
 
 

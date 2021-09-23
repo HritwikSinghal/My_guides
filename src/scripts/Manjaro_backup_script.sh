@@ -170,7 +170,7 @@ yadm add \
     ~/.config/appimagelauncher.cfg \
     ~/.config/kate* \
     ~/.config/kid3rc \
-    ~/.config/topgrade.toml \
+    ~/.config/topgrade.toml
 
 
 yadm add \
@@ -187,7 +187,6 @@ yadm add \
     ~/.local/share/gnome-shell \
     ~/.local/share/gnote \
     ~/.local/share/gstreamer-1.0 \
-    ~/.local/share/icc \
     ~/.local/share/ice \
     ~/.local/share/JetBrains \
     ~/.local/share/keyrings \
@@ -206,3 +205,8 @@ yadm add \
 
 yadm commit -m 'updates'
 yadm push
+
+# todo: create python script that:
+#		- checks if folder to add exists, if not then create it
+# 		- run command yadm add '''
+# 		- 

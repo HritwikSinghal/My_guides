@@ -9,11 +9,11 @@ sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 
 sudo pacman-mirrors -c United_States
 sudo pacman-mirrors --fasttrack 5
-sudo pacman -Syyu yay yadm --noconfirm
+sudo pacman -Syyu yay yadm micro --noconfirm
 
 # update Kernels
 
-
+# cd to my_guides/src/scripts
 
 printf "\n--------------------------Restore---mozilla-------------------------\n"
 rm -rf ~/.mozilla
@@ -47,7 +47,10 @@ gsettings set org.gnome.FileRoller.General compression-level "very-fast"
 
 # Restart
 
+yadm clone git@gitlab.com:Hritwik/dotfiles.git
 
+# check before running below command, Read the warning in YADM first.
+# yadm checkout "home/hritwik"
 
 
 printf "\n---------------------------------------------------------------------------\n"

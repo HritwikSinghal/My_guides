@@ -75,8 +75,11 @@ set -e
 # https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
 
 # Snap apps data
-
 # Backup gnome-boxes images: /home/hritwik/.local/share/gnome-boxes/images
+#    ~/.config/BraveSoftware
+# web apps data
+# /home/hritwik/.local/share/Jetbrains
+
 
 printf "\n-------------------------Backuping up Configs-------------------------\n"
 cd ~
@@ -136,7 +139,6 @@ yadm add \
     ~/.config/Atom \
     ~/.config/autostart \
     ~/.config/bleachbit \
-    ~/.config/BraveSoftware \
     ~/.config/"Code - OSS" \
     ~/.config/easyeffects \
     ~/.config/evince \
@@ -217,4 +219,4 @@ yadm push
 # todo: create python script that:
 #		- checks if folder to add exists, if not then create it
 # 		- run command yadm add '''
-# 		- 
+# 		- if i want to remove a folder from tracking, add that folder to gitignore and (find soln online)

@@ -279,6 +279,7 @@ pip3 install pipenv yt-dlp youtube_dlc
 
 printf "\n-------------------------Install--jetbrains-------------------------\n"
 # Use toolbox
+yay -S --noconfirm --needed aur/jetbrains-toolbox
 
 printf "\n-------------------------Install--Atom-------------------------\n"
 # sudo pacman -S --noconfirm --needed atom

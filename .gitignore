@@ -3,7 +3,8 @@ thunderbird*.zip
 teams*
 error.png
 .ssh
-git_ssh.zip
+ssh.zip
 telegram.zip
 signal.zip
 mozilla.zip
+*ssh*

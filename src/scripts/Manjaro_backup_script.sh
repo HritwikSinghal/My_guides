@@ -6,6 +6,7 @@ set -e
 # https://github.com/lra/mackup
 # https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
 
+# Snap apps data
 
 #
 # printf "\n-------------------------easyeffects-------------------------\n"

@@ -1,7 +1,53 @@
 #!/bin/bash
 
+
+# Start timeshift first
+
+# pacman, Enable color output
+sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
+sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
+
+sudo pacman-mirrors -c United_States
 sudo pacman-mirrors --fasttrack 5
-sudo pacman -Syyuu
+sudo pacman -Syyu yay yadm --noconfirm
+
+# update Kernels
+
+
+
+printf "\n--------------------------Restore---mozilla-------------------------\n"
+rm -rf ~/.mozilla
+unzip ./configs/mozilla.zip -d ~
+
+
+printf "\n--------------------------Restore---git_ssh-------------------------\n"
+git config --global user.email "Hritwiksinghal@outlook.in"
+git config --global user.name "Hritwik"
+rm -rf ~/.ssh
+unzip ./configs/ssh.zip -d ~
+
+
+printf "\n--------------------------Restore---Keyboard Layout-------------------------\n"
+sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
+sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
+sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
+sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
+
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
+
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 4
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+gsettings set org.gnome.FileRoller.General compression-level "very-fast"
+
+# Restart
+
+
 
 
 printf "\n---------------------------------------------------------------------------\n"
@@ -18,7 +64,7 @@ sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-p
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform
-sudo pacman -Rs --noconfirm --needed onlyoffice-desktopeditors firefox thunderbird
+sudo pacman -Rs --noconfirm firefox-gnome-theme-maia onlyoffice-desktopeditors firefox thunderbird
 
 # ADB
 sudo pacman -S --noconfirm --needed android-tools android-udev
@@ -226,17 +272,6 @@ printf "\n----------------------------------------------------------------------
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
 
 
-printf "\n--------------------------Restore---mozilla-------------------------\n"
-rm -rf ~/.mozilla
-unzip ./configs/mozilla.zip -d ~
-
-
-printf "\n--------------------------Restore---git_ssh-------------------------\n"
-git config --global user.email "Hritwiksinghal@outlook.in"
-git config --global user.name "Hritwik"
-rm -rf ~/.ssh
-unzip ./configs/ssh.zip -d ~
-
 
 printf "\n--------------------------Restore---dconf-settings-------------------------\n"
 
@@ -248,15 +283,6 @@ dconf dump /com/github/wwmm/easyeffects/ > /home/hritwik/com.github.wwmm.easyeff
 dconf load /org/gnome/ < ./configs/gsettings/org.gnome
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/easyeffects/ < ./configs/gsettings/com.github.wwmm.easyeffects
-
-printf "\n--------------------------Restore---Keyboard Layout-------------------------\n"
-sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
-sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
-sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
-sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
-
-
-
 
 
 
@@ -311,10 +337,6 @@ echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 
 
 
-# pacman, Enable color output
-sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
-sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
-
 # paru. Enable bottomup, SkipReview
 sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
 echo 'SkipReview' | sudo tee -a /etc/paru.conf
@@ -324,7 +346,7 @@ echo 'SkipReview' | sudo tee -a /etc/paru.conf
 timedatectl set-local-rtc 1
 
 # Grub, Enable Os-prober
-echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
+# echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
 
 # SSD
 sudo systemctl enable fstrim.timer
@@ -335,31 +357,10 @@ gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
 gsettings set org.gnome.nautilus.preferences show-create-link 'true'
 
-# Key Bindings
-gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
-gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
-
-gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
-gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
-
-
-gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 4
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-gsettings set org.gnome.desktop.interface show-battery-percentage true
-gsettings set org.gnome.FileRoller.General compression-level "very-fast"
-
 
 printf "\n--------------------------Tweaks---extra-app-presets-in-menu-------------------------\n"
 echo "[Desktop Entry] Hidden=true" > /tmp/1
 find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
-
-
-printf "\n--------------------------Tweaks---increase swamp size-------------------------\n"
-# sudo swapoff /swapfile
-# sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc
-# sudo mkswap /swapfile
-# sudo swapon /swapfile
-
 
 
 

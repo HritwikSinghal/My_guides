@@ -24,6 +24,15 @@
 
 ### Notes
 
+
+- increase swap size
+	```
+	sudo swapoff /swapfile
+	sudo dd if=/dev/zero of=/swapfile bs=1M count=6144 oflag=append conv=notrunc
+	sudo mkswap /swapfile
+	sudo swapon /swapfile
+	```
+
 - Tmux
     - [Oh my tmux](https://github.com/gpakosz/.tmux)
     - https://github.com/jimeh/tmux-themepack

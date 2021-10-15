@@ -196,6 +196,15 @@ cd ~/mnt/linode/rr
 umount ~/mnt/linode/rr
 ```
 
+## To test roms in emulator after completing build
+
+```
+. build/envsetup.sh
+set_stuff_for_environment
+lunch havoc_X2-userdebug
+QT_QPA_PLATFORM=xcb emulator -verbose
+```
+
 ## Setup
 
 
@@ -218,10 +227,15 @@ chmod +x ./scripts/setup/android_build_env.sh ./scripts/setup/arch-manjaro.sh
 ./scripts/setup/android_build_env.sh
 # ./scripts/setup/arch-manjaro.sh    # This is not required if you install all below 
 
-sudo pacman -S base-devel multilib-devel gcc repo git gnupg gperf sdl wxgtk2 squashfs-tools curl ncurses zlib schedtool perl-switch zip unzip libxslt bc rsync ccache lib32-zlib lib32-ncurses lib32-readline --noconfirm --needed
+# Note that Vim is a dependency of aosp-devel and will be in conflict with xxd-standalone. So install aosp-devel, remove Vim, install neovim in place of vim and then install xxd-standalone to remove any conflicts
 
-yay -S flex bison cpio clang ncurses5-compat-libs lib32-ncurses5-compat-libs xxd-standalone --noconfirm --needed
-yay -S lineageos-devel aosp-devel maven gradle xmlstarlet --noconfirm --needed
+sudo pacman -S --noconfirm --needed yay base-devel multilib-devel gcc repo git gnupg gperf sdl wxgtk2 squashfs-tools curl ncurses zlib schedtool perl-switch zip unzip libxslt bc rsync ccache lib32-zlib lib32-ncurses lib32-readline
+
+yay -S --noconfirm --needed lineageos-devel aosp-devel maven gradle xmlstarlet neovim 
+
+yay -Rdd vim --noconfirm
+
+yay -S --noconfirm --needed flex bison cpio clang ncurses5-compat-libs lib32-ncurses5-compat-libs xxd-standalone xml2
 
 ccache -M 50G
 
@@ -239,6 +253,7 @@ or
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+
 
 ```
 

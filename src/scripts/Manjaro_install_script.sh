@@ -72,7 +72,7 @@ printf "\n-------------------------Install--extras-------------------------\n"
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
 sudo pacman -S --noconfirm --needed filezilla git unrar p7zip
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
-sudo pacman -S --noconfirm --needed dconf-editor net-tools curl eog nano tmux
+sudo pacman -S --noconfirm --needed dconf-editor net-tools curl eog nano tmux sshfs
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-printer
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
@@ -126,7 +126,7 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 # add nemo to startup apps & disable desktop icon extension
 
-sudo pacman -S nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-compare nemo-media-columns nemo-pdf-tools nemo-preview  nemo-share --noconfirm --needed
+sudo pacman -S nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-compare nemo-media-columns nemo-pdf-tools nemo-preview nemo-python  nemo-share nemo-terminal --noconfirm --needed
 
 cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
 sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
@@ -221,9 +221,10 @@ sudo pacman -S --noconfirm --needed whatsapp-for-linux
 
 
 printf "\n-------------------------Install--BingWall-------------------------\n"
-sudo snap install bing-wall
-sudo snap install wonderwall
-
+# sudo snap install bing-wall
+# sudo snap install wonderwall
+yay -S --noconfirm --needed bing-wall
+flatpak install flathub com.ktechpit.wonderwall
 
 printf "\n-------------------------Install--appimagelauncher-------------------------\n"
 sudo pacman -S --noconfirm --needed appimagelauncher
@@ -455,13 +456,13 @@ printf "\n\n\n-------------------------Finished Successfully--------------------
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"
 printf "\n--------------------------Final-add-user-to-input-group-------------------------\n"
-sudo usermod -a -G input $(whoami)
+sudo usermod -aG input $(whoami)
 newgrp input
-sudo usermod -a -G libvirt $(whoami)
+sudo usermod -aG libvirt $(whoami)
 newgrp libvirt
-sudo usermod -a -G kvm $(whoami)
+sudo usermod -aG kvm $(whoami)
 newgrp kvm
-sudo usermod -a -G adbusers $(whoami)
+sudo usermod -aG adbusers $(whoami)
 newgrp adbusers
-sudo usermod -a -G wireshark $(whoami)
+sudo usermod -aG wireshark $(whoami)
 newgrp wireshark

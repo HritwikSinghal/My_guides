@@ -77,8 +77,9 @@ set -e
 # Snap apps data
 # Backup gnome-boxes images: /home/hritwik/.local/share/gnome-boxes/images
 #    ~/.config/BraveSoftware
-# web apps data
-# /home/hritwik/.local/share/Jetbrains
+# web apps data: ~/.local/share/ice/profiles/
+# JetBrains apps: /home/hritwik/.local/share/Jetbrains
+# /etc/environment, /etc/pacman.conf , /etc/paru.conf, yay conf
 
 
 printf "\n-------------------------Backuping up Configs-------------------------\n"
@@ -112,7 +113,6 @@ yadm add \
     ~/Templates \
     ~/.android \
     ~/.atom \
-    ~/.conky \
     ~/.gnupg \
     ~/.java \
     ~/.kodi \
@@ -140,6 +140,7 @@ yadm add \
     ~/.config/autostart \
     ~/.config/bleachbit \
     ~/.config/"Code - OSS" \
+    ~/.config/conky \
     ~/.config/easyeffects \
     ~/.config/evince \
     ~/.config/filezilla \
@@ -197,10 +198,8 @@ yadm add \
     ~/.local/share/gnome-shell \
     ~/.local/share/gnote \
     ~/.local/share/gstreamer-1.0 \
-    ~/.local/share/ice \
     ~/.local/share/JetBrains \
     ~/.local/share/keyrings \
-    ~/.local/share/lollypop \
     ~/.local/share/lutris \
     ~/.local/share/man \
     ~/.local/share/mime \
@@ -213,10 +212,26 @@ yadm add \
     ~/.local/share/TelegramDesktop \
     ~/.local/share/vlc
 
+yadm add --update
 yadm commit -m 'updates'
 yadm push
+
+
+
+# Extras
+#     ~/.local/share/lollypop \
+
 
 # todo: create python script that:
 #		- checks if folder to add exists, if not then create it
 # 		- run command yadm add '''
 # 		- if i want to remove a folder from tracking, add that folder to gitignore and (find soln online)
+#            - https://stackoverflow.com/questions/1274057/how-can-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitign
+#            - yadm rm -rf --cached .local/share/gnome-shell/application_state
+# a blacklist for folders and list new folders which are added (by apps newly installed) so that i can choose to add them only
+
+
+# yadm rm -rf --cached .
+# yadm stash
+# yadm stash drop
+

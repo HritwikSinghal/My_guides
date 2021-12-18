@@ -227,7 +227,7 @@ chmod +x ./scripts/setup/android_build_env.sh ./scripts/setup/arch-manjaro.sh
 ./scripts/setup/android_build_env.sh
 # ./scripts/setup/arch-manjaro.sh    # This is not required if you install all below 
 
-# Note that Vim is a dependency of aosp-devel and will be in conflict with xxd-standalone. So install aosp-devel, remove Vim, install neovim in place of vim and then install xxd-standalone to remove any conflicts
+# Note that Vim is a dependency of aosp-devel and will be in conflict with xxd-standalone. So install aosp-devel, remove Vim, install neovim in place of vim (and then optional, install xxd-standalone) to remove any conflicts
 
 sudo pacman -S --noconfirm --needed yay base-devel multilib-devel gcc repo git gnupg gperf sdl wxgtk2 squashfs-tools curl ncurses zlib schedtool perl-switch zip unzip libxslt bc rsync ccache lib32-zlib lib32-ncurses lib32-readline
 
@@ -314,7 +314,7 @@ printf "Canned DONE"
 
 
 ```zsh
-mkdir -p ~/roms/aicp/&& cd ~/roms/aicp
+mkdir -p ./roms/aicp/&& cd ./roms/aicp
 repo init -u https://github.com/AICP/platform_manifest.git -b r11.1 --depth=1
 repo sync --force-sync -j$(nproc --all) --no-tags --no-clone-bundle  -c
 
@@ -329,6 +329,13 @@ git cherry-pick db56d38c06ca4514304eec771a14558b867ab2ff
 cd ..
 cd ..
 
+
+# see https://github.com/AOSPK/frameworks_base/commit/3feb1ac8fcfe5b9f1cc07febbee80ce472a7ed85
+# and change "DeviceConfig.NAMESPACE_SYSTEMUI, BRIGHTLINE_FALSING_MANAGER_ENABLED, true" to "false"
+
+# https://github.com/AOSP-Realme-X2/platform_frameworks_base/commit/30867565a37912255aeb08bfae39d1cf9a7843d6
+# https://github.com/Retypolkg/device_realme_X2/commit/143e7780ba7828c21af9a8e322f7d8c1ca217b63
+
 ccache -M 50G
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
@@ -337,8 +344,8 @@ export SKIP_ABI_CHECKS=true
 # export ALLOW_MISSING_DEPENDENCIES=true
 
 chmod +x build/envsetup.sh
-source build/envsetup.sh
-time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
+. build/envsetup.sh
+time brunch aicp_X2-userdebug
 
 ```
 
@@ -438,7 +445,8 @@ export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 export SKIP_ABI_CHECKS=true
 
 chmod +x build/envsetup.sh
-source build/envsetup.sh
+. build/envsetup.sh
+lunch havoc_X2-userdebug
 
 # make api-stubs-docs-update-current-api -j$(nproc --all) && \
 # make system-api-stubs-docs-non-updatable-update-current-api -j$(nproc --all) && \
@@ -487,14 +495,14 @@ git clone "https://github.com/HritwikSinghal/android_kernel_realme_sm6150" -b li
 
 cd frameworks/base
 git remote add off_rr https://github.com/ResurrectionRemix/android_frameworks_base
-git fetch off_rr
+git fetch off_rr --depth=1
 git cherry-pick b27490b437a1bc2a767af6d0dd8a30aae96036f0
 cd ../..
 
 
 cd packages/apps/Settings
 git remote add off_rr https://github.com/ResurrectionRemix/Resurrection_packages_apps_Settings
-git fetch off_rr
+git fetch off_rr --depth=1
 git cherry-pick 24551c50223cbccd8fd74f053463f99e38ee93d8
 cd ../../..
 

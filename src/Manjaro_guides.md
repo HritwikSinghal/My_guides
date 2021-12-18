@@ -50,13 +50,15 @@
 
 - enable snap, flatpak, AUR support in pamac (and maybe globally) via terminal
 
-- for startup app fix see [this](https://forum.manjaro.org/t/solved-trouble-setting-up-a-startup-command/37323/15). This thread is also awesome, read whole convo.
+- for startup app fix see [this](https://forum.manjaro.org/t/solved-trouble-setting-up-a-startup-command/37323/15).
+    This thread is also awesome, read whole convo.
 
 - for snap apps fix
+    - Dont use them
 	-
     ```
-    sudo rm /var/cache/fontconfig/*
-    rm ~/.cache/fontconfig/*
+        sudo rm /var/cache/fontconfig/*
+        rm ~/.cache/fontconfig/*
     ```
 
 
@@ -72,7 +74,7 @@
 
 ## Notes & Saved
 
-- Build manjaro ISO (use git version of 'manjaro-tools-iso' )
+- Build manjaro ISO (use git version of 'manjaro-tools-iso') 
     - https://wiki.manjaro.org/index.php/Build_Manjaro_ISOs_with_buildiso#Prerequisites
     - https://gitlab.manjaro.org/tools/development-tools/manjaro-tools
     - https://forum.manjaro.org/t/how-create-iso-from-current-manjaro-installation/26219/5
@@ -91,11 +93,11 @@
 	- [Similar issue on Arch forums](https://bbs.archlinux.org/viewtopic.php?id=257421)
 	- [Fix on Arch wiki, first see above 2 points](https://wiki.archlinux.org/index.php/Kernel_mode_setting#Early_KMS_start)
 
-	- In short do
-	- sudo nano /etc/mkinitcpio.conf
-	- Add the required module for the 'video driver' to the MODULES array: 
-		- so add 'intel_agp i915 amdgpu' to MODULES
-	- sudo mkinitcpio -P
+	- In short
+        	-  edit ``` /etc/mkinitcpio.conf ``` 
+        	- Add the required module for the 'video driver' to the MODULES array: 
+        		- so add 'intel_agp i915 amdgpu' to MODULES
+        	- ``` sudo mkinitcpio -P ```
 
 
 - Enable hibernate (use Arch wiki)
@@ -119,23 +121,25 @@
 	- add hibernate shortcut or install gnome extension or change power button behaviour in setting to hibernate
 	
 	OR
-	- in "/etc/default/grub" in line "GRUB_CMDLINE_LINUX_DEFAULT" do 
-	```
-	The kernel parameter resume=swap_device must be used. Any of the persistent block device naming methods can be used as swap_device. For example:
-    resume=UUID=4209c845-f495-4c43-8a03-5363dd433153
-    resume="PARTLABEL=Swap partition"
-    resume=/dev/archVolumeGroup/archLogicalVolume
-    ```
-    # basically add "resume=UUID=4209c845-f495-4c43-8a03-5363dd433153"
-    # Then Configure the initramfs
+	- in "/etc/default/grub" in line "GRUB_CMDLINE_LINUX_DEFAULT" add The kernel parameter resume=swap_device.
+	Any of the persistent block device naming methods can be used as swap_device. For example:
+        ```
+        resume=UUID=4209c845-f495-4c43-8a03-5363dd433153
+        resume="PARTLABEL=Swap partition"
+        resume=/dev/archVolumeGroup/archLogicalVolume
+        ```
+
+    basically add "resume=UUID=4209c845-f495-4c43-8a03-5363dd433153"
+    Then Configure the initramfs
+
     ```
     When an initramfs with the base hook is used, which is the default, the resume hook is required in /etc/mkinitcpio.conf. Whether by label or by UUID, the swap partition is referred to with a udev device node, so the resume hook must go after the udev hook. This example was made starting from the default hook configuration:
     HOOKS=(base udev autodetect keyboard modconf block filesystems resume fsck)
     Remember to regenerate the initramfs for these changes to take effect.
     ```
-    Then regenerate the initramfs for these changes to take effect.
-    https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
-    do ```sudo mkinitcpio -P```
+
+    [Then regenerate the initramfs for these changes to take effect](https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation)
+    - do ```sudo mkinitcpio -P```
 
 
 

@@ -60,3 +60,10 @@ source build/envsetup.sh
 
 time brunch aicp_X2-userdebug -j$(nproc --all) | tee log.txt
 
+
+mkdir -p ~/mnt/linode/aicp
+sshfs hritwik@xxx.xxx.xxx.xxx:/home/hritwik/ ~/mnt/linode/aicp
+cd ~/mnt/linode/aicp
+
+exit
+umount ~/mnt/linode/aicp

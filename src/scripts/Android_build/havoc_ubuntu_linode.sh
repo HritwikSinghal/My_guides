@@ -55,7 +55,25 @@ export CCACHE_EXEC=/usr/bin/ccache
 export SKIP_ABI_CHECKS=true
 
 chmod +x build/envsetup.sh
-source build/envsetup.sh
+. build/envsetup.sh
 lunch havoc_X2-userdebug
 brunch
 
+
+mkdir -p ~/mnt/linode/havoc
+54.188.253.74
+# sshfs hritwik@xxx.xxx.xxx.xxx:/home/hritwik/ ~/mnt/linode/havoc
+sshfs hritwik@172.105.34.222:/home/hritwik/ ~/mnt/linode/havoc
+
+cd ~/mnt/linode/havoc
+
+exit
+umount ~/mnt/linode/havoc
+
+
+
+
+
+54.188.253.74
+yBVZF1X6e3zJct4X
+sshfs candidate@XXXXX:/home/candidate ~/mnt/linode/havoc

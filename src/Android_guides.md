@@ -59,3 +59,5 @@
 - Magisk
 - Migrate zips
 - Magisk Modules
+
+- enable aegis backup

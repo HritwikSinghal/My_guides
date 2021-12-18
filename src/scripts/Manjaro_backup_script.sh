@@ -68,20 +68,6 @@ set -e
 
 
 
-
-# todo: backup and restore of whole OS
-# https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
-# https://github.com/lra/mackup
-# https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
-
-# Snap apps data
-# Backup gnome-boxes images: /home/hritwik/.local/share/gnome-boxes/images
-#    ~/.config/BraveSoftware
-# web apps data: ~/.local/share/ice/profiles/
-# JetBrains apps: /home/hritwik/.local/share/Jetbrains
-# /etc/environment, /etc/pacman.conf , /etc/paru.conf, yay conf
-
-
 printf "\n-------------------------Backuping up Configs-------------------------\n"
 cd ~
 mkdir -p ~/Backups
@@ -95,16 +81,39 @@ printf "\n-------------------------ssh-------------------------\n"
 cd ~
 zip -r ~/Backups/ssh.zip ./.ssh
 
+printf "\n-------------------------Jetbrains-------------------------\n"
+cd ~
+zip -r ~/Backups/Jetbrains.zip ./.local/share/JetBrains/
+
+printf "\n-------------------------Web-app-manager-------------------------\n"
+cd ~
+zip -r ~/Backups/web_apps.zip ./.local/share/ice/profiles/
+
+printf "\n-------------------------ssh-------------------------\n"
+cd ~
+zip -r ~/Backups/brave.zip ./.config/BraveSoftware/
+
 printf "\n-------------------------Backuping up gsettings-------------------------\n"
 mkdir -p ~/Backups/gsettings
 dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
 dconf dump /com/github/wwmm/easyeffects/ > ~/Backups/gsettings/com.github.wwmm.easyeffects
 
+# copy them to other SSD automatically
+# make extract srcipt for these
 
 echo "Finished Successfully..."
 echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory "
 
+
+# Extras to manually backup
+# /etc/environment, /etc/pacman.conf , /etc/paru.conf, yay conf
+#     - Backup Projects folder
+#     - downloads and other folders
+#     - /etc/
+# Snap apps data (or dont use them)
+# flatpak apps data in ~/.var/
+# Backup gnome-boxes images: /home/hritwik/.local/share/gnome-boxes/images
 
 
 yadm add \
@@ -119,7 +128,6 @@ yadm add \
     ~/.pki \
     ~/.pvpn-cli \
     ~/.SpaceVim.d \
-    ~/.ssh \
     ~/.steam \
     ~/.var \
     ~/.vnc \
@@ -198,7 +206,6 @@ yadm add \
     ~/.local/share/gnome-shell \
     ~/.local/share/gnote \
     ~/.local/share/gstreamer-1.0 \
-    ~/.local/share/JetBrains \
     ~/.local/share/keyrings \
     ~/.local/share/lutris \
     ~/.local/share/man \
@@ -217,10 +224,10 @@ yadm commit -m 'updates'
 yadm push
 
 
-
-# Extras
-#     ~/.local/share/lollypop \
-
+# todo: backup and restore of whole OS
+# https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
+# https://github.com/lra/mackup
+# https://ostechnix.com/backup-and-restore-application-settings-on-newly-installed-linux-system/
 
 # todo: create python script that:
 #		- checks if folder to add exists, if not then create it
@@ -229,7 +236,8 @@ yadm push
 #            - https://stackoverflow.com/questions/1274057/how-can-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitign
 #            - yadm rm -rf --cached .local/share/gnome-shell/application_state
 # a blacklist for folders and list new folders which are added (by apps newly installed) so that i can choose to add them only
-
+# if the path (like .kodi) does not exist, git gives error, so make sure that that path not committed
+# add manual backup zip support where you just type path to folder and it will auto zip it and auto extract it
 
 # yadm rm -rf --cached .
 # yadm stash

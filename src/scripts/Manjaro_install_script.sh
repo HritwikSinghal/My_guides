@@ -154,12 +154,19 @@ sudo systemctl start vnstat.service
 
 printf "\n-------------------------Install--pipewire-------------------------\n"
 
+# PipeWire currently uses the simple example session manager pipewire-media-session.
+# To switch to the more powerful WirePlumber, install the wireplumber package,
+# then disable the pipewire-media-session user unit, and enable the wireplumber.service user unit
+
 sudo pacman -Rdd --noconfirm manjaro-pulse pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-rtp pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-ctl sof-firmware
 
 sudo pacman -S --noconfirm --needed xdg-desktop-portal xdg-desktop-portal-gtk \
-									pipewire-media-session pipewire pipewire-alsa pipewire-pulse pipewire-jack manjaro-pipewire \
+                                    pipewire pipewire-alsa pipewire-pulse pipewire-jack manjaro-pipewire \
 									gst-plugin-pipewire gstreamer-vaapi wireplumber
-									
+
+systemctl disable pipewire-media-session --user
+systemctl enable --now wireplumber --user
+
 sudo pacman -S --noconfirm --needed easyeffects
 
 printf "\n-------------------------Install--uget-or-XDM-------------------------\n"
@@ -239,8 +246,11 @@ curl -sLf https://spacevim.org/install.sh | bash
 
 printf "\n-------------------------Install--AUR packages-------------------------\n"
 # also install reflector if not on manjaro
-yay -S --noconfirm --needed paru-bin  ghostwriter bash-zsh-insulter
+yay -S --noconfirm --needed paru-bin bash-zsh-insulter
 yay -S --noconfirm --needed brave-bin brlaser brother-hll2360d brother-lpr-drivers-common
+# dont ghostwriter, use marktext
+yay -S marktext-bin
+
 
 yay -S --noconfirm --needed warpinator webapp-manager firefox-profile-switcher-connector-bin 
 yay -S --noconfirm --needed lib32-ncurses5-compat-libs ncurses5-compat-libs 
@@ -418,6 +428,9 @@ timedatectl set-local-rtc 1
 # SSD
 sudo systemctl enable fstrim.timer
 sudo systemctl start fstrim.timer
+
+# systemd-oomd
+sudo systemctl enable --now systemd-oomd.service
 
 # Gsettings
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'

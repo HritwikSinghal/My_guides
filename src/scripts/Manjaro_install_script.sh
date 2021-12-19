@@ -3,13 +3,13 @@
 
 # Start timeshift first
 
-# pacman, Enable color output
-sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
-sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
+# pacman, Enable color output, not needed if /etc/pacman.conf is restored
+# sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
+# sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 
-sudo pacman-mirrors -c United_States
-sudo pacman-mirrors --fasttrack 5
-sudo pacman -Syyu yay yadm micro --noconfirm
+sudo pacman-mirrors -c Global
+sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu
+sudo pacman -S yay yadm micro --noconfirm
 
 # update Kernels
 

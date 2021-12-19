@@ -99,6 +99,15 @@ dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
 dconf dump /com/github/wwmm/easyeffects/ > ~/Backups/gsettings/com.github.wwmm.easyeffects
 
+cd ~
+tar -cvf ~/Backups/Documents.tar Documents/
+tar -cvf ~/Backups/Downloads.tar Downloads/
+tar -cvf ~/Backups/Music.tar Music/
+tar -cvf ~/Backups/Pictures.tar Pictures/
+tar -cvf ~/Backups/Projects.tar Projects/
+tar -cvf ~/Backups/My_guides.tar Projects/My_guides/
+tar -cvf ~/Backups/Videos.tar Videos/
+
 # copy them to other SSD automatically
 # make extract srcipt for these
 

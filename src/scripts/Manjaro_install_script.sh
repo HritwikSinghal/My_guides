@@ -3,12 +3,13 @@
 
 # Start timeshift first
 
-# pacman, Enable color output, not needed if /etc/pacman.conf is restored
-# sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
-# sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
+# To fix "Failed to commit transaction (invalid or corrupted package)" error
+# find /var/cache/pacman/pkg/ -iname "*.part" -delete
 
-sudo pacman-mirrors -c Global
-sudo pacman-mirrors --fasttrack 5 && sudo pacman -Syyu
+
+sudo pacman-mirrors -c Germany
+sudo pacman-mirrors --fasttrack 5
+sudo pacman -Syyu
 sudo pacman -S yay yadm micro --noconfirm
 
 # update Kernels
@@ -47,6 +48,7 @@ gsettings set org.gnome.FileRoller.General compression-level "very-fast"
 
 # Restart
 
+cd ~
 yadm clone git@gitlab.com:Hritwik/dotfiles.git
 
 # check before running below command, Read the warning in YADM first.
@@ -68,11 +70,13 @@ printf "\n\n\n-------------------------Insatlling Apps-------------------------\
 
 
 printf "\n-------------------------Install--extras-------------------------\n"
+# old packages
+# net-tools
 
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
 sudo pacman -S --noconfirm --needed filezilla git unrar p7zip
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
-sudo pacman -S --noconfirm --needed dconf-editor net-tools curl eog nano tmux sshfs
+sudo pacman -S --noconfirm --needed dconf-editor curl eog nano tmux sshfs
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-printer
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
@@ -80,8 +84,8 @@ sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-cl
 sudo pacman -Rs --noconfirm firefox-gnome-theme-maia
 sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
 
-# sudo pacman -Rs --noconfirm firefox
-# sudo pacman -Rs --noconfirm thunderbird
+# remove snap
+sudo pacman -Rdd --noconfirm snapd
 
 # ADB
 sudo pacman -S --noconfirm --needed android-tools android-udev
@@ -94,7 +98,7 @@ sudo pacman -S --noconfirm --needed firefox thunderbird
 
 
 printf "\n-------------------------Install--KDE tools-------------------------\n"
-sudo pacman -S --noconfirm --needed thunar kate kid3 kio latex
+sudo pacman -S --noconfirm --needed thunar kate kid3 kio
 
 printf "\n-------------------------Install--Wine & Proton-------------------------\n"
 
@@ -112,7 +116,7 @@ printf "\n-------------------------Install--GNOME-tweak-tool and chrome-gnome-sh
 sudo pacman -S --noconfirm --needed gnome-tweaks chrome-gnome-shell
 
 printf "\n-------------------------Install--Kvantum-------------------------\n"
-sudo pacman -S --noconfirm --needed kvantum-manjaro kvantum-qt5
+# sudo pacman -S --noconfirm --needed kvantum-manjaro kvantum-qt5
 
 
 printf "\n-------------------------Install--Flatpak-------------------------\n"
@@ -126,7 +130,13 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 # add nemo to startup apps & disable desktop icon extension
 
-sudo pacman -S nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-compare nemo-media-columns nemo-pdf-tools nemo-preview nemo-python  nemo-share nemo-terminal --noconfirm --needed
+sudo pacman -S --noconfirm --needed nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-preview nemo-python  nemo-share nemo-terminal
+
+# nemo-compare nemo-media-columns nemo-pdf-tools are not in repos, get them from AUR
+yay -S --noconfirm --needed nemo-compare nemo-media-columns nemo-pdf-tools
+
+# for permission denied error in python
+# sudo chmod 666 /usr/lib/python3.10/site-packages/google_api_core-2.3.2-py3.10.egg-info/
 
 cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
 sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
@@ -158,15 +168,16 @@ printf "\n-------------------------Install--pipewire-------------------------\n"
 # To switch to the more powerful WirePlumber, install the wireplumber package,
 # then disable the pipewire-media-session user unit, and enable the wireplumber.service user unit
 
-sudo pacman -Rdd --noconfirm manjaro-pulse pulseaudio pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-rtp pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-ctl sof-firmware
+# pulseaudio-equalizer sof-firmware
 
+sudo pacman -Rdd --noconfirm manjaro-pulse pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-lirc pulseaudio-rtp pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-ctl
+
+systemctl disable pipewire-media-session --user
 sudo pacman -S --noconfirm --needed xdg-desktop-portal xdg-desktop-portal-gtk \
                                     pipewire pipewire-alsa pipewire-pulse pipewire-jack manjaro-pipewire \
 									gst-plugin-pipewire gstreamer-vaapi wireplumber
 
-systemctl disable pipewire-media-session --user
 systemctl enable --now wireplumber --user
-
 sudo pacman -S --noconfirm --needed easyeffects
 
 printf "\n-------------------------Install--uget-or-XDM-------------------------\n"
@@ -186,7 +197,6 @@ sudo gem install fusuma
 sudo gem install revdev
 sudo gem install bundler
 gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
-# --- #
 printf "\n-------------------------Install--fusuma-gems-------------------------\n"
 sudo pacman -S --noconfirm --needed libevdev base-devel
 sudo gem install fusuma-plugin-sendkey
@@ -197,7 +207,7 @@ sudo gem install fusuma-plugin-wmctrl
 sudo gem install fusuma-plugin-tap
 
 printf "\n-------------------------Install--fonts-manager-------------------------\n"
-sudo pacman -S --noconfirm --needed font-manager
+yay -S --noconfirm --needed font-manager
 
 printf "\n-------------------------Install--obs-studio-------------------------\n"
 sudo pacman -S --noconfirm --needed obs-studio
@@ -210,7 +220,7 @@ sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/you
 sudo chmod a+rx /usr/local/bin/youtube-dl
 
 printf "\n-------------------------Install--gnome-boxes & virt-manager-------------------------\n"
-sudo pacman -Rs --noconfirm iptables
+sudo pacman -Rdd --noconfirm iptables
 sudo pacman -S --noconfirm --needed gnome-boxes virt-manager iptables-nft bridge-utils openbsd-netcat
 
 sudo systemctl enable libvirtd.service
@@ -237,8 +247,8 @@ printf "\n-------------------------Install--appimagelauncher--------------------
 sudo pacman -S --noconfirm --needed appimagelauncher
 
 printf "\n-------------------------Install--Rust-tools-------------------------\n"
-sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs micro fzf tldr neovim fish zsh
-micro -plugin install aspell wc python-pip
+sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs micro fzf tldr neovim fish zsh python-pip
+micro -plugin install aspell wc
 
 
 printf "\n-------------------------Install--spacevim-------------------------\n"
@@ -248,8 +258,8 @@ printf "\n-------------------------Install--AUR packages------------------------
 # also install reflector if not on manjaro
 yay -S --noconfirm --needed paru-bin bash-zsh-insulter
 yay -S --noconfirm --needed brave-bin brlaser brother-hll2360d brother-lpr-drivers-common
+yay -S  --noconfirm --needed marktext-bin
 # dont ghostwriter, use marktext
-yay -S marktext-bin
 
 
 yay -S --noconfirm --needed warpinator webapp-manager firefox-profile-switcher-connector-bin 
@@ -260,6 +270,7 @@ yay -S --noconfirm --needed qemu-user-static-bin binfmt-qemu-static-all-arch
 printf "\n-------------------------Install--Python packages-------------------------\n"
 pip3 install pipenv yt-dlp youtube_dlc
 
+sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/HritwikSinghal/bash-insulter/master/src/bash.command-not-found
 
 
 
@@ -289,7 +300,6 @@ pip3 install pipenv yt-dlp youtube_dlc
 
 
 printf "\n-------------------------Install--jetbrains-------------------------\n"
-# Use toolbox
 yay -S --noconfirm --needed aur/jetbrains-toolbox
 
 printf "\n-------------------------Install--Atom-------------------------\n"
@@ -334,16 +344,13 @@ printf "\n-------------------------Install--Sublime-------------------------\n"
 # QT_QPA_PLATFORMTHEME="qt5ct"
 QT_QPA_PLATFORMTHEME="gnome"
 QT_STYLE_OVERRIDE="kvantum-dark"
-
 QT_AUTO_SCREEN_SCALE_FACTOR=1
 QT_QPA_PLATFORM=wayland         # Force to use wayland backend, also install qt5-wayland & qt6-wayland
 
 # echo "QT_STYLE_OVERRIDE=kvantum-dark" | sudo tee -a /etc/environment      # replace instead of add
 sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=kvantum-dark/g' /etc/environment
-
 echo "" | sudo tee -a /etc/environment
 echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
-
 
 echo "EDITOR=/usr/bin/micro" | sudo tee -a /etc/environment
 
@@ -354,6 +361,17 @@ echo "AMD_VULKAN_ICD=RADV" | sudo tee -a /etc/environment
 
 # Firefox, run in wayland mode
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
+
+
+
+# pacman, Enable color output, not needed if /etc/pacman.conf is restored
+# sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
+# sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
+
+
+# paru. Enable bottomup, SkipReview
+# sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
+# echo 'SkipReview' | sudo tee -a /etc/paru.conf
 
 
 
@@ -372,7 +390,7 @@ echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
 
 
 printf "\n--------------------------Theme_Ext---shell-theme & Extensions-------------------------\n"
-unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
+# unzip ./configs/extensions_bak.zip -d /home/hritwik/.local/share/gnome-shell/
 
 
 
@@ -408,18 +426,13 @@ dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
 dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
 dconf dump /com/github/wwmm/easyeffects/ > /home/hritwik/com.github.wwmm.easyeffects_Bak
 
-dconf load /org/gnome/ < ./configs/gsettings/org.gnome_new
+dconf load /org/gnome/ < ./configs/gsettings/org.gnome
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/easyeffects/ < ./configs/gsettings/com.github.wwmm.easyeffects
 
 
 
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
-
-
-# paru. Enable bottomup, SkipReview
-sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
-echo 'SkipReview' | sudo tee -a /etc/paru.conf
 
 
 # fix for dual boot time issue
@@ -449,7 +462,7 @@ find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} 
 printf "\n--------------------------Theme_Ext---Grub-theme-------------------------\n"
 rm -rf /home/hritwik/my_downloads/grub_themes
 git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git /home/hritwik/my_downloads/grub_themes
-sudo /home/hritwik/my_downloads/grub_themes/install.sh -t slaze -i white
+sudo /home/hritwik/my_downloads/grub_themes/install.sh
 
 
 printf "\n--------------------------Theme_Ext---Theme: Yaru-Colors-------------------------\n"

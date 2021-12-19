@@ -6,6 +6,15 @@ show-desktop-icons=true
 trash-icon-visible=true
 volumes-visible=false
 
+[extensions/nemo-media-columns]
+timeout=4.0
+
+[extensions/nemo-terminal]
+default-terminal-height=10
+default-visible=false
+terminal-hotkey='F4'
+terminal-position='bottom'
+
 [icon-view]
 captions=['size', 'date_modified']
 default-zoom-level='large'
@@ -15,12 +24,15 @@ default-column-order=['name', 'size', 'type', 'date_modified', 'date_created_wit
 default-visible-columns=['name', 'size', 'type', 'date_modified', 'permissions']
 default-zoom-level='small'
 
+[plugins]
+disabled-extensions=['NemoTerminalProvider+NemoPython']
+
 [preferences]
 bulk-rename-tool=b'krename'
 click-double-parent-folder=true
 close-device-view-on-device-eject=true
 confirm-move-to-trash=false
-date-format='locale'
+date-format='iso'
 default-folder-viewer='list-view'
 default-sort-order='type'
 inherit-show-thumbnails=false
@@ -35,7 +47,7 @@ show-new-folder-icon-toolbar=true
 show-open-in-terminal-toolbar=true
 show-reload-icon-toolbar=true
 show-show-thumbnails-toolbar=false
-thumbnail-limit=uint64 8589934592
+thumbnail-limit=uint64 2147483648
 tooltips-in-icon-view=true
 tooltips-in-list-view=true
 tooltips-on-desktop=true
@@ -48,7 +60,7 @@ selection-menu-make-link=true
 
 [window-state]
 devices-expanded=true
-geometry='1229x1007+26+23'
+geometry='1099x773+26+23'
 maximized=false
 my-computer-expanded=true
 side-pane-view='places'

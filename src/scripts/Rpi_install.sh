@@ -97,27 +97,32 @@ sudo chroot /mnt qemu-arm-static /bin/bash
 # sudo systemctl enable rc-local
 # sudo systemctl enable NetworkManager
 # sudo systemctl start NetworkManager
-# sudo nmcli dev wifi connect Singhals password "123123123"
+# sudo nmcli dev wifi connect Singhals password "123123123"         # (Enter the actual password, not 123123123)
 # sudo cp wpa_supplicant-wlan0.conf /mnt/etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 # sudo ln -s /usr/lib/systemd/system/wpa_supplicant\@.service /mnt/etc/systemd/system/multi-user.target.wants/wpa_supplicant
 
 chsh -s /usr/bin/fish
 pacman -Syu --noconfirm --needed yay
-yay -S --noconfirm --needed git htop neofetch fish python3 cronie curl neovim
+yay -S --noconfirm --needed python-raspberry-gpio gpio-utils
+yay -S --noconfirm --needed git htop neofetch fish python3 python-pip cronie curl neovim
 yay -S --noconfirm --needed micro wl-clipboard net-tools spacevim ranger exa bat ripgrep fd procs
 pip3 install pipenv
 
 systemctl enable cronie
 systemctl enable fstrim.timer
 systemctl enable sshd
+systemctl enable systemd-timesyncd
+timedatectl set-ntp true
 pacman-mirrors -c Global
 
 # rpi uses iwd and NOT wpa_supplicant
-mkdir -p /var/lib/iwd
-touch /var/lib/iwd/Singhals.psk
 # add below to above file (remove # from start)
 #[Security]
-#Passphrase=123123123
+#Passphrase=123123123       # (Enter the actual password, not 123123123)
+mkdir -p /var/lib/iwd
+touch /var/lib/iwd/Singhals.psk
+echo "[Security]" | sudo tee -a /var/lib/iwd/Singhals.psk
+echo "Passphrase=123123123" | sudo tee -a /var/lib/iwd/Singhals.psk
 
 
 # finally
@@ -127,6 +132,9 @@ sudo umount /mnt/proc/ -l
 sudo umount /mnt/dev/pts -l
 sudo umount /mnt/ -l
 
+
+# room control server should be run as root on manjaro
+# CFLAGS="-fcommon" pip install rpi.gpio
 
 
 # - Wifi (for debian based systems that use wpa_supplicant)

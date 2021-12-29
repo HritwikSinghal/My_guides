@@ -91,21 +91,12 @@ sudo cp /etc/resolv.conf /mnt/etc/resolv.conf
 sudo chroot /mnt qemu-arm-static /bin/bash
 # or try - sudo chroot /mnt
 
-# Use iwd for networking
-# Network
-# sudo pacman -Syyu --noconfirm --needed networkmanager
-# sudo systemctl enable rc-local
-# sudo systemctl enable NetworkManager
-# sudo systemctl start NetworkManager
-# sudo nmcli dev wifi connect Singhals password "123123123"         # (Enter the actual password, not 123123123)
-# sudo cp wpa_supplicant-wlan0.conf /mnt/etc/wpa_supplicant/wpa_supplicant-wlan0.conf
-# sudo ln -s /usr/lib/systemd/system/wpa_supplicant\@.service /mnt/etc/systemd/system/multi-user.target.wants/wpa_supplicant
-
-chsh -s /usr/bin/fish
-pacman -Syu --noconfirm --needed yay
+pacman -Syyu --noconfirm --needed yay
 yay -S --noconfirm --needed python-raspberry-gpio gpio-utils
 yay -S --noconfirm --needed git htop neofetch fish python3 python-pip cronie curl neovim
 yay -S --noconfirm --needed micro wl-clipboard net-tools spacevim ranger exa bat ripgrep fd procs
+chsh -s /usr/bin/fish
+
 pip3 install pipenv
 
 systemctl enable cronie
@@ -133,9 +124,21 @@ sudo umount /mnt/dev/pts -l
 sudo umount /mnt/ -l
 
 
+# installing latest kernel https://forum.manjaro.org/t/raspberry-pi-kernels-2-0/84885
+
 # room control server should be run as root on manjaro
 # CFLAGS="-fcommon" pip install rpi.gpio
 
+
+# Use iwd for networking
+# Network
+# sudo pacman -Syyu --noconfirm --needed networkmanager
+# sudo systemctl enable rc-local
+# sudo systemctl enable NetworkManager
+# sudo systemctl start NetworkManager
+# sudo nmcli dev wifi connect Singhals password "123123123"         # (Enter the actual password, not 123123123)
+# sudo cp wpa_supplicant-wlan0.conf /mnt/etc/wpa_supplicant/wpa_supplicant-wlan0.conf
+# sudo ln -s /usr/lib/systemd/system/wpa_supplicant\@.service /mnt/etc/systemd/system/multi-user.target.wants/wpa_supplicant
 
 # - Wifi (for debian based systems that use wpa_supplicant)
 #     - https://unix.stackexchange.com/questions/483678/debian-connect-to-wifi-automatically-when-in-range

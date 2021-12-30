@@ -5,6 +5,8 @@
 	- Todo
     - Notes & Saved
     - Guides
+        - Manjaro Install
+        - Ubuntu server install
 	    - Brother Printer Driver Installation
 		    - 1. For x86 & x64 Linux (Only DEB and RPM)
 		    - 2. For x86 & x64 Arch Based.
@@ -72,6 +74,31 @@
 
 ## Guides
 
+### Manjaro install
+
+
+- https://wiki.debian.org/RaspberryPi/qemu-user-static
+- install 'qemu-user-static' (from AUR if on arch/manjaro) in HOST system (not on RPI)
+- then follow
+    # https://unix.stackexchange.com/a/222981
+    # https://askubuntu.com/a/855307
+    # https://unix.stackexchange.com/a/280534
+    # https://wiki.archlinux.org/title/Iwd
+
+- Extra resources
+    # https://www.raspberrypi.org/forums/viewtopic.php?t=233691
+    # https://forum.manjaro.org/t/howto-chroot-from-or-into-any-linux-distribution/34071
+
+- maybe try arch-chroot for easy-chrooting (last tym it didn't work tho)
+
+- https://forum.manjaro.org/t/guide-install-manjaro-arm-minimal-headless-on-rpi4-with-wifi/96515
+- https://forum.manjaro.org/t/guide-install-manjaro-arm-minimal-headless-on-rpi4-with-wifi/96515
+- [installing latest kernel](https://forum.manjaro.org/t/raspberry-pi-kernels-2-0/84885)
+-
+
+### Ubuntu server install
+
+- https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview
 
 ### Brother Printer Driver Installation.
 
@@ -168,6 +195,7 @@
 </details>
 
 ---
+
 
 # Pihole.
 

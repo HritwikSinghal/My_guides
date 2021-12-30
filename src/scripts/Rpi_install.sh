@@ -61,19 +61,6 @@ echo "hdmi_mode=82" | sudo tee -a /boot/config.txt
 
 # GUIDE FOR CHROOTING IN MANJARO RPI INSTALL FROM PC
 
-# https://wiki.debian.org/RaspberryPi/qemu-user-static
-# install 'qemu-user-static' (from AUR if on arch/manjaro) in HOST system (not on RPI)
-# then follow
-    # https://unix.stackexchange.com/a/222981
-    # https://askubuntu.com/a/855307
-    # https://unix.stackexchange.com/a/280534
-    # https://wiki.archlinux.org/title/Iwd
-
-# Extra resources
-    # https://www.raspberrypi.org/forums/viewtopic.php?t=233691
-    # https://forum.manjaro.org/t/howto-chroot-from-or-into-any-linux-distribution/34071
-
-# maybe try arch-chroot for easy-chrooting (last tym it didn't work tho)
 
 yay -S --noconfirm --needed qemu-user-static-bin
 sudo mount /dev/sdc2 -o rw /mnt
@@ -91,13 +78,15 @@ sudo cp /etc/resolv.conf /mnt/etc/resolv.conf
 sudo chroot /mnt qemu-arm-static /bin/bash
 # or try - sudo chroot /mnt
 
+
+
 pacman -Syyu --noconfirm --needed yay
 yay -S --noconfirm --needed python-raspberry-gpio gpio-utils
 yay -S --noconfirm --needed git htop neofetch fish python3 python-pip cronie curl neovim
-yay -S --noconfirm --needed micro wl-clipboard net-tools spacevim ranger exa bat ripgrep fd procs
+yay -S --noconfirm --needed micro wl-clipboard net-tools exa bat wget zellij
 chsh -s /usr/bin/fish
 
-pip3 install pipenv
+pip3 install pipenv lgpio
 
 systemctl enable cronie
 systemctl enable fstrim.timer
@@ -106,14 +95,15 @@ systemctl enable systemd-timesyncd
 timedatectl set-ntp true
 pacman-mirrors -c Global
 
-# rpi uses iwd and NOT wpa_supplicant
-# add below to above file (remove # from start)
-#[Security]
-#Passphrase=123123123       # (Enter the actual password, not 123123123)
+
+# install spacevim
+# modify pacman.conf, makepkg.conf
+# add aliases, see bottom of this file
+
 mkdir -p /var/lib/iwd
-touch /var/lib/iwd/Singhals.psk
-echo "[Security]" | sudo tee -a /var/lib/iwd/Singhals.psk
-echo "Passphrase=123123123" | sudo tee -a /var/lib/iwd/Singhals.psk
+touch /var/lib/iwd/Singhals.psk                                         # (Enter the wifi name, not Singhals)
+echo "[Security]" | sudo tee -a /var/lib/iwd/Singhals.psk               # (Enter the wifi name, not Singhals)
+echo "Passphrase=123123123" | sudo tee -a /var/lib/iwd/Singhals.psk     # (Enter the actual password, not 123123123)
 
 
 # finally
@@ -123,37 +113,81 @@ sudo umount /mnt/proc/ -l
 sudo umount /mnt/dev/pts -l
 sudo umount /mnt/ -l
 
-
 # installing latest kernel https://forum.manjaro.org/t/raspberry-pi-kernels-2-0/84885
 
 # room control server should be run as root on manjaro
 # CFLAGS="-fcommon" pip install rpi.gpio
 
 
-# Use iwd for networking
-# Network
-# sudo pacman -Syyu --noconfirm --needed networkmanager
-# sudo systemctl enable rc-local
-# sudo systemctl enable NetworkManager
-# sudo systemctl start NetworkManager
-# sudo nmcli dev wifi connect Singhals password "123123123"         # (Enter the actual password, not 123123123)
-# sudo cp wpa_supplicant-wlan0.conf /mnt/etc/wpa_supplicant/wpa_supplicant-wlan0.conf
-# sudo ln -s /usr/lib/systemd/system/wpa_supplicant\@.service /mnt/etc/systemd/system/multi-user.target.wants/wpa_supplicant
+# --------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------------- #
 
-# - Wifi (for debian based systems that use wpa_supplicant)
-#     - https://unix.stackexchange.com/questions/483678/debian-connect-to-wifi-automatically-when-in-range
-#
-#     ```
-#     /bin/ping -q -c3 1.1.1.1  > /dev/null
-#     if [ $? -ne 0 ]
-#     then
-#     killall wpa_supplicant
-#     /bin/ip link set wlan0 up
-#     /sbin/wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf  > /dev/null 2>&1
-#     /sbin/dhclient -r
-#     /sbin/dhclient  > /dev/null 2>&1
-#     fi
-#
-#     ```
-#
-#     sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -i wlan0&
+# ------------------------------------ Ubuntu server Install ---------------------------------- #
+# --------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------------- #
+
+
+
+
+
+
+
+
+
+
+
+# --------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------------- #
+
+
+
+
+# BELOW ARE ALIASES
+
+#### get fastest mirrors
+alias mirror="sudo pacman-mirrors --fasttrack 5  && sudo pacman -Syyu"
+alias mirrorreset="sudo pacman-mirrors --country all --api --protocols all --set-branch stable && sudo pacman -Syyu"
+
+
+#### Colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#### git
+alias gaa='git add .'
+alias glog='git log --graph --decorate --oneline' # this one is just pure terminal beauty
+alias gs='git status'  # 'status' is protected
+alias gst='git stash'
+alias gitu='git add . && git commit && git push'
+alias branch='git branch'
+alias checkout='git checkout'
+alias clone='git clone'
+alias commit='git commit -m'
+alias fetch='git fetch'
+alias pull='git pull'
+alias push='git push'
+alias pushf='git push --force'
+alias pushall='git remote | xargs -L1 git push --all' 	# push to all remotes, or "git config --global alias.pushall '!git remote | xargs -L1 git push --all'" and then run "git pushall"
+alias remote='git remote'
+alias remotev='git remote -vv'
+alias tag='git tag'
+alias newtag='git tag -a'
+
+#### youtube-dl
+alias ytdl="yt-dlp -o '%(episode_number)s - %(title)s.%(ext)s' -f bestvideo+bestaudio "
+alias yta-best="yt-dlp --extract-audio --audio-format best "
+alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+alias ytv-best="yt-dlp -f bestvideo+bestaudio"
+
+#### rsync & rclone
+alias rsync='rsync --info=progress2' ## Copy things with progress bar
+alias rclone='rclone --stats-one-line -P -v --stats 1s'
+#### nmap
+alias ipscan='nmap -sP 192.168.1.0/24'
+
+alias tarr='tar -cvf'

@@ -96,9 +96,24 @@
 - [installing latest kernel](https://forum.manjaro.org/t/raspberry-pi-kernels-2-0/84885)
 -
 
-### Ubuntu server install
+### RaspiOS install
 
-- https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview
+- https://desertbot.io/blog/headless-raspberry-pi-3-bplus-ssh-wifi-setup
+
+- Enable ssh
+    - ``` touch /mnt/boot/ssh ```
+- Enable Wifi
+    - ``` touch /mnt/boot/wpa_supplicant.conf ```
+    - add
+        ``` country=US
+            ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+            update_config=1
+            network={
+                ssid="NETWORK-NAME"
+                psk="NETWORK-PASSWORD"
+                }
+        ```
+
 
 ### Brother Printer Driver Installation.
 

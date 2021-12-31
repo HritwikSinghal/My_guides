@@ -1,5 +1,19 @@
 #!/bin/bash
 
+touch /Volumes/boot/ssh
+
+touch /Volumes/boot/wpa_supplicant.conf
+'''
+country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="NETWORK-NAME"
+    psk="NETWORK-PASSWORD"
+}
+'''
+
 # --------------------------------------------------------------------------------------------- #
 # --------------------------------------------------------------------------------------------- #
 # --------------------------------------------------------------------------------------------- #
@@ -7,17 +21,35 @@
 # --------------------------------------------------------------------------------------------- #
 # --------------------------------------------------------------------------------------------- #
 
+
+# python3-lgpio
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install git fish cron gcc python3-pip htop bpytop neofetch curl wget -y
+sudo apt install micro neovim -y
+chsh -s /usr/bin/fish
+sudo systemctl enable --now cron
+
+
 # MS repo remove
 sudo sed 's/^/#/g' /etc/apt/sources.list.d/vscode.list | sudo tee /etc/apt/sources.list.d/vscode.list
 sudo rm -f /etc/apt/trusted.gpg.d/microsoft.gpg
 
 
+# Make IP static
+
+# edit /etc/dhcpcd.conf and add this to bottom
+interface wlan0
+static ip_address=192.168.11.13
+static routers=192.168.11.1
+static domain_name_servers=8.8.8.8
+
 
 # Brother printer driver install
 sudo apt install qemu binfmt-support qemu-user-static cups a2ps -y
 sudo dpkg --add-architecture i386
-wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6_2.28-10_i386.deb
-dpkg -x libc6_2.28-10_i386.deb data
+wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6_2.31-13+deb11u2_i386.deb
+dpkg -x libc6*.deb data
 sudo cp -r data/lib/* /lib
 sudo cp -r data/usr/* /usr
 sudo cp -r data/etc/* /etc
@@ -45,8 +77,6 @@ curl -sSL https://raw.githubusercontent.com/HritwikSinghal/room_control_server/m
 echo "# force a specific HDMI mode (this will force VGA)" | sudo tee -a /boot/config.txt
 echo "hdmi_group=2" | sudo tee -a /boot/config.txt
 echo "hdmi_mode=82" | sudo tee -a /boot/config.txt
-
-
 
 
 
@@ -119,22 +149,13 @@ sudo umount /mnt/ -l
 # CFLAGS="-fcommon" pip install rpi.gpio
 
 
-# --------------------------------------------------------------------------------------------- #
-# --------------------------------------------------------------------------------------------- #
-# --------------------------------------------------------------------------------------------- #
+# https://raspberrypi.stackexchange.com/questions/40105/access-gpio-pins-without-root-no-access-to-dev-mem-try-running-as-root
 
-# ------------------------------------ Ubuntu server Install ---------------------------------- #
-# --------------------------------------------------------------------------------------------- #
-# --------------------------------------------------------------------------------------------- #
-
-
-
-
-
-
-
-
-
+sudo groupadd gpio
+sudo usermod -a -G gpio user_name
+sudo grep gpio /etc/group
+sudo chown root.gpio /dev/gpiomem
+sudo chmod g+rw /dev/gpiomem
 
 
 # --------------------------------------------------------------------------------------------- #

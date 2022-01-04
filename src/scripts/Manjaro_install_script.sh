@@ -159,8 +159,15 @@ sudo pacman -S --noconfirm --needed copyq
 
 printf "\n-------------------------Install--vnstat-------------------------\n"
 sudo pacman -S --noconfirm --needed vnstat
-sudo systemctl enable vnstat.service
-sudo systemctl start vnstat.service
+sudo systemctl enable --now vnstat.service
+mkdir -p ~/.config/vnstat/
+sudo chmod -R 755 .config/vnstat/
+vnstatd --initdb
+sudo systemctl enable --now vnstatd.service
+killall vnstatd
+vnstatd -d
+
+
 
 printf "\n-------------------------Install--pipewire-------------------------\n"
 
@@ -256,8 +263,8 @@ curl -sLf https://spacevim.org/install.sh | bash
 
 printf "\n-------------------------Install--AUR packages-------------------------\n"
 # also install reflector if not on manjaro
-yay -S --noconfirm --needed paru-bin bash-zsh-insulter
-yay -S --noconfirm --needed brave-bin brlaser brother-hll2360d brother-lpr-drivers-common
+sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/HritwikSinghal/bash-insulter/master/src/bash.command-not-found
+yay -S --noconfirm --needed paru-bin brave-bin brlaser brother-hll2360d brother-lpr-drivers-common
 yay -S  --noconfirm --needed marktext-bin
 # dont ghostwriter, use marktext
 

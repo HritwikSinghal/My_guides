@@ -67,7 +67,7 @@ sudo usermod -a -G lpadmin pi
 
 
 # pihole
-curl -sSL https://install.pi-hole.net | bash
+curl -sSL https://install.pi-hole.net | sudo bash
 
 
 # Room control service

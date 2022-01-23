@@ -128,11 +128,15 @@
 
 # 1. High priority
 
+- Mnet Videos of training & copy for notes
+
+
+
 - Willpower & time management
 
 - Reading books
 
-- Other courses
+- Other courses (dand)
 
 
 
@@ -140,7 +144,7 @@
 
 - OS & CN
 
-- DSA & coursera courses
+- DSA & coursera courses (DSA, DMS, Happ)
 
 - Cherno C++
 
@@ -150,6 +154,14 @@
   - [SOLID principles made easy 🍀 - in Python! - YouTube](https://www.youtube.com/watch?v=pTB30aXS77U)
 
 - videos from [LearnLinuxTV - YouTube](https://www.youtube.com/c/LearnLinuxtv/videos)
+  
+  - Docker
+  
+  - Ansible
+  
+  - Proxmox
+  
+  - Vim
 
 - See bookmarks in FF & nightly
 
@@ -170,21 +182,55 @@
 - Mozilla
   
   - [Codetribute](https://codetribute.mozilla.org/languages/python)
-  - [Mozilla chat | Element](https://chat.mozilla.org/#/room/#introduction:mozilla.org)
-  
-  - Thunderbird
-      - [Mozilla's Mentored Bugs](https://yoric.github.io/post/moz-great-stuff/)
-  - FF
-      - [Firefox Contributors’ Quick Reference — Firefox Source Docs documentation](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html)
-  - [Mozilla Deepspeech](https://github.com/mozilla/DeepSpeech)
+    - [Mozilla chat | Element](https://chat.mozilla.org/#/room/#introduction:mozilla.org)
+    
+    - Thunderbird
+        - [Mozilla's Mentored Bugs](https://yoric.github.io/post/moz-great-stuff/)
+    - FF
+        - [Firefox Contributors’ Quick Reference — Firefox Source Docs documentation](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html)
+    - [Mozilla Deepspeech](https://github.com/mozilla/DeepSpeech)
 
-- [mycroft](https://mycroft.ai/)
+- Homelab (use gigabit switch)
+  
+  - See homelab, homedatacenter, selfhosted subreddit (also datahoarder)
+  
+  - Plex/Jellyfin
+  
+  - SearX
+  
+  - Tor
+  
+  - Unifi/Pfsense
+  
+  - Pihole
+  
+  - Nextcloud
+  
+  - Jitsi
+  
+  - Proxmox / Ceph
+  
+  - Docker and other things
+  
+  - NAS
+  
+  - Jackett sonar, radarr
+  
+  - Bittorrent
+
+- Upgrade media to 4k (but dont delete old one)
 
 ---
 
 # 2. Medium priority
 
+- Django, flask, Fast API
+
+- Learn SDE things
+
 - Learn Rust
+
+- DMBS
 
 - Github
   
@@ -229,6 +275,12 @@
 ---
 
 # 3. Low priority
+
+- Adv Algo
+
+- LNM privacy course
+
+- Old LNM courses
 
 - Android Rom building and DT building and kernel building
 
@@ -299,6 +351,14 @@
 
 # 4. Ultra Low priority
 
+- WebD
+  
+  - See yearly video of some channel (cant remember name) on how to start webdev. (its in FF bookmarks IG)
+  
+  - ReactJS etc
+
+- Pytorch, Pytessaract, OpenCV.
+
 - [custom Kernel, Xanmod](https://xanmod.org/)
 
 - Theming
@@ -334,10 +394,8 @@
   - [I made a Finance Database with over 180.000 tickers to make Investment Decisions easier](https://www.reddit.com/r/Python/comments/lcexoa/i_made_a_finance_database_with_over_180000/)
   - [Udemy Coupon Grabber & Course Enroller](https://github.com/aapatre/Automatic-Udemy-Course-Enroller-GET-PAID-UDEMY-COURSES-for-FREE)
 
-- WebD using Django or flask
-  
-  - [Flask Tutorial #1 - How to Make Websites with Python - YouTube](https://www.youtube.com/watch?v=mqhxxeeTbu0)
-
 - Port swigger and book
+
+- [mycroft](https://mycroft.ai/)
 
 ---

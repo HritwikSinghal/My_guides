@@ -74,7 +74,7 @@ printf "\n-------------------------Install--extras-------------------------\n"
 # net-tools
 
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
-sudo pacman -S --noconfirm --needed filezilla git unrar p7zip
+sudo pacman -S --noconfirm --needed filezilla git unrar p7zip rclone
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
 sudo pacman -S --noconfirm --needed dconf-editor curl eog nano tmux sshfs
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-printer

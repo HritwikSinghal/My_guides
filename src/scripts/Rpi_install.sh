@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# To clone one SSD to another one
+# https://www.pragmaticlinux.com/2020/08/move-the-raspberry-pi-root-file-system-to-a-usb-drive/
+# in short, make sure fstab is updated and /boot/cmdline.txt has correct boot partition id (if using RPiOS)
+
 touch /Volumes/boot/ssh
 
 touch /Volumes/boot/wpa_supplicant.conf
@@ -22,7 +26,7 @@ network={
 # --------------------------------------------------------------------------------------------- #
 
 
-# python3-lgpio
+# Also install python3-lgpio for kernel >= 5.11
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install git fish cron gcc python3-pip htop bpytop neofetch curl wget -y
@@ -64,6 +68,12 @@ sudo dpkg -i hll2360dlpr-3.2.0-1.i386.deb
 
 # Cups printing
 sudo usermod -a -G lpadmin pi
+sudo sed -i 's/Browsing Off/Browsing On/g' /etc/cups/cupsd.conf
+sudo sed -i 's/Listen localhost:631/Port 631/g' /etc/cups/cupsd.conf
+sudo sed -i 's/<Location \/>\n  Order allow,deny/Browsing On/g' /etc/cups/cupsd.conf
+
+# To access cups interface over wifi on other devices
+# see https://www.techrepublic.com/article/how-to-configure-a-print-server-with-ubuntu-server-cups-and-bonjour/
 
 
 # pihole

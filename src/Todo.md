@@ -124,21 +124,22 @@
     
     - See bookmarks on boost
 
-
-
 # 1. High priority
 
 - Mnet Videos of training & copy for notes
-
-
+- sort photos by category
+- Start reading habit
+- stop wasting time
+  
+  -
 
 - Willpower & time management
 
 - Reading books
 
 - Other courses (dand)
-
-
+  
+  -
 
 - CP
 
@@ -165,9 +166,15 @@
 
 - See bookmarks in FF & nightly
 
-- See github stars and forks
+- See github stars and forks, and my github my guides
+
+- Telegram bookmarks
+
+- Reddit bookmarks
+
+- FIrefox reading list
   
-  
+  -
 
 - Contribute to OSS
   
@@ -182,12 +189,17 @@
 - Mozilla
   
   - [Codetribute](https://codetribute.mozilla.org/languages/python)
+    
     - [Mozilla chat | Element](https://chat.mozilla.org/#/room/#introduction:mozilla.org)
     
     - Thunderbird
-        - [Mozilla's Mentored Bugs](https://yoric.github.io/post/moz-great-stuff/)
+      
+      - [Mozilla's Mentored Bugs](https://yoric.github.io/post/moz-great-stuff/)
+    
     - FF
-        - [Firefox Contributors’ Quick Reference — Firefox Source Docs documentation](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html)
+      
+      - [Firefox Contributors’ Quick Reference — Firefox Source Docs documentation](https://firefox-source-docs.mozilla.org/contributing/contribution_quickref.html)
+    
     - [Mozilla Deepspeech](https://github.com/mozilla/DeepSpeech)
 
 - Homelab (use gigabit switch)
@@ -217,6 +229,8 @@
   - Jackett sonar, radarr
   
   - Bittorrent
+  
+  - home automation
 
 - Upgrade media to 4k (but dont delete old one)
 

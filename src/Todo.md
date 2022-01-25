@@ -127,8 +127,11 @@
 # 1. High priority
 
 - Mnet Videos of training & copy for notes
+
 - sort photos by category
+
 - Start reading habit
+
 - stop wasting time
   
   -
@@ -137,7 +140,7 @@
 
 - Reading books
 
-- Other courses (dand)
+- Other courses (dand) & videos
   
   -
 
@@ -173,6 +176,8 @@
 - Reddit bookmarks
 
 - FIrefox reading list
+
+- Screenshots
   
   -
 
@@ -204,6 +209,10 @@
 
 - Homelab (use gigabit switch)
   
+  - [Techno Tim](https://www.youtube.com/c/TechnoTimLive) for homelab
+
+  - https://www.youtube.com/watch?v=IE5y2_S8S8U
+
   - See homelab, homedatacenter, selfhosted subreddit (also datahoarder)
   
   - Plex/Jellyfin
@@ -224,13 +233,15 @@
   
   - Docker and other things
   
-  - NAS
+  - NAS (maybe autofs for auto nfs mount )
   
   - Jackett sonar, radarr
   
   - Bittorrent
   
-  - home automation
+  - home automation (home assistant)
+  
+  - Nagios
 
 - Upgrade media to 4k (but dont delete old one)
 
@@ -242,7 +253,7 @@
 
 - Learn SDE things
 
-- Learn Rust
+- Learn Rust, git (advanced features like `git stash --staged` that will help you)
 
 - DMBS
 
@@ -300,10 +311,14 @@
 
 - enable firewall
 
+- Meditate
+
 - Coursera courses on CS
   
   - https://www.coursera.org/learn/algorithms-part1
   - https://www.coursera.org/learn/algorithms-part1
+
+- what is used in linux networking. like iwd or wpa_supplicant or systemd-networkd or systemd-resolved
 
 - Pytest & tox
   
@@ -360,6 +375,7 @@
 - Books
   
   - python DSA
+  - Web application hackers handbook
 
 ---
 
@@ -369,7 +385,11 @@
   
   - See yearly video of some channel (cant remember name) on how to start webdev. (its in FF bookmarks IG)
   
-  - ReactJS etc
+  - ReactJS, VueJS etc
+
+- Blockchain
+  
+  - LN
 
 - Pytorch, Pytessaract, OpenCV.
 

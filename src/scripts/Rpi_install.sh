@@ -123,7 +123,7 @@ sudo chroot /mnt qemu-arm-static /bin/bash
 pacman -Syyu --noconfirm --needed yay
 yay -S --noconfirm --needed python-raspberry-gpio gpio-utils
 yay -S --noconfirm --needed git htop neofetch fish python3 python-pip cronie curl neovim
-yay -S --noconfirm --needed micro wl-clipboard net-tools exa bat wget zellij
+yay -S --noconfirm --needed micro wl-clipboard net-tools exa bat wget zellij xclip
 chsh -s /usr/bin/fish
 
 pip3 install pipenv lgpio
@@ -135,6 +135,7 @@ systemctl enable systemd-timesyncd
 timedatectl set-ntp true
 pacman-mirrors -c Global
 
+# add neofetch to start on fish startup
 
 # install spacevim
 # modify pacman.conf, makepkg.conf
@@ -155,8 +156,9 @@ sudo umount /mnt/ -l
 
 # installing latest kernel https://forum.manjaro.org/t/raspberry-pi-kernels-2-0/84885
 
-# room control server should be run as root on manjaro
-# CFLAGS="-fcommon" pip install rpi.gpio
+# room control server should be run as root on manjaro. https://forums.raspberrypi.com/viewtopic.php?t=289084
+CFLAGS="-fcommon"
+pip install rpi.gpio
 
 
 # https://raspberrypi.stackexchange.com/questions/40105/access-gpio-pins-without-root-no-access-to-dev-mem-try-running-as-root
@@ -167,6 +169,8 @@ sudo grep gpio /etc/group
 sudo chown root.gpio /dev/gpiomem
 sudo chmod g+rw /dev/gpiomem
 
+# note that you need to run last two lines after every reboot
+
 
 # --------------------------------------------------------------------------------------------- #
 # --------------------------------------------------------------------------------------------- #
@@ -176,6 +180,24 @@ sudo chmod g+rw /dev/gpiomem
 
 
 # BELOW ARE ALIASES
+
+alias cat='bat --style header --style rules --style snip --style changes --style header'
+alias cl='clear'
+
+# navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+
+
+
+alias ll='exa -laah --color=always --group-directories-first'  # long format
+alias ls='exa -aal --color=always --group-directories-first'   # my preferred listing
+alias la='exa -aa --color=always --group-directories-first'    # all files and dirs
+alias lt='exa -aaT --color=always --group-directories-first'   # tree listing
+alias l.='exa -aa | egrep "^\."'								  # list all dot files
 
 #### get fastest mirrors
 alias mirror="sudo pacman-mirrors --fasttrack 5  && sudo pacman -Syyu"

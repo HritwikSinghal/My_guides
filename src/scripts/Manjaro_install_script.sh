@@ -263,7 +263,6 @@ curl -sLf https://spacevim.org/install.sh | bash
 
 printf "\n-------------------------Install--AUR packages-------------------------\n"
 # also install reflector if not on manjaro
-sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/HritwikSinghal/bash-insulter/master/src/bash.command-not-found
 yay -S --noconfirm --needed paru-bin brave-bin brlaser brother-hll2360d brother-lpr-drivers-common
 yay -S  --noconfirm --needed marktext-bin
 # dont ghostwriter, use marktext
@@ -279,7 +278,8 @@ pip3 install pipenv yt-dlp youtube_dlc
 
 sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/HritwikSinghal/bash-insulter/master/src/bash.command-not-found
 
-
+printf "\n-------------------------Install--Docker-------------------------\n"
+sudo pacman -S --noconfirm --needed docker docker-compose
 
 
 
@@ -452,6 +452,9 @@ sudo systemctl start fstrim.timer
 # systemd-oomd
 sudo systemctl enable --now systemd-oomd.service
 
+sudo pacman -S --noconfirm --needed power-profiles-daemon
+sudo systemctl enable --now power-profiles-daemon
+
 # Gsettings
 gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
 gsettings set org.gnome.mutter center-new-windows 'true'
@@ -491,6 +494,8 @@ printf "\n\n\n-------------------------Final changes-------------------------\n\
 printf "\n--------------------------Final-add-user-to-input-group-------------------------\n"
 sudo usermod -aG input $(whoami)
 newgrp input
+sudo usermod -aG docker $(whoami)
+newgrp docker
 sudo usermod -aG libvirt $(whoami)
 newgrp libvirt
 sudo usermod -aG kvm $(whoami)

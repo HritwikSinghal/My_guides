@@ -28,8 +28,12 @@ network={
 
 # Also install python3-lgpio for kernel >= 5.11
 
+# set this mirror http://mirrordirector.raspbian.org/raspbian/
+# here are list of all mirrors https://www.raspbian.org/RaspbianMirrors
+# AND FOR THE LOVE OF GOD (and to parallel download) install apt fast https://github.com/ilikenwf/apt-fast
+
 sudo apt update && sudo apt upgrade -y
-sudo apt install git fish cron gcc python3-pip htop bpytop neofetch curl wget -y
+sudo apt install git fish cron gcc python3-pip htop bpytop neofetch curl wget micro -y
 sudo apt install micro neovim -y
 chsh -s /usr/bin/fish
 sudo systemctl enable --now cron
@@ -44,9 +48,9 @@ sudo rm -f /etc/apt/trusted.gpg.d/microsoft.gpg
 
 # edit /etc/dhcpcd.conf and add this to bottom
 interface wlan0
-static ip_address=192.168.11.13
-static routers=192.168.11.1
-static domain_name_servers=8.8.8.8
+static ip_address=192.168.1.3
+static routers=192.168.1.1
+static domain_name_servers=1.1.1.1
 
 
 # Brother printer driver install
@@ -82,6 +86,7 @@ curl -sSL https://install.pi-hole.net | sudo bash
 
 # Room control service
 curl -sSL https://raw.githubusercontent.com/HritwikSinghal/room_control_server/master/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/HritwikSinghal/room_control_server/system_install/install.sh | sudo bash
 
 # set custom resolution, this should work but dont know it it would
 echo "# force a specific HDMI mode (this will force VGA)" | sudo tee -a /boot/config.txt

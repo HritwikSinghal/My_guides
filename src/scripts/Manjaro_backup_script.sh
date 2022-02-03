@@ -248,7 +248,10 @@ yadm push
 # if the path (like .kodi) does not exist, git gives error, so make sure that that path not committed
 # add manual backup zip support where you just type path to folder and it will auto zip it and auto extract it
 
+# i can write all apps to install in yaml file and that program will also create a bash script to install them for various distros.
+# i should also add all folders to backup in yml file and it should add them to yadm, and create zip of them to backup.
+# it should also be able to restore those folder by unzipping then or pulling from yadm.
+
 # yadm rm -rf --cached .
 # yadm stash
 # yadm stash drop
-

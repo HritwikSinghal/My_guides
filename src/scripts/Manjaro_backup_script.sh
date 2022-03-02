@@ -72,44 +72,33 @@ printf "\n-------------------------Backuping up Configs-------------------------
 cd ~
 mkdir -p ~/Backups
 
+tar -cvf ~/Backups/Documents.tar Documents/
+tar -cvf ~/Backups/Downloads.tar Downloads/
+tar -cvf ~/Backups/Music.tar Music/
+tar -cvf ~/Backups/Pictures.tar Pictures/
+tar -cvf ~/Backups/Videos.tar Videos/
 
-printf "\n-------------------------mozilla-------------------------\n"
-cd ~
-zip -r ~/Backups/mozilla.zip ./.thunderbird ./.mozilla
+tar -cvf ~/Backups/projects.tar Projects/
+tar -cvf ~/Backups/my_guides.tar Projects/My_guides/
 
-printf "\n-------------------------ssh-------------------------\n"
-cd ~
-zip -r ~/Backups/ssh.zip ./.ssh
+tar -cvf ~/Backups/brave.tar .config/BraveSoftware/
+tar -cvf ~/Backups/jetbrains_config .config/JetBrains/
+tar -cvf ~/Backups/jetbrains_data.tar .local/share/JetBrains/
+tar -cvf ~/Backups/web_apps.tar .local/share/ice/profiles/
 
-printf "\n-------------------------Jetbrains-------------------------\n"
-cd ~
-zip -r ~/Backups/Jetbrains.zip ./.local/share/JetBrains/
+tar -cvf ~/Backups/mozilla.tar .thunderbird .mozilla
+tar -cvf ~/Backups/ssh.tar .ssh
+tar -cvf ~/Backups/vscode .vscode-oss/
 
-printf "\n-------------------------Web-app-manager-------------------------\n"
-cd ~
-zip -r ~/Backups/web_apps.zip ./.local/share/ice/profiles/
 
-printf "\n-------------------------ssh-------------------------\n"
-cd ~
-zip -r ~/Backups/brave.zip ./.config/BraveSoftware/
+# copy them to other SSD automatically
+# make extract srcipt for these
 
 printf "\n-------------------------Backuping up gsettings-------------------------\n"
 mkdir -p ~/Backups/gsettings
 dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
 dconf dump /com/github/wwmm/easyeffects/ > ~/Backups/gsettings/com.github.wwmm.easyeffects
-
-cd ~
-tar -cvf ~/Backups/Documents.tar Documents/
-tar -cvf ~/Backups/Downloads.tar Downloads/
-tar -cvf ~/Backups/Music.tar Music/
-tar -cvf ~/Backups/Pictures.tar Pictures/
-tar -cvf ~/Backups/Projects.tar Projects/
-tar -cvf ~/Backups/My_guides.tar Projects/My_guides/
-tar -cvf ~/Backups/Videos.tar Videos/
-
-# copy them to other SSD automatically
-# make extract srcipt for these
 
 echo "Finished Successfully..."
 echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory "
@@ -120,44 +109,50 @@ echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory
 #     - Backup Projects folder
 #     - downloads and other folders
 #     - /etc/
+#     - .vscode-oss/
+#     - .config/JetBrains/
+#     - .config/BraveSoftware
 # Snap apps data (or dont use them)
 # flatpak apps data in ~/.var/
 # Backup gnome-boxes images: /home/hritwik/.local/share/gnome-boxes/images
 
 
 yadm add \
-    ~/.gitignore \
-    \
     ~/Templates \
     ~/.android \
     ~/.atom \
     ~/.gnupg \
-    ~/.java \
     ~/.kodi \
     ~/.pki \
     ~/.pvpn-cli \
     ~/.SpaceVim.d \
     ~/.steam \
-    ~/.var \
     ~/.vnc \
     ~/.vscode-oss \
     ~/.xdman \
+
+yadm add \
     ~/.bash* \
     ~/.dir_colors \
     ~/.gitconfig \
+    ~/.gitignore \
     ~/.gtkrc-2.0 \
+    ~/.nanorc \
     ~/.p10k.zsh \
     ~/.profile \
     ~/.vnstatrc \
     ~/.zhistory \
     ~/.zsh* \
-    \
-    \
+
+
+
+yadm add \
     ~/.config/Atom \
     ~/.config/autostart \
     ~/.config/bleachbit \
-    ~/.config/"Code - OSS" \
+    ~/.config/bpytop \
     ~/.config/conky \
+    ~/.config/copyq \
     ~/.config/easyeffects \
     ~/.config/evince \
     ~/.config/filezilla \
@@ -171,23 +166,26 @@ yadm add \
     ~/.config/gtk-3.0 \
     ~/.config/gtk-4.0 \
     ~/.config/htop \
-    ~/.config/JetBrains \
+    ~/.config/kate* \
     ~/.config/Kid3 \
     ~/.config/Kvantum \
     ~/.config/libreoffice \
     ~/.config/libvirt \
     ~/.config/manjaro \
+    ~/.config/marktext \
     ~/.config/micro \
     ~/.config/nemo \
     ~/.config/neofetch \
     ~/.config/obs-studio \
     ~/.config/pamac \
+    ~/.config/Pinta \
     ~/.config/pop-shell \
     ~/.config/qBittorrent \
+    ~/.config/ranger \
+    ~/.config/rclone \
     ~/.config/Signal \
     ~/.config/stacer \
     ~/.config/sublime-text-3 \
-    ~/.config/systemd \
     ~/.config/Thunar \
     ~/.config/transmission \
     ~/.config/vlc \
@@ -196,16 +194,16 @@ yadm add \
     ~/.config/wireshark \
     ~/.config/yay \
     ~/.config/appimagelauncher.cfg \
-    ~/.config/kate* \
+    ~/.config/katerc \
+    ~/.config/katevirc \
     ~/.config/kid3rc \
+    ~/.config/mimeapps.list \
     ~/.config/topgrade.toml
 
 
 yadm add \
     ~/.local/share/copyq \
-    ~/.local/share/desktop-directories \
     ~/.local/share/evolution \
-    ~/.local/share/firefoxprofileswitcher \
     ~/.local/share/fish \
     ~/.local/share/fonts \
     ~/.local/share/gedit \
@@ -214,11 +212,9 @@ yadm add \
     ~/.local/share/gnome-settings-daemon \
     ~/.local/share/gnome-shell \
     ~/.local/share/gnote \
-    ~/.local/share/gstreamer-1.0 \
+    ~/.local/share/GPaste \
     ~/.local/share/keyrings \
     ~/.local/share/lutris \
-    ~/.local/share/man \
-    ~/.local/share/mime \
     ~/.local/share/nautilus \
     ~/.local/share/nemo \
     ~/.local/share/nvim \

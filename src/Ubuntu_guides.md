@@ -47,3 +47,5 @@ Feel free to copy anything from here and use it.
 - Increase Bash History
     - https://eshlox.net/2017/08/01/bash-increase-command-history-size
     - https://stackoverflow.com/questions/9457233/unlimited-bash-history
+
+- [Restore default apt sources list](https://askubuntu.com/questions/586595/restore-default-apt-repositories-in-sources-list-from-command-line)

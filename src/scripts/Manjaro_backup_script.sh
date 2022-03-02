@@ -1,72 +1,6 @@
 #!/bin/sh
 set -e
 
-#
-# printf "\n-------------------------easyeffects-------------------------\n"
-# cd ~
-# zip -r ~/Backups/easyeffects.zip ~/.config/easyeffects
-#
-# printf "\n-------------------------fusuma-------------------------\n"
-# cd ~
-# sudo cp ~/.config/fusuma/config.yml ~/Backups/config.yml
-
-# printf "\n-------------------------conky-------------------------\n"
-# cd ~
-# cp -r ~/.conky ~/Backups/.conky
-
-# printf "\n-------------------------Atom-------------------------\n"
-# cd ~
-# zip -r ~/Backups/atom_bak.zip ./.atom
-#
-# printf "\n-------------------------sublime-------------------------\n"
-# cd ~/.config/sublime-text-3/Packages
-# zip -r ~/Backups/sublime_bak.zip ./User
-#
-# printf "\n-------------------------VLC-------------------------\n"
-# cd ~/.config/
-# zip -r ~/Backups/vlc_bak.zip ./vlc
-
-# printf "\n-------------------------jetbrains-------------------------\n"
-# cd ~
-# zip -r ~/Backups/clion_bak.zip ./CLionProjects
-# zip -r ~/Backups/pycharm_bak.zip ./PycharmProjects
-#
-# printf "\n-------------------------vnstat-------------------------\n"
-# cd ~
-# cp ./.vnstatrc ~/Backups/
-
-# printf "\n-------------------------Qbittorrent-------------------------\n"
-# # https://github.com/qbittorrent/qBittorrent/wiki/Frequently-Asked-Questions#Where_does_qBittorrent_save_its_settings
-# cd ~
-# zip -r ~/Backups/qbit_settings.zip ./.config/qBittorrent/
-# zip -r ~/Backups/qbit_data.zip ./.local/share/qBittorrent/
-
-# printf "\n-------------------------XDM-------------------------\n"
-# cd ~
-# zip -r ~/Backups/xdm.zip ./.xdman/
-
-# printf "\n-------------------------Telegram-------------------------\n"
-# cd ~
-# rm -rf ~/.local/share/TelegramDesktop/tdata/user_data
-# zip -r ~/Backups/telegram.zip ./.local/share/TelegramDesktop
-#
-# printf "\n-------------------------Signal-------------------------\n"
-# cd ~
-# zip -r ~/Backups/signal.zip ./.config/Signal
-#
-#
-# printf "\n-------------------------Backuping up Extensions-------------------------\n"
-# cd ~/.local/share/gnome-shell
-# zip -r ~/Backups/extensions_bak.zip ./extensions
-#
-# printf "\n-------------------------Backuping up startup-apps-------------------------\n"
-# cp -r ~/.config/autostart/ ~/Backups/autostart
-
-
-
-
-
-
 
 printf "\n-------------------------Backuping up Configs-------------------------\n"
 cd ~
@@ -106,12 +40,7 @@ echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory
 
 # Extras to manually backup
 # /etc/environment, /etc/pacman.conf , /etc/paru.conf, yay conf
-#     - Backup Projects folder
-#     - downloads and other folders
 #     - /etc/
-#     - .vscode-oss/
-#     - .config/JetBrains/
-#     - .config/BraveSoftware
 # Snap apps data (or dont use them)
 # flatpak apps data in ~/.var/
 # Backup gnome-boxes images: /home/hritwik/.local/share/gnome-boxes/images

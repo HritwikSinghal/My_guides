@@ -32,7 +32,7 @@ dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
 dconf dump /com/github/wwmm/easyeffects/ > ~/Backups/gsettings/com.github.wwmm.easyeffects
 
 
-cp /etc/environment /etc/pacman.conf /etc/paru.conf /etc /etc/makepkg.conf ~/Backups/
+cp /etc/environment /etc/pacman.conf /etc/paru.conf /etc/makepkg.conf ~/Backups/
 
 echo "Finished Successfully..."
 echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory "
@@ -175,6 +175,11 @@ yadm push
 # it can write all apps to install in yaml file and that program will also create a bash script to install them for various distros.
 # it should also add all folders to backup in yml file and it should add them to yadm, and create zip of them to backup.
 # it should also be able to restore those folder by unzipping then or pulling from yadm.
+# Also copy some common files like zshrc, mozilla to my_guides folder
+
+
+
+
 
 # to remove all files from staging area after updating gitignore
 yadm reset HEAD -- .

@@ -14,25 +14,25 @@ sudo pacman -S yay yadm micro --noconfirm
 
 # update Kernels
 
-# cd to my_guides/src/scripts
-
-printf "\n--------------------------Restore---mozilla-------------------------\n"
-rm -rf ~/.mozilla
-unzip ./configs/mozilla.zip -d ~
-
-
-printf "\n--------------------------Restore---git_ssh-------------------------\n"
-git config --global user.email "Hritwiksinghal@outlook.in"
-git config --global user.name "Hritwik"
-rm -rf ~/.ssh
-unzip ./configs/ssh.zip -d ~
-
 
 printf "\n--------------------------Restore---Keyboard Layout-------------------------\n"
 sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
 sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
 sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
 sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
+
+
+
+# cd to my_guides/src/scripts
+
+printf "\n--------------------------Restore---mozilla-------------------------\n"
+tar -xvf ~/Backups/mozilla.tar -C ~/
+
+printf "\n--------------------------Restore---git-ssh-dconf-------------------------\n"
+git config --global user.email "Hritwiksinghal@outlook.in"
+git config --global user.name "Hritwik"
+
+tar -xvf ~/Backups/ssh.tar -C ~/
 
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
@@ -53,15 +53,6 @@ yadm clone git@gitlab.com:Hritwik/dotfiles.git
 
 # check before running below command, Read the warning in YADM first.
 # yadm checkout "home/hritwik"
-
-
-
-
-
-
-
-
-
 
 
 

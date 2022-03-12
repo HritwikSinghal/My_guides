@@ -100,18 +100,13 @@ yadm clone git@gitlab.com:Hritwik/dotfiles.git
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Insatlling Apps-------------------------\n\n\n"
 
-printf "\n-------------------------Install--Wine & Proton-------------------------\n"
-
-# old packages
-# net-tools
-
 
 printf "\n-------------------------Install--extras-------------------------\n"
 
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
 sudo pacman -S --noconfirm --needed filezilla git unrar p7zip rclone
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
-sudo pacman -S --noconfirm --needed dconf-editor curl eog nano tmux sshfs meld
+sudo pacman -S --noconfirm --needed dconf-editor curl eog nano tmux sshfs meld font-manager
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-printer
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
@@ -125,8 +120,8 @@ sudo pacman -Rdd --noconfirm snapd
 
 printf "\n-------------------------Install--Mozilla-------------------------\n"
 sudo pacman -S --noconfirm --needed firefox thunderbird
-# https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux
-
+git clone --depth 1 https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux ~/my_downloads/firefox
+chmod + x ~/my_downloads/firefox/Setup.sh && bash ~/my_downloads/firefox/Setup.sh
 
 
 printf "\n-------------------------Install--KDE tools-------------------------\n"
@@ -138,16 +133,11 @@ sudo pacman -S --noconfirm --needed jre-openjdk jdk-openjdk
 
 printf "\n-------------------------Install--Timeshift-------------------------\n"
 sudo pacman -S --noconfirm --needed timeshift cronie
-sudo systemctl enable cronie
-sudo systemctl start cronie
+sudo systemctl enable --now cronie
 
 
 printf "\n-------------------------Install--GNOME-tweak-tool and chrome-gnome-shell-------------------------\n"
 sudo pacman -S --noconfirm --needed gnome-tweaks chrome-gnome-shell
-
-printf "\n-------------------------Install--Kvantum-------------------------\n"
-# sudo pacman -S --noconfirm --needed kvantum-manjaro kvantum-qt5
-
 
 printf "\n-------------------------Install--Flatpak-------------------------\n"
 sudo pacman -S --noconfirm --needed flatpak
@@ -158,6 +148,7 @@ sudo pacman -S --noconfirm --needed nemo
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
+
 # add nemo to startup apps & disable desktop icon extension
 
 sudo pacman -S --noconfirm --needed nemo-fileroller nemo-audio-tab nemo-bulk-rename nemo-preview
@@ -171,8 +162,8 @@ yay -S --noconfirm --needed nemo-compare nemo-media-columns nemo-pdf-tools
 cp /usr/share/applications/nemo.desktop ~/.local/share/applications/nemo.desktop
 sed -i "s/Actions=open-home;open-computer;open-trash;/Actions=new-window;open-home;open-computer;open-trash;\n\n[Desktop Action new-window]\nName=New Window\nExec=nemo\n\n/g" ~/.local/share/applications/nemo.desktop
 
-printf "\n-------------------------Install--Lollypop-------------------------\n"
-sudo pacman -S --noconfirm --needed lollypop
+printf "\n-------------------------Install--Lollypop-VLC-------------------------\n"
+sudo pacman -S --noconfirm --needed lollypop vlc
 
 printf "\n-------------------------Install--GreenTunnel-------------------------\n"
 sudo pacman -S --noconfirm --needed nodejs npm
@@ -181,11 +172,6 @@ sudo npm i -g green-tunnel
 printf "\n-------------------------Install--Wireshark-------------------------\n"
 sudo pacman -S --noconfirm --needed wireshark-qt
 
-printf "\n-------------------------Install--VLC-------------------------\n"
-sudo pacman -S --noconfirm --needed vlc
-
-# printf "\n-------------------------Install--Copyq-------------------------\n"
-# sudo pacman -S --noconfirm --needed copyq
 
 printf "\n-------------------------Install--vnstat-------------------------\n"
 sudo pacman -S --noconfirm --needed vnstat
@@ -246,8 +232,6 @@ sudo pacman -S --noconfirm --needed wmctrl
 sudo gem install fusuma-plugin-wmctrl
 sudo gem install fusuma-plugin-tap
 
-printf "\n-------------------------Install--fonts-manager-------------------------\n"
-yay -S --noconfirm --needed font-manager
 
 printf "\n-------------------------Install--obs-studio-------------------------\n"
 sudo pacman -S --noconfirm --needed obs-studio
@@ -272,22 +256,12 @@ printf "\n-------------------------Install--telegram-------------------------\n"
 sudo pacman -S --noconfirm --needed telegram-desktop
 
 
-printf "\n-------------------------Install--WhatsApp-------------------------\n"
-# sudo pacman -S --noconfirm --needed whatsapp-for-linux
-# sudo snap install whatsdesk
-
-
 printf "\n-------------------------Install--BingWall-------------------------\n"
-# sudo snap install bing-wall
-# sudo snap install wonderwall
 yay -S --noconfirm --needed bing-wall
 flatpak install flathub com.ktechpit.wonderwall
 
-printf "\n-------------------------Install--appimagelauncher-------------------------\n"
-sudo pacman -S --noconfirm --needed appimagelauncher
-
 printf "\n-------------------------Install--Rust-tools-------------------------\n"
-sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs micro fzf tldr neovim fish zsh python-pip
+sudo pacman -S --noconfirm --needed exa bat ripgrep fd procs micro fzf tldr neovim fish zsh python-pip appimagelauncher
 micro -plugin install aspell wc
 
 
@@ -309,25 +283,60 @@ yay -S --noconfirm --needed qemu-user-static-bin binfmt-qemu-static-all-arch
 
 printf "\n-------------------------Install--Python packages-------------------------\n"
 pip3 install pipenv yt-dlp youtube_dlc
-
 sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/HritwikSinghal/bash-insulter/master/src/bash.command-not-found
 
 printf "\n-------------------------Install--Docker-------------------------\n"
 sudo pacman -S --noconfirm --needed docker docker-compose
 
+printf "\n-------------------------Install--jetbrains-------------------------\n"
+yay -S --noconfirm --needed aur/jetbrains-toolbox
+
+
+printf "\n-------------------------Install--nmcli-------------------------\n"
+sudo pacman -S --noconfirm --needed networkmanager
+sudo systemctl enable --now NetworkManager.service
+
+printf "\n-------------------------Install--vscodium-------------------------\n"
+yay -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features
 
 
 
 
+# printf "\n-------------------------Install--Copyq-------------------------\n"
+# sudo pacman -S --noconfirm --needed copyq
 
+printf "\n-------------------------Install--Kvantum-------------------------\n"
+# sudo pacman -S --noconfirm --needed kvantum-manjaro kvantum-qt5
+
+
+printf "\n-------------------------Install--WhatsApp-------------------------\n"
+# sudo pacman -S --noconfirm --needed whatsapp-for-linux
+# sudo snap install whatsdesk
+
+printf "\n-------------------------Install--Wine & Proton-------------------------\n"
+# old packages
+# net-tools
+
+printf "\n-------------------------Install--Atom-------------------------\n"
+# sudo pacman -S --noconfirm --needed atom
+
+
+printf "\n-------------------------Install--Code-oss-------------------------\n"
+# THIS IS NOT VSCODIUM
+# yay -S --noconfirm --needed code-marketplace code-features-insiders code-icons
+
+printf "\n-------------------------Install--Sublime-------------------------\n"
+# curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+# echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+# sudo pacman -Syu --noconfirm --needed sublime-text
+
+# yay -S --noconfirm --needed --overwrite ruby-revdev
 
 
 
 
 #################################################################################
 ################################# Needs testing #################################
-
-
 
 
 # sudo apt install ttf-mscorefonts-installer -y
@@ -340,40 +349,12 @@ sudo pacman -S --noconfirm --needed docker docker-compose
 # sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv opus wavpack x264 xvidcore  --noconfirm --needed
 
 
-printf "\n-------------------------Install--jetbrains-------------------------\n"
-yay -S --noconfirm --needed aur/jetbrains-toolbox
 
-printf "\n-------------------------Install--Atom-------------------------\n"
-# sudo pacman -S --noconfirm --needed atom
+##################### - reduce 5% reserved space on ext4 home and / to 2% #####################
+#     - https://unix.stackexchange.com/questions/527628/disk-usage-confusion-10g-missing-on-linux-home-partition-on-ssd
+#     - sudo tune2fs -m 2 /dev/nvme0n1p4
+#     - sudo tune2fs -m 2 /dev/nvme0n1p3
 
-
-
-
-printf "\n-------------------------Install--nmcli-------------------------\n"
-sudo pacman -S --noconfirm --needed networkmanager
-sudo systemctl enable --now NetworkManager.service
-
-printf "\n-------------------------Install--vscodium-------------------------\n"
-# yay -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features
-
-# for code oss
-# yay -S --noconfirm --needed code-marketplace code-features-insiders code-icons
-
-printf "\n-------------------------Install--Sublime-------------------------\n"
-# curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
-# echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-# sudo pacman -Syu --noconfirm --needed sublime-text
-
-# yay -S --noconfirm --needed --overwrite ruby-revdev
-
-
-################################# Needs testing #################################
-#################################################################################
-
-
-
-#################################################################################
-################################# Needs testing #################################
 
 
 ########################
@@ -384,15 +365,17 @@ printf "\n-------------------------Install--Sublime-------------------------\n"
 
 # QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
 # QT_QPA_PLATFORMTHEME="qt5ct"
-QT_AUTO_SCREEN_SCALE_FACTOR=1
-QT_QPA_PLATFORMTHEME="gnome"
-QT_STYLE_OVERRIDE="Adwaita-Dark"		# or Kvantum-dark
-QT_QPA_PLATFORM=wayland         # Force to use wayland backend, also install qt5-wayland & qt6-wayland
 
 # echo "QT_STYLE_OVERRIDE=Adwaita-dark" | sudo tee -a /etc/environment      # replace instead of add
 sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=Adwaita-dark/g' /etc/environment
 echo "" | sudo tee -a /etc/environment
 
+
+
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+QT_QPA_PLATFORMTHEME="gnome"
+QT_STYLE_OVERRIDE="Adwaita-Dark"		# or Kvantum-dark
+QT_QPA_PLATFORM=wayland         # Force to use wayland backend, also install qt5-wayland & qt6-wayland
 EDITOR=/usr/bin/micro
 
 # Graphics card, use dGPU
@@ -432,23 +415,8 @@ printf "\n--------------------------Theme_Ext---shell-theme & Extensions--------
 
 
 
-# - reduce 5% reserved space on ext4 home and / to 2%
-#     - https://unix.stackexchange.com/questions/527628/disk-usage-confusion-10g-missing-on-linux-home-partition-on-ssd
-#     - sudo tune2fs -m 2 /dev/nvme0n1p4
-#     - sudo tune2fs -m 2 /dev/nvme0n1p3
-
-
-
 ################################# Needs testing #################################
 #################################################################################
-
-
-
-
-
-
-
-
 
 
 

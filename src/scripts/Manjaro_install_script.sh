@@ -1,97 +1,136 @@
 #!/bin/bash
 
 
-# Start timeshift first
+#############################
+### Start timeshift first ###
+#############################
 
-# To fix "Failed to commit transaction (invalid or corrupted package)" error
+##################################################################################
+### To fix "Failed to commit transaction (invalid or corrupted package)" error ###
 # find /var/cache/pacman/pkg/ -iname "*.part" -delete
+##################################################################################
 
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 
-sudo pacman-mirrors -c Germany
+sudo pacman-mirrors -a -S unstable
+sudo pacman-mirrors -c Global
 sudo pacman-mirrors --fasttrack 5
 sudo pacman -Syyu
-sudo pacman -S yay yadm micro --noconfirm
-
-# update Kernels
+sudo pacman -S --noconfirm --needed yay yadm micro
 
 
+######################
+### update Kernels ###
+######################
+
+printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Restore---Keyboard Layout-------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 sudo mv /usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc_bak
 sudo mv /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us_bak
 sudo cp ./configs/pc /usr/share/X11/xkb/symbols/pc
 sudo cp ./configs/us /usr/share/X11/xkb/symbols/us
 
-
-
-# cd to my_guides/src/scripts
-
+###################################
+### cd to my_guides/src/scripts ###
+###################################
+printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Restore---mozilla-------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 tar -xvf ~/Backups/mozilla.tar -C ~/
 
+printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Restore---git-ssh-dconf-------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 git config --global user.email "Hritwiksinghal@outlook.in"
 git config --global user.name "Hritwik"
-
 tar -xvf ~/Backups/ssh.tar -C ~/
+
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
-
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
-
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 4
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.FileRoller.General compression-level "very-fast"
 
-# Restart
+
+gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
+gsettings set org.gnome.mutter center-new-windows 'true'
+gsettings set org.gnome.nautilus.preferences show-create-link 'true'
+gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
+
+
+###############
+### Restart ###
+###############
 
 cd ~
 yadm clone git@gitlab.com:Hritwik/dotfiles.git
 
-# check before running below command, Read the warning in YADM first.
+##########################################################################
+### check before running below command, READ THE WARNING IN YADM FIRST ###
+
+###**NOTE**
+###  Local files with content that differs from the ones just
+###  cloned were found in /home/hritwik. They have been left
+###  unmodified.
+###
+###  Please review and resolve any differences appropriately.
+###  If you know what you're doing, and want to overwrite the
+###  tracked files, consider 'yadm checkout "/home/hritwik"'.
+
 # yadm checkout "home/hritwik"
+##########################################################################
+
+
+# printf "\n-------------------------Removing-Useless-Extensions-------------------------\n"
+# sudo pacman -Rdd gnome-shell-extension-arcmenu gnome-shell-extension-dash-to-dock gnome-shell-extension-unite gnome-shell-extension-gsconnect gnome-shell-extension-material-shell
 
 
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Insatlling Apps-------------------------\n\n\n"
 
+printf "\n-------------------------Install--Wine & Proton-------------------------\n"
 
-printf "\n-------------------------Install--extras-------------------------\n"
 # old packages
 # net-tools
+
+
+printf "\n-------------------------Install--extras-------------------------\n"
 
 sudo pacman -S --noconfirm --needed exfat-utils ntfs-3g 
 sudo pacman -S --noconfirm --needed filezilla git unrar p7zip rclone
 sudo pacman -S --noconfirm --needed gnome-music gnote gnome-weather gnome-clocks
-sudo pacman -S --noconfirm --needed dconf-editor curl eog nano tmux sshfs
+sudo pacman -S --noconfirm --needed dconf-editor curl eog nano tmux sshfs meld
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-printer
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform
+sudo pacman -S --noconfirm --needed android-tools android-udev
+
 sudo pacman -Rs --noconfirm firefox-gnome-theme-maia
 sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
-
-# remove snap
+sudo pacman -Rs --noconfirm touche touchegg gnome-shell-extension-x11gestures
 sudo pacman -Rdd --noconfirm snapd
-
-# ADB
-sudo pacman -S --noconfirm --needed android-tools android-udev
 
 printf "\n-------------------------Install--Mozilla-------------------------\n"
 sudo pacman -S --noconfirm --needed firefox thunderbird
-# make script for firefox-trunk
 # https://github.com/Linux-Is-Best/Firefox-automatic-install-for-Linux
 
 
 
 printf "\n-------------------------Install--KDE tools-------------------------\n"
-sudo pacman -S --noconfirm --needed thunar kate kid3 kio
-
-printf "\n-------------------------Install--Wine & Proton-------------------------\n"
+sudo pacman -S --noconfirm --needed thunar kate kid3 kio kid3-cli
 
 
 printf "\n-------------------------Install--java-------------------------\n"
@@ -121,7 +160,7 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.nemo.desktop show-desktop-icons true
 # add nemo to startup apps & disable desktop icon extension
 
-sudo pacman -S --noconfirm --needed nemo-fileroller nemo-image-converter nemo-audio-tab nemo-bulk-rename nemo-preview nemo-python  nemo-share nemo-terminal
+sudo pacman -S --noconfirm --needed nemo-fileroller nemo-audio-tab nemo-bulk-rename nemo-preview
 
 # nemo-compare nemo-media-columns nemo-pdf-tools are not in repos, get them from AUR
 yay -S --noconfirm --needed nemo-compare nemo-media-columns nemo-pdf-tools
@@ -145,18 +184,19 @@ sudo pacman -S --noconfirm --needed wireshark-qt
 printf "\n-------------------------Install--VLC-------------------------\n"
 sudo pacman -S --noconfirm --needed vlc
 
-printf "\n-------------------------Install--Copyq-------------------------\n"
-sudo pacman -S --noconfirm --needed copyq
+# printf "\n-------------------------Install--Copyq-------------------------\n"
+# sudo pacman -S --noconfirm --needed copyq
 
 printf "\n-------------------------Install--vnstat-------------------------\n"
 sudo pacman -S --noconfirm --needed vnstat
 sudo systemctl enable --now vnstat.service
-mkdir -p ~/.config/vnstat/
-sudo chmod -R 755 .config/vnstat/
-vnstatd --initdb
-sudo systemctl enable --now vnstatd.service
-killall vnstatd
-vnstatd -d
+
+#mkdir -p ~/.config/vnstat/
+#sudo chmod -R 755 .config/vnstat/
+#vnstatd --initdb
+#sudo systemctl enable --now vnstatd.service
+#sudo killall vnstatd
+#vnstatd -d
 
 
 
@@ -169,6 +209,8 @@ printf "\n-------------------------Install--pipewire-------------------------\n"
 # pulseaudio-equalizer sof-firmware
 
 sudo pacman -Rdd --noconfirm manjaro-pulse pulseaudio pulseaudio-alsa pulseaudio-jack pulseaudio-lirc pulseaudio-rtp pulseaudio-zeroconf pulseaudio-bluetooth pulseaudio-ctl
+
+sudo pacman -Rdd jack2 pipewire-media-session
 
 systemctl disable pipewire-media-session --user
 sudo pacman -S --noconfirm --needed xdg-desktop-portal xdg-desktop-portal-gtk \
@@ -231,7 +273,7 @@ sudo pacman -S --noconfirm --needed telegram-desktop
 
 
 printf "\n-------------------------Install--WhatsApp-------------------------\n"
-sudo pacman -S --noconfirm --needed whatsapp-for-linux
+# sudo pacman -S --noconfirm --needed whatsapp-for-linux
 # sudo snap install whatsdesk
 
 
@@ -254,9 +296,10 @@ curl -sLf https://spacevim.org/install.sh | bash
 
 printf "\n-------------------------Install--AUR packages-------------------------\n"
 # also install reflector if not on manjaro
+# dont ghostwriter, use marktext
+
 yay -S --noconfirm --needed paru-bin brave-bin brlaser brother-hll2360d brother-lpr-drivers-common
 yay -S  --noconfirm --needed marktext-bin
-# dont ghostwriter, use marktext
 
 
 yay -S --noconfirm --needed warpinator webapp-manager firefox-profile-switcher-connector-bin 
@@ -308,8 +351,7 @@ printf "\n-------------------------Install--Atom-------------------------\n"
 
 printf "\n-------------------------Install--nmcli-------------------------\n"
 sudo pacman -S --noconfirm --needed networkmanager
-sudo systemctl enable NetworkManager.service
-sudo systemctl start NetworkManager.service
+sudo systemctl enable --now NetworkManager.service
 
 printf "\n-------------------------Install--vscodium-------------------------\n"
 # yay -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features
@@ -321,8 +363,6 @@ printf "\n-------------------------Install--Sublime-------------------------\n"
 # curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 # echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 # sudo pacman -Syu --noconfirm --needed sublime-text
-
-# add nemo to startup apps & disable desktop icon extension
 
 # yay -S --noconfirm --needed --overwrite ruby-revdev
 
@@ -336,52 +376,52 @@ printf "\n-------------------------Install--Sublime-------------------------\n"
 ################################# Needs testing #################################
 
 
+########################
+### etc/environment ####
+########################
+
 # QT Tweaks
 
 # QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
 # QT_QPA_PLATFORMTHEME="qt5ct"
-QT_QPA_PLATFORMTHEME="gnome"
-QT_STYLE_OVERRIDE="kvantum-dark"
 QT_AUTO_SCREEN_SCALE_FACTOR=1
+QT_QPA_PLATFORMTHEME="gnome"
+QT_STYLE_OVERRIDE="Adwaita-Dark"		# or Kvantum-dark
 QT_QPA_PLATFORM=wayland         # Force to use wayland backend, also install qt5-wayland & qt6-wayland
 
-# echo "QT_STYLE_OVERRIDE=kvantum-dark" | sudo tee -a /etc/environment      # replace instead of add
-sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=kvantum-dark/g' /etc/environment
+# echo "QT_STYLE_OVERRIDE=Adwaita-dark" | sudo tee -a /etc/environment      # replace instead of add
+sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=Adwaita-dark/g' /etc/environment
 echo "" | sudo tee -a /etc/environment
-echo "QT_QPA_PLATFORM=wayland" | sudo tee -a /etc/environment
 
-echo "EDITOR=/usr/bin/micro" | sudo tee -a /etc/environment
+EDITOR=/usr/bin/micro
 
 # Graphics card, use dGPU
-echo "" | sudo tee -a /etc/environment
-echo "DRI_PRIME=1" | sudo tee -a /etc/environment
-echo "AMD_VULKAN_ICD=RADV" | sudo tee -a /etc/environment
+DRI_PRIME=1
+AMD_VULKAN_ICD=RADV
 
 # Firefox, run in wayland mode
 echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
+MOZ_ENABLE_WAYLAND=1
 
+
+
+#############################
+### pacman, paru, makepkg ###
+#############################
 
 
 # pacman, Enable color output, not needed if /etc/pacman.conf is restored
-# sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
-# sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
-
+# make backup of IgnorePkg in pacman.conf
+sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
+sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 
 # paru. Enable bottomup, SkipReview
 # sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
 # echo 'SkipReview' | sudo tee -a /etc/paru.conf
 
 
-
-# goes to .profile
-# export AMD_VULKAN_ICD=RADV
-# export EDITOR=/usr/bin/micro
-# export BROWSER=firefox
-# export TERM=alacritty
-# export MAIL=geary
-# export QT_QPA_PLATFORMTHEME="qt5ct"
-# export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-
+# for makepkg, make sure MAKEFLAGS is 
+# MAKEFLAGS="-j$(($(nproc)+1))"
 
 # Grub, Enable Os-prober
 # echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
@@ -414,12 +454,12 @@ printf "\n--------------------------Theme_Ext---shell-theme & Extensions--------
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Applying Tweaks-------------------------\n\n\n"
+printf "\n---------------------------------------------------------------------------\n"
 
-
-
+printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Restore---dconf-settings-------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 
-# Backup first
 dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
 dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
 dconf dump /com/github/wwmm/easyeffects/ > /home/hritwik/com.github.wwmm.easyeffects_Bak
@@ -429,60 +469,50 @@ dconf load /org/nemo/ < ./configs/gsettings/org.nemo
 dconf load /com/github/wwmm/easyeffects/ < ./configs/gsettings/com.github.wwmm.easyeffects
 
 
-
+printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
-
-
-# fix for dual boot time issue
+printf "\n---------------------------------------------------------------------------\n"
 timedatectl set-local-rtc 1
-
-# SSD
-sudo systemctl enable fstrim.timer
-sudo systemctl start fstrim.timer
-
-# systemd-oomd
+sudo systemctl enable --now fstrim.timer
 sudo systemctl enable --now systemd-oomd.service
 
 sudo pacman -S --noconfirm --needed power-profiles-daemon
 sudo systemctl enable --now power-profiles-daemon
 
-# Gsettings
-gsettings set org.gnome.desktop.privacy remove-old-temp-files 'true'
-gsettings set org.gnome.mutter center-new-windows 'true'
-gsettings set org.gnome.nautilus.preferences show-create-link 'true'
-gsettings set org.gnome.desktop.interface text-scaling-factor 0.85
-
+printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Tweaks---extra-app-presets-in-menu-------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 echo "[Desktop Entry] Hidden=true" > /tmp/1
 find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
 
 
 
-
-
+printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Theme_Ext---Grub-theme-------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 rm -rf /home/hritwik/my_downloads/grub_themes
 git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git /home/hritwik/my_downloads/grub_themes
 sudo /home/hritwik/my_downloads/grub_themes/install.sh
 
 
+printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Theme_Ext---Theme: Yaru-Colors-------------------------\n"
-
+printf "\n---------------------------------------------------------------------------\n"
 sudo snap install yaru-colors
 for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done
 for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done
 for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done
 
 
-
-
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Finished Successfully-------------------------\n\n\n"
+printf "\n---------------------------------------------------------------------------\n"
 
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"
 printf "\n--------------------------Final-add-user-to-input-group-------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
 sudo usermod -aG input $(whoami)
 newgrp input
 sudo usermod -aG docker $(whoami)
@@ -495,3 +525,7 @@ sudo usermod -aG adbusers $(whoami)
 newgrp adbusers
 sudo usermod -aG wireshark $(whoami)
 newgrp wireshark
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"

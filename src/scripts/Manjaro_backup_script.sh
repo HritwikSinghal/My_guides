@@ -4,26 +4,23 @@ set -e
 
 printf "\n-------------------------Backuping up Configs-------------------------\n"
 cd ~
-mkdir -p ~/Backups
+mkdir -p ~/Backups/
 
 tar -cvf ~/Backups/Documents.tar Documents/
 tar -cvf ~/Backups/Downloads.tar Downloads/
 tar -cvf ~/Backups/Music.tar Music/
 tar -cvf ~/Backups/Pictures.tar Pictures/
 tar -cvf ~/Backups/Videos.tar Videos/
-
 tar -cvf ~/Backups/projects.tar Projects/
 tar -cvf ~/Backups/my_guides.tar Projects/My_guides/
 
 tar -cvf ~/Backups/brave.tar .config/BraveSoftware/
-tar -cvf ~/Backups/jetbrains_config .config/JetBrains/
-tar -cvf ~/Backups/jetbrains_data.tar .local/share/JetBrains/
+tar -cvf ~/Backups/jetbrains.tar .config/JetBrains/ .local/share/JetBrains/
 tar -cvf ~/Backups/web_apps.tar .local/share/ice/profiles/
 
-tar -cvf ~/Backups/mozilla.tar .thunderbird .mozilla
-tar -cvf ~/Backups/ssh.tar .ssh
+tar -cvf ~/Backups/mozilla.tar .thunderbird/ .mozilla/
+tar -cvf ~/Backups/ssh.tar .ssh/
 tar -cvf ~/Backups/vscode .vscode-oss/
-
 
 # copy them to other SSD automatically
 # make extract srcipt for these
@@ -33,6 +30,9 @@ mkdir -p ~/Backups/gsettings
 dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
 dconf dump /com/github/wwmm/easyeffects/ > ~/Backups/gsettings/com.github.wwmm.easyeffects
+
+
+cp /etc/environment /etc/pacman.conf /etc/paru.conf /etc /etc/makepkg.conf ~/Backups/
 
 echo "Finished Successfully..."
 echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory "
@@ -57,8 +57,7 @@ yadm add \
     ~/.SpaceVim.d \
     ~/.steam \
     ~/.vnc \
-    ~/.vscode-oss \
-    ~/.xdman \
+    ~/.xdman
 
 yadm add \
     ~/.bash* \
@@ -71,7 +70,7 @@ yadm add \
     ~/.profile \
     ~/.vnstatrc \
     ~/.zhistory \
-    ~/.zsh* \
+    ~/.zsh*
 
 
 
@@ -173,9 +172,12 @@ yadm push
 # if the path (like .kodi) does not exist, git gives error, so make sure that that path not committed
 # add manual backup zip support where you just type path to folder and it will auto zip it and auto extract it
 
-# i can write all apps to install in yaml file and that program will also create a bash script to install them for various distros.
-# i should also add all folders to backup in yml file and it should add them to yadm, and create zip of them to backup.
+# it can write all apps to install in yaml file and that program will also create a bash script to install them for various distros.
+# it should also add all folders to backup in yml file and it should add them to yadm, and create zip of them to backup.
 # it should also be able to restore those folder by unzipping then or pulling from yadm.
+
+# to remove all files from staging area after updating gitignore
+yadm reset HEAD -- .
 
 # yadm rm -rf --cached .
 # yadm stash

@@ -2,9 +2,14 @@ firefox*.zip
 thunderbird*.zip
 teams*
 error.png
-.ssh
-ssh.zip
 telegram.zip
 signal.zip
+
 mozilla.zip
+mozilla.tar
+*mozilla*
+
+.ssh
+ssh.zip
+ssh.tar
 *ssh*

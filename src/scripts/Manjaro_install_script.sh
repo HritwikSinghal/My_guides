@@ -332,8 +332,18 @@ printf "\n-------------------------Install--Sublime-------------------------\n"
 
 # yay -S --noconfirm --needed --overwrite ruby-revdev
 
+printf "\n-------------------------Install--Chaotic-AUR-------------------------\n"
+sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key FBA220DFC880C036
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+echo "" | sudo tee -a /etc/pacman.conf
+echo "[chaotic-aur]" | sudo tee -a /etc/pacman.conf
+echo "Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
 
-
+# https://aur.chaotic.cx/
+# https://wiki.archlinux.org/title/Powerpill
+# You may want to use powerpill to download from all mirrors simultaneously. We recommend doing updates this way: sudo pacman -Sy && sudo powerpill -Su && paru -Su.
+# Make sure to insert all mirrors in your pacman.conf or use chaotic-mirrorlist with all of them active if using powerpill.
 
 #################################################################################
 ################################# Needs testing #################################

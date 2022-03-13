@@ -16,9 +16,9 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
+# export USE_CCACHE=1
+# export CCACHE_EXEC=/usr/bin/ccache
+# export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 
 
 ### Export
@@ -26,14 +26,14 @@ export EDITOR=/usr/bin/micro
 export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
 
 alias vim='nvim'
+alias sshpo='sudo iw wlp3s0 set power_save off'
 
 #### "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
 ### Aliases
-alias cat='bat'
-alias nano='micro'
+alias cat='bat --style header --style rules --style snip --style changes --style header'
 alias cl='clear'
 
 # navigation
@@ -45,11 +45,11 @@ alias .5='cd ../../../../..'
 
 
 
-alias ll='exa -laah --color=always --group-directories-first'  # long format
-alias ls='exa -aal --color=always --group-directories-first'   # my preferred listing
+alias ll='exa -laahg --color=always --group-directories-first'  # long format
+alias ls='exa --color=always --group-directories-first'   # my preferred listing
 alias la='exa -aa --color=always --group-directories-first'    # all files and dirs
-alias lt='exa -aaT --color=always --group-directories-first'   # tree listing
-alias l.='exa -aa | egrep "^\."'								  # list all dot files
+alias lt='exa -aT --color=always --group-directories-first'   # tree listing
+alias l.='exa -a | egrep "^\."'								  # list all dot files
 
 
 
@@ -60,7 +60,7 @@ alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
 #### get fastest mirrors
-alias mirror="sudo pacman-mirrors --fasttrack  && sudo pacman -Syyu"
+alias mirror="sudo pacman-mirrors --fasttrack 5  && sudo pacman -Syyu"
 alias mirrorreset="sudo pacman-mirrors --country all --api --protocols all --set-branch stable && sudo pacman -Syyu"
 
 
@@ -83,20 +83,27 @@ alias fetch='git fetch'
 alias pull='git pull'
 alias push='git push'
 alias pushf='git push --force'
+alias pushall='git remote | xargs -L1 git push --all' 	# push to all remotes, or "git config --global alias.pushall '!git remote | xargs -L1 git push --all'" and then run "git pushall"
 alias remote='git remote'
 alias remotev='git remote -vv'
 alias tag='git tag'
 alias newtag='git tag -a'
 
 #### youtube-dl
-alias yta-best="youtube-dl --extract-audio --audio-format best "
-alias yta-flac="youtube-dl --extract-audio --audio-format flac "
-alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
-alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
-alias ytv-best="youtube-dl -f bestvideo+bestaudio"
+alias ytdl="yt-dlp -o '%(episode_number)s - %(title)s.%(ext)s' -f bestvideo+bestaudio "
+alias yta-best="yt-dlp --extract-audio --audio-format best "
+alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+alias ytv-best="yt-dlp -f bestvideo+bestaudio"
 
-#### rsync
+#### rsync & rclone
 alias rsync='rsync --info=progress2' ## Copy things with progress bar 
+alias rclone='rclone --stats-one-line -P -v --stats 1s'
+#### nmap
+alias ipscan='nmap -sP 192.168.1.0/24'
+
+alias tarr='tar -cvf'
 
  ### BASH INSULTER ###
 if [ -f /etc/bash.command-not-found ]; then
@@ -112,9 +119,18 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export DOWNGRADE_FROM_ALA=1
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
-
+export CCACHE_DIR=/run/media/hritwik/CR/.cache/ccache
 
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt DVORAK
+
+# To remove Duplicate lines from any file
+# cp ~/.zhistory ~/.zhistory_old
+# awk '!seen[$0]++' .zhistory_old > .zhistory
+

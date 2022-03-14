@@ -459,7 +459,10 @@ echo "kernel.sysrq = 1" | sudo tee -a /etc/sysctl.d/99-sysctl.conf
 
 # Persistant journal
 sudo mkdir -p /var/log/journal/
-sudo systemctl enable --now systemd-journal-flush.service
+# Make sure systemd-journal-flush.service is active coz below command will not work.
+# sudo systemctl enable --now systemd-journal-flush.service
+
+# You can also add these lines instead of replacing.
 sudo sed -i 's/#Storage.*/Storage=persistent/' /etc/systemd/journald.conf
 sudo sed -i 's/#SyncIntervalSec=.*/SyncIntervalSec=1/' /etc/systemd/journald.conf
 

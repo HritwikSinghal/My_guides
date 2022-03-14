@@ -454,6 +454,15 @@ timedatectl set-local-rtc 1
 sudo systemctl enable --now fstrim.timer
 sudo systemctl enable --now systemd-oomd.service
 
+# Enable REISUB
+echo "kernel.sysrq = 1" | sudo tee -a /etc/sysctl.d/99-sysctl.conf
+
+# Persistant journal
+sudo mkdir -p /var/log/journal/
+sudo systemctl enable --now systemd-journal-flush.service
+sudo sed -i 's/#Storage.*/Storage=persistent/' /etc/systemd/journald.conf
+sudo sed -i 's/#SyncIntervalSec=.*/SyncIntervalSec=1/' /etc/systemd/journald.conf
+
 sudo pacman -S --noconfirm --needed power-profiles-daemon
 sudo systemctl enable --now power-profiles-daemon
 

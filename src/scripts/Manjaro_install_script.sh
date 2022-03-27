@@ -111,7 +111,7 @@ sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-p
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
 sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform
-sudo pacman -S --noconfirm --needed android-tools android-udev
+sudo pacman -S --noconfirm --needed android-tools android-udev nmap
 
 sudo pacman -Rs --noconfirm firefox-gnome-theme-maia
 sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
@@ -302,6 +302,7 @@ yay -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-f
 
 
 
+
 # printf "\n-------------------------Install--Copyq-------------------------\n"
 # sudo pacman -S --noconfirm --needed copyq
 
@@ -312,10 +313,10 @@ printf "\n-------------------------Install--Kvantum-------------------------\n"
 printf "\n-------------------------Install--WhatsApp-------------------------\n"
 # sudo pacman -S --noconfirm --needed whatsapp-for-linux
 # sudo snap install whatsdesk
+######### just use any flatpak app #########
 
 printf "\n-------------------------Install--Wine & Proton-------------------------\n"
-# old packages
-# net-tools
+# eh,
 
 printf "\n-------------------------Install--Atom-------------------------\n"
 # sudo pacman -S --noconfirm --needed atom
@@ -332,18 +333,9 @@ printf "\n-------------------------Install--Sublime-------------------------\n"
 
 # yay -S --noconfirm --needed --overwrite ruby-revdev
 
-printf "\n-------------------------Install--Chaotic-AUR-------------------------\n"
-sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
-sudo pacman-key --lsign-key FBA220DFC880C036
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-echo "" | sudo tee -a /etc/pacman.conf
-echo "[chaotic-aur]" | sudo tee -a /etc/pacman.conf
-echo "Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
+######### old packages #########
+# net-tools
 
-# https://aur.chaotic.cx/
-# https://wiki.archlinux.org/title/Powerpill
-# You may want to use powerpill to download from all mirrors simultaneously. We recommend doing updates this way: sudo pacman -Sy && sudo powerpill -Su && paru -Su.
-# Make sure to insert all mirrors in your pacman.conf or use chaotic-mirrorlist with all of them active if using powerpill.
 
 #################################################################################
 ################################# Needs testing #################################
@@ -364,60 +356,6 @@ echo "Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
 #     - https://unix.stackexchange.com/questions/527628/disk-usage-confusion-10g-missing-on-linux-home-partition-on-ssd
 #     - sudo tune2fs -m 2 /dev/nvme0n1p4
 #     - sudo tune2fs -m 2 /dev/nvme0n1p3
-
-
-
-########################
-### etc/environment ####
-########################
-
-# QT Tweaks
-
-# QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
-# QT_QPA_PLATFORMTHEME="qt5ct"
-
-# echo "QT_STYLE_OVERRIDE=Adwaita-dark" | sudo tee -a /etc/environment      # replace instead of add
-sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=Adwaita-dark/g' /etc/environment
-echo "" | sudo tee -a /etc/environment
-
-
-
-QT_AUTO_SCREEN_SCALE_FACTOR=1
-QT_QPA_PLATFORMTHEME="gnome"
-QT_STYLE_OVERRIDE="Adwaita-Dark"		# or Kvantum-dark
-QT_QPA_PLATFORM=wayland         # Force to use wayland backend, also install qt5-wayland & qt6-wayland
-EDITOR=/usr/bin/micro
-
-# Graphics card, use dGPU
-DRI_PRIME=1
-AMD_VULKAN_ICD=RADV
-
-# Firefox, run in wayland mode
-echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
-MOZ_ENABLE_WAYLAND=1
-
-
-
-#############################
-### pacman, paru, makepkg ###
-#############################
-
-
-# pacman, Enable color output, not needed if /etc/pacman.conf is restored
-# make backup of IgnorePkg in pacman.conf
-sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
-sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
-
-# paru. Enable bottomup, SkipReview
-# sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
-# echo 'SkipReview' | sudo tee -a /etc/paru.conf
-
-
-# for makepkg, make sure MAKEFLAGS is 
-# MAKEFLAGS="-j$(($(nproc)+1))"
-
-# Grub, Enable Os-prober
-# echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
 
 
 printf "\n--------------------------Theme_Ext---shell-theme & Extensions-------------------------\n"
@@ -450,6 +388,72 @@ dconf load /com/github/wwmm/easyeffects/ < ./configs/gsettings/com.github.wwmm.e
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Tweaks---Some common Settings-------------------------\n"
 printf "\n---------------------------------------------------------------------------\n"
+
+
+
+########################
+### etc/environment ####
+########################
+
+### QT Tweaks ###
+
+# QT_QPA_PLATFORM=xcb           # Force to use Xwayland backend
+# QT_QPA_PLATFORMTHEME="qt5ct"
+
+# echo "QT_STYLE_OVERRIDE=Adwaita-dark" | sudo tee -a /etc/environment      # replace instead of add
+sudo sed -i 's/QT_STYLE_OVERRIDE=kvantum/QT_STYLE_OVERRIDE=Adwaita-dark/g' /etc/environment
+echo "" | sudo tee -a /etc/environment
+
+echo "MOZ_ENABLE_WAYLAND=1" | sudo tee -a /etc/environment
+echo "" | sudo tee -a /etc/environment
+
+
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+QT_QPA_PLATFORMTHEME="gnome"
+QT_STYLE_OVERRIDE="Adwaita-Dark"		# or Kvantum-dark
+QT_QPA_PLATFORM=wayland                 # Force to use wayland backend, also install qt5-wayland & qt6-wayland
+EDITOR=/usr/bin/micro
+
+# Graphics card, use dGPU
+DRI_PRIME=1
+AMD_VULKAN_ICD=RADV
+
+# Firefox, run in wayland mode
+MOZ_ENABLE_WAYLAND=1
+
+
+
+#############################
+### pacman, paru, makepkg ###
+#############################
+
+
+### pacman ###
+# Enable color output, not needed if /etc/pacman.conf is restored
+# make backup of IgnorePkg in pacman.conf
+
+sudo sed -i 's/#Color/Color\nILoveCandy/g' /etc/pacman.conf
+sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
+# sudo sed -i 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
+# sudo sed -i 's/#UseSyslog/UseSyslog/g' /etc/pacman.conf
+
+
+### paru ###
+# Enable bottomup, SkipReview
+# sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
+# echo 'SkipReview' | sudo tee -a /etc/paru.conf
+
+
+
+### makepkg ###
+# make sure MAKEFLAGS is
+# MAKEFLAGS="-j$(($(nproc)+1))"
+
+
+### grub ###
+# Grub, Enable Os-prober
+# echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
+
 timedatectl set-local-rtc 1
 sudo systemctl enable --now fstrim.timer
 sudo systemctl enable --now systemd-oomd.service
@@ -469,11 +473,26 @@ sudo sed -i 's/#SyncIntervalSec=.*/SyncIntervalSec=1/' /etc/systemd/journald.con
 sudo pacman -S --noconfirm --needed power-profiles-daemon
 sudo systemctl enable --now power-profiles-daemon
 
-printf "\n---------------------------------------------------------------------------\n"
-printf "\n--------------------------Tweaks---extra-app-presets-in-menu-------------------------\n"
-printf "\n---------------------------------------------------------------------------\n"
+
 echo "[Desktop Entry] Hidden=true" > /tmp/1
 find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
+
+
+printf "\n------------------------------------------------------------------\n"
+printf "\n-------------------------Add--Chaotic-AUR-------------------------\n"
+printf "\n------------------------------------------------------------------\n"
+
+sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key FBA220DFC880C036
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+echo "" | sudo tee -a /etc/pacman.conf
+echo "[chaotic-aur]" | sudo tee -a /etc/pacman.conf
+echo "Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
+
+# https://aur.chaotic.cx/
+# https://wiki.archlinux.org/title/Powerpill
+# You may want to use powerpill to download from all mirrors simultaneously. We recommend doing updates this way: sudo pacman -Sy && sudo powerpill -Su && paru -Su.
+# Make sure to insert all mirrors in your pacman.conf or use chaotic-mirrorlist with all of them active if using powerpill.
 
 
 
@@ -488,16 +507,11 @@ sudo /home/hritwik/my_downloads/grub_themes/install.sh
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Theme_Ext---Theme: Yaru-Colors-------------------------\n"
 printf "\n---------------------------------------------------------------------------\n"
-sudo snap install yaru-colors
-for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done
-for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done
-for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done
-
-
-printf "\n---------------------------------------------------------------------------\n"
-printf "\n\n\n-------------------------Finished Successfully-------------------------\n\n\n"
-printf "\n---------------------------------------------------------------------------\n"
-
+### Dont use snaps ###
+# sudo snap install yaru-colors
+# for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-3-themes; done
+# for i in $(snap connections | grep gtk-common-themes:gtk-2-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:gtk-2-themes; done
+# for i in $(snap connections | grep gtk-common-themes:icon-themes | awk '{print $2}'); do sudo snap connect $i yaru-colors:icon-themes; done
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"

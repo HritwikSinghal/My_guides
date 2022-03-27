@@ -1,8 +1,10 @@
 #!/bin/sh
 set -e
 
-
+printf "\n----------------------------------------------------------------------\n"
 printf "\n-------------------------Backuping up Configs-------------------------\n"
+printf "\n----------------------------------------------------------------------\n"
+
 cd ~
 mkdir -p ~/Backups/
 
@@ -22,10 +24,17 @@ tar -cvf ~/Backups/mozilla.tar .thunderbird/ .mozilla/
 tar -cvf ~/Backups/ssh.tar .ssh/
 tar -cvf ~/Backups/vscode .vscode-oss/
 
+#############                                       #######################
+######### CHECK THESE TAR ARCHIVES, 2 MF's WERE CORRUPTED LAST TIME #######
+#############                                       #######################
+
 # copy them to other SSD automatically
 # make extract srcipt for these
 
+printf "\n------------------------------------------------------------------------\n"
 printf "\n-------------------------Backuping up gsettings-------------------------\n"
+printf "\n------------------------------------------------------------------------\n"
+
 mkdir -p ~/Backups/gsettings
 dconf dump /org/gnome/ > ~/Backups/gsettings/org.gnome
 dconf dump /org/nemo/ > ~/Backups/gsettings/org.nemo
@@ -38,13 +47,19 @@ echo "Finished Successfully..."
 echo "Dont forget to Copy contents of '~/Backups/' into your 'configs' directory "
 
 
-# Extras to manually backup
-# /etc/environment, /etc/pacman.conf , /etc/paru.conf, yay conf
-#     - /etc/
+#############################################
+######### Extras to manually backup #########
+#############################################
+
+# files in /etc/ & yay conf
 # Snap apps data (or dont use them)
 # flatpak apps data in ~/.var/
-# Backup gnome-boxes images: /home/hritwik/.local/share/gnome-boxes/images
+# Backup gnome-boxes images: ~/.local/share/gnome-boxes/images
 
+
+printf "\n----------------------------------------------------------------------\n"
+printf "\n----------------------------------------------------------------------\n"
+printf "\n----------------------------------------------------------------------\n"
 
 yadm add \
     ~/Templates \
@@ -157,6 +172,9 @@ yadm commit -m 'updates'
 yadm push
 
 
+printf "\n----------------------------------------------------------------------\n"
+printf "\n----------------------------------------------------------------------\n"
+
 # todo: backup and restore of whole OS
 # https://ostechnix.com/backup-and-restore-linux-desktop-system-settings-with-dconf/
 # https://github.com/lra/mackup
@@ -177,7 +195,8 @@ yadm push
 # it should also be able to restore those folder by unzipping then or pulling from yadm.
 # Also copy some common files like zshrc, mozilla to my_guides folder
 
-
+printf "\n----------------------------------------------------------------------\n"
+printf "\n----------------------------------------------------------------------\n"
 
 
 
@@ -187,3 +206,5 @@ yadm reset HEAD -- .
 # yadm rm -rf --cached .
 # yadm stash
 # yadm stash drop
+
+

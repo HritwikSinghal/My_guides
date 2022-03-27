@@ -60,7 +60,7 @@ selection-menu-make-link=true
 
 [window-state]
 devices-expanded=true
-geometry='1099x773+26+23'
+geometry='1113x773+26+23'
 maximized=false
 my-computer-expanded=true
 side-pane-view='places'

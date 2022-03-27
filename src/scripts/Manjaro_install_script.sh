@@ -376,9 +376,9 @@ printf "\n----------------------------------------------------------------------
 printf "\n--------------------------Restore---dconf-settings-------------------------\n"
 printf "\n---------------------------------------------------------------------------\n"
 
-dconf dump /org/gnome/ > /home/hritwik/org.gnome_Bak
-dconf dump /org/nemo/ > /home/hritwik/org.nemo_Bak
-dconf dump /com/github/wwmm/easyeffects/ > /home/hritwik/com.github.wwmm.easyeffects_Bak
+dconf dump /org/gnome/ > ~/org.gnome_Bak
+dconf dump /org/nemo/ > ~/org.nemo_Bak
+dconf dump /com/github/wwmm/easyeffects/ > ~/com.github.wwmm.easyeffects_Bak
 
 dconf load /org/gnome/ < ./configs/gsettings/org.gnome
 dconf load /org/nemo/ < ./configs/gsettings/org.nemo
@@ -439,10 +439,12 @@ sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 
 
 ### paru ###
-# Enable bottomup, SkipReview
+# BottomUp
+# SudoLoop
+# CleanAfter
+# BatchInstall
+# SkipReview
 # sudo sed -i 's/#BottomUp/BottomUp/g' /etc/paru.conf
-# echo 'SkipReview' | sudo tee -a /etc/paru.conf
-
 
 
 ### makepkg ###
@@ -454,14 +456,10 @@ sudo sed -i 's/#ParallelDownloads/ParallelDownloads/g' /etc/pacman.conf
 # Grub, Enable Os-prober
 # echo GRUB_DISABLE_OS_PROBER=false | sudo tee -a /etc/default/grub && sudo update-grub
 
-timedatectl set-local-rtc 1
-sudo systemctl enable --now fstrim.timer
-sudo systemctl enable --now systemd-oomd.service
-
-# Enable REISUB
+### Enable REISUB ###
 echo "kernel.sysrq = 1" | sudo tee -a /etc/sysctl.d/99-sysctl.conf
 
-# Persistant journal
+### Persistant journal ###
 sudo mkdir -p /var/log/journal/
 # Make sure systemd-journal-flush.service is active coz below command will not work.
 # sudo systemctl enable --now systemd-journal-flush.service
@@ -469,6 +467,13 @@ sudo mkdir -p /var/log/journal/
 # You can also add these lines instead of replacing.
 sudo sed -i 's/#Storage.*/Storage=persistent/' /etc/systemd/journald.conf
 sudo sed -i 's/#SyncIntervalSec=.*/SyncIntervalSec=1/' /etc/systemd/journald.conf
+
+
+
+
+timedatectl set-local-rtc 1
+sudo systemctl enable --now fstrim.timer
+sudo systemctl enable --now systemd-oomd.service
 
 sudo pacman -S --noconfirm --needed power-profiles-daemon
 sudo systemctl enable --now power-profiles-daemon
@@ -478,9 +483,9 @@ echo "[Desktop Entry] Hidden=true" > /tmp/1
 find /usr -name "*lsp_plug*desktop" 2>/dev/null | cut -f 5 -d '/' | xargs -I {} cp /tmp/1 ~/.local/share/applications/{}
 
 
-printf "\n------------------------------------------------------------------\n"
-printf "\n-------------------------Add--Chaotic-AUR-------------------------\n"
-printf "\n------------------------------------------------------------------\n"
+printf "\n-------------------------------------------------------------------------\n"
+printf "\n-------------------------Tweaks--Add-Chaotic-AUR-------------------------\n"
+printf "\n-------------------------------------------------------------------------\n"
 
 sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key FBA220DFC880C036
@@ -499,10 +504,12 @@ echo "Include = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Theme_Ext---Grub-theme-------------------------\n"
 printf "\n---------------------------------------------------------------------------\n"
-rm -rf /home/hritwik/my_downloads/grub_themes
-git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git /home/hritwik/my_downloads/grub_themes
-sudo /home/hritwik/my_downloads/grub_themes/install.sh
-
+cd ~
+rm -rf ~/my_downloads/grub_themes
+git clone --depth 1 https://github.com/vinceliuice/grub2-themes.git ~/my_downloads/grub_themes
+cd ~/my_downloads/grub_themes/
+sudo ./install.sh
+cd ~
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n--------------------------Theme_Ext---Theme: Yaru-Colors-------------------------\n"
@@ -517,6 +524,7 @@ printf "\n----------------------------------------------------------------------
 printf "\n\n\n-------------------------Final changes-------------------------\n\n\n"
 printf "\n--------------------------Final-add-user-to-input-group-------------------------\n"
 printf "\n---------------------------------------------------------------------------\n"
+
 sudo usermod -aG input $(whoami)
 newgrp input
 sudo usermod -aG docker $(whoami)
@@ -529,6 +537,38 @@ sudo usermod -aG adbusers $(whoami)
 newgrp adbusers
 sudo usermod -aG wireshark $(whoami)
 newgrp wireshark
+
+
+printf "\n---------------------------------------------------------------------------\n"
+printf "\n--------------------------Final-restore-user-dirs--------------------------\n"
+printf "\n---------------------------------------------------------------------------\n"
+
+cd ~/Backups/
+
+# tar -xvf ~/Backups/Documents.tar -C ~/
+# tar -xvf ~/Backups/Downloads.tar -C ~/
+# tar -xvf ~/Backups/Music.tar -C ~/
+# tar -xvf ~/Backups/Pictures.tar -C ~/
+# tar -xvf ~/Backups/Videos.tar -C ~/
+#
+# tar -xvf ~/Backups/projects.tar -C ~/
+# rm -rf ~/Projects/My_guides/
+# tar -xvf ~/Backups/my_guides.tar -C ~/
+#
+# tar -xvf ~/Backups/brave.tar -C ~/
+# tar -xvf ~/Backups/jetbrains.tar -C ~/
+# tar -xvf ~/Backups/web_apps.tar -C ~/
+#
+# tar -xvf ~/Backups/mozilla.tar -C ~/
+# tar -xvf ~/Backups/ssh.tar -C ~/
+# tar -xvf ~/Backups/vscode.tar -C ~/
+
+ for f in *.tar; do tar -xvf "$f" -C ~/; done
+
+
+#######
+### Do something with pkgAURlist & pkglist ###
+#######
 
 printf "\n---------------------------------------------------------------------------\n"
 printf "\n---------------------------------------------------------------------------\n"

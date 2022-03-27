@@ -1,3 +1,12 @@
+[Disks]
+image-dir-uri='file:///home/hritwik/Downloads'
+
+[Disks/benchmark]
+do-write=true
+num-access-samples=1000
+num-samples=2
+sample-size-mib=1000
+
 [GPaste]
 growing-lines=true
 history-name='history'
@@ -39,7 +48,7 @@ show-compilations=true
 show-sidebar-labels=true
 shown-album-lists=[-3, -4, -5, -8, -11, -16, -103, -99, -2, -7]
 shuffle=false
-volume-rate=0.703887939453125
+volume-rate=0.66943359375
 window-maximized=false
 window-position=[26, 23]
 window-size=[1304, 849]
@@ -49,7 +58,7 @@ did-initial-state=true
 repeat='song'
 window-maximized=false
 window-position=[26, 23]
-window-size=[922, 547]
+window-size=[918, 886]
 
 [Totem]
 active-plugins=['movie-properties', 'screenshot', 'apple-trailers', 'skipto', 'media-player-keys', 'variable-rate', 'open-directory', 'save-file', 'recent', 'vimeo', 'screensaver', 'autoload-subtitles', 'rotation']
@@ -101,17 +110,17 @@ video-x-resolution=640
 video-y-resolution=480
 
 [clocks/state/window]
-panel-id='timer'
+panel-id='world'
 size=(870, 690)
 state=87168
 
 [control-center]
-last-panel='wifi'
+last-panel='bluetooth'
 
 [deja-dup]
 backend='local'
 include-list=@as []
-last-run='2021-10-07T22:33:22.407773Z'
+last-run='2022-01-02T22:45:30.802109Z'
 prompt-check='disabled'
 
 [deja-dup/local]
@@ -130,16 +139,22 @@ mousekeys-enable=false
 slowkeys-enable=false
 
 [desktop/a11y/magnifier]
-lens-mode=false
-mag-factor=5.0
-mouse-tracking='centered'
+lens-mode=true
+mag-factor=2.0
+mouse-tracking='proportional'
+screen-position='top-half'
+scroll-at-edges=true
 show-cross-hairs=false
 
 [desktop/app-folders]
-folder-children=['accessories', 'system-tools', '5a78931c-1226-49f6-909c-e4b9697cf0c8']
+folder-children=['accessories', 'system-tools', '5a78931c-1226-49f6-909c-e4b9697cf0c8', '609e3883-690d-4e26-9530-30ad9a227183']
 
 [desktop/app-folders/folders/5a78931c-1226-49f6-909c-e4b9697cf0c8]
-apps=['UserFeedbackConsole.desktop', 'electron9.desktop', 'gtk-lshw.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-base.desktop']
+apps=['UserFeedbackConsole.desktop', 'electron9.desktop', 'gtk-lshw.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-base.desktop', 'wine-Programs-Grand Theft Auto Vice City 10 Year Anniversary Edition-Play Grand Theft Auto Vice City.desktop']
+name='Programming'
+
+[desktop/app-folders/folders/609e3883-690d-4e26-9530-30ad9a227183]
+apps=['linguist.desktop', 'designer.desktop', 'qdbusviewer.desktop', 'assistant.desktop']
 name='Programming'
 
 [desktop/app-folders/folders/accessories]
@@ -160,13 +175,16 @@ translate=true
 color-shading-type='solid'
 picture-opacity=100
 picture-options='zoom'
-picture-uri='file:///home/hritwik/.var/app/com.ktechpit.wonderwall/data/ktechpit/WonderWall/download/43p93v.jpg'
-primary-color='#ffffff'
+picture-uri='file:///home/hritwik/.local/share/org.keshavnrj.ubuntu/BingWall/downloaded/4fcba4071e6c45ceb482ba3e319d496e.jpg'
+primary-color='#3465a4'
 secondary-color='#000000'
 show-desktop-icons=false
 
 [desktop/calendar]
 show-weekdate=false
+
+[desktop/datetime]
+automatic-timezone=true
 
 [desktop/file-sharing]
 require-password='never'
@@ -187,8 +205,8 @@ clock-show-weekday=true
 cursor-theme='Adwaita'
 enable-animations=true
 enable-hot-corners=false
-font-antialiasing='grayscale'
-font-hinting='slight'
+font-antialiasing='rgba'
+font-hinting='medium'
 gtk-im-module='gtk-im-context-simple'
 gtk-key-theme='Default'
 gtk-theme='Adwaita-maia-compact-dark'
@@ -199,8 +217,11 @@ text-scaling-factor=0.84999999999999998
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['firefox', 'org-gnome-gedit', 'org-gnome-nautilus', 'org-gnome-lollypop', 'gnome-network-panel', 'gnome-power-panel', 'ca-desrt-dconf-editor', 'thunderbird', 'org-gnome-fileroller', 'jetbrains-pycharm', 'org-qbittorrent-qbittorrent', 'jetbrains-clion', 'xdg-desktop-portal-gtk', 'nemo', 'org-manjaro-pamac-manager', 'vlc', 'org-gnome-terminal', 'org-kde-kget', 'org-gnome-evince', 'signal-desktop', 'org-gnome-baobab', 'jetbrains-toolbox', 'org-gnome-chromegnomeshell', 'gnome-printers-panel', 'org-gnome-extensions', 'org-gnome-dejadup', 'kesty-whatsapp-kesty-whatsapp', 'org-gnome-boxes', 'org-x-warpinator', 'org-gnome-extensions-desktop', 'filezilla', 'brave-browser', 'jetbrains-idea', 'webapp-googledrive8599', 'org-gnome-tweaks', 'com-github-calo001-fondo']
+application-children=['firefox', 'org-gnome-gedit', 'org-gnome-nautilus', 'org-gnome-lollypop', 'gnome-network-panel', 'gnome-power-panel', 'ca-desrt-dconf-editor', 'thunderbird', 'org-gnome-fileroller', 'jetbrains-pycharm', 'org-qbittorrent-qbittorrent', 'jetbrains-clion', 'xdg-desktop-portal-gtk', 'nemo', 'org-manjaro-pamac-manager', 'vlc', 'org-gnome-terminal', 'org-kde-kget', 'org-gnome-evince', 'signal-desktop', 'org-gnome-baobab', 'jetbrains-toolbox', 'org-gnome-chromegnomeshell', 'gnome-printers-panel', 'org-gnome-extensions', 'org-gnome-dejadup', 'kesty-whatsapp-kesty-whatsapp', 'org-gnome-boxes', 'org-x-warpinator', 'org-gnome-extensions-desktop', 'filezilla', 'brave-browser', 'jetbrains-idea', 'webapp-googledrive8599', 'org-gnome-tweaks', 'com-github-calo001-fondo', 'de-haeckerfelix-fragments', 'balena-etcher-electron']
 show-banners=true
+
+[desktop/notifications/application/balena-etcher-electron]
+application-id='balena-etcher-electron.desktop'
 
 [desktop/notifications/application/brave-browser]
 application-id='brave-browser.desktop'
@@ -210,6 +231,9 @@ application-id='ca.desrt.dconf-editor.desktop'
 
 [desktop/notifications/application/com-github-calo001-fondo]
 application-id='com.github.calo001.fondo.desktop'
+
+[desktop/notifications/application/de-haeckerfelix-fragments]
+application-id='de.haeckerfelix.Fragments.desktop'
 
 [desktop/notifications/application/filezilla]
 application-id='filezilla.desktop'
@@ -319,9 +343,9 @@ report-technical-problems=true
 [desktop/screensaver]
 color-shading-type='solid'
 lock-delay=uint32 0
-picture-options='stretched'
-picture-uri='file:///home/hritwik/.var/app/com.ktechpit.wonderwall/data/ktechpit/WonderWall/download/43p93v.jpg'
-primary-color='#ffffff'
+picture-options='zoom'
+picture-uri='file:///home/hritwik/.var/app/com.ktechpit.wonderwall/data/ktechpit/WonderWall/download/nrp2mm.jpg'
+primary-color='#3465a4'
 secondary-color='#000000'
 
 [desktop/search-providers]
@@ -341,19 +365,42 @@ begin-move=['<Super>m']
 begin-resize=['<Super>r']
 close=['<Super>j']
 maximize=['<Super>Up']
+minimize=['<Super>h']
+move-to-workspace-1=['<Shift><Super>1']
+move-to-workspace-10=['<Shift><Super>0']
+move-to-workspace-2=['<Shift><Super>2']
+move-to-workspace-3=['<Shift><Super>3']
+move-to-workspace-4=['<Shift><Super>4']
+move-to-workspace-5=['<Shift><Super>5']
+move-to-workspace-6=['<Shift><Super>6']
+move-to-workspace-7=['<Shift><Super>7']
+move-to-workspace-8=['<Shift><Super>8']
+move-to-workspace-9=['<Shift><Super>9']
 move-to-workspace-down=['<Super><Alt><Shift>Down', '<Control><Alt><Shift>Down', '<Super><Shift>s']
 move-to-workspace-left=['<Primary><Shift><Alt>Left']
 move-to-workspace-right=['<Primary><Shift><Alt>Right']
 move-to-workspace-up=['<Super><Alt><Shift>Up', '<Control><Alt><Shift>Up', '<Super><Shift>w']
 panel-main-menu=['<Alt>F1']
+panel-run-dialog=['<Alt>AudioLowerVolume']
 switch-applications=['<Super>Tab']
 switch-applications-backward=['<Shift><Super>Tab']
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-10=['<Super>0']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-5=['<Super>5']
+switch-to-workspace-6=['<Super>6']
+switch-to-workspace-7=['<Super>7']
+switch-to-workspace-8=['<Super>8']
+switch-to-workspace-9=['<Super>9']
 switch-to-workspace-down=@as []
 switch-to-workspace-left=['<Primary><Alt>Left']
 switch-to-workspace-right=['<Primary><Alt>Right']
 switch-to-workspace-up=['<Super><Alt>Up', '<Control><Alt>Up', '<Super>w']
 switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
+toggle-fullscreen=['F11']
 
 [desktop/wm/preferences]
 action-middle-click-titlebar='minimize'
@@ -361,7 +408,7 @@ auto-raise=false
 button-layout=':minimize,maximize,close'
 focus-mode='click'
 mouse-button-modifier='<Super>'
-num-workspaces=7
+num-workspaces=8
 resize-with-right-button=true
 visual-bell=false
 
@@ -397,7 +444,7 @@ show-sidebar=true
 sidebar-page='links'
 sidebar-size=144
 sizing-mode='free'
-window-ratio=(1.2091503267973855, 1.2361111111111112)
+window-ratio=(1.6139583333333327, 0.87354497354497318)
 
 [evolution-data-server]
 migrated=true
@@ -421,15 +468,15 @@ compression-level='very-fast'
 
 [file-roller/listing]
 list-mode='as-folder'
-name-column-width=278
+name-column-width=393
 show-path=false
 sort-method='name'
 sort-type='ascending'
 
 [file-roller/ui]
 sidebar-width=200
-window-height=427
-window-width=600
+window-height=473
+window-width=665
 
 [font-manager]
 compare-background-color='rgb(255,255,255)'
@@ -447,13 +494,17 @@ selected-font='0:0'
 window-position=(23, 15)
 window-size=(900, 600)
 
+[font-manager/font-viewer]
+window-position=(26, 23)
+window-size=(600, 400)
+
 [gedit/plugins]
 active-plugins=['spell', 'sort', 'snippets', 'quickhighlight', 'modelines', 'filebrowser', 'docinfo']
 
 [gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/hritwik/.config/autostart'
+virtual-root='file:///home/hritwik/.mozilla/firefox/0_main/sessionstore-backups'
 
 [gedit/preferences/editor]
 auto-save=true
@@ -566,8 +617,8 @@ sidebar-sections=['GthFileProperties:expanded', 'GthFileComment:expanded', 'GthF
 sidebar-visible=true
 sort-inverse=false
 sort-type='file::mtime'
-startup-current-file='file:///home/hritwik/.var/app/com.ktechpit.wonderwall/data/ktechpit/WonderWall/download/01eqgg.jpg'
-startup-location='file:///home/hritwik/.var/app/com.ktechpit.wonderwall/data/ktechpit/WonderWall/download'
+startup-current-file='file:///run/media/hritwik/Seagate/Xtra/Placement/Pic_20191211_102439_1.jpg'
+startup-location='file:///run/media/hritwik/Seagate/Xtra/Placement'
 statusbar-visible=true
 thumbnail-list-visible=true
 viewer-sidebar='tools'
@@ -586,8 +637,18 @@ grid-type='thirds'
 [gthumb/data-migration]
 catalogs-2-10=true
 
+[gthumb/dialogs/save-file]
+show-options=true
+
 [gthumb/general]
 active-extensions=['23hq', 'bookmarks', 'burn_disc', 'catalogs', 'change_date', 'comments', 'contact_sheet', 'convert_format', 'desktop_background', 'edit_metadata', 'exiv2_tools', 'facebook', 'file_manager', 'find_duplicates', 'flicker', 'gstreamer_tools', 'gstreamer_utils', 'image_print', 'image_rotation', 'importer', 'jpeg_utils', 'list_tools', 'oauth', 'photo_importer', 'picasaweb', 'raw_files', 'red_eye_removal', 'rename_series', 'resize_images', 'search', 'selections', 'slideshow', 'terminal', 'webalbums']
+
+[gthumb/pixbuf-savers/jpeg]
+default-ext='jpeg'
+optimize=true
+progressive=false
+quality=100
+smoothing=0
 
 [gthumb/rotate]
 background-color='rgb(0,0,0)'
@@ -596,14 +657,14 @@ keep-aspect-ratio=true
 resize='crop'
 
 [maps]
-last-viewed-location=[26.9336873214882, 75.92251181602478]
+last-viewed-location=[40.783780820291426, -73.974729180335999]
 map-type='MapsStreetSource'
-night-mode=true
+night-mode=false
 transportation-type='pedestrian'
 window-maximized=false
-window-position=[23, 15]
+window-position=[26, 23]
 window-size=[1136, 699]
-zoom-level=17
+zoom-level=18
 
 [mutter]
 attach-modal-dialogs=false
@@ -629,6 +690,7 @@ default-zoom-level='large'
 [nautilus/list-view]
 default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']
 default-visible-columns=['name', 'size', 'date_modified', 'starred']
+default-zoom-level='standard'
 use-tree-view=true
 
 [nautilus/preferences]
@@ -638,14 +700,30 @@ search-view='list-view'
 show-create-link=true
 
 [nautilus/window-state]
-initial-size=(1179, 750)
+initial-size=(1128, 666)
 maximized=false
+
+[nm-applet/eap/275bdc3a-eb2a-4642-865e-302a2a27975e]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
 
 [nm-applet/eap/293e2b62-9e01-4185-9aa1-04a080fe4107]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[nm-applet/eap/2adaa4cd-2f8e-48dc-96ef-6d344620da6f]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/468823f0-8be5-42ec-84d2-4587ae948215]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
 [nm-applet/eap/62b4d168-b12e-428d-ad20-62dfd120b8d0]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/6a82305e-9f08-4ceb-b1d7-403687af47ba]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
@@ -662,6 +740,14 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [nm-applet/eap/bb9c5eb6-2e23-4603-a284-b82f546390b5]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/e7aac422-886a-48da-8de8-ddef1586aa72]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/f3ef53ba-d86f-3a96-be24-bd682949faf5]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
@@ -731,7 +817,7 @@ name='firefox'
 power-button-action='hibernate'
 sleep-inactive-ac-timeout=7200
 sleep-inactive-ac-type='nothing'
-sleep-inactive-battery-timeout=1800
+sleep-inactive-battery-timeout=1500
 sleep-inactive-battery-type='suspend'
 
 [settings-daemon/plugins/sharing/gnome-user-share-webdav]
@@ -741,12 +827,13 @@ enabled-connections=@as []
 enabled-connections=@as []
 
 [shell]
-app-picker-layout=[{'system-tools': <{'position': <0>}>, 'accessories': <{'position': <1>}>, 'webapp-manager.desktop': <{'position': <2>}>, 'brave-browser.desktop': <{'position': <3>}>, 'simple-scan.desktop': <{'position': <4>}>, 'org.gnome.Totem.desktop': <{'position': <5>}>, 'org.gnome.Cheese.desktop': <{'position': <6>}>, 'org.gnome.gThumb.desktop': <{'position': <7>}>, 'gnome-layouts.desktop': <{'position': <8>}>, 'org.gnome.Nautilus.desktop': <{'position': <9>}>, 'jetbrains-datagrip.desktop': <{'position': <10>}>, 'org.manjaro.pamac.manager.desktop': <{'position': <11>}>, 'com.github.wwmm.easyeffects.desktop': <{'position': <12>}>, 'gnome-control-center.desktop': <{'position': <13>}>, 'filezilla.desktop': <{'position': <14>}>, 'pinta.desktop': <{'position': <15>}>, 'org.mozilla.firefox.desktop': <{'position': <16>}>, 'Firefox-Nightly.desktop': <{'position': <17>}>, 'timeshift-gtk.desktop': <{'position': <18>}>, 'gprename.desktop': <{'position': <19>}>, 'org.gnome.TextEditor.Devel.desktop': <{'position': <20>}>, 'com.ktechpit.wonderwall.desktop': <{'position': <21>}>, 'codium.desktop': <{'position': <22>}>, 'bingwall.desktop': <{'position': <23>}>}, {'org.gnome.tweaks.desktop': <{'position': <0>}>, 'net.sourceforge.gscan2pdf.desktop': <{'position': <1>}>, 'org.gnome.eog.desktop': <{'position': <2>}>, 'jetbrains-toolbox.desktop': <{'position': <3>}>, 'org.kde.kid3.desktop': <{'position': <4>}>, 'protonvpn.desktop': <{'position': <5>}>, 'telegramdesktop.desktop': <{'position': <6>}>, '5a78931c-1226-49f6-909c-e4b9697cf0c8': <{'position': <7>}>, 'org.gnome.Calculator.desktop': <{'position': <8>}>, 'io.github.mightycreak.Diffuse.desktop': <{'position': <9>}>, 'org.gnome.Calendar.desktop': <{'position': <10>}>, 'org.gnome.Evince.desktop': <{'position': <11>}>, 'vlc.desktop': <{'position': <12>}>, 'org.wireshark.Wireshark.desktop': <{'position': <13>}>, 'libreoffice-draw.desktop': <{'position': <14>}>, 'libreoffice-impress.desktop': <{'position': <15>}>, 'libreoffice-math.desktop': <{'position': <16>}>, 'libreoffice-writer.desktop': <{'position': <17>}>, 'libreoffice-calc.desktop': <{'position': <18>}>, 'org.gnome.Adwaita1.Demo.desktop': <{'position': <19>}>, 'webapp-whatsappweb4616.desktop': <{'position': <20>}>}]
+app-picker-layout=[{'system-tools': <{'position': <0>}>, 'accessories': <{'position': <1>}>, 'webapp-manager.desktop': <{'position': <2>}>, 'brave-browser.desktop': <{'position': <3>}>, 'simple-scan.desktop': <{'position': <4>}>, 'org.gnome.Geary.desktop': <{'position': <5>}>, 'org.gnome.gThumb.desktop': <{'position': <6>}>, 'gnome-layouts.desktop': <{'position': <7>}>, 'org.gnome.Nautilus.desktop': <{'position': <8>}>, 'org.gnome.Contacts.desktop': <{'position': <9>}>, 'org.manjaro.pamac.manager.desktop': <{'position': <10>}>, 'com.github.wwmm.easyeffects.desktop': <{'position': <11>}>, 'gnome-control-center.desktop': <{'position': <12>}>, 'filezilla.desktop': <{'position': <13>}>, 'org.gnome.Maps.desktop': <{'position': <14>}>, 'timeshift-gtk.desktop': <{'position': <15>}>, 'gprename.desktop': <{'position': <16>}>, 'com.ktechpit.wonderwall.desktop': <{'position': <17>}>, 'bingwall.desktop': <{'position': <18>}>}, {'org.gnome.tweaks.desktop': <{'position': <0>}>, 'org.gnome.eog.desktop': <{'position': <1>}>, 'jetbrains-toolbox.desktop': <{'position': <2>}>, 'org.kde.kid3.desktop': <{'position': <3>}>, 'telegramdesktop.desktop': <{'position': <4>}>, '5a78931c-1226-49f6-909c-e4b9697cf0c8': <{'position': <5>}>, '609e3883-690d-4e26-9530-30ad9a227183': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'org.gnome.Calendar.desktop': <{'position': <8>}>, 'org.gnome.Evince.desktop': <{'position': <9>}>, 'vlc.desktop': <{'position': <10>}>, 'org.wireshark.Wireshark.desktop': <{'position': <11>}>, 'libreoffice-draw.desktop': <{'position': <12>}>, 'libreoffice-impress.desktop': <{'position': <13>}>, 'libreoffice-math.desktop': <{'position': <14>}>, 'libreoffice-writer.desktop': <{'position': <15>}>, 'libreoffice-calc.desktop': <{'position': <16>}>, 'org.gnome.Music.desktop': <{'position': <17>}>, 'org.flameshot.Flameshot.desktop': <{'position': <18>}>, 'jetbrains-datagrip.desktop': <{'position': <19>}>, 'electron12.desktop': <{'position': <20>}>, 'Firefox-Nightly.desktop': <{'position': <21>}>, 'protonvpn.desktop': <{'position': <22>}>, 'com.anydesk.Anydesk.desktop': <{'position': <23>}>}, {'wine-Programs-Grand Theft Auto Vice City 10 Year Anniversary Edition-Uninstall.desktop': <{'position': <0>}>, 'codium.desktop': <{'position': <1>}>, 'burpsuite.desktop': <{'position': <2>}>, 'org.mozilla.firefox.desktop': <{'position': <3>}>, 'webapp-Whatsapp0851.desktop': <{'position': <4>}>}]
 command-history=['fildem', 'pulseeffects', 'lg', 'nemo-desktop', 'r']
 disable-user-extensions=false
-disabled-extensions=['pamac-updates@manjaro.org', 'gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'fildemGMenu@gonza.com', 'gamemode@christian.kellner.me', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'unite@hardpixel.eu', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gnome-shell-hammer@icedman.github.com', 'windowoverlay-icons@sustmidown.centrum.cz', 'blur-me@nunchucks', 'cpufreq@konkor', 'x11gestures@joseexposito.github.io', 'vertical-overview@RensAlthuis.github.com', 'ding@rastersoft.com', 'transparentnotification@ipaq3870', 'gestureImprovements@gestures', 'dash-to-dock@micxgx.gmail.com']
-enabled-extensions=['multi-monitors-add-on@spin83', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'noannoyance@sindex.com', 'remove-alt-tab-delay@tetrafox.pw', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'animation-tweaks@Selenium-H', 'appindicatorsupport@rgcjonas.gmail.com', 'GPaste@gnome-shell-extensions.gnome.org', 'gnome-ui-tune@itstime.tech', 'blur-my-shell@aunetx', 'dash-to-panel@jderose9.github.com']
-favorite-apps=['firefox.desktop', 'thunderbird.desktop', 'org.gnome.Lollypop.desktop', 'nemo.desktop', 'org.gnome.Terminal.desktop', 'org.qbittorrent.qBittorrent.desktop', 'signal-desktop.desktop', 'jetbrains-clion.desktop', 'org.gnome.Boxes.desktop', 'jetbrains-pycharm.desktop', 'org.kde.kate.desktop', 'virt-manager.desktop', 'org.gnome.Screenshot.desktop', 'xdman.desktop', 'com.obsproject.Studio.desktop']
+disabled-extensions=['pamac-updates@manjaro.org', 'gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'fildemGMenu@gonza.com', 'gamemode@christian.kellner.me', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'unite@hardpixel.eu', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gnome-shell-hammer@icedman.github.com', 'windowoverlay-icons@sustmidown.centrum.cz', 'blur-me@nunchucks', 'cpufreq@konkor', 'x11gestures@joseexposito.github.io', 'vertical-overview@RensAlthuis.github.com', 'ding@rastersoft.com', 'transparentnotification@ipaq3870', 'gestureImprovements@gestures', 'dash-to-dock@micxgx.gmail.com', 'material-shell@papyelgringo']
+enabled-extensions=['multi-monitors-add-on@spin83', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'noannoyance@sindex.com', 'remove-alt-tab-delay@tetrafox.pw', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'GPaste@gnome-shell-extensions.gnome.org', 'gnome-ui-tune@itstime.tech', 'blur-my-shell@aunetx', 'dash-to-panel@jderose9.github.com', 'animation-tweaks@Selenium-H', 'appindicatorsupport@rgcjonas.gmail.com']
+favorite-apps=['firefox.desktop', 'thunderbird.desktop', 'org.gnome.Lollypop.desktop', 'nemo.desktop', 'org.gnome.Terminal.desktop', 'org.qbittorrent.qBittorrent.desktop', 'signal-desktop.desktop', 'jetbrains-clion.desktop', 'org.gnome.Boxes.desktop', 'org.kde.kate.desktop', 'jetbrains-pycharm.desktop', 'virt-manager.desktop', 'org.gnome.Screenshot.desktop', 'xdman.desktop', 'com.obsproject.Studio.desktop']
+had-bluetooth-devices-setup=true
 looking-glass-history=['Main.overview._updateBackgroundBlur', 'Main.layoutManager.monitors[0].width Main.panel.get_parent().get_children()[0].get_children()[0].width\nMain.panel.get_parent().get_children()[0].get_children()[0].width\n\n\nMain.layoutManager.monitors[1].width\nMain.panel.get_parent().get_children()[0].get_children()[1].width\nMain.panel.get_parent().get_children()[0].get_children()[1].width', 'Main.layoutManager.monitors[0].width Main.panel.get_parent().get_children()[0].get_children()[0].width Main.panel.get_parent().get_children()[0].get_children()[0].width \n\nMain.layoutManager.monitors[1].width\nMain.panel.get_parent().get_children()[0].get_children()[1].width\nMain.panel.get_parent().get_children()[0].get_children()[1].width']
 remember-mount-password=false
 welcome-dialog-last-shown-version='40.3'
@@ -755,8 +842,10 @@ welcome-dialog-last-shown-version='40.3'
 application-list=@as []
 closing-effect=true
 combo-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '1', '128', '0.9', '0.9', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
-current-profile-modified=true
-current-version=14.0
+current-profile-modified=false
+current-version=18.0
+dashappicon-newwindow=['|', 'F', 'Bounce Up', '4', '0.0', '0.0', '0.0', '0.0', '0.0', '125', '255', '1.0', '1.0', '0.0', '-0.03', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_QUAD', '0.0', '0.0', '0.0', '0.0', '0.0', '100', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_QUAD', '0.0', '0.0', '0.0', '0.0', '0.0', '75', '255', '1.0', '1.0', '0.0', '-0.01', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_QUAD', '0.0', '0.0', '0.0', '0.0', '0.0', '50', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_QUAD']
+dashappiconpopupmenu-open=['|', 'F', 'Scale Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '1', '0', '1.0', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 desktoppopupmenu-open=['|', 'F', 'Scale Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '1', '0', '1.0', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 dialog-close=['|', 'T', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '300', '0', '0.9', '0.9', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 dialog-minimize=['|', 'T', 'Scale Auto In', '1', '0.0', '0.0', '0', '0', '0', '250', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
@@ -766,13 +855,12 @@ dialog-unminimize=['|', 'T', 'Scale Auto Out', '2', '0.0', '0.0', '0', '0', '0',
 disable-shortcut=['<Super>toooo4/////*//']
 endsessiondialog-close=['|', 'T', 'Slide Up', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '0', '1.0', '1.0', '0.0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
 endsessiondialog-open=['|', 'T', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '1', '0', '1.0', '1.0', '0.0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+group-actions=false
 minimizing-effect=true
-modaldialog-close=['|', 'T', 'Slide Up', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '0', '1.0', '1.0', '0.0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
-modaldialog-movestart=['|', 'F', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '220', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 modaldialog-open=['|', 'T', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '1', '0', '1.0', '1.0', '0.0', '-0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 moving-effect=false
 name-list=@as []
-normal-close=['|', 'T', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '300', '0', '0.9', '0.9', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+normal-close=['|', 'F', 'Zoom Out', '1', '0.5', '0.5', '0.0', '0.0', '0.0', '300', '0', '0.9', '0.9', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 normal-minimize=['|', 'T', 'Scale Auto In', '1', '0.0', '0.0', '0', '0', '0', '250', '0', 'MW', 'MH', 'MX', 'MY', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
 normal-movestart=['|', 'T', 'Fade', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '220', '.9999', '.9999', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 normal-open=['|', 'T', 'Zoom In', '3', '0.5', '0.5', '0.0', '0.0', '0.0', '1', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '15', '128', '0.9', '0.9', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
@@ -782,13 +870,15 @@ notificationbanner-open=['|', 'T', 'Slide Down', '2', '0.0', '0.0', '0.0', '0.0'
 notificationbanner-pos='right'
 overrideother-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '1', '128', '0.9', '0.9', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 padosd-open=['|', 'F', 'Slide Up', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '1', '0', '1.0', '1.0', '0.0', '0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
+popupmenu-open=['|', 'T', 'Scale Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '1', '0', '1.0', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 reload-profiles-signal=true
-reload-signal=false
+reload-signal=true
 show-delay=true
 tooltip-open=['|', 'T', 'Zoom In', '2', '0.5', '0.5', '0.0', '0.0', '0.0', '1', '128', '0.9', '0.9', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.5', '0.5', '0.0', '0.0', '0.0', '250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 toppanelpopupmenu-close=['|', 'T', 'Slide Down', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '0', '1.0', '1.0', '0.0', '0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
 toppanelpopupmenu-open=['|', 'T', 'Slide Up', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '1', '0', '1.0', '1.0', '0.0', '0.1', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
 unminimizing-effect=true
+use-application-profiles=true
 wayland=true
 windowmenu-close=['|', 'T', 'Scale Up', '1', '0.0', '0.0', '0.0', '0.0', '0.0', '300', '0', '1.0', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_IN_CUBIC']
 windowmenu-open=['|', 'T', 'Scale Down', '2', '0.0', '0.0', '0.0', '0.0', '0.0', '1', '0', '1.0', '0.7', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC', '0.0', '0.0', '0.0', '0.0', '0.0', '250', '255', '1.0', '1.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'EASE_OUT_CUBIC']
@@ -1087,6 +1177,9 @@ show-title=true
 tile-by-default=false
 tile-enter=@as []
 toggle-stacking-global=@as []
+
+[shell/extensions/tiling-assistant]
+favorite-layouts=['-1']
 
 [shell/extensions/user-theme]
 name='Adwaita-maia-dark'

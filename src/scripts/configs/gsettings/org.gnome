@@ -18,10 +18,6 @@ trim-items=true
 [GWeather]
 temperature-unit='centigrade'
 
-[Geary]
-folder-list-pane-position-horizontal=100
-messages-pane-position=351
-migrated-config=true
 
 [Lollypop]
 background-mode=true
@@ -53,24 +49,9 @@ window-maximized=false
 window-position=[26, 23]
 window-size=[1304, 849]
 
-[Music]
-did-initial-state=true
-repeat='song'
-window-maximized=false
-window-position=[26, 23]
-window-size=[918, 886]
-
-[Totem]
-active-plugins=['movie-properties', 'screenshot', 'apple-trailers', 'skipto', 'media-player-keys', 'variable-rate', 'open-directory', 'save-file', 'recent', 'vimeo', 'screensaver', 'autoload-subtitles', 'rotation']
-subtitle-encoding='UTF-8'
 
 [Weather]
 locations=[<(uint32 2, <('Agra', 'VIAG', true, [(0.47398779161036003, 1.3606732234474483)], [(0.47438049069205873, 1.3617058824059758)])>)>]
-
-[baobab/ui]
-active-chart='rings'
-window-size=(1135, 685)
-window-state=87168
 
 [boxes]
 first-run=false
@@ -101,75 +82,10 @@ window-maximized=false
 window-position=(26, 23)
 window-size=(827, 600)
 
-[cheese]
-burst-delay=1000
-camera='Video Capture 3'
-photo-x-resolution=640
-photo-y-resolution=480
-video-x-resolution=640
-video-y-resolution=480
-
 [clocks/state/window]
 panel-id='world'
 size=(870, 690)
 state=87168
-
-[control-center]
-last-panel='bluetooth'
-
-[deja-dup]
-backend='local'
-include-list=@as []
-last-run='2022-01-02T22:45:30.802109Z'
-prompt-check='disabled'
-
-[deja-dup/local]
-folder='Documents'
-
-[desktop/a11y]
-always-show-universal-access-status=false
-
-[desktop/a11y/applications]
-screen-keyboard-enabled=false
-screen-magnifier-enabled=false
-screen-reader-enabled=false
-
-[desktop/a11y/keyboard]
-mousekeys-enable=false
-slowkeys-enable=false
-
-[desktop/a11y/magnifier]
-lens-mode=true
-mag-factor=2.0
-mouse-tracking='proportional'
-screen-position='top-half'
-scroll-at-edges=true
-show-cross-hairs=false
-
-[desktop/app-folders]
-folder-children=['accessories', 'system-tools', '5a78931c-1226-49f6-909c-e4b9697cf0c8', '609e3883-690d-4e26-9530-30ad9a227183']
-
-[desktop/app-folders/folders/5a78931c-1226-49f6-909c-e4b9697cf0c8]
-apps=['UserFeedbackConsole.desktop', 'electron9.desktop', 'gtk-lshw.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-base.desktop', 'wine-Programs-Grand Theft Auto Vice City 10 Year Anniversary Edition-Play Grand Theft Auto Vice City.desktop']
-name='Programming'
-
-[desktop/app-folders/folders/609e3883-690d-4e26-9530-30ad9a227183]
-apps=['linguist.desktop', 'designer.desktop', 'qdbusviewer.desktop', 'assistant.desktop']
-name='Programming'
-
-[desktop/app-folders/folders/accessories]
-apps=['yad-icon-browser.desktop', 'uget-gtk.desktop', 'transmission-gtk.desktop']
-categories=['Utility']
-excluded-apps=['gnome-layouts.desktop', 'manjaro-documentation.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Maps.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.TextEditor.Devel.desktop', 'bingwall.desktop', 'com.ktechpit.wonderwall.desktop', 'gprename.desktop', 'codium.desktop']
-name='Accessories'
-translate=true
-
-[desktop/app-folders/folders/system-tools]
-apps=['qvidcap.desktop', 'qv4l2.desktop', 'bssh.desktop', 'bvnc.desktop', 'hp-uiscan.desktop', 'kvantummanager.desktop', 'gnome-printers-panel.desktop', 'lstopo.desktop', 'thunar-bulk-rename.desktop', 'msm_notifier_settings.desktop', 'jconsole-java-openjdk.desktop', 'conky.desktop', 'gnome-system-log.desktop', 'gufw.desktop', 'gnome-system-monitor.desktop', 'jshell-java-openjdk.desktop', 'caffeine-preferences.desktop', 'org.gnome.GPaste.Ui.desktop', 'avahi-discover.desktop', 'thunar-settings.desktop', 'manjaro-settings-manager.desktop', 'appimagelaunchersettings.desktop', 'gparted.desktop', 'grsync.desktop', 'manjaro-hello.desktop', 'org.gnome.baobab.desktop', 'yad-settings.desktop', 'ca.desrt.dconf-editor.desktop', 'nm-connection-editor.desktop', 'alacarte.desktop', 'manjaro-log-helper.desktop', 'toolbox.desktop', 'fish.desktop', 'ranger.desktop', 'thunar.desktop', 'byobu.desktop', 'cmake-gui.desktop', 'manjaro-documentation.desktop', 'calf.desktop']
-categories=['System', 'Settings']
-excluded-apps=['org.manjaro.pamac.manager.desktop', 'timeshift-gtk.desktop', 'com.ktechpit.wonderwall.desktop', 'gtk-lshw.desktop', 'gnome-control-center.desktop']
-name='System Tools'
-translate=true
 
 [desktop/background]
 color-shading-type='solid'
@@ -422,37 +338,6 @@ sidebar=false
 background-color='rgb(0,0,0)'
 use-background-color=true
 
-[epiphany]
-ask-for-default=false
-
-[epiphany/state]
-is-maximized=false
-window-position=(-1, -1)
-window-size=(1024, 768)
-
-[evince]
-document-directory=@ms 'file:///run/media/hritwik/Seagate/Semister_Material/Sem_7/QCQI'
-override-restrictions=false
-
-[evince/default]
-continuous=true
-dual-page=false
-dual-page-odd-left=false
-enable-spellchecking=true
-fullscreen=false
-show-sidebar=true
-sidebar-page='links'
-sidebar-size=144
-sizing-mode='free'
-window-ratio=(1.6139583333333327, 0.87354497354497318)
-
-[evolution-data-server]
-migrated=true
-network-monitor-gio-name=''
-
-[evolution]
-default-task-list='19524a298d5e00899c879d564124de22bcdd3054'
-
 [file-roller/dialogs/extract]
 recreate-folders=true
 skip-newer=false
@@ -477,26 +362,6 @@ sort-type='ascending'
 sidebar-width=200
 window-height=473
 window-width=665
-
-[font-manager]
-compare-background-color='rgb(255,255,255)'
-compare-foreground-color='rgb(0,0,0)'
-compare-list=@as []
-google-fonts-background-color='rgb(255,255,255)'
-google-fonts-foreground-color='rgb(0,0,0)'
-is-maximized=false
-language-filter-list=@as []
-mode='Manage'
-preview-mode='waterfall'
-preview-text="    The quick brown fox jumps over the lazy dog.\n\n    ABCDEFGHIJKLMNOPQRSTUVWXYZ\n    abcdefghijklmnopqrstuvwxyz\n    1234567890.:,;(*!?')\n\n    "
-selected-category='0'
-selected-font='0:0'
-window-position=(23, 15)
-window-size=(900, 600)
-
-[font-manager/font-viewer]
-window-position=(26, 23)
-window-size=(600, 400)
 
 [gedit/plugins]
 active-plugins=['spell', 'sort', 'snippets', 'quickhighlight', 'modelines', 'filebrowser', 'docinfo']
@@ -530,9 +395,6 @@ side-panel-active-page='GeditWindowDocumentsPanel'
 side-panel-size=200
 size=(960, 999)
 state=87040
-
-[ghex]
-offset-format='0x%X'
 
 [gnome-screenshot]
 delay=0
@@ -600,71 +462,6 @@ columns-order=[0, 1, 2, 3, 4, 6, 8, 15, 9, 10, 11, 12, 14, 13, 16, 17, 18, 19, 2
 sort-col=15
 sort-order=0
 
-[gnote]
-main-window-maximized=false
-search-window-height=400
-search-window-splitter-pos=150
-search-window-width=450
-start-note='note://gnote/41fc2a43-75d3-46f6-b44d-4868745b07b3'
-
-[gthumb/browser]
-browser-sidebar-width=285
-fullscreen-sidebar='hidden'
-fullscreen-thumbnails-visible=false
-maximized=true
-properties-visible=false
-sidebar-sections=['GthFileProperties:expanded', 'GthFileComment:expanded', 'GthFileDetails:expanded', 'GthImageHistogram:expanded']
-sidebar-visible=true
-sort-inverse=false
-sort-type='file::mtime'
-startup-current-file='file:///run/media/hritwik/Seagate/Xtra/Placement/Pic_20191211_102439_1.jpg'
-startup-location='file:///run/media/hritwik/Seagate/Xtra/Placement'
-statusbar-visible=true
-thumbnail-list-visible=true
-viewer-sidebar='tools'
-window-height=810
-window-width=1363
-
-[gthumb/crop]
-aspect-ratio='none'
-aspect-ratio-height=1
-aspect-ratio-invert=false
-aspect-ratio-width=1
-bind-dimensions=false
-bind-factor=8
-grid-type='thirds'
-
-[gthumb/data-migration]
-catalogs-2-10=true
-
-[gthumb/dialogs/save-file]
-show-options=true
-
-[gthumb/general]
-active-extensions=['23hq', 'bookmarks', 'burn_disc', 'catalogs', 'change_date', 'comments', 'contact_sheet', 'convert_format', 'desktop_background', 'edit_metadata', 'exiv2_tools', 'facebook', 'file_manager', 'find_duplicates', 'flicker', 'gstreamer_tools', 'gstreamer_utils', 'image_print', 'image_rotation', 'importer', 'jpeg_utils', 'list_tools', 'oauth', 'photo_importer', 'picasaweb', 'raw_files', 'red_eye_removal', 'rename_series', 'resize_images', 'search', 'selections', 'slideshow', 'terminal', 'webalbums']
-
-[gthumb/pixbuf-savers/jpeg]
-default-ext='jpeg'
-optimize=true
-progressive=false
-quality=100
-smoothing=0
-
-[gthumb/rotate]
-background-color='rgb(0,0,0)'
-grid-type='thirds'
-keep-aspect-ratio=true
-resize='crop'
-
-[maps]
-last-viewed-location=[40.783780820291426, -73.974729180335999]
-map-type='MapsStreetSource'
-night-mode=false
-transportation-type='pedestrian'
-window-maximized=false
-window-position=[26, 23]
-window-size=[1136, 699]
-zoom-level=18
 
 [mutter]
 attach-modal-dialogs=false
@@ -751,33 +548,6 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
-[rhythmbox]
-position=(23, 15)
-
-[rhythmbox/library/source]
-show-browser=true
-
-[rhythmbox/plugins]
-active-plugins=['generic-player', 'audiocd', 'power-manager', 'iradio', 'daap', 'rb', 'mtpdevice', 'artsearch', 'mmkeys', 'audioscrobbler', 'android', 'mpris', 'notification', 'dbus-media-server']
-seen-plugins=['cd-recorder', 'rblirc', 'daap', 'ipod', 'rb', 'lyrics', 'listenbrainz', 'soundcloud', 'mtpdevice', 'artsearch', 'webremote', 'im-status', 'magnatune', 'fmradio', 'replaygain', 'audioscrobbler', 'pythonconsole', 'mpris', 'notification', 'grilo', 'dbus-media-server']
-
-[rhythmbox/plugins/audioscrobbler/Last.fm]
-scrobbling-enabled=true
-
-[rhythmbox/plugins/audioscrobbler/Libre.fm]
-scrobbling-enabled=true
-
-[rhythmbox/plugins/iradio]
-initial-stations-loaded=true
-
-[rhythmbox/plugins/iradio/source]
-show-browser=true
-
-[rhythmbox/podcast/source]
-show-browser=true
-
-[rhythmbox/rhythmdb]
-locations=['file:///home/hritwik/Music']
 
 [settings-daemon/plugins/color]
 night-light-enabled=false
@@ -827,8 +597,6 @@ enabled-connections=@as []
 enabled-connections=@as []
 
 [shell]
-app-picker-layout=[{'system-tools': <{'position': <0>}>, 'accessories': <{'position': <1>}>, 'webapp-manager.desktop': <{'position': <2>}>, 'brave-browser.desktop': <{'position': <3>}>, 'simple-scan.desktop': <{'position': <4>}>, 'org.gnome.Geary.desktop': <{'position': <5>}>, 'org.gnome.gThumb.desktop': <{'position': <6>}>, 'gnome-layouts.desktop': <{'position': <7>}>, 'org.gnome.Nautilus.desktop': <{'position': <8>}>, 'org.gnome.Contacts.desktop': <{'position': <9>}>, 'org.manjaro.pamac.manager.desktop': <{'position': <10>}>, 'com.github.wwmm.easyeffects.desktop': <{'position': <11>}>, 'gnome-control-center.desktop': <{'position': <12>}>, 'filezilla.desktop': <{'position': <13>}>, 'org.gnome.Maps.desktop': <{'position': <14>}>, 'timeshift-gtk.desktop': <{'position': <15>}>, 'gprename.desktop': <{'position': <16>}>, 'com.ktechpit.wonderwall.desktop': <{'position': <17>}>, 'bingwall.desktop': <{'position': <18>}>}, {'org.gnome.tweaks.desktop': <{'position': <0>}>, 'org.gnome.eog.desktop': <{'position': <1>}>, 'jetbrains-toolbox.desktop': <{'position': <2>}>, 'org.kde.kid3.desktop': <{'position': <3>}>, 'telegramdesktop.desktop': <{'position': <4>}>, '5a78931c-1226-49f6-909c-e4b9697cf0c8': <{'position': <5>}>, '609e3883-690d-4e26-9530-30ad9a227183': <{'position': <6>}>, 'org.gnome.Calculator.desktop': <{'position': <7>}>, 'org.gnome.Calendar.desktop': <{'position': <8>}>, 'org.gnome.Evince.desktop': <{'position': <9>}>, 'vlc.desktop': <{'position': <10>}>, 'org.wireshark.Wireshark.desktop': <{'position': <11>}>, 'libreoffice-draw.desktop': <{'position': <12>}>, 'libreoffice-impress.desktop': <{'position': <13>}>, 'libreoffice-math.desktop': <{'position': <14>}>, 'libreoffice-writer.desktop': <{'position': <15>}>, 'libreoffice-calc.desktop': <{'position': <16>}>, 'org.gnome.Music.desktop': <{'position': <17>}>, 'org.flameshot.Flameshot.desktop': <{'position': <18>}>, 'jetbrains-datagrip.desktop': <{'position': <19>}>, 'electron12.desktop': <{'position': <20>}>, 'Firefox-Nightly.desktop': <{'position': <21>}>, 'protonvpn.desktop': <{'position': <22>}>, 'com.anydesk.Anydesk.desktop': <{'position': <23>}>}, {'wine-Programs-Grand Theft Auto Vice City 10 Year Anniversary Edition-Uninstall.desktop': <{'position': <0>}>, 'codium.desktop': <{'position': <1>}>, 'burpsuite.desktop': <{'position': <2>}>, 'org.mozilla.firefox.desktop': <{'position': <3>}>, 'webapp-Whatsapp0851.desktop': <{'position': <4>}>}]
-command-history=['fildem', 'pulseeffects', 'lg', 'nemo-desktop', 'r']
 disable-user-extensions=false
 disabled-extensions=['pamac-updates@manjaro.org', 'gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com', 'horizontal-workspaces@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'fildemGMenu@gonza.com', 'gamemode@christian.kellner.me', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'arcmenu@arcmenu.com', 'unite@hardpixel.eu', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'gnome-shell-hammer@icedman.github.com', 'windowoverlay-icons@sustmidown.centrum.cz', 'blur-me@nunchucks', 'cpufreq@konkor', 'x11gestures@joseexposito.github.io', 'vertical-overview@RensAlthuis.github.com', 'ding@rastersoft.com', 'transparentnotification@ipaq3870', 'gestureImprovements@gestures', 'dash-to-dock@micxgx.gmail.com', 'material-shell@papyelgringo']
 enabled-extensions=['multi-monitors-add-on@spin83', 'gamemode@christian.kellner.me', 'just-perfection-desktop@just-perfection', 'noannoyance@sindex.com', 'remove-alt-tab-delay@tetrafox.pw', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'GPaste@gnome-shell-extensions.gnome.org', 'gnome-ui-tune@itstime.tech', 'blur-my-shell@aunetx', 'dash-to-panel@jderose9.github.com', 'animation-tweaks@Selenium-H', 'appindicatorsupport@rgcjonas.gmail.com']
@@ -1075,9 +843,6 @@ default-overview=false
 default-session-workspace=false
 touchpad-speed-scale=1.0
 
-[shell/extensions/gnome-shell-hammer]
-startup-overview=false
-
 [shell/extensions/gnome-ui-tune]
 always-show-thumbnails=true
 hide-search=true
@@ -1100,56 +865,9 @@ ratio-value=0.54999999999999993
 split=false
 windows-excluded='Enpass,Gnome-layout-switcher'
 
-[shell/extensions/materialshell/theme]
-clock-horizontal=true
-primary-color='#2eb398'
-taskbar-item-style='name'
-
-[shell/extensions/multi-monitors-add-on]
-available-indicators=@as []
-show-activities=false
-show-app-menu=false
-show-date-time=false
-show-indicator=false
-show-panel=false
-
 [shell/extensions/net/gfxmonk/impatience]
 speed-factor=0.62
 
-[shell/extensions/nightthemeswitcher]
-commands-enabled=false
-gtk-variant-day='Adwaita-maia-compact'
-gtk-variant-night='Adwaita-maia-compact-dark'
-manual-gtk-variants=false
-manual-shell-variants=false
-manual-time-source=true
-ondemand-time='night'
-settings-version=1
-shell-variant-day='Adwaita-maia-compact'
-shell-variant-night='Adwaita-maia-compact-dark'
-time-source='ondemand'
-
-[shell/extensions/nightthemeswitcher/commands]
-enabled=false
-sunrise='sed -i "s/Adwaita-maia-dark.conf/Adwaita-maia.conf/" ~/.config/qt5ct/qt5ct.conf'
-sunset='sed -i "s/Adwaita-maia.conf/Adwaita-maia-dark.conf/" ~/.config/qt5ct/qt5ct.conf'
-
-[shell/extensions/nightthemeswitcher/gtk-variants]
-day='Adwaita-maia-compact'
-manual=true
-night='Adwaita-maia-compact-dark'
-
-[shell/extensions/nightthemeswitcher/shell-variants]
-day='Adwaita-maia-compact'
-enabled=false
-manual=true
-night='Adwaita-maia-compact-dark'
-
-[shell/extensions/nightthemeswitcher/time]
-manual-time-source=true
-nightthemeswitcher-ondemand-keybinding=['<Shift><Super>t']
-ondemand-time='night'
-time-source='ondemand'
 
 [shell/extensions/notifications-alert]
 filter=0
@@ -1164,43 +882,9 @@ x-res=false
 y-pos=77.799999999999997
 y-res=false
 
-[shell/extensions/pop-shell]
-active-hint=false
-focus-down=@as []
-focus-left=@as []
-focus-right=@as []
-focus-up=@as []
-gap-inner=uint32 1
-gap-outer=uint32 1
-hint-color-rgba='rgb(0,135,135)'
-show-title=true
-tile-by-default=false
-tile-enter=@as []
-toggle-stacking-global=@as []
-
-[shell/extensions/tiling-assistant]
-favorite-layouts=['-1']
-
 [shell/extensions/user-theme]
 name='Adwaita-maia-dark'
 
-[shell/extensions/vertical-overview]
-dash-max-height=100
-default-old-style=true
-hide-dash=false
-old-style=true
-override-dash=false
-panel-in-overview=true
-scaling-workspace-background=true
-
-[shell/extensions/windowoverlay-icons]
-icon-horizontal-alignment='middle'
-icon-size=100
-icon-size-relative=false
-icon-vertical-alignment='middle'
-
-[shell/extensions/x11gestures]
-swipe-fingers=3
 
 [shell/keybindings]
 switch-to-application-1=['']
@@ -1243,13 +927,6 @@ font='MesloLGS NF 11'
 foreground-color='rgb(211,215,207)'
 palette=['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']
 use-theme-colors=true
-
-[todo]
-default-provider='local'
-sidebar-revealed=true
-style-variant='light'
-window-maximized=false
-window-size=(800, 600)
 
 [tweaks]
 show-extensions-notice=false

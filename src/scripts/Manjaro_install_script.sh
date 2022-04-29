@@ -110,7 +110,7 @@ sudo pacman -S --noconfirm --needed dconf-editor curl eog nano tmux sshfs meld f
 sudo pacman -S --noconfirm --needed nautilus-admin htop dnsutils system-config-printer
 
 sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en languagetool aspell-en
-sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform
+sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform qgnomeplatform-qt6
 sudo pacman -S --noconfirm --needed android-tools android-udev nmap
 
 sudo pacman -Rs --noconfirm firefox-gnome-theme-maia
@@ -273,7 +273,7 @@ printf "\n-------------------------Install--AUR packages------------------------
 # dont ghostwriter, use marktext
 
 yay -S --noconfirm --needed paru-bin brave-bin brlaser brother-hll2360d brother-lpr-drivers-common
-yay -S  --noconfirm --needed marktext-bin
+yay -S  --noconfirm --needed marktext-bin protonmail-bridge-bin librewolf drawing openvpn-update-systemd-resolved
 
 
 yay -S --noconfirm --needed warpinator webapp-manager firefox-profile-switcher-connector-bin 
@@ -409,7 +409,7 @@ echo "" | sudo tee -a /etc/environment
 
 
 QT_AUTO_SCREEN_SCALE_FACTOR=1
-QT_QPA_PLATFORMTHEME="gnome"
+#QT_QPA_PLATFORMTHEME="gnome"
 QT_STYLE_OVERRIDE="Adwaita-Dark"		# or Kvantum-dark
 QT_QPA_PLATFORM=wayland                 # Force to use wayland backend, also install qt5-wayland & qt6-wayland
 EDITOR=/usr/bin/micro

@@ -235,7 +235,7 @@ yay -S --noconfirm --needed lineageos-devel aosp-devel maven gradle xmlstarlet n
 
 yay -Rdd vim --noconfirm
 
-yay -S --noconfirm --needed flex bison cpio clang ncurses5-compat-libs lib32-ncurses5-compat-libs xxd-standalone xml2
+yay -S --noconfirm --needed flex bison cpio clang ncurses5-compat-libs lib32-ncurses5-compat-libs xxd-standalone xml2 libxcrypt-compact
 
 ccache -M 50G
 

@@ -113,10 +113,14 @@ sudo pacman -S --noconfirm --needed libreoffice-fresh conky libmythes mythes-en 
 sudo pacman -S --noconfirm --needed yay qt5-wayland qt6-wayland base-devel wl-clipboard qgnomeplatform qgnomeplatform-qt6
 sudo pacman -S --noconfirm --needed android-tools android-udev nmap
 
+# below are needed for GNOME 43 to not crash
+sudo pacman -S --noconfirm --needed libgda6 intel-media-driver gstreamer-vaapi
+
 sudo pacman -Rs --noconfirm firefox-gnome-theme-maia
 sudo pacman -Rs --noconfirm onlyoffice-desktopeditors
 sudo pacman -Rs --noconfirm touche touchegg gnome-shell-extension-x11gestures
 sudo pacman -Rdd --noconfirm snapd
+
 
 printf "\n-------------------------Install--Mozilla-------------------------\n"
 sudo pacman -S --noconfirm --needed firefox thunderbird
